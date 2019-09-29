@@ -1,18 +1,14 @@
 import React, { Component } from "react";
 import {
-    Alert,
     StyleSheet,
     Text,
     TextInput,
     TouchableOpacity,
     View,
 } from "react-native";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { ReduxAction } from "./ReduxAction";
 
 interface Props {
-    addAwesomeText: (text: string) => void;
+    handleSubmit: (text: string) => void;
 }
 interface State {
     awesomeText: string;
@@ -44,30 +40,16 @@ class Inputs extends Component<Props, State> {
 
                 <TouchableOpacity
                     style={styles.submitButton}
-                    onPress={() => this.handleSubmit(this.state.awesomeText)}
+                    onPress={() =>
+                        this.props.handleSubmit(this.state.awesomeText)
+                    }
                 >
                     <Text style={styles.submitButtonText}> Submit </Text>
                 </TouchableOpacity>
             </View>
         );
     }
-
-    private handleSubmit(text: string) {
-        Alert.alert(
-            "Thanks for your contribution!",
-            `You are a valued member of our awesome contribution. \n Your message: \n ${text}`
-        );
-        this.props.addAwesomeText(text);
-        // TODO navigate back
-    }
 }
-
-const mapStateToProps = (state: never) => state;
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addAwesomeText: (text: string) =>
-        dispatch({ type: ReduxAction.AddAwesomeText, payload: { text } }),
-});
 
 const styles = StyleSheet.create({
     container: {
@@ -91,7 +73,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Inputs);
+export default Inputs;

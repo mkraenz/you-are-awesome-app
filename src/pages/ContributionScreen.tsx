@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Alert, View } from "react-native";
 import { Header, Icon } from "react-native-elements";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
 import { INavigationProps } from "./INavigationProps";
 import Inputs from "./Inputs";
+import { ReduxAction } from "./ReduxAction";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
@@ -13,7 +16,7 @@ interface State {
     mirroredText: string;
 }
 
-export default class ContributionScreen extends Component<Props, State> {
+class ContributionScreen extends Component<Props, State> {
     public render() {
         return (
             <View style={styles.container}>
@@ -25,7 +28,9 @@ export default class ContributionScreen extends Component<Props, State> {
                         />
                     }
                 ></Header>
-                <Inputs />
+                <Inputs
+                    handleSubmit={(text: string) => this.handleSubmit(text)}
+                />
             </View>
         );
     }
@@ -33,9 +38,28 @@ export default class ContributionScreen extends Component<Props, State> {
     private handleSubmit(text: string) {
         Alert.alert(
             "Thanks for your contribution!",
-            `You are a valued member of our awesome contribution. \n Your message: \n ${text}`
+            `You are a valued member of our awesome contribution. \n Your message: \n ${text}`,
+            [
+                {
+                    text: "Awesome!",
+                    onPress: () => {
+                        this.props.addAwesomeText(text);
+                        this.props.navigation.goBack();
+                    },
+                },
+            ]
         );
-        this.props.addAwesomeText(text);
-        this.props.navigation.goBack();
     }
 }
+
+const mapStateToProps = (state: never) => state;
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+    addAwesomeText: (text: string) =>
+        dispatch({ type: ReduxAction.AddAwesomeText, payload: { text } }),
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ContributionScreen);
