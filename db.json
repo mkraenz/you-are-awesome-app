@@ -1,0 +1,70 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "text": "You are perfect!",
+            "author": "Phil",
+            "country": "United States"
+        },
+        {
+            "id": 2,
+            "text": "You look beautiful today.",
+            "author": "Jessi",
+            "country": "Canada"
+        },
+        {
+            "id": 3,
+            "text": "You are amazing.",
+            "author": "Peter",
+            "country": "England"
+        },
+        {
+            "id": 4,
+            "text": "Keep up the good work. You're doing great.",
+            "author": "Jan",
+            "country": "Germany"
+        },
+        {
+            "id": 5,
+            "text": "I know you can do it!",
+            "author": "John",
+            "country": "United States"
+        },
+        {
+            "id": 6,
+            "text": "I believe in you.",
+            "author": "Marie",
+            "country": "Germany"
+        },
+        {
+            "id": 7,
+            "text": "It's great to be with you.",
+            "author": "Phillip",
+            "country": "Germany"
+        },
+        {
+            "id": 8,
+            "text": "Let's do our best again today to have a beautiful and fun day.",
+            "author": "Alex",
+            "country": "Italy"
+        },
+        {
+            "id": 9,
+            "text": "Have a great and successful day.",
+            "author": "Gwen",
+            "country": "United States"
+        },
+        {
+            "id": 10,
+            "text": "Hello again, good-looking. ;)",
+            "author": "Catrin",
+            "country": "Wales"
+        },
+        {
+            "id": 11,
+            "text": "May the Force be with you.",
+            "author": "Charlotte",
+            "country": "France"
+        }
+    ]
+}

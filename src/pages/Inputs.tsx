@@ -31,13 +31,14 @@ class Inputs extends Component<Props, State> {
             <View style={styles.container}>
                 <TextInput
                     style={styles.input}
+                    maxLength={200}
                     underlineColorAndroid="transparent"
-                    placeholder="Your thank-you message"
+                    placeholder="Your awesome message to the world"
                     placeholderTextColor="dimgrey"
                     autoCapitalize="none"
                     onChangeText={text => this.handleTextChanged(text)}
+                    autoFocus={true}
                 />
-
                 <TouchableOpacity
                     style={styles.submitButton}
                     onPress={() =>
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     },
     input: {
         margin: 15,
-        paddingHorizontal: 3,
+        paddingHorizontal: 5,
         height: 40,
         borderColor: "dodgerblue",
         borderWidth: 1,

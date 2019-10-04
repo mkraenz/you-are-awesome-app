@@ -8,11 +8,14 @@ export const styles = StyleSheet.create({
     },
     textContainer: {
         justifyContent: "center",
-        padding: 40,
+        padding: 20,
         flex: 1,
     },
     awesomeText: {
         fontSize: 32,
         paddingBottom: 20,
+    },
+    header: {
+        color: "white",
     },
 });

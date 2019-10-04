@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Alert, View } from "react-native";
 import { Header, Icon } from "react-native-elements";
+import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { INavigationProps } from "./INavigationProps";
@@ -25,7 +26,13 @@ class ContributionScreen extends Component<Props, State> {
                         <Icon
                             name="arrow-back"
                             onPress={() => this.props.navigation.goBack()}
+                            color={styles.header.color}
                         />
+                    }
+                    centerComponent={
+                        <HeaderTitle style={styles.header}>
+                            Contribute
+                        </HeaderTitle>
                     }
                 ></Header>
                 <Inputs

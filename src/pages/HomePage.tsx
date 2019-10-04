@@ -1,7 +1,8 @@
 import casual from "casual-browserify";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import { Button, Header } from "react-native-elements";
+import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { randomAwesomeText } from "../content/awesomeTexts";
@@ -31,22 +32,53 @@ class HomePage extends Component<Props, State> {
     public componentDidMount() {
         // casual lib probably gets loaded async
         this.setRandomText();
+        this.fetchData();
         setInterval(() => this.setRandomText(), 10000);
+    }
+
+    public async fetchData() {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/proSingularity/you-are-awesome-app/"
+        );
+        const myJson = await response.json();
+        console.log(JSON.stringify(myJson));
+        this.setState({ author: JSON.stringify(myJson) });
     }
 
     public render() {
         return (
             <View style={styles.container}>
+                <Header
+                    centerComponent={
+                        <HeaderTitle style={styles.header}>Home</HeaderTitle>
+                    }
+                ></Header>
                 <View style={styles.textContainer}>
-                    <Text style={styles.awesomeText}>
-                        {this.props.awesomeText}
-                    </Text>
-                    <Text style={localStyles.authorText}>
-                        {this.state.author} from {this.state.authorCountry}
-                    </Text>
+                    <View style={[localStyles.balloon]}>
+                        <Text
+                            style={{
+                                paddingTop: 5,
+                                color: "white",
+                                fontSize: 32,
+                            }}
+                        >
+                            {this.props.awesomeText}
+                        </Text>
+
+                        <Text
+                            style={{
+                                paddingTop: 5,
+                                color: "white",
+                                alignContent: "flex-end",
+                            }}
+                        >
+                            {this.state.author} from {this.state.authorCountry}
+                        </Text>
+                    </View>
                 </View>
+
                 <Button
-                    title="Add"
+                    title="Share awesomeness"
                     onPress={() =>
                         this.props.navigation.navigate("AddAwesomeTextModal")
                     }
@@ -67,6 +99,12 @@ class HomePage extends Component<Props, State> {
 const localStyles = StyleSheet.create({
     authorText: {
         fontSize: 24,
+    },
+    balloon: {
+        marginTop: 5,
+        padding: 15,
+        borderRadius: 20,
+        backgroundColor: "#1084ff",
     },
 });
 
