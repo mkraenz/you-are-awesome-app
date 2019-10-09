@@ -14,7 +14,7 @@ const RootStack = createStackNavigator(
         },
     },
     {
-        initialRouteName: "Home",
+        initialRouteName: "AddAwesomeTextModal",
         mode: "modal",
         headerMode: "none",
     }

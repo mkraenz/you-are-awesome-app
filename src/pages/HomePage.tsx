@@ -1,48 +1,32 @@
-import casual from "casual-browserify";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, Header } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { randomAwesomeText } from "../content/awesomeTexts";
 import { INavigationProps } from "./INavigationProps";
+import { IPost } from "./IPost";
 import { ReduxAction } from "./ReduxAction";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
-    awesomeText: string;
+    currentPost: IPost;
     randomizeAwesomeText: () => void;
+    dispatchAddPost: (payload: IPost) => void;
 }
 
-interface State {
-    author: string;
-    authorCountry: string;
-}
-
-class HomePage extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            author: "",
-            authorCountry: "",
-        };
-    }
-
+class HomePage extends Component<Props> {
     public componentDidMount() {
         // casual lib probably gets loaded async
-        this.setRandomText();
         this.fetchData();
-        setInterval(() => this.setRandomText(), 10000);
     }
 
     public async fetchData() {
         const response = await fetch(
-            "https://jsonplaceholder.typicode.com/proSingularity/you-are-awesome-app/"
+            "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts"
         );
-        const myJson = await response.json();
-        console.log(JSON.stringify(myJson));
-        this.setState({ author: JSON.stringify(myJson) });
+        const post: IPost[] = await response.json();
+        this.props.dispatchAddPost(post[0]);
     }
 
     public render() {
@@ -62,7 +46,7 @@ class HomePage extends Component<Props, State> {
                                 fontSize: 32,
                             }}
                         >
-                            {this.props.awesomeText}
+                            {this.props.currentPost.text}
                         </Text>
 
                         <Text
@@ -72,7 +56,8 @@ class HomePage extends Component<Props, State> {
                                 alignContent: "flex-end",
                             }}
                         >
-                            {this.state.author} from {this.state.authorCountry}
+                            {this.props.currentPost.author} from{" "}
+                            {this.props.currentPost.country}
                         </Text>
                     </View>
                 </View>
@@ -85,14 +70,6 @@ class HomePage extends Component<Props, State> {
                 />
             </View>
         );
-    }
-
-    private setRandomText() {
-        this.props.randomizeAwesomeText();
-        this.setState({
-            author: `${casual.first_name} ${casual.last_name}`,
-            authorCountry: casual.country,
-        });
     }
 }
 
@@ -108,16 +85,13 @@ const localStyles = StyleSheet.create({
     },
 });
 
-const mapStateToProps = (state: { currentAwesomeText: string }) => ({
-    awesomeText: state.currentAwesomeText,
+const mapStateToProps = (state: { currentPost: IPost }) => ({
+    currentPost: state.currentPost,
 });
 
 const mapDispatcherToProps = (dispatch: Dispatch) => ({
-    randomizeAwesomeText: () =>
-        dispatch({
-            type: ReduxAction.SetAwesomeText,
-            payload: { text: randomAwesomeText() },
-        }),
+    dispatchAddPost: (payload: IPost) =>
+        dispatch({ type: ReduxAction.AddPost, payload }),
 });
 
 export default connect(
