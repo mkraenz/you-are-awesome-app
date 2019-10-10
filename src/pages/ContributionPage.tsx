@@ -17,11 +17,7 @@ interface Props extends INavigationProps {
     addPost: (post: IPost) => void;
 }
 
-interface State {
-    mirroredText: string;
-}
-
-class ContributionPage extends Component<Props, State> {
+class ContributionPage extends Component<Props> {
     public render() {
         return (
             <View style={styles.container}>
