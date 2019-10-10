@@ -9,8 +9,8 @@ import { IAddPost } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
-import { INavigationProps } from "./INavigationProps";
 import AddPostInput from "./AddPostInputs";
+import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
@@ -21,7 +21,7 @@ interface State {
     mirroredText: string;
 }
 
-class ContributionScreen extends Component<Props, State> {
+class ContributionPage extends Component<Props, State> {
     public render() {
         return (
             <View style={styles.container}>
@@ -71,7 +71,7 @@ const mapStateToProps = (state: IReduxState) => state;
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     addPost: (payload: IPost): IAddPost =>
         dispatch({
-            type: ReduxAction.AddPost,
+            type: ReduxAction.PostAdded,
             payload,
         }),
 });
@@ -79,4 +79,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ContributionScreen);
+)(ContributionPage);

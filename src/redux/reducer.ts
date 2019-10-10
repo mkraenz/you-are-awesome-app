@@ -1,4 +1,4 @@
-import { IAddPost } from "./Actions";
+import { IAddPost, IPostFetched } from "./Actions";
 import { IPost } from "./IPost";
 import { IReduxState } from "./IReduxState";
 import { ReduxAction } from "./ReduxAction";
@@ -15,10 +15,11 @@ const fetchPostsFrom =
 
 export const reducer = (
     state: IReduxState = { currentPost, fetchPostsFrom },
-    action: IAddPost
+    action: IAddPost | IPostFetched
 ): IReduxState => {
     switch (action.type) {
-        case ReduxAction.AddPost:
+        case ReduxAction.PostAdded:
+        case ReduxAction.PostFetched:
             return {
                 ...state,
                 currentPost: action.payload,

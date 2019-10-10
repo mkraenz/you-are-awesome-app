@@ -1,6 +1,6 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import ContributionScreen from "./pages/ContributionScreen";
+import ContributionPage from "./pages/ContributionPage";
 import HomePage from "./pages/HomePage";
 
 // injects `props.navigation` into components
@@ -9,12 +9,12 @@ const RootStack = createStackNavigator(
         Home: {
             screen: HomePage,
         },
-        AddAwesomeTextModal: {
-            screen: ContributionScreen,
+        Contribute: {
+            screen: ContributionPage,
         },
     },
     {
-        initialRouteName: "AddAwesomeTextModal",
+        initialRouteName: "Home",
         mode: "modal",
         headerMode: "none",
     }

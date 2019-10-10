@@ -1,3 +1,4 @@
 export enum ReduxAction {
-    AddPost = "ADD_POST",
+    PostAdded = "POST_ADDED",
+    PostFetched = "POST_FETCHED",
 }

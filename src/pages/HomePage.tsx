@@ -5,7 +5,7 @@ import { Button, Header } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { IAddPost } from "../redux/Actions";
+import { IPostFetched } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
@@ -14,20 +14,20 @@ import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
     currentPost: IPostContent;
-    dispatchAddPost: (payload: IPost) => void;
+    fetchPost: (payload: IPost) => void;
     fetchPostsFrom: string;
 }
 
 class HomePage extends Component<Props> {
-    public componentDidMount() {
-        // casual lib probably gets loaded async
+    constructor(props: Props) {
+        super(props);
         this.fetchData();
     }
 
     public async fetchData() {
         const response = await fetch(this.props.fetchPostsFrom);
         const posts: IPost[] = await response.json();
-        this.props.dispatchAddPost(posts[random(posts.length - 1)]);
+        this.props.fetchPost(posts[random(posts.length - 1)]);
     }
 
     public render() {
@@ -65,9 +65,7 @@ class HomePage extends Component<Props> {
 
                 <Button
                     title="Share awesomeness"
-                    onPress={() =>
-                        this.props.navigation.navigate("AddAwesomeTextModal")
-                    }
+                    onPress={() => this.props.navigation.navigate("Contribute")}
                 />
             </View>
         );
@@ -94,8 +92,8 @@ const mapStateToProps = (
 });
 
 const mapDispatcherToProps = (dispatch: Dispatch) => ({
-    dispatchAddPost: (payload: IPost): IAddPost =>
-        dispatch({ type: ReduxAction.AddPost, payload }),
+    fetchPost: (payload: IPost): IPostFetched =>
+        dispatch({ type: ReduxAction.PostFetched, payload }),
 });
 
 export default connect(
