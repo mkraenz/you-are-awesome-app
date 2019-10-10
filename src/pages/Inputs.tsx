@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Input } from "react-native-elements";
-import { IPostContent } from "./IPost";
+import { IPostContent } from "../redux/IPost";
 
 interface Props {
     handleSubmit: (post: IPostContent) => void;
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     },
     submitButtonText: {
         color: "white",
+        textAlign: "center",
     },
 });
 

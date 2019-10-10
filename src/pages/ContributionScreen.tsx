@@ -5,14 +5,16 @@ import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import uuid from "uuid";
+import { IAddPost } from "../redux/Actions";
+import { IPost, IPostContent } from "../redux/IPost";
+import { IReduxState } from "../redux/IReduxState";
+import { ReduxAction } from "../redux/ReduxAction";
 import { INavigationProps } from "./INavigationProps";
 import Inputs from "./Inputs";
-import { IPost, IPostContent } from "./IPost";
-import { ReduxAction } from "./ReduxAction";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
-    addAwesomeText: (post: IPost) => void;
+    addPost: (post: IPost) => void;
 }
 
 interface State {
@@ -47,7 +49,7 @@ class ContributionScreen extends Component<Props, State> {
     }
 
     private handleSubmit(post: IPostContent) {
-        this.props.addAwesomeText({
+        this.props.addPost({
             ...post,
             id: uuid.v4(),
         });
@@ -57,20 +59,20 @@ class ContributionScreen extends Component<Props, State> {
             [
                 {
                     text: "Awesome!",
-                    onPress: () => this.props.navigation.goBack(),
+                    onPress: () => this.props.navigation.navigate("Home"),
                 },
             ]
         );
     }
 }
 
-const mapStateToProps = (state: never) => state;
+const mapStateToProps = (state: IReduxState) => state;
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addAwesomeText: (post: IPost) =>
+    addPost: (payload: IPost): IAddPost =>
         dispatch({
             type: ReduxAction.AddPost,
-            payload: post,
+            payload,
         }),
 });
 

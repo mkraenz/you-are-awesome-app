@@ -1,18 +1,21 @@
+import random from "lodash/random";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, Header } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { IAddPost } from "../redux/Actions";
+import { IPost, IPostContent } from "../redux/IPost";
+import { IReduxState } from "../redux/IReduxState";
+import { ReduxAction } from "../redux/ReduxAction";
 import { INavigationProps } from "./INavigationProps";
-import { IPost } from "./IPost";
-import { ReduxAction } from "./ReduxAction";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
-    currentPost: IPost;
-    randomizeAwesomeText: () => void;
+    currentPost: IPostContent;
     dispatchAddPost: (payload: IPost) => void;
+    fetchPostsFrom: string;
 }
 
 class HomePage extends Component<Props> {
@@ -22,11 +25,9 @@ class HomePage extends Component<Props> {
     }
 
     public async fetchData() {
-        const response = await fetch(
-            "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts"
-        );
-        const post: IPost[] = await response.json();
-        this.props.dispatchAddPost(post[0]);
+        const response = await fetch(this.props.fetchPostsFrom);
+        const posts: IPost[] = await response.json();
+        this.props.dispatchAddPost(posts[random(posts.length - 1)]);
     }
 
     public render() {
@@ -85,12 +86,15 @@ const localStyles = StyleSheet.create({
     },
 });
 
-const mapStateToProps = (state: { currentPost: IPost }) => ({
+const mapStateToProps = (
+    state: IReduxState
+): Pick<IReduxState, "currentPost" | "fetchPostsFrom"> => ({
     currentPost: state.currentPost,
+    fetchPostsFrom: state.fetchPostsFrom,
 });
 
 const mapDispatcherToProps = (dispatch: Dispatch) => ({
-    dispatchAddPost: (payload: IPost) =>
+    dispatchAddPost: (payload: IPost): IAddPost =>
         dispatch({ type: ReduxAction.AddPost, payload }),
 });
 
