@@ -12,14 +12,10 @@ interface State {
     country: string;
 }
 
-class Inputs extends Component<Props, State> {
+class AddPostInput extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = {
-            text: "",
-            author: "",
-            country: "",
-        };
+        this.state = getEmptyState();
     }
 
     private handleTextChanged(text: string) {
@@ -43,7 +39,7 @@ class Inputs extends Component<Props, State> {
                     maxLength={200}
                     underlineColorAndroid="transparent"
                     placeholder="Your awesome message to the world"
-                    placeholderTextColor="dimgrey"
+                    placeholderTextColor="grey"
                     autoCapitalize="sentences"
                     onChangeText={text => this.handleTextChanged(text)}
                 />
@@ -53,7 +49,7 @@ class Inputs extends Component<Props, State> {
                     maxLength={50}
                     underlineColorAndroid="transparent"
                     placeholder="First name"
-                    placeholderTextColor="dimgrey"
+                    placeholderTextColor="grey"
                     autoCapitalize="words"
                     onChangeText={text => this.handleAuthorChanged(text)}
                 />
@@ -63,18 +59,25 @@ class Inputs extends Component<Props, State> {
                     maxLength={50}
                     underlineColorAndroid="transparent"
                     placeholder="Country"
-                    placeholderTextColor="dimgrey"
+                    placeholderTextColor="grey"
                     autoCapitalize="sentences"
                     onChangeText={text => this.handleCountryChanged(text)}
                 />
                 <TouchableOpacity
                     style={styles.submitButton}
-                    onPress={() => this.props.handleSubmit({ ...this.state })}
+                    onPress={() => {
+                        this.props.handleSubmit({ ...this.state });
+                        this.handleSubmitAdditional();
+                    }}
                 >
                     <Text style={styles.submitButtonText}> Submit </Text>
                 </TouchableOpacity>
             </View>
         );
+    }
+
+    private handleSubmitAdditional() {
+        this.setState(getEmptyState());
     }
 }
 
@@ -82,7 +85,10 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 23,
     },
-    inputLabel: { marginTop: 10 },
+    inputLabel: {
+        marginTop: 10,
+        color: "dimgrey",
+    },
     submitButton: {
         backgroundColor: "dodgerblue",
         padding: 10,
@@ -95,4 +101,10 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Inputs;
+const getEmptyState = (): State => ({
+    text: "",
+    author: "",
+    country: "",
+});
+
+export default AddPostInput;

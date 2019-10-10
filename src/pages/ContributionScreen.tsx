@@ -10,7 +10,7 @@ import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
 import { INavigationProps } from "./INavigationProps";
-import Inputs from "./Inputs";
+import AddPostInput from "./AddPostInputs";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
@@ -39,7 +39,7 @@ class ContributionScreen extends Component<Props, State> {
                         </HeaderTitle>
                     }
                 ></Header>
-                <Inputs
+                <AddPostInput
                     handleSubmit={(post: IPostContent) =>
                         this.handleSubmit(post)
                     }
@@ -55,7 +55,7 @@ class ContributionScreen extends Component<Props, State> {
         });
         Alert.alert(
             "Thanks for your contribution!",
-            `You are a valued member of our awesome contribution. \n Your message: \n ${post.text}`,
+            `You are a valued member of our awesome community. \n Your message: \n ${post.text}`,
             [
                 {
                     text: "Awesome!",
