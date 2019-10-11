@@ -1,25 +1,25 @@
 import { IPostSendFailed, IPostSendSucceeded } from "../Actions";
+import { IReduxStateNetworking } from "../IReduxState";
 import { ReduxAction } from "../ReduxAction";
 
 /** exponential backoff for sending new posts to the server */
 export const sendPostReducer = (
-    state = { backoffInMs: 0 },
+    state: IReduxStateNetworking = { backoffInMs: 0 },
     action: IPostSendFailed | IPostSendSucceeded
-) => {
+): IReduxStateNetworking => {
     switch (action.type) {
         case ReduxAction.PostSendSucceeded:
-            return { ...state, backoff: 0 };
+            return { ...state, backoffInMs: 0 };
         case ReduxAction.PostSendFailed:
-            console.log(action.payload.error.message);
-            return { ...state, backoff: getBackoffInMs(state.backoffInMs) };
+            return { ...state, backoffInMs: getBackoffInMs(state.backoffInMs) };
     }
     return state;
 };
 
 const getBackoffInMs = (previous: number) => {
-    const fiveMinutes = 5 * 60000;
-    if (previous > fiveMinutes) {
-        return previous; // should be 512 seconds ~ 8.5 mins
+    const oneMinute = 60000;
+    if (2 * previous > oneMinute) {
+        return oneMinute;
     }
     if (previous === 0) {
         return 1000;

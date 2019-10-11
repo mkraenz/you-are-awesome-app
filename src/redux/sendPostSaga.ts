@@ -1,24 +1,50 @@
-import { call, put, takeEvery } from "redux-saga/effects";
-import { IAddPost, IPostSendFailed } from "./Actions";
+import { call, put, select, takeEvery } from "redux-saga/effects";
+import { MAX_BACKOFF_IN_MS } from "../config";
+import { IAddPost as IPostAdded, IPostSendFailed } from "./Actions";
 import { SERVER_URI } from "./reducers/postReducer";
 import { ReduxAction } from "./ReduxAction";
-import { sendAddedPostToServer } from "./sendAddedPostToServer";
+import { backoffInMs } from "./selectors";
+import { waitAndSendPostToServer } from "./sendPostToServer";
 
-function* sendPostWorkerSaga(action: IAddPost) {
+const FINAL_ERROR_MSG = "Maximum timeout exceeded. Sending to server failed.";
+
+function* sendPostWorkerSaga(action: IPostAdded | IPostSendFailed) {
+    const postAdded =
+        action.type === ReduxAction.PostAdded
+            ? action
+            : action.payload.originalAction;
     try {
+        const backoff = yield select(backoffInMs);
+        if (backoff > MAX_BACKOFF_IN_MS) {
+            throw new Error(FINAL_ERROR_MSG);
+        }
         const responseData = yield call(
-            sendAddedPostToServer,
-            action.payload,
-            SERVER_URI
+            waitAndSendPostToServer,
+            postAdded.payload,
+            SERVER_URI,
+            backoff
         );
         yield put({
             type: ReduxAction.PostSendSucceeded,
             payload: responseData,
         });
     } catch (e) {
+        yield* handleSendFailed(e, postAdded);
+    }
+}
+
+function* handleSendFailed(e: any, postAdded: IPostAdded) {
+    if (e.message === FINAL_ERROR_MSG) {
+        const finalErrorAction = {
+            type: ReduxAction.PostSendFailedTimeoutExceeded,
+            payload: { originalAction: postAdded, error: e },
+            error: true,
+        };
+        yield put(finalErrorAction);
+    } else {
         const errorAction: IPostSendFailed = {
             type: ReduxAction.PostSendFailed,
-            payload: { originalAction: action, error: e },
+            payload: { originalAction: postAdded, error: e },
             error: true,
         };
         yield put(errorAction);
@@ -26,7 +52,10 @@ function* sendPostWorkerSaga(action: IAddPost) {
 }
 
 function* sendPostSaga() {
-    yield takeEvery(ReduxAction.PostAdded, sendPostWorkerSaga);
+    yield takeEvery(
+        [ReduxAction.PostAdded, ReduxAction.PostSendFailed],
+        sendPostWorkerSaga
+    );
 }
 
 export default sendPostSaga;

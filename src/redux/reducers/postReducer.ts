@@ -1,4 +1,4 @@
-import { IAddPost, IPostFetched } from "../Actions";
+import { IPostAdded, IPostFetched } from "../Actions";
 import { IPost } from "../IPost";
 import { IReduxStateApp } from "../IReduxState";
 import { ReduxAction } from "../ReduxAction";
@@ -15,7 +15,7 @@ export const SERVER_URI =
 
 export const postReducer = (
     state: IReduxStateApp = { currentPost, SERVER_URI: SERVER_URI },
-    action: IAddPost | IPostFetched
+    action: IPostAdded | IPostFetched
 ): IReduxStateApp => {
     switch (action.type) {
         case ReduxAction.PostAdded:

@@ -5,7 +5,7 @@ import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import uuid from "uuid";
-import { IAddPost } from "../redux/Actions";
+import { IPostAdded } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
@@ -65,7 +65,7 @@ class ContributionPage extends Component<Props> {
 const mapStateToProps = (state: IReduxState) => state;
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addPost: (payload: IPost): IAddPost =>
+    addPost: (payload: IPost): IPostAdded =>
         dispatch({
             type: ReduxAction.PostAdded,
             payload,

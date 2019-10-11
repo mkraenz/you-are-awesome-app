@@ -1,7 +1,7 @@
 import { IPost } from "./IPost";
 import { ReduxAction } from "./ReduxAction";
 
-export interface IAddPost {
+export interface IPostAdded {
     type: ReduxAction.PostAdded;
     payload: IPost;
 }
@@ -14,7 +14,7 @@ export interface IPostFetched {
 export interface IPostSendFailed {
     type: ReduxAction.PostSendFailed;
     payload: {
-        originalAction: IAddPost;
+        originalAction: IPostAdded;
         error: Error;
     };
     error: true;
