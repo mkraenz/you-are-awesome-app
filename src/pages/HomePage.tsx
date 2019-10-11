@@ -15,7 +15,7 @@ import { styles } from "./Styles";
 interface Props extends INavigationProps {
     currentPost: IPostContent;
     fetchPost: (payload: IPost) => void;
-    fetchPostsFrom: string;
+    SERVER_URI: string;
 }
 
 class HomePage extends Component<Props> {
@@ -25,7 +25,7 @@ class HomePage extends Component<Props> {
     }
 
     public async fetchData() {
-        const response = await fetch(this.props.fetchPostsFrom);
+        const response = await fetch(this.props.SERVER_URI);
         const posts: IPost[] = await response.json();
         this.props.fetchPost(posts[random(posts.length - 1)]);
     }
@@ -84,11 +84,9 @@ const localStyles = StyleSheet.create({
     },
 });
 
-const mapStateToProps = (
-    state: IReduxState
-): Pick<IReduxState, "currentPost" | "fetchPostsFrom"> => ({
-    currentPost: state.currentPost,
-    fetchPostsFrom: state.fetchPostsFrom,
+const mapStateToProps = (state: IReduxState) => ({
+    currentPost: state.app.currentPost,
+    SERVER_URI: state.app.SERVER_URI,
 });
 
 const mapDispatcherToProps = (dispatch: Dispatch) => ({

@@ -1,7 +1,7 @@
-import { IAddPost, IPostFetched } from "./Actions";
-import { IPost } from "./IPost";
-import { IReduxState } from "./IReduxState";
-import { ReduxAction } from "./ReduxAction";
+import { IAddPost, IPostFetched } from "../Actions";
+import { IPost } from "../IPost";
+import { IReduxStateApp } from "../IReduxState";
+import { ReduxAction } from "../ReduxAction";
 
 const currentPost: IPost = {
     id: "0",
@@ -10,13 +10,13 @@ const currentPost: IPost = {
     country: "dummy country",
 };
 
-const fetchPostsFrom =
+export const SERVER_URI =
     "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts";
 
-export const reducer = (
-    state: IReduxState = { currentPost, fetchPostsFrom },
+export const postReducer = (
+    state: IReduxStateApp = { currentPost, SERVER_URI: SERVER_URI },
     action: IAddPost | IPostFetched
-): IReduxState => {
+): IReduxStateApp => {
     switch (action.type) {
         case ReduxAction.PostAdded:
         case ReduxAction.PostFetched:

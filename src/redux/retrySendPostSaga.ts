@@ -4,11 +4,15 @@ import { SERVER_URI } from "./reducers/postReducer";
 import { ReduxAction } from "./ReduxAction";
 import { sendAddedPostToServer } from "./sendAddedPostToServer";
 
-function* sendPostWorkerSaga(action: IAddPost) {
+function* sendPostWorkerSaga(action: IAddPost | IPostSendFailed) {
+    const postAdded =
+        action.type === ReduxAction.PostAdded
+            ? action
+            : action.payload.originalAction;
     try {
         const responseData = yield call(
             sendAddedPostToServer,
-            action.payload,
+            postAdded.payload,
             SERVER_URI
         );
         yield put({
@@ -18,7 +22,7 @@ function* sendPostWorkerSaga(action: IAddPost) {
     } catch (e) {
         const errorAction: IPostSendFailed = {
             type: ReduxAction.PostSendFailed,
-            payload: { originalAction: action, error: e },
+            payload: { originalAction: postAdded, error: e },
             error: true,
         };
         yield put(errorAction);
@@ -26,7 +30,10 @@ function* sendPostWorkerSaga(action: IAddPost) {
 }
 
 function* sendPostSaga() {
-    yield takeEvery(ReduxAction.PostAdded, sendPostWorkerSaga);
+    yield takeEvery(
+        [ReduxAction.PostAdded, ReduxAction.PostSendFailed],
+        sendPostWorkerSaga
+    );
 }
 
 export default sendPostSaga;

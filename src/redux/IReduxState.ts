@@ -1,6 +1,10 @@
 import { IPost } from "./IPost";
 
 export interface IReduxState {
+    app: IReduxStateApp;
+}
+
+export interface IReduxStateApp {
     currentPost: IPost;
-    fetchPostsFrom: string;
+    SERVER_URI: string;
 }
