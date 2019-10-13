@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 19624,
-  "expoServerNgrokUrl": "https://5k-b6w.mirolaos.you-are-awesome.exp.direct",
-  "packagerNgrokUrl": "https://packager.5k-b6w.mirolaos.you-are-awesome.exp.direct",
-  "ngrokPid": 19647,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
