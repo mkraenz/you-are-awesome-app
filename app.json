@@ -1,22 +1,18 @@
 {
-  "name": "yaawesomeapp",
-  "displayName": "You are Awesome App!",
-  "expo": {
-    "name": "You are Awesome App!",
-    "slug": "you-are-awesome-app",
-    "icon": "./assets/AppIcons/you-are-awesome-app-icon.png",
-    "privacy": "unlisted",
-    "sdkVersion": "35.0.0",
-    "version": "1.0.0",
-    "entryPoint": "node_modules/expo/AppEntry.js",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "android": {
-      "package": "eu.kraenz.youareawesomeapp"
-    },
-    "description": "Join our community that tells you HOW AWESOME YOU ARE. Spread the awesomeness by sending awesome messages to other people around the globe and feel proud to help them reach their goals."
-  }
+    "name": "yaawesomeapp",
+    "displayName": "You are Awesome App! Daily Motivation Up!",
+    "expo": {
+        "name": "You are Awesome App!",
+        "slug": "you-are-awesome-app",
+        "icon": "./assets/google-play-store/logo.png",
+        "privacy": "unlisted",
+        "sdkVersion": "35.0.0",
+        "version": "1.0.0",
+        "entryPoint": "node_modules/expo/AppEntry.js",
+        "platforms": ["ios", "android", "web"],
+        "android": {
+            "package": "eu.kraenz.youareawesomeapp"
+        },
+        "description": "Join our community that tells you HOW AWESOME YOU ARE. Spread the awesomeness by sending awesome messages to other people around the globe and feel proud to help them reach their goals."
+    }
 }
