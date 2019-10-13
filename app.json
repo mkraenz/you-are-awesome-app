@@ -7,7 +7,7 @@
         "icon": "./assets/google-play-store/logo.png",
         "privacy": "public",
         "sdkVersion": "35.0.0",
-        "version": "1.0.1",
+        "version": "1.1.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
