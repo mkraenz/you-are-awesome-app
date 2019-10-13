@@ -49,6 +49,7 @@ class ContributionPage extends Component<Props> {
             ...post,
             id: uuid.v4(),
         });
+        // TODO #2 show spinner until the POST request was successful (or failed)
         Alert.alert(
             "Thanks for your contribution!",
             `You are a valued member of our awesome community. \n Your message: \n ${post.text}`,
