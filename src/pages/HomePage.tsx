@@ -10,7 +10,10 @@ import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
 import { INavigationProps } from "./INavigationProps";
+import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
 import { styles } from "./Styles";
+
+export type PostWithDate = IPost & { isoDate: string };
 
 interface Props extends INavigationProps {
     currentPost: IPostContent;
@@ -26,7 +29,8 @@ class HomePage extends Component<Props> {
 
     public async fetchData() {
         const response = await fetch(this.props.SERVER_URI);
-        const posts: IPost[] = await response.json();
+        const posts: PostWithDate[] = await response.json();
+        maybeGetTodaysPost(new Date(), posts);
         this.props.fetchPost(posts[random(posts.length - 1)]);
     }
 
