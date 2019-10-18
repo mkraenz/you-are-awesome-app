@@ -5,9 +5,9 @@ import { ReduxAction } from "../ReduxAction";
 
 const currentPost: IPost = {
     id: "0",
-    text: "dummy text",
-    author: "dummy author",
-    country: "dummy country",
+    text: "Loading...",
+    author: "",
+    country: "",
 };
 
 export const SERVER_URI =
