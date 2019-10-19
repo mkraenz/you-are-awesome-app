@@ -13,7 +13,7 @@ import { INavigationProps } from "./INavigationProps";
 import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
 import { styles } from "./Styles";
 
-export type PostWithDate = IPost & { isoDate: string };
+export type PostWithDate = IPost & { isodate: string };
 
 interface Props extends INavigationProps {
     currentPost: IPostContent;
@@ -29,7 +29,9 @@ class HomePage extends Component<Props> {
 
     public async fetchData() {
         const response = await fetch(this.props.SERVER_URI);
-        const posts: PostWithDate[] = await response.json();
+        // NOTE: capital letters in the google sheets header (= names of the json's properties)
+        // will be converted to all small letters
+        const posts: PostWithDate[] = (await response.json()).rows;
         const todaysPost = maybeGetTodaysPost(new Date(), posts);
         if (todaysPost) {
             this.props.fetchPost(todaysPost);
