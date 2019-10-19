@@ -1,4 +1,4 @@
-import { PostWithDate } from "./HomePage";
+import { PostWithDate } from "../redux/IPost";
 
 export const maybeGetTodaysPost = (
     now: Date,

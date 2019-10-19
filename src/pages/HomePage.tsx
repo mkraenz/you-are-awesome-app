@@ -1,20 +1,23 @@
-import { random } from "lodash";
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import {
+    RefreshControl,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    View,
+} from "react-native";
 import { Button, Header } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { fetchPosts } from "../api/fetchPosts";
 import { IPostFetched } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
 import Balloon from "./components/Balloon";
 import { INavigationProps } from "./INavigationProps";
-import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
 import { styles } from "./Styles";
-
-export type PostWithDate = IPost & { isodate: string };
 
 interface Props extends INavigationProps {
     currentPost: IPostContent;
@@ -22,43 +25,61 @@ interface Props extends INavigationProps {
     SERVER_URI: string;
 }
 
-class HomePage extends Component<Props> {
+interface State {
+    refreshing: boolean;
+}
+
+class HomePage extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.fetchData();
-    }
-
-    public async fetchData() {
-        const response = await fetch(this.props.SERVER_URI);
-        // NOTE: capital letters in the google sheets header (= names of the json's properties)
-        // will be converted to all small letters
-        const posts: PostWithDate[] = (await response.json()).rows;
-        const todaysPost = maybeGetTodaysPost(new Date(), posts);
-        if (todaysPost) {
-            this.props.fetchPost(todaysPost);
-        } else {
-            this.props.fetchPost(posts[random(posts.length - 1)]);
-        }
+        fetchPosts(this.props.SERVER_URI, this.props.fetchPost);
+        this.state = {
+            refreshing: false,
+        };
     }
 
     public render() {
         return (
-            <View style={styles.container}>
-                <Header
-                    centerComponent={
-                        <HeaderTitle style={styles.header}>Home</HeaderTitle>
+            <SafeAreaView style={styles.container}>
+                <ScrollView
+                    contentContainerStyle={localStyles.scrollView}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.refreshing}
+                            onRefresh={() => this.handleRefresh()}
+                        />
                     }
-                ></Header>
-                <View style={localStyles.textContainer}>
-                    <Balloon post={this.props.currentPost} />
-                </View>
+                >
+                    <View style={styles.container}>
+                        <Header
+                            centerComponent={
+                                <HeaderTitle style={styles.header}>
+                                    Home
+                                </HeaderTitle>
+                            }
+                        ></Header>
+                        <View style={localStyles.textContainer}>
+                            <Balloon post={this.props.currentPost} />
+                        </View>
 
-                <Button
-                    title="Share awesomeness"
-                    onPress={() => this.props.navigation.navigate("Contribute")}
-                />
-            </View>
+                        <Button
+                            title="Share awesomeness"
+                            onPress={() =>
+                                this.props.navigation.navigate("Contribute")
+                            }
+                        />
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
         );
+    }
+
+    private async handleRefresh() {
+        this.setState({
+            refreshing: true,
+        });
+        await fetchPosts(this.props.SERVER_URI, this.props.fetchPost);
+        this.setState({ refreshing: false });
     }
 }
 const mapStateToProps = (state: IReduxState) => ({
@@ -83,4 +104,13 @@ export const localStyles = StyleSheet.create({
         padding: 20,
         flex: 1,
     },
+    scrollView: {
+        flex: 1,
+    },
 });
+
+function wait(timeout: number) {
+    return new Promise(resolve => {
+        setTimeout(resolve, timeout);
+    });
+}
