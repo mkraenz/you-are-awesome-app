@@ -1,4 +1,4 @@
-import random from "lodash/random";
+import { random } from "lodash";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, Header } from "react-native-elements";
@@ -30,8 +30,12 @@ class HomePage extends Component<Props> {
     public async fetchData() {
         const response = await fetch(this.props.SERVER_URI);
         const posts: PostWithDate[] = await response.json();
-        maybeGetTodaysPost(new Date(), posts);
-        this.props.fetchPost(posts[random(posts.length - 1)]);
+        const todaysPost = maybeGetTodaysPost(new Date(), posts);
+        if (todaysPost) {
+            this.props.fetchPost(todaysPost);
+        } else {
+            this.props.fetchPost(posts[random(posts.length - 1)]);
+        }
     }
 
     public render() {
