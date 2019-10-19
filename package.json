@@ -5,7 +5,11 @@
         "ios": "react-native run-ios",
         "web": "expo start --web",
         "start": "react-native start",
-        "test": "jest"
+        "test": "jest",
+        "test:watch": "jest --watch --coverage=false --changedSince=origin/master",
+        "test:debug": "jest --onlyChanged --watch --coverage=false",
+        "test:coverage": "jest",
+        "updateSnapshots": "jest --updateSnapshot --coverage=false"
     },
     "dependencies": {
         "casual-browserify": "^1.5.19-2",
@@ -31,6 +35,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.6.0",
+        "@types/jest": "^24.0.19",
         "@types/lodash": "^4.14.140",
         "@types/react": "^16.8.23",
         "@types/react-native": "^0.57.65",
@@ -38,13 +43,24 @@
         "@types/redux": "^3.6.0",
         "@types/uuid": "^3.4.5",
         "babel-preset-expo": "^7.0.0",
-        "expo-cli": "^3.3.0",
+        "expo-cli": "^3.4.1",
         "jest-expo": "^35.0.0",
         "jetifier": "^1.6.4",
         "typescript": "^3.4.5"
     },
     "jest": {
-        "preset": "react-native"
+        "preset": "jest-expo",
+        "transformIgnorePatterns": [
+            "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
+        ],
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "**/*.{ts,tsx}",
+            "!**/coverage/**",
+            "!**/node_modules/**",
+            "!**/babel.config.js",
+            "!**/jest.setup.js"
+        ]
     },
     "private": true
 }
