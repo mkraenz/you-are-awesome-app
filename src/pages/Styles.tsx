@@ -6,15 +6,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#89cff0",
     },
-    textContainer: {
-        justifyContent: "center",
-        padding: 20,
-        flex: 1,
-    },
-    awesomeText: {
-        fontSize: 32,
-        paddingBottom: 20,
-    },
     header: {
         color: "white",
     },

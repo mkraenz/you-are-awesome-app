@@ -1,6 +1,6 @@
 import { random } from "lodash";
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Button, Header } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
@@ -9,6 +9,7 @@ import { IPostFetched } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
+import Balloon from "./components/Balloon";
 import { INavigationProps } from "./INavigationProps";
 import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
 import { styles } from "./Styles";
@@ -48,29 +49,8 @@ class HomePage extends Component<Props> {
                         <HeaderTitle style={styles.header}>Home</HeaderTitle>
                     }
                 ></Header>
-                <View style={styles.textContainer}>
-                    <View style={[localStyles.balloon]}>
-                        <Text
-                            style={{
-                                paddingTop: 5,
-                                color: "white",
-                                fontSize: 32,
-                            }}
-                        >
-                            {this.props.currentPost.text}
-                        </Text>
-
-                        <Text
-                            style={{
-                                paddingTop: 5,
-                                color: "white",
-                                alignContent: "flex-end",
-                            }}
-                        >
-                            {this.props.currentPost.author} from{" "}
-                            {this.props.currentPost.country}
-                        </Text>
-                    </View>
+                <View style={localStyles.textContainer}>
+                    <Balloon post={this.props.currentPost} />
                 </View>
 
                 <Button
@@ -81,19 +61,6 @@ class HomePage extends Component<Props> {
         );
     }
 }
-
-const localStyles = StyleSheet.create({
-    authorText: {
-        fontSize: 24,
-    },
-    balloon: {
-        marginTop: 5,
-        padding: 15,
-        borderRadius: 20,
-        backgroundColor: "#1084ff",
-    },
-});
-
 const mapStateToProps = (state: IReduxState) => ({
     currentPost: state.app.currentPost,
     SERVER_URI: state.app.SERVER_URI,
@@ -108,3 +75,12 @@ export default connect(
     mapStateToProps,
     mapDispatcherToProps
 )(HomePage);
+
+/** global styles, use as defualts */
+export const localStyles = StyleSheet.create({
+    textContainer: {
+        justifyContent: "center",
+        padding: 20,
+        flex: 1,
+    },
+});
