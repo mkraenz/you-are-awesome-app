@@ -11,7 +11,7 @@ import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { fetchPosts } from "../api/fetchPosts";
-import { IPostFetched } from "../redux/Actions";
+import { IPostFetchSucceeded } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
@@ -88,8 +88,8 @@ const mapStateToProps = (state: IReduxState) => ({
 });
 
 const mapDispatcherToProps = (dispatch: Dispatch) => ({
-    fetchPost: (payload: IPost): IPostFetched =>
-        dispatch({ type: ReduxAction.PostFetched, payload }),
+    fetchPost: (payload: IPost): IPostFetchSucceeded =>
+        dispatch({ type: ReduxAction.PostFetchSucceeded, payload }),
 });
 
 export default connect(

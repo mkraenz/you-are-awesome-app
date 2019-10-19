@@ -1,5 +1,5 @@
 export enum ReduxAction {
-    PostFetched = "POST_FETCHED",
+    PostFetchSucceeded = "POST_FETCHED",
     PostSendRequested = "POST_SEND_REQUESTED",
     PostSendSucceeded = "POST_SEND_SUCCEEDED",
     PostSendFailed = "POST_SEND_FAILED",

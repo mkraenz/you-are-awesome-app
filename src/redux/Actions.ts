@@ -6,8 +6,8 @@ export interface IPostSendRequested {
     payload: IPost;
 }
 
-export interface IPostFetched {
-    type: ReduxAction.PostFetched;
+export interface IPostFetchSucceeded {
+    type: ReduxAction.PostFetchSucceeded;
     payload: IPost;
 }
 
