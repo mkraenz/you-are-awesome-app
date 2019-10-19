@@ -11,7 +11,7 @@ const currentPost: IPost = {
 };
 
 export const SERVER_URI =
-    "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts";
+    "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false";
 
 export const postReducer = (
     state: IReduxStateApp = { currentPost, SERVER_URI: SERVER_URI },

@@ -11,22 +11,22 @@ describe("maybeGetTodaysPost()", () => {
 
     it("returns today's post", () => {
         const today = new Date("2019-10-18");
-        const nonMatchingIsoDate = "2000-01-01";
-        const matchingIsoDate = "2019-10-18";
+        const nonMatchingIsodate = "2000-01-01";
+        const matchingIsodate = "2019-10-18";
         const posts = [
             {
                 author: "my-author-1",
                 country: "my-country-1",
                 id: "my-id-1",
                 text: "my-text-1",
-                isoDate: nonMatchingIsoDate,
+                isodate: nonMatchingIsodate,
             },
             {
                 author: "my-author-2",
                 country: "my-country-2",
                 id: "my-id-2",
                 text: "my-text-2",
-                isoDate: matchingIsoDate,
+                isodate: matchingIsodate,
             },
         ];
 

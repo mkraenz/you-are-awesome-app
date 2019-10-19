@@ -6,6 +6,7 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 
 - [You are Awesome App! on Google Play Store](https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp)
 - [Google Play Console](https://play.google.com/apps/publish/)
+- [Google Sheets](https://docs.google.com/spreadsheets/)
 
 ### Update production apps
 
@@ -33,3 +34,5 @@ yarn expo build:android -t apk
 ## Further Links
 
 - [You are Awesome App! on expo.io](https://expo.io/@mirolaos/you-are-awesome-app)
+- [Google Sheets to JSON](http://gsx2json.com/)
+- [My JSON Server](https://my-json-server.typicode.com)
