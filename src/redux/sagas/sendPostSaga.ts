@@ -1,10 +1,10 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
-import { MAX_BACKOFF_IN_MS } from "../config";
-import { IPostSendFailed, IPostSendRequested } from "./Actions";
-import { SEND_POST_URI } from "./reducers/postReducer";
-import { ReduxAction } from "./ReduxAction";
-import { backoffInMs } from "./selectors";
-import { waitAndSendPostToServer } from "./sendPostToServer";
+import { MAX_BACKOFF_IN_MS } from "../../config";
+import { IPostSendFailed, IPostSendRequested } from "../Actions";
+import { SEND_POST_URI } from "../reducers/postReducer";
+import { ReduxAction } from "../ReduxAction";
+import { backoffInMs } from "../selectors";
+import { waitAndSendPostToServer } from "../../api/sendPostToServer";
 
 const FINAL_ERROR_MSG = "Maximum timeout exceeded. Sending to server failed.";
 

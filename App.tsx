@@ -4,7 +4,7 @@ import { applyMiddleware, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
 import NavigationAppContainer from "./src/NavigationAppContainer";
 import combinedReducers from "./src/redux/reducers";
-import sendPostSaga from "./src/redux/sendPostSaga";
+import sendPostSaga from "./src/redux/sagas/sendPostSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(combinedReducers, applyMiddleware(sagaMiddleware));

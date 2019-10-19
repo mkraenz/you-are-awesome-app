@@ -1,6 +1,6 @@
 export enum ReduxAction {
-    PostSendRequested = "POST_SEND_REQUESTED",
     PostFetched = "POST_FETCHED",
+    PostSendRequested = "POST_SEND_REQUESTED",
     PostSendSucceeded = "POST_SEND_SUCCEEDED",
     PostSendFailed = "POST_SEND_FAILED",
     // TODO handle somehow (at least notify the user)
