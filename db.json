@@ -76,6 +76,83 @@
             "text": "May the Force be with you.",
             "author": "Charlotte",
             "country": "France"
+        },
+        {
+            "id": 12,
+            "isoDate": "2019-10-28",
+            "text": "Yes we can!",
+            "author": "Dave",
+            "country": "United States"
+        },
+        {
+            "id": 13,
+            "isoDate": "2019-10-29",
+            "text": "Arigatou. That's Japanese for 'thank you' and I just wanted to tell you 'thank you'.",
+            "author": "Yoshi",
+            "country": "Japan"
+        },
+        {
+            "id": 14,
+            "isoDate": "2019-10-30",
+            "text": "Thanks for being the person you are.",
+            "author": "Ashley",
+            "country": "England"
+        },
+        {
+            "id": 15,
+            "isoDate": "2019-10-31",
+            "text": "You are worthy of your dreams.",
+            "author": "Kim",
+            "country": "Canada"
+        },
+        {
+            "id": 16,
+            "isoDate": "2019-11-01",
+            "text": "I've got the power!",
+            "author": "Chris",
+            "country": "Finland"
+        },
+        {
+            "id": 17,
+            "isoDate": "2019-11-02",
+            "text": "You're so courageous. I admire that.",
+            "author": "Chen",
+            "country": "China"
+        },
+        {
+            "id": 18,
+            "isoDate": "2019-11-03",
+            "text": "Keep calm and hug the cat. ~(=^‥^)/",
+            "author": "Holly",
+            "country": "Scotland"
+        },
+        {
+            "id": 19,
+            "isoDate": "2019-11-04",
+            "text": "Beautiful. Just beautiful.",
+            "author": "Lindsay",
+            "country": "USA"
+        },
+        {
+            "id": 20,
+            "isoDate": "2019-11-05",
+            "text": "Hakuna Matata.",
+            "author": "Piotr",
+            "country": "Poland"
+        },
+        {
+            "id": 21,
+            "isoDate": "2019-11-06",
+            "text": "You can dream it, you can reach it.",
+            "author": "Max",
+            "country": "Sweden"
+        },
+        {
+            "id": 22,
+            "isoDate": "2019-11-07",
+            "text": "Stay awesome.",
+            "author": "Sarah",
+            "country": "Germany"
         }
     ]
 }
