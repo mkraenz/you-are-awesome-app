@@ -1,13 +1,26 @@
 import { IPost } from "./IPost";
 import { ReduxAction } from "./ReduxAction";
 
-export interface IPostSendRequested {
-    type: ReduxAction.PostSendRequested;
+export interface IPostFetchSucceeded {
+    type: ReduxAction.PostFetchSucceeded;
     payload: IPost;
 }
 
-export interface IPostFetchSucceeded {
-    type: ReduxAction.PostFetchSucceeded;
+export interface IPostFetchRequested {
+    type: ReduxAction.PostFetchRequested;
+}
+
+export interface IPostFetchFailed {
+    type: ReduxAction.PostFetchFailed;
+    payload: {
+        originalAction: IPostFetchRequested;
+        error: Error;
+    };
+    error: true;
+}
+
+export interface IPostSendRequested {
+    type: ReduxAction.PostSendRequested;
     payload: IPost;
 }
 

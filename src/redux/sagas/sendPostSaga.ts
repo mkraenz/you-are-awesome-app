@@ -1,7 +1,12 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
 import { waitAndSendPostToServer } from "../../api/sendPostToServer";
 import { MAX_BACKOFF_IN_MS } from "../../config";
-import { IPostSendFailed, IPostSendRequested } from "../Actions";
+import {
+    IPostSendFailed,
+    IPostSendRequested,
+    IPostSendSucceeded,
+} from "../Actions";
+import { IPost } from "../IPost";
 import { SEND_POST_URI } from "../reducers/postReducer";
 import { ReduxAction } from "../ReduxAction";
 import { backoffInMs } from "../selectors";
@@ -18,16 +23,17 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
         if (backoff > MAX_BACKOFF_IN_MS) {
             throw new Error(FINAL_ERROR_MSG);
         }
-        const responseData = yield call(
+        const responseData: IPost = yield call(
             waitAndSendPostToServer,
             postSendRequested.payload,
             SEND_POST_URI,
             backoff
         );
-        yield put({
+        const success: IPostSendSucceeded = {
             type: ReduxAction.PostSendSucceeded,
             payload: responseData,
-        });
+        };
+        yield put(success);
     } catch (e) {
         yield* handleSendFailed(e, postSendRequested);
     }
