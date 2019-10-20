@@ -7,7 +7,6 @@ import { Dispatch } from "redux";
 import uuid from "uuid";
 import { IPostSendRequested } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
-import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
 import AddPostInput from "./AddPostInputs";
 import { INavigationProps } from "./INavigationProps";
@@ -65,9 +64,10 @@ class ContributionPage extends Component<Props> {
     }
 }
 
-const mapStateToProps = (state: IReduxState) => state;
+// not needed by component but app fails if not present
+const mapStateToProps = (state: {}) => state;
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch): Pick<Props, "addPost"> => ({
     addPost: (payload: IPost): IPostSendRequested =>
         dispatch({
             type: ReduxAction.PostSendRequested,

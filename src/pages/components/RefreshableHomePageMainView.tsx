@@ -7,13 +7,13 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { IPostsFetchRequested } from "../redux/Actions";
-import { IPostContent } from "../redux/IPost";
-import { IReduxState } from "../redux/IReduxState";
-import { ReduxAction } from "../redux/ReduxAction";
-import HomePageMainView from "./components/HomePageMainView";
-import { INavigationProps } from "./INavigationProps";
-import { styles } from "./Styles";
+import { IPostsFetchRequested } from "../../redux/Actions";
+import { IPostContent } from "../../redux/IPost";
+import { IReduxState } from "../../redux/IReduxState";
+import { ReduxAction } from "../../redux/ReduxAction";
+import HomePageMainView from "./HomePageMainView";
+import { INavigationProps } from "../INavigationProps";
+import { styles } from "../Styles";
 
 interface Props extends INavigationProps {
     requestFetchPosts: () => void;
