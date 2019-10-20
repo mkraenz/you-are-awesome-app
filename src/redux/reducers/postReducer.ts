@@ -15,7 +15,7 @@ const currentPost: IPost = {
     country: "",
 };
 
-export const GET_POSTS_URI =
+export const FETCH_POSTS_URI =
     "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false";
 export const SEND_POST_URI =
     "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts";
@@ -23,7 +23,6 @@ export const SEND_POST_URI =
 export const postReducer = (
     state: IReduxStateApp = {
         currentPost,
-        SERVER_URI: GET_POSTS_URI,
         refreshing: false,
     },
     action:

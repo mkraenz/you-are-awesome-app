@@ -50,7 +50,7 @@ class ContributionPage extends Component<Props> {
         });
         const sorry =
             "\n\nUnfortunately, we cannot save your contributions on the server yet because the app is still in early development. We are working on it and keep you updated!";
-        // TODO #2 show spinner until the POST request was successful (or failed)
+        // TODO show spinner until the POST request was successful (or failed)
         Alert.alert(
             "Thanks for your contribution!",
             `You are a valued member of our awesome community. \n Your message: \n ${post.text}${sorry}`,

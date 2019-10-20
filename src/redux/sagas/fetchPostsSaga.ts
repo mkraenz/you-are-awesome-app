@@ -8,7 +8,7 @@ import {
     IPostsFetchSucceeded,
 } from "../Actions";
 import { PostWithDate } from "../IPost";
-import { GET_POSTS_URI } from "../reducers/postReducer";
+import { FETCH_POSTS_URI } from "../reducers/postReducer";
 import { ReduxAction } from "../ReduxAction";
 import { backoffInMs } from "../selectors";
 
@@ -29,7 +29,7 @@ function* fetchPostsWorkerSaga(
         }
         const responseData: PostWithDate = yield call(
             fetchPosts,
-            GET_POSTS_URI
+            FETCH_POSTS_URI
         );
         const success: IPostsFetchSucceeded = {
             type: ReduxAction.PostsFetchSucceeded,
