@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#89cff0",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2089dc",
+        "borderBottomColor": "#f2f2f2",
+        "borderBottomWidth": 0.5,
+        "flexDirection": "row",
+        "height": 64,
+        "justifyContent": "space-between",
+        "paddingHorizontal": 10,
+        "paddingTop": 20,
+      }
+    }
+  >
+    <Image
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 64,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+      testID="headerContainer"
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+        }
+      }
+    >
+      <View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 3,
+        }
+      }
+    >
+      <Text
+        accessibilityTraits="header"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 17,
+            "fontWeight": "600",
+            "marginHorizontal": 16,
+          }
+        }
+      >
+        Contribute
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "flex": 1,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "paddingTop": 23,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "dimgrey",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "marginTop": 10,
+          }
+        }
+      >
+        Awesome message
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "#86939e",
+            "flexDirection": "row",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="sentences"
+          editable={true}
+          maxLength={200}
+          onChangeText={[Function]}
+          placeholder="Your awesome message to the world"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Object {
+              "alignSelf": "center",
+              "color": "black",
+              "flex": 1,
+              "fontSize": 18,
+              "minHeight": 40,
+            }
+          }
+          testID="RNE__Input__text-input"
+          underlineColorAndroid="transparent"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "dimgrey",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "marginTop": 10,
+          }
+        }
+      >
+        First Name
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "#86939e",
+            "flexDirection": "row",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="words"
+          editable={true}
+          maxLength={50}
+          onChangeText={[Function]}
+          placeholder="First name"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Object {
+              "alignSelf": "center",
+              "color": "black",
+              "flex": 1,
+              "fontSize": 18,
+              "minHeight": 40,
+            }
+          }
+          testID="RNE__Input__text-input"
+          underlineColorAndroid="transparent"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "dimgrey",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "marginTop": 10,
+          }
+        }
+      >
+        Country
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "#86939e",
+            "flexDirection": "row",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="sentences"
+          editable={true}
+          maxLength={50}
+          onChangeText={[Function]}
+          placeholder="Country"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Object {
+              "alignSelf": "center",
+              "color": "black",
+              "flex": 1,
+              "fontSize": 18,
+              "minHeight": 40,
+            }
+          }
+          testID="RNE__Input__text-input"
+          underlineColorAndroid="transparent"
+        />
+      </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "dodgerblue",
+          "height": 40,
+          "margin": 15,
+          "opacity": 1,
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "textAlign": "center",
+          }
+        }
+      >
+         Submit 
+      </Text>
+    </View>
+  </View>
+</View>
+`;

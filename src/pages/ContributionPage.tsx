@@ -5,9 +5,8 @@ import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import uuid from "uuid";
-import { IPostAdded } from "../redux/Actions";
+import { IPostSendRequested } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
-import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
 import AddPostInput from "./AddPostInputs";
 import { INavigationProps } from "./INavigationProps";
@@ -51,7 +50,7 @@ class ContributionPage extends Component<Props> {
         });
         const sorry =
             "\n\nUnfortunately, we cannot save your contributions on the server yet because the app is still in early development. We are working on it and keep you updated!";
-        // TODO #2 show spinner until the POST request was successful (or failed)
+        // TODO show spinner until the POST request was successful (or failed)
         Alert.alert(
             "Thanks for your contribution!",
             `You are a valued member of our awesome community. \n Your message: \n ${post.text}${sorry}`,
@@ -65,12 +64,13 @@ class ContributionPage extends Component<Props> {
     }
 }
 
-const mapStateToProps = (state: IReduxState) => state;
+// not needed by component but app fails if not present
+const mapStateToProps = (state: {}) => state;
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addPost: (payload: IPost): IPostAdded =>
+const mapDispatchToProps = (dispatch: Dispatch): Pick<Props, "addPost"> => ({
+    addPost: (payload: IPost): IPostSendRequested =>
         dispatch({
-            type: ReduxAction.PostAdded,
+            type: ReduxAction.PostSendRequested,
             payload,
         }),
 });

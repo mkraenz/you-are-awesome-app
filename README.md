@@ -52,3 +52,21 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [You are Awesome App! on expo.io](https://expo.io/@mirolaos/you-are-awesome-app)
 - [Google Sheets to JSON](http://gsx2json.com/)
 - [My JSON Server](https://my-json-server.typicode.com)
+
+## Frequent Development Mistakes
+
+### `ReferenceError: Can't find variable: React`
+
+Having a react component import from `react` like this
+
+```typescript
+import { SFC } from "react";
+```
+
+will result in `ReferenceError: Can't find variable: React`.
+
+#### Solution
+
+```typescript
+import React, { SFC } from "react";
+```

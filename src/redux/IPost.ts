@@ -1,3 +1,5 @@
+export type PostWithDate = IPost & { isodate: string };
+
 export interface IPost extends IPostContent {
     id: string;
 }

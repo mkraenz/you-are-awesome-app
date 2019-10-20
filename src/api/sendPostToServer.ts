@@ -1,4 +1,4 @@
-import { IPost } from "./IPost";
+import { IPost } from "../redux/IPost";
 
 const HTTP_CREATED = 201;
 
