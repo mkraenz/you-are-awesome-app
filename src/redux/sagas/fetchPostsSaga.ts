@@ -17,7 +17,7 @@ const TIMEOUT_EXCEEDED =
 
 function* fetchPostsWorkerSaga(action: IPostFetchRequested | IPostFetchFailed) {
     const fetchPostRequested =
-        action.type === ReduxAction.PostFetchRequested
+        action.type === ReduxAction.PostsFetchRequested
             ? action
             : action.payload.originalAction;
     try {
@@ -30,7 +30,7 @@ function* fetchPostsWorkerSaga(action: IPostFetchRequested | IPostFetchFailed) {
             GET_POSTS_URI
         );
         const success: IPostFetchSucceeded = {
-            type: ReduxAction.PostFetchSucceeded,
+            type: ReduxAction.PostsFetchSucceeded,
             payload: responseData,
         };
         yield put(success);
@@ -42,14 +42,14 @@ function* fetchPostsWorkerSaga(action: IPostFetchRequested | IPostFetchFailed) {
 function* handleFetchFailed(e: Error, action: IPostFetchRequested) {
     if (e.message === TIMEOUT_EXCEEDED) {
         const finalErrorAction: IPostFetchFailedTimeoutExceeded = {
-            type: ReduxAction.PostFetchFailedTimeoutExceeded,
+            type: ReduxAction.PostsFetchFailedTimeoutExceeded,
             payload: { originalAction: action, error: e },
             error: true,
         };
         yield put(finalErrorAction);
     } else {
         const errorAction: IPostFetchFailed = {
-            type: ReduxAction.PostFetchFailed,
+            type: ReduxAction.PostsFetchFailed,
             payload: { originalAction: action, error: e },
             error: true,
         };
@@ -59,7 +59,7 @@ function* handleFetchFailed(e: Error, action: IPostFetchRequested) {
 
 function* fetchPostsSaga() {
     yield takeLatest(
-        [ReduxAction.PostFetchRequested, ReduxAction.PostFetchFailed],
+        [ReduxAction.PostsFetchRequested, ReduxAction.PostsFetchFailed],
         fetchPostsWorkerSaga
     );
 }

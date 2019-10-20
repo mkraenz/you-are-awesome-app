@@ -21,7 +21,7 @@ export const postReducer = (
 ): IReduxStateApp => {
     switch (action.type) {
         case ReduxAction.PostSendRequested:
-        case ReduxAction.PostFetchSucceeded:
+        case ReduxAction.PostsFetchSucceeded:
             return {
                 ...state,
                 currentPost: action.payload,

@@ -63,7 +63,7 @@ const mapDispatcherToProps = (
     dispatch: Dispatch
 ): Pick<Props, "requestFetchPosts"> => ({
     requestFetchPosts: (): IPostFetchRequested =>
-        dispatch({ type: ReduxAction.PostFetchRequested }),
+        dispatch({ type: ReduxAction.PostsFetchRequested }),
 });
 
 export default connect(
