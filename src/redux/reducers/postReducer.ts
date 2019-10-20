@@ -1,4 +1,9 @@
-import { IPostSendRequested, IPostsFetchSucceeded } from "../Actions";
+import {
+    IPostSendRequested,
+    IPostsFetchFailedTimeoutExceeded,
+    IPostsFetchRequested,
+    IPostsFetchSucceeded,
+} from "../Actions";
 import { IPost } from "../IPost";
 import { IReduxStateApp } from "../IReduxState";
 import { ReduxAction } from "../ReduxAction";
@@ -16,8 +21,16 @@ export const SEND_POST_URI =
     "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts";
 
 export const postReducer = (
-    state: IReduxStateApp = { currentPost, SERVER_URI: GET_POSTS_URI },
-    action: IPostSendRequested | IPostsFetchSucceeded
+    state: IReduxStateApp = {
+        currentPost,
+        SERVER_URI: GET_POSTS_URI,
+        refreshing: false,
+    },
+    action:
+        | IPostSendRequested
+        | IPostsFetchSucceeded
+        | IPostsFetchRequested
+        | IPostsFetchFailedTimeoutExceeded
 ): IReduxStateApp => {
     switch (action.type) {
         case ReduxAction.PostSendRequested:
@@ -25,6 +38,17 @@ export const postReducer = (
             return {
                 ...state,
                 currentPost: action.payload,
+                refreshing: false,
+            };
+        case ReduxAction.PostsFetchRequested:
+            return {
+                ...state,
+                refreshing: true,
+            };
+        case ReduxAction.PostsFetchFailedTimeoutExceeded:
+            return {
+                ...state,
+                refreshing: false,
             };
     }
     return state;

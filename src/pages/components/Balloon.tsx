@@ -1,12 +1,9 @@
 import React, { SFC } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { IPostContent } from "../../redux/IPost";
 
 interface Props {
-    post: {
-        text: string;
-        author: string;
-        country: string;
-    };
+    post: IPostContent;
 }
 
 const Balloon: SFC<Props> = props => (

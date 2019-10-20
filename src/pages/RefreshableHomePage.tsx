@@ -4,31 +4,27 @@ import {
     SafeAreaView,
     ScrollView,
     StyleSheet,
+    View,
 } from "react-native";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { IPostsFetchRequested } from "../redux/Actions";
+import { IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
-import HomePage from "./HomePage";
+import Balloon from "./components/Balloon";
 import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
     requestFetchPosts: () => void;
-}
-
-interface State {
     refreshing: boolean;
+    post: IPostContent;
 }
 
-class RefreshableHomePage extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
+class RefreshableHomePageView extends Component<Props> {
+    public componentDidMount() {
         this.props.requestFetchPosts();
-        this.state = {
-            refreshing: false,
-        };
     }
 
     public render() {
@@ -38,12 +34,15 @@ class RefreshableHomePage extends Component<Props, State> {
                     contentContainerStyle={localStyles.scrollView}
                     refreshControl={
                         <RefreshControl
-                            refreshing={this.state.refreshing}
+                            refreshing={this.props.refreshing}
                             onRefresh={() => this.handleRefresh()}
                         />
                     }
                 >
-                    <HomePage navigation={this.props.navigation} />
+                    <View style={localStyles.textContainer}>
+                        <Balloon post={this.props.post} />
+                    </View>
+                    {/* <HomePage navigation={this.props.navigation} /> */}
                 </ScrollView>
             </SafeAreaView>
         );
@@ -57,7 +56,24 @@ class RefreshableHomePage extends Component<Props, State> {
         this.setState({ refreshing: false });
     }
 }
-const mapStateToProps = (state: IReduxState) => state;
+
+const localStyles = StyleSheet.create({
+    scrollView: {
+        flex: 1,
+    },
+    textContainer: {
+        justifyContent: "center",
+        padding: 20,
+        flex: 1,
+    },
+});
+
+const mapStateToProps = (
+    state: IReduxState
+): Pick<Props, "post" | "refreshing"> => ({
+    post: state.app.currentPost,
+    refreshing: state.app.refreshing,
+});
 
 const mapDispatcherToProps = (
     dispatch: Dispatch
@@ -69,11 +85,4 @@ const mapDispatcherToProps = (
 export default connect(
     mapStateToProps,
     mapDispatcherToProps
-)(RefreshableHomePage);
-
-/** global styles, use as defualts */
-export const localStyles = StyleSheet.create({
-    scrollView: {
-        flex: 1,
-    },
-});
+)(RefreshableHomePageView);

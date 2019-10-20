@@ -7,7 +7,9 @@ export interface IReduxState {
 
 export interface IReduxStateApp {
     currentPost: IPost;
+    // TODO #12 remove
     SERVER_URI: string;
+    refreshing: boolean;
 }
 
 export interface IReduxStateNetworking {
