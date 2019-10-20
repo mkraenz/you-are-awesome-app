@@ -5,12 +5,12 @@ import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
+import HomePageMainView from "./components/HomePageMainView";
 import { INavigationProps } from "./INavigationProps";
-import RefreshableHomePage from "./RefreshableHomePage";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
-    currentPost: IPostContent;
+    post: IPostContent;
 }
 
 class HomePage extends Component<Props> {
@@ -23,7 +23,7 @@ class HomePage extends Component<Props> {
                     }
                 ></Header>
 
-                <RefreshableHomePage />
+                <HomePageMainView post={this.props.post} />
                 <Button
                     title="Share awesomeness"
                     onPress={() => this.props.navigation.navigate("Contribute")}
@@ -32,8 +32,9 @@ class HomePage extends Component<Props> {
         );
     }
 }
-const mapStateToProps = (state: IReduxState) => ({
-    currentPost: state.app.currentPost,
+
+const mapStateToProps = (state: IReduxState): Pick<Props, "post"> => ({
+    post: state.app.currentPost,
 });
 
 export default connect(mapStateToProps)(HomePage);

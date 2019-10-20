@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React, { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { IPostContent } from "../../redux/IPost";
 
@@ -6,7 +6,7 @@ interface Props {
     post: IPostContent;
 }
 
-const Balloon: SFC<Props> = props => (
+const Balloon: FC<Props> = props => (
     <View style={styles.balloon}>
         <Text style={styles.largeText}>{props.post.text}</Text>
         <Text style={styles.authorAndCountry}>

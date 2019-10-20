@@ -4,7 +4,6 @@ import {
     SafeAreaView,
     ScrollView,
     StyleSheet,
-    View,
 } from "react-native";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
@@ -12,7 +11,7 @@ import { IPostsFetchRequested } from "../redux/Actions";
 import { IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
-import Balloon from "./components/Balloon";
+import HomePageMainView from "./components/HomePageMainView";
 import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 
@@ -22,7 +21,7 @@ interface Props extends INavigationProps {
     post: IPostContent;
 }
 
-class RefreshableHomePageView extends Component<Props> {
+class RefreshableHomePageMainView extends Component<Props> {
     public componentDidMount() {
         this.props.requestFetchPosts();
     }
@@ -35,35 +34,19 @@ class RefreshableHomePageView extends Component<Props> {
                     refreshControl={
                         <RefreshControl
                             refreshing={this.props.refreshing}
-                            onRefresh={() => this.handleRefresh()}
+                            onRefresh={() => this.props.requestFetchPosts()}
                         />
                     }
                 >
-                    <View style={localStyles.textContainer}>
-                        <Balloon post={this.props.post} />
-                    </View>
-                    {/* <HomePage navigation={this.props.navigation} /> */}
+                    <HomePageMainView post={this.props.post} />
                 </ScrollView>
             </SafeAreaView>
         );
-    }
-
-    private async handleRefresh() {
-        this.setState({
-            refreshing: true,
-        });
-        this.props.requestFetchPosts();
-        this.setState({ refreshing: false });
     }
 }
 
 const localStyles = StyleSheet.create({
     scrollView: {
-        flex: 1,
-    },
-    textContainer: {
-        justifyContent: "center",
-        padding: 20,
         flex: 1,
     },
 });
@@ -85,4 +68,4 @@ const mapDispatcherToProps = (
 export default connect(
     mapStateToProps,
     mapDispatcherToProps
-)(RefreshableHomePageView);
+)(RefreshableHomePageMainView);
