@@ -3,6 +3,7 @@ import { fetchPosts } from "../../api/fetchPosts";
 import { MAX_BACKOFF_IN_MS } from "../../config";
 import {
     IPostFetchFailed,
+    IPostFetchFailedTimeoutExceeded,
     IPostFetchRequested,
     IPostFetchSucceeded,
 } from "../Actions";
@@ -11,7 +12,7 @@ import { GET_POSTS_URI } from "../reducers/postReducer";
 import { ReduxAction } from "../ReduxAction";
 import { backoffInMs } from "../selectors";
 
-const FINAL_ERROR_MSG =
+const TIMEOUT_EXCEEDED =
     "Maximum timeout exceeded. Fetching posts from server failed.";
 
 function* fetchPostsWorkerSaga(action: IPostFetchRequested | IPostFetchFailed) {
@@ -22,7 +23,7 @@ function* fetchPostsWorkerSaga(action: IPostFetchRequested | IPostFetchFailed) {
     try {
         const backoff = yield select(backoffInMs);
         if (backoff > MAX_BACKOFF_IN_MS) {
-            throw new Error(FINAL_ERROR_MSG);
+            throw new Error(TIMEOUT_EXCEEDED);
         }
         const responseData: PostWithDate = yield call(
             fetchPosts,
@@ -38,8 +39,22 @@ function* fetchPostsWorkerSaga(action: IPostFetchRequested | IPostFetchFailed) {
     }
 }
 
-function* handleFetchFailed(e: any, action: IPostFetchRequested) {
-    // TODO #12, do nothing for the time being
+function* handleFetchFailed(e: Error, action: IPostFetchRequested) {
+    if (e.message === TIMEOUT_EXCEEDED) {
+        const finalErrorAction: IPostFetchFailedTimeoutExceeded = {
+            type: ReduxAction.PostFetchFailedTimeoutExceeded,
+            payload: { originalAction: action, error: e },
+            error: true,
+        };
+        yield put(finalErrorAction);
+    } else {
+        const errorAction: IPostFetchFailed = {
+            type: ReduxAction.PostFetchFailed,
+            payload: { originalAction: action, error: e },
+            error: true,
+        };
+        yield put(errorAction);
+    }
 }
 
 function* fetchPostsSaga() {

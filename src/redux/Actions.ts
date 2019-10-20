@@ -19,6 +19,15 @@ export interface IPostFetchFailed {
     error: true;
 }
 
+export interface IPostFetchFailedTimeoutExceeded {
+    type: ReduxAction.PostFetchFailedTimeoutExceeded;
+    payload: {
+        originalAction: IPostFetchRequested;
+        error: Error;
+    };
+    error: true;
+}
+
 export interface IPostSendRequested {
     type: ReduxAction.PostSendRequested;
     payload: IPost;
@@ -36,4 +45,13 @@ export interface IPostSendFailed {
 export interface IPostSendSucceeded {
     type: ReduxAction.PostSendSucceeded;
     payload: IPost;
+}
+
+export interface IPostSendFailedTimeoutExceeded {
+    type: ReduxAction.PostSendFailedTimeoutExceeded;
+    payload: {
+        originalAction: IPostSendRequested;
+        error: Error;
+    };
+    error: true;
 }

@@ -1,5 +1,6 @@
 export enum ReduxAction {
     PostFetchFailed = "POST_FETCH_FAILED",
+    PostFetchFailedTimeoutExceeded = "POST_FETCH_FAILED_TIMEOUT_EXCEEDED",
     PostFetchRequested = "POST_FETCH_REQUESTED",
     PostFetchSucceeded = "POST_FETCH_SUCCEEDED",
     PostSendFailed = "POST_SEND_FAILED",

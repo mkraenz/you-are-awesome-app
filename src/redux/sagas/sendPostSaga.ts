@@ -3,6 +3,7 @@ import { waitAndSendPostToServer } from "../../api/sendPostToServer";
 import { MAX_BACKOFF_IN_MS } from "../../config";
 import {
     IPostSendFailed,
+    IPostSendFailedTimeoutExceeded,
     IPostSendRequested,
     IPostSendSucceeded,
 } from "../Actions";
@@ -11,7 +12,7 @@ import { SEND_POST_URI } from "../reducers/postReducer";
 import { ReduxAction } from "../ReduxAction";
 import { backoffInMs } from "../selectors";
 
-const FINAL_ERROR_MSG = "Maximum timeout exceeded. Sending to server failed.";
+const TIMEOUT_EXCEEDED = "Maximum timeout exceeded. Sending to server failed.";
 
 function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
     const postSendRequested =
@@ -21,7 +22,7 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
     try {
         const backoff = yield select(backoffInMs);
         if (backoff > MAX_BACKOFF_IN_MS) {
-            throw new Error(FINAL_ERROR_MSG);
+            throw new Error(TIMEOUT_EXCEEDED);
         }
         const responseData: IPost = yield call(
             waitAndSendPostToServer,
@@ -39,9 +40,9 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
     }
 }
 
-function* handleSendFailed(e: any, action: IPostSendRequested) {
-    if (e.message === FINAL_ERROR_MSG) {
-        const finalErrorAction = {
+function* handleSendFailed(e: Error, action: IPostSendRequested) {
+    if (e.message === TIMEOUT_EXCEEDED) {
+        const finalErrorAction: IPostSendFailedTimeoutExceeded = {
             type: ReduxAction.PostSendFailedTimeoutExceeded,
             payload: { originalAction: action, error: e },
             error: true,
