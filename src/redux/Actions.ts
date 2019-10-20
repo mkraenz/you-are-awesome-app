@@ -1,28 +1,28 @@
 import { IPost } from "./IPost";
 import { ReduxAction } from "./ReduxAction";
 
-export interface IPostFetchSucceeded {
+export interface IPostsFetchSucceeded {
     type: ReduxAction.PostsFetchSucceeded;
     payload: IPost;
 }
 
-export interface IPostFetchRequested {
+export interface IPostsFetchRequested {
     type: ReduxAction.PostsFetchRequested;
 }
 
-export interface IPostFetchFailed {
+export interface IPostsFetchFailed {
     type: ReduxAction.PostsFetchFailed;
     payload: {
-        originalAction: IPostFetchRequested;
+        originalAction: IPostsFetchRequested;
         error: Error;
     };
     error: true;
 }
 
-export interface IPostFetchFailedTimeoutExceeded {
+export interface IPostsFetchFailedTimeoutExceeded {
     type: ReduxAction.PostsFetchFailedTimeoutExceeded;
     payload: {
-        originalAction: IPostFetchRequested;
+        originalAction: IPostsFetchRequested;
         error: Error;
     };
     error: true;

@@ -1,4 +1,4 @@
-import { IPostFetchSucceeded, IPostSendRequested } from "../Actions";
+import { IPostSendRequested, IPostsFetchSucceeded } from "../Actions";
 import { IPost } from "../IPost";
 import { IReduxStateApp } from "../IReduxState";
 import { ReduxAction } from "../ReduxAction";
@@ -17,7 +17,7 @@ export const SEND_POST_URI =
 
 export const postReducer = (
     state: IReduxStateApp = { currentPost, SERVER_URI: GET_POSTS_URI },
-    action: IPostSendRequested | IPostFetchSucceeded
+    action: IPostSendRequested | IPostsFetchSucceeded
 ): IReduxStateApp => {
     switch (action.type) {
         case ReduxAction.PostSendRequested:

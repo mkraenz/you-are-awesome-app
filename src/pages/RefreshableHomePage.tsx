@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { IPostFetchRequested } from "../redux/Actions";
+import { IPostsFetchRequested } from "../redux/Actions";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
 import HomePage from "./HomePage";
@@ -62,7 +62,7 @@ const mapStateToProps = (state: IReduxState) => state;
 const mapDispatcherToProps = (
     dispatch: Dispatch
 ): Pick<Props, "requestFetchPosts"> => ({
-    requestFetchPosts: (): IPostFetchRequested =>
+    requestFetchPosts: (): IPostsFetchRequested =>
         dispatch({ type: ReduxAction.PostsFetchRequested }),
 });
 
