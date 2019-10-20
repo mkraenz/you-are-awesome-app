@@ -57,7 +57,14 @@
         "transformIgnorePatterns": [
             "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
         ],
-        "testEnvironment": "node"
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "**/*.{ts,tsx}",
+            "!**/coverage/**",
+            "!**/node_modules/**",
+            "!**/babel.config.js",
+            "!**/jest.setup.js"
+        ]
     },
     "private": true
 }
