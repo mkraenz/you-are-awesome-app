@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={false}
+    onGestureHandlerEvent={[Function]}
+    onGestureHandlerStateChange={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#eee",
+        "flex": 1,
+        "flexDirection": "column-reverse",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          accessibilityElementsHidden={false}
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#89cff0",
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              accessibilityIgnoresInvertColors={true}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2089dc",
+                  "borderBottomColor": "#f2f2f2",
+                  "borderBottomWidth": 0.5,
+                  "flexDirection": "row",
+                  "height": 64,
+                  "justifyContent": "space-between",
+                  "paddingHorizontal": 10,
+                  "paddingTop": 20,
+                }
+              }
+            >
+              <Image
+                style={
+                  Array [
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "height": 64,
+                      "width": undefined,
+                    },
+                    undefined,
+                  ]
+                }
+                testID="headerContainer"
+              />
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-start",
+                    "flex": 1,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flex": 3,
+                  }
+                }
+              >
+                <Text
+                  accessibilityTraits="header"
+                  numberOfLines={1}
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": 17,
+                      "fontWeight": "600",
+                      "marginHorizontal": 16,
+                    }
+                  }
+                >
+                  Home
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "flex-end",
+                    "flex": 1,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                  "padding": 20,
+                }
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#1084ff",
+                      "borderRadius": 20,
+                      "marginTop": 5,
+                      "padding": 15,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": 32,
+                      "paddingTop": 5,
+                    }
+                  }
+                >
+                  Loading...
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "alignContent": "flex-end",
+                      "color": "white",
+                      "paddingTop": 5,
+                    }
+                  }
+                >
+                  
+                   from
+                   
+                  
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <View
+                accessible={true}
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2089dc",
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "padding": 8,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    Share awesomeness
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

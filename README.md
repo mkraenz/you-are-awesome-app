@@ -31,6 +31,22 @@ yarn expo build:android -t apk
 - [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
 - [Expo Doc Limits of Publish](https://docs.expo.io/versions/latest/workflow/publishing/#deploying-to-the-app-store-and-play)
 
+## Development
+
+### Debugging Jest tests
+
+- Install [VS Code Jest Extension](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest).
+- Install Jest `npm install --save-dev jest` (even if it is included in `expo-jest`! The plugin expects).
+- Open test file (either `test.js` or `test.ts`).
+- VS Code shows small green lights (or red, if test fails) in front of each `it()`.
+- Make one test fail.
+- Set breakpoint in that test.
+- `Debug` text appears above `it()` (may take 3 seconds). Hit that to start debugger.
+- Debugger stops at the breakpoint.
+- Happy Debugging.
+
+Further reading in related [issue #16](https://github.com/proSingularity/you-are-awesome-app/issues/16#issuecomment-544240073) .
+
 ## Further Links
 
 - [You are Awesome App! on expo.io](https://expo.io/@mirolaos/you-are-awesome-app)

@@ -1,12 +1,12 @@
 import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
 
 describe("maybeGetTodaysPost()", () => {
-    it("returns null for empty posts array", () => {
+    it("returns undefined for empty posts array", () => {
         const today = new Date("2019-10-18");
 
         const result = maybeGetTodaysPost(today, []);
 
-        expect(result).toBeNull;
+        expect(result).toBeUndefined();
     });
 
     it("returns today's post", () => {
