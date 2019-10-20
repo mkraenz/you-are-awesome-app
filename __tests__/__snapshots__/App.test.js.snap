@@ -153,14 +153,12 @@ exports[`renders correctly 1`] = `
             >
               <View
                 style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#1084ff",
-                      "borderRadius": 20,
-                      "marginTop": 5,
-                      "padding": 15,
-                    },
-                  ]
+                  Object {
+                    "backgroundColor": "#1084ff",
+                    "borderRadius": 20,
+                    "marginTop": 5,
+                    "padding": 15,
+                  }
                 }
               >
                 <Text
@@ -184,8 +182,7 @@ exports[`renders correctly 1`] = `
                   }
                 >
                   
-                   from
-                   
+                   from 
                   
                 </Text>
               </View>
