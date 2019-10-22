@@ -50,6 +50,8 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 ## Further Links
 
 - [You are Awesome App! on expo.io](https://expo.io/@mirolaos/you-are-awesome-app)
+- [Travis CI](https://travis-ci.com/proSingularity/you-are-awesome-app)
+- [Codecov](https://codecov.io/gh/proSingularity/you-are-awesome-app)
 - [Google Sheets to JSON](http://gsx2json.com/)
 - [My JSON Server](https://my-json-server.typicode.com)
 
