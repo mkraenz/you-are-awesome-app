@@ -8,6 +8,7 @@ export interface IReduxState {
 export interface IReduxStateApp {
     currentPost: IPost;
     refreshing: boolean;
+    lastUpdate: Date;
 }
 
 export interface IReduxStateNetworking {

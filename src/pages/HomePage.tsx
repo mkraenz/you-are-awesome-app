@@ -33,7 +33,7 @@ class HomePage extends Component<Props> {
     }
 }
 
-const mapStateToProps = (state: IReduxState): Pick<Props, "post"> => ({
+const mapStateToProps = (state: IReduxState): Omit<Props, "navigation"> => ({
     post: state.app.currentPost,
 });
 

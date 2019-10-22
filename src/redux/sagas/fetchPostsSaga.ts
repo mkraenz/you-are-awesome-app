@@ -33,7 +33,10 @@ function* fetchPostsWorkerSaga(
         );
         const success: IPostsFetchSucceeded = {
             type: ReduxAction.PostsFetchSucceeded,
-            payload: responseData,
+            payload: {
+                post: responseData,
+                now: new Date(),
+            },
         };
         yield put(success);
     } catch (e) {
