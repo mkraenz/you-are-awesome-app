@@ -24,6 +24,7 @@ export const postReducer = (
     state: IReduxStateApp = {
         currentPost,
         refreshing: false,
+        lastUpdate: new Date(0), // epoch
     },
     action:
         | IPostSendRequested
@@ -33,10 +34,16 @@ export const postReducer = (
 ): IReduxStateApp => {
     switch (action.type) {
         case ReduxAction.PostSendRequested:
-        case ReduxAction.PostsFetchSucceeded:
             return {
                 ...state,
                 currentPost: action.payload,
+                refreshing: false,
+            };
+        case ReduxAction.PostsFetchSucceeded:
+            return {
+                ...state,
+                currentPost: action.payload.post,
+                lastUpdate: action.payload.now,
                 refreshing: false,
             };
         case ReduxAction.PostsFetchRequested:

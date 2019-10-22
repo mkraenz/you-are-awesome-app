@@ -3,11 +3,17 @@ import { ReduxAction } from "./ReduxAction";
 
 export interface IPostsFetchSucceeded {
     type: ReduxAction.PostsFetchSucceeded;
-    payload: IPost;
+    payload: {
+        post: IPost;
+        now: Date;
+    };
 }
 
 export interface IPostsFetchRequested {
     type: ReduxAction.PostsFetchRequested;
+    payload: {
+        now: Date;
+    };
 }
 
 export interface IPostsFetchFailed {

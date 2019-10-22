@@ -11,19 +11,19 @@ import { IPostsFetchRequested } from "../../redux/Actions";
 import { IPostContent } from "../../redux/IPost";
 import { IReduxState } from "../../redux/IReduxState";
 import { ReduxAction } from "../../redux/ReduxAction";
-import HomePageMainView from "./HomePageMainView";
 import { INavigationProps } from "../INavigationProps";
 import { styles } from "../Styles";
+import HomePageMainView from "./HomePageMainView";
 
 interface Props extends INavigationProps {
-    requestFetchPosts: () => void;
+    requestFetchPosts: (now: Date) => void;
     refreshing: boolean;
     post: IPostContent;
 }
 
 class RefreshableHomePageMainView extends Component<Props> {
     public componentDidMount() {
-        this.props.requestFetchPosts();
+        this.props.requestFetchPosts(new Date());
     }
 
     public render() {
@@ -34,7 +34,9 @@ class RefreshableHomePageMainView extends Component<Props> {
                     refreshControl={
                         <RefreshControl
                             refreshing={this.props.refreshing}
-                            onRefresh={() => this.props.requestFetchPosts()}
+                            onRefresh={() =>
+                                this.props.requestFetchPosts(new Date())
+                            }
                         />
                     }
                 >
@@ -61,8 +63,8 @@ const mapStateToProps = (
 const mapDispatcherToProps = (
     dispatch: Dispatch
 ): Pick<Props, "requestFetchPosts"> => ({
-    requestFetchPosts: (): IPostsFetchRequested =>
-        dispatch({ type: ReduxAction.PostsFetchRequested }),
+    requestFetchPosts: (now: Date): IPostsFetchRequested =>
+        dispatch({ type: ReduxAction.PostsFetchRequested, payload: { now } }),
 });
 
 export default connect(
