@@ -2,6 +2,7 @@
     "name": "you-are-awesome-app",
     "version": "0.0.1",
     "description": "You are Awesome App! Daily Motivation Up!",
+    "license": "UNLICENSED",
     "scripts": {
         "postinstall": "jetify",
         "android": "react-native run-android",
@@ -73,5 +74,6 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/proSingularity/you-are-awesome-app.git"
-    }
+    },
+    "private": true
 }

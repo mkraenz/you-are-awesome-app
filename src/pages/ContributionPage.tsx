@@ -48,12 +48,12 @@ class ContributionPage extends Component<Props> {
             ...post,
             id: uuid.v4(),
         });
-        const sorry =
-            "\n\nUnfortunately, we cannot save your contributions on the server yet because the app is still in early development. We are working on it and keep you updated!";
+        const stayTuned =
+            "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)";
         // TODO show spinner until the POST request was successful (or failed)
         Alert.alert(
             "Thanks for your contribution!",
-            `You are a valued member of our awesome community. \n Your message: \n ${post.text}${sorry}`,
+            `You are a valued member of our awesome community. \n Your message: \n ${post.text}${stayTuned}`,
             [
                 {
                     text: "Awesome!",
