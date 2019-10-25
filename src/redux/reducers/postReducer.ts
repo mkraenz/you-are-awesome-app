@@ -18,7 +18,7 @@ const currentPost: IPost = {
 export const FETCH_POSTS_URI =
     "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false";
 export const SEND_POST_URI =
-    "https://my-json-server.typicode.com/proSingularity/you-are-awesome-app/posts";
+    "https://s25cfu9sz3.execute-api.eu-central-1.amazonaws.com/prod/contrib";
 
 export const postReducer = (
     state: IReduxStateApp = {

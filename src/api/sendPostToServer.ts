@@ -1,9 +1,9 @@
-import { IPost } from "../redux/IPost";
+import { IPost, IPostContent } from "../redux/IPost";
 
 const HTTP_CREATED = 201;
 
 export const waitAndSendPostToServer = async (
-    post: IPost,
+    post: IPostContent,
     uri: string,
     backoffInMs: number
 ) => {
@@ -27,7 +27,7 @@ const delay = (backoffInMs: number) =>
         }, backoffInMs)
     );
 
-const getRequest = (post: IPost): RequestInit => ({
+const getRequest = (post: IPostContent): RequestInit => ({
     method: "POST",
     headers: {
         "Content-Type": "application/json",
