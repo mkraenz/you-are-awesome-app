@@ -8,7 +8,7 @@ import { IPost } from "../IPost";
 import { IReduxStateApp } from "../IReduxState";
 import { ReduxAction } from "../ReduxAction";
 
-const currentPost: IPost = {
+export const initialPost: IPost = {
     id: "0",
     text: "Loading...",
     author: "",
@@ -22,7 +22,7 @@ export const SEND_POST_URI =
 
 export const postReducer = (
     state: IReduxStateApp = {
-        currentPost,
+        currentPost: initialPost,
         refreshing: false,
         lastUpdate: new Date(0), // epoch
     },
