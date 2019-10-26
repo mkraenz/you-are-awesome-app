@@ -1,5 +1,8 @@
 # You are Awesome App! Daily Motivation Up!
 
+<a href='https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width="200"/></a>
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40YouareAwesomeA2)](https://twitter.com/YouareAwesomeA2?ref_src=twsrc%5Etfw)
+
 ## Production
 
 Production apps are apps on a User's smart phone installed from the Google Play Store.
@@ -49,11 +52,16 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 
 ## Further Links
 
+- [You are Awesome App! on Twitter](https://twitter.com/YouareAwesomeA2)
+- [Github Repo](https://github.com/proSingularity/you-are-awesome-app)
 - [You are Awesome App! on expo.io](https://expo.io/@mirolaos/you-are-awesome-app)
 - [Travis CI](https://travis-ci.com/proSingularity/you-are-awesome-app)
 - [Codecov](https://codecov.io/gh/proSingularity/you-are-awesome-app)
 - [Google Sheets to JSON](http://gsx2json.com/)
 - [My JSON Server](https://my-json-server.typicode.com)
+- [UI Prototyping via Moqups](https://app.moqups.com/pczu8pWcIi/edit/page/aa9df7b72)
+- [Hashtagify](https://hashtagify.me/hashtag/app)
+- [Commun.it](https://commun.it/)
 
 ## Frequent Development Mistakes
 
@@ -62,7 +70,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 Having a react component import from `react` like this
 
 ```typescript
-import { SFC } from "react";
+import { FC } from "react";
 ```
 
 will result in `ReferenceError: Can't find variable: React`.
@@ -70,5 +78,9 @@ will result in `ReferenceError: Can't find variable: React`.
 #### Solution
 
 ```typescript
-import React, { SFC } from "react";
+import React, { FC } from "react";
 ```
+
+##### Legal Attributions
+
+Google Play and the Google Play logo are trademarks of Google LLC.
