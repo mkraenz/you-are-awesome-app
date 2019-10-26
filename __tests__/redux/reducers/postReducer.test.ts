@@ -1,7 +1,14 @@
-import { IPostsFetchRequested, IPostsFetchSucceeded } from "../Actions";
-import { IReduxStateApp } from "../IReduxState";
-import { ReduxAction } from "../ReduxAction";
-import { initialPost, postReducer } from "./postReducer";
+import {
+    IPostsFetchRequested,
+    IPostsFetchSucceeded,
+} from "../../../src/redux/Actions";
+import { IReduxStateApp } from "../../../src/redux/IReduxState";
+import {
+    initialPost,
+    postReducer,
+} from "../../../src/redux/reducers/postReducer";
+import { ReduxAction } from "../../../src/redux/ReduxAction";
+import { mock } from "../../helpers/mocks";
 
 describe("postReducer", () => {
     it("should return the initial state", () => {
@@ -40,12 +47,7 @@ describe("postReducer", () => {
             type: ReduxAction.PostsFetchSucceeded,
             payload: {
                 now: new Date(123),
-                post: {
-                    author: "my-author",
-                    country: "my-country",
-                    id: "876",
-                    text: "awesome-message",
-                },
+                post: mock.post,
             },
         };
         const state: IReduxStateApp = {
