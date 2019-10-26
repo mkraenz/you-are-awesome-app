@@ -50,7 +50,7 @@ export interface IPostSendFailed {
 
 export interface IPostSendSucceeded {
     type: ReduxAction.PostSendSucceeded;
-    payload: IPost;
+    payload: unknown;
 }
 
 export interface IPostSendFailedTimeoutExceeded {
