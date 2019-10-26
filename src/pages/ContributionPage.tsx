@@ -8,7 +8,7 @@ import uuid from "uuid";
 import { IPostSendRequested } from "../redux/Actions";
 import { IPost, IPostContent } from "../redux/IPost";
 import { ReduxAction } from "../redux/ReduxAction";
-import AddPostInput from "./AddPostInputs";
+import AddPostInput from "./components/AddPostInputs";
 import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 

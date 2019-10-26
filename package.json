@@ -61,19 +61,5 @@
         "jetifier": "^1.6.4",
         "redux-mock-store": "^1.5.3",
         "typescript": "^3.6.3"
-    },
-    "jest": {
-        "preset": "jest-expo",
-        "transformIgnorePatterns": [
-            "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|sentry-expo|native-base)"
-        ],
-        "collectCoverage": true,
-        "collectCoverageFrom": [
-            "**/*.{ts,tsx}",
-            "!**/coverage/**",
-            "!**/node_modules/**",
-            "!**/babel.config.js",
-            "!**/jest.setup.js"
-        ]
     }
 }

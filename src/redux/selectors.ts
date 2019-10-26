@@ -1,3 +1,4 @@
 import { IReduxState } from "./IReduxState";
 
-export const backoffInMs = (state: IReduxState) => state.networking.backoffInMs;
+export const backoffInMs = (state: Pick<IReduxState, "networking">) =>
+    state.networking.backoffInMs;

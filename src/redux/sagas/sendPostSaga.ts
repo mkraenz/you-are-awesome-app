@@ -7,7 +7,7 @@ import {
     IPostSendRequested,
     IPostSendSucceeded,
 } from "../Actions";
-import { IPost, IPostContent } from "../IPost";
+import { IPostContent } from "../IPost";
 import { SEND_POST_URI } from "../reducers/postReducer";
 import { ReduxAction } from "../ReduxAction";
 import { backoffInMs } from "../selectors";
@@ -24,9 +24,9 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
         if (backoff > MAX_BACKOFF_IN_MS) {
             throw new Error(TIMEOUT_EXCEEDED);
         }
-        const responseData: IPost = yield call(
+        const responseData: unknown = yield call(
             waitAndSendPostToServer,
-            getExactPostContent(postSendRequested.payload),
+            pickPostContent(postSendRequested.payload),
             SEND_POST_URI,
             backoff
         );
@@ -40,8 +40,7 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
     }
 }
 
-/** pick props because this will be send as-is in the POST request */
-const getExactPostContent = (post: IPostContent): IPostContent => ({
+const pickPostContent = (post: IPostContent): IPostContent => ({
     author: post.author,
     country: post.country,
     text: post.text,
