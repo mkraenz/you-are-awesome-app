@@ -12,9 +12,8 @@ describe("isToday()", () => {
     it("returns false for 2016-01-01", () => {
         const notToday = new Date("2016");
         const today = new Date("2015");
-        global.Date = jest.fn(() => today) as any;
 
-        const result = isToday(notToday);
+        const result = isToday(notToday, today);
 
         expect(result).toBe(false);
     });
@@ -22,9 +21,8 @@ describe("isToday()", () => {
     it("returns true for today", () => {
         const todayForInput = new Date("2016");
         const today = new Date("2016");
-        global.Date = jest.fn(() => today) as any;
 
-        const result = isToday(todayForInput);
+        const result = isToday(todayForInput, today);
 
         expect(result).toBe(true);
     });

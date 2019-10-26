@@ -5,10 +5,11 @@ const HTTP_CREATED = 201;
 export const waitAndSendPostToServer = async (
     post: IPostContent,
     uri: string,
-    backoffInMs: number
+    backoffInMs: number,
+    fetchFn = fetch
 ) => {
     await delay(backoffInMs);
-    const response = await fetch(uri, getRequest(post));
+    const response = await fetchFn(uri, getRequest(post));
     if (response.status !== HTTP_CREATED) {
         return Promise.reject(
             new Error(
