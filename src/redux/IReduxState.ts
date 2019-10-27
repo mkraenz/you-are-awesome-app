@@ -3,6 +3,7 @@ import { IPost } from "./IPost";
 export interface IReduxState {
     app: IReduxStateApp;
     networking: IReduxStateNetworking;
+    netInfo: IReduxStateInternetConnection;
 }
 
 export interface IReduxStateApp {
@@ -13,4 +14,8 @@ export interface IReduxStateApp {
 
 export interface IReduxStateNetworking {
     backoffInMs: number;
+}
+
+export interface IReduxStateInternetConnection {
+    connected: boolean;
 }

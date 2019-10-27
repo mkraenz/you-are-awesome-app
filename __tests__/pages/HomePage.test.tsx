@@ -16,6 +16,9 @@ it("renders correctly", () => {
                 country: "my-country",
             },
         },
+        netInfo: {
+            connected: true,
+        },
     });
 
     const tree = renderer
@@ -27,6 +30,33 @@ it("renders correctly", () => {
         .toJSON();
 
     expect(tree).toMatchSnapshot();
+});
+
+it("renders no connection notify if disconnected from internet", () => {
+    const store = createMockStore([])({
+        app: {
+            currentPost: {
+                id: 1,
+                author: "",
+                text: "Loading...",
+                country: "",
+            },
+        },
+        netInfo: {
+            connected: false,
+        },
+    });
+
+    const tree = renderer
+        .create(
+            <Provider store={store}>
+                <HomePage />
+            </Provider>
+        )
+        .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    // TODO expect No internet connection
 });
 
 // TODO test interactivity

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import NavigationAppContainer from "./NavigationAppContainer";
+import NetInfoChangedContainer from "./NetInfoChangedContainer";
 import { IPostsFetchRequested } from "./redux/Actions";
 import { IReduxState } from "./redux/IReduxState";
 import { ReduxAction } from "./redux/ReduxAction";
@@ -33,7 +33,8 @@ class AppStateChangedContainer extends Component<Props> {
     }
 
     public render() {
-        return <NavigationAppContainer />;
+        // can we wrap somewhere else? e.g. in the app. This nested approach is not optimal.
+        return <NetInfoChangedContainer />;
     }
 }
 
