@@ -5,12 +5,14 @@ import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
+import OfflineNotice from "./components/OfflineNotice";
 import RefreshableHomePageMainView from "./components/RefreshableHomePageMainView";
 import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 
 interface Props extends INavigationProps {
     post: IPostContent;
+    connectedToInternet: boolean;
 }
 
 class HomePage extends Component<Props> {
@@ -22,6 +24,7 @@ class HomePage extends Component<Props> {
                         <HeaderTitle style={styles.header}>Home</HeaderTitle>
                     }
                 ></Header>
+                {this.shouldBeLoading() && <OfflineNotice />}
 
                 <RefreshableHomePageMainView />
                 <Button
@@ -31,10 +34,18 @@ class HomePage extends Component<Props> {
             </View>
         );
     }
+
+    private shouldBeLoading() {
+        return (
+            !this.props.connectedToInternet &&
+            this.props.post.text === "Loading..." // slightly hacky
+        );
+    }
 }
 
 const mapStateToProps = (state: IReduxState): Omit<Props, "navigation"> => ({
     post: state.app.currentPost,
+    connectedToInternet: state.netInfo.connected,
 });
 
 export default connect(mapStateToProps)(HomePage);

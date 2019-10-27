@@ -1,7 +1,9 @@
 import { backoffInMs } from "../../src/redux/selectors";
 
 it("backoffInMs returns backoff", () => {
-    const state = { networking: { backoffInMs: 1337 } };
+    const state = {
+        networking: { backoffInMs: 1337 },
+    };
 
     const result = backoffInMs(state);
 

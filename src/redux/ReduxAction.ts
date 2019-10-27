@@ -9,4 +9,5 @@ export enum ReduxAction {
     PostSendFailedTimeoutExceeded = "POST_SEND_FAILED_TIMEOUT_EXCEEDED",
     PostSendRequested = "POST_SEND_REQUESTED",
     PostSendSucceeded = "POST_SEND_SUCCEEDED",
+    NetInfoChanged = "NET_INFO_CHANGED",
 }

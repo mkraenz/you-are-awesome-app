@@ -61,3 +61,10 @@ export interface IPostSendFailedTimeoutExceeded {
     };
     error: true;
 }
+
+export interface INetInfoChanged {
+    type: ReduxAction.NetInfoChanged;
+    payload: {
+        connected: boolean;
+    };
+}

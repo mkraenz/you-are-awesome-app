@@ -4,7 +4,9 @@ import { ReduxAction } from "../ReduxAction";
 
 /** exponential backoff for sending new posts to the server */
 export const sendPostReducer = (
-    state: IReduxStateNetworking = { backoffInMs: 0 },
+    state: IReduxStateNetworking = {
+        backoffInMs: 0,
+    },
     action: IPostSendFailed | IPostSendSucceeded
 ): IReduxStateNetworking => {
     switch (action.type) {
