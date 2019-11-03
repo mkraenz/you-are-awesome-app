@@ -1,4 +1,4 @@
-import { StorageSchema } from "../../config";
+import { StorageSchema } from "../../../src/config";
 
 export const deserialize = (settings: [StorageSchema, string][]) => {
     if (settings.length !== 2) {
