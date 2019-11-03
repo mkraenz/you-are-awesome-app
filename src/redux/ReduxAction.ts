@@ -10,4 +10,7 @@ export enum ReduxAction {
     PostSendRequested = "POST_SEND_REQUESTED",
     PostSendSucceeded = "POST_SEND_SUCCEEDED",
     NetInfoChanged = "NET_INFO_CHANGED",
+    SetNotificationsState = "SET_NOTIFICATIONS_STATE",
+    ReadSettingsRequested = "READ_SETTINGS_REQUESTED",
+    ReadSettingsSucceeded = "READ_SETTINGS_SUCCEEDED",
 }

@@ -7,9 +7,10 @@ const OfflineNotice: FC<{}> = () => (
     </View>
 );
 
+const red = "#b52424";
 const styles = StyleSheet.create({
     offlineContainer: {
-        backgroundColor: "#b52424",
+        backgroundColor: red,
         height: 30,
         justifyContent: "center",
         alignItems: "center",
