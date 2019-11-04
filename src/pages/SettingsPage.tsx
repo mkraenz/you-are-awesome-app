@@ -3,15 +3,9 @@ import { View } from "react-native";
 import { CheckBox, Header, Icon } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { NOTIFICATION_HOUR, NOTIFICATION_MIN } from "../config";
-import {
-    IReadSettingsRequested,
-    ISetNotificationsState,
-} from "../redux/Actions";
+import { requestReadSettings } from "../redux/action-creators/requestReadSettings";
+import { setNotificationsState } from "../redux/action-creators/setNotificationState";
 import { IReduxState } from "../redux/IReduxState";
-import { ReduxAction } from "../redux/ReduxAction";
-import { atTime } from "../utils/atTime";
 import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 
@@ -68,20 +62,13 @@ const mapStateToProps = (
     notificationsEnabled: state.settings.notificationsEnabled,
 });
 
-const mapDispatchToProps = (
-    dispatch: Dispatch
-): Pick<Props, "setNotificationsState" | "requestReadSettings"> => ({
-    setNotificationsState: (enabled: boolean): ISetNotificationsState =>
-        dispatch({
-            type: ReduxAction.SetNotificationsState,
-            payload: {
-                enabled,
-                scheduledTime: atTime(NOTIFICATION_HOUR, NOTIFICATION_MIN),
-            },
-        }),
-    requestReadSettings: (): IReadSettingsRequested =>
-        dispatch({ type: ReduxAction.ReadSettingsRequested }),
-});
+const mapDispatchToProps: Pick<
+    Props,
+    "setNotificationsState" | "requestReadSettings"
+> = {
+    setNotificationsState,
+    requestReadSettings,
+};
 
 export default connect(
     mapStateToProps,

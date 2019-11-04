@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
 import NetInfoChangedContainer from "./NetInfoChangedContainer";
-import { IPostsFetchRequested } from "./redux/Actions";
+import { requestFetchPosts } from "./redux/action-creators/requestFetchPosts";
 import { IReduxState } from "./redux/IReduxState";
-import { ReduxAction } from "./redux/ReduxAction";
 import { isToday } from "./utils/toTodayString";
 
 interface Props {
@@ -42,14 +40,11 @@ const mapStateToProps = (state: IReduxState): Pick<Props, "lastUpdate"> => ({
     lastUpdate: state.app.lastUpdate,
 });
 
-const mapDispatcherToProps = (
-    dispatch: Dispatch
-): Pick<Props, "requestFetchPosts"> => ({
-    requestFetchPosts: (now: Date): IPostsFetchRequested =>
-        dispatch({ type: ReduxAction.PostsFetchRequested, payload: { now } }),
-});
+const mapDispatchToProps: Pick<Props, "requestFetchPosts"> = {
+    requestFetchPosts,
+};
 
 export default connect(
     mapStateToProps,
-    mapDispatcherToProps
+    mapDispatchToProps
 )(AppStateChangedContainer);
