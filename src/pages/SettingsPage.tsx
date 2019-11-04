@@ -4,6 +4,7 @@ import { CheckBox, Header, Icon } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { NOTIFICATION_TIME } from "../config";
 import {
     IReadSettingsRequested,
     ISetNotificationsState,
@@ -72,7 +73,7 @@ const mapDispatchToProps = (
     setNotificationsState: (enabled: boolean): ISetNotificationsState =>
         dispatch({
             type: ReduxAction.SetNotificationsState,
-            payload: { enabled, scheduledTime: atElevenAm() },
+            payload: { enabled, scheduledTime: atTime(NOTIFICATION_TIME) },
         }),
     requestReadSettings: (): IReadSettingsRequested =>
         dispatch({ type: ReduxAction.ReadSettingsRequested }),
@@ -89,12 +90,12 @@ const addSeconds = (date: Date, seconds: number) => {
     return new Date(date.getTime() + seconds * msToSec);
 };
 
-const atElevenAm = () => {
+const atTime = (hour: number) => {
     const date = new Date();
-    if (date.getHours() > 10) {
+    if (date.getHours() >= hour) {
         date.setDate(date.getDate() + 1);
     }
-    date.setHours(11);
+    date.setHours(hour);
     date.setMinutes(0);
     date.setSeconds(0);
     date.setMilliseconds(0);
