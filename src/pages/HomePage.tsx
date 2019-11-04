@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import { Button, Header } from "react-native-elements";
+import { Button, Header, Icon } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
+import { Navigation } from "../Navigation";
 import { IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
 import OfflineNotice from "./components/OfflineNotice";
@@ -23,13 +24,26 @@ class HomePage extends Component<Props> {
                     centerComponent={
                         <HeaderTitle style={styles.header}>Home</HeaderTitle>
                     }
+                    rightComponent={
+                        <Icon
+                            name="settings"
+                            onPress={() =>
+                                this.props.navigation.navigate(
+                                    Navigation.Settings
+                                )
+                            }
+                            color={styles.header.color}
+                        />
+                    }
                 ></Header>
                 {this.shouldBeLoading() && <OfflineNotice />}
 
                 <RefreshableHomePageMainView />
                 <Button
                     title="Share awesomeness"
-                    onPress={() => this.props.navigation.navigate("Contribute")}
+                    onPress={() =>
+                        this.props.navigation.navigate(Navigation.Contribute)
+                    }
                 />
             </View>
         );

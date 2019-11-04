@@ -4,6 +4,7 @@ export interface IReduxState {
     app: IReduxStateApp;
     networking: IReduxStateNetworking;
     netInfo: IReduxStateInternetConnection;
+    settings: IReduxStateSettings;
 }
 
 export interface IReduxStateApp {
@@ -18,4 +19,9 @@ export interface IReduxStateNetworking {
 
 export interface IReduxStateInternetConnection {
     connected: boolean;
+}
+
+export interface IReduxStateSettings {
+    notificationsEnabled: boolean;
+    scheduledTime: Date;
 }

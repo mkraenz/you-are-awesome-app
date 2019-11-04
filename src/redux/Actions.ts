@@ -68,3 +68,23 @@ export interface INetInfoChanged {
         connected: boolean;
     };
 }
+
+export interface ISetNotificationsState {
+    type: ReduxAction.SetNotificationsState;
+    payload: {
+        enabled: boolean;
+        scheduledTime: Date | null;
+    };
+}
+
+export interface IReadSettingsRequested {
+    type: ReduxAction.ReadSettingsRequested;
+}
+
+export interface IReadSettingsSucceeded {
+    type: ReduxAction.ReadSettingsSucceeded;
+    payload: {
+        enabled: boolean;
+        scheduledTime: Date | null;
+    };
+}

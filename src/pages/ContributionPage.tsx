@@ -3,12 +3,10 @@ import { Alert, View } from "react-native";
 import { Header, Icon } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
 import uuid from "uuid";
-import { IPostSendRequested } from "../redux/Actions";
+import { addPost } from "../redux/action-creators/addPost";
 import { IPost, IPostContent } from "../redux/IPost";
 import { IReduxState } from "../redux/IReduxState";
-import { ReduxAction } from "../redux/ReduxAction";
 import AddPostInput from "./components/AddPostInputs";
 import OfflineNotice from "./components/OfflineNotice";
 import { INavigationProps } from "./INavigationProps";
@@ -77,13 +75,7 @@ const mapStateToProps = (
     connectedToInternet: state.netInfo.connected,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): Pick<Props, "addPost"> => ({
-    addPost: (payload: IPost): IPostSendRequested =>
-        dispatch({
-            type: ReduxAction.PostSendRequested,
-            payload,
-        }),
-});
+const mapDispatchToProps: Pick<Props, "addPost"> = { addPost };
 
 export default connect(
     mapStateToProps,

@@ -13,6 +13,7 @@
         "android": "react-native run-android",
         "ios": "react-native run-ios",
         "web": "expo start --web",
+        "dev": "expo start",
         "sanity-check": "npm install && yarn tsc && yarn test && yarn expo start",
         "start": "react-native start",
         "test": "jest",
