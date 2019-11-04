@@ -1,16 +1,5 @@
 import { StorageSchema } from "../../../src/config";
-
-export const deserialize = (settings: [StorageSchema, string][]) => {
-    if (settings.length !== 2) {
-        throw new Error(
-            `Expected serialized settings array to have length 2, found ${settings.length}`
-        );
-    }
-    return {
-        enabled: JSON.parse(settings[0][1]),
-        scheduledTime: new Date(settings[1][1]),
-    };
-};
+import { deserialize } from "../../../src/redux/sagas/deserializeSettings";
 
 it("deserializes correctly", () => {
     const serialized = [

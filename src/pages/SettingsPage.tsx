@@ -4,13 +4,14 @@ import { CheckBox, Header, Icon } from "react-native-elements";
 import { HeaderTitle } from "react-navigation-stack";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { NOTIFICATION_TIME } from "../config";
+import { NOTIFICATION_HOUR, NOTIFICATION_MIN } from "../config";
 import {
     IReadSettingsRequested,
     ISetNotificationsState,
 } from "../redux/Actions";
 import { IReduxState } from "../redux/IReduxState";
 import { ReduxAction } from "../redux/ReduxAction";
+import { atTime } from "../utils/atTime";
 import { INavigationProps } from "./INavigationProps";
 import { styles } from "./Styles";
 
@@ -73,7 +74,10 @@ const mapDispatchToProps = (
     setNotificationsState: (enabled: boolean): ISetNotificationsState =>
         dispatch({
             type: ReduxAction.SetNotificationsState,
-            payload: { enabled, scheduledTime: atTime(NOTIFICATION_TIME) },
+            payload: {
+                enabled,
+                scheduledTime: atTime(NOTIFICATION_HOUR, NOTIFICATION_MIN),
+            },
         }),
     requestReadSettings: (): IReadSettingsRequested =>
         dispatch({ type: ReduxAction.ReadSettingsRequested }),
@@ -85,19 +89,7 @@ export default connect(
 )(SettingsPage);
 
 // for development
-const addSeconds = (date: Date, seconds: number) => {
-    const msToSec = 1000;
-    return new Date(date.getTime() + seconds * msToSec);
-};
-
-const atTime = (hour: number) => {
-    const date = new Date();
-    if (date.getHours() >= hour) {
-        date.setDate(date.getDate() + 1);
-    }
-    date.setHours(hour);
-    date.setMinutes(0);
-    date.setSeconds(0);
-    date.setMilliseconds(0);
-    return date;
-};
+// const addSeconds = (date: Date, seconds: number) => {
+//     const msToSec = 1000;
+//     return new Date(date.getTime() + seconds * msToSec);
+// };

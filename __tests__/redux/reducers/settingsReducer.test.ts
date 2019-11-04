@@ -1,7 +1,10 @@
-import { IReadSettingsSucceeded, ISetNotificationsState } from "../../../src/redux/Actions";
+import {
+    IReadSettingsSucceeded,
+    ISetNotificationsState,
+} from "../../../src/redux/Actions";
 import { IReduxStateSettings } from "../../../src/redux/IReduxState";
-import { ReduxAction } from "../../../src/redux/ReduxAction";
 import { settingsReducer } from "../../../src/redux/reducers/settingsReducer";
+import { ReduxAction } from "../../../src/redux/ReduxAction";
 
 describe("settingsReducer", () => {
     it("should return the initial state", () => {
@@ -19,7 +22,7 @@ describe("settingsReducer", () => {
             type: ReduxAction.SetNotificationsState,
             payload: {
                 enabled: true,
-                scheduledTime: new Date(2016),
+                scheduledTime: new Date("2016"),
             },
         };
         const state: IReduxStateSettings = {
@@ -41,7 +44,7 @@ describe("settingsReducer", () => {
             type: ReduxAction.ReadSettingsSucceeded,
             payload: {
                 enabled: true,
-                scheduledTime: new Date(2016),
+                scheduledTime: new Date("2016"),
             },
         };
         const state: IReduxStateSettings = {
