@@ -189,7 +189,7 @@ exports[`renders correctly for notificationsEnabled=false 1`] = `
           }
         }
       >
-        Enable notifications daily at 11 AM
+        Enable daily notifications at 11 AM
       </Text>
       <Text />
     </View>

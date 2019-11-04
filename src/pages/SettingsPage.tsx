@@ -46,7 +46,7 @@ class SettingsPage extends Component<Props> {
                     containerStyle={{ marginTop: 30 }}
                     textStyle={{ flex: 1 }}
                     center
-                    title="Enable notifications daily at 11 AM"
+                    title="Enable daily notifications at 11 AM"
                     iconRight
                     checked={this.props.notificationsEnabled}
                     onPress={() =>

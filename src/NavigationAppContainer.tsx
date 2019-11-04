@@ -1,5 +1,6 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
+import { Navigation } from "./Navigation";
 import ContributionPage from "./pages/ContributionPage";
 import HomePage from "./pages/HomePage";
 import SettingsPage from "./pages/SettingsPage";
@@ -7,13 +8,12 @@ import SettingsPage from "./pages/SettingsPage";
 // injects `props.navigation` into components
 const RootStack = createStackNavigator(
     {
-        Home: { screen: HomePage },
-        Contribute: { screen: ContributionPage },
-        Settings: { screen: SettingsPage },
+        [Navigation.Home]: { screen: HomePage },
+        [Navigation.Contribute]: { screen: ContributionPage },
+        [Navigation.Settings]: { screen: SettingsPage },
     },
     {
-        initialRouteName: "Home",
-        mode: "modal",
+        initialRouteName: Navigation.Home,
         headerMode: "none",
     }
 );
