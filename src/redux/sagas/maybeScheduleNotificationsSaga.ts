@@ -17,10 +17,18 @@ async function maybeScheduleNotifications(
 ) {
     await Notifications.cancelAllScheduledNotificationsAsync();
     if (notificationsEnabled) {
-        await Notifications.scheduleLocalNotificationAsync(
-            { title: "You are Awesome App!", body: "today's message" + Date() },
-            { time: scheduledTime, repeat: "day" }
+        const id = await Notifications.scheduleLocalNotificationAsync(
+            {
+                title: "You are Awesome App!",
+                body: "A new awesome message! Btw, you're awesome! :)",
+            },
+            { time: scheduledTime.getTime(), repeat: "day" }
         );
+        if (!id) {
+            throw new Error(
+                "Something went wrong while scheduling notifications. Please report to Mirco if you see this message."
+            );
+        }
     }
 }
 
