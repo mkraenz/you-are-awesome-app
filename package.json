@@ -14,6 +14,7 @@
         "ios": "react-native run-ios",
         "web": "expo start --web",
         "dev": "expo start",
+        "build:watch": "tsc -w",
         "sanity-check": "npm install && yarn tsc && yarn test && yarn expo start",
         "start": "react-native start",
         "test": "jest",
