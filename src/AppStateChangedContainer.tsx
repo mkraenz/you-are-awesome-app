@@ -1,3 +1,4 @@
+import { Notifications } from "expo";
 import React, { Component } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
@@ -27,6 +28,9 @@ class AppStateChangedContainer extends Component<Props> {
     private handleAppStateChange(nextAppState: AppStateStatus) {
         if (nextAppState === "active" && !isToday(this.props.lastUpdate)) {
             this.props.requestFetchPosts(new Date());
+        }
+        if (nextAppState === "active") {
+            Notifications.dismissAllNotificationsAsync();
         }
     }
 
