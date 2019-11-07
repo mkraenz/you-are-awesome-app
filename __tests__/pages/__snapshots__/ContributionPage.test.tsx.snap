@@ -298,7 +298,7 @@ exports[`renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "dodgerblue",
+          "backgroundColor": "#2289dc",
           "height": 40,
           "margin": 15,
           "opacity": 1,
@@ -640,7 +640,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "backgroundColor": "dodgerblue",
+          "backgroundColor": "#2289dc",
           "height": 40,
           "margin": 15,
           "opacity": 1,

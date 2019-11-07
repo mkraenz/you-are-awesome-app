@@ -5,7 +5,7 @@ import { ReduxAction } from "../ReduxAction";
 export const settingsReducer = (
     state: IReduxStateSettings = {
         notificationsEnabled: false,
-        scheduledTime: null,
+        scheduledTime: new Date(0),
     },
     action: ISetNotificationsState | IReadSettingsSucceeded
 ): IReduxStateSettings => {

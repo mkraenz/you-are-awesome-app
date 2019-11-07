@@ -11,4 +11,6 @@ export const styles = StyleSheet.create({
     header: {
         color: "white",
     },
+    buttonContainer: { padding: 10, marginHorizontal: 15 },
+    button: { backgroundColor: "#2289dc" },
 });
