@@ -1,5 +1,5 @@
 export const atTime = (hour: number, min: number, date = new Date()) => {
-    if (date.getHours() >= hour) {
+    if (date.getHours() >= hour && date.getMinutes() >= min) {
         date.setDate(date.getDate() + 1);
     }
     date.setHours(hour);
