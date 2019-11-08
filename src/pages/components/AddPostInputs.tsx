@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         color: "dimgrey",
     },
     submitButton: {
-        backgroundColor: "dodgerblue",
+        backgroundColor: "#2289dc",
         padding: 10,
         margin: 15,
         height: 40,
