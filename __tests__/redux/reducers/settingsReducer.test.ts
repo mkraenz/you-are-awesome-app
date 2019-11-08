@@ -12,7 +12,7 @@ describe("settingsReducer", () => {
 
         const expected: IReduxStateSettings = {
             notificationsEnabled: false,
-            scheduledTime: null,
+            scheduledTime: new Date(0),
         };
         expect(result).toEqual(expected);
     });
