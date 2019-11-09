@@ -1,6 +1,7 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
 import { waitAndSendPostToServer } from "../../api/sendPostToServer";
 import { MAX_BACKOFF_IN_MS } from "../../config";
+import { AwaitedReturnType } from "../../typescript/AwaitedReturnType";
 import {
     IPostSendFailed,
     IPostSendFailedTimeoutExceeded,
@@ -20,11 +21,15 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
             ? action
             : action.payload.originalAction;
     try {
-        const backoff = yield select(backoffInMs);
+        const backoff: ReturnType<typeof backoffInMs> = yield select(
+            backoffInMs
+        );
         if (backoff > MAX_BACKOFF_IN_MS) {
             throw new Error(TIMEOUT_EXCEEDED);
         }
-        const responseData: unknown = yield call(
+        const responseData: AwaitedReturnType<
+            typeof waitAndSendPostToServer
+        > = yield call(
             waitAndSendPostToServer,
             pickPostContent(postSendRequested.payload),
             SEND_POST_URI,

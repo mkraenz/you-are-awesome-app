@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { Button, Icon } from "react-native-elements";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import { connect } from "react-redux";
+import { notificationErrorMsg } from "../config";
 import { requestReadSettings } from "../redux/action-creators/requestReadSettings";
 import { setNotificationsState } from "../redux/action-creators/setNotificationState";
 import { IReduxState } from "../redux/IReduxState";
@@ -108,9 +109,7 @@ const showNotification = async () => {
         body: "An awesome test message! Btw, you're awesome! :)",
     });
     if (!id) {
-        throw new Error(
-            "Something went wrong while scheduling notifications. Please report to Mirco if you see this message. Ideally send a screenshot. You are helping me a lot! Thank you :)"
-        );
+        throw new Error(notificationErrorMsg);
     }
 };
 

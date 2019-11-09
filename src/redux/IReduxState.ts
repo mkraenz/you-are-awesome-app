@@ -1,4 +1,4 @@
-import { IPost } from "./IPost";
+import { IPost, PostWithDate } from "./IPost";
 
 export interface IReduxState {
     app: IReduxStateApp;
@@ -11,6 +11,7 @@ export interface IReduxStateApp {
     currentPost: IPost;
     refreshing: boolean;
     lastUpdate: Date;
+    posts: PostWithDate[];
 }
 
 export interface IReduxStateNetworking {

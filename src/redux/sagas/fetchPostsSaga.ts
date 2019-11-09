@@ -1,13 +1,14 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
 import { fetchPosts } from "../../api/fetchPosts";
 import { MAX_BACKOFF_IN_MS } from "../../config";
+import { AwaitedReturnType } from "../../typescript/AwaitedReturnType";
+import { todayOrRandomPost } from "../../utils/todayOrRandomPost";
 import {
     IPostsFetchFailed,
     IPostsFetchFailedTimeoutExceeded,
     IPostsFetchRequested,
     IPostsFetchSucceeded,
 } from "../Actions";
-import { PostWithDate } from "../IPost";
 import { FETCH_POSTS_URI } from "../reducers/postReducer";
 import { ReduxAction } from "../ReduxAction";
 import { backoffInMs } from "../selectors";
@@ -23,19 +24,23 @@ function* fetchPostsWorkerSaga(
             ? action
             : action.payload.originalAction;
     try {
-        const backoff = yield select(backoffInMs);
+        const backoff: ReturnType<typeof backoffInMs> = yield select(
+            backoffInMs
+        );
         if (backoff > MAX_BACKOFF_IN_MS) {
             throw new Error(TIMEOUT_EXCEEDED);
         }
-        const responseData: PostWithDate = yield call(
+        const posts: AwaitedReturnType<typeof fetchPosts> = yield call(
             fetchPosts,
             FETCH_POSTS_URI
         );
+        const maybeTodaysPost = todayOrRandomPost(posts);
         const success: IPostsFetchSucceeded = {
             type: ReduxAction.PostsFetchSucceeded,
             payload: {
-                post: responseData,
+                post: maybeTodaysPost,
                 now: new Date(),
+                posts: posts,
             },
         };
         yield put(success);

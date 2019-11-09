@@ -1167,7 +1167,7 @@ Next on Sep 6, 2029, 5:00 PM
         >
           <View>
             <RCTDatePicker
-              date={1573228800000}
+              date={1883401200000}
               minuteInterval={1}
               mode="time"
               onChange={[Function]}

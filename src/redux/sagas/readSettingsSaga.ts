@@ -1,6 +1,7 @@
 import { AsyncStorage } from "react-native";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { StorageSchema } from "../../config";
+import { AwaitedReturnType } from "../../typescript/AwaitedReturnType";
 import { IReadSettingsSucceeded } from "../Actions";
 import { ReduxAction } from "../ReduxAction";
 import { deserialize } from "./deserializeSettings";
@@ -11,7 +12,9 @@ type Settings = {
 };
 
 function* readSettingsWorkerSaga() {
-    const settings: Settings = yield call(readFromAsyncStorage);
+    const settings: AwaitedReturnType<typeof readFromAsyncStorage> = yield call(
+        readFromAsyncStorage
+    );
     const success: IReadSettingsSucceeded = {
         type: ReduxAction.ReadSettingsSucceeded,
         payload: settings,
