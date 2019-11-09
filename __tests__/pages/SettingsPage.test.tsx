@@ -14,9 +14,7 @@ const mockGlobalDate = (nowMock: Date) => {
     expect(new Date().getTime()).toBe(nowMock.getTime());
 };
 
-afterEach(() => {
-    global.Date = _Date;
-});
+afterEach(() => (global.Date = _Date));
 
 it("renders correctly for disabled notifications", () => {
     // far in the future so that the snapshot does not change

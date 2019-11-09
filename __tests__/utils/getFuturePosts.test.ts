@@ -1,5 +1,5 @@
-import { mock } from "../../__tests__/helpers/mocks";
-import { getFuturePosts } from "./getFuturePosts";
+import { mock } from "../helpers/mocks";
+import { getFuturePosts } from "../../src/utils/getFuturePosts";
 
 it("returns empty array for empty input", () => {
     const result = getFuturePosts([]);

@@ -11,7 +11,7 @@ export const mock = {
             country: "country-1",
             id: "id-1",
             text: "text-1",
-            isodate: "2029-01-02",
+            isodate: "2029-01-01",
         },
         {
             author: "author-2",
