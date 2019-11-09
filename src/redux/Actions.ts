@@ -1,4 +1,4 @@
-import { IPost } from "./IPost";
+import { IPost, PostWithDate } from "./IPost";
 import { ReduxAction } from "./ReduxAction";
 
 export interface IPostsFetchSucceeded {
@@ -6,6 +6,7 @@ export interface IPostsFetchSucceeded {
     payload: {
         post: IPost;
         now: Date;
+        posts: PostWithDate[];
     };
 }
 

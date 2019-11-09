@@ -21,30 +21,25 @@ describe("fetchPosts", () => {
             } as unknown) as Response)
         );
 
-        const result = await fetchPosts(
-            "irrelevant-uri",
-            new Date(isodate),
-            fetchMock
-        );
+        const result = await fetchPosts("irrelevant-uri", fetchMock);
 
-        expect(result).toBe(posts[0]);
+        expect(result).toBe(posts);
         expect(fetchMock).toBeCalledWith("irrelevant-uri");
     });
 
     it("returns a random post as fallback", async () => {
-        const isodate = "2016-01-01";
-        const differentIsodate = "2017-12-19";
+        const isodate = "2017-12-19";
         const posts: PostWithDate[] = [
             {
                 author: "author-1",
                 country: "country-1",
                 id: "id-1",
                 text: "text-1",
-                isodate: differentIsodate,
+                isodate,
             },
         ];
 
-        const result = await fetchPosts("irrelevant", new Date(isodate), () =>
+        const result = await fetchPosts("irrelevant", () =>
             Promise.resolve(({
                 json: () => ({
                     rows: posts,
@@ -52,6 +47,6 @@ describe("fetchPosts", () => {
             } as unknown) as Response)
         );
 
-        expect(result).toBe(posts[0]);
+        expect(result).toBe(posts);
     });
 });

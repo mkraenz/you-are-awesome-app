@@ -25,6 +25,7 @@ export const postReducer = (
         currentPost: initialPost,
         refreshing: false,
         lastUpdate: new Date(0), // epoch
+        posts: [],
     },
     action:
         | IPostSendRequested
@@ -44,6 +45,7 @@ export const postReducer = (
                 ...state,
                 currentPost: action.payload.post,
                 lastUpdate: action.payload.now,
+                posts: action.payload.posts,
                 refreshing: false,
             };
         case ReduxAction.PostsFetchRequested:

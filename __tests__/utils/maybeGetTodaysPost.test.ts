@@ -1,4 +1,4 @@
-import { maybeGetTodaysPost } from "../../src/api/maybeGetTodaysPost";
+import { maybeGetTodaysPost } from "../../src/utils/maybeGetTodaysPost";
 
 describe("maybeGetTodaysPost()", () => {
     it("returns undefined for empty posts array", () => {

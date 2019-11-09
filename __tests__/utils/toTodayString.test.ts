@@ -1,9 +1,9 @@
-import { isToday, toDateString } from "../../src/utils/toTodayString";
+import { isToday, toIsoDateString } from "../../src/utils/toTodayString";
 
 it("toDateString() returns only the date", () => {
     const epoch = new Date(0);
 
-    const result = toDateString(epoch);
+    const result = toIsoDateString(epoch);
 
     expect(result).toBe("1970-01-01");
 });

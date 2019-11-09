@@ -20,6 +20,7 @@ describe("postReducer", () => {
             currentPost: initialPost,
             refreshing: false,
             lastUpdate: new Date(0),
+            posts: [],
         });
     });
 
@@ -32,6 +33,7 @@ describe("postReducer", () => {
             currentPost: null as any,
             lastUpdate: new Date(0),
             refreshing: false,
+            posts: [],
         };
 
         const result = postReducer(state, action);
@@ -40,6 +42,7 @@ describe("postReducer", () => {
             currentPost: mock.post,
             lastUpdate: new Date(0),
             refreshing: false,
+            posts: [],
         };
         expect(result).toEqual(expected);
     });
@@ -53,6 +56,7 @@ describe("postReducer", () => {
             currentPost: null as any,
             lastUpdate: new Date(0),
             refreshing: false,
+            posts: [],
         };
 
         const result = postReducer(state, action);
@@ -61,6 +65,7 @@ describe("postReducer", () => {
             currentPost: null as any,
             lastUpdate: new Date(0),
             refreshing: true,
+            posts: [],
         };
         expect(result).toEqual(expected);
     });
@@ -71,12 +76,14 @@ describe("postReducer", () => {
             payload: {
                 now: new Date(123),
                 post: mock.post,
+                posts: mock.posts,
             },
         };
         const state: IReduxStateApp = {
             currentPost: null as any,
             lastUpdate: new Date(0),
             refreshing: true,
+            posts: [],
         };
 
         const result = postReducer(state, action);
@@ -85,6 +92,7 @@ describe("postReducer", () => {
             currentPost: action.payload.post,
             lastUpdate: action.payload.now,
             refreshing: false,
+            posts: mock.posts,
         };
         expect(result).toEqual(expected);
     });
@@ -107,6 +115,7 @@ describe("postReducer", () => {
             currentPost: null as any,
             lastUpdate: new Date(0),
             refreshing: true,
+            posts: [],
         };
 
         const result = postReducer(state, action);
@@ -115,6 +124,7 @@ describe("postReducer", () => {
             currentPost: null as any,
             lastUpdate: new Date(0),
             refreshing: false,
+            posts: [],
         };
         expect(result).toEqual(expected);
     });

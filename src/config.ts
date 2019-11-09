@@ -6,3 +6,6 @@ export enum StorageSchema {
     LocalNotificationsEnabled = "@YouAreAwesomeApp:localNotificationsEnabled",
     LocalNotificationsScheduledTime = "@YouAreAwesomeApp:localNotificationsScheduledTime",
 }
+
+export const notificationErrorMsg =
+    "Something went wrong while scheduling notifications. Please report to Mirco if you see this message. Ideally send a screenshot. You are helping me a lot! Thank you :)";
