@@ -16,7 +16,7 @@
         "dev": "expo start",
         "build": "tsc",
         "build:watch": "tsc -w",
-        "sanity-check": "npm install && yarn tsc && yarn test && yarn expo start",
+        "sanity-check": "npm install && yarn build && yarn test && yarn expo start",
         "start": "react-native start",
         "test": "jest",
         "test:watch": "jest --watch --coverage=false --changedSince=origin/master",
@@ -70,6 +70,6 @@
         "jest-expo": "^35.0.0",
         "jetifier": "^1.6.4",
         "redux-mock-store": "^1.5.3",
-        "typescript": "^3.6.3"
+        "typescript": "^3.7.2"
     }
 }
