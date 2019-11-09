@@ -105,8 +105,8 @@ class SettingsPage extends Component<Props, State> {
 const showNotification = async () => {
     await askNotificationPermissions();
     const id = await Notifications.presentLocalNotificationAsync({
-        title: "You are Awesome App!",
-        body: "An awesome test message! Btw, you're awesome! :)",
+        title: "Awesome!",
+        body: "Notifications work on your phone. Btw, you're awesome! :)",
     });
     if (!id) {
         throw new Error(notificationErrorMsg);

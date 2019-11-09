@@ -12,4 +12,4 @@ export enum StorageSchema {
 export const notificationErrorMsg =
     "Something went wrong while scheduling notifications. Please report to Mirco if you see this message. Ideally send a screenshot. You are helping me a lot! Thank you :)";
 
-export const START_SCREEN = Navigation.Settings;
+export const START_SCREEN = Navigation.Home;
