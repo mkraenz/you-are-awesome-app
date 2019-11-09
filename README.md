@@ -62,6 +62,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [UI Prototyping via Moqups](https://app.moqups.com/pczu8pWcIi/edit/page/aa9df7b72)
 - [Hashtagify](https://hashtagify.me/hashtag/app)
 - [Commun.it](https://commun.it/)
+- [Expo API Status](https://status.expo.io/#)
 - [React Native Vector Icon List](https://oblador.github.io/react-native-vector-icons/)
 
 ## Frequent Development Mistakes
