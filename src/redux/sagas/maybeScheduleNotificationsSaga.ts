@@ -70,8 +70,8 @@ export const scheduledTimePassed = (
 ) => new Date(atPostDateAndScheduledTime(post, scheduledTime)) <= now;
 
 export const toNotification = (post: IPostContent) => ({
-    title: "You are Awesome App!",
-    body: `${post.text} - ${post.author} from ${post.country}`,
+    title: `${post.author} from ${post.country}`,
+    body: post.text,
 });
 
 export const atPostDateAndScheduledTime = (
@@ -100,7 +100,7 @@ const scheduleFallbackNotifications = async (
         .toMillis();
     await Notifications.scheduleLocalNotificationAsync(
         {
-            title: "You are Awesome App! - Action requested",
+            title: "Action requested. Click to open",
             body:
                 "A new awesome message! To get tomorrow's message via notification as usual, simply open your app once.",
         },

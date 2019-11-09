@@ -14,6 +14,7 @@
         "ios": "react-native run-ios",
         "web": "expo start --web",
         "dev": "expo start",
+        "build": "tsc",
         "build:watch": "tsc -w",
         "sanity-check": "npm install && yarn tsc && yarn test && yarn expo start",
         "start": "react-native start",
@@ -21,7 +22,9 @@
         "test:watch": "jest --watch --coverage=false --changedSince=origin/master",
         "test:debug": "jest --onlyChanged --watch --coverage=false",
         "test:coverage": "jest",
-        "updateSnapshots": "jest --updateSnapshot --coverage=false"
+        "updateSnapshots": "jest --updateSnapshot --coverage=false",
+        "deploy:prod": "expo publish",
+        "deploy:test": "expo publish --release-channel test"
     },
     "dependencies": {
         "casual-browserify": "^1.5.19-2",

@@ -1,5 +1,4 @@
 import { Notifications } from "expo";
-import { mock } from "../../helpers/mocks";
 import {
     atPostDateAndScheduledTime,
     maybeScheduleNotifications,
@@ -7,6 +6,7 @@ import {
     scheduleNotification,
     toNotification,
 } from "../../../src/redux/sagas/maybeScheduleNotificationsSaga";
+import { mock } from "../../helpers/mocks";
 
 afterEach(() => jest.resetAllMocks());
 
@@ -92,8 +92,8 @@ describe("toNotification()", () => {
             text: "BAMS BAMS BAMS",
         });
         expect(result).toEqual({
-            title: "You are Awesome App!",
-            body: "BAMS BAMS BAMS - my-author from my-country",
+            title: "my-author from my-country",
+            body: "BAMS BAMS BAMS",
         });
     });
 });
@@ -113,8 +113,8 @@ describe("scheduleNotification()", () => {
         expect(spy).toBeCalledTimes(1);
         expect(spy).toHaveBeenCalledWith(
             {
-                body: "text-1 - author-1 from country-1",
-                title: "You are Awesome App!",
+                body: "text-1",
+                title: "author-1 from country-1",
             },
             { time: new Date("2029-01-01T08:03:56.123Z").getTime() }
         );
@@ -161,16 +161,16 @@ describe("maybeScheduleNotifications()", () => {
         expect(spy).toHaveBeenNthCalledWith(
             1,
             {
-                body: "text-1 - author-1 from country-1",
-                title: "You are Awesome App!",
+                body: "text-1",
+                title: "author-1 from country-1",
             },
             { time: new Date("2029-01-01T23:59:59.999Z").getTime() }
         );
         expect(spy).toHaveBeenNthCalledWith(
             2,
             {
-                body: "text-2 - author-2 from country-2",
-                title: "You are Awesome App!",
+                body: "text-2",
+                title: "author-2 from country-2",
             },
             { time: new Date("2029-01-02T23:59:59.999Z").getTime() }
         );
@@ -179,7 +179,7 @@ describe("maybeScheduleNotifications()", () => {
             {
                 body:
                     "A new awesome message! To get tomorrow's message via notification as usual, simply open your app once.",
-                title: "You are Awesome App! - Action requested",
+                title: "Action requested. Click to open",
             },
             {
                 repeat: "day",
