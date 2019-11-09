@@ -7,13 +7,17 @@ before_install:
   # fix timezone to developers' timezone
   - export TZ=Europe/Berlin
 
+# .travis.yml
 install:
-  - npm install
+  - npm ci
+# keep the npm cache around to speed up installs
+cache:
+  directories:
+    - "~/.npm"
 
 script:
   - npx tsc
-  - npm test
+  - npm test -- --ci
 
 after_success:
-  - npm install codecov
   - npx codecov
