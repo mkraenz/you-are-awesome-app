@@ -21,9 +21,3 @@ script:
 
 after_success:
   - npx codecov
-
-deploy:
-  provider: script
-  script: bash scripts/deploy-to-test.sh
-  on:
-    branch: master
