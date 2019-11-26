@@ -1,12 +1,14 @@
 import { Notifications } from "expo";
 import { DateTime } from "luxon";
 import { call, select, takeLatest } from "redux-saga/effects";
+import store from "..";
 import { notificationErrorMsg } from "../../config";
 import { toIsoDateString } from "../../utils/toTodayString";
+import { requestFetchPosts } from "../action-creators/requestFetchPosts";
 import { ISetNotificationsState } from "../Actions";
 import { IPostContent, PostWithDate } from "../IPost";
 import { ReduxAction } from "../ReduxAction";
-import { futurePosts } from "../selectors";
+import { connectedToInternet, futurePosts } from "../selectors";
 
 export default maybeScheduleNotificationsSaga;
 
@@ -19,11 +21,19 @@ function* maybeScheduleNotificationsSaga() {
 
 function* maybeScheduleNotificationsWorkerSaga(action: ISetNotificationsState) {
     const posts: ReturnType<typeof futurePosts> = yield select(futurePosts);
+    const connectedToInternet_: ReturnType<typeof connectedToInternet> = yield select(
+        connectedToInternet
+    );
     yield call(
         maybeScheduleNotifications,
         action.payload.enabled,
         action.payload.scheduledTime,
         posts
+    );
+    yield call(
+        maybeAddNotificationListener,
+        action.payload.enabled,
+        connectedToInternet_
     );
 }
 
@@ -38,6 +48,19 @@ export async function maybeScheduleNotifications(
             await scheduleNotification(post, scheduledTime);
         }
         await scheduleFallbackNotifications(futurePosts, scheduledTime);
+    }
+}
+
+function maybeAddNotificationListener(
+    notificationsEnabled: boolean,
+    connectedToInternet: boolean
+) {
+    // assert inet connection to avoid deleting the event subscription in case fetch posts fails due to network issues
+    if (notificationsEnabled && connectedToInternet) {
+        const eventSubscription = Notifications.addListener(() => {
+            eventSubscription.remove();
+            store.dispatch(requestFetchPosts(new Date()));
+        });
     }
 }
 
@@ -91,8 +114,10 @@ const scheduleFallbackNotifications = async (
     futurePosts: PostWithDate[],
     scheduledTime: Date
 ) => {
-    const lastPost = futurePosts.reduce((latestPost, post) =>
-        post.isodate > latestPost.isodate ? post : latestPost
+    const lastPost = futurePosts.reduce(
+        (latestPost, post) =>
+            post.isodate > latestPost.isodate ? post : latestPost,
+        { isodate: toIsoDateString(new Date()) }
     );
     const lastOccurrence = atPostDateAndScheduledTime(lastPost, scheduledTime);
     const firstFallbackOccurrence = DateTime.fromMillis(lastOccurrence)

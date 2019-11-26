@@ -1,3 +1,4 @@
 {
-    "markiscodecoverage.searchCriteria": "coverage/lcov.info"
+    "markiscodecoverage.searchCriteria": "coverage/lcov.info",
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
