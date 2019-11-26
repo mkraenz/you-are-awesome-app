@@ -158,7 +158,4 @@ const mapDispatchToProps: Pick<
     requestReadSettings,
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(SettingsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsPage);
