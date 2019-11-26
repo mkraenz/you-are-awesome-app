@@ -6,11 +6,9 @@ import {
     StyleSheet,
 } from "react-native";
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { IPostsFetchRequested } from "../../redux/Actions";
+import { requestFetchPosts } from "../../redux/action-creators/requestFetchPosts";
 import { IPostContent } from "../../redux/IPost";
 import { IReduxState } from "../../redux/IReduxState";
-import { ReduxAction } from "../../redux/ReduxAction";
 import { INavigationProps } from "../INavigationProps";
 import { styles } from "../Styles";
 import HomePageMainView from "./HomePageMainView";
@@ -60,14 +58,11 @@ const mapStateToProps = (
     refreshing: state.app.refreshing,
 });
 
-const mapDispatcherToProps = (
-    dispatch: Dispatch
-): Pick<Props, "requestFetchPosts"> => ({
-    requestFetchPosts: (now: Date): IPostsFetchRequested =>
-        dispatch({ type: ReduxAction.PostsFetchRequested, payload: { now } }),
-});
+const mapDispatchToProps: Pick<Props, "requestFetchPosts"> = {
+    requestFetchPosts,
+};
 
 export default connect(
     mapStateToProps,
-    mapDispatcherToProps
+    mapDispatchToProps
 )(RefreshableHomePageMainView);
