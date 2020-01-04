@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
-import NetInfoChangedContainer from "./NetInfoChangedContainer";
 import { requestFetchPosts } from "./redux/action-creators/requestFetchPosts";
 import { IReduxState } from "./redux/IReduxState";
 import { isToday } from "./utils/toTodayString";
@@ -31,8 +30,7 @@ class AppStateChangedContainer extends Component<Props> {
     }
 
     public render() {
-        // can we wrap somewhere else? e.g. in the app. This nested approach is not optimal.
-        return <NetInfoChangedContainer />;
+        return this.props.children;
     }
 }
 
