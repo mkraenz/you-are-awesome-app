@@ -2,6 +2,7 @@ import {
     backoffInMs,
     connectedToInternet,
     futurePosts,
+    pushNotificationsEnabled,
 } from "../../src/redux/selectors";
 import { mock } from "../helpers/mocks";
 
@@ -31,6 +32,16 @@ it("connectedToInternet returns whether internet connection exists", () => {
     };
 
     const result = connectedToInternet(state);
+
+    expect(result).toEqual(false);
+});
+
+it("pushNotificationsEnabled returns whether push notifications are enabled", () => {
+    const state = {
+        settings: { notificationsEnabled: false },
+    };
+
+    const result = pushNotificationsEnabled(state);
 
     expect(result).toEqual(false);
 });
