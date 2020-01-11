@@ -30,9 +30,12 @@ class NotificationsEnabledCheckbox extends Component<Props> {
 
     private getTitle() {
         const base = "Enable daily notifications";
-        const addition = `\nNext on ${DateTime.fromJSDate(
+        const addition = `\nNext at ${DateTime.fromJSDate(
             this.props.scheduledTime
-        ).toLocaleString(DateTime.DATETIME_MED)}`;
+        )
+            .toLocaleString(DateTime.DATETIME_MED)
+            .slice(-8)
+            .trim()}`;
         return this.props.notificationsEnabled ? `${base}${addition}` : base;
     }
 }
