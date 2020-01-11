@@ -219,7 +219,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
           }
         >
           Enable daily notifications
-Next on Sep 6, 2029, 5:00 PM
+Next at 11:00 PM
         </Text>
         <Text />
       </View>
@@ -450,7 +450,7 @@ Next on Sep 6, 2029, 5:00 PM
         >
           <View>
             <RCTDatePicker
-              date={1883401200000}
+              date={1883422800000}
               minuteInterval={1}
               mode="time"
               onChange={[Function]}
@@ -976,7 +976,7 @@ exports[`renders correctly for disabled notifications 1`] = `
         >
           <View>
             <RCTDatePicker
-              date={1883401200000}
+              date={1883422800000}
               minuteInterval={1}
               mode="time"
               onChange={[Function]}
@@ -1272,7 +1272,7 @@ exports[`renders correctly for enabled notifications 1`] = `
           }
         >
           Enable daily notifications
-Next on Sep 6, 2029, 5:00 PM
+Next at 11:00 PM
         </Text>
         <Text />
       </View>
@@ -1503,7 +1503,7 @@ Next on Sep 6, 2029, 5:00 PM
         >
           <View>
             <RCTDatePicker
-              date={1883401200000}
+              date={1883422800000}
               minuteInterval={1}
               mode="time"
               onChange={[Function]}

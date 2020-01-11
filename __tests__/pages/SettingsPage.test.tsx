@@ -19,7 +19,7 @@ afterEach(() => (global.Date = _Date));
 
 it("renders correctly for disabled notifications", () => {
     // far in the future so that the snapshot does not change
-    const scheduledTime = new Date("2029-09-06T15:00:00.000Z");
+    const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
     mockGlobalDate(scheduledTime);
 
     const store = createMockStore([])({
@@ -45,7 +45,7 @@ it("renders correctly for disabled notifications", () => {
 
 it("renders correctly for enabled notifications", () => {
     // far in the future so that the snapshot does not change
-    const scheduledTime = new Date("2029-09-06T15:00:00.000Z");
+    const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
     mockGlobalDate(scheduledTime);
 
     const store = createMockStore([])({
@@ -71,7 +71,7 @@ it("renders correctly for enabled notifications", () => {
 
 it("displays netinfo box for no internet connection", () => {
     // far in the future so that the snapshot does not change
-    const scheduledTime = new Date("2029-09-06T15:00:00.000Z");
+    const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
     mockGlobalDate(scheduledTime);
 
     const store = createMockStore([])({
