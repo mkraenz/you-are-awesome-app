@@ -14,6 +14,9 @@ import { INavigationProps } from "./INavigationProps";
 import { askNotificationPermissions } from "./other/askNotificationPermissions";
 import { styles } from "./Styles";
 
+const FREEZE_BUTTON_TIMEOUT = 2000;
+const FREEZE_BUTTON_TIMEOUT_LONG = 8000;
+
 interface DispatchProps {
     setNotificationsState: (enabled: boolean, scheduledTime: Date) => void;
     changePushNotificationTime: (scheduledTime: Date) => void;
@@ -29,6 +32,7 @@ type Props = INavigationProps & DispatchProps & IStateProps;
 
 interface State {
     showTimePicker: boolean;
+    freezeButtons: boolean;
 }
 
 class SettingsPage extends Component<Props, State> {
@@ -36,6 +40,7 @@ class SettingsPage extends Component<Props, State> {
         super(props);
         this.state = {
             showTimePicker: false,
+            freezeButtons: false,
         };
         ``;
     }
@@ -77,23 +82,35 @@ class SettingsPage extends Component<Props, State> {
     }
 
     private handleTimePickerConfirm(date: Date) {
+        if (this.state.freezeButtons) {
+            return;
+        }
         if (!this.props.connectedToInternet) {
             alert("Internet connection required");
             return;
         }
+        this.toggleFreezeButtons();
         this.setState({ showTimePicker: false });
         if (this.props.notificationsEnabled) {
             this.props.changePushNotificationTime(date);
         } else {
             this.props.setNotificationsState(true, date);
         }
+        setTimeout(
+            () => this.toggleFreezeButtons(),
+            FREEZE_BUTTON_TIMEOUT_LONG
+        );
     }
 
     private async handleNotificationsCheckboxPressed() {
+        if (this.state.freezeButtons) {
+            return;
+        }
         if (!this.props.connectedToInternet) {
             alert("Internet connection required");
             return;
         }
+        this.toggleFreezeButtons();
         let time = this.props.scheduledTime;
         if (time.getTime() === 0) {
             time = at11Am();
@@ -103,6 +120,11 @@ class SettingsPage extends Component<Props, State> {
             !this.props.notificationsEnabled,
             time
         );
+        setTimeout(() => this.toggleFreezeButtons(), FREEZE_BUTTON_TIMEOUT);
+    }
+
+    private toggleFreezeButtons() {
+        this.setState({ freezeButtons: !this.state.freezeButtons });
     }
 }
 
