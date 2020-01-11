@@ -85,7 +85,7 @@ class SettingsPage extends Component<Props, State> {
         );
     }
 
-    private handleTimePickerConfirm(date: Date) {
+    private async handleTimePickerConfirm(date: Date) {
         if (this.state.freezeButtons) {
             return;
         }
@@ -95,6 +95,7 @@ class SettingsPage extends Component<Props, State> {
         }
         this.toggleFreezeButtons();
         this.setState({ showTimePicker: false });
+        await askNotificationPermissions();
         if (this.props.notificationsEnabled) {
             this.props.changePushNotificationTime(date);
         } else {
