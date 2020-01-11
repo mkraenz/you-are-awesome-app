@@ -1,9 +1,9 @@
 import { Notifications } from "expo";
-import { REGISTER_PUSH_NOTIFICATION_URI } from "../redux/reducers/postReducer";
+import { URI } from "../config";
 
 export const registerForPushNotifications = async (time: Date) => {
     let token = await Notifications.getExpoPushTokenAsync();
-    return fetch(REGISTER_PUSH_NOTIFICATION_URI, {
+    return fetch(URI.REGISTER_PUSH_NOTIFICATION, {
         method: "POST",
         headers: {
             Accept: "application/json",
