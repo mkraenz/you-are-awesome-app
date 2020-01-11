@@ -8,6 +8,7 @@ import { requestReadSettings } from "../redux/action-creators/requestReadSetting
 import { setNotificationsState } from "../redux/action-creators/setNotificationState";
 import { IReduxState } from "../redux/IReduxState";
 import NotificationsEnabledCheckbox from "./components/NotificationsEnabledCheckbox";
+import OfflineNotice from "./components/OfflineNotice";
 import SettingsHeader from "./components/SettingsHeader";
 import { INavigationProps } from "./INavigationProps";
 import { askNotificationPermissions } from "./other/askNotificationPermissions";
@@ -19,10 +20,12 @@ interface DispatchProps {
     requestReadSettings: () => void;
 }
 
-interface Props extends INavigationProps, DispatchProps {
+interface IStateProps {
     notificationsEnabled: boolean;
     scheduledTime: Date;
+    connectedToInternet: boolean;
 }
+type Props = INavigationProps & DispatchProps & IStateProps;
 
 interface State {
     showTimePicker: boolean;
@@ -45,6 +48,7 @@ class SettingsPage extends Component<Props, State> {
         return (
             <View style={styles.container}>
                 <SettingsHeader navigation={this.props.navigation} />
+                {!this.props.connectedToInternet && <OfflineNotice />}
                 <View
                     style={{
                         marginTop: 20,
@@ -73,6 +77,10 @@ class SettingsPage extends Component<Props, State> {
     }
 
     private handleTimePickerConfirm(date: Date) {
+        if (!this.props.connectedToInternet) {
+            alert("Internet connection required");
+            return;
+        }
         this.setState({ showTimePicker: false });
         if (this.props.notificationsEnabled) {
             this.props.changePushNotificationTime(date);
@@ -82,6 +90,10 @@ class SettingsPage extends Component<Props, State> {
     }
 
     private async handleNotificationsCheckboxPressed() {
+        if (!this.props.connectedToInternet) {
+            alert("Internet connection required");
+            return;
+        }
         let time = this.props.scheduledTime;
         if (time.getTime() === 0) {
             time = at11Am();
@@ -107,10 +119,11 @@ const SetNotificationTimeButton: FC<{ onPress: () => void }> = props => (
 );
 
 const mapStateToProps = (
-    state: Pick<IReduxState, "settings">
-): Pick<Props, "notificationsEnabled" | "scheduledTime"> => ({
+    state: Pick<IReduxState, "settings" | "netInfo">
+): IStateProps => ({
     notificationsEnabled: state.settings.notificationsEnabled,
     scheduledTime: state.settings.scheduledTime,
+    connectedToInternet: state.netInfo.connected,
 });
 
 const mapDispatchToProps: DispatchProps = {
