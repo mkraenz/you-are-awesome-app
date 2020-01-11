@@ -78,6 +78,13 @@ export interface ISetNotificationsState {
     };
 }
 
+export interface IChangePushNotificationTime {
+    type: ReduxAction.ChangePushNotificationTime;
+    payload: {
+        scheduledTime: Date;
+    };
+}
+
 export interface IReadSettingsRequested {
     type: ReduxAction.ReadSettingsRequested;
 }

@@ -1,24 +1,25 @@
-import { Notifications } from "expo";
 import React, { Component, FC } from "react";
 import { View } from "react-native";
 import { Button, Icon } from "react-native-elements";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import { connect } from "react-redux";
-import { notificationErrorMsg } from "../config";
+import { changePushNotificationTime } from "../redux/action-creators/changePushNotificationTime";
 import { requestReadSettings } from "../redux/action-creators/requestReadSettings";
 import { setNotificationsState } from "../redux/action-creators/setNotificationState";
 import { IReduxState } from "../redux/IReduxState";
-import { futureOrTodayOrTomorrow } from "../utils/futureOrTodayOrTomorrow";
-import { timeWithTodaysDate } from "../utils/timeWithTodaysDate";
 import NotificationsEnabledCheckbox from "./components/NotificationsEnabledCheckbox";
 import SettingsHeader from "./components/SettingsHeader";
 import { INavigationProps } from "./INavigationProps";
 import { askNotificationPermissions } from "./other/askNotificationPermissions";
 import { styles } from "./Styles";
 
-interface Props extends INavigationProps {
+interface DispatchProps {
     setNotificationsState: (enabled: boolean, scheduledTime: Date) => void;
+    changePushNotificationTime: (scheduledTime: Date) => void;
     requestReadSettings: () => void;
+}
+
+interface Props extends INavigationProps, DispatchProps {
     notificationsEnabled: boolean;
     scheduledTime: Date;
 }
@@ -38,18 +39,6 @@ class SettingsPage extends Component<Props, State> {
 
     public componentDidMount() {
         this.props.requestReadSettings();
-        setTimeout(() => {
-            const props = this.props;
-            if (
-                props.notificationsEnabled &&
-                props.scheduledTime <= new Date()
-            ) {
-                props.setNotificationsState(
-                    props.notificationsEnabled,
-                    futureOrTodayOrTomorrow(props.scheduledTime)
-                );
-            }
-        }, 1000);
     }
 
     public render() {
@@ -72,13 +61,12 @@ class SettingsPage extends Component<Props, State> {
                 <SetNotificationTimeButton
                     onPress={() => this.setState({ showTimePicker: true })}
                 />
-                <TriggerTestNotificationButton />
                 <DateTimePicker
                     isVisible={this.state.showTimePicker}
                     mode="time"
                     onConfirm={date => this.handleTimePickerConfirm(date)}
                     onCancel={() => this.setState({ showTimePicker: false })}
-                    date={timeWithTodaysDate(this.props.scheduledTime)}
+                    date={this.props.scheduledTime}
                 />
             </View>
         );
@@ -86,7 +74,11 @@ class SettingsPage extends Component<Props, State> {
 
     private handleTimePickerConfirm(date: Date) {
         this.setState({ showTimePicker: false });
-        this.props.setNotificationsState(true, futureOrTodayOrTomorrow(date));
+        if (this.props.notificationsEnabled) {
+            this.props.changePushNotificationTime(date);
+        } else {
+            this.props.setNotificationsState(true, date);
+        }
     }
 
     private async handleNotificationsCheckboxPressed() {
@@ -97,41 +89,12 @@ class SettingsPage extends Component<Props, State> {
         await askNotificationPermissions();
         this.props.setNotificationsState(
             !this.props.notificationsEnabled,
-            futureOrTodayOrTomorrow(time)
+            time
         );
     }
 }
 
-const showNotification = async () => {
-    await askNotificationPermissions();
-    const id = await Notifications.presentLocalNotificationAsync({
-        title: "Awesome!",
-        body: "Notifications work on your phone. Btw, you're awesome! :)",
-    });
-    if (!id) {
-        throw new Error(notificationErrorMsg);
-    }
-};
-
-const at11Am = (now = new Date()) =>
-    new Date(futureOrTodayOrTomorrow(now).setHours(11, 0, 0, 0));
-
-const TriggerTestNotificationButton: FC = () => (
-    <Button
-        containerStyle={[styles.buttonContainer]}
-        title="Trigger test notification"
-        onPress={showNotification}
-        style={styles.button}
-        icon={
-            <Icon
-                name="notification"
-                type="antdesign"
-                size={25}
-                color="white"
-            />
-        }
-    />
-);
+const at11Am = (now = new Date()) => new Date(now.setHours(11, 0, 0, 0));
 
 const SetNotificationTimeButton: FC<{ onPress: () => void }> = props => (
     <Button
@@ -150,12 +113,10 @@ const mapStateToProps = (
     scheduledTime: state.settings.scheduledTime,
 });
 
-const mapDispatchToProps: Pick<
-    Props,
-    "setNotificationsState" | "requestReadSettings"
-> = {
+const mapDispatchToProps: DispatchProps = {
     setNotificationsState,
     requestReadSettings,
+    changePushNotificationTime,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsPage);

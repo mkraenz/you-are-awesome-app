@@ -5,7 +5,7 @@ import {
     scheduledTimePassed,
     scheduleNotification,
     toNotification,
-} from "../../../src/redux/sagas/maybeScheduleNotificationsSaga";
+} from "../../../src/redux/sagas/registerOrUnregisterPushNotificationsSaga";
 import { mock } from "../../helpers/mocks";
 
 afterEach(() => jest.resetAllMocks());

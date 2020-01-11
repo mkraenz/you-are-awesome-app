@@ -11,3 +11,7 @@ export const futurePosts = (state: Pick2<IReduxState, "app", "posts">) =>
 export const connectedToInternet = (
     state: Pick2<IReduxState, "netInfo", "connected">
 ) => state.netInfo.connected;
+
+export const pushNotificationsEnabled = (
+    state: Pick2<IReduxState, "settings", "notificationsEnabled">
+) => state.settings.notificationsEnabled;
