@@ -23,7 +23,7 @@
         "test:debug": "jest --onlyChanged --watch --coverage=false",
         "test:coverage": "jest",
         "updateSnapshots": "jest --updateSnapshot --coverage=false",
-        "deploy:prod": "expo publish",
+        "deploy:prod": "node ./scripts/expo-publish-with-version.js",
         "deploy:test": "expo publish --release-channel test"
     },
     "dependencies": {
@@ -70,7 +70,9 @@
         "jest": "^24.9.0",
         "jest-expo": "^35.0.0",
         "jetifier": "^1.6.4",
+        "jsonfile": "^5.0.0",
         "redux-mock-store": "^1.5.3",
+        "shelljs": "^0.8.3",
         "typescript": "^3.7.2"
     }
 }

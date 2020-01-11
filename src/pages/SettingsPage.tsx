@@ -1,12 +1,13 @@
 import React, { Component, FC } from "react";
 import { View } from "react-native";
-import { Button, Icon } from "react-native-elements";
+import { Button, Icon, Text } from "react-native-elements";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import { connect } from "react-redux";
 import { changePushNotificationTime } from "../redux/action-creators/changePushNotificationTime";
 import { requestReadSettings } from "../redux/action-creators/requestReadSettings";
 import { setNotificationsState } from "../redux/action-creators/setNotificationState";
 import { IReduxState } from "../redux/IReduxState";
+import version from "../utils/version.json";
 import NotificationsEnabledCheckbox from "./components/NotificationsEnabledCheckbox";
 import OfflineNotice from "./components/OfflineNotice";
 import SettingsHeader from "./components/SettingsHeader";
@@ -77,6 +78,9 @@ class SettingsPage extends Component<Props, State> {
                     onCancel={() => this.setState({ showTimePicker: false })}
                     date={this.props.scheduledTime}
                 />
+                <Text style={{ marginHorizontal: 30 }}>
+                    Build Version: {version.jsBuildNumber}
+                </Text>
             </View>
         );
     }
