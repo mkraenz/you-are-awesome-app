@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { NetInfo } from "react-native";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import NavigationAppContainer from "./NavigationAppContainer";
 import { INetInfoChanged } from "./redux/Actions";
 import { IReduxState } from "./redux/IReduxState";
 import { ReduxAction } from "./redux/ReduxAction";
@@ -25,7 +24,7 @@ class NetInfoChangedContainer extends Component<Props> {
     }
 
     public render() {
-        return <NavigationAppContainer />;
+        return this.props.children;
     }
 }
 

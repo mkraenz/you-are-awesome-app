@@ -62,4 +62,6 @@ coverage/
 
 # expo
 .expo/
-.expo/packager-info.json
+
+# firebase
+google-services.json

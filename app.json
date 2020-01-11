@@ -12,7 +12,8 @@
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
-            "permissions": []
+            "permissions": [],
+            "googleServicesFile": "./google-services.json"
         },
         "description": "Join our community that tells you HOW AWESOME YOU ARE. Spread the awesomeness by sending awesome messages to other people around the globe and feel proud to help them reach their goals."
     }

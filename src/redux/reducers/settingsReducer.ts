@@ -1,4 +1,8 @@
-import { IReadSettingsSucceeded, ISetNotificationsState } from "../Actions";
+import {
+    IChangePushNotificationTime,
+    IReadSettingsSucceeded,
+    ISetNotificationsState,
+} from "../Actions";
 import { IReduxStateSettings } from "../IReduxState";
 import { ReduxAction } from "../ReduxAction";
 
@@ -7,7 +11,10 @@ export const settingsReducer = (
         notificationsEnabled: false,
         scheduledTime: new Date(0),
     },
-    action: ISetNotificationsState | IReadSettingsSucceeded
+    action:
+        | ISetNotificationsState
+        | IReadSettingsSucceeded
+        | IChangePushNotificationTime
 ): IReduxStateSettings => {
     switch (action.type) {
         case ReduxAction.SetNotificationsState:
@@ -17,6 +24,8 @@ export const settingsReducer = (
                 notificationsEnabled: action.payload.enabled,
                 scheduledTime: action.payload.scheduledTime,
             };
+        case ReduxAction.ChangePushNotificationTime:
+            return { ...state, scheduledTime: action.payload.scheduledTime };
     }
     return state;
 };

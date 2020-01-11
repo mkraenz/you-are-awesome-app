@@ -1,4 +1,5 @@
 import {
+    IChangePushNotificationTime,
     IReadSettingsSucceeded,
     ISetNotificationsState,
 } from "../../../src/redux/Actions";
@@ -56,6 +57,27 @@ describe("settingsReducer", () => {
 
         const expected: IReduxStateSettings = {
             notificationsEnabled: true,
+            scheduledTime: action.payload.scheduledTime,
+        };
+        expect(result).toEqual(expected);
+    });
+
+    it(`should handle ${ReduxAction.ChangePushNotificationTime}`, () => {
+        const action: IChangePushNotificationTime = {
+            type: ReduxAction.ChangePushNotificationTime,
+            payload: {
+                scheduledTime: new Date("2016"),
+            },
+        };
+        const state: IReduxStateSettings = {
+            notificationsEnabled: false,
+            scheduledTime: null,
+        };
+
+        const result = settingsReducer(state, action);
+
+        const expected: IReduxStateSettings = {
+            notificationsEnabled: false,
             scheduledTime: action.payload.scheduledTime,
         };
         expect(result).toEqual(expected);
