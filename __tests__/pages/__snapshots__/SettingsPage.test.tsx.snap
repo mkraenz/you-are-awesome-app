@@ -590,7 +590,7 @@ Next at 11:00 PM
     }
   >
     Build Version: 
-    2
+    3
   </Text>
 </View>
 `;
@@ -1163,7 +1163,7 @@ exports[`renders correctly for disabled notifications 1`] = `
     }
   >
     Build Version: 
-    2
+    3
   </Text>
 </View>
 `;
@@ -1737,7 +1737,7 @@ Next at 11:00 PM
     }
   >
     Build Version: 
-    2
+    3
   </Text>
 </View>
 `;
