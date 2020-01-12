@@ -1,13 +1,22 @@
 import { AsyncStorage } from "react-native";
-import { call, takeLatest } from "redux-saga/effects";
+import { call, select, takeLatest } from "redux-saga/effects";
 import { StorageSchema } from "../../config";
-import { ISetNotificationsState } from "../Actions";
+import {
+    IChangePushNotificationTime,
+    ISetNotificationsState,
+} from "../Actions";
 import { ReduxAction } from "../ReduxAction";
+import { pushNotificationsEnabled } from "../selectors";
 
-function* writeSettingsToStorageWorkerSaga(action: ISetNotificationsState) {
+function* writeSettingsToStorageWorkerSaga(
+    action: ISetNotificationsState | IChangePushNotificationTime
+) {
+    const notificationsEnabled: ReturnType<typeof pushNotificationsEnabled> = yield select(
+        pushNotificationsEnabled
+    );
     yield call(
         writeToAsyncStorage,
-        action.payload.enabled,
+        notificationsEnabled,
         action.payload.scheduledTime
     );
 }
@@ -36,7 +45,10 @@ async function writeToAsyncStorage(
 
 function* writeSettingsToStorageSaga() {
     yield takeLatest(
-        [ReduxAction.SetNotificationsState],
+        [
+            ReduxAction.SetNotificationsState,
+            ReduxAction.ChangePushNotificationTime,
+        ],
         writeSettingsToStorageWorkerSaga
     );
 }
