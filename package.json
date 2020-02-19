@@ -65,7 +65,7 @@
         "@types/redux-saga": "^0.10.5",
         "@types/uuid": "^3.4.5",
         "babel-preset-expo": "^7.0.0",
-        "codecov": "^3.6.1",
+        "codecov": "^3.6.5",
         "expo-cli": "^3.11.5",
         "jest": "^24.9.0",
         "jest-expo": "^35.0.0",
