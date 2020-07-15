@@ -9,13 +9,7 @@ import createMockStore from "redux-mock-store";
 import SettingsScreen from "../../src/screens/SettingsScreen";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
-const originalTimezone = process.env.TZ;
-beforeEach(() => {
-    process.env.TZ = "Europe/Berlin"; // same timezone on CI and all developer machines
-});
-
 afterEach(() => {
-    process.env.TZ = originalTimezone;
     resetDateMock();
 });
 
