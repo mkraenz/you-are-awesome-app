@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { connect } from "react-redux";
-import { IMessageContent } from "../../state/state/IPost";
+import { IMessageContent } from "../../state/state/IMessage";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
 
 const styles = StyleSheet.create({

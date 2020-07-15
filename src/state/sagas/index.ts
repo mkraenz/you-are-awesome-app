@@ -4,7 +4,7 @@ import changePushNotificationTimeSaga from "./push-notifications/changePushNotif
 import readSettingsFromStorageSaga from "./push-notifications/readSettingsSaga";
 import registerOrUnregisterPushNotificationsSaga from "./push-notifications/registerOrUnregisterPushNotificationsSaga";
 import writePushNotificationSettingsToStorageSaga from "./push-notifications/writeSettingsSaga";
-import submitMessageSaga from "./sendPostSaga";
+import submitMessageSaga from "./submitMessageSaga";
 
 export default function* rootSaga() {
     yield fork(fetchMessagesSaga);

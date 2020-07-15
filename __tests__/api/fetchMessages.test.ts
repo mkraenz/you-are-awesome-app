@@ -1,5 +1,5 @@
 import { fetchMessages } from "../../src/api/fetchPosts";
-import { MessageWithDate } from "../../src/state/state/IPost";
+import { MessageWithDate } from "../../src/state/state/IMessage";
 
 describe("fetchMessages", () => {
     it("returns todays message if found", async () => {

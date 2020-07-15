@@ -4,7 +4,7 @@ import { IAnyAction } from "../actions/IAction";
 import { IState } from "../state/IState";
 import { appReducer } from "./appReducer";
 import { networkReducer } from "./networkReducer";
-import { messageReducer } from "./postReducer";
+import { messageReducer } from "./messageReducer";
 import { submitMessageReducer } from "./sendPostReducer";
 
 type MyReducer = Reducer<CombinedState<IState>, IAnyAction>;

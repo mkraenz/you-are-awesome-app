@@ -1,5 +1,5 @@
 import { random } from "lodash";
-import { MessageWithDate } from "../state/state/IPost";
+import { MessageWithDate } from "../state/state/IMessage";
 import { maybeGetTodaysMessages } from "./maybeGetTodaysPost";
 
 export function todaysMessageOrRandomMessage(

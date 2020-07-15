@@ -4,7 +4,7 @@ import {
     ISubmitMessageSucceeded,
 } from "../../../src/state/actions/IAction";
 import { submitMessageReducer } from "../../../src/state/reducers/sendPostReducer";
-import { ISubmitMessageState } from "../../../src/state/state/ISendPostState";
+import { ISubmitMessageState } from "../../../src/state/state/ISubmitMessageState";
 import { mock } from "../../helpers/mocks";
 
 describe("submitMessageReducer", () => {

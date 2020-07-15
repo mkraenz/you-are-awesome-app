@@ -1,4 +1,4 @@
-import { IMessage, MessageWithDate } from "../state/IPost";
+import { IMessage, MessageWithDate } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
 import { INetworkAction } from "./INetworkAction";

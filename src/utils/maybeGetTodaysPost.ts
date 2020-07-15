@@ -1,4 +1,4 @@
-import { MessageWithDate } from "../state/state/IPost";
+import { MessageWithDate } from "../state/state/IMessage";
 import { toIsoDateString } from "./toTodayString";
 
 export const maybeGetTodaysMessages = (

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import RefreshMessagesView from "../components/RefreshPostsView";
 import { Route } from "../navigation/Route";
-import { IMessageContent } from "../state/state/IPost";
+import { IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { FullTheme } from "../themes/theme";
 

@@ -1,4 +1,4 @@
-import { IMessage } from "./IPost";
+import { IMessage } from "./IMessage";
 
 export interface IMessagesState {
     currentMessage: IMessage;

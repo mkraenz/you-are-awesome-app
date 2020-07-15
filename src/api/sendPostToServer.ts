@@ -1,4 +1,4 @@
-import { IMessageContent } from "../state/state/IPost";
+import { IMessageContent } from "../state/state/IMessage";
 import { pickMessageContent } from "../utils/pickPostContent";
 
 const HTTP_CREATED = 201;

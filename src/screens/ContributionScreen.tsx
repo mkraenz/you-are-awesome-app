@@ -7,8 +7,8 @@ import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
 import SubmitMessageInputForm from "../components/contribution/AddPostInputs";
 import { Route } from "../navigation/Route";
-import { submitMessage } from "../state/action-creators/addPost";
-import { IMessage, IMessageContent } from "../state/state/IPost";
+import { submitMessage } from "../state/action-creators/submitMessage";
+import { IMessage, IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
 interface StateProps {

@@ -1,4 +1,4 @@
-import { submitMessage } from "../../../src/state/action-creators/addPost";
+import { submitMessage } from "../../../src/state/action-creators/submitMessage";
 import { ActionType } from "../../../src/state/actions/ActionType";
 import { mock } from "../../helpers/mocks";
 

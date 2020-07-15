@@ -1,4 +1,4 @@
-import { IMessageContent } from "../state/state/IPost";
+import { IMessageContent } from "../state/state/IMessage";
 
 /**
  * Pick props so that the returned value is an exact IMessageContent with no additional props.
