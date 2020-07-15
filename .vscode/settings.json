@@ -1,4 +1,8 @@
 {
     "markiscodecoverage.searchCriteria": "coverage/lcov.info",
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "terminal.integrated.env.linux": {
+        "TZ": "Europe/Berlin"
+    },
+    "jest.pathToConfig": "./jest.config.js"
 }

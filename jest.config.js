@@ -1,5 +1,7 @@
 const expoPreset = require("jest-expo/jest-preset");
 
+process.env.TZ = "Europe/Berlin";
+
 module.exports = Object.assign(expoPreset, {
     setupFiles: [...expoPreset.setupFiles, "jest-date-mock"],
     transformIgnorePatterns: [
