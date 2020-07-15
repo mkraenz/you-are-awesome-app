@@ -1,4 +1,4 @@
-import { PostWithDate } from "../redux/IPost";
+import { PostWithDate } from "../state/state/IPost";
 
 export async function fetchPosts(uri: string, fetchFn = fetch) {
     const response = await fetchFn(uri);

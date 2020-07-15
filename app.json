@@ -4,16 +4,29 @@
     "expo": {
         "name": "You are Awesome App!",
         "slug": "you-are-awesome-app",
+        "orientation": "portrait",
         "icon": "./assets/google-play-store/logo.png",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "sdkVersion": "35.0.0",
-        "version": "1.1.0",
+        "sdkVersion": "37.0.0",
+        "version": "1.2.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json"
+        },
+        "ios": {
+            "supportsTablet": true
         },
         "description": "Join our community that tells you HOW AWESOME YOU ARE. Spread the awesomeness by sending awesome messages to other people around the globe and feel proud to help them reach their goals."
     }

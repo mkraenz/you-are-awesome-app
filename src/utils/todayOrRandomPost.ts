@@ -1,5 +1,5 @@
 import { random } from "lodash";
-import { PostWithDate } from "../redux/IPost";
+import { PostWithDate } from "../state/state/IPost";
 import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
 
 export function todayOrRandomPost(posts: PostWithDate[], now = new Date()) {

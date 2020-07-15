@@ -1,5 +1,5 @@
 import { fetchPosts } from "../../src/api/fetchPosts";
-import { PostWithDate } from "../../src/redux/IPost";
+import { PostWithDate } from "../../src/state/state/IPost";
 
 describe("fetchPosts", () => {
     it("returns todays post if found", async () => {

@@ -11,8 +11,8 @@ export const registerForPushNotifications = async (time: Date) => {
         },
         body: JSON.stringify({
             token,
-            hour: time.getHours(),
-            minute: time.getMinutes(),
+            hour: time.getUTCHours(),
+            minute: time.getUTCMinutes(),
         }),
     });
 };

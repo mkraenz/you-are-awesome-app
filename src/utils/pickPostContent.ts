@@ -1,4 +1,4 @@
-import { IPostContent } from "../redux/IPost";
+import { IPostContent } from "../state/state/IPost";
 
 /**
  * Pick props so that the returned value is an exact IPostContent with no additional props.

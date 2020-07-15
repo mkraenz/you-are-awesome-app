@@ -1,4 +1,4 @@
-import { PostWithDate } from "../redux/IPost";
+import { PostWithDate } from "../state/state/IPost";
 import { toIsoDateString } from "./toTodayString";
 
 export const maybeGetTodaysPost = (
@@ -7,5 +7,5 @@ export const maybeGetTodaysPost = (
 ): PostWithDate | undefined => {
     const today = toIsoDateString(now);
     // why does Array.find() not have return type T | undefined?
-    return posts.find(post => post.isodate.slice(0, 10) === today);
+    return posts.find((post) => post.isodate.slice(0, 10) === today);
 };

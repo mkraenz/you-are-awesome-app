@@ -1,4 +1,4 @@
-import { IPostContent } from "../redux/IPost";
+import { IPostContent } from "../state/state/IPost";
 import { pickPostContent } from "../utils/pickPostContent";
 
 const HTTP_CREATED = 201;
@@ -24,7 +24,7 @@ export const waitAndSendPostToServer = async (
 };
 
 const delay = (backoffInMs: number) =>
-    new Promise(resolve =>
+    new Promise((resolve) =>
         setTimeout(() => {
             resolve();
         }, backoffInMs)

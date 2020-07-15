@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<withTheme(Appbar.Header)>
+  <Appbar.Action
+    icon="menu"
+    onPress={[Function]}
+    size={24}
+  />
+  <withTheme(Appbar.Content)
+    title="my-title"
+  />
+  <Appbar.Action
+    icon="magnify"
+    onPress={[Function]}
+    size={24}
+  />
+  <Appbar.Action
+    icon="dots-vertical"
+    onPress={[Function]}
+    size={24}
+  />
+</withTheme(Appbar.Header)>
+`;

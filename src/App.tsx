@@ -1,21 +1,20 @@
 import React from "react";
-import { Provider } from "react-redux";
-import AppStateChangedContainer from "./AppStateChangedContainer";
-import NavigationAppContainer from "./NavigationAppContainer";
-import NetInfoChangedContainer from "./NetInfoChangedContainer";
-import ReceivePushNotificationsContainer from "./ReceivePushNotificationsContainer";
-import store from "./redux";
+import "react-native-gesture-handler";
+import { Provider as StoreProvider } from "react-redux";
+import AppStateChangedContainer from "./app-containers/AppStateChangedContainer";
+import NetInfoChangedContainer from "./app-containers/NetInfoChangedContainer";
+import "./localization/i18n";
+import store from "./state/store";
+import ThemedApp from "./themes/ThemedApp";
 
-const App = () => (
-    <Provider store={store}>
-        <AppStateChangedContainer>
+export default function App() {
+    return (
+        <StoreProvider store={store}>
             <NetInfoChangedContainer>
-                <ReceivePushNotificationsContainer>
-                    <NavigationAppContainer />
-                </ReceivePushNotificationsContainer>
+                <AppStateChangedContainer>
+                    <ThemedApp />
+                </AppStateChangedContainer>
             </NetInfoChangedContainer>
-        </AppStateChangedContainer>
-    </Provider>
-);
-
-export default App;
+        </StoreProvider>
+    );
+}
