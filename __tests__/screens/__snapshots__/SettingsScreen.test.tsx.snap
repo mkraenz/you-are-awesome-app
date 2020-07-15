@@ -652,7 +652,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                 ]
               }
             >
-              6:00 AM
+              11:00 PM
             </Text>
           </View>
         </View>
@@ -2525,7 +2525,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                 ]
               }
             >
-              6:00 AM
+              11:00 PM
             </Text>
           </View>
         </View>
