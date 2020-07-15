@@ -1,102 +1,103 @@
 import { ActionType } from "../../../src/state/actions/ActionType";
 import {
-    IPostSendRequested,
-    IPostsFetchFailedTimeoutExceeded,
-    IPostsFetchRequested,
-    IPostsFetchSucceeded,
+    IFetchMessagesFailedTimeoutExceeded,
+    IFetchMessagesRequested,
+    IFetchMessagesSucceeded,
+    ISubmitMessageRequested,
 } from "../../../src/state/actions/IAction";
 import {
-    initialPost,
-    postReducer,
+    initialMessage,
+    messageReducer,
 } from "../../../src/state/reducers/postReducer";
-import { IPostsState } from "../../../src/state/state/IPostsState";
+import { IMessagesState } from "../../../src/state/state/IPostsState";
 import { mock } from "../../helpers/mocks";
 
-describe("postReducer", () => {
+describe("messagesReducer", () => {
     it("should return the initial state", () => {
-        const result = postReducer(undefined, {} as any);
+        const result = messageReducer(undefined, {} as any);
 
-        expect(result).toEqual({
-            currentPost: initialPost,
+        const expected: IMessagesState = {
+            currentMessage: initialMessage,
             refreshing: false,
             lastUpdate: new Date(0),
-        });
+        };
+        expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.PostSendRequested}`, () => {
-        const action: IPostSendRequested = {
-            type: ActionType.PostSendRequested,
-            payload: mock.post,
+    it(`should handle ${ActionType.SubmitMessageRequested}`, () => {
+        const action: ISubmitMessageRequested = {
+            type: ActionType.SubmitMessageRequested,
+            payload: mock.message,
         };
-        const state: IPostsState = {
-            currentPost: null as any,
+        const state: IMessagesState = {
+            currentMessage: null as any,
             lastUpdate: new Date(0),
             refreshing: false,
         };
 
-        const result = postReducer(state, action);
+        const result = messageReducer(state, action);
 
-        const expected: IPostsState = {
-            currentPost: mock.post,
+        const expected: IMessagesState = {
+            currentMessage: mock.message,
             lastUpdate: new Date(0),
             refreshing: false,
         };
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.PostsFetchRequested}`, () => {
-        const action: IPostsFetchRequested = {
-            type: ActionType.PostsFetchRequested,
+    it(`should handle ${ActionType.FetchMessagesRequested}`, () => {
+        const action: IFetchMessagesRequested = {
+            type: ActionType.FetchMessagesRequested,
             payload: { now: new Date(123) },
         };
-        const state: IPostsState = {
-            currentPost: null as any,
+        const state: IMessagesState = {
+            currentMessage: null as any,
             lastUpdate: new Date(0),
             refreshing: false,
         };
 
-        const result = postReducer(state, action);
+        const result = messageReducer(state, action);
 
-        const expected: IPostsState = {
-            currentPost: null as any,
+        const expected: IMessagesState = {
+            currentMessage: null as any,
             lastUpdate: new Date(0),
             refreshing: true,
         };
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.PostsFetchSucceeded}`, () => {
-        const action: IPostsFetchSucceeded = {
-            type: ActionType.PostsFetchSucceeded,
+    it(`should handle ${ActionType.FetchMessagesSucceeded}`, () => {
+        const action: IFetchMessagesSucceeded = {
+            type: ActionType.FetchMessagesSucceeded,
             payload: {
                 now: new Date(123),
-                post: mock.post,
-                posts: mock.posts,
+                message: mock.message,
+                messages: mock.messages,
             },
         };
-        const state: IPostsState = {
-            currentPost: null as any,
+        const state: IMessagesState = {
+            currentMessage: null as any,
             lastUpdate: new Date(0),
             refreshing: true,
         };
 
-        const result = postReducer(state, action);
+        const result = messageReducer(state, action);
 
-        const expected: IPostsState = {
-            currentPost: action.payload.post,
+        const expected: IMessagesState = {
+            currentMessage: action.payload.message,
             lastUpdate: action.payload.now,
             refreshing: false,
         };
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.PostsFetchFailedTimeoutExceeded}`, () => {
-        const action: IPostsFetchFailedTimeoutExceeded = {
-            type: ActionType.PostsFetchFailedTimeoutExceeded,
+    it(`should handle ${ActionType.FetchMessagesFailedTimeoutExceeded}`, () => {
+        const action: IFetchMessagesFailedTimeoutExceeded = {
+            type: ActionType.FetchMessagesFailedTimeoutExceeded,
             payload: {
                 error: new Error("an error message"),
                 originalAction: {
-                    type: ActionType.PostsFetchRequested,
+                    type: ActionType.FetchMessagesRequested,
                     payload: {
                         now: new Date("2013"),
                     },
@@ -104,16 +105,16 @@ describe("postReducer", () => {
             },
             error: true,
         };
-        const state: IPostsState = {
-            currentPost: null as any,
+        const state: IMessagesState = {
+            currentMessage: null as any,
             lastUpdate: new Date(0),
             refreshing: true,
         };
 
-        const result = postReducer(state, action);
+        const result = messageReducer(state, action);
 
-        const expected: IPostsState = {
-            currentPost: null as any,
+        const expected: IMessagesState = {
+            currentMessage: null as any,
             lastUpdate: new Date(0),
             refreshing: false,
         };

@@ -1,11 +1,11 @@
-import { PostWithDate } from "../state/state/IPost";
+import { MessageWithDate } from "../state/state/IPost";
 import { toIsoDateString } from "./toTodayString";
 
-export const maybeGetTodaysPost = (
+export const maybeGetTodaysMessages = (
     now: Date,
-    posts: PostWithDate[]
-): PostWithDate | undefined => {
+    messages: MessageWithDate[]
+): MessageWithDate | undefined => {
     const today = toIsoDateString(now);
     // why does Array.find() not have return type T | undefined?
-    return posts.find((post) => post.isodate.slice(0, 10) === today);
+    return messages.find((msg) => msg.isodate.slice(0, 10) === today);
 };

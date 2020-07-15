@@ -1,77 +1,77 @@
-import { IPost, PostWithDate } from "../state/IPost";
+import { IMessage, MessageWithDate } from "../state/IPost";
 import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
 import { INetworkAction } from "./INetworkAction";
-import { SendPostAction } from "./SendPostAction";
+import { SubmitMessageAction } from "./SendPostAction";
 import { IActionWithPayload } from "./utils";
 
 export type IAnyAction =
-    | IPostAction
+    | IMessageAction
     | IAppAction
     | INetworkAction
-    | SendPostAction;
+    | SubmitMessageAction;
 
-export type IPostAction =
-    | IPostSendRequested
-    | IPostsFetchSucceeded
-    | IPostsFetchRequested
-    | IPostsFetchFailedTimeoutExceeded;
+export type IMessageAction =
+    | ISubmitMessageRequested
+    | IFetchMessagesSucceeded
+    | IFetchMessagesRequested
+    | IFetchMessagesFailedTimeoutExceeded;
 
-export interface IPostsFetchSucceeded {
-    type: ActionType.PostsFetchSucceeded;
+export interface IFetchMessagesSucceeded {
+    type: ActionType.FetchMessagesSucceeded;
     payload: {
-        post: IPost;
+        message: IMessage;
         now: Date;
-        posts: PostWithDate[];
+        messages: MessageWithDate[];
     };
 }
 
-export type IPostsFetchRequested = IActionWithPayload<
-    ActionType.PostsFetchRequested,
+export type IFetchMessagesRequested = IActionWithPayload<
+    ActionType.FetchMessagesRequested,
     { now: Date }
 >;
 
-export interface IPostsFetchFailed {
-    type: ActionType.PostsFetchFailed;
+export interface IFetchMessagesFailed {
+    type: ActionType.FetchMessagesFailed;
     payload: {
-        originalAction: IPostsFetchRequested;
+        originalAction: IFetchMessagesRequested;
         error: Error;
     };
     error: true;
 }
 
-export interface IPostsFetchFailedTimeoutExceeded {
-    type: ActionType.PostsFetchFailedTimeoutExceeded;
+export interface IFetchMessagesFailedTimeoutExceeded {
+    type: ActionType.FetchMessagesFailedTimeoutExceeded;
     payload: {
-        originalAction: IPostsFetchRequested;
+        originalAction: IFetchMessagesRequested;
         error: Error;
     };
     error: true;
 }
 
-export type IPostSendRequested = IActionWithPayload<
-    ActionType.PostSendRequested,
-    IPost
+export type ISubmitMessageRequested = IActionWithPayload<
+    ActionType.SubmitMessageRequested,
+    IMessage
 >;
 
-export interface IPostSendFailed {
-    type: ActionType.PostSendFailed;
+export interface ISubmitMessageFailed {
+    type: ActionType.SubmitMessageFailed;
     payload: {
-        originalAction: IPostSendRequested;
+        originalAction: ISubmitMessageRequested;
         error: Error;
     };
     error: true;
 }
 
-export interface IPostSendSucceeded {
-    type: ActionType.PostSendSucceeded;
+export interface ISubmitMessageSucceeded {
+    type: ActionType.SubmitMessageSucceeded;
     payload: unknown;
 }
 
-export interface IPostSendFailedTimeoutExceeded {
-    type: ActionType.PostSendFailedTimeoutExceeded;
+export interface ISubmitMessageFailedTimeoutExceeded {
+    type: ActionType.SubmitMessageFailedTimeoutExceeded;
     payload: {
-        originalAction: IPostSendRequested;
+        originalAction: ISubmitMessageRequested;
         error: Error;
     };
     error: true;

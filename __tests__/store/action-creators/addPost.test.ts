@@ -1,14 +1,14 @@
-import { addPost } from "../../../src/state/action-creators/addPost";
+import { submitMessage } from "../../../src/state/action-creators/addPost";
 import { ActionType } from "../../../src/state/actions/ActionType";
 import { mock } from "../../helpers/mocks";
 
 it("returns correct action", () => {
-    const post = mock.post;
+    const msg = mock.message;
 
-    const result = addPost(post);
+    const result = submitMessage(msg);
 
     expect(result).toEqual({
-        type: ActionType.PostSendRequested,
-        payload: post,
+        type: ActionType.SubmitMessageRequested,
+        payload: msg,
     });
 });

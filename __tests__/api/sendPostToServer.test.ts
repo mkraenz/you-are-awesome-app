@@ -1,6 +1,6 @@
-import { waitAndSendPostToServer } from "../../src/api/sendPostToServer";
+import { waitAndSubmitMessageToServer } from "../../src/api/sendPostToServer";
 
-describe("waitAndSendPostToServer()", () => {
+describe("waitAndSubmitMessageToServer()", () => {
     it("returns the response json body", async () => {
         const responseBody = { myData: "someValue" };
         const fetchMock = jest.fn(() =>
@@ -9,14 +9,14 @@ describe("waitAndSendPostToServer()", () => {
                 json: () => responseBody,
             } as unknown) as Response)
         );
-        const post = {
+        const msg = {
             author: "my author",
             country: "my country",
             text: "my text",
         };
 
-        const result = await waitAndSendPostToServer(
-            post,
+        const result = await waitAndSubmitMessageToServer(
+            msg,
             "irrelevant-uri",
             0,
             fetchMock
@@ -24,7 +24,7 @@ describe("waitAndSendPostToServer()", () => {
 
         expect(result).toBe(responseBody);
         expect(fetchMock).toHaveBeenCalledWith("irrelevant-uri", {
-            body: JSON.stringify(post),
+            body: JSON.stringify(msg),
             headers: {
                 ["Content-Type"]: "application/json",
             },
@@ -40,7 +40,7 @@ describe("waitAndSendPostToServer()", () => {
             } as unknown) as Response)
         );
 
-        const resultPromise = waitAndSendPostToServer(
+        const resultPromise = waitAndSubmitMessageToServer(
             {
                 author: "my author",
                 country: "my country",

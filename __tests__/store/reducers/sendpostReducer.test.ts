@@ -1,104 +1,104 @@
 import { ActionType } from "../../../src/state/actions/ActionType";
 import {
-    IPostSendFailed,
-    IPostSendSucceeded,
+    ISubmitMessageFailed,
+    ISubmitMessageSucceeded,
 } from "../../../src/state/actions/IAction";
-import { sendPostReducer } from "../../../src/state/reducers/sendPostReducer";
-import { ISendPostState } from "../../../src/state/state/ISendPostState";
+import { submitMessageReducer } from "../../../src/state/reducers/sendPostReducer";
+import { ISubmitMessageState } from "../../../src/state/state/ISendPostState";
 import { mock } from "../../helpers/mocks";
 
-describe("sendPostReducer", () => {
+describe("submitMessageReducer", () => {
     it("should return the initial state", () => {
-        const result = sendPostReducer(undefined, {} as any);
+        const result = submitMessageReducer(undefined, {} as any);
 
         expect(result).toEqual({ backoffInMs: 0 });
     });
 
-    it("should handle POST_SEND_SUCCEEDED", () => {
-        const action: IPostSendSucceeded = {
-            type: ActionType.PostSendSucceeded,
-            payload: mock.post,
+    it(`should handle ${ActionType.SubmitMessageSucceeded}`, () => {
+        const action: ISubmitMessageSucceeded = {
+            type: ActionType.SubmitMessageSucceeded,
+            payload: mock.message,
         };
-        const state: ISendPostState = {
+        const state: ISubmitMessageState = {
             backoffInMs: 987,
         };
 
-        const result = sendPostReducer(state, action);
+        const result = submitMessageReducer(state, action);
 
-        const expected: ISendPostState = {
+        const expected: ISubmitMessageState = {
             backoffInMs: 0,
         };
         expect(result).toEqual(expected);
     });
 
-    describe("POST_SEND_FAILED", () => {
+    describe(`${ActionType.SubmitMessageFailed}`, () => {
         it("should backoff 1 sec if first fail", () => {
-            const action: IPostSendFailed = {
-                type: ActionType.PostSendFailed,
+            const action: ISubmitMessageFailed = {
+                type: ActionType.SubmitMessageFailed,
                 payload: {
                     error: new Error("an error message"),
                     originalAction: {
-                        type: ActionType.PostSendRequested,
-                        payload: mock.post,
+                        type: ActionType.SubmitMessageRequested,
+                        payload: mock.message,
                     },
                 },
                 error: true,
             };
-            const state: ISendPostState = {
+            const state: ISubmitMessageState = {
                 backoffInMs: 0,
             };
 
-            const result = sendPostReducer(state, action);
+            const result = submitMessageReducer(state, action);
 
-            const expected: ISendPostState = {
+            const expected: ISubmitMessageState = {
                 backoffInMs: 1000,
             };
             expect(result).toEqual(expected);
         });
 
         it("should double backoff", () => {
-            const action: IPostSendFailed = {
-                type: ActionType.PostSendFailed,
+            const action: ISubmitMessageFailed = {
+                type: ActionType.SubmitMessageFailed,
                 payload: {
                     error: new Error("an error message"),
                     originalAction: {
-                        type: ActionType.PostSendRequested,
-                        payload: mock.post,
+                        type: ActionType.SubmitMessageRequested,
+                        payload: mock.message,
                     },
                 },
                 error: true,
             };
-            const state: ISendPostState = {
+            const state: ISubmitMessageState = {
                 backoffInMs: 987,
             };
 
-            const result = sendPostReducer(state, action);
+            const result = submitMessageReducer(state, action);
 
-            const expected: ISendPostState = {
+            const expected: ISubmitMessageState = {
                 backoffInMs: 987 * 2,
             };
             expect(result).toEqual(expected);
         });
 
         it("should max out at 1 min", () => {
-            const action: IPostSendFailed = {
-                type: ActionType.PostSendFailed,
+            const action: ISubmitMessageFailed = {
+                type: ActionType.SubmitMessageFailed,
                 payload: {
                     error: new Error("an error message"),
                     originalAction: {
-                        type: ActionType.PostSendRequested,
-                        payload: mock.post,
+                        type: ActionType.SubmitMessageRequested,
+                        payload: mock.message,
                     },
                 },
                 error: true,
             };
-            const state: ISendPostState = {
+            const state: ISubmitMessageState = {
                 backoffInMs: 30001,
             };
 
-            const result = sendPostReducer(state, action);
+            const result = submitMessageReducer(state, action);
 
-            const expected: ISendPostState = {
+            const expected: ISubmitMessageState = {
                 backoffInMs: 60000, // 1 min
             };
             expect(result).toEqual(expected);

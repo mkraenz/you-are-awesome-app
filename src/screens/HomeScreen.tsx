@@ -3,9 +3,9 @@ import { StyleSheet, View } from "react-native";
 import { Card, Paragraph, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
-import RefreshPostsView from "../components/RefreshPostsView";
+import RefreshMessagesView from "../components/RefreshPostsView";
 import { Route } from "../navigation/Route";
-import { IPostContent } from "../state/state/IPost";
+import { IMessageContent } from "../state/state/IPost";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { FullTheme } from "../themes/theme";
 
@@ -20,20 +20,20 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    post: IPostContent;
+    msg: IMessageContent;
 }
 
-const HomeScreen: FC<Props> = ({ post }) => {
+const HomeScreen: FC<Props> = ({ msg }) => {
     const theme = useTheme() as FullTheme;
     const cardStyle = theme.dark
         ? {
               backgroundColor: theme.colors.accentedCard,
           }
         : { backgroundColor: theme.colors.primary };
-    const { author, text, country } = post;
+    const { author, text, country } = msg;
     return (
         <Layout route={Route.Home}>
-            <RefreshPostsView>
+            <RefreshMessagesView>
                 <View style={styles.container}>
                     <Card style={cardStyle}>
                         <Card.Content>
@@ -44,13 +44,13 @@ const HomeScreen: FC<Props> = ({ post }) => {
                         </Card.Content>
                     </Card>
                 </View>
-            </RefreshPostsView>
+            </RefreshMessagesView>
         </Layout>
     );
 };
 
 const mapStateToProps: MapStateToProps<Props> = (state) => ({
-    post: state.posts.currentPost,
+    msg: state.messages.currentMessage,
 });
 
 export default connect(mapStateToProps)(HomeScreen);

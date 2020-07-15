@@ -29,6 +29,7 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
                 ...state,
                 pushNotificationsScheduledTime: action.payload.scheduledTime,
             };
+        default:
+            return state;
     }
-    return state;
 };

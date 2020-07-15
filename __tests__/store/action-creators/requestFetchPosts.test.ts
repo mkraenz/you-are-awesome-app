@@ -1,13 +1,13 @@
-import { requestFetchPosts } from "../../../src/state/action-creators/requestFetchPosts";
+import { requestFetchMessages } from "../../../src/state/action-creators/requestFetchPosts";
 import { ActionType } from "../../../src/state/actions/ActionType";
 
 it("returns correct action", () => {
     const date = new Date("2016");
 
-    const result = requestFetchPosts(date);
+    const result = requestFetchMessages(date);
 
     expect(result).toEqual({
-        type: ActionType.PostsFetchRequested,
+        type: ActionType.FetchMessagesRequested,
         payload: { now: date },
     });
 });

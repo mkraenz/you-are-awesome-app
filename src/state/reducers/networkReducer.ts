@@ -1,3 +1,4 @@
+import { isEmpty } from "lodash";
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
 import { INetworkAction } from "../actions/INetworkAction";
@@ -9,12 +10,16 @@ export const networkReducer: Reducer<INetworkState, INetworkAction> = (
     },
     action
 ) => {
+    if (isEmpty(action)) {
+        return state;
+    }
     switch (action.type) {
         case ActionType.NetInfoChanged:
             return {
                 ...state,
                 connected: action.payload.connected,
             };
+        default:
+            return state;
     }
-    return state;
 };

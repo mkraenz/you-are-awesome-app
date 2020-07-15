@@ -1,16 +1,16 @@
-import { IPostContent } from "../state/state/IPost";
-import { pickPostContent } from "../utils/pickPostContent";
+import { IMessageContent } from "../state/state/IPost";
+import { pickMessageContent } from "../utils/pickPostContent";
 
 const HTTP_CREATED = 201;
 
-export const waitAndSendPostToServer = async (
-    post: IPostContent,
+export const waitAndSubmitMessageToServer = async (
+    msg: IMessageContent,
     uri: string,
     backoffInMs: number,
     fetchFn = fetch
 ) => {
     await delay(backoffInMs);
-    const response = await fetchFn(uri, getRequest(post));
+    const response = await fetchFn(uri, getRequest(msg));
     if (response.status !== HTTP_CREATED) {
         return Promise.reject(
             new Error(
@@ -30,11 +30,11 @@ const delay = (backoffInMs: number) =>
         }, backoffInMs)
     );
 
-const getRequest = (post: IPostContent): RequestInit => ({
+const getRequest = (msg: IMessageContent): RequestInit => ({
     method: "POST",
     headers: {
         "Content-Type": "application/json",
     },
     redirect: "error",
-    body: JSON.stringify(pickPostContent(post)),
+    body: JSON.stringify(pickMessageContent(msg)),
 });

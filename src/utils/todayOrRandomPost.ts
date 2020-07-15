@@ -1,11 +1,14 @@
 import { random } from "lodash";
-import { PostWithDate } from "../state/state/IPost";
-import { maybeGetTodaysPost } from "./maybeGetTodaysPost";
+import { MessageWithDate } from "../state/state/IPost";
+import { maybeGetTodaysMessages } from "./maybeGetTodaysPost";
 
-export function todayOrRandomPost(posts: PostWithDate[], now = new Date()) {
-    const todaysPost = maybeGetTodaysPost(now, posts);
-    if (todaysPost) {
-        return todaysPost;
+export function todaysMessageOrRandomMessage(
+    messages: MessageWithDate[],
+    now = new Date()
+) {
+    const todaysMessage = maybeGetTodaysMessages(now, messages);
+    if (todaysMessage) {
+        return todaysMessage;
     }
-    return posts[random(posts.length - 1)];
+    return messages[random(messages.length - 1)];
 }

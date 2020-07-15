@@ -1,11 +1,11 @@
 import { IAppState } from "./IAppState";
 import { INetworkState } from "./INetworkState";
-import { IPostsState } from "./IPostsState";
-import { ISendPostState } from "./ISendPostState";
+import { IMessagesState } from "./IPostsState";
+import { ISubmitMessageState } from "./ISendPostState";
 
 export interface IState {
-    posts: IPostsState;
+    messages: IMessagesState;
     app: IAppState;
     network: INetworkState;
-    sendPost: ISendPostState;
+    submitMessage: ISubmitMessageState;
 }

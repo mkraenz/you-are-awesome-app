@@ -1,7 +1,7 @@
-import { IPost } from "./IPost";
+import { IMessage } from "./IPost";
 
-export interface IPostsState {
-    currentPost: IPost;
+export interface IMessagesState {
+    currentMessage: IMessage;
     refreshing: boolean;
     lastUpdate: Date;
 }

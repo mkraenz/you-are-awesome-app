@@ -1,19 +1,19 @@
-import { maybeGetTodaysPost } from "../../src/utils/maybeGetTodaysPost";
+import { maybeGetTodaysMessages } from "../../src/utils/maybeGetTodaysPost";
 
-describe("maybeGetTodaysPost()", () => {
-    it("returns undefined for empty posts array", () => {
+describe("maybeGetTodaysMessages()", () => {
+    it("returns undefined for empty messages", () => {
         const today = new Date("2019-10-18");
 
-        const result = maybeGetTodaysPost(today, []);
+        const result = maybeGetTodaysMessages(today, []);
 
         expect(result).toBeUndefined();
     });
 
-    it("returns today's post", () => {
+    it("returns today's message", () => {
         const today = new Date("2019-10-18");
         const nonMatchingIsodate = "2000-01-01";
         const matchingIsodate = "2019-10-18";
-        const posts = [
+        const messages = [
             {
                 author: "my-author-1",
                 country: "my-country-1",
@@ -30,8 +30,8 @@ describe("maybeGetTodaysPost()", () => {
             },
         ];
 
-        const result = maybeGetTodaysPost(today, posts);
+        const result = maybeGetTodaysMessages(today, messages);
 
-        expect(result).toBe(posts[1]);
+        expect(result).toBe(messages[1]);
     });
 });

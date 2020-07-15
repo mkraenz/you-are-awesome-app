@@ -1,15 +1,18 @@
+import { todaysMessageOrRandomMessage } from "../../src/utils/todayOrRandomPost";
 import { mock } from "../helpers/mocks";
-import { todayOrRandomPost } from "../../src/utils/todayOrRandomPost";
 
-it("returns todays post if available", () => {
-    const result = todayOrRandomPost(
-        mock.posts,
-        new Date(mock.posts[1].isodate)
+it("returns todays message if available", () => {
+    const result = todaysMessageOrRandomMessage(
+        mock.messages,
+        new Date(mock.messages[1].isodate)
     );
-    expect(result).toBe(mock.posts[1]);
+    expect(result).toBe(mock.messages[1]);
 });
 
-it("returns random post if todays post unavailable", () => {
-    const result = todayOrRandomPost(mock.posts, new Date("2000"));
-    expect(mock.posts).toContain(result);
+it("returns random message if todays message unavailable", () => {
+    const result = todaysMessageOrRandomMessage(
+        mock.messages,
+        new Date("2000")
+    );
+    expect(mock.messages).toContain(result);
 });

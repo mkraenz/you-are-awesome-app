@@ -1,4 +1,6 @@
-import { IPostSendFailed, IPostSendSucceeded } from "./IAction";
+import { ISubmitMessageFailed, ISubmitMessageSucceeded } from "./IAction";
 
 // TODO move sub-actions here
-export type SendPostAction = IPostSendFailed | IPostSendSucceeded;
+export type SubmitMessageAction =
+    | ISubmitMessageFailed
+    | ISubmitMessageSucceeded;

@@ -1,13 +1,13 @@
 import { Component, ReactNode } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
-import { requestFetchPosts } from "../state/action-creators/requestFetchPosts";
+import { requestFetchMessages } from "../state/action-creators/requestFetchPosts";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { isToday } from "../utils/toTodayString";
 
 interface Props {
     lastUpdate: Date;
-    requestFetchPosts: (now: Date) => void;
+    requestFetchMessages: (now: Date) => void;
     children: ReactNode;
 }
 
@@ -25,9 +25,9 @@ class AppStateChangedContainer extends Component<Props> {
     }
 
     private handleAppStateChange(nextAppState: AppStateStatus) {
-        const { lastUpdate, requestFetchPosts } = this.props;
+        const { lastUpdate, requestFetchMessages } = this.props;
         if (nextAppState === "active" && !isToday(lastUpdate)) {
-            requestFetchPosts(new Date());
+            requestFetchMessages(new Date());
         }
     }
 
@@ -39,11 +39,11 @@ class AppStateChangedContainer extends Component<Props> {
 const mapStateToProps: MapStateToProps<Pick<Props, "lastUpdate">> = (
     state
 ) => ({
-    lastUpdate: state.posts.lastUpdate,
+    lastUpdate: state.messages.lastUpdate,
 });
 
-const mapDispatchToProps: Pick<Props, "requestFetchPosts"> = {
-    requestFetchPosts,
+const mapDispatchToProps: Pick<Props, "requestFetchMessages"> = {
+    requestFetchMessages,
 };
 
 export default connect(

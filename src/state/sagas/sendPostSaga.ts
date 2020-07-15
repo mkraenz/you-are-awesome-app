@@ -1,22 +1,24 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
-import { waitAndSendPostToServer } from "../../api/sendPostToServer";
+import { waitAndSubmitMessageToServer } from "../../api/sendPostToServer";
 import { MAX_BACKOFF_IN_MS, URI } from "../../config";
+import { pickMessageContent } from "../../utils/pickPostContent";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
 import {
-    IPostSendFailed,
-    IPostSendFailedTimeoutExceeded,
-    IPostSendRequested,
-    IPostSendSucceeded,
+    ISubmitMessageFailed,
+    ISubmitMessageFailedTimeoutExceeded,
+    ISubmitMessageRequested,
+    ISubmitMessageSucceeded,
 } from "../actions/IAction";
 import { backoffInMs } from "../selectors";
-import { IPostContent } from "../state/IPost";
 
 const TIMEOUT_EXCEEDED = "Maximum timeout exceeded. Sending to server failed.";
 
-function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
-    const postSendRequested =
-        action.type === ActionType.PostSendRequested
+function* submitMessageWorkerSaga(
+    action: ISubmitMessageRequested | ISubmitMessageFailed
+) {
+    const submitMessageRequested =
+        action.type === ActionType.SubmitMessageRequested
             ? action
             : action.payload.originalAction;
     try {
@@ -26,39 +28,33 @@ function* sendPostWorkerSaga(action: IPostSendRequested | IPostSendFailed) {
         if (backoff > MAX_BACKOFF_IN_MS) {
             throw new Error(TIMEOUT_EXCEEDED);
         }
-        const responseData: AwaitedReturnType<typeof waitAndSendPostToServer> = yield call(
-            waitAndSendPostToServer,
-            pickPostContent(postSendRequested.payload),
-            URI.SEND_POST,
+        const responseData: AwaitedReturnType<typeof waitAndSubmitMessageToServer> = yield call(
+            waitAndSubmitMessageToServer,
+            pickMessageContent(submitMessageRequested.payload),
+            URI.SEND_MESSAGES,
             backoff
         );
-        const success: IPostSendSucceeded = {
-            type: ActionType.PostSendSucceeded,
+        const success: ISubmitMessageSucceeded = {
+            type: ActionType.SubmitMessageSucceeded,
             payload: responseData,
         };
         yield put(success);
     } catch (e) {
-        yield* handleSendFailed(e, postSendRequested);
+        yield* handleSendFailed(e, submitMessageRequested);
     }
 }
 
-const pickPostContent = (post: IPostContent): IPostContent => ({
-    author: post.author,
-    country: post.country,
-    text: post.text,
-});
-
-function* handleSendFailed(e: Error, action: IPostSendRequested) {
+function* handleSendFailed(e: Error, action: ISubmitMessageRequested) {
     if (e.message === TIMEOUT_EXCEEDED) {
-        const finalErrorAction: IPostSendFailedTimeoutExceeded = {
-            type: ActionType.PostSendFailedTimeoutExceeded,
+        const finalErrorAction: ISubmitMessageFailedTimeoutExceeded = {
+            type: ActionType.SubmitMessageFailedTimeoutExceeded,
             payload: { originalAction: action, error: e },
             error: true,
         };
         yield put(finalErrorAction);
     } else {
-        const errorAction: IPostSendFailed = {
-            type: ActionType.PostSendFailed,
+        const errorAction: ISubmitMessageFailed = {
+            type: ActionType.SubmitMessageFailed,
             payload: { originalAction: action, error: e },
             error: true,
         };
@@ -66,11 +62,11 @@ function* handleSendFailed(e: Error, action: IPostSendRequested) {
     }
 }
 
-function* sendPostSaga() {
+function* submitMessageSaga() {
     yield takeEvery(
-        [ActionType.PostSendRequested, ActionType.PostSendFailed],
-        sendPostWorkerSaga
+        [ActionType.SubmitMessageRequested, ActionType.SubmitMessageFailed],
+        submitMessageWorkerSaga
     );
 }
 
-export default sendPostSaga;
+export default submitMessageSaga;

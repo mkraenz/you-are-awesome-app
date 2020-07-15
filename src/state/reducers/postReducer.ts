@@ -1,10 +1,10 @@
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
-import { IPostAction } from "../actions/IAction";
-import { IPost } from "../state/IPost";
-import { IPostsState } from "../state/IPostsState";
+import { IMessageAction } from "../actions/IAction";
+import { IMessage } from "../state/IPost";
+import { IMessagesState } from "../state/IPostsState";
 
-export const initialPost: IPost = {
+export const initialMessage: IMessage = {
     id: "0",
     // text: "Loading...",
     // author: "",
@@ -14,38 +14,39 @@ export const initialPost: IPost = {
     text: "You can make a change. Stay awesome as you are!",
 };
 
-export const postReducer: Reducer<IPostsState, IPostAction> = (
+export const messageReducer: Reducer<IMessagesState, IMessageAction> = (
     state = {
-        currentPost: initialPost,
+        currentMessage: initialMessage,
         refreshing: false,
         lastUpdate: new Date(0), // epoch
     },
     action
 ) => {
     switch (action.type) {
-        case ActionType.PostSendRequested:
+        case ActionType.SubmitMessageRequested:
             return {
                 ...state,
-                currentPost: action.payload,
+                currentMessage: action.payload,
                 refreshing: false,
             };
-        case ActionType.PostsFetchSucceeded:
+        case ActionType.FetchMessagesSucceeded:
             return {
                 ...state,
-                currentPost: action.payload.post,
+                currentMessage: action.payload.message,
                 lastUpdate: action.payload.now,
                 refreshing: false,
             };
-        case ActionType.PostsFetchRequested:
+        case ActionType.FetchMessagesRequested:
             return {
                 ...state,
                 refreshing: true,
             };
-        case ActionType.PostsFetchFailedTimeoutExceeded:
+        case ActionType.FetchMessagesFailedTimeoutExceeded:
             return {
                 ...state,
                 refreshing: false,
             };
+        default:
+            return state;
     }
-    return state;
 };

@@ -1,22 +1,26 @@
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
-import { SendPostAction } from "../actions/SendPostAction";
-import { ISendPostState } from "../state/ISendPostState";
+import { SubmitMessageAction } from "../actions/SendPostAction";
+import { ISubmitMessageState } from "../state/ISendPostState";
 
-/** exponential backoff for sending new posts to the server */
-export const sendPostReducer: Reducer<ISendPostState, SendPostAction> = (
+/** exponential backoff for submitting a new message to the server */
+export const submitMessageReducer: Reducer<
+    ISubmitMessageState,
+    SubmitMessageAction
+> = (
     state = {
         backoffInMs: 0,
     },
     action
 ) => {
     switch (action.type) {
-        case ActionType.PostSendSucceeded:
+        case ActionType.SubmitMessageSucceeded:
             return { ...state, backoffInMs: 0 };
-        case ActionType.PostSendFailed:
+        case ActionType.SubmitMessageFailed:
             return { ...state, backoffInMs: getBackoffInMs(state.backoffInMs) };
+        default:
+            return state;
     }
-    return state;
 };
 
 const getBackoffInMs = (previous: number) => {

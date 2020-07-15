@@ -7,7 +7,7 @@ import { Unpack } from "../../src/utils/ts/Unpack";
 
 it("backoffInMs returns backoff", () => {
     const state: Unpack<Parameters<typeof backoffInMs>> = {
-        sendPost: { backoffInMs: 1337 },
+        submitMessage: { backoffInMs: 1337 },
     };
 
     const result = backoffInMs(state);

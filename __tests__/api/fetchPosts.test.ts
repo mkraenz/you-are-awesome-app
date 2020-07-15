@@ -1,10 +1,10 @@
-import { fetchPosts } from "../../src/api/fetchPosts";
-import { PostWithDate } from "../../src/state/state/IPost";
+import { fetchMessages } from "../../src/api/fetchPosts";
+import { MessageWithDate } from "../../src/state/state/IPost";
 
-describe("fetchPosts", () => {
-    it("returns todays post if found", async () => {
+describe("fetchMessages", () => {
+    it("returns todays message if found", async () => {
         const isodate = "2016-01-01";
-        const posts: PostWithDate[] = [
+        const messages: MessageWithDate[] = [
             {
                 author: "author-1",
                 country: "country-1",
@@ -16,20 +16,20 @@ describe("fetchPosts", () => {
         const fetchMock = jest.fn(() =>
             Promise.resolve(({
                 json: () => ({
-                    rows: posts,
+                    rows: messages,
                 }),
             } as unknown) as Response)
         );
 
-        const result = await fetchPosts("irrelevant-uri", fetchMock);
+        const result = await fetchMessages("irrelevant-uri", fetchMock);
 
-        expect(result).toBe(posts);
+        expect(result).toBe(messages);
         expect(fetchMock).toBeCalledWith("irrelevant-uri");
     });
 
-    it("returns a random post as fallback", async () => {
+    it("returns a random message as fallback", async () => {
         const isodate = "2017-12-19";
-        const posts: PostWithDate[] = [
+        const messages: MessageWithDate[] = [
             {
                 author: "author-1",
                 country: "country-1",
@@ -39,14 +39,14 @@ describe("fetchPosts", () => {
             },
         ];
 
-        const result = await fetchPosts("irrelevant", () =>
+        const result = await fetchMessages("irrelevant", () =>
             Promise.resolve(({
                 json: () => ({
-                    rows: posts,
+                    rows: messages,
                 }),
             } as unknown) as Response)
         );
 
-        expect(result).toBe(posts);
+        expect(result).toBe(messages);
     });
 });

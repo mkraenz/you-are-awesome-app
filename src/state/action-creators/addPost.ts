@@ -1,8 +1,8 @@
 import { ActionType } from "../actions/ActionType";
-import { IPostSendRequested } from "../actions/IAction";
-import { IPost } from "../state/IPost";
+import { ISubmitMessageRequested } from "../actions/IAction";
+import { IMessage } from "../state/IPost";
 
-export const addPost = (payload: IPost): IPostSendRequested => ({
-    type: ActionType.PostSendRequested,
+export const submitMessage = (payload: IMessage): ISubmitMessageRequested => ({
+    type: ActionType.SubmitMessageRequested,
     payload,
 });

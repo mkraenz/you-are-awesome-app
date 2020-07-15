@@ -4,8 +4,8 @@ import { IAnyAction } from "../actions/IAction";
 import { IState } from "../state/IState";
 import { appReducer } from "./appReducer";
 import { networkReducer } from "./networkReducer";
-import { postReducer } from "./postReducer";
-import { sendPostReducer } from "./sendPostReducer";
+import { messageReducer } from "./postReducer";
+import { submitMessageReducer } from "./sendPostReducer";
 
 type MyReducer = Reducer<CombinedState<IState>, IAnyAction>;
 type assertReducerMatchesState<T extends MyReducer> = T extends Reducer<
@@ -16,10 +16,10 @@ type assertReducerMatchesState<T extends MyReducer> = T extends Reducer<
     : false;
 
 const reducers = {
-    posts: postReducer,
+    messages: messageReducer,
     app: appReducer,
     network: networkReducer,
-    sendPost: sendPostReducer,
+    submitMessage: submitMessageReducer,
 };
 const combined = combineReducers(reducers);
 export const rootReducer: assertReducerMatchesState<typeof combined> = combined;

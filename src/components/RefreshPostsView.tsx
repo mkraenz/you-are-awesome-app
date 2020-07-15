@@ -6,7 +6,7 @@ import {
     StyleSheet,
 } from "react-native";
 import { connect } from "react-redux";
-import { requestFetchPosts } from "../state/action-creators/requestFetchPosts";
+import { requestFetchMessages } from "../state/action-creators/requestFetchPosts";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
 const styles = StyleSheet.create({
@@ -20,18 +20,18 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    requestFetchPosts: (now: Date) => void;
+    requestFetchMessages: (now: Date) => void;
     refreshing: boolean;
     children: ReactNode;
 }
 
-class RefreshPostsView extends Component<Props> {
+class RefreshMessagesView extends Component<Props> {
     public componentDidMount() {
-        this.props.requestFetchPosts(new Date());
+        this.props.requestFetchMessages(new Date());
     }
 
     public render() {
-        const { refreshing, children, requestFetchPosts } = this.props;
+        const { refreshing, children, requestFetchMessages } = this.props;
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView
@@ -39,7 +39,7 @@ class RefreshPostsView extends Component<Props> {
                     refreshControl={
                         <RefreshControl
                             refreshing={refreshing}
-                            onRefresh={() => requestFetchPosts(new Date())}
+                            onRefresh={() => requestFetchMessages(new Date())}
                         />
                     }
                 >
@@ -53,11 +53,14 @@ class RefreshPostsView extends Component<Props> {
 const mapStateToProps: MapStateToProps<Pick<Props, "refreshing">> = (
     state
 ) => ({
-    refreshing: state.posts.refreshing,
+    refreshing: state.messages.refreshing,
 });
 
-const mapDispatchToProps: Pick<Props, "requestFetchPosts"> = {
-    requestFetchPosts,
+const mapDispatchToProps: Pick<Props, "requestFetchMessages"> = {
+    requestFetchMessages,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RefreshPostsView);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(RefreshMessagesView);

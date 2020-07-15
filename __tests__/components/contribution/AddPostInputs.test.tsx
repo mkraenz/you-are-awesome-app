@@ -4,13 +4,15 @@ import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
 import createMockStore from "redux-mock-store";
-import AddPostInputs from "../../../src/components/contribution/AddPostInputs";
+import SubmitMessageInputForm from "../../../src/components/contribution/AddPostInputs";
+import { IState } from "../../../src/state/state/IState";
+import { Pick2 } from "../../../src/utils/ts/Pick2";
 import TestLocalizationProvider from "../../helpers/TestLocalizationProvider";
 
 it("renders correctly", () => {
-    const store = createMockStore([])({
+    const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {
-            connectedToInternet: true,
+            connected: false,
         },
     });
 
@@ -18,7 +20,7 @@ it("renders correctly", () => {
         .create(
             <Provider store={store}>
                 <TestLocalizationProvider>
-                    <AddPostInputs handleSubmit={() => undefined} />
+                    <SubmitMessageInputForm handleSubmit={() => undefined} />
                 </TestLocalizationProvider>
             </Provider>
         )

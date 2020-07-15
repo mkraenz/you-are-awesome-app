@@ -1,9 +1,9 @@
 import { ActionType } from "../actions/ActionType";
-import { IPostsFetchRequested } from "../actions/IAction";
+import { IFetchMessagesRequested } from "../actions/IAction";
 
-export const requestFetchPosts = (now: Date): IPostsFetchRequested => {
+export const requestFetchMessages = (now: Date): IFetchMessagesRequested => {
     return {
-        type: ActionType.PostsFetchRequested,
+        type: ActionType.FetchMessagesRequested,
         payload: { now },
     };
 };
