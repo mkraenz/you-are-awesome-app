@@ -9,7 +9,7 @@ import {
     initialMessage,
     messageReducer,
 } from "../../../src/state/reducers/messageReducer";
-import { IMessagesState } from "../../../src/state/state/IPostsState";
+import { IMessagesState } from "../../../src/state/state/IMessagesState";
 import { mock } from "../../helpers/mocks";
 
 describe("messagesReducer", () => {

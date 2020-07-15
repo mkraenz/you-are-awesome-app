@@ -1,4 +1,4 @@
-import { todaysMessageOrRandomMessage } from "../../src/utils/todayOrRandomPost";
+import { todaysMessageOrRandomMessage } from "../../src/utils/todayOrRandomMessage";
 import { mock } from "../helpers/mocks";
 
 it("returns todays message if available", () => {

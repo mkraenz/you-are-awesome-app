@@ -2,7 +2,7 @@ import { IMessage, MessageWithDate } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
 import { INetworkAction } from "./INetworkAction";
-import { SubmitMessageAction } from "./SendPostAction";
+import { SubmitMessageAction } from "./SubmitMessageAction";
 import { IActionWithPayload } from "./utils";
 
 export type IAnyAction =

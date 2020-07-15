@@ -1,4 +1,4 @@
-import { waitAndSubmitMessageToServer } from "../../src/api/sendPostToServer";
+import { waitAndSubmitMessageToServer } from "../../src/api/waitAndSubmitMessageToServer";
 
 describe("waitAndSubmitMessageToServer()", () => {
     it("returns the response json body", async () => {

@@ -1,4 +1,4 @@
-import { requestFetchMessages } from "../../../src/state/action-creators/requestFetchPosts";
+import { requestFetchMessages } from "../../../src/state/action-creators/requestFetchMessages";
 import { ActionType } from "../../../src/state/actions/ActionType";
 
 it("returns correct action", () => {

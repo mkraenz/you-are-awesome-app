@@ -1,4 +1,4 @@
-import { maybeGetTodaysMessages } from "../../src/utils/maybeGetTodaysPost";
+import { maybeGetTodaysMessages } from "../../src/utils/maybeGetTodaysMessage";
 
 describe("maybeGetTodaysMessages()", () => {
     it("returns undefined for empty messages", () => {

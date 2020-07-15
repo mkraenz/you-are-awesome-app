@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
-import { SubmitMessageAction } from "../actions/SendPostAction";
+import { SubmitMessageAction } from "../actions/SubmitMessageAction";
 import { ISubmitMessageState } from "../state/ISubmitMessageState";
 
 /** exponential backoff for submitting a new message to the server */

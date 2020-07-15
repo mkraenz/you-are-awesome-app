@@ -1,7 +1,7 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
-import { fetchMessages } from "../../api/fetchPosts";
+import { fetchMessages } from "../../api/fetchMessages";
 import { MAX_BACKOFF_IN_MS, URI } from "../../config";
-import { todaysMessageOrRandomMessage } from "../../utils/todayOrRandomPost";
+import { todaysMessageOrRandomMessage } from "../../utils/todayOrRandomMessage";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
 import {

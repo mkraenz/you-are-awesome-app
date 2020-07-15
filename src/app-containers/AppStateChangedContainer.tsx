@@ -1,7 +1,7 @@
 import { Component, ReactNode } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
-import { requestFetchMessages } from "../state/action-creators/requestFetchPosts";
+import { requestFetchMessages } from "../state/action-creators/requestFetchMessages";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { isToday } from "../utils/toTodayString";
 

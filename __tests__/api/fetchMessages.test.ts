@@ -1,4 +1,4 @@
-import { fetchMessages } from "../../src/api/fetchPosts";
+import { fetchMessages } from "../../src/api/fetchMessages";
 import { MessageWithDate } from "../../src/state/state/IMessage";
 
 describe("fetchMessages", () => {

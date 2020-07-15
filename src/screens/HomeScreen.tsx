@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { Card, Paragraph, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
-import RefreshMessagesView from "../components/RefreshPostsView";
+import RefreshMessagesView from "../components/RefreshMessagesView";
 import { Route } from "../navigation/Route";
 import { IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";

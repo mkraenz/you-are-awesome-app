@@ -2,7 +2,7 @@ import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
 import { IMessageAction } from "../actions/IAction";
 import { IMessage } from "../state/IMessage";
-import { IMessagesState } from "../state/IPostsState";
+import { IMessagesState } from "../state/IMessagesState";
 
 export const initialMessage: IMessage = {
     id: "0",
