@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { v4 } from "uuid";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
-import SubmitMessageInputForm from "../components/contribution/AddPostInputs";
+import SubmitMessageInputForm from "../components/contribution/SubmitMessageInputForm";
 import { Route } from "../navigation/Route";
 import { submitMessage } from "../state/action-creators/submitMessage";
 import { IMessage, IMessageContent } from "../state/state/IMessage";

@@ -1,5 +1,5 @@
 import { fork } from "redux-saga/effects";
-import fetchMessagesSaga from "./fetchPostsSaga";
+import fetchMessagesSaga from "./fetchMessagesSaga";
 import changePushNotificationTimeSaga from "./push-notifications/changePushNotificationTimeSaga";
 import readSettingsFromStorageSaga from "./push-notifications/readSettingsSaga";
 import registerOrUnregisterPushNotificationsSaga from "./push-notifications/registerOrUnregisterPushNotificationsSaga";

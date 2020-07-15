@@ -1,7 +1,7 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
 import { waitAndSubmitMessageToServer } from "../../api/sendPostToServer";
 import { MAX_BACKOFF_IN_MS, URI } from "../../config";
-import { pickMessageContent } from "../../utils/pickPostContent";
+import { pickMessageContent } from "../../utils/pickMessageContent";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
 import {

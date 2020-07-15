@@ -5,7 +5,7 @@ import { IState } from "../state/IState";
 import { appReducer } from "./appReducer";
 import { networkReducer } from "./networkReducer";
 import { messageReducer } from "./messageReducer";
-import { submitMessageReducer } from "./sendPostReducer";
+import { submitMessageReducer } from "./submitMessageReducer";
 
 type MyReducer = Reducer<CombinedState<IState>, IAnyAction>;
 type assertReducerMatchesState<T extends MyReducer> = T extends Reducer<

@@ -3,7 +3,7 @@ import {
     ISubmitMessageFailed,
     ISubmitMessageSucceeded,
 } from "../../../src/state/actions/IAction";
-import { submitMessageReducer } from "../../../src/state/reducers/sendPostReducer";
+import { submitMessageReducer } from "../../../src/state/reducers/submitMessageReducer";
 import { ISubmitMessageState } from "../../../src/state/state/ISubmitMessageState";
 import { mock } from "../../helpers/mocks";
 

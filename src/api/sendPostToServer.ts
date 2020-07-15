@@ -1,5 +1,5 @@
 import { IMessageContent } from "../state/state/IMessage";
-import { pickMessageContent } from "../utils/pickPostContent";
+import { pickMessageContent } from "../utils/pickMessageContent";
 
 const HTTP_CREATED = 201;
 

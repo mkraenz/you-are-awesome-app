@@ -1,4 +1,4 @@
-import { pickMessageContent } from "../../src/utils/pickPostContent";
+import { pickMessageContent } from "../../src/utils/pickMessageContent";
 import { mock } from "../helpers/mocks";
 
 it("pickMessageContent() returns an exact IMessageContent", () => {
