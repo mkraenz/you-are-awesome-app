@@ -7,7 +7,9 @@ import { DarkTheme, DefaultTheme, Theme } from "react-native-paper";
 type NavigationTheme = typeof NavDarkTheme | typeof NavDefaultTheme;
 
 export type FullTheme = Theme &
-    NavigationTheme & { colors: { accentedCard: string } };
+    NavigationTheme & {
+        colors: { accentedCard: string; disabledItemText: string };
+    };
 
 export enum Color {
     LightBlue = "#89cff0",
@@ -27,6 +29,7 @@ export const lightTheme: FullTheme = {
         primary: Color.Blue,
         accent: "white", // TODO maybe split nav theme and paper theme. With the current approach, enabled switches are white on white background etc.
         accentedCard: NavDefaultTheme.colors.card,
+        disabledItemText: Color.Grey,
     },
 };
 
@@ -40,5 +43,6 @@ export const darkTheme: FullTheme = {
         primary: Color.Violet,
         card: DarkTheme.colors.surface,
         accentedCard: Color.Grey,
+        disabledItemText: Color.Grey,
     },
 };

@@ -49,10 +49,12 @@ const PushNotificationSettings: FC<Props> = ({
     }, DEBOUNCE_TIMEOUT);
     const scheduledTime_ = DateTime.fromJSDate(scheduledTime);
 
-    const renderNotificationTimeRight = () => {
+    const renderNotificationTimeRight = (disabledStyle: {
+        color?: string;
+    }) => () => {
         if (enabled) {
             return (
-                <Subheading>
+                <Subheading style={disabledStyle}>
                     {scheduledTime_.toLocaleString(DateTime.TIME_SIMPLE)}
                 </Subheading>
             );
@@ -65,7 +67,7 @@ const PushNotificationSettings: FC<Props> = ({
             <SettingsRow
                 title={t("notificationsEnable")}
                 onPress={toggleNotifications}
-                rightComponent={() => (
+                rightComponent={() => () => (
                     <Switch
                         value={enabled}
                         disabled={disabled}

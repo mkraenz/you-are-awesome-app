@@ -426,6 +426,93 @@ exports[`displays netinfo box for no internet connection 1`] = `
         }
       }
     >
+      <View
+        collapsable={false}
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              false,
+              Array [
+                Object {
+                  "padding": 8,
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "marginVertical": 6,
+                    "paddingLeft": 8,
+                  },
+                  Object {
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                Language
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, 0.12)",
+              "height": 0.5,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      />
       <View>
         <View
           style={
@@ -518,7 +605,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
                       Object {
                         "color": "rgba(0, 0, 0, 0.87)",
                       },
-                      undefined,
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.26)",
+                      },
                     ],
                   ]
                 }
@@ -605,7 +694,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
                       Object {
                         "color": "rgba(0, 0, 0, 0.87)",
                       },
-                      undefined,
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.26)",
+                      },
                     ],
                   ]
                 }
@@ -637,7 +728,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
                         "lineHeight": 24,
                         "marginVertical": 2,
                       },
-                      undefined,
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.26)",
+                      },
                     ],
                     Array [
                       Object {
@@ -646,7 +739,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
                         "lineHeight": 24,
                         "marginVertical": 2,
                       },
-                      undefined,
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.26)",
+                      },
                     ],
                   ],
                 ]
@@ -763,7 +858,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.87)",
                     },
-                    undefined,
+                    Object {},
                   ],
                 ]
               }
@@ -786,93 +881,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
             tintColor=""
             value={false}
           />
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.12)",
-              "height": 0.5,
-            },
-            undefined,
-            undefined,
-          ]
-        }
-      />
-      <View
-        collapsable={false}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              false,
-              Array [
-                Object {
-                  "padding": 8,
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "marginVertical": 6,
-                    "paddingLeft": 8,
-                  },
-                  Object {
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                ]
-              }
-            >
-              <Text
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                      "textAlign": "left",
-                    },
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Language
-              </Text>
-            </View>
-          </View>
         </View>
       </View>
       <View
@@ -1413,6 +1421,93 @@ exports[`renders correctly for disabled notifications 1`] = `
         }
       }
     >
+      <View
+        collapsable={false}
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              false,
+              Array [
+                Object {
+                  "padding": 8,
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "marginVertical": 6,
+                    "paddingLeft": 8,
+                  },
+                  Object {
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                Language
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, 0.12)",
+              "height": 0.5,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      />
       <View>
         <View
           accessible={true}
@@ -1475,7 +1570,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                       Object {
                         "color": "rgba(0, 0, 0, 0.87)",
                       },
-                      undefined,
+                      Object {},
                     ],
                   ]
                 }
@@ -1562,7 +1657,9 @@ exports[`renders correctly for disabled notifications 1`] = `
                       Object {
                         "color": "rgba(0, 0, 0, 0.87)",
                       },
-                      undefined,
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.26)",
+                      },
                     ],
                   ]
                 }
@@ -1679,7 +1776,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.87)",
                     },
-                    undefined,
+                    Object {},
                   ],
                 ]
               }
@@ -1702,93 +1799,6 @@ exports[`renders correctly for disabled notifications 1`] = `
             tintColor=""
             value={false}
           />
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.12)",
-              "height": 0.5,
-            },
-            undefined,
-            undefined,
-          ]
-        }
-      />
-      <View
-        collapsable={false}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              false,
-              Array [
-                Object {
-                  "padding": 8,
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "marginVertical": 6,
-                    "paddingLeft": 8,
-                  },
-                  Object {
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                ]
-              }
-            >
-              <Text
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                      "textAlign": "left",
-                    },
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Language
-              </Text>
-            </View>
-          </View>
         </View>
       </View>
       <View
@@ -2329,6 +2339,93 @@ exports[`renders correctly for enabled notifications 1`] = `
         }
       }
     >
+      <View
+        collapsable={false}
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              false,
+              Array [
+                Object {
+                  "padding": 8,
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "marginVertical": 6,
+                    "paddingLeft": 8,
+                  },
+                  Object {
+                    "flex": 1,
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                      },
+                      Object {},
+                    ],
+                  ]
+                }
+              >
+                Language
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, 0.12)",
+              "height": 0.5,
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      />
       <View>
         <View
           accessible={true}
@@ -2391,7 +2488,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                       Object {
                         "color": "rgba(0, 0, 0, 0.87)",
                       },
-                      undefined,
+                      Object {},
                     ],
                   ]
                 }
@@ -2478,7 +2575,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                       Object {
                         "color": "rgba(0, 0, 0, 0.87)",
                       },
-                      undefined,
+                      Object {},
                     ],
                   ]
                 }
@@ -2510,7 +2607,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                         "lineHeight": 24,
                         "marginVertical": 2,
                       },
-                      undefined,
+                      Object {},
                     ],
                     Array [
                       Object {
@@ -2519,7 +2616,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                         "lineHeight": 24,
                         "marginVertical": 2,
                       },
-                      undefined,
+                      Object {},
                     ],
                   ],
                 ]
@@ -2636,7 +2733,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.87)",
                     },
-                    undefined,
+                    Object {},
                   ],
                 ]
               }
@@ -2659,93 +2756,6 @@ exports[`renders correctly for enabled notifications 1`] = `
             tintColor=""
             value={false}
           />
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.12)",
-              "height": 0.5,
-            },
-            undefined,
-            undefined,
-          ]
-        }
-      />
-      <View
-        collapsable={false}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              false,
-              Array [
-                Object {
-                  "padding": 8,
-                },
-                undefined,
-              ],
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "marginVertical": 6,
-                    "paddingLeft": 8,
-                  },
-                  Object {
-                    "flex": 1,
-                    "justifyContent": "center",
-                  },
-                ]
-              }
-            >
-              <Text
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#000000",
-                      "fontFamily": "System",
-                      "fontWeight": "400",
-                      "textAlign": "left",
-                    },
-                    Array [
-                      Object {
-                        "fontSize": 16,
-                      },
-                      Object {
-                        "color": "rgba(0, 0, 0, 0.87)",
-                      },
-                      undefined,
-                    ],
-                  ]
-                }
-              >
-                Language
-              </Text>
-            </View>
-          </View>
         </View>
       </View>
       <View

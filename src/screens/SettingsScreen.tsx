@@ -49,19 +49,19 @@ const SettingsScreen: FC<Props> = ({
 
     return (
         <Layout route={Route.Settings}>
+            <LanguageDropdown />
+            <Divider />
             <PushNotificationSettings />
             <SettingsRow
                 title={t("darkMode")}
                 onPress={toggleDarkTheme}
-                rightComponent={() => (
+                rightComponent={() => () => (
                     <Switch
                         value={isDarkModeOn}
                         onValueChange={toggleDarkTheme}
                     ></Switch>
                 )}
             ></SettingsRow>
-            <Divider />
-            <LanguageDropdown />
             <Divider />
             <About />
         </Layout>
