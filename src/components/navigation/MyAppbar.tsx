@@ -9,10 +9,10 @@ interface Props {
 const MyAppbar: FC<Props> = ({ title, icon = "menu" }) => {
     return (
         <Appbar.Header>
-            <Appbar.Action icon={icon} onPress={() => undefined} />
-            <Appbar.Content title={title} />
-            <Appbar.Action icon="magnify" onPress={() => undefined} />
-            <Appbar.Action icon="dots-vertical" onPress={() => undefined} />
+            <Appbar.Content
+                title={"You are Awesome App!"}
+                style={{ alignItems: "center", display: "flex" }}
+            />
         </Appbar.Header>
     );
 };

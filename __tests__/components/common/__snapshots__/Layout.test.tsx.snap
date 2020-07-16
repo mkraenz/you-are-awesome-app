@@ -61,105 +61,12 @@ exports[`renders correctly 1`] = `
         }
       >
         <View
-          accessibilityRole="button"
-          accessibilityStates={Array []}
-          accessible={true}
-          focusable={true}
-          hitSlop={
+          style={
             Object {
-              "bottom": 6,
-              "left": 6,
-              "right": 6,
-              "top": 6,
+              "width": 48,
             }
           }
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "overflow": "hidden",
-              },
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                  "margin": 6,
-                  "overflow": "hidden",
-                },
-                Object {
-                  "borderRadius": 18,
-                  "height": 36,
-                  "width": 36,
-                },
-                undefined,
-                undefined,
-              ],
-            ]
-          }
-        >
-          <View
-            style={null}
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "height": 24,
-                    "width": 24,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "opacity": 1,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                    "transform": Array [
-                      Object {
-                        "rotate": "0deg",
-                      },
-                    ],
-                  }
-                }
-              >
-                <Text
-                  accessibilityElementsHidden={true}
-                  importantForAccessibility="no-hide-descendants"
-                  pointerEvents="none"
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                      },
-                      Object {
-                        "color": "#ffffff",
-                        "fontSize": 24,
-                      },
-                    ]
-                  }
-                >
-                  □
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
+        />
         <View
           accessible={true}
           focusable={false}
@@ -177,11 +84,14 @@ exports[`renders correctly 1`] = `
                 "paddingHorizontal": 12,
               },
               Array [
-                Object {
-                  "marginLeft": 8,
-                },
                 false,
-                undefined,
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                },
               ],
             ]
           }
@@ -213,209 +123,16 @@ exports[`renders correctly 1`] = `
               ]
             }
           >
-            Home
+            You are Awesome App!
           </Text>
         </View>
         <View
-          accessibilityRole="button"
-          accessibilityStates={Array []}
-          accessible={true}
-          focusable={true}
-          hitSlop={
+          style={
             Object {
-              "bottom": 6,
-              "left": 6,
-              "right": 6,
-              "top": 6,
+              "width": 48,
             }
           }
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "overflow": "hidden",
-              },
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                  "margin": 6,
-                  "overflow": "hidden",
-                },
-                Object {
-                  "borderRadius": 18,
-                  "height": 36,
-                  "width": 36,
-                },
-                undefined,
-                undefined,
-              ],
-            ]
-          }
-        >
-          <View
-            style={null}
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "height": 24,
-                    "width": 24,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "opacity": 1,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                    "transform": Array [
-                      Object {
-                        "rotate": "0deg",
-                      },
-                    ],
-                  }
-                }
-              >
-                <Text
-                  accessibilityElementsHidden={true}
-                  importantForAccessibility="no-hide-descendants"
-                  pointerEvents="none"
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                      },
-                      Object {
-                        "color": "#ffffff",
-                        "fontSize": 24,
-                      },
-                    ]
-                  }
-                >
-                  □
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-        <View
-          accessibilityRole="button"
-          accessibilityStates={Array []}
-          accessible={true}
-          focusable={true}
-          hitSlop={
-            Object {
-              "bottom": 6,
-              "left": 6,
-              "right": 6,
-              "top": 6,
-            }
-          }
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Array [
-              Object {
-                "overflow": "hidden",
-              },
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                  "margin": 6,
-                  "overflow": "hidden",
-                },
-                Object {
-                  "borderRadius": 18,
-                  "height": 36,
-                  "width": 36,
-                },
-                undefined,
-                undefined,
-              ],
-            ]
-          }
-        >
-          <View
-            style={null}
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "justifyContent": "center",
-                  },
-                  Object {
-                    "height": 24,
-                    "width": 24,
-                  },
-                ]
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "opacity": 1,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                    "transform": Array [
-                      Object {
-                        "rotate": "0deg",
-                      },
-                    ],
-                  }
-                }
-              >
-                <Text
-                  accessibilityElementsHidden={true}
-                  importantForAccessibility="no-hide-descendants"
-                  pointerEvents="none"
-                  style={
-                    Array [
-                      Object {
-                        "backgroundColor": "transparent",
-                      },
-                      Object {
-                        "color": "#ffffff",
-                        "fontSize": 24,
-                      },
-                    ]
-                  }
-                >
-                  □
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
+        />
       </View>
     </RCTSafeAreaView>
     <View
