@@ -858,7 +858,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.87)",
                     },
-                    Object {},
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
                   ],
                 ]
               }
@@ -866,21 +868,51 @@ exports[`displays netinfo box for no internet connection 1`] = `
               Dark mode
             </Text>
           </View>
-          <RCTSwitch
-            accessibilityRole="button"
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onTintColor="#03dac4"
+          <Text
             style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
+                  ],
+                ],
+              ]
             }
-            tintColor=""
-            value={false}
-          />
+          >
+            Coming soon
+          </Text>
         </View>
       </View>
       <View
@@ -1776,7 +1808,9 @@ exports[`renders correctly for disabled notifications 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.87)",
                     },
-                    Object {},
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
                   ],
                 ]
               }
@@ -1784,21 +1818,51 @@ exports[`renders correctly for disabled notifications 1`] = `
               Dark mode
             </Text>
           </View>
-          <RCTSwitch
-            accessibilityRole="button"
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onTintColor="#03dac4"
+          <Text
             style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
+                  ],
+                ],
+              ]
             }
-            tintColor=""
-            value={false}
-          />
+          >
+            Coming soon
+          </Text>
         </View>
       </View>
       <View
@@ -2733,7 +2797,9 @@ exports[`renders correctly for enabled notifications 1`] = `
                     Object {
                       "color": "rgba(0, 0, 0, 0.87)",
                     },
-                    Object {},
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
                   ],
                 ]
               }
@@ -2741,21 +2807,51 @@ exports[`renders correctly for enabled notifications 1`] = `
               Dark mode
             </Text>
           </View>
-          <RCTSwitch
-            accessibilityRole="button"
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onTintColor="#03dac4"
+          <Text
             style={
-              Object {
-                "height": 31,
-                "width": 51,
-              }
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.26)",
+                    },
+                  ],
+                ],
+              ]
             }
-            tintColor=""
-            value={false}
-          />
+          >
+            Coming soon
+          </Text>
         </View>
       </View>
       <View

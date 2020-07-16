@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
-import { Divider, Paragraph, Switch } from "react-native-paper";
+import { Divider, Paragraph, Subheading } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import LanguageDropdown from "../components/settings/LanguageDropdown";
@@ -55,11 +55,13 @@ const SettingsScreen: FC<Props> = ({
             <SettingsRow
                 title={t("darkMode")}
                 onPress={toggleDarkTheme}
-                rightComponent={() => () => (
-                    <Switch
-                        value={isDarkModeOn}
-                        onValueChange={toggleDarkTheme}
-                    ></Switch>
+                disabled={true}
+                rightComponent={(disabledStyle: { color?: string }) => () => (
+                    // <Switch
+                    //     value={isDarkModeOn}
+                    //     onValueChange={toggleDarkTheme}
+                    // ></Switch>
+                    <Subheading style={disabledStyle}>Coming soon</Subheading>
                 )}
             ></SettingsRow>
             <Divider />
