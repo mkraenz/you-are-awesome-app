@@ -53,10 +53,10 @@ const localization: {
             [Route.Contribute]: "Contribute",
             buildVersion: "Build version",
             noInternet: "No Internet Connection",
-            contributeAwesomeMessage: "Awesome Message",
+            contributeAwesomeMessage: "Your Awesome Message",
             contributeAwesomeMessageLong: "Your awesome message to the world",
             contributeCountry: "Country",
-            contributeName: "First Name",
+            contributeName: "Nickname",
             contributeSubmit: "Submit",
             contributionStayTuned:
                 "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)",
@@ -81,10 +81,10 @@ const localization: {
             [Route.Contribute]: "Teilen",
             buildVersion: "Programmversion",
             noInternet: "Keine Internetverbindung",
-            contributeAwesomeMessage: "Awesome Nachricht",
+            contributeAwesomeMessage: "Deine Awesome Nachricht",
             contributeAwesomeMessageLong: "Deine awesome Nachricht an die Welt",
             contributeCountry: "Land",
-            contributeName: "Vorname",
+            contributeName: "Spitzname",
             contributeSubmit: "Senden",
             contributionStayTuned:
                 "\n\nAufgrund der geringen Anzahl an Nachrichten, die wir jeden Tag zeigen können, wählen wir Beiträge per Hand aus. Mit ein wenig Glück ist deine Nachricht in Kürze für alle in der Community sichtbar. Freu dich darauf! :)",
@@ -115,9 +115,8 @@ const localization: {
             contributeCountry: "国",
             contributeName: "ニックネーム",
             contributeSubmit: "送信",
-            // TODO
             contributionStayTuned:
-                "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)",
+                "\n\n毎日一つのメッセージだけが表示されているため、届いたメッセージは手動で選択されています。運がよければあなたのメッセージももうすぐ選ばれるかもしれません。ということで、お楽しみに! (≧▽≦)",
             contributionMember:
                 "私達のコミュニティーの大事な一員でいてくれてありがとうございます。\n送ったメッセージ:\n",
             contributionThanks: "参加してくれてありがとうございます。",

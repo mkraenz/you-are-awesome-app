@@ -117,7 +117,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            Awesome Message
+            Your Awesome Message
           </Text>
           <Text
             numberOfLines={1}
@@ -149,7 +149,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            Awesome Message
+            Your Awesome Message
           </Text>
           <Text
             numberOfLines={1}
@@ -180,7 +180,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            Awesome Message
+            Your Awesome Message
           </Text>
         </View>
         <TextInput
@@ -336,7 +336,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            First Name
+            Nickname
           </Text>
           <Text
             numberOfLines={1}
@@ -368,7 +368,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            First Name
+            Nickname
           </Text>
           <Text
             numberOfLines={1}
@@ -399,7 +399,7 @@ exports[`renders correctly 1`] = `
               }
             }
           >
-            First Name
+            Nickname
           </Text>
         </View>
         <TextInput
