@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<withTheme(Appbar.Header)>
+  <withTheme(Appbar.Content)
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+      }
+    }
+    title="You are Awesome App!"
+  />
+</withTheme(Appbar.Header)>
+`;

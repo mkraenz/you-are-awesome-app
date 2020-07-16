@@ -1,11 +1,11 @@
 export const mock = {
-    post: {
+    message: {
         author: "my-author",
         country: "my-country",
         id: "876",
         text: "awesome-message",
     },
-    posts: [
+    messages: [
         {
             author: "author-1",
             country: "country-1",

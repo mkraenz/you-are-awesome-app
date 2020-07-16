@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Fontawesome
+    color="rgba(0, 0, 0, 0.26)"
+    name="my-name"
+    size={26}
+    style={
+      Object {
+        "marginBottom": -3,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`renders correctly with focus 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Fontawesome
+    color="#03dac4"
+    name="my-name"
+    size={26}
+    style={
+      Object {
+        "marginBottom": -3,
+      }
+    }
+  />
+</View>
+`;
