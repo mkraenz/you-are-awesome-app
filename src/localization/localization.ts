@@ -87,7 +87,7 @@ const localization: {
             contributeName: "Spitzname",
             contributeSubmit: "Senden",
             contributionStayTuned:
-                "\n\nAufgrund der geringen Anzahl an Nachrichten, die wir jeden Tag zeigen können, wählen wir Beiträge per Hand aus. Mit ein wenig Glück ist deine Nachricht in Kürze für alle in der Community sichtbar. Freu dich darauf! :)",
+                "\n\nAufgrund der begrenzten Anzahl an Nachrichten, die wir jeden Tag zeigen können, wählen wir Beiträge per Hand aus. Mit ein wenig Glück ist deine Nachricht in Kürze für alle in der Community sichtbar. Freu dich darauf! :)",
             contributionThanks: "Danke für deinen Beitrag!",
             contributionMember:
                 "Du bist ein wertvolles Mitglied unserer awesome Community.\nDeine Nachricht:\n",

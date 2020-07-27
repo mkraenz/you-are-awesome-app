@@ -23,11 +23,12 @@
         "test:debug": "jest --onlyChanged --watch --coverage=false",
         "test:coverage": "jest",
         "test:update-snapshot": "jest --updateSnapshot --coverage=false",
+        "ebuild:android": "expo build:android --type apk",
+        "publish:android": "expo upload:android --latest --use-submission-service",
         "deploy:prod": "node ./scripts/expo-publish-with-version.js",
         "deploy:test": "expo publish --release-channel test"
     },
     "dependencies": {
-        "@react-native-community/async-storage": "^1.11.0",
         "@react-native-community/datetimepicker": "2.2.2",
         "@react-native-community/masked-view": "0.1.6",
         "@react-native-community/netinfo": "5.5.1",

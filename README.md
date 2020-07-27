@@ -64,6 +64,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [Hashtagify](https://hashtagify.me/hashtag/app)
 - [Commun.it](https://commun.it/)
 - [Expo API Status](https://status.expo.io/#)
+- [Expo How to publish to AppStores](https://docs.expo.io/distribution/uploading-apps/)
 - [React Native Vector Icon List](https://oblador.github.io/react-native-vector-icons/)
 
 ## Frequent Development Mistakes
