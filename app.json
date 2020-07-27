@@ -23,7 +23,8 @@
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
-            "googleServicesFile": "./google-services.json"
+            "googleServicesFile": "./google-services.json",
+            "versionCode": 3
         },
         "ios": {
             "supportsTablet": true
