@@ -36,7 +36,7 @@
         "@react-navigation/native": "^5.5.0",
         "expo": "^38.0.0",
         "expo-localization": "~8.2.1",
-        "expo-notifications": "~0.3.3",
+        "expo-notifications": "~0.4.0",
         "i18next": "^19.4.5",
         "lodash": "^4.17.19",
         "luxon": "^1.24.1",
