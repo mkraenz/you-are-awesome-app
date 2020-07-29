@@ -29,6 +29,7 @@
         "deploy:test": "expo publish --release-channel test"
     },
     "dependencies": {
+        "@react-native-community/async-storage": "~1.11.0",
         "@react-native-community/datetimepicker": "2.4.0",
         "@react-native-community/masked-view": "0.1.10",
         "@react-native-community/netinfo": "5.9.2",
