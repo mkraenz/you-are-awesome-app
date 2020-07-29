@@ -1,18 +1,10 @@
-import * as Permissions from "expo-permissions";
+import * as Notifications from "expo-notifications";
 
 export const askNotificationPermissions = async () => {
-    const { status: existingStatus } = await Permissions.getAsync(
-        Permissions.NOTIFICATIONS
-    );
-    let finalStatus = existingStatus;
-    if (existingStatus !== "granted") {
-        const { status } = await Permissions.askAsync(
-            Permissions.NOTIFICATIONS
-        );
-        finalStatus = status;
+    const { granted } = await Notifications.getPermissionsAsync();
+    if (granted) {
+        return true;
     }
-    if (finalStatus !== "granted") {
-        return false;
-    }
-    return true;
+    const status = await Notifications.requestPermissionsAsync();
+    return status.granted;
 };

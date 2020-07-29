@@ -1,4 +1,4 @@
-import { Notifications } from "expo";
+import * as Notifications from "expo-notifications";
 import { URI } from "../config";
 
 export const registerForPushNotifications = async (time: Date) => {

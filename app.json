@@ -16,7 +16,6 @@
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "sdkVersion": "37.0.0",
         "version": "1.2.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
@@ -24,7 +23,8 @@
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 3
+            "versionCode": 4,
+            "useNextNotificationsApi": true
         },
         "ios": {
             "supportsTablet": true
