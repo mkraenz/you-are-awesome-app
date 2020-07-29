@@ -681,14 +681,8 @@ exports[`renders correctly 1`] = `
   >
     <View
       accessibilityRole="button"
-      accessibilityStates={
-        Array [
-          "disabled",
-        ]
-      }
       accessible={true}
       focusable={true}
-      isTVSelectable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}

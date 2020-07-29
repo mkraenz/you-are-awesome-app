@@ -853,14 +853,8 @@ exports[`renders correctly 1`] = `
         >
           <View
             accessibilityRole="button"
-            accessibilityStates={
-              Array [
-                "disabled",
-              ]
-            }
             accessible={true}
             focusable={true}
-            isTVSelectable={true}
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
@@ -1790,14 +1784,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
         >
           <View
             accessibilityRole="button"
-            accessibilityStates={
-              Array [
-                "disabled",
-              ]
-            }
             accessible={true}
             focusable={true}
-            isTVSelectable={true}
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
