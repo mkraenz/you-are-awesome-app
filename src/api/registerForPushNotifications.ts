@@ -10,7 +10,7 @@ export const registerForPushNotifications = async (time: Date) => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            token,
+            token: token.data,
             hour: time.getUTCHours(),
             minute: time.getUTCMinutes(),
         }),

@@ -10,7 +10,7 @@ export const unregisterFromPushNotifications = async () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            token,
+            token: token.data,
         }),
     });
 };
