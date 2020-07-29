@@ -11,6 +11,7 @@ exports[`renders correctly 1`] = `
   }
 >
   <View
+    accessibilityStates={Object {}}
     style={
       Object {
         "backgroundColor": "#ffffff",
@@ -48,6 +49,7 @@ exports[`renders correctly 1`] = `
       }
     >
       <View
+        accessibilityStates={Object {}}
         style={
           Object {
             "alignItems": "center",
@@ -68,6 +70,7 @@ exports[`renders correctly 1`] = `
           }
         />
         <View
+          accessibilityStates={Object {}}
           accessible={true}
           focusable={false}
           onClick={[Function]}

@@ -43,7 +43,9 @@ const LanguageDropdown: FC = () => {
                         }}
                         title={lang}
                     />
-                    {i !== languages.length - 1 && <Divider />}
+                    {i !== languages.length - 1 && (
+                        <Divider accessibilityStates={{}} />
+                    )}
                 </Fragment>
             ))}
         </Menu>

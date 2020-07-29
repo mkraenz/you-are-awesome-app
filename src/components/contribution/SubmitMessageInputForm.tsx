@@ -44,6 +44,7 @@ const SubmitMessageInputForm: FC<Props> = ({
         underlineColorAndroid: "transparent",
         placeholderTextColor: "grey",
         autoCapitalize: "sentences" as const,
+        accessibilityStates: {},
     };
     return (
         <View style={styles.container}>
@@ -79,6 +80,7 @@ const SubmitMessageInputForm: FC<Props> = ({
                     resetInputs();
                 }}
                 disabled={!connectedToInternet}
+                accessibilityStates={{}}
             >
                 {t("contributeSubmit")}
             </Button>

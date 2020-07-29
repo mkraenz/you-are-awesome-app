@@ -25,7 +25,9 @@ const OfflineNotice: FC<{}> = () => {
     };
     return (
         <View style={containerStyle}>
-            <Text style={styles.text}>{t("noInternet")}</Text>
+            <Text style={styles.text} accessibilityStates={{}}>
+                {t("noInternet")}
+            </Text>
         </View>
     );
 };

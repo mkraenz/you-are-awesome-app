@@ -35,7 +35,7 @@ const HomeScreen: FC<Props> = ({ msg }) => {
         <Layout route={Route.Home}>
             <RefreshMessagesView>
                 <View style={styles.container}>
-                    <Card style={cardStyle}>
+                    <Card style={cardStyle} accessibilityStates={{}}>
                         <Card.Content>
                             <Title style={{ color: "white" }}>{text}</Title>
                             <Paragraph style={{ color: "white" }}>

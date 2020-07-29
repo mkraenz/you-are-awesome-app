@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<withTheme(Appbar.Header)>
+<withTheme(Appbar.Header)
+  accessibilityStates={Object {}}
+>
   <withTheme(Appbar.Content)
+    accessibilityStates={Object {}}
     style={
       Object {
         "alignItems": "center",
