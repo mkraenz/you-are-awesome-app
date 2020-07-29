@@ -184,6 +184,7 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
         <TextInput
+          accessibilityStates={Object {}}
           allowFontScaling={true}
           autoCapitalize="sentences"
           editable={true}
@@ -403,6 +404,7 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
         <TextInput
+          accessibilityStates={Object {}}
           allowFontScaling={true}
           autoCapitalize="sentences"
           editable={true}
@@ -622,6 +624,7 @@ exports[`renders correctly 1`] = `
           </Text>
         </View>
         <TextInput
+          accessibilityStates={Object {}}
           allowFontScaling={true}
           autoCapitalize="sentences"
           editable={true}
@@ -666,6 +669,7 @@ exports[`renders correctly 1`] = `
     </View>
   </View>
   <View
+    accessibilityStates={Object {}}
     style={
       Object {
         "backgroundColor": "rgba(0, 0, 0, 0.12)",
@@ -681,14 +685,8 @@ exports[`renders correctly 1`] = `
   >
     <View
       accessibilityRole="button"
-      accessibilityStates={
-        Array [
-          "disabled",
-        ]
-      }
       accessible={true}
       focusable={true}
-      isTVSelectable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}

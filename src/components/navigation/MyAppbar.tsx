@@ -8,10 +8,11 @@ interface Props {
 
 const MyAppbar: FC<Props> = ({ title, icon = "menu" }) => {
     return (
-        <Appbar.Header>
+        <Appbar.Header accessibilityStates={{}}>
             <Appbar.Content
                 title={"You are Awesome App!"}
                 style={{ alignItems: "center", display: "flex" }}
+                accessibilityStates={{}}
             />
         </Appbar.Header>
     );

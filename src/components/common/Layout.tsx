@@ -31,7 +31,7 @@ const Layout: FC<Props> = (props) => {
     };
 
     return (
-        <Surface style={containerStyles}>
+        <Surface style={containerStyles} accessibilityStates={{}}>
             <MyAppbar title={t(props.route)} />
             <View style={styles.contentContainer}>{props.children}</View>
         </Surface>

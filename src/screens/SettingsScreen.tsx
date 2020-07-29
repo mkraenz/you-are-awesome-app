@@ -50,7 +50,7 @@ const SettingsScreen: FC<Props> = ({
     return (
         <Layout route={Route.Settings}>
             <LanguageDropdown />
-            <Divider />
+            <Divider accessibilityStates={{}} />
             <PushNotificationSettings />
             <SettingsRow
                 title={t("darkMode")}
@@ -64,7 +64,7 @@ const SettingsScreen: FC<Props> = ({
                     <Subheading style={disabledStyle}>Coming soon</Subheading>
                 )}
             ></SettingsRow>
-            <Divider />
+            <Divider accessibilityStates={{}} />
             <About />
         </Layout>
     );

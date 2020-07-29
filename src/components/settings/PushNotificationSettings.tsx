@@ -72,6 +72,7 @@ const PushNotificationSettings: FC<Props> = ({
                         value={enabled}
                         disabled={disabled}
                         onValueChange={toggleNotifications}
+                        accessibilityStates={{}}
                     ></Switch>
                 )}
                 disabled={disabled}
@@ -90,7 +91,7 @@ const PushNotificationSettings: FC<Props> = ({
                 onCancel={() => setOpen(false)}
                 date={scheduledTime}
             />
-            <Divider />
+            <Divider accessibilityStates={{}} />
         </View>
     );
 };

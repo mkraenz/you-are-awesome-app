@@ -1,4 +1,4 @@
-import { Notifications } from "expo";
+import * as Notifications from "expo-notifications";
 import { URI } from "../config";
 
 export const unregisterFromPushNotifications = async () => {
@@ -10,7 +10,7 @@ export const unregisterFromPushNotifications = async () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            token,
+            token: token.data,
         }),
     });
 };
