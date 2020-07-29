@@ -1,4 +1,4 @@
-import AsyncStorage from "@react-native-community/async-storage";
+import { AsyncStorage } from "react-native";
 import { call, select, takeLatest } from "redux-saga/effects";
 import { StorageSchema } from "../../../config";
 import { ActionType } from "../../actions/ActionType";
