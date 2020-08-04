@@ -67,7 +67,7 @@
         "@types/redux-mock-store": "^1.0.2",
         "@types/uuid": "^8.0.0",
         "babel-preset-expo": "^8.2.3",
-        "expo-cli": "^3.22.3",
+        "expo-cli": "^3.23.2",
         "jest": "^26.1.0",
         "jest-date-mock": "^1.0.8",
         "jest-expo": "~38.0.2",
