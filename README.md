@@ -11,6 +11,23 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 - [Google Play Console](https://play.google.com/apps/publish/)
 - [Google Sheets](https://docs.google.com/spreadsheets/)
 - [EasyCron](https://www.easycron.com/user)
+- [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
+
+## Legals
+
+- [Privacy Policy](https://privacy-policy-yzw2wab24m.s3.eu-central-1.amazonaws.com/YouAreAwesomeAppPrivacyPolicy.html)
+- [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
+
+### Legal Attributions
+
+Google Play and the Google Play logo are trademarks of Google LLC.
+
+#### Further reading
+
+- [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
+- [Expo Doc Limits of Publish](https://docs.expo.io/versions/latest/workflow/publishing/#deploying-to-the-app-store-and-play)
+
+## Development
 
 ### Update production apps
 
@@ -29,13 +46,6 @@ Only in case `app.json` changes, there is a need to rebuild the app and republis
 ```shell
 yarn expo build:android -t apk
 ```
-
-#### Further reading
-
-- [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
-- [Expo Doc Limits of Publish](https://docs.expo.io/versions/latest/workflow/publishing/#deploying-to-the-app-store-and-play)
-
-## Development
 
 ### Debugging Jest tests
 
@@ -66,6 +76,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [Expo API Status](https://status.expo.io/#)
 - [Expo How to publish to AppStores](https://docs.expo.io/distribution/uploading-apps/)
 - [React Native Vector Icon List](https://oblador.github.io/react-native-vector-icons/)
+- [Monetize Expo App](https://medium.com/leckr-react-native-graphql-apollo-tutorials/monetisation-of-your-react-native-app-7c63241c4460)
 
 ## Frequent Development Mistakes
 
@@ -84,7 +95,3 @@ will result in `ReferenceError: Can't find variable: React`.
 ```typescript
 import React, { FC } from "react";
 ```
-
-##### Legal Attributions
-
-Google Play and the Google Play logo are trademarks of Google LLC.
