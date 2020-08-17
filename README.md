@@ -15,7 +15,7 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 
 ## Legals
 
-- [Privacy Policy](https://privacy-policy-yzw2wab24m.s3.eu-central-1.amazonaws.com/YouAreAwesomeAppPrivacyPolicy.html)
+- [Privacy Policy](https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html)
 - [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
 
 ### Legal Attributions
@@ -77,6 +77,8 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [Expo How to publish to AppStores](https://docs.expo.io/distribution/uploading-apps/)
 - [React Native Vector Icon List](https://oblador.github.io/react-native-vector-icons/)
 - [Monetize Expo App](https://medium.com/leckr-react-native-graphql-apollo-tutorials/monetisation-of-your-react-native-app-7c63241c4460)
+- [Expo Admob SDK](https://docs.expo.io/versions/latest/sdk/admob/)
+- [Microsoft UI Translations](https://www.microsoft.com/en-us/language)
 
 ## Frequent Development Mistakes
 
