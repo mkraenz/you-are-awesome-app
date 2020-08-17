@@ -19,7 +19,9 @@ type keys =
     | "contributionAlertButton"
     | "contributeName"
     | "notificationsEnable"
-    | "notificationsSetTime";
+    | "notificationsSetTime"
+    | "privacyPolicyLink"
+    | "privacyPolicy";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -66,6 +68,9 @@ const localization: {
             contributionAlertButton: "Awesome!",
             notificationsEnable: "Daily notifications",
             notificationsSetTime: "Notification time",
+            privacyPolicy: "Privacy Policy",
+            privacyPolicyLink:
+                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
         },
     },
     de: {
@@ -94,6 +99,9 @@ const localization: {
             contributionAlertButton: "Awesome!",
             notificationsEnable: "Tägliche Benachrichtigungen",
             notificationsSetTime: "Benachrichtigung um",
+            privacyPolicy: "Datenschutzerklärung (en)",
+            privacyPolicyLink:
+                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
         },
     },
     ja: {
@@ -123,6 +131,9 @@ const localization: {
             contributionAlertButton: "素晴らしい",
             notificationsEnable: "プッシュ通知（毎日）",
             notificationsSetTime: "通知時間",
+            privacyPolicy: "プライバシー ポリシー(英語)",
+            privacyPolicyLink:
+                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
         },
     },
 };
