@@ -2,11 +2,12 @@ import { Resource } from "i18next";
 import { Route } from "../navigation/Route";
 
 type keys =
+    | "appTitle"
     | "darkMode"
     | "settings"
-    | "appTitle"
     | "language"
     | "copyright"
+    | "comingSoon"
     | "noInternet"
     | "buildVersion"
     | "contributeAwesomeMessage"
@@ -21,6 +22,7 @@ type keys =
     | "notificationsEnable"
     | "notificationsSetTime"
     | "privacyPolicyLink"
+    | "viewInBrowser"
     | "privacyPolicy";
 
 export interface ITranslations extends Resource {
@@ -44,15 +46,17 @@ const localization: {
 } = {
     en: {
         default: {
+            appTitle: "You are Awesome App!",
             darkMode: "Dark mode",
             settings: "Settings",
-            appTitle: "You are Awesome App!",
+            comingSoon: "Coming soon",
             language: "Language",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Home",
             [Route.Settings]: "Settings",
             [Route.Contribute]: "Contribute",
+            [Route.PrivacyPolicy]: "Privacy Policy",
             buildVersion: "Build version",
             noInternet: "No Internet Connection",
             contributeAwesomeMessage: "Your Awesome Message",
@@ -69,21 +73,24 @@ const localization: {
             notificationsEnable: "Daily notifications",
             notificationsSetTime: "Notification time",
             privacyPolicy: "Privacy Policy",
+            viewInBrowser: "View in Web Browser",
             privacyPolicyLink:
                 "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
         },
     },
     de: {
         default: {
+            appTitle: "You are Awesome App!",
             darkMode: "Nachtmodus",
             settings: "Einstellungen",
-            appTitle: "You are Awesome App!",
+            comingSoon: "In Kürze verfügbar",
             language: "Sprache",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Start",
             [Route.Settings]: "Einstellungen",
             [Route.Contribute]: "Teilen",
+            [Route.PrivacyPolicy]: "Datenschutzerklärung",
             buildVersion: "Programmversion",
             noInternet: "Keine Internetverbindung",
             contributeAwesomeMessage: "Deine Awesome Nachricht",
@@ -99,22 +106,25 @@ const localization: {
             contributionAlertButton: "Awesome!",
             notificationsEnable: "Tägliche Benachrichtigungen",
             notificationsSetTime: "Benachrichtigung um",
-            privacyPolicy: "Datenschutzerklärung (en)",
+            privacyPolicy: "Datenschutzerklärung (Englisch)",
+            viewInBrowser: "Im Web Browser ansehen",
             privacyPolicyLink:
                 "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
         },
     },
     ja: {
         default: {
+            appTitle: "You are Awesome App!",
             darkMode: "ダークモード",
             settings: "設定",
-            appTitle: "You are Awesome App!",
+            comingSoon: "近日公開",
             language: "言語",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "ホーム",
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
+            [Route.PrivacyPolicy]: "プライバシー ポリシー",
             buildVersion: "ビルドバージョン",
             noInternet: "インターネットに接続できませんでした",
             contributeAwesomeMessage: "すごいメッセージ",
@@ -132,6 +142,7 @@ const localization: {
             notificationsEnable: "プッシュ通知（毎日）",
             notificationsSetTime: "通知時間",
             privacyPolicy: "プライバシー ポリシー(英語)",
+            viewInBrowser: "ブラウザーで表示",
             privacyPolicyLink:
                 "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
         },

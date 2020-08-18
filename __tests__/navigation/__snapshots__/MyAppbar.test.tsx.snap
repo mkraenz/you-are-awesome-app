@@ -109,7 +109,7 @@ exports[`renders correctly 1`] = `
             ]
           }
         >
-          You are Awesome App!
+          my-title
         </Text>
       </View>
       <View
