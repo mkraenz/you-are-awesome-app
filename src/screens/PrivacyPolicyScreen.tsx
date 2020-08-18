@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet } from "react-native";
@@ -16,8 +17,13 @@ const styles = StyleSheet.create({
 
 const PrivacyPolicyScreen: React.FC = () => {
     const { t } = useTranslation();
+    const navigation = useNavigation();
     return (
-        <Layout route={Route.PrivacyPolicy}>
+        <Layout
+            route={Route.PrivacyPolicy}
+            onBack={() => navigation.goBack()}
+            title={t(Route.PrivacyPolicy)}
+        >
             <Button
                 mode="outlined"
                 style={styles.viewInBrowserButton}

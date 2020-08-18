@@ -4,6 +4,7 @@ import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
 import PrivacyPolicyScreen from "../../src/screens/PrivacyPolicyScreen";
+import MockedNavigator from "../helpers/MockedNavigation";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 jest.mock("react-native-webview", () => ({ WebView: "WebView" }));
@@ -11,7 +12,7 @@ jest.mock("react-native-webview", () => ({ WebView: "WebView" }));
 const ConfiguredPrivacyPolicyScreen: FC = () => (
     <PaperProvider theme={DefaultTheme}>
         <TestLocalizationProvider>
-            <PrivacyPolicyScreen />
+            <MockedNavigator component={PrivacyPolicyScreen} />
         </TestLocalizationProvider>
     </PaperProvider>
 );

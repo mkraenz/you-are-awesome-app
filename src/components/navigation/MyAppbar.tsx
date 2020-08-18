@@ -5,19 +5,22 @@ import { Appbar } from "react-native-paper";
 
 interface Props {
     title: string;
-    icon?: string;
+    onBack?: () => void;
 }
 
-const MyAppbar: FC<Props> = ({ title, icon = "menu" }) => {
+const MyAppbar: FC<Props> = ({ title, onBack }) => {
     const { t } = useTranslation();
     return (
         <Appbar.Header
             accessibilityStates={{}}
             statusBarHeight={StatusBar.currentHeight}
         >
+            {onBack && (
+                <Appbar.BackAction onPress={onBack} accessibilityStates={{}} />
+            )}
             <Appbar.Content
                 title={title}
-                style={{ alignItems: "center", display: "flex" }}
+                style={onBack ? {} : { alignItems: "center", display: "flex" }}
                 accessibilityStates={{}}
             />
         </Appbar.Header>
