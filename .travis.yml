@@ -7,17 +7,12 @@ before_install:
   # fix timezone to developers' timezone
   - export TZ=Europe/Berlin
 
-# .travis.yml
 install:
-  - npm ci
-# keep the npm cache around to speed up installs
-cache:
-  directories:
-    - "~/.npm"
+  - yarn install --frozen-lockfile
 
 script:
-  - npx tsc
-  - npm test -- --ci
+  - yarn tsc
+  - yarn test --ci
 
 after_success:
   - npx codecov
