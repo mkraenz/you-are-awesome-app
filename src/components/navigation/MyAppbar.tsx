@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { StatusBar } from "react-native";
 import { Appbar } from "react-native-paper";
 
 interface Props {
@@ -10,7 +11,10 @@ interface Props {
 const MyAppbar: FC<Props> = ({ title, icon = "menu" }) => {
     const { t } = useTranslation();
     return (
-        <Appbar.Header accessibilityStates={{}}>
+        <Appbar.Header
+            accessibilityStates={{}}
+            statusBarHeight={StatusBar.currentHeight}
+        >
             <Appbar.Content
                 title={title}
                 style={{ alignItems: "center", display: "flex" }}

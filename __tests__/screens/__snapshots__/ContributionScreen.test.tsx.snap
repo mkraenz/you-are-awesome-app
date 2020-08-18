@@ -57,7 +57,7 @@ exports[`renders correctly 1`] = `
             "elevation": 0,
             "flexDirection": "row",
             "height": 56,
-            "marginTop": 0,
+            "marginTop": null,
             "paddingHorizontal": 4,
           }
         }
@@ -996,7 +996,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
             "elevation": 0,
             "flexDirection": "row",
             "height": 56,
-            "marginTop": 0,
+            "marginTop": null,
             "paddingHorizontal": 4,
           }
         }
