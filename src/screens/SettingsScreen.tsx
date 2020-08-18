@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
@@ -37,6 +38,7 @@ const SettingsScreen: FC<Props> = ({
     requestReadSettings,
 }) => {
     const { t } = useTranslation();
+    const navigation = useNavigation();
 
     const [readFinished, setReadFinished] = useState(false);
     useEffect(() => {
@@ -47,6 +49,8 @@ const SettingsScreen: FC<Props> = ({
         }
     }, [readFinished, setReadFinished]);
 
+    const handlePrivacyPolicyPressed = () =>
+        navigation.navigate(Route.PrivacyPolicy);
     return (
         <Layout route={Route.Settings}>
             <LanguageDropdown />
@@ -61,9 +65,16 @@ const SettingsScreen: FC<Props> = ({
                     //     value={isDarkModeOn}
                     //     onValueChange={toggleDarkTheme}
                     // ></Switch>
-                    <Subheading style={disabledStyle}>Coming soon</Subheading>
+                    <Subheading style={disabledStyle}>
+                        {t("comingSoon")}
+                    </Subheading>
                 )}
-            ></SettingsRow>
+            />
+            <Divider accessibilityStates={{}} />
+            <SettingsRow
+                title={t("privacyPolicy")}
+                onPress={handlePrivacyPolicyPressed}
+            />
             <Divider accessibilityStates={{}} />
             <About />
         </Layout>
