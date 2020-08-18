@@ -57,7 +57,7 @@ exports[`renders a button and the webview 1`] = `
             "elevation": 0,
             "flexDirection": "row",
             "height": 56,
-            "marginTop": 0,
+            "marginTop": null,
             "paddingHorizontal": 4,
           }
         }

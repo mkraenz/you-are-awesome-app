@@ -337,7 +337,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 "elevation": 0,
                                 "flexDirection": "row",
                                 "height": 56,
-                                "marginTop": 0,
+                                "marginTop": null,
                                 "paddingHorizontal": 4,
                               }
                             }
@@ -1061,7 +1061,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             >
                               Build version
                                
-                              9
+                              10
                             </Text>
                             <Text
                               style={
@@ -1458,7 +1458,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 "elevation": 0,
                                 "flexDirection": "row",
                                 "height": 56,
-                                "marginTop": 0,
+                                "marginTop": null,
                                 "paddingHorizontal": 4,
                               }
                             }
@@ -2104,7 +2104,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                             >
                               Build version
                                
-                              9
+                              10
                             </Text>
                             <Text
                               style={
@@ -2501,7 +2501,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 "elevation": 0,
                                 "flexDirection": "row",
                                 "height": 56,
-                                "marginTop": 0,
+                                "marginTop": null,
                                 "paddingHorizontal": 4,
                               }
                             }
@@ -3186,7 +3186,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                             >
                               Build version
                                
-                              9
+                              10
                             </Text>
                             <Text
                               style={
