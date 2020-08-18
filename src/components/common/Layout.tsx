@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
 
 interface Props {
     route: Route;
+    onBack?: () => void;
+    title?: string;
 }
 
 const Layout: FC<Props> = (props) => {
@@ -32,7 +34,10 @@ const Layout: FC<Props> = (props) => {
 
     return (
         <Surface style={containerStyles} accessibilityStates={{}}>
-            <MyAppbar title={t("appTitle")} />
+            <MyAppbar
+                title={props.title || t("appTitle")}
+                onBack={props.onBack}
+            />
             <View style={styles.contentContainer}>{props.children}</View>
         </Surface>
     );
