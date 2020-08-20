@@ -31,7 +31,7 @@ const NavigationApp = () => {
     const { t } = useTranslation();
     return (
         <NavigationContainer theme={theme as any}>
-            <Tab.Navigator initialRouteName={t(START_SCREEN)}>
+            <Tab.Navigator initialRouteName={START_SCREEN}>
                 <Tab.Screen
                     name={Route.Contribute}
                     component={ContributionScreen}
