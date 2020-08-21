@@ -8,6 +8,8 @@ import MockedNavigator from "../helpers/MockedNavigation";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 jest.mock("react-native-webview", () => ({ WebView: "WebView" }));
+// Silence the warning https://github.com/facebook/react-native/issues/11094#issuecomment-263240420
+jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
 
 const ConfiguredPrivacyPolicyScreen: FC = () => (
     <PaperProvider theme={DefaultTheme}>

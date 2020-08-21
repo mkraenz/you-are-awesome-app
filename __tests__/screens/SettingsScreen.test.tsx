@@ -10,6 +10,8 @@ import SettingsScreen from "../../src/screens/SettingsScreen";
 import MockedNavigator from "../helpers/MockedNavigation";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
+jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
+
 afterEach(() => {
     resetDateMock();
 });

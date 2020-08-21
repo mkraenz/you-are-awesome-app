@@ -170,6 +170,9 @@ exports[`renders correctly 1`] = `
           <RCTRefreshControl />
           <View>
             <View
+              collapsable={false}
+              onGestureHandlerEvent={[Function]}
+              onGestureHandlerStateChange={[Function]}
               style={
                 Object {
                   "alignItems": "stretch",
@@ -223,7 +226,10 @@ exports[`renders correctly 1`] = `
                         Object {
                           "paddingVertical": 16,
                         },
-                        undefined,
+                        Object {
+                          "justifyContent": "center",
+                          "position": "relative",
+                        },
                       ]
                     }
                   >

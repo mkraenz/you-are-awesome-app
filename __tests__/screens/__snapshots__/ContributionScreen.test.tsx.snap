@@ -149,37 +149,6 @@ exports[`renders correctly 1`] = `
       <View
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "#B00020",
-            "flexDirection": "row",
-            "height": 30,
-            "justifyContent": "center",
-            "marginHorizontal": -100,
-          }
-        }
-      >
-        <Text
-          accessibilityStates={Object {}}
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "System",
-                "fontWeight": "400",
-                "textAlign": "left",
-              },
-              Object {
-                "color": "white",
-              },
-            ]
-          }
-        >
-          No Internet Connection
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
             "marginTop": 8,
           }
         }
@@ -848,14 +817,21 @@ exports[`renders correctly 1`] = `
           accessibilityStates={Object {}}
           style={
             Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.12)",
+              "backgroundColor": "#6200ee",
               "borderColor": "transparent",
               "borderRadius": 4,
               "borderStyle": "solid",
               "borderWidth": 0,
-              "elevation": 0,
+              "elevation": 2,
               "marginTop": 8,
               "minWidth": 64,
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 0.75,
+                "width": 0,
+              },
+              "shadowOpacity": 0.24,
+              "shadowRadius": 1.5,
             }
           }
         >
@@ -915,7 +891,7 @@ exports[`renders correctly 1`] = `
                         "textTransform": "uppercase",
                       },
                       Object {
-                        "color": "rgba(0, 0, 0, 0.32)",
+                        "color": "#ffffff",
                         "fontFamily": "System",
                         "fontWeight": "500",
                       },
