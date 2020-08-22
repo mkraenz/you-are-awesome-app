@@ -14,7 +14,7 @@ const TestLocalizationProvider: FC = ({ children }) => {
     };
 
     return (
-        <I18nextProvider i18n={myi18n(mockLanguageDetector)}>
+        <I18nextProvider i18n={myi18n(null)(mockLanguageDetector)}>
             {children}
         </I18nextProvider>
     );
