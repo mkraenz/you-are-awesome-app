@@ -1,10 +1,12 @@
+import { Language } from "../../localization/localization";
 import { ActionType } from "./ActionType";
 import { IAction, IActionWithPayload } from "./utils";
 
 export type IAppAction =
     | IToggleDarkThemeAction
     | ISetPushNotificationsState
-    | IChangePushNotificationTime;
+    | IChangePushNotificationTime
+    | ISetLanguage;
 
 export type IToggleDarkThemeAction = IAction<ActionType.ToggleDarkTheme>;
 
@@ -21,4 +23,9 @@ export type IChangePushNotificationTime = IActionWithPayload<
     {
         scheduledTime: Date;
     }
+>;
+
+export type ISetLanguage = IActionWithPayload<
+    ActionType.SetLanguage,
+    { language: Language }
 >;

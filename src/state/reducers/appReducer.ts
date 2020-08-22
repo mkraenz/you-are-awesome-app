@@ -8,9 +8,11 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
         isDarkModeOn: false,
         pushNotificationsEnabled: false,
         pushNotificationsScheduledTime: new Date(0),
+        language: null,
     },
     action
 ) => {
+    const x = 5;
     switch (action.type) {
         case ActionType.ToggleDarkTheme:
             return {
@@ -27,6 +29,11 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
             return {
                 ...state,
                 pushNotificationsScheduledTime: action.payload.scheduledTime,
+            };
+        case ActionType.SetLanguage:
+            return {
+                ...state,
+                language: action.payload.language,
             };
         default:
             return state;
