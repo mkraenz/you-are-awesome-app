@@ -87,9 +87,9 @@ const PushNotificationSettings: FC<Props> = ({
             <DateTimePicker
                 isVisible={openTimepicker}
                 mode="time"
-                onConfirm={(date) => setNotificationTime(date)}
+                onConfirm={setNotificationTime}
                 onCancel={() => setOpen(false)}
-                date={scheduledTime}
+                date={new Date(scheduledTime)}
             />
             <Divider accessibilityStates={{}} />
         </View>
@@ -97,7 +97,7 @@ const PushNotificationSettings: FC<Props> = ({
 };
 
 const getScheduledTimeOrDefault = (scheduledTime: Date) =>
-    scheduledTime.getTime() === 9 ? at11Am() : scheduledTime;
+    scheduledTime.getTime() === 0 ? at11Am() : scheduledTime;
 const at11Am = (now = new Date()) =>
     new Date(now.setHours(DEFAULT_NOTIFICATION_HOUR, 0, 0, 0));
 

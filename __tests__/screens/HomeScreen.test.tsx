@@ -10,6 +10,14 @@ import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
+const ConfiguredHomeScreen = () => (
+    <PaperProvider theme={DefaultTheme}>
+        <TestLocalizationProvider>
+            <HomeScreen />
+        </TestLocalizationProvider>
+    </PaperProvider>
+);
+
 it("renders correctly", () => {
     const store = createMockStore<Pick2<IState, "messages", "currentMessage">>(
         []
@@ -27,16 +35,10 @@ it("renders correctly", () => {
     const tree = renderer
         .create(
             <Provider store={store}>
-                <PaperProvider theme={DefaultTheme}>
-                    <TestLocalizationProvider>
-                        <HomeScreen />
-                    </TestLocalizationProvider>
-                </PaperProvider>
+                <ConfiguredHomeScreen />
             </Provider>
         )
         .toJSON();
 
     expect(tree).toMatchSnapshot();
 });
-
-// TODO test interactivity

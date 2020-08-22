@@ -1,8 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { State, TapGestureHandler } from "react-native-gesture-handler";
 import { Card, Paragraph, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
+import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
 import RefreshMessagesView from "../components/RefreshMessagesView";
 import { Route } from "../navigation/Route";
 import { IMessageContent } from "../state/state/IMessage";
@@ -17,6 +19,14 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "stretch",
     },
+    bubble: {
+        position: "relative",
+        justifyContent: "center",
+    },
+    heartIcon: {
+        position: "absolute",
+        alignSelf: "center",
+    },
 });
 
 interface Props {
@@ -24,6 +34,7 @@ interface Props {
 }
 
 const HomeScreen: FC<Props> = ({ msg }) => {
+    const [heartShown, showHeart] = useState(false);
     const theme = useTheme() as FullTheme;
     const cardStyle = theme.dark
         ? {
@@ -31,19 +42,38 @@ const HomeScreen: FC<Props> = ({ msg }) => {
           }
         : { backgroundColor: theme.colors.primary };
     const { author, text, country } = msg;
+
+    const likeOnDoubleTap = (event: any) => {
+        if (event.nativeEvent.state === State.ACTIVE) {
+            showHeart(true);
+        }
+    };
     return (
         <Layout route={Route.Home}>
             <RefreshMessagesView>
-                <View style={styles.container}>
-                    <Card style={cardStyle} accessibilityStates={{}}>
-                        <Card.Content>
-                            <Title style={{ color: "white" }}>{text}</Title>
-                            <Paragraph style={{ color: "white" }}>
-                                {author} from {country}
-                            </Paragraph>
-                        </Card.Content>
-                    </Card>
-                </View>
+                <TapGestureHandler
+                    onHandlerStateChange={likeOnDoubleTap}
+                    numberOfTaps={2}
+                >
+                    <View style={styles.container}>
+                        <Card style={cardStyle} accessibilityStates={{}}>
+                            <Card.Content style={styles.bubble}>
+                                <Title style={{ color: "white" }}>{text}</Title>
+                                <Paragraph style={{ color: "white" }}>
+                                    {author} from {country}
+                                </Paragraph>
+
+                                {heartShown && (
+                                    <AnimatedLikeIcon
+                                        style={styles.heartIcon}
+                                        onFinished={() => showHeart(false)}
+                                        maxIconSize={200}
+                                    />
+                                )}
+                            </Card.Content>
+                        </Card>
+                    </View>
+                </TapGestureHandler>
             </RefreshMessagesView>
         </Layout>
     );

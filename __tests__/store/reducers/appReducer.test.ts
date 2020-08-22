@@ -1,7 +1,8 @@
+import { Language } from "../../../src/localization/localization";
 import { ActionType } from "../../../src/state/actions/ActionType";
 import {
     IChangePushNotificationTime,
-    IReadSettingsSucceeded,
+    ISetLanguage,
     ISetPushNotificationsState,
     IToggleDarkThemeAction,
 } from "../../../src/state/actions/IAppAction";
@@ -16,6 +17,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
         expect(result).toEqual(expected);
     });
@@ -28,6 +30,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
 
         const result = appReducer(state, action);
@@ -36,6 +39,7 @@ describe("appReducer()", () => {
             isDarkModeOn: true,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
         expect(result).toEqual(expected);
     });
@@ -48,6 +52,7 @@ describe("appReducer()", () => {
             isDarkModeOn: true,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
 
         const result = appReducer(state, action);
@@ -56,6 +61,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
         expect(result).toEqual(expected);
     });
@@ -72,6 +78,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
 
         const result = appReducer(state, action);
@@ -80,6 +87,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: true,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
+            language: null,
         };
         expect(result).toEqual(expected);
     });
@@ -96,6 +104,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: true,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
+            language: null,
         };
 
         const result = appReducer(state, action);
@@ -104,30 +113,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
-        };
-        expect(result).toEqual(expected);
-    });
-
-    it(`should handle ${ActionType.ReadSettingsSucceeded}`, () => {
-        const action: IReadSettingsSucceeded = {
-            type: ActionType.ReadSettingsSucceeded,
-            payload: {
-                enabled: true,
-                scheduledTime: new Date("2016"),
-            },
-        };
-        const state: IAppState = {
-            isDarkModeOn: false,
-            pushNotificationsEnabled: false,
-            pushNotificationsScheduledTime: new Date(0),
-        };
-
-        const result = appReducer(state, action);
-
-        const expected: IAppState = {
-            isDarkModeOn: false,
-            pushNotificationsEnabled: true,
-            pushNotificationsScheduledTime: new Date("2016"),
+            language: null,
         };
         expect(result).toEqual(expected);
     });
@@ -143,6 +129,7 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
+            language: null,
         };
 
         const result = appReducer(state, action);
@@ -151,6 +138,32 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date("2016"),
+            language: null,
+        };
+        expect(result).toEqual(expected);
+    });
+
+    it(`should handle ${ActionType.SetLanguage}`, () => {
+        const action: ISetLanguage = {
+            type: ActionType.SetLanguage,
+            payload: {
+                language: Language.English,
+            },
+        };
+        const state: IAppState = {
+            isDarkModeOn: false,
+            pushNotificationsEnabled: false,
+            pushNotificationsScheduledTime: new Date(0),
+            language: null,
+        };
+
+        const result = appReducer(state, action);
+
+        const expected: IAppState = {
+            isDarkModeOn: false,
+            pushNotificationsEnabled: false,
+            pushNotificationsScheduledTime: new Date(0),
+            language: Language.English,
         };
         expect(result).toEqual(expected);
     });

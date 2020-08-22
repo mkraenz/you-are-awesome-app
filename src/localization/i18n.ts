@@ -1,21 +1,21 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import localization from "./localization";
+import localization, { Language } from "./localization";
 
 const DEBUG = false;
 
-const myi18n = (languageDetector?: {
+const myi18n = (language: Language | null) => (languageDetector?: {
     type: "languageDetector";
     async: boolean;
     detect: (callback: (locale: string) => void) => void;
     init: () => void;
     cacheUserLanguage: () => void;
 }) => {
-    const i18 = i18n;
     if (languageDetector) i18n.use(languageDetector);
-    i18.use(initReactI18next).init({
+    i18n.use(initReactI18next).init({
+        lng: language || undefined,
         resources: localization,
-        fallbackLng: "en",
+        fallbackLng: Language.English,
         defaultNS: "default",
         debug: DEBUG,
         interpolation: {
@@ -23,7 +23,7 @@ const myi18n = (languageDetector?: {
         },
         cleanCode: true,
     });
-    return i18;
+    return i18n;
 };
 
 export default myi18n;

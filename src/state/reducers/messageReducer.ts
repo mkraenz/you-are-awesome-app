@@ -6,9 +6,6 @@ import { IMessagesState } from "../state/IMessagesState";
 
 export const initialMessage: IMessage = {
     id: "0",
-    // text: "Loading...",
-    // author: "",
-    // country: "", // TODO delete
     author: "Max",
     country: "Germany",
     text: "You can make a change. Stay awesome as you are!",

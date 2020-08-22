@@ -12,7 +12,6 @@ export enum ActionType {
     NetInfoChanged = "NetInfoChanged",
     SetPushNotificationsState = "SetPushNotificationsState",
     ChangePushNotificationTime = "ChangePushNotificationTime",
-    ReadSettingsRequested = "ReadSettingsRequested",
-    ReadSettingsSucceeded = "ReadSettingsSucceeded",
     ToggleDarkTheme = "ToggleDarkTheme",
+    SetLanguage = "SetLanguage",
 }
