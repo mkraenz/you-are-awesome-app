@@ -1,15 +1,14 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
-import { Divider, Paragraph, Subheading } from "react-native-paper";
+import { Divider, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import LanguageDropdown from "../components/settings/LanguageDropdown";
 import PushNotificationSettings from "../components/settings/PushNotificationSettings";
 import SettingsRow from "../components/settings/SettingsRow";
 import { Route } from "../navigation/Route";
-import { requestReadSettings } from "../state/action-creators/requestReadSettings";
 import { toggleDarkTheme } from "../state/action-creators/toggleDarkTheme";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import version from "../utils/version.json";
@@ -27,27 +26,13 @@ interface StateProps {
 }
 interface DispatchProps {
     toggleDarkTheme: () => void;
-    requestReadSettings: () => void;
 }
 
 type Props = StateProps & DispatchProps;
 
-const SettingsScreen: FC<Props> = ({
-    isDarkModeOn,
-    toggleDarkTheme,
-    requestReadSettings,
-}) => {
+const SettingsScreen: FC<Props> = ({ isDarkModeOn, toggleDarkTheme }) => {
     const { t } = useTranslation();
     const navigation = useNavigation();
-
-    const [readFinished, setReadFinished] = useState(false);
-    useEffect(() => {
-        // TODO load existing settings into redux on app startup -> Redux persist
-        if (!readFinished) {
-            requestReadSettings();
-            setReadFinished(true);
-        }
-    }, [readFinished, setReadFinished]);
 
     const handlePrivacyPolicyPressed = () =>
         navigation.navigate(Route.PrivacyPolicy);
@@ -59,15 +44,12 @@ const SettingsScreen: FC<Props> = ({
             <SettingsRow
                 title={t("darkMode")}
                 onPress={toggleDarkTheme}
-                disabled={true}
-                rightComponent={(disabledStyle: { color?: string }) => () => (
-                    // <Switch
-                    //     value={isDarkModeOn}
-                    //     onValueChange={toggleDarkTheme}
-                    // ></Switch>
-                    <Subheading style={disabledStyle}>
-                        {t("comingSoon")}
-                    </Subheading>
+                rightComponent={() => () => (
+                    <Switch
+                        value={isDarkModeOn}
+                        onValueChange={toggleDarkTheme}
+                        accessibilityStates={{}}
+                    ></Switch>
                 )}
             />
             <Divider accessibilityStates={{}} />
@@ -99,6 +81,5 @@ const mapStateToProps: MapStateToProps<StateProps> = (state) => ({
 
 const mapDispatchToProps: DispatchProps = {
     toggleDarkTheme,
-    requestReadSettings,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);

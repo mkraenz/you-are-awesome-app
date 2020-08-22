@@ -4,9 +4,7 @@ import { IAction, IActionWithPayload } from "./utils";
 export type IAppAction =
     | IToggleDarkThemeAction
     | ISetPushNotificationsState
-    | IChangePushNotificationTime
-    | IReadSettingsSucceeded
-    | IReadSettingsRequested;
+    | IChangePushNotificationTime;
 
 export type IToggleDarkThemeAction = IAction<ActionType.ToggleDarkTheme>;
 
@@ -21,16 +19,6 @@ export type ISetPushNotificationsState = IActionWithPayload<
 export type IChangePushNotificationTime = IActionWithPayload<
     ActionType.ChangePushNotificationTime,
     {
-        scheduledTime: Date;
-    }
->;
-
-export type IReadSettingsRequested = IAction<ActionType.ReadSettingsRequested>;
-
-export type IReadSettingsSucceeded = IActionWithPayload<
-    ActionType.ReadSettingsSucceeded,
-    {
-        enabled: boolean;
         scheduledTime: Date;
     }
 >;

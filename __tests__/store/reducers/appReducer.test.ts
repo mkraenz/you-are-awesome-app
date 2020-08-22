@@ -1,7 +1,6 @@
 import { ActionType } from "../../../src/state/actions/ActionType";
 import {
     IChangePushNotificationTime,
-    IReadSettingsSucceeded,
     ISetPushNotificationsState,
     IToggleDarkThemeAction,
 } from "../../../src/state/actions/IAppAction";
@@ -104,30 +103,6 @@ describe("appReducer()", () => {
             isDarkModeOn: false,
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
-        };
-        expect(result).toEqual(expected);
-    });
-
-    it(`should handle ${ActionType.ReadSettingsSucceeded}`, () => {
-        const action: IReadSettingsSucceeded = {
-            type: ActionType.ReadSettingsSucceeded,
-            payload: {
-                enabled: true,
-                scheduledTime: new Date("2016"),
-            },
-        };
-        const state: IAppState = {
-            isDarkModeOn: false,
-            pushNotificationsEnabled: false,
-            pushNotificationsScheduledTime: new Date(0),
-        };
-
-        const result = appReducer(state, action);
-
-        const expected: IAppState = {
-            isDarkModeOn: false,
-            pushNotificationsEnabled: true,
-            pushNotificationsScheduledTime: new Date("2016"),
         };
         expect(result).toEqual(expected);
     });

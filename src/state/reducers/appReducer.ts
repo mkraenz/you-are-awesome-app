@@ -18,7 +18,6 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
                 isDarkModeOn: !state.isDarkModeOn,
             };
         case ActionType.SetPushNotificationsState:
-        case ActionType.ReadSettingsSucceeded:
             return {
                 ...state,
                 pushNotificationsEnabled: action.payload.enabled,

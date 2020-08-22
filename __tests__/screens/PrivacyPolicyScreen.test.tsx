@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import "react-native";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 // Note: test renderer must be required after react-native.
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 import PrivacyPolicyScreen from "../../src/screens/PrivacyPolicyScreen";
 import MockedNavigator from "../helpers/MockedNavigation";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
@@ -21,6 +21,7 @@ const ConfiguredPrivacyPolicyScreen: FC = () => (
 
 it("renders a button and the webview", async () => {
     const tree = renderer.create(<ConfiguredPrivacyPolicyScreen />).toJSON();
+    await act(async () => {});
 
     expect(tree).toMatchSnapshot();
 });

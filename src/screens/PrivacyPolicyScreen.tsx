@@ -9,9 +9,7 @@ import { Route } from "../navigation/Route";
 
 const styles = StyleSheet.create({
     viewInBrowserButton: {
-        marginTop: 16,
-        marginHorizontal: 16,
-        marginBottom: 8,
+        margin: 16,
     },
 });
 
@@ -25,7 +23,7 @@ const PrivacyPolicyScreen: React.FC = () => {
             title={t(Route.PrivacyPolicy)}
         >
             <Button
-                mode="outlined"
+                mode="contained"
                 style={styles.viewInBrowserButton}
                 onPress={() => Linking.openURL(t("privacyPolicyLink"))}
                 accessibilityStates={{}}

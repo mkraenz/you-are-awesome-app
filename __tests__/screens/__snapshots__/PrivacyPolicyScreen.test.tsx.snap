@@ -536,16 +536,21 @@ exports[`renders a button and the webview 1`] = `
                             accessibilityStates={Object {}}
                             style={
                               Object {
-                                "backgroundColor": "transparent",
-                                "borderColor": "rgba(0, 0, 0, 0.29)",
+                                "backgroundColor": "#6200ee",
+                                "borderColor": "transparent",
                                 "borderRadius": 4,
                                 "borderStyle": "solid",
-                                "borderWidth": 0.5,
-                                "elevation": 0,
-                                "marginBottom": 8,
-                                "marginHorizontal": 16,
-                                "marginTop": 16,
+                                "borderWidth": 0,
+                                "elevation": 2,
+                                "margin": 16,
                                 "minWidth": 64,
+                                "shadowColor": "#000000",
+                                "shadowOffset": Object {
+                                  "height": 0.75,
+                                  "width": 0,
+                                },
+                                "shadowOpacity": 0.24,
+                                "shadowRadius": 1.5,
                               }
                             }
                           >
@@ -605,7 +610,7 @@ exports[`renders a button and the webview 1`] = `
                                           "textTransform": "uppercase",
                                         },
                                         Object {
-                                          "color": "#6200ee",
+                                          "color": "#ffffff",
                                           "fontFamily": "System",
                                           "fontWeight": "500",
                                         },

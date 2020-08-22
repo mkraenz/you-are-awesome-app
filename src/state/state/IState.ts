@@ -1,6 +1,6 @@
 import { IAppState } from "./IAppState";
-import { INetworkState } from "./INetworkState";
 import { IMessagesState } from "./IMessagesState";
+import { INetworkState } from "./INetworkState";
 import { ISubmitMessageState } from "./ISubmitMessageState";
 
 export interface IState {
