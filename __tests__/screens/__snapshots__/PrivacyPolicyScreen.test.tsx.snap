@@ -515,13 +515,6 @@ exports[`renders a button and the webview 1`] = `
                                 Privacy Policy
                               </Text>
                             </View>
-                            <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
                           </View>
                         </RCTSafeAreaView>
                         <View

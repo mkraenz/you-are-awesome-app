@@ -1,7 +1,7 @@
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { StatusBar } from "react-native";
-import { Appbar } from "react-native-paper";
+import { Appbar, useTheme } from "react-native-paper";
 
 interface Props {
     title: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const MyAppbar: FC<Props> = ({ title, onBack }) => {
-    const { t } = useTranslation();
+    const { dark } = useTheme();
     return (
         <Appbar.Header
             accessibilityStates={{}}
@@ -23,6 +23,7 @@ const MyAppbar: FC<Props> = ({ title, onBack }) => {
                 style={onBack ? {} : { alignItems: "center", display: "flex" }}
                 accessibilityStates={{}}
             />
+            <ExpoStatusBar style={dark ? "light" : "dark"} />
         </Appbar.Header>
     );
 };
