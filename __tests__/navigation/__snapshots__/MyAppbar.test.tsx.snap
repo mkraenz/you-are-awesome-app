@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders correctly without dark mode 1`] = `
 <View
   collapsable={false}
   pointerEvents="box-none"
@@ -112,13 +112,6 @@ exports[`renders correctly 1`] = `
           my-title
         </Text>
       </View>
-      <View
-        style={
-          Object {
-            "width": 48,
-          }
-        }
-      />
     </View>
   </RCTSafeAreaView>
 </View>

@@ -409,13 +409,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 You are Awesome App!
                               </Text>
                             </View>
-                            <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
                           </View>
                         </RCTSafeAreaView>
                         <View
@@ -1030,7 +1023,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             >
                               Build version
                                
-                              13
+                              14
                             </Text>
                             <Text
                               style={
@@ -1499,13 +1492,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 You are Awesome App!
                               </Text>
                             </View>
-                            <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
                           </View>
                         </RCTSafeAreaView>
                         <View
@@ -2042,7 +2028,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                             >
                               Build version
                                
-                              13
+                              14
                             </Text>
                             <Text
                               style={
@@ -2511,13 +2497,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 You are Awesome App!
                               </Text>
                             </View>
-                            <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
                           </View>
                         </RCTSafeAreaView>
                         <View
@@ -3093,7 +3072,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                             >
                               Build version
                                
-                              13
+                              14
                             </Text>
                             <Text
                               style={

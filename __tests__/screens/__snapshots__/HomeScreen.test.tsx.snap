@@ -129,13 +129,6 @@ exports[`renders correctly 1`] = `
             You are Awesome App!
           </Text>
         </View>
-        <View
-          style={
-            Object {
-              "width": 48,
-            }
-          }
-        />
       </View>
     </RCTSafeAreaView>
     <View
