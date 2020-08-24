@@ -1,4 +1,4 @@
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
@@ -10,6 +10,7 @@ import ContributionScreen from "../screens/ContributionScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PrivacyPolicyScreen from "../screens/PrivacyPolicyScreen";
 import SettingsScreen from "../screens/SettingsScreen";
+import { FullTheme } from "../themes/theme";
 import { Route } from "./Route";
 
 const Stack = createStackNavigator();
@@ -25,13 +26,32 @@ export const SettingsStack = () => {
     );
 };
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 const NavigationApp = () => {
-    const theme = useTheme();
+    const theme = useTheme() as FullTheme;
     const { t } = useTranslation();
     return (
         <NavigationContainer theme={theme as any}>
-            <Tab.Navigator initialRouteName={START_SCREEN}>
+            <Tab.Navigator
+                initialRouteName={START_SCREEN}
+                tabBarPosition="bottom"
+                tabBarOptions={{
+                    showIcon: true,
+                    style: {
+                        backgroundColor: theme.dark
+                            ? theme.colors.accentedCard
+                            : theme.colors.primary,
+                        marginBottom: -8,
+                        marginTop: -4,
+                    },
+                    iconStyle: { margin: -4 },
+                    renderIndicator: () => null,
+                    labelStyle: {
+                        textTransform: "capitalize",
+                    },
+                    activeTintColor: "white",
+                }}
+            >
                 <Tab.Screen
                     name={Route.Contribute}
                     component={ContributionScreen}

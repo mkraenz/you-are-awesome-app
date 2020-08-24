@@ -1,6 +1,10 @@
 import React, { FC, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { State, TapGestureHandler } from "react-native-gesture-handler";
+import {
+    State,
+    TapGestureHandler,
+    TapGestureHandlerStateChangeEvent,
+} from "react-native-gesture-handler";
 import { Card, Paragraph, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
@@ -43,7 +47,7 @@ const HomeScreen: FC<Props> = ({ msg }) => {
         : { backgroundColor: theme.colors.primary };
     const { author, text, country } = msg;
 
-    const likeOnDoubleTap = (event: any) => {
+    const likeOnDoubleTap = (event: TapGestureHandlerStateChangeEvent) => {
         if (event.nativeEvent.state === State.ACTIVE) {
             showHeart(true);
         }
