@@ -1,14 +1,15 @@
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
 import { IMessageAction } from "../actions/IAction";
-import { IMessage } from "../state/IMessage";
+import { MessageWithDate } from "../state/IMessage";
 import { IMessagesState } from "../state/IMessagesState";
 
-export const initialMessage: IMessage = {
-    id: "0",
+export const initialMessage: MessageWithDate = {
+    id: "default",
     author: "Max",
     country: "Germany",
     text: "You can make a change. Stay awesome as you are!",
+    isodate: "2019-11-12",
 };
 
 export const messageReducer: Reducer<IMessagesState, IMessageAction> = (
@@ -20,12 +21,6 @@ export const messageReducer: Reducer<IMessagesState, IMessageAction> = (
     action
 ) => {
     switch (action.type) {
-        case ActionType.SubmitMessageRequested:
-            return {
-                ...state,
-                currentMessage: action.payload,
-                refreshing: false,
-            };
         case ActionType.FetchMessagesSucceeded:
             return {
                 ...state,

@@ -71,6 +71,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [Google Sheets to JSON](http://gsx2json.com/)
 - [My JSON Server](https://my-json-server.typicode.com)
 - [UI Prototyping via Moqups](https://app.moqups.com/pczu8pWcIi/edit/page/aa9df7b72)
+- [UI Prototyping via Framer](https://framer.com/projects/examples)
 - [Hashtagify](https://hashtagify.me/hashtag/app)
 - [Commun.it](https://commun.it/)
 - [Expo API Status](https://status.expo.io/#)

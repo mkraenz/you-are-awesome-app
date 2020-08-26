@@ -4,6 +4,7 @@ export const mock = {
         country: "my-country",
         id: "876",
         text: "awesome-message",
+        isodate: "2020-05-01",
     },
     messages: [
         {

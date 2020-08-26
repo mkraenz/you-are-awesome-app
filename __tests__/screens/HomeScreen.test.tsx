@@ -28,6 +28,7 @@ it("renders correctly", () => {
                 author: "my-author",
                 text: "my-text",
                 country: "my-country",
+                isodate: "2018-08-20",
             },
         },
     });
