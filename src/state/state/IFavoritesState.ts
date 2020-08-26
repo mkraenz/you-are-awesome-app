@@ -1,5 +1,5 @@
-import { MessageWithDate } from "./IMessage";
+import { IMessage } from "./IMessage";
 
 export interface IFavoritesState {
-    messages: MessageWithDate[];
+    messages: IMessage[];
 }

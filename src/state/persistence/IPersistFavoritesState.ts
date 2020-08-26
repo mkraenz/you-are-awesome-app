@@ -1,5 +1,5 @@
-import { MessageWithDate } from "../state/IMessage";
+import { IMessage } from "../state/IMessage";
 
 export type IPersistFavoritesState = Readonly<{
-    messages: MessageWithDate[];
+    messages: IMessage[];
 }>;

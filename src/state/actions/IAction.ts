@@ -1,4 +1,4 @@
-import { IMessage, MessageWithDate } from "../state/IMessage";
+import { IMessage, IMessageWithId } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
 import { IFavoritesAction } from "./IFavoritesAction";
@@ -22,9 +22,9 @@ export type IMessageAction =
 export interface IFetchMessagesSucceeded {
     type: ActionType.FetchMessagesSucceeded;
     payload: {
-        message: MessageWithDate;
+        message: IMessage;
         now: Date;
-        messages: MessageWithDate[];
+        messages: IMessage[];
     };
 }
 
@@ -53,7 +53,7 @@ export interface IFetchMessagesFailedTimeoutExceeded {
 
 export type ISubmitMessageRequested = IActionWithPayload<
     ActionType.SubmitMessageRequested,
-    IMessage
+    IMessageWithId
 >;
 
 export interface ISubmitMessageFailed {

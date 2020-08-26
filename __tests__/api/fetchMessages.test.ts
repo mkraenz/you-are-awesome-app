@@ -1,6 +1,6 @@
 import axios from "axios";
 import { fetchMessages } from "../../src/api/fetchMessages";
-import { MessageWithDate } from "../../src/state/state/IMessage";
+import { IMessage } from "../../src/state/state/IMessage";
 
 afterEach(() => {
     jest.clearAllMocks();
@@ -11,7 +11,7 @@ afterEach(() => {
 describe("fetchMessages", () => {
     it("returns the fetched messages", async () => {
         const isodate = "2016-01-01";
-        const messages: MessageWithDate[] = [
+        const messages: IMessage[] = [
             {
                 author: "author-1",
                 country: "country-1",
@@ -33,7 +33,7 @@ describe("fetchMessages", () => {
     });
 
     it("returns strings for each property", async () => {
-        const messages: MessageWithDate[] = [
+        const messages: IMessage[] = [
             {
                 // @ts-expect-error
                 author: 5,
