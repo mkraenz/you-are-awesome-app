@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Keyboard, StyleSheet } from "react-native";
+import { Dimensions, Keyboard, StyleSheet } from "react-native";
 import { useTheme } from "react-native-paper";
 import TabBarIcon from "../components/navigation/TabBarIcon";
 import { START_SCREEN } from "../config";
@@ -46,7 +46,7 @@ export const SettingsStack = () => {
 
 const Tab = createMaterialTopTabNavigator();
 const NavigationApp = () => {
-    // navbar should be hidden if keyboard is shown
+    // hide navbar if keyboard is shown
     const [keyboardShown, setKeyboardShown] = useState(false);
     useEffect(() => {
         Keyboard.addListener("keyboardDidShow", handleKeyboardShown);
@@ -82,6 +82,7 @@ const NavigationApp = () => {
                     labelStyle: styles.label,
                     activeTintColor: "white",
                 }}
+                initialLayout={{ width: Dimensions.get("window").width }}
             >
                 <Tab.Screen
                     name={Route.Contribute}
