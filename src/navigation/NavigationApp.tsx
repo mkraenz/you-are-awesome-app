@@ -45,7 +45,7 @@ const NavigationApp = () => {
     const theme = useTheme() as FullTheme;
     const { t } = useTranslation();
     return (
-        <NavigationContainer theme={theme as any}>
+        <NavigationContainer theme={theme}>
             <Tab.Navigator
                 initialRouteName={START_SCREEN}
                 tabBarPosition="bottom"

@@ -1061,7 +1061,7 @@ exports[`renders the list 1`] = `
                                 >
                                   <View
                                     accessible={true}
-                                    focusable={true}
+                                    focusable={false}
                                     onClick={[Function]}
                                     onResponderGrant={[Function]}
                                     onResponderMove={[Function]}
@@ -1070,56 +1070,61 @@ exports[`renders the list 1`] = `
                                     onResponderTerminationRequest={[Function]}
                                     onStartShouldSetResponder={[Function]}
                                     style={
-                                      Object {
-                                        "opacity": 1,
-                                      }
+                                      Array [
+                                        false,
+                                        Array [
+                                          Object {
+                                            "padding": 8,
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
                                     }
                                   >
                                     <View
-                                      accessible={true}
-                                      focusable={false}
-                                      onClick={[Function]}
-                                      onResponderGrant={[Function]}
-                                      onResponderMove={[Function]}
-                                      onResponderRelease={[Function]}
-                                      onResponderTerminate={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
                                       style={
-                                        Array [
-                                          false,
-                                          Array [
-                                            Object {
-                                              "padding": 8,
-                                            },
-                                            undefined,
-                                          ],
-                                        ]
+                                        Object {
+                                          "flexDirection": "row",
+                                        }
                                       }
                                     >
                                       <View
                                         style={
-                                          Object {
-                                            "flexDirection": "row",
-                                          }
+                                          Array [
+                                            Object {
+                                              "marginVertical": 6,
+                                              "paddingLeft": 8,
+                                            },
+                                            Object {
+                                              "flex": 1,
+                                              "justifyContent": "center",
+                                            },
+                                          ]
                                         }
                                       >
-                                        <View
+                                        <Text
+                                          numberOfLines={5}
                                           style={
                                             Array [
                                               Object {
-                                                "marginVertical": 6,
-                                                "paddingLeft": 8,
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontWeight": "400",
+                                                "textAlign": "left",
                                               },
-                                              Object {
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                              },
+                                              Array [
+                                                Object {
+                                                  "fontSize": 16,
+                                                },
+                                                Object {
+                                                  "color": "rgba(0, 0, 0, 0.87)",
+                                                },
+                                                undefined,
+                                              ],
                                             ]
                                           }
                                         >
                                           <Text
-                                            numberOfLines={1}
                                             style={
                                               Array [
                                                 Object {
@@ -1130,156 +1135,134 @@ exports[`renders the list 1`] = `
                                                 },
                                                 Array [
                                                   Object {
-                                                    "fontSize": 16,
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "400",
+                                                    "textAlign": "left",
+                                                    "writingDirection": "ltr",
                                                   },
-                                                  undefined,
+                                                  Array [
+                                                    Object {
+                                                      "fontSize": 16,
+                                                      "letterSpacing": 0.5,
+                                                      "lineHeight": 24,
+                                                      "marginVertical": 2,
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                  Array [
+                                                    Object {
+                                                      "fontSize": 16,
+                                                      "letterSpacing": 0.5,
+                                                      "lineHeight": 24,
+                                                      "marginVertical": 2,
+                                                    },
+                                                    undefined,
+                                                  ],
                                                 ],
                                               ]
                                             }
                                           >
-                                            <Text
-                                              style={
+                                            text-1
+                                          </Text>
+                                        </Text>
+                                        <View
+                                          style={
+                                            Object {
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "justifyContent": "space-between",
+                                            }
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontWeight": "400",
+                                                  "textAlign": "left",
+                                                },
                                                 Array [
                                                   Object {
-                                                    "color": "#000000",
+                                                    "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
                                                     "textAlign": "left",
+                                                    "writingDirection": "ltr",
                                                   },
                                                   Array [
                                                     Object {
-                                                      "color": "rgba(0, 0, 0, 0.87)",
-                                                      "fontFamily": "System",
-                                                      "fontWeight": "400",
-                                                      "textAlign": "left",
-                                                      "writingDirection": "ltr",
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
                                                     },
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 16,
-                                                        "letterSpacing": 0.5,
-                                                        "lineHeight": 24,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 16,
-                                                        "letterSpacing": 0.5,
-                                                        "lineHeight": 24,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
+                                                    undefined,
                                                   ],
-                                                ]
-                                              }
-                                            >
-                                              text-1
-                                            </Text>
-                                          </Text>
-                                          <View
-                                            style={
-                                              Object {
-                                                "flex": 1,
-                                                "flexDirection": "row",
-                                                "justifyContent": "space-between",
-                                              }
+                                                  Array [
+                                                    Object {
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                ],
+                                              ]
                                             }
                                           >
-                                            <Text
-                                              style={
+                                            author-1
+                                             from 
+                                            country-1
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontWeight": "400",
+                                                  "textAlign": "left",
+                                                },
                                                 Array [
                                                   Object {
-                                                    "color": "#000000",
+                                                    "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
                                                     "textAlign": "left",
+                                                    "writingDirection": "ltr",
                                                   },
                                                   Array [
                                                     Object {
-                                                      "color": "rgba(0, 0, 0, 0.87)",
-                                                      "fontFamily": "System",
-                                                      "fontWeight": "400",
-                                                      "textAlign": "left",
-                                                      "writingDirection": "ltr",
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
                                                     },
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
+                                                    Object {
+                                                      "fontSize": 10,
+                                                    },
                                                   ],
-                                                ]
-                                              }
-                                            >
-                                              author-1
-                                               from 
-                                              country-1
-                                            </Text>
-                                            <Text
-                                              style={
-                                                Array [
-                                                  Object {
-                                                    "color": "#000000",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "400",
-                                                    "textAlign": "left",
-                                                  },
                                                   Array [
                                                     Object {
-                                                      "color": "rgba(0, 0, 0, 0.87)",
-                                                      "fontFamily": "System",
-                                                      "fontWeight": "400",
-                                                      "textAlign": "left",
-                                                      "writingDirection": "ltr",
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
                                                     },
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      Object {
-                                                        "fontSize": 10,
-                                                      },
-                                                    ],
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      Object {
-                                                        "fontSize": 10,
-                                                      },
-                                                    ],
+                                                    Object {
+                                                      "fontSize": 10,
+                                                    },
                                                   ],
-                                                ]
-                                              }
-                                            >
-                                              2029-01-01
-                                            </Text>
-                                          </View>
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            2029-01-01
+                                          </Text>
                                         </View>
                                       </View>
                                     </View>
@@ -1304,7 +1287,7 @@ exports[`renders the list 1`] = `
                                 >
                                   <View
                                     accessible={true}
-                                    focusable={true}
+                                    focusable={false}
                                     onClick={[Function]}
                                     onResponderGrant={[Function]}
                                     onResponderMove={[Function]}
@@ -1313,56 +1296,61 @@ exports[`renders the list 1`] = `
                                     onResponderTerminationRequest={[Function]}
                                     onStartShouldSetResponder={[Function]}
                                     style={
-                                      Object {
-                                        "opacity": 1,
-                                      }
+                                      Array [
+                                        false,
+                                        Array [
+                                          Object {
+                                            "padding": 8,
+                                          },
+                                          undefined,
+                                        ],
+                                      ]
                                     }
                                   >
                                     <View
-                                      accessible={true}
-                                      focusable={false}
-                                      onClick={[Function]}
-                                      onResponderGrant={[Function]}
-                                      onResponderMove={[Function]}
-                                      onResponderRelease={[Function]}
-                                      onResponderTerminate={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
                                       style={
-                                        Array [
-                                          false,
-                                          Array [
-                                            Object {
-                                              "padding": 8,
-                                            },
-                                            undefined,
-                                          ],
-                                        ]
+                                        Object {
+                                          "flexDirection": "row",
+                                        }
                                       }
                                     >
                                       <View
                                         style={
-                                          Object {
-                                            "flexDirection": "row",
-                                          }
+                                          Array [
+                                            Object {
+                                              "marginVertical": 6,
+                                              "paddingLeft": 8,
+                                            },
+                                            Object {
+                                              "flex": 1,
+                                              "justifyContent": "center",
+                                            },
+                                          ]
                                         }
                                       >
-                                        <View
+                                        <Text
+                                          numberOfLines={5}
                                           style={
                                             Array [
                                               Object {
-                                                "marginVertical": 6,
-                                                "paddingLeft": 8,
+                                                "color": "#000000",
+                                                "fontFamily": "System",
+                                                "fontWeight": "400",
+                                                "textAlign": "left",
                                               },
-                                              Object {
-                                                "flex": 1,
-                                                "justifyContent": "center",
-                                              },
+                                              Array [
+                                                Object {
+                                                  "fontSize": 16,
+                                                },
+                                                Object {
+                                                  "color": "rgba(0, 0, 0, 0.87)",
+                                                },
+                                                undefined,
+                                              ],
                                             ]
                                           }
                                         >
                                           <Text
-                                            numberOfLines={1}
                                             style={
                                               Array [
                                                 Object {
@@ -1373,156 +1361,134 @@ exports[`renders the list 1`] = `
                                                 },
                                                 Array [
                                                   Object {
-                                                    "fontSize": 16,
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
+                                                    "fontFamily": "System",
+                                                    "fontWeight": "400",
+                                                    "textAlign": "left",
+                                                    "writingDirection": "ltr",
                                                   },
-                                                  undefined,
+                                                  Array [
+                                                    Object {
+                                                      "fontSize": 16,
+                                                      "letterSpacing": 0.5,
+                                                      "lineHeight": 24,
+                                                      "marginVertical": 2,
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                  Array [
+                                                    Object {
+                                                      "fontSize": 16,
+                                                      "letterSpacing": 0.5,
+                                                      "lineHeight": 24,
+                                                      "marginVertical": 2,
+                                                    },
+                                                    undefined,
+                                                  ],
                                                 ],
                                               ]
                                             }
                                           >
-                                            <Text
-                                              style={
+                                            text-2
+                                          </Text>
+                                        </Text>
+                                        <View
+                                          style={
+                                            Object {
+                                              "flex": 1,
+                                              "flexDirection": "row",
+                                              "justifyContent": "space-between",
+                                            }
+                                          }
+                                        >
+                                          <Text
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontWeight": "400",
+                                                  "textAlign": "left",
+                                                },
                                                 Array [
                                                   Object {
-                                                    "color": "#000000",
+                                                    "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
                                                     "textAlign": "left",
+                                                    "writingDirection": "ltr",
                                                   },
                                                   Array [
                                                     Object {
-                                                      "color": "rgba(0, 0, 0, 0.87)",
-                                                      "fontFamily": "System",
-                                                      "fontWeight": "400",
-                                                      "textAlign": "left",
-                                                      "writingDirection": "ltr",
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
                                                     },
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 16,
-                                                        "letterSpacing": 0.5,
-                                                        "lineHeight": 24,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 16,
-                                                        "letterSpacing": 0.5,
-                                                        "lineHeight": 24,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
+                                                    undefined,
                                                   ],
-                                                ]
-                                              }
-                                            >
-                                              text-2
-                                            </Text>
-                                          </Text>
-                                          <View
-                                            style={
-                                              Object {
-                                                "flex": 1,
-                                                "flexDirection": "row",
-                                                "justifyContent": "space-between",
-                                              }
+                                                  Array [
+                                                    Object {
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
+                                                    },
+                                                    undefined,
+                                                  ],
+                                                ],
+                                              ]
                                             }
                                           >
-                                            <Text
-                                              style={
+                                            author-2
+                                             from 
+                                            country-2
+                                          </Text>
+                                          <Text
+                                            style={
+                                              Array [
+                                                Object {
+                                                  "color": "#000000",
+                                                  "fontFamily": "System",
+                                                  "fontWeight": "400",
+                                                  "textAlign": "left",
+                                                },
                                                 Array [
                                                   Object {
-                                                    "color": "#000000",
+                                                    "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
                                                     "textAlign": "left",
+                                                    "writingDirection": "ltr",
                                                   },
                                                   Array [
                                                     Object {
-                                                      "color": "rgba(0, 0, 0, 0.87)",
-                                                      "fontFamily": "System",
-                                                      "fontWeight": "400",
-                                                      "textAlign": "left",
-                                                      "writingDirection": "ltr",
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
                                                     },
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      undefined,
-                                                    ],
+                                                    Object {
+                                                      "fontSize": 10,
+                                                    },
                                                   ],
-                                                ]
-                                              }
-                                            >
-                                              author-2
-                                               from 
-                                              country-2
-                                            </Text>
-                                            <Text
-                                              style={
-                                                Array [
-                                                  Object {
-                                                    "color": "#000000",
-                                                    "fontFamily": "System",
-                                                    "fontWeight": "400",
-                                                    "textAlign": "left",
-                                                  },
                                                   Array [
                                                     Object {
-                                                      "color": "rgba(0, 0, 0, 0.87)",
-                                                      "fontFamily": "System",
-                                                      "fontWeight": "400",
-                                                      "textAlign": "left",
-                                                      "writingDirection": "ltr",
+                                                      "fontSize": 14,
+                                                      "letterSpacing": 0.25,
+                                                      "lineHeight": 20,
+                                                      "marginVertical": 2,
                                                     },
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      Object {
-                                                        "fontSize": 10,
-                                                      },
-                                                    ],
-                                                    Array [
-                                                      Object {
-                                                        "fontSize": 14,
-                                                        "letterSpacing": 0.25,
-                                                        "lineHeight": 20,
-                                                        "marginVertical": 2,
-                                                      },
-                                                      Object {
-                                                        "fontSize": 10,
-                                                      },
-                                                    ],
+                                                    Object {
+                                                      "fontSize": 10,
+                                                    },
                                                   ],
-                                                ]
-                                              }
-                                            >
-                                              2029-01-02
-                                            </Text>
-                                          </View>
+                                                ],
+                                              ]
+                                            }
+                                          >
+                                            2029-01-02
+                                          </Text>
                                         </View>
                                       </View>
                                     </View>
