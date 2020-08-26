@@ -1,7 +1,7 @@
-import { IMessage } from "./IMessage";
+import { MessageWithDate } from "./IMessage";
 
-export interface IMessagesState {
-    currentMessage: IMessage;
+export type IMessagesState = Readonly<{
+    currentMessage: MessageWithDate;
     refreshing: boolean;
     lastUpdate: Date;
-}
+}>;

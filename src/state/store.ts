@@ -6,15 +6,17 @@ import createSagaMiddleware from "redux-saga";
 import { IsoStringToDateTransform } from "./persistence/DateTransform";
 import { rootReducer } from "./reducers";
 import rootSaga from "./sagas";
+import { IState } from "./state/IState";
 
 const DEBUG = false;
 
+const whitelist: (keyof IState)[] = ["app", "favorites"];
 const persistConfig = {
     key: "root",
     storage: AsyncStorage,
     transforms: [IsoStringToDateTransform],
     debug: DEBUG,
-    whitelist: ["app"],
+    whitelist,
     stateReconciler: autoMergeLevel2,
 };
 

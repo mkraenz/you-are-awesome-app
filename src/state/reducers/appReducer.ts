@@ -12,7 +12,6 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
     },
     action
 ) => {
-    const x = 5;
     switch (action.type) {
         case ActionType.ToggleDarkTheme:
             return {

@@ -23,7 +23,7 @@ describe("fetchMessages", () => {
 
         const result = await fetchMessages("irrelevant-uri", fetchMock);
 
-        expect(result).toBe(messages);
+        expect(result).toEqual(messages);
         expect(fetchMock).toBeCalledWith("irrelevant-uri");
     });
 
@@ -47,6 +47,6 @@ describe("fetchMessages", () => {
             } as unknown) as Response)
         );
 
-        expect(result).toBe(messages);
+        expect(result).toEqual(messages);
     });
 });

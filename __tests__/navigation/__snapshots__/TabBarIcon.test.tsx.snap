@@ -13,12 +13,7 @@ exports[`renders correctly 1`] = `
   <Fontawesome
     color="rgba(0, 0, 0, 0.26)"
     name="my-name"
-    size={26}
-    style={
-      Object {
-        "marginBottom": -3,
-      }
-    }
+    size={24}
   />
 </View>
 `;
@@ -36,12 +31,7 @@ exports[`renders correctly with focus 1`] = `
   <Fontawesome
     color="#03dac4"
     name="my-name"
-    size={26}
-    style={
-      Object {
-        "marginBottom": -3,
-      }
-    }
+    size={24}
   />
 </View>
 `;

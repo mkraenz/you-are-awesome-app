@@ -23,7 +23,10 @@ type keys =
     | "notificationsSetTime"
     | "privacyPolicyLink"
     | "viewInBrowser"
-    | "privacyPolicy";
+    | "privacyPolicy"
+    | "from"
+    | "favoritesEmptyList"
+    | "favoritesToRoute";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -57,6 +60,7 @@ const localization: {
             [Route.Settings]: "Settings",
             [Route.Contribute]: "Contribute",
             [Route.PrivacyPolicy]: "Privacy Policy",
+            [Route.Favorites]: "Favorites",
             buildVersion: "Build version",
             noInternet: "No Internet Connection",
             contributeAwesomeMessage: "Your Awesome Message",
@@ -76,6 +80,10 @@ const localization: {
             viewInBrowser: "View in Web Browser",
             privacyPolicyLink:
                 "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
+            from: " from ",
+            favoritesEmptyList:
+                "Double tap your first awesome message in {{route}} to add it to your favorites.",
+            favoritesToRoute: "Go to {{route}}",
         },
     },
     de: {
@@ -91,6 +99,7 @@ const localization: {
             [Route.Settings]: "Einstellungen",
             [Route.Contribute]: "Teilen",
             [Route.PrivacyPolicy]: "Datenschutzerklärung",
+            [Route.Favorites]: "Favoriten",
             buildVersion: "Programmversion",
             noInternet: "Keine Internetverbindung",
             contributeAwesomeMessage: "Deine Awesome Nachricht",
@@ -110,6 +119,10 @@ const localization: {
             viewInBrowser: "Im Web Browser ansehen",
             privacyPolicyLink:
                 "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
+            from: " from ",
+            favoritesEmptyList:
+                "Doppeltippe deine erste awesome Nachricht im {{route}}bildschirm um sie zu deinen Favoriten hinzuzufügen.",
+            favoritesToRoute: "Zu {{route}} wechseln",
         },
     },
     ja: {
@@ -125,6 +138,7 @@ const localization: {
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
             [Route.PrivacyPolicy]: "プライバシー ポリシー",
+            [Route.Favorites]: "お気に入り",
             buildVersion: "ビルドバージョン",
             noInternet: "インターネットに接続できませんでした",
             contributeAwesomeMessage: "すごいメッセージ",
@@ -145,6 +159,10 @@ const localization: {
             viewInBrowser: "ブラウザーで表示",
             privacyPolicyLink:
                 "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
+            from: " from ",
+            favoritesEmptyList:
+                "{{route}}ですごいメッセージをダブルタップしてお気に入りに追加してみてください。",
+            favoritesToRoute: "{{route}} へ",
         },
     },
 };

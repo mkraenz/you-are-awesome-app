@@ -6,8 +6,8 @@ import {
     StyleSheet,
 } from "react-native";
 import { connect } from "react-redux";
-import { requestFetchMessages } from "../state/action-creators/requestFetchMessages";
-import { MapStateToProps } from "../state/state/MapStateToProps";
+import { requestFetchMessages } from "../../state/action-creators/requestFetchMessages";
+import { MapStateToProps } from "../../state/state/MapStateToProps";
 
 const styles = StyleSheet.create({
     container: {

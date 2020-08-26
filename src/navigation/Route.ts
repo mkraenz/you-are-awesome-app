@@ -3,4 +3,5 @@ export enum Route {
     Settings = "Settings",
     Contribute = "Contribute",
     PrivacyPolicy = "Privacy Policy",
+    Favorites = "Favorites",
 }
