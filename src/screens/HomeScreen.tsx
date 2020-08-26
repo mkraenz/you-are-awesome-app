@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import {
     State,
@@ -9,9 +10,10 @@ import { Card, Paragraph, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
-import RefreshMessagesView from "../components/RefreshMessagesView";
+import RefreshMessagesView from "../components/home/RefreshMessagesView";
 import { Route } from "../navigation/Route";
-import { IMessageContent } from "../state/state/IMessage";
+import { addFavorite } from "../state/action-creators/addFavorite";
+import { MessageWithDate } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { FullTheme } from "../themes/theme";
 
@@ -34,12 +36,14 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    msg: IMessageContent;
+    msg: MessageWithDate;
+    addFavorite: typeof addFavorite;
 }
 
-const HomeScreen: FC<Props> = ({ msg }) => {
+const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     const [heartShown, showHeart] = useState(false);
     const theme = useTheme() as FullTheme;
+    const { t } = useTranslation();
     const cardStyle = theme.dark
         ? {
               backgroundColor: theme.colors.accentedCard,
@@ -49,6 +53,7 @@ const HomeScreen: FC<Props> = ({ msg }) => {
 
     const likeOnDoubleTap = (event: TapGestureHandlerStateChangeEvent) => {
         if (event.nativeEvent.state === State.ACTIVE) {
+            addFavorite(msg);
             showHeart(true);
         }
     };
@@ -64,7 +69,9 @@ const HomeScreen: FC<Props> = ({ msg }) => {
                             <Card.Content style={styles.bubble}>
                                 <Title style={{ color: "white" }}>{text}</Title>
                                 <Paragraph style={{ color: "white" }}>
-                                    {author} from {country}
+                                    {author}
+                                    {t("from")}
+                                    {country}
                                 </Paragraph>
 
                                 {heartShown && (
@@ -83,8 +90,11 @@ const HomeScreen: FC<Props> = ({ msg }) => {
     );
 };
 
-const mapStateToProps: MapStateToProps<Props> = (state) => ({
+const mapStateToProps: MapStateToProps<Pick<Props, "msg">> = (state) => ({
     msg: state.messages.currentMessage,
 });
+const mapDispatchToProps = {
+    addFavorite,
+};
 
-export default connect(mapStateToProps)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

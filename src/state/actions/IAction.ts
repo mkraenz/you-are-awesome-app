@@ -1,6 +1,7 @@
 import { IMessage, MessageWithDate } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
+import { IFavoritesAction } from "./IFavoritesAction";
 import { INetworkAction } from "./INetworkAction";
 import { SubmitMessageAction } from "./SubmitMessageAction";
 import { IActionWithPayload } from "./utils";
@@ -9,7 +10,8 @@ export type IAnyAction =
     | IMessageAction
     | IAppAction
     | INetworkAction
-    | SubmitMessageAction;
+    | SubmitMessageAction
+    | IFavoritesAction;
 
 export type IMessageAction =
     | ISubmitMessageRequested
@@ -20,7 +22,7 @@ export type IMessageAction =
 export interface IFetchMessagesSucceeded {
     type: ActionType.FetchMessagesSucceeded;
     payload: {
-        message: IMessage;
+        message: MessageWithDate;
         now: Date;
         messages: MessageWithDate[];
     };

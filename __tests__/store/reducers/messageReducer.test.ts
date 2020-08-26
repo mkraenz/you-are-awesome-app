@@ -3,7 +3,6 @@ import {
     IFetchMessagesFailedTimeoutExceeded,
     IFetchMessagesRequested,
     IFetchMessagesSucceeded,
-    ISubmitMessageRequested,
 } from "../../../src/state/actions/IAction";
 import {
     initialMessage,
@@ -24,34 +23,13 @@ describe("messagesReducer", () => {
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.SubmitMessageRequested}`, () => {
-        const action: ISubmitMessageRequested = {
-            type: ActionType.SubmitMessageRequested,
-            payload: mock.message,
-        };
-        const state: IMessagesState = {
-            currentMessage: null as any,
-            lastUpdate: new Date(0),
-            refreshing: false,
-        };
-
-        const result = messageReducer(state, action);
-
-        const expected: IMessagesState = {
-            currentMessage: mock.message,
-            lastUpdate: new Date(0),
-            refreshing: false,
-        };
-        expect(result).toEqual(expected);
-    });
-
     it(`should handle ${ActionType.FetchMessagesRequested}`, () => {
         const action: IFetchMessagesRequested = {
             type: ActionType.FetchMessagesRequested,
             payload: { now: new Date(123) },
         };
         const state: IMessagesState = {
-            currentMessage: null as any,
+            currentMessage: initialMessage,
             lastUpdate: new Date(0),
             refreshing: false,
         };
@@ -59,7 +37,7 @@ describe("messagesReducer", () => {
         const result = messageReducer(state, action);
 
         const expected: IMessagesState = {
-            currentMessage: null as any,
+            currentMessage: initialMessage,
             lastUpdate: new Date(0),
             refreshing: true,
         };
