@@ -9,7 +9,8 @@ import { mock } from "../../helpers/mocks";
 
 describe("submitMessageReducer", () => {
     it("should return the initial state", () => {
-        const result = submitMessageReducer(undefined, {} as any);
+        // @ts-expect-error
+        const result = submitMessageReducer(undefined, {});
 
         expect(result).toEqual({ backoffInMs: 0 });
     });

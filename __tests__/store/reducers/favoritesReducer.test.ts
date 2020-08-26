@@ -5,7 +5,8 @@ import { IFavoritesState } from "../../../src/state/state/IFavoritesState";
 
 describe("favoritesReducer()", () => {
     it("should return the initial state", () => {
-        const result = favoritesReducer(undefined, {} as any);
+        // @ts-expect-error
+        const result = favoritesReducer(undefined, {});
 
         const expected: IFavoritesState = {
             messages: [],

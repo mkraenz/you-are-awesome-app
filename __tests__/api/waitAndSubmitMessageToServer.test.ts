@@ -1,59 +1,63 @@
+import axios from "axios";
+import { range } from "lodash";
 import { waitAndSubmitMessageToServer } from "../../src/api/waitAndSubmitMessageToServer";
+
+afterEach(() => {
+    jest.clearAllMocks();
+    jest.resetAllMocks();
+    jest.restoreAllMocks();
+});
 
 describe("waitAndSubmitMessageToServer()", () => {
     it("returns the response json body", async () => {
         const responseBody = { myData: "someValue" };
-        const fetchMock = jest.fn(() =>
-            Promise.resolve(({
-                status: 201, // http created
-                json: () => responseBody,
-            } as unknown) as Response)
-        );
         const msg = {
             author: "my author",
             country: "my country",
             text: "my text",
         };
+        const postSpy = jest.spyOn(axios, "post").mockResolvedValue({
+            status: 201,
+            data: responseBody,
+        });
 
         const result = await waitAndSubmitMessageToServer(
             msg,
             "irrelevant-uri",
-            0,
-            fetchMock
+            0
         );
 
         expect(result).toBe(responseBody);
-        expect(fetchMock).toHaveBeenCalledWith("irrelevant-uri", {
-            body: JSON.stringify(msg),
+        expect(postSpy).toHaveBeenCalledWith("irrelevant-uri", msg, {
             headers: {
                 ["Content-Type"]: "application/json",
             },
-            method: "POST",
-            redirect: "error",
+            maxRedirects: 0,
         });
     });
 
-    it("returns the response json body", async () => {
-        const fetchMock = jest.fn(() =>
-            Promise.resolve(({
-                status: 199,
-            } as unknown) as Response)
-        );
-
-        const resultPromise = waitAndSubmitMessageToServer(
-            {
+    it("rejects if not status code 201 Created", async () => {
+        // range excludes the end, so 201 is not in the array
+        for (const status of [...range(0, 201), ...range(202, 550)]) {
+            jest.spyOn(axios, "post").mockResolvedValue({
+                status,
+                data: { a: "b" },
+            });
+            const msg = {
                 author: "my author",
                 country: "my country",
                 text: "my text",
-            },
-            "irrelevant-uri",
-            0,
-            fetchMock
-        );
+            };
 
-        // TODO #27 not working
-        await expect(resultPromise).rejects.toThrow(
-            /Expected POST response status 201, found 199/
-        );
+            const resultPromise = waitAndSubmitMessageToServer(
+                msg,
+                "irrelevant-uri",
+                0
+            );
+
+            await expect(resultPromise).rejects.toThrow(
+                new RegExp(`Expected POST response status 201, found ${status}`)
+            );
+        }
     });
 });

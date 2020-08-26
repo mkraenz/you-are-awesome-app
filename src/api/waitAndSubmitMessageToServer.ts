@@ -1,3 +1,4 @@
+import axios, { AxiosRequestConfig } from "axios";
 import { IMessageContent } from "../state/state/IMessage";
 import { pickMessageContent } from "../utils/pickMessageContent";
 
@@ -6,11 +7,10 @@ const HTTP_CREATED = 201;
 export const waitAndSubmitMessageToServer = async (
     msg: IMessageContent,
     uri: string,
-    backoffInMs: number,
-    fetchFn = fetch
+    backoffInMs: number
 ) => {
     await delay(backoffInMs);
-    const response = await fetchFn(uri, getRequest(msg));
+    const response = await axios.post(uri, pickMessageContent(msg), options);
     if (response.status !== HTTP_CREATED) {
         return Promise.reject(
             new Error(
@@ -18,9 +18,7 @@ export const waitAndSubmitMessageToServer = async (
             )
         );
     }
-    // TODO handle server response. what do we want here? the row? the row as an object? For what?
-    const data: unknown = await response.json();
-    return data;
+    return response.data;
 };
 
 const delay = (backoffInMs: number) =>
@@ -30,11 +28,9 @@ const delay = (backoffInMs: number) =>
         }, backoffInMs)
     );
 
-const getRequest = (msg: IMessageContent): RequestInit => ({
-    method: "POST",
+const options: AxiosRequestConfig = {
     headers: {
         "Content-Type": "application/json",
     },
-    redirect: "error",
-    body: JSON.stringify(pickMessageContent(msg)),
-});
+    maxRedirects: 0,
+};

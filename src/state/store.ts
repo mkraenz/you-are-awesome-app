@@ -20,6 +20,7 @@ const persistConfig = {
     stateReconciler: autoMergeLevel2,
 };
 
+// TODO fix ts error
 const persistedReducer = persistReducer(persistConfig, rootReducer as any);
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(persistedReducer, applyMiddleware(sagaMiddleware));

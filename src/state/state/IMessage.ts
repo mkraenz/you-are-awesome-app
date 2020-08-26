@@ -8,5 +8,4 @@ export interface IMessage extends IMessageContent {
     id: string;
 }
 
-// TODO #211 rename to DatedMessage
 export type MessageWithDate = IMessage & { isodate: string };

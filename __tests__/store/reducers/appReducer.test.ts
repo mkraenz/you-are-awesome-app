@@ -11,7 +11,8 @@ import { IAppState } from "../../../src/state/state/IAppState";
 
 describe("appReducer()", () => {
     it("should return the initial state", () => {
-        const result = appReducer(undefined, {} as any);
+        // @ts-expect-error
+        const result = appReducer(undefined, {});
 
         const expected: IAppState = {
             isDarkModeOn: false,

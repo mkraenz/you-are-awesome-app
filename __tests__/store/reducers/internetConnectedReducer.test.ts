@@ -5,7 +5,8 @@ import { INetworkState } from "../../../src/state/state/INetworkState";
 
 describe("networkReducer", () => {
     it("should return the initial state", () => {
-        const result = networkReducer(undefined, {} as any);
+        // @ts-expect-error
+        const result = networkReducer(undefined, {});
 
         const expected: INetworkState = {
             connected: true,
