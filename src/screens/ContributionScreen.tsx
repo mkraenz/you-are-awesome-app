@@ -8,14 +8,14 @@ import OfflineNotice from "../components/common/OfflineNotice";
 import SubmitMessageInputForm from "../components/contribution/SubmitMessageInputForm";
 import { Route } from "../navigation/Route";
 import { submitMessage } from "../state/action-creators/submitMessage";
-import { IMessage, IMessageContent } from "../state/state/IMessage";
+import { IMessageContent, IMessageWithId } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
 interface StateProps {
     connectedToInternet: boolean;
 }
 interface DispatchProps {
-    submitMessage: (message: IMessage) => void;
+    submitMessage: (message: IMessageWithId) => void;
 }
 type Props = StateProps & DispatchProps;
 

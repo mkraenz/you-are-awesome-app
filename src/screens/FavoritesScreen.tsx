@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import ListItem from "../components/favorites/ListItem";
 import { Route } from "../navigation/Route";
-import { MessageWithDate } from "../state/state/IMessage";
+import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
 const styles = StyleSheet.create({
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    messages: MessageWithDate[];
+    messages: IMessage[];
 }
 
 const FavoritesScreen: FC<Props> = ({ messages }) => {

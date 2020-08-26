@@ -10,12 +10,16 @@ it("can create a store with the rootReducer", () => {
     const store = createStore(rootReducer);
     const state = store.getState();
 
-    expect(state.messages).toEqual(messageReducer(undefined, {} as any));
+    // @ts-expect-error
+    expect(state.messages).toEqual(messageReducer(undefined, {}));
     expect(state.submitMessage).toEqual(
-        submitMessageReducer(undefined, {} as any)
+        // @ts-expect-error
+        submitMessageReducer(undefined, {})
     );
-    expect(state.network).toEqual(networkReducer(undefined, {} as any));
-    expect(state.app).toEqual(appReducer(undefined, {} as any));
+    // @ts-expect-error
+    expect(state.network).toEqual(networkReducer(undefined, {}));
+    // @ts-expect-error
+    expect(state.app).toEqual(appReducer(undefined, {}));
     const expectedKeys: Array<keyof IState> = [
         "messages",
         "app",

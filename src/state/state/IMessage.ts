@@ -4,9 +4,8 @@ export interface IMessageContent {
     author: string;
 }
 
-export interface IMessage extends IMessageContent {
+export interface IMessageWithId extends IMessageContent {
     id: string;
 }
 
-// TODO #211 rename to DatedMessage
-export type MessageWithDate = IMessage & { isodate: string };
+export type IMessage = IMessageWithId & { isodate: string };

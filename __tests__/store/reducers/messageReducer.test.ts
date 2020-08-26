@@ -13,7 +13,8 @@ import { mock } from "../../helpers/mocks";
 
 describe("messagesReducer", () => {
     it("should return the initial state", () => {
-        const result = messageReducer(undefined, {} as any);
+        // @ts-expect-error
+        const result = messageReducer(undefined, {});
 
         const expected: IMessagesState = {
             currentMessage: initialMessage,

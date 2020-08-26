@@ -1,10 +1,10 @@
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
 import { IMessageAction } from "../actions/IAction";
-import { MessageWithDate } from "../state/IMessage";
+import { IMessage } from "../state/IMessage";
 import { IMessagesState } from "../state/IMessagesState";
 
-export const initialMessage: MessageWithDate = {
+export const initialMessage: IMessage = {
     id: "default",
     author: "Max",
     country: "Germany",

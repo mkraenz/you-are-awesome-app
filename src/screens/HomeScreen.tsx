@@ -13,7 +13,7 @@ import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
 import RefreshMessagesView from "../components/home/RefreshMessagesView";
 import { Route } from "../navigation/Route";
 import { addFavorite } from "../state/action-creators/addFavorite";
-import { MessageWithDate } from "../state/state/IMessage";
+import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { FullTheme } from "../themes/theme";
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    msg: MessageWithDate;
+    msg: IMessage;
     addFavorite: typeof addFavorite;
 }
 

@@ -1,18 +1,21 @@
-import * as Notifications from "expo-notifications";
+import axios from "axios";
+import { getExpoPushTokenAsync } from "expo-notifications";
 import { URI } from "../config";
 
 export const registerForPushNotifications = async (time: Date) => {
-    let token = await Notifications.getExpoPushTokenAsync();
-    return fetch(URI.REGISTER_PUSH_NOTIFICATION, {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+    let token = await getExpoPushTokenAsync();
+    await axios.post(
+        URI.REGISTER_PUSH_NOTIFICATION,
+        {
             token: token.data,
             hour: time.getUTCHours(),
             minute: time.getUTCMinutes(),
-        }),
-    });
+        },
+        {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        }
+    );
 };
