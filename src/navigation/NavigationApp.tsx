@@ -1,9 +1,9 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleSheet } from "react-native";
+import { Keyboard, StyleSheet } from "react-native";
 import { useTheme } from "react-native-paper";
 import TabBarIcon from "../components/navigation/TabBarIcon";
 import { START_SCREEN } from "../config";
@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
         textTransform: "capitalize",
         fontSize: 12,
     },
+    hidden: {
+        display: "none",
+        position: undefined,
+    },
 });
 
 const Stack = createStackNavigator();
@@ -42,6 +46,20 @@ export const SettingsStack = () => {
 
 const Tab = createMaterialTopTabNavigator();
 const NavigationApp = () => {
+    // navbar should be hidden if keyboard is shown
+    const [keyboardShown, setKeyboardShown] = useState(false);
+    useEffect(() => {
+        Keyboard.addListener("keyboardDidShow", handleKeyboardShown);
+        Keyboard.addListener("keyboardDidHide", handleKeyboardHidden);
+
+        return () => {
+            Keyboard.removeListener("keyboardDidShow", handleKeyboardShown);
+            Keyboard.removeListener("keyboardDidHide", handleKeyboardHidden);
+        };
+    }, []);
+    const handleKeyboardShown = () => setKeyboardShown(true);
+    const handleKeyboardHidden = () => setKeyboardShown(false);
+
     const theme = useTheme() as FullTheme;
     const { t } = useTranslation();
     return (
@@ -51,12 +69,14 @@ const NavigationApp = () => {
                 tabBarPosition="bottom"
                 tabBarOptions={{
                     showIcon: true,
-                    style: {
-                        ...styles.tabBar,
-                        backgroundColor: theme.dark
-                            ? theme.colors.accentedCard
-                            : theme.colors.primary,
-                    },
+                    style: keyboardShown
+                        ? styles.hidden
+                        : {
+                              ...styles.tabBar,
+                              backgroundColor: theme.dark
+                                  ? theme.colors.accentedCard
+                                  : theme.colors.primary,
+                          },
                     iconStyle: styles.icon,
                     renderIndicator: () => null,
                     labelStyle: styles.label,
