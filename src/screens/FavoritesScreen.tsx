@@ -1,37 +1,22 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 import { isEmpty } from "lodash";
 import React, { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { FlatList, StyleSheet, View } from "react-native";
-import { Button, Divider, Paragraph, useTheme } from "react-native-paper";
+import { FlatList } from "react-native";
+import { Divider } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import DeleteConfirmationDialog from "../components/favorites/DeleteConfirmationDialog";
+import EmptyFavoritesScreen from "../components/favorites/EmptyFavoritesScreen";
 import ListItem from "../components/favorites/ListItem";
 import { Route } from "../navigation/Route";
 import { deleteFavorites } from "../state/action-creators/deleteFavorites";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
-const styles = StyleSheet.create({
-    container: {},
-    list: {},
-    emptyListContainer: { height: "50%" },
-    emptyListText: {
-        fontSize: 16,
-        marginTop: "auto",
-    },
-    emptyListButton: { marginTop: 24 },
-    homeIcon: {},
-});
-
 interface Props {
     messages: IMessage[];
     deleteFavorites: typeof deleteFavorites;
 }
 
-// TODO #245 split into nonempty fav screen and empty fav screen + top level component or at least the non-empty list in separate component
 const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     const [selectModeEnabled, enableSelectMode] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
@@ -58,35 +43,8 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
         hideDeleteConfirmation();
     };
 
-    const { t } = useTranslation();
-    const nav = useNavigation();
-    const theme = useTheme();
-
     if (isEmpty(messages)) {
-        return (
-            <Layout route={Route.Favorites}>
-                <View style={styles.emptyListContainer}>
-                    <Paragraph style={styles.emptyListText}>
-                        {t("favoritesEmptyList", { route: t(Route.Home) })}
-                    </Paragraph>
-                    <Button
-                        mode="outlined"
-                        onPress={() => nav.navigate(Route.Home)}
-                        accessibilityStates={{}}
-                        style={styles.emptyListButton}
-                        icon={() => (
-                            <MaterialCommunityIcons
-                                name="home"
-                                size={20}
-                                color={theme.colors.primary}
-                            />
-                        )}
-                    >
-                        {t("favoritesToRoute", { route: t(Route.Home) })}
-                    </Button>
-                </View>
-            </Layout>
-        );
+        return <EmptyFavoritesScreen />;
     }
 
     return (
@@ -102,36 +60,34 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                       }
                     : undefined
             }
+            containerStyleOverwrites={{ paddingLeft: 0 }}
         >
-            <View style={styles.container}>
-                <FlatList
-                    data={messages}
-                    extraData={[]}
-                    renderItem={({ item }) => {
-                        return (
-                            <ListItem
-                                {...item}
-                                key={item.id}
-                                onLongPress={() => select(item.id)}
-                                onPressInSelectMode={() => select(item.id)}
-                                selectMode={selectModeEnabled}
-                                selected={selectedItemIds.includes(item.id)}
-                            ></ListItem>
-                        );
-                    }}
-                    ItemSeparatorComponent={() => (
-                        <Divider accessibilityStates={{}} />
-                    )}
-                    onEndReachedThreshold={0.2}
-                    initialNumToRender={20}
-                    style={styles.list}
-                />
-                <DeleteConfirmationDialog
-                    visible={deleteConfirmationVisible}
-                    onDismiss={hideDeleteConfirmation}
-                    onConfirm={deleteSelected}
-                />
-            </View>
+            <FlatList
+                data={messages}
+                extraData={[]}
+                renderItem={({ item }) => {
+                    return (
+                        <ListItem
+                            {...item}
+                            key={item.id}
+                            onLongPress={() => select(item.id)}
+                            onPressInSelectMode={() => select(item.id)}
+                            selectMode={selectModeEnabled}
+                            selected={selectedItemIds.includes(item.id)}
+                        ></ListItem>
+                    );
+                }}
+                ItemSeparatorComponent={() => (
+                    <Divider accessibilityStates={{}} />
+                )}
+                onEndReachedThreshold={0.2}
+                initialNumToRender={20}
+            />
+            <DeleteConfirmationDialog
+                visible={deleteConfirmationVisible}
+                onDismiss={hideDeleteConfirmation}
+                onConfirm={deleteSelected}
+            />
         </Layout>
     );
 };

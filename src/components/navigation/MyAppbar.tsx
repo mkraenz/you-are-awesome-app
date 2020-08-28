@@ -27,7 +27,11 @@ const MyAppbar: FC<MyAppbarProps> = ({
             )}
             <Appbar.Content
                 title={title}
-                style={onBack ? {} : { alignItems: "center", display: "flex" }}
+                style={
+                    onBack && !actionIcon
+                        ? {}
+                        : { alignItems: "center", display: "flex" }
+                }
                 accessibilityStates={{}}
             />
             {actionIcon && (

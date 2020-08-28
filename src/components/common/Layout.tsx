@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     },
     contentContainer: {
         flex: 1,
-        paddingHorizontal: 16,
+        paddingLeft: 16,
+        paddingRight: 16,
     },
 });
 
@@ -20,9 +21,15 @@ interface Props {
     route: Route;
     title?: string;
     appbarProps?: Omit<MyAppbarProps, "title">;
+    containerStyleOverwrites?: { paddingLeft: number };
 }
 
-const Layout: FC<Props> = (props) => {
+const Layout: FC<Props> = ({
+    children,
+    title,
+    appbarProps,
+    containerStyleOverwrites,
+}) => {
     const { t } = useTranslation();
     const theme = useTheme();
     const containerStyles = {
@@ -31,14 +38,15 @@ const Layout: FC<Props> = (props) => {
             ? theme.colors.background
             : theme.colors.surface,
     };
+    const contentContainerStyles = {
+        ...styles.contentContainer,
+        ...containerStyleOverwrites,
+    };
 
     return (
         <Surface style={containerStyles} accessibilityStates={{}}>
-            <MyAppbar
-                {...props.appbarProps}
-                title={props.title || t("appTitle")}
-            />
-            <View style={styles.contentContainer}>{props.children}</View>
+            <MyAppbar {...appbarProps} title={title || t("appTitle")} />
+            <View style={contentContainerStyles}>{children}</View>
         </Surface>
     );
 };
