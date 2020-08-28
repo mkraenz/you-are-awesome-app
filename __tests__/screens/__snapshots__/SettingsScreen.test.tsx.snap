@@ -415,7 +415,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                           style={
                             Object {
                               "flex": 1,
-                              "paddingHorizontal": 16,
+                              "paddingLeft": 16,
+                              "paddingRight": 16,
                             }
                           }
                         >
@@ -1498,7 +1499,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                           style={
                             Object {
                               "flex": 1,
-                              "paddingHorizontal": 16,
+                              "paddingLeft": 16,
+                              "paddingRight": 16,
                             }
                           }
                         >
@@ -2503,7 +2505,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                           style={
                             Object {
                               "flex": 1,
-                              "paddingHorizontal": 16,
+                              "paddingLeft": 16,
+                              "paddingRight": 16,
                             }
                           }
                         >
