@@ -4,16 +4,10 @@ import { isEmpty } from "lodash";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FlatList, StyleSheet, View } from "react-native";
-import {
-    Button,
-    Dialog,
-    Divider,
-    Paragraph,
-    Portal,
-    useTheme,
-} from "react-native-paper";
+import { Button, Divider, Paragraph, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
+import DeleteConfirmationDialog from "../components/favorites/DeleteConfirmationDialog";
 import ListItem from "../components/favorites/ListItem";
 import { Route } from "../navigation/Route";
 import { deleteFavorites } from "../state/action-creators/deleteFavorites";
@@ -95,33 +89,6 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
         );
     }
 
-    const DeleteConfirmationDialog = () => (
-        <Portal>
-            <Dialog
-                visible={deleteConfirmationVisible}
-                onDismiss={hideDeleteConfirmation}
-            >
-                <Dialog.Title accessibilityStates={{}}>
-                    {t("favoritesDeleteDialogTitle")}
-                </Dialog.Title>
-                <Dialog.Content>
-                    <Paragraph>{t("favoritesDeleteDialogText")}</Paragraph>
-                </Dialog.Content>
-                <Dialog.Actions>
-                    <Button
-                        onPress={hideDeleteConfirmation}
-                        accessibilityStates={{}}
-                    >
-                        {t("favoritesCancel")}
-                    </Button>
-                    <Button onPress={deleteSelected} accessibilityStates={{}}>
-                        {t("favoritesDelete")}
-                    </Button>
-                </Dialog.Actions>
-            </Dialog>
-        </Portal>
-    );
-
     return (
         // TODO #245 consider custom style for the left margin in selectMode
         <Layout
@@ -159,7 +126,11 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                     initialNumToRender={20}
                     style={styles.list}
                 />
-                <DeleteConfirmationDialog />
+                <DeleteConfirmationDialog
+                    visible={deleteConfirmationVisible}
+                    onDismiss={hideDeleteConfirmation}
+                    onConfirm={deleteSelected}
+                />
             </View>
         </Layout>
     );
