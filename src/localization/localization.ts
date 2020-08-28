@@ -26,7 +26,11 @@ type keys =
     | "privacyPolicy"
     | "from"
     | "favoritesEmptyList"
-    | "favoritesToRoute";
+    | "favoritesToRoute"
+    | "favoritesDeleteDialogTitle"
+    | "favoritesDeleteDialogText"
+    | "favoritesDelete"
+    | "favoritesCancel";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -84,6 +88,11 @@ const localization: {
             favoritesEmptyList:
                 "Double tap your first awesome message in {{route}} to add it to your favorites.",
             favoritesToRoute: "Go to {{route}}",
+            favoritesCancel: "Cancel",
+            favoritesDelete: "Delete Forever",
+            favoritesDeleteDialogText:
+                "Deleting favorites is permanent and cannot be reverted.",
+            favoritesDeleteDialogTitle: "Are you sure?",
         },
     },
     de: {
@@ -123,6 +132,11 @@ const localization: {
             favoritesEmptyList:
                 "Doppeltippe deine erste awesome Nachricht im {{route}}bildschirm um sie zu deinen Favoriten hinzuzufügen.",
             favoritesToRoute: "Zu {{route}} wechseln",
+            favoritesCancel: "Abbrechen",
+            favoritesDelete: "Endgültig löschen",
+            favoritesDeleteDialogText:
+                "Das Löschen von Favoriten ist permanent und kann nicht rückgängig gemacht werden.",
+            favoritesDeleteDialogTitle: "Bist du sicher?",
         },
     },
     ja: {
@@ -162,7 +176,12 @@ const localization: {
             from: " from ",
             favoritesEmptyList:
                 "{{route}}ですごいメッセージをダブルタップしてお気に入りに追加してみてください。",
-            favoritesToRoute: "{{route}} へ",
+            favoritesToRoute: "{{route}}へ",
+            favoritesCancel: "キャンセル",
+            favoritesDelete: "永久に削除",
+            favoritesDeleteDialogText:
+                "お気に入りのすごいメッセジを削除すると元に戻すことはできません。",
+            favoritesDeleteDialogTitle: "削除確認",
         },
     },
 };

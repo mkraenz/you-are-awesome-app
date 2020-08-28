@@ -4,7 +4,14 @@ import { isEmpty } from "lodash";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FlatList, StyleSheet, View } from "react-native";
-import { Button, Divider, Paragraph, useTheme } from "react-native-paper";
+import {
+    Button,
+    Dialog,
+    Divider,
+    Paragraph,
+    Portal,
+    useTheme,
+} from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import ListItem from "../components/favorites/ListItem";
@@ -34,6 +41,7 @@ interface Props {
 const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     const [selectModeEnabled, enableSelectMode] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
+    const [deleteConfirmationVisible, showDeleteConfirmation] = useState(false);
 
     const select = (id: string) => {
         enableSelectMode(true);
@@ -49,9 +57,11 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
         enableSelectMode(false);
         setSelectedItemIds([]);
     };
+    const hideDeleteConfirmation = () => showDeleteConfirmation(false);
     const deleteSelected = () => {
         deleteFavorites(selectedItemIds);
         resetSelection();
+        hideDeleteConfirmation();
     };
 
     const { t } = useTranslation();
@@ -85,6 +95,33 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
         );
     }
 
+    const DeleteConfirmationDialog = () => (
+        <Portal>
+            <Dialog
+                visible={deleteConfirmationVisible}
+                onDismiss={hideDeleteConfirmation}
+            >
+                <Dialog.Title accessibilityStates={{}}>
+                    {t("favoritesDeleteDialogTitle")}
+                </Dialog.Title>
+                <Dialog.Content>
+                    <Paragraph>{t("favoritesDeleteDialogText")}</Paragraph>
+                </Dialog.Content>
+                <Dialog.Actions>
+                    <Button
+                        onPress={hideDeleteConfirmation}
+                        accessibilityStates={{}}
+                    >
+                        {t("favoritesCancel")}
+                    </Button>
+                    <Button onPress={deleteSelected} accessibilityStates={{}}>
+                        {t("favoritesDelete")}
+                    </Button>
+                </Dialog.Actions>
+            </Dialog>
+        </Portal>
+    );
+
     return (
         // TODO #245 consider custom style for the left margin in selectMode
         <Layout
@@ -94,7 +131,7 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                     ? {
                           onBack: resetSelection,
                           actionIcon: "delete-forever",
-                          onActionPress: deleteSelected,
+                          onActionPress: () => showDeleteConfirmation(true),
                       }
                     : undefined
             }
@@ -122,6 +159,7 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                     initialNumToRender={20}
                     style={styles.list}
                 />
+                <DeleteConfirmationDialog />
             </View>
         </Layout>
     );
