@@ -1,4 +1,4 @@
-import { IMessage, IMessageWithId } from "../state/IMessage";
+import { IMessage } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
 import { IFavoritesAction } from "./IFavoritesAction";
@@ -14,7 +14,6 @@ export type IAnyAction =
     | IFavoritesAction;
 
 export type IMessageAction =
-    | ISubmitMessageRequested
     | IFetchMessagesSucceeded
     | IFetchMessagesRequested
     | IFetchMessagesFailedTimeoutExceeded;
@@ -46,34 +45,6 @@ export interface IFetchMessagesFailedTimeoutExceeded {
     type: ActionType.FetchMessagesFailedTimeoutExceeded;
     payload: {
         originalAction: IFetchMessagesRequested;
-        error: Error;
-    };
-    error: true;
-}
-
-export type ISubmitMessageRequested = IActionWithPayload<
-    ActionType.SubmitMessageRequested,
-    IMessageWithId
->;
-
-export interface ISubmitMessageFailed {
-    type: ActionType.SubmitMessageFailed;
-    payload: {
-        originalAction: ISubmitMessageRequested;
-        error: Error;
-    };
-    error: true;
-}
-
-export interface ISubmitMessageSucceeded {
-    type: ActionType.SubmitMessageSucceeded;
-    payload: unknown;
-}
-
-export interface ISubmitMessageFailedTimeoutExceeded {
-    type: ActionType.SubmitMessageFailedTimeoutExceeded;
-    payload: {
-        originalAction: ISubmitMessageRequested;
         error: Error;
     };
     error: true;

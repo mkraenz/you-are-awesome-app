@@ -1,5 +1,5 @@
 import { ActionType } from "../actions/ActionType";
-import { ISubmitMessageRequested } from "../actions/IAction";
+import { ISubmitMessageRequested } from "../actions/SubmitMessageAction";
 import { IMessageWithId } from "../state/IMessage";
 
 export const submitMessage = (

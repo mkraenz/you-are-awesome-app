@@ -1,6 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React, { FC } from "react";
 import { useTheme } from "react-native-paper";
+import { FullTheme } from "../../themes/theme";
 
 interface Props {
     name: string;
@@ -8,13 +9,13 @@ interface Props {
 }
 
 const TabBarIcon: FC<Props> = ({ name, focused }) => {
-    const { colors } = useTheme();
+    const { colors } = useTheme() as FullTheme;
 
     return (
         <FontAwesome
             name={name}
             size={24}
-            color={focused ? colors.accent : colors.disabled}
+            color={focused ? colors.navAccent : colors.disabled}
         />
     );
 };

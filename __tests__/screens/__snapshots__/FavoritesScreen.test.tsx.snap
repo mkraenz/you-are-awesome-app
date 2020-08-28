@@ -415,7 +415,8 @@ exports[`renders special message on empty list 1`] = `
                           style={
                             Object {
                               "flex": 1,
-                              "paddingHorizontal": 16,
+                              "paddingLeft": 16,
+                              "paddingRight": 16,
                             }
                           }
                         >
@@ -1003,61 +1004,74 @@ exports[`renders the list 1`] = `
                           style={
                             Object {
                               "flex": 1,
-                              "paddingHorizontal": 16,
+                              "paddingLeft": 0,
+                              "paddingRight": 16,
                             }
                           }
                         >
-                          <View
-                            style={Object {}}
+                          <RCTScrollView
+                            ItemSeparatorComponent={[Function]}
+                            data={
+                              Array [
+                                Object {
+                                  "author": "author-1",
+                                  "country": "country-1",
+                                  "id": "id-1",
+                                  "isodate": "2029-01-01",
+                                  "text": "text-1",
+                                },
+                                Object {
+                                  "author": "author-2",
+                                  "country": "country-2",
+                                  "id": "id-2",
+                                  "isodate": "2029-01-02",
+                                  "text": "text-2",
+                                },
+                              ]
+                            }
+                            disableVirtualization={false}
+                            extraData={Array []}
+                            getItem={[Function]}
+                            getItemCount={[Function]}
+                            horizontal={false}
+                            initialNumToRender={20}
+                            keyExtractor={[Function]}
+                            maxToRenderPerBatch={10}
+                            onContentSizeChange={[Function]}
+                            onEndReachedThreshold={0.2}
+                            onLayout={[Function]}
+                            onMomentumScrollEnd={[Function]}
+                            onScroll={[Function]}
+                            onScrollBeginDrag={[Function]}
+                            onScrollEndDrag={[Function]}
+                            removeClippedSubviews={false}
+                            renderItem={[Function]}
+                            scrollEventThrottle={50}
+                            stickyHeaderIndices={Array []}
+                            updateCellsBatchingPeriod={50}
+                            viewabilityConfigCallbackPairs={Array []}
+                            windowSize={21}
                           >
-                            <RCTScrollView
-                              ItemSeparatorComponent={[Function]}
-                              data={
-                                Array [
-                                  Object {
-                                    "author": "author-1",
-                                    "country": "country-1",
-                                    "id": "id-1",
-                                    "isodate": "2029-01-01",
-                                    "text": "text-1",
-                                  },
-                                  Object {
-                                    "author": "author-2",
-                                    "country": "country-2",
-                                    "id": "id-2",
-                                    "isodate": "2029-01-02",
-                                    "text": "text-2",
-                                  },
-                                ]
-                              }
-                              disableVirtualization={false}
-                              extraData={Array []}
-                              getItem={[Function]}
-                              getItemCount={[Function]}
-                              horizontal={false}
-                              initialNumToRender={20}
-                              keyExtractor={[Function]}
-                              maxToRenderPerBatch={10}
-                              onContentSizeChange={[Function]}
-                              onEndReachedThreshold={0.2}
-                              onLayout={[Function]}
-                              onMomentumScrollEnd={[Function]}
-                              onScroll={[Function]}
-                              onScrollBeginDrag={[Function]}
-                              onScrollEndDrag={[Function]}
-                              removeClippedSubviews={false}
-                              renderItem={[Function]}
-                              scrollEventThrottle={50}
-                              stickyHeaderIndices={Array []}
-                              style={Object {}}
-                              updateCellsBatchingPeriod={50}
-                              viewabilityConfigCallbackPairs={Array []}
-                              windowSize={21}
-                            >
-                              <View>
+                            <View>
+                              <View
+                                onLayout={[Function]}
+                                style={null}
+                              >
                                 <View
-                                  onLayout={[Function]}
-                                  style={null}
+                                  accessible={true}
+                                  focusable={false}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Object {
+                                      "opacity": 1,
+                                    }
+                                  }
                                 >
                                   <View
                                     accessible={true}
@@ -1267,23 +1281,40 @@ exports[`renders the list 1`] = `
                                       </View>
                                     </View>
                                   </View>
-                                  <View
-                                    accessibilityStates={Object {}}
-                                    style={
-                                      Array [
-                                        Object {
-                                          "backgroundColor": "rgba(0, 0, 0, 0.12)",
-                                          "height": 0.5,
-                                        },
-                                        undefined,
-                                        undefined,
-                                      ]
-                                    }
-                                  />
                                 </View>
                                 <View
-                                  onLayout={[Function]}
-                                  style={null}
+                                  accessibilityStates={Object {}}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                        "height": 0.5,
+                                      },
+                                      undefined,
+                                      undefined,
+                                    ]
+                                  }
+                                />
+                              </View>
+                              <View
+                                onLayout={[Function]}
+                                style={null}
+                              >
+                                <View
+                                  accessible={true}
+                                  focusable={false}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Object {
+                                      "opacity": 1,
+                                    }
+                                  }
                                 >
                                   <View
                                     accessible={true}
@@ -1495,8 +1526,8 @@ exports[`renders the list 1`] = `
                                   </View>
                                 </View>
                               </View>
-                            </RCTScrollView>
-                          </View>
+                            </View>
+                          </RCTScrollView>
                         </View>
                       </View>
                     </View>

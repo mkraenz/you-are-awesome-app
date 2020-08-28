@@ -9,7 +9,7 @@ import {
     ISubmitMessageFailedTimeoutExceeded,
     ISubmitMessageRequested,
     ISubmitMessageSucceeded,
-} from "../actions/IAction";
+} from "../actions/SubmitMessageAction";
 import { backoffInMs } from "../selectors";
 
 const TIMEOUT_EXCEEDED = "Maximum timeout exceeded. Sending to server failed.";

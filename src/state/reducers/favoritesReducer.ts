@@ -1,3 +1,4 @@
+import { difference } from "lodash";
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
 import { IFavoritesAction } from "../actions/IFavoritesAction";
@@ -26,6 +27,13 @@ export const favoritesReducer: Reducer<IFavoritesState, IFavoritesAction> = (
                 ...state,
                 messages: sortedMessages,
             };
+        case ActionType.DeleteFavorites:
+            const currentIds = state.messages.map((m) => m.id);
+            const remainingIds = difference(currentIds, action.payload.ids);
+            const remainingMessages = state.messages.filter((m) =>
+                remainingIds.includes(m.id)
+            );
+            return { ...state, messages: remainingMessages };
         default:
             return state;
     }

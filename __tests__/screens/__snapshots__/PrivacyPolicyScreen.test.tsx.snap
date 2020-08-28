@@ -521,7 +521,8 @@ exports[`renders a button and the webview 1`] = `
                           style={
                             Object {
                               "flex": 1,
-                              "paddingHorizontal": 16,
+                              "paddingLeft": 16,
+                              "paddingRight": 16,
                             }
                           }
                         >

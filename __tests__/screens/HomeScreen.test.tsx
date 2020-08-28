@@ -1,6 +1,5 @@
 import React from "react";
 import "react-native";
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
@@ -8,14 +7,12 @@ import createMockStore from "redux-mock-store";
 import HomeScreen from "../../src/screens/HomeScreen";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
-import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
+import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 
 const ConfiguredHomeScreen = () => (
-    <PaperProvider theme={DefaultTheme}>
-        <TestLocalizationProvider>
-            <HomeScreen />
-        </TestLocalizationProvider>
-    </PaperProvider>
+    <LocalizedMockPaperProvider>
+        <HomeScreen />
+    </LocalizedMockPaperProvider>
 );
 
 it("renders correctly", () => {

@@ -1,17 +1,17 @@
 import React from "react";
 import "react-native";
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import renderer from "react-test-renderer";
 import MyAppbar from "../../src/components/navigation/MyAppbar";
+import MockPaperProvider from "../helpers/MockPaperProvider";
 
 jest.mock("@expo/vector-icons", () => ({ FontAwesome: "Fontawesome" }));
 
 it("renders correctly without dark mode", () => {
     const tree = renderer
         .create(
-            <PaperProvider theme={DefaultTheme}>
+            <MockPaperProvider>
                 <MyAppbar title="my-title" />
-            </PaperProvider>
+            </MockPaperProvider>
         )
         .toJSON();
 
@@ -21,9 +21,9 @@ it("renders correctly without dark mode", () => {
 it("renders light status bar in dark mode", () => {
     const tree = renderer
         .create(
-            <PaperProvider theme={{ ...DefaultTheme, dark: true }}>
+            <MockPaperProvider dark>
                 <MyAppbar title="my-title" />
-            </PaperProvider>
+            </MockPaperProvider>
         )
         .toJSON();
 
