@@ -48,11 +48,11 @@ export const darkTheme: FullTheme = {
     colors: {
         ...NavDarkTheme.colors,
         ...DarkTheme.colors,
-        primary: Color.Violet,
+        primary: Color.DarkTurquoise,
         card: DarkTheme.colors.surface,
         accentedCard: Color.Grey,
         disabledItemText: Color.Grey,
-        navAccent: Color.Violet,
-        accent: Color.Violet,
+        navAccent: Color.DarkTurquoise,
+        accent: Color.DarkTurquoise,
     },
 };
