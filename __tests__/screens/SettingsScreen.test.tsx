@@ -1,13 +1,13 @@
 import { advanceTo, clear as resetDateMock } from "jest-date-mock";
 import React, { FC } from "react";
 import "react-native";
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer, { act } from "react-test-renderer";
 import createMockStore from "redux-mock-store";
 import SettingsScreen from "../../src/screens/SettingsScreen";
 import MockedNavigator from "../helpers/MockedNavigation";
+import MockPaperProvider from "../helpers/MockPaperProvider";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
@@ -17,11 +17,11 @@ afterEach(() => {
 });
 
 const ConfiguredSettingsScreen: FC = () => (
-    <PaperProvider theme={DefaultTheme}>
+    <MockPaperProvider>
         <TestLocalizationProvider>
             <MockedNavigator component={SettingsScreen} />
         </TestLocalizationProvider>
-    </PaperProvider>
+    </MockPaperProvider>
 );
 
 it("renders correctly for disabled notifications", async () => {

@@ -1,7 +1,6 @@
 import i18next from "i18next";
 import React from "react";
 import "react-native";
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer, { act } from "react-test-renderer";
@@ -11,17 +10,18 @@ import FavoritesScreen from "../../src/screens/FavoritesScreen";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import MockedNavigator from "../helpers/MockedNavigation";
+import MockPaperProvider from "../helpers/MockPaperProvider";
 import { mock } from "../helpers/mocks";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
 
 const ConfiguredFavorites = () => (
-    <PaperProvider theme={DefaultTheme}>
+    <MockPaperProvider>
         <TestLocalizationProvider>
             <MockedNavigator component={FavoritesScreen} />
         </TestLocalizationProvider>
-    </PaperProvider>
+    </MockPaperProvider>
 );
 
 it("renders special message on empty list", async () => {

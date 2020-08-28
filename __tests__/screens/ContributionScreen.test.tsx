@@ -2,7 +2,6 @@ import { fireEvent, render } from "@testing-library/react-native";
 import i18next from "i18next";
 import React, { FC } from "react";
 import "react-native";
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
@@ -12,14 +11,15 @@ import { ActionType } from "../../src/state/actions/ActionType";
 import { ISubmitMessageRequested } from "../../src/state/actions/SubmitMessageAction";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
+import MockPaperProvider from "../helpers/MockPaperProvider";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 const ConfiguredContributionScreen: FC = () => (
-    <PaperProvider theme={DefaultTheme}>
+    <MockPaperProvider>
         <TestLocalizationProvider>
             <ContributionScreen />
         </TestLocalizationProvider>
-    </PaperProvider>
+    </MockPaperProvider>
 );
 
 it("renders correctly", () => {

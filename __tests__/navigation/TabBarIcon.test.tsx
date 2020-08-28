@@ -1,18 +1,18 @@
 import React from "react";
 import "react-native";
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
 import TabBarIcon from "../../src/components/navigation/TabBarIcon";
+import MockPaperProvider from "../helpers/MockPaperProvider";
 
 jest.mock("@expo/vector-icons", () => ({ FontAwesome: "Fontawesome" }));
 
 it("renders correctly", () => {
     const tree = renderer
         .create(
-            <PaperProvider theme={DefaultTheme}>
+            <MockPaperProvider>
                 <TabBarIcon name="my-name" focused={false} />
-            </PaperProvider>
+            </MockPaperProvider>
         )
         .toJSON();
 
@@ -22,9 +22,9 @@ it("renders correctly", () => {
 it("renders correctly with focus", () => {
     const tree = renderer
         .create(
-            <PaperProvider theme={DefaultTheme}>
+            <MockPaperProvider>
                 <TabBarIcon name="my-name" focused />
-            </PaperProvider>
+            </MockPaperProvider>
         )
         .toJSON();
 
