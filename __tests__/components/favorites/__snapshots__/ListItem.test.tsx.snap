@@ -1,0 +1,813 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly in normal mode 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        false,
+        Array [
+          Object {
+            "padding": 8,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "marginVertical": 6,
+              "paddingLeft": 8,
+            },
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={5}
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              Array [
+                Object {
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            The story of King Arthur
+          </Text>
+        </Text>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            Merlin
+             from 
+            The old Kingdom of Britania
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "fontSize": 10,
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "fontSize": 10,
+                    },
+                  ],
+                ],
+              ]
+            }
+          >
+            975-09-17
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly in select mode with disabled radio button 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        false,
+        Array [
+          Object {
+            "padding": 8,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "justifyContent": "center",
+            "maxWidth": "10%",
+          }
+        }
+      >
+        <View
+          accessibilityLiveRegion="polite"
+          accessibilityRole="button"
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "overflow": "hidden",
+              },
+              Object {
+                "borderRadius": 18,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "rgba(0, 0, 0, 0.54)",
+                "borderRadius": 10,
+                "borderWidth": 2,
+                "height": 20,
+                "margin": 8,
+                "width": 20,
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "marginVertical": 6,
+              "paddingLeft": 8,
+            },
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={5}
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              Array [
+                Object {
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            The story of King Arthur
+          </Text>
+        </Text>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            Merlin
+             from 
+            The old Kingdom of Britania
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "fontSize": 10,
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "fontSize": 10,
+                    },
+                  ],
+                ],
+              ]
+            }
+          >
+            975-09-17
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly in select mode with enabled radio button 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        false,
+        Array [
+          Object {
+            "padding": 8,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "justifyContent": "center",
+            "maxWidth": "10%",
+          }
+        }
+      >
+        <View
+          accessibilityLiveRegion="polite"
+          accessibilityRole="button"
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "overflow": "hidden",
+              },
+              Object {
+                "borderRadius": 18,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "#03dac4",
+                "borderRadius": 10,
+                "borderWidth": 2,
+                "height": 20,
+                "margin": 8,
+                "width": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#03dac4",
+                    "borderRadius": 5,
+                    "height": 10,
+                    "transform": Array [
+                      Object {
+                        "scale": 1,
+                      },
+                    ],
+                    "width": 10,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "marginVertical": 6,
+              "paddingLeft": 8,
+            },
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={5}
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              Array [
+                Object {
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                },
+                undefined,
+              ],
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "letterSpacing": 0.5,
+                      "lineHeight": 24,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            The story of King Arthur
+          </Text>
+        </Text>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            Merlin
+             from 
+            The old Kingdom of Britania
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Array [
+                  Object {
+                    "color": "rgba(0, 0, 0, 0.87)",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "fontSize": 10,
+                    },
+                  ],
+                  Array [
+                    Object {
+                      "fontSize": 14,
+                      "letterSpacing": 0.25,
+                      "lineHeight": 20,
+                      "marginVertical": 2,
+                    },
+                    Object {
+                      "fontSize": 10,
+                    },
+                  ],
+                ],
+              ]
+            }
+          >
+            975-09-17
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
