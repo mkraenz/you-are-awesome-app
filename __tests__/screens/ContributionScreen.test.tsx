@@ -9,7 +9,7 @@ import renderer from "react-test-renderer";
 import createMockStore from "redux-mock-store";
 import ContributionScreen from "../../src/screens/ContributionScreen";
 import { ActionType } from "../../src/state/actions/ActionType";
-import { ISubmitMessageRequested } from "../../src/state/actions/IAction";
+import { ISubmitMessageRequested } from "../../src/state/actions/SubmitMessageAction";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import TestLocalizationProvider from "../helpers/TestLocalizationProvider";

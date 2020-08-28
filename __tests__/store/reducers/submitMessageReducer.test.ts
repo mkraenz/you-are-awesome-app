@@ -2,7 +2,7 @@ import { ActionType } from "../../../src/state/actions/ActionType";
 import {
     ISubmitMessageFailed,
     ISubmitMessageSucceeded,
-} from "../../../src/state/actions/IAction";
+} from "../../../src/state/actions/SubmitMessageAction";
 import { submitMessageReducer } from "../../../src/state/reducers/submitMessageReducer";
 import { ISubmitMessageState } from "../../../src/state/state/ISubmitMessageState";
 import { mock } from "../../helpers/mocks";

@@ -48,7 +48,6 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     }
 
     return (
-        // TODO #245 consider custom style for the left margin in selectMode
         <Layout
             route={Route.Favorites}
             appbarProps={
