@@ -15,4 +15,5 @@ export enum ActionType {
     ToggleDarkTheme = "ToggleDarkTheme",
     SetLanguage = "SetLanguage",
     AddToFavorites = "AddToFavorites",
+    DeleteFavorites = "DeleteFavorites",
 }

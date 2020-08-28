@@ -8,7 +8,11 @@ type NavigationTheme = typeof NavDarkTheme | typeof NavDefaultTheme;
 
 export type FullTheme = Theme &
     NavigationTheme & {
-        colors: { accentedCard: string; disabledItemText: string };
+        colors: {
+            accentedCard: string;
+            disabledItemText: string;
+            navAccent: string;
+        };
     };
 
 export enum Color {
@@ -18,6 +22,8 @@ export enum Color {
     DarkTurquoise = "#00DAC6",
     DarkGrey = "#202c39",
     Grey = "#272727",
+    LightGrey = "grey",
+    White = "white",
 }
 
 export const lightTheme: FullTheme = {
@@ -28,9 +34,10 @@ export const lightTheme: FullTheme = {
         ...NavDefaultTheme.colors,
         ...DefaultTheme.colors,
         primary: Color.Blue,
-        accent: "white", // TODO maybe split nav theme and paper theme. With the current approach, enabled switches are white on white background etc.
         accentedCard: NavDefaultTheme.colors.card,
         disabledItemText: Color.Grey,
+        navAccent: Color.White,
+        accent: Color.LightGrey,
     },
 };
 
@@ -45,5 +52,7 @@ export const darkTheme: FullTheme = {
         card: DarkTheme.colors.surface,
         accentedCard: Color.Grey,
         disabledItemText: Color.Grey,
+        navAccent: Color.Violet,
+        accent: Color.Violet,
     },
 };

@@ -19,7 +19,9 @@ const PrivacyPolicyScreen: React.FC = () => {
     return (
         <Layout
             route={Route.PrivacyPolicy}
-            onBack={() => navigation.goBack()}
+            appbarProps={{
+                onBack: () => navigation.goBack(),
+            }}
             title={t(Route.PrivacyPolicy)}
         >
             <Button

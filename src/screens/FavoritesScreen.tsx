@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { isEmpty } from "lodash";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FlatList, StyleSheet, View } from "react-native";
 import { Button, Divider, Paragraph, useTheme } from "react-native-paper";
@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import ListItem from "../components/favorites/ListItem";
 import { Route } from "../navigation/Route";
+import { deleteFavorites } from "../state/action-creators/deleteFavorites";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
@@ -26,12 +27,37 @@ const styles = StyleSheet.create({
 
 interface Props {
     messages: IMessage[];
+    deleteFavorites: typeof deleteFavorites;
 }
 
-const FavoritesScreen: FC<Props> = ({ messages }) => {
+// TODO #245 split into nonempty fav screen and empty fav screen + top level component or at least the non-empty list in separate component
+const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
+    const [selectModeEnabled, enableSelectMode] = useState(false);
+    const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
+
+    const select = (id: string) => {
+        enableSelectMode(true);
+        const selected = selectedItemIds.includes(id);
+        if (selected) {
+            const idsWithoutParamId = selectedItemIds.filter((s) => s !== id);
+            setSelectedItemIds(idsWithoutParamId);
+        } else {
+            setSelectedItemIds([...selectedItemIds, id]);
+        }
+    };
+    const resetSelection = () => {
+        enableSelectMode(false);
+        setSelectedItemIds([]);
+    };
+    const deleteSelected = () => {
+        deleteFavorites(selectedItemIds);
+        resetSelection();
+    };
+
     const { t } = useTranslation();
     const nav = useNavigation();
     const theme = useTheme();
+
     if (isEmpty(messages)) {
         return (
             <Layout route={Route.Favorites}>
@@ -60,13 +86,34 @@ const FavoritesScreen: FC<Props> = ({ messages }) => {
     }
 
     return (
-        <Layout route={Route.Favorites}>
+        // TODO #245 consider custom style for the left margin in selectMode
+        <Layout
+            route={Route.Favorites}
+            appbarProps={
+                selectModeEnabled
+                    ? {
+                          onBack: resetSelection,
+                          actionIcon: "delete-forever",
+                          onActionPress: deleteSelected,
+                      }
+                    : undefined
+            }
+        >
             <View style={styles.container}>
                 <FlatList
                     data={messages}
                     extraData={[]}
                     renderItem={({ item }) => {
-                        return <ListItem {...item} key={item.id}></ListItem>;
+                        return (
+                            <ListItem
+                                {...item}
+                                key={item.id}
+                                onLongPress={() => select(item.id)}
+                                onPressInSelectMode={() => select(item.id)}
+                                selectMode={selectModeEnabled}
+                                selected={selectedItemIds.includes(item.id)}
+                            ></ListItem>
+                        );
                     }}
                     ItemSeparatorComponent={() => (
                         <Divider accessibilityStates={{}} />
@@ -79,8 +126,11 @@ const FavoritesScreen: FC<Props> = ({ messages }) => {
         </Layout>
     );
 };
+
 const mapStateToProps: MapStateToProps<Pick<Props, "messages">> = (state) => ({
     messages: state.favorites.messages,
 });
 
-export default connect(mapStateToProps)(FavoritesScreen);
+const mapDispatchToProps = { deleteFavorites };
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesScreen);

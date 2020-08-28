@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Surface, useTheme } from "react-native-paper";
 import { Route } from "../../navigation/Route";
-import MyAppbar from "../navigation/MyAppbar";
+import MyAppbar, { MyAppbarProps } from "../navigation/MyAppbar";
 
 const styles = StyleSheet.create({
     container: {
@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
 
 interface Props {
     route: Route;
-    onBack?: () => void;
     title?: string;
+    appbarProps?: Omit<MyAppbarProps, "title">;
 }
 
 const Layout: FC<Props> = (props) => {
@@ -35,8 +35,8 @@ const Layout: FC<Props> = (props) => {
     return (
         <Surface style={containerStyles} accessibilityStates={{}}>
             <MyAppbar
+                {...props.appbarProps}
                 title={props.title || t("appTitle")}
-                onBack={props.onBack}
             />
             <View style={styles.contentContainer}>{props.children}</View>
         </Surface>
