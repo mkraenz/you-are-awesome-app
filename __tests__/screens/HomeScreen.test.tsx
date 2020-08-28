@@ -7,15 +7,12 @@ import createMockStore from "redux-mock-store";
 import HomeScreen from "../../src/screens/HomeScreen";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
-import MockPaperProvider from "../helpers/MockPaperProvider";
-import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
+import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 
 const ConfiguredHomeScreen = () => (
-    <MockPaperProvider>
-        <TestLocalizationProvider>
-            <HomeScreen />
-        </TestLocalizationProvider>
-    </MockPaperProvider>
+    <LocalizedMockPaperProvider>
+        <HomeScreen />
+    </LocalizedMockPaperProvider>
 );
 
 it("renders correctly", () => {

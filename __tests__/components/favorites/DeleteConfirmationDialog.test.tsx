@@ -5,21 +5,18 @@ import React from "react";
 import "react-native";
 import renderer, { act } from "react-test-renderer";
 import DeleteConfirmationDialog from "../../../src/components/favorites/DeleteConfirmationDialog";
-import MockPaperProvider from "../../helpers/MockPaperProvider";
-import TestLocalizationProvider from "../../helpers/TestLocalizationProvider";
+import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider";
 
 it("renders correctly", async () => {
     const tree = renderer
         .create(
-            <MockPaperProvider>
-                <TestLocalizationProvider>
-                    <DeleteConfirmationDialog
-                        onConfirm={noop}
-                        onDismiss={noop}
-                        visible={true}
-                    />
-                </TestLocalizationProvider>
-            </MockPaperProvider>
+            <LocalizedMockPaperProvider>
+                <DeleteConfirmationDialog
+                    onConfirm={noop}
+                    onDismiss={noop}
+                    visible={true}
+                />
+            </LocalizedMockPaperProvider>
         )
         .toJSON();
 
@@ -29,15 +26,13 @@ it("renders correctly", async () => {
 it("calls confirm callback when confirm button clicked", async () => {
     const confirmMock = jest.fn();
     const { findByText } = render(
-        <MockPaperProvider>
-            <TestLocalizationProvider>
-                <DeleteConfirmationDialog
-                    onConfirm={confirmMock}
-                    onDismiss={noop}
-                    visible={true}
-                />
-            </TestLocalizationProvider>
-        </MockPaperProvider>
+        <LocalizedMockPaperProvider>
+            <DeleteConfirmationDialog
+                onConfirm={confirmMock}
+                onDismiss={noop}
+                visible={true}
+            />
+        </LocalizedMockPaperProvider>
     );
     const confirmButton = await findByText(i18next.t("favoritesDelete"));
     await act(async () => {});
@@ -51,15 +46,13 @@ it("calls confirm callback when confirm button clicked", async () => {
 it("calls dismiss callback when cancel button clicked", async () => {
     const dismissMock = jest.fn();
     const { findByText } = render(
-        <MockPaperProvider>
-            <TestLocalizationProvider>
-                <DeleteConfirmationDialog
-                    onConfirm={noop}
-                    onDismiss={dismissMock}
-                    visible={true}
-                />
-            </TestLocalizationProvider>
-        </MockPaperProvider>
+        <LocalizedMockPaperProvider>
+            <DeleteConfirmationDialog
+                onConfirm={noop}
+                onDismiss={dismissMock}
+                visible={true}
+            />
+        </LocalizedMockPaperProvider>
     );
     const cancelButton = await findByText(i18next.t("favoritesCancel"));
     await act(async () => {});

@@ -9,19 +9,16 @@ import { Route } from "../../src/navigation/Route";
 import FavoritesScreen from "../../src/screens/FavoritesScreen";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
+import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
-import MockPaperProvider from "../helpers/MockPaperProvider";
 import { mock } from "../helpers/mocks";
-import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
 
 const ConfiguredFavorites = () => (
-    <MockPaperProvider>
-        <TestLocalizationProvider>
-            <MockedNavigator component={FavoritesScreen} />
-        </TestLocalizationProvider>
-    </MockPaperProvider>
+    <LocalizedMockPaperProvider>
+        <MockedNavigator component={FavoritesScreen} />
+    </LocalizedMockPaperProvider>
 );
 
 it("renders special message on empty list", async () => {

@@ -6,9 +6,8 @@ import { Provider } from "react-redux";
 import renderer, { act } from "react-test-renderer";
 import createMockStore from "redux-mock-store";
 import SettingsScreen from "../../src/screens/SettingsScreen";
+import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
-import MockPaperProvider from "../helpers/MockPaperProvider";
-import TestLocalizationProvider from "../helpers/TestLocalizationProvider";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
 
@@ -17,11 +16,9 @@ afterEach(() => {
 });
 
 const ConfiguredSettingsScreen: FC = () => (
-    <MockPaperProvider>
-        <TestLocalizationProvider>
-            <MockedNavigator component={SettingsScreen} />
-        </TestLocalizationProvider>
-    </MockPaperProvider>
+    <LocalizedMockPaperProvider>
+        <MockedNavigator component={SettingsScreen} />
+    </LocalizedMockPaperProvider>
 );
 
 it("renders correctly for disabled notifications", async () => {
