@@ -16,14 +16,14 @@
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.2.0",
+        "version": "1.4.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 5,
+            "versionCode": 6,
             "useNextNotificationsApi": true
         },
         "ios": {
