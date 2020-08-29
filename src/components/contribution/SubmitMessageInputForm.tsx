@@ -30,6 +30,9 @@ const SubmitMessageInputForm: FC<Props> = ({
     const [text, setText] = useState("");
     const [author, setAuthor] = useState("");
     const [country, setCountry] = useState("");
+    const [textError, setTextError] = useState(false);
+    const [authorError, setAuthorError] = useState(false);
+    const [countryError, setCountryError] = useState(false);
     const { t } = useTranslation();
 
     const resetInputs = () => {
@@ -46,39 +49,75 @@ const SubmitMessageInputForm: FC<Props> = ({
         autoCapitalize: "sentences" as const,
         accessibilityStates: {},
     };
+    const missingInputs = !(text && author && country);
+    const displayErrors = () => {
+        if (!text) {
+            setTextError(true);
+        }
+        if (!author) {
+            setAuthorError(true);
+        }
+        if (!country) {
+            setCountryError(true);
+        }
+    };
+    const handleTextChanged = (str: string) => {
+        setText(str);
+        setTextError(false);
+    };
+    const handleAuthorChanged = (str: string) => {
+        setAuthor(str);
+        setAuthorError(false);
+    };
+    const handleCountryChanged = (str: string) => {
+        setCountry(str);
+        setCountryError(false);
+    };
+    const resetErrors = () => {
+        setTextError(false);
+        setAuthorError(false);
+        setCountryError(false);
+    };
+    const onSubmit = () => {
+        if (missingInputs) {
+            displayErrors();
+            return;
+        }
+        handleSubmit({ text, author, country });
+        resetErrors();
+        resetInputs();
+    };
+
     return (
         <View style={styles.container}>
             <TextInput
                 {...commonProps}
                 label={t("contributeAwesomeMessage")}
                 maxLength={200}
-                placeholder={t("contributeAwesomeMessageLong")}
-                onChangeText={setText}
+                onChangeText={handleTextChanged}
                 value={text}
+                error={textError}
             />
             <TextInput
                 {...commonProps}
                 label={t("contributeName")}
                 maxLength={50}
-                placeholder={t("contributeName")}
-                onChangeText={setAuthor}
+                onChangeText={handleAuthorChanged}
                 value={author}
+                error={authorError}
             />
             <TextInput
                 {...commonProps}
                 label={t("contributeCountry")}
                 maxLength={50}
-                onChangeText={setCountry}
+                onChangeText={handleCountryChanged}
                 value={country}
-                placeholder={t("contributeCountry")}
+                error={countryError}
             />
             <Button
                 mode="contained"
                 style={styles.button}
-                onPress={() => {
-                    handleSubmit({ text, author, country });
-                    resetInputs();
-                }}
+                onPress={onSubmit}
                 disabled={!connectedToInternet}
                 accessibilityStates={{}}
             >

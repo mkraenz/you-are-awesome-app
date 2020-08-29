@@ -15,9 +15,20 @@ export const submitMessageReducer: Reducer<
 ) => {
     switch (action.type) {
         case ActionType.SubmitMessageRequested:
+            const newMsg = action.payload;
+            const alreadyInFavorites = state.myMessages.find(
+                (m) => m.id === newMsg.id
+            );
+            if (alreadyInFavorites) {
+                return state;
+            }
+            const messages = [action.payload, ...state.myMessages];
+            const sortedMessages = messages.sort((a, b) =>
+                a.isodate < b.isodate ? 1 : -1
+            );
             return {
                 ...state,
-                myMessages: [...state.myMessages, action.payload],
+                myMessages: sortedMessages,
             };
         case ActionType.DeleteMyContributions:
             const currentIds = state.myMessages.map((m) => m.id);

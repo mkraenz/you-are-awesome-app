@@ -52,6 +52,74 @@ describe("submitMessageReducer", () => {
             };
             expect(result).toEqual(expected);
         });
+
+        it(`does not add if id already exists`, () => {
+            const action: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
+                payload: {
+                    author: "humpty dumpty",
+                    text: "I sit on a wall",
+                    country: "England",
+                    id: "id-1",
+                    isodate: "2020-08-25",
+                },
+            };
+            const state: ISubmitMessageState = {
+                myMessages: [
+                    Object.freeze({
+                        text: "message-with-same-id",
+                        author: "humpty dumpty",
+                        country: "England",
+                        id: "id-1",
+                        isodate: "2020-08-25",
+                    }),
+                ],
+            };
+
+            const result = submitMessageReducer(state, action);
+
+            const expected: ISubmitMessageState = {
+                myMessages: [state.myMessages[0]],
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it(`orders by date: newest-first`, () => {
+            const msg = {
+                author: "Humpty Dumpty",
+                text: "sat on a wall",
+                country: "England",
+                id: "id-old",
+                isodate: "2020-08-25",
+            };
+            const old: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
+                payload: msg,
+            };
+            const newest: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
+                payload: { ...msg, isodate: "2020-08-26", id: "id-new" },
+            };
+            const state: ISubmitMessageState = {
+                myMessages: [],
+            };
+
+            // permutate the timestamps
+            const resultState1 = submitMessageReducer(
+                submitMessageReducer(state, old),
+                newest
+            );
+            const resultState2 = submitMessageReducer(
+                submitMessageReducer(state, newest),
+                old
+            );
+
+            const expected: ISubmitMessageState = {
+                myMessages: [newest.payload, old.payload],
+            };
+            expect(resultState1).toEqual(expected);
+            expect(resultState1).toEqual(resultState2);
+        });
     });
 
     describe(`${ActionType.DeleteMyContributions}`, () => {

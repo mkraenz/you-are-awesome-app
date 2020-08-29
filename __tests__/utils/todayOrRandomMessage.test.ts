@@ -1,18 +1,19 @@
+import MockDate from "mockdate";
 import { todaysMessageOrRandomMessage } from "../../src/utils/todayOrRandomMessage";
 import { mock } from "../helpers/mocks";
 
+afterEach(() => {
+    MockDate.reset();
+});
+
 it("returns todays message if available", () => {
-    const result = todaysMessageOrRandomMessage(
-        mock.messages,
-        new Date(mock.messages[1].isodate)
-    );
+    MockDate.set(new Date(mock.messages[1].isodate));
+    const result = todaysMessageOrRandomMessage(mock.messages);
     expect(result).toBe(mock.messages[1]);
 });
 
 it("returns random message if todays message unavailable", () => {
-    const result = todaysMessageOrRandomMessage(
-        mock.messages,
-        new Date("2000")
-    );
+    MockDate.set(new Date("2000"));
+    const result = todaysMessageOrRandomMessage(mock.messages);
     expect(mock.messages).toContain(result);
 });

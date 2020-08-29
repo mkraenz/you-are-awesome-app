@@ -27,6 +27,7 @@ const ContributionScreen: FC<Props> = ({
 }) => {
     const { t } = useTranslation();
     const { navigate } = useNavigation();
+    const gotoMyContributions = () => navigate(Route.MyContributions);
     const handleSubmit = (msg: IMessageContent) => {
         submitMessage({
             ...msg,
@@ -43,6 +44,7 @@ const ContributionScreen: FC<Props> = ({
                 },
             ]
         );
+        gotoMyContributions();
     };
 
     return (
@@ -51,7 +53,7 @@ const ContributionScreen: FC<Props> = ({
             title={t(Route.Contribute)}
             appbarProps={{
                 actionIcon: "view-list",
-                onActionPress: () => navigate(Route.MyContributions),
+                onActionPress: gotoMyContributions,
             }}
         >
             {!connectedToInternet && <OfflineNotice />}
