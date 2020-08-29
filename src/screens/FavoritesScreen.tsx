@@ -1,5 +1,6 @@
 import { isEmpty } from "lodash";
 import React, { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FlatList } from "react-native";
 import { Divider } from "react-native-paper";
 import { connect } from "react-redux";
@@ -21,6 +22,7 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     const [selectModeEnabled, enableSelectMode] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
     const [deleteConfirmationVisible, showDeleteConfirmation] = useState(false);
+    const { t } = useTranslation();
 
     const select = (id: string) => {
         enableSelectMode(true);
@@ -50,6 +52,7 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     return (
         <Layout
             route={Route.Favorites}
+            title={t(Route.Favorites)}
             appbarProps={
                 selectModeEnabled
                     ? {

@@ -126,7 +126,7 @@ exports[`renders correctly 1`] = `
               ]
             }
           >
-            You are Awesome App!
+            Contribution
           </Text>
         </View>
       </View>
@@ -1035,7 +1035,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
               ]
             }
           >
-            You are Awesome App!
+            Contribution
           </Text>
         </View>
       </View>

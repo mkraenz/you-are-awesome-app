@@ -21,7 +21,7 @@ const EmptyFavoritesScreen = () => {
     const { navigate } = useNavigation();
 
     return (
-        <Layout route={Route.Favorites}>
+        <Layout route={Route.Favorites} title={t(Route.Favorites)}>
             <View style={styles.container}>
                 <Paragraph style={styles.text}>
                     {t("favoritesEmptyList", { route: t(Route.Home) })}

@@ -406,7 +406,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   ]
                                 }
                               >
-                                You are Awesome App!
+                                Settings
                               </Text>
                             </View>
                           </View>
@@ -1490,7 +1490,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   ]
                                 }
                               >
-                                You are Awesome App!
+                                Settings
                               </Text>
                             </View>
                           </View>
@@ -2496,7 +2496,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   ]
                                 }
                               >
-                                You are Awesome App!
+                                Settings
                               </Text>
                             </View>
                           </View>

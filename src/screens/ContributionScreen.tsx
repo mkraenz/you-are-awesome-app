@@ -42,7 +42,10 @@ const ContributionScreen: FC<Props> = ({
     };
 
     return (
-        <Layout route={Route.Contribute}>
+        <Layout
+            route={Route.Contribute}
+            title={t(Route.Contribute)}
+        >
             {!connectedToInternet && <OfflineNotice />}
             <SubmitMessageInputForm handleSubmit={handleSubmit} />
         </Layout>

@@ -406,7 +406,7 @@ exports[`renders special message on empty list 1`] = `
                                   ]
                                 }
                               >
-                                You are Awesome App!
+                                Favorites
                               </Text>
                             </View>
                           </View>
@@ -423,7 +423,8 @@ exports[`renders special message on empty list 1`] = `
                           <View
                             style={
                               Object {
-                                "height": "50%",
+                                "flex": 1,
+                                "justifyContent": "center",
                               }
                             }
                           >
@@ -453,7 +454,6 @@ exports[`renders special message on empty list 1`] = `
                                       },
                                       Object {
                                         "fontSize": 16,
-                                        "marginTop": "auto",
                                       },
                                     ],
                                     Array [
@@ -465,7 +465,6 @@ exports[`renders special message on empty list 1`] = `
                                       },
                                       Object {
                                         "fontSize": 16,
-                                        "marginTop": "auto",
                                       },
                                     ],
                                   ],
@@ -995,7 +994,7 @@ exports[`renders the list 1`] = `
                                   ]
                                 }
                               >
-                                You are Awesome App!
+                                Favorites
                               </Text>
                             </View>
                           </View>

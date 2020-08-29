@@ -62,7 +62,7 @@ const localization: {
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Home",
             [Route.Settings]: "Settings",
-            [Route.Contribute]: "Contribute",
+            [Route.Contribute]: "Contribution",
             [Route.PrivacyPolicy]: "Privacy Policy",
             [Route.Favorites]: "Favorites",
             buildVersion: "Build version",
