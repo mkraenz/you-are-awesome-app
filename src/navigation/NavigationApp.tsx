@@ -104,7 +104,7 @@ const NavigationApp = () => {
                         tabBarIcon: ({ focused }) => (
                             <TabBarIcon focused={focused} name="share-alt" />
                         ),
-                        tabBarLabel: t(Route.Contribute),
+                        tabBarLabel: t("contributeNavLabel"),
                     }}
                 />
                 <Tab.Screen

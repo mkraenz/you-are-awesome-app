@@ -14,6 +14,7 @@ type keys =
     | "contributeAwesomeMessageLong"
     | "contributeCountry"
     | "contributeSubmit"
+    | "contributeNavLabel"
     | "contributionStayTuned"
     | "contributionThanks"
     | "contributionMember"
@@ -65,6 +66,7 @@ const localization: {
             [Route.Home]: "Home",
             [Route.Settings]: "Settings",
             [Route.Contribute]: "Contribution",
+            contributeNavLabel: "Contribute",
             [Route.MyContributions]: "My Contributions",
             [Route.PrivacyPolicy]: "Privacy Policy",
             [Route.Favorites]: "Favorites",
@@ -113,6 +115,7 @@ const localization: {
             [Route.Home]: "Start",
             [Route.Settings]: "Einstellungen",
             [Route.Contribute]: "Teilen",
+            contributeNavLabel: "Teilen",
             [Route.MyContributions]: "Meine Beiträge",
             [Route.PrivacyPolicy]: "Datenschutzerklärung",
             [Route.Favorites]: "Favoriten",
@@ -161,6 +164,7 @@ const localization: {
             [Route.Home]: "ホーム",
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
+            contributeNavLabel: "シェア",
             [Route.MyContributions]: "自分の送信したアイテム",
             [Route.PrivacyPolicy]: "プライバシー ポリシー",
             [Route.Favorites]: "お気に入り",
