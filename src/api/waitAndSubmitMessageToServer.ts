@@ -4,13 +4,11 @@ import { pick } from "../utils/pick";
 
 const HTTP_CREATED = 201;
 
+// TODO #254 rename
 export const waitAndSubmitMessageToServer = async (
     msg: IMessage,
-    uri: string,
-    backoffInMs: number
+    uri: string
 ) => {
-    await delay(backoffInMs);
-    // TODO #254 adjust user contributions API
     const response = await axios.post<IMessage>(
         uri,
         pick(msg, ["author", "country", "isodate", "id", "text"]),
@@ -25,13 +23,6 @@ export const waitAndSubmitMessageToServer = async (
     }
     return response.data;
 };
-
-const delay = (backoffInMs: number) =>
-    new Promise((resolve) =>
-        setTimeout(() => {
-            resolve();
-        }, backoffInMs)
-    );
 
 const options: AxiosRequestConfig = {
     headers: {

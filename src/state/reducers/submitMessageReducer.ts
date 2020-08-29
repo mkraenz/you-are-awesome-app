@@ -9,27 +9,21 @@ export const submitMessageReducer: Reducer<
     SubmitMessageAction
 > = (
     state = {
-        backoffInMs: 0,
+        myMessages: [],
     },
     action
 ) => {
     switch (action.type) {
+        case ActionType.SubmitMessageRequested:
+            return {
+                ...state,
+                myMessages: [...state.myMessages, action.payload],
+            };
         case ActionType.SubmitMessageSucceeded:
-            return { ...state, backoffInMs: 0 };
+            return { ...state };
         case ActionType.SubmitMessageFailed:
-            return { ...state, backoffInMs: getBackoffInMs(state.backoffInMs) };
+            return { ...state };
         default:
             return state;
     }
-};
-
-const getBackoffInMs = (previous: number) => {
-    const oneMinute = 60000;
-    if (2 * previous > oneMinute) {
-        return oneMinute;
-    }
-    if (previous === 0) {
-        return 1000;
-    }
-    return previous * 2;
 };

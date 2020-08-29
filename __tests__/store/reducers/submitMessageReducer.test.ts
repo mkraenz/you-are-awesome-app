@@ -12,7 +12,7 @@ describe("submitMessageReducer", () => {
         // @ts-expect-error
         const result = submitMessageReducer(undefined, {});
 
-        expect(result).toEqual({ backoffInMs: 0 });
+        expect(result).toEqual({ myMessages: [] });
     });
 
     it(`should handle ${ActionType.SubmitMessageSucceeded}`, () => {
@@ -21,13 +21,13 @@ describe("submitMessageReducer", () => {
             payload: mock.message,
         };
         const state: ISubmitMessageState = {
-            backoffInMs: 987,
+            myMessages: [],
         };
 
         const result = submitMessageReducer(state, action);
 
         const expected: ISubmitMessageState = {
-            backoffInMs: 0,
+            myMessages: [],
         };
         expect(result).toEqual(expected);
     });
@@ -46,61 +46,13 @@ describe("submitMessageReducer", () => {
                 error: true,
             };
             const state: ISubmitMessageState = {
-                backoffInMs: 0,
+                myMessages: [],
             };
 
             const result = submitMessageReducer(state, action);
 
             const expected: ISubmitMessageState = {
-                backoffInMs: 1000,
-            };
-            expect(result).toEqual(expected);
-        });
-
-        it("should double backoff", () => {
-            const action: ISubmitMessageFailed = {
-                type: ActionType.SubmitMessageFailed,
-                payload: {
-                    error: new Error("an error message"),
-                    originalAction: {
-                        type: ActionType.SubmitMessageRequested,
-                        payload: mock.message,
-                    },
-                },
-                error: true,
-            };
-            const state: ISubmitMessageState = {
-                backoffInMs: 987,
-            };
-
-            const result = submitMessageReducer(state, action);
-
-            const expected: ISubmitMessageState = {
-                backoffInMs: 987 * 2,
-            };
-            expect(result).toEqual(expected);
-        });
-
-        it("should max out at 1 min", () => {
-            const action: ISubmitMessageFailed = {
-                type: ActionType.SubmitMessageFailed,
-                payload: {
-                    error: new Error("an error message"),
-                    originalAction: {
-                        type: ActionType.SubmitMessageRequested,
-                        payload: mock.message,
-                    },
-                },
-                error: true,
-            };
-            const state: ISubmitMessageState = {
-                backoffInMs: 30001,
-            };
-
-            const result = submitMessageReducer(state, action);
-
-            const expected: ISubmitMessageState = {
-                backoffInMs: 60000, // 1 min
+                myMessages: [],
             };
             expect(result).toEqual(expected);
         });

@@ -25,8 +25,7 @@ describe("waitAndSubmitMessageToServer()", () => {
 
         const result = await waitAndSubmitMessageToServer(
             msg,
-            "irrelevant-uri",
-            0
+            "irrelevant-uri"
         );
 
         expect(result).toBe(responseBody);
@@ -55,8 +54,7 @@ describe("waitAndSubmitMessageToServer()", () => {
 
             const resultPromise = waitAndSubmitMessageToServer(
                 msg,
-                "irrelevant-uri",
-                0
+                "irrelevant-uri"
             );
 
             await expect(resultPromise).rejects.toThrow(

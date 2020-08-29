@@ -3,7 +3,6 @@ import { Route } from "./navigation/Route";
 
 export const DEFAULT_LANGUAGE = Language.English;
 export const START_SCREEN: Route = Route.Home;
-export const MAX_BACKOFF_IN_MS = 1000 * Math.pow(2, 3);
 export const DEFAULT_NOTIFICATION_HOUR = 11;
 
 // verbose name because async storage is like a production database.

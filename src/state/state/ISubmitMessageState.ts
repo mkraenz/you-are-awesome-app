@@ -1,3 +1,5 @@
+import { IMessage } from "./IMessage";
+
 export interface ISubmitMessageState {
-    backoffInMs: number;
+    myMessages: IMessage[];
 }

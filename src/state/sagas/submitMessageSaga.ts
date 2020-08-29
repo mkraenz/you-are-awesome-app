@@ -1,6 +1,6 @@
-import { call, put, select, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { waitAndSubmitMessageToServer } from "../../api/waitAndSubmitMessageToServer";
-import { MAX_BACKOFF_IN_MS, URI } from "../../config";
+import { URI } from "../../config";
 import { pick } from "../../utils/pick";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
@@ -10,7 +10,6 @@ import {
     ISubmitMessageRequested,
     ISubmitMessageSucceeded,
 } from "../actions/SubmitMessageAction";
-import { backoffInMs } from "../selectors";
 
 const TIMEOUT_EXCEEDED = "Maximum timeout exceeded. Sending to server failed.";
 
@@ -22,17 +21,10 @@ function* submitMessageWorkerSaga(
             ? action
             : action.payload.originalAction;
     try {
-        const backoff: ReturnType<typeof backoffInMs> = yield select(
-            backoffInMs
-        );
-        if (backoff > MAX_BACKOFF_IN_MS) {
-            throw new Error(TIMEOUT_EXCEEDED);
-        }
         const responseData: AwaitedReturnType<typeof waitAndSubmitMessageToServer> = yield call(
             waitAndSubmitMessageToServer,
             submitMessageRequested.payload,
-            URI.SEND_MESSAGES,
-            backoff
+            URI.SEND_MESSAGES
         );
         const success: ISubmitMessageSucceeded = {
             type: ActionType.SubmitMessageSucceeded,
