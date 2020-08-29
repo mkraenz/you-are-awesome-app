@@ -8,10 +8,9 @@ import { Route } from "../../navigation/Route";
 import Layout from "../common/Layout";
 
 const styles = StyleSheet.create({
-    container: { height: "50%" },
+    container: { flex: 1, justifyContent: "center" },
     text: {
         fontSize: 16,
-        marginTop: "auto",
     },
     button: { marginTop: 24 },
 });
