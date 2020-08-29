@@ -6,7 +6,8 @@ export type SubmitMessageAction =
     | ISubmitMessageFailed
     | ISubmitMessageSucceeded
     | ISubmitMessageRequested
-    | ISubmitMessageFailedTimeoutExceeded;
+    | ISubmitMessageFailedTimeoutExceeded
+    | IDeleteMyContributions;
 
 export type ISubmitMessageRequested = IActionWithPayload<
     ActionType.SubmitMessageRequested,
@@ -35,3 +36,8 @@ export interface ISubmitMessageFailedTimeoutExceeded {
     };
     error: true;
 }
+
+export type IDeleteMyContributions = IActionWithPayload<
+    ActionType.DeleteMyContributions,
+    { ids: string[] }
+>;

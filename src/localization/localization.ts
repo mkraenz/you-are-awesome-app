@@ -33,7 +33,11 @@ type keys =
     | "favoritesDelete"
     | "favoritesCancel"
     | "myContributionsContribute"
-    | "myContributionsEmptyList";
+    | "myContributionsEmptyList"
+    | "myContributionsDeleteDialogTitle"
+    | "myContributionsDeleteDialogText"
+    | "myContributionsDelete"
+    | "myContributionsCancel";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -101,6 +105,11 @@ const localization: {
             myContributionsContribute: "Contribute now",
             myContributionsEmptyList:
                 "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
+            myContributionsCancel: "Cancel",
+            myContributionsDelete: "Delete Forever",
+            myContributionsDeleteDialogText:
+                "Deleting list items is permanent and cannot be reverted.\nNote that deletions do not affect server data. Deletions are only effective on your device.",
+            myContributionsDeleteDialogTitle: "Are you sure?",
         },
     },
     de: {
@@ -149,7 +158,12 @@ const localization: {
             favoritesDeleteDialogTitle: "Bist du sicher?",
             myContributionsContribute: "Jetzt beitragen",
             myContributionsEmptyList:
-                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
+                "Keine bisherigen Beiträge. Tippe auf den Knopf, um jetzt deine erste awesome Nachricht mit der Welt zu teilen. Wir warten schon auf dich. :)",
+            myContributionsCancel: "Abbrechen",
+            myContributionsDelete: "Endgültig löschen",
+            myContributionsDeleteDialogText:
+                "Das Löschen von Beiträge ist permanent und kann nicht rückgängig gemacht werden. Bitte beachte, dass keine Daten auf den Servern gelöscht werden. Nur Daten auf diesem Gerät werden gelöscht.",
+            myContributionsDeleteDialogTitle: "Bist du sicher?",
         },
     },
     ja: {
@@ -165,7 +179,7 @@ const localization: {
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
             contributeNavLabel: "シェア",
-            [Route.MyContributions]: "自分の送信したアイテム",
+            [Route.MyContributions]: "自分の送信したすごいメッセージ",
             [Route.PrivacyPolicy]: "プライバシー ポリシー",
             [Route.Favorites]: "お気に入り",
             buildVersion: "ビルドバージョン",
@@ -199,7 +213,12 @@ const localization: {
             favoritesDeleteDialogTitle: "削除確認",
             myContributionsContribute: "今すぐシェア",
             myContributionsEmptyList:
-                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
+                "まだシェアしたメッセージはありません。今すぐ自分の初めてのすごいメッセージをシェアするため、下のボタンをタップしてください。",
+            myContributionsCancel: "キャンセル",
+            myContributionsDelete: "永久に削除",
+            myContributionsDeleteDialogText:
+                "削除すると元に戻すことはできません。サーバーに保存しているデータは消除されることはできません。このデバイスに保存しているのデータだけは消除されます。",
+            myContributionsDeleteDialogTitle: "削除確認",
         },
     },
 };

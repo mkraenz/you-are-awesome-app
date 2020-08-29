@@ -6,29 +6,31 @@ interface Props {
     visible: boolean;
     onDismiss: () => void;
     onConfirm: () => void;
+    route?: "favorites" | "myContributions";
 }
 
 const DeleteConfirmationDialog: FC<Props> = ({
     visible,
     onDismiss,
     onConfirm,
+    route = "favorites",
 }) => {
     const { t } = useTranslation();
     return (
         <Portal>
             <Dialog visible={visible} onDismiss={onDismiss}>
                 <Dialog.Title accessibilityStates={{}}>
-                    {t("favoritesDeleteDialogTitle")}
+                    {t(`${route}DeleteDialogTitle`)}
                 </Dialog.Title>
                 <Dialog.Content>
-                    <Paragraph>{t("favoritesDeleteDialogText")}</Paragraph>
+                    <Paragraph>{t(`${route}DeleteDialogText`)}</Paragraph>
                 </Dialog.Content>
                 <Dialog.Actions>
                     <Button onPress={onDismiss} accessibilityStates={{}}>
-                        {t("favoritesCancel")}
+                        {t(`${route}Cancel`)}
                     </Button>
                     <Button onPress={onConfirm} accessibilityStates={{}}>
-                        {t("favoritesDelete")}
+                        {t(`${route}Delete`)}
                     </Button>
                 </Dialog.Actions>
             </Dialog>

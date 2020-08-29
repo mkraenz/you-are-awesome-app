@@ -49,11 +49,10 @@ const ContributionScreen: FC<Props> = ({
         <Layout
             route={Route.Contribute}
             title={t(Route.Contribute)}
-            // TODO #254 enable
-            // appbarProps={{
-            //     actionIcon: "view-list",
-            //     onActionPress: () => navigate(Route.MyContributions),
-            // }}
+            appbarProps={{
+                actionIcon: "view-list",
+                onActionPress: () => navigate(Route.MyContributions),
+            }}
         >
             {!connectedToInternet && <OfflineNotice />}
             <SubmitMessageInputForm handleSubmit={handleSubmit} />

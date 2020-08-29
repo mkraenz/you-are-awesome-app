@@ -1,5 +1,6 @@
 import { ActionType } from "../../../src/state/actions/ActionType";
 import {
+    IDeleteMyContributions,
     ISubmitMessageRequested,
     ISubmitMessageSucceeded,
 } from "../../../src/state/actions/SubmitMessageAction";
@@ -48,6 +49,46 @@ describe("submitMessageReducer", () => {
 
             const expected: ISubmitMessageState = {
                 myMessages: [mock.message],
+            };
+            expect(result).toEqual(expected);
+        });
+    });
+
+    describe(`${ActionType.DeleteMyContributions}`, () => {
+        it("does nothing if messages don't exist", () => {
+            const action: IDeleteMyContributions = {
+                type: ActionType.DeleteMyContributions,
+                payload: {
+                    ids: ["id-1", "id-2"],
+                },
+            };
+            const state: ISubmitMessageState = {
+                myMessages: [{ ...mock.message, id: "different-id" }],
+            };
+
+            const result = submitMessageReducer(state, action);
+
+            const expected: ISubmitMessageState = {
+                myMessages: [{ ...mock.message, id: "different-id" }],
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it("deletes the specified subset of messages", () => {
+            const action: IDeleteMyContributions = {
+                type: ActionType.DeleteMyContributions,
+                payload: {
+                    ids: ["id-2"],
+                },
+            };
+            const state: ISubmitMessageState = {
+                myMessages: mock.messages,
+            };
+
+            const result = submitMessageReducer(state, action);
+
+            const expected: ISubmitMessageState = {
+                myMessages: [mock.messages[0]],
             };
             expect(result).toEqual(expected);
         });

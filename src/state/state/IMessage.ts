@@ -4,8 +4,4 @@ export interface IMessageContent {
     author: string;
 }
 
-export interface IMessageWithId extends IMessageContent {
-    id: string;
-}
-
-export type IMessage = IMessageWithId & { isodate: string };
+export type IMessage = IMessageContent & { isodate: string; id: string };

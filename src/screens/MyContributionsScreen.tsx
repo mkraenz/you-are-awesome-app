@@ -10,16 +10,19 @@ import EmptyMyContributionsScreen from "../components/contribution/EmptyMyContri
 import DeleteConfirmationDialog from "../components/favorites/DeleteConfirmationDialog";
 import ListItem from "../components/favorites/ListItem";
 import { Route } from "../navigation/Route";
-import { deleteFavorites } from "../state/action-creators/deleteFavorites";
+import { deleteMyContributions } from "../state/action-creators/deleteMyContributions";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
 interface Props {
     messages: IMessage[];
-    deleteFavorites: typeof deleteFavorites;
+    deleteMyContributions: typeof deleteMyContributions;
 }
 
-const MyContributionsScreen: FC<Props> = ({ messages, deleteFavorites }) => {
+const MyContributionsScreen: FC<Props> = ({
+    messages,
+    deleteMyContributions,
+}) => {
     const [selectModeEnabled, enableSelectMode] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
     const [deleteConfirmationVisible, showDeleteConfirmation] = useState(false);
@@ -42,7 +45,7 @@ const MyContributionsScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     };
     const hideDeleteConfirmation = () => showDeleteConfirmation(false);
     const deleteSelected = () => {
-        deleteFavorites(selectedItemIds);
+        deleteMyContributions(selectedItemIds);
         resetSelection();
         hideDeleteConfirmation();
     };
@@ -53,8 +56,8 @@ const MyContributionsScreen: FC<Props> = ({ messages, deleteFavorites }) => {
 
     return (
         <Layout
-            route={Route.Favorites}
-            title={t(Route.Favorites)}
+            route={Route.MyContributions}
+            title={t(Route.MyContributions)}
             appbarProps={
                 selectModeEnabled
                     ? {
@@ -91,16 +94,17 @@ const MyContributionsScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                 visible={deleteConfirmationVisible}
                 onDismiss={hideDeleteConfirmation}
                 onConfirm={deleteSelected}
+                route="myContributions"
             />
         </Layout>
     );
 };
 
 const mapStateToProps: MapStateToProps<Pick<Props, "messages">> = (state) => ({
-    messages: [],
+    messages: state.submitMessage.myMessages,
 });
 
-const mapDispatchToProps = { deleteFavorites };
+const mapDispatchToProps = { deleteMyContributions };
 
 export default connect(
     mapStateToProps,
