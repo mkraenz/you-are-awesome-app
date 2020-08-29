@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { waitAndSubmitMessageToServer } from "../../api/waitAndSubmitMessageToServer";
+import { submitContribution } from "../../api/submitContribution";
 import { URI } from "../../config";
 import { pick } from "../../utils/pick";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
@@ -21,8 +21,8 @@ function* submitMessageWorkerSaga(
             ? action
             : action.payload.originalAction;
     try {
-        const responseData: AwaitedReturnType<typeof waitAndSubmitMessageToServer> = yield call(
-            waitAndSubmitMessageToServer,
+        const responseData: AwaitedReturnType<typeof submitContribution> = yield call(
+            submitContribution,
             submitMessageRequested.payload,
             URI.SEND_MESSAGES
         );

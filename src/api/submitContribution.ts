@@ -4,11 +4,7 @@ import { pick } from "../utils/pick";
 
 const HTTP_CREATED = 201;
 
-// TODO #254 rename
-export const waitAndSubmitMessageToServer = async (
-    msg: IMessage,
-    uri: string
-) => {
+export const submitContribution = async (msg: IMessage, uri: string) => {
     const response = await axios.post<IMessage>(
         uri,
         pick(msg, ["author", "country", "isodate", "id", "text"]),
