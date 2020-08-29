@@ -1,4 +1,4 @@
-import { pick } from "lodash";
+import { pick } from "../../utils/pick";
 import { ActionType } from "../actions/ActionType";
 import { IAddToFavorites } from "../actions/IFavoritesAction";
 import { IMessage } from "../state/IMessage";

@@ -15,6 +15,8 @@ describe("waitAndSubmitMessageToServer()", () => {
             author: "my author",
             country: "my country",
             text: "my text",
+            id: "id-123",
+            isodate: "2014-01-23",
         };
         const postSpy = jest.spyOn(axios, "post").mockResolvedValue({
             status: 201,
@@ -47,6 +49,8 @@ describe("waitAndSubmitMessageToServer()", () => {
                 author: "my author",
                 country: "my country",
                 text: "my text",
+                id: "id-123",
+                isodate: "2020-05-09",
             };
 
             const resultPromise = waitAndSubmitMessageToServer(

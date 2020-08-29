@@ -1,10 +1,11 @@
-import { fireEvent, render } from "@testing-library/react-native";
+import { act as actTL, fireEvent, render } from "@testing-library/react-native";
 import i18next from "i18next";
+import MockDate from "mockdate";
 import React, { FC } from "react";
 import "react-native";
 import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 import createMockStore from "redux-mock-store";
 import ContributionScreen from "../../src/screens/ContributionScreen";
 import { ActionType } from "../../src/state/actions/ActionType";
@@ -12,14 +13,21 @@ import { ISubmitMessageRequested } from "../../src/state/actions/SubmitMessageAc
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
+import MockedNavigator from "../helpers/MockedNavigation";
+
+jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
 
 const ConfiguredContributionScreen: FC = () => (
     <LocalizedMockPaperProvider>
-        <ContributionScreen />
+        <MockedNavigator component={ContributionScreen} />
     </LocalizedMockPaperProvider>
 );
 
-it("renders correctly", () => {
+afterEach(() => {
+    MockDate.reset();
+});
+
+it("renders correctly", async () => {
     const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {
             connected: true,
@@ -33,12 +41,13 @@ it("renders correctly", () => {
             </Provider>
         )
         .toJSON();
+    await act(async () => {});
 
     expect(JSON.stringify(tree)).not.toContain(i18next.t("noInternet"));
     expect(tree).toMatchSnapshot();
 });
 
-it("renders no connection notify if disconnected from internet", () => {
+it("renders no connection notify if disconnected from internet", async () => {
     const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {
             connected: false,
@@ -52,12 +61,14 @@ it("renders no connection notify if disconnected from internet", () => {
             </Provider>
         )
         .toJSON();
+    await act(async () => {});
 
     expect(tree).toMatchSnapshot();
     expect(JSON.stringify(tree)).toContain(i18next.t("noInternet"));
 });
 
 it("can fill the form and submits it to the store", async () => {
+    MockDate.set("2002-02-20T20:20:02Z");
     const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {
             connected: false,
@@ -69,6 +80,7 @@ it("can fill the form and submits it to the store", async () => {
             <ConfiguredContributionScreen />
         </Provider>
     );
+    await actTL(async () => {});
 
     const countryInputs = await findAllByText(i18next.t("contributeCountry"));
     const awesomeInputs = await findAllByText(
@@ -90,6 +102,7 @@ it("can fill the form and submits it to the store", async () => {
             country: "Wonderland",
             text: "You are soooo awesome!",
             id: expect.stringMatching(v4),
+            isodate: "2002-02-20",
         },
     };
     expect(store.getActions()).toContainEqual(expected);

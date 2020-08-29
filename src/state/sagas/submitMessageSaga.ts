@@ -1,7 +1,7 @@
 import { call, put, select, takeEvery } from "redux-saga/effects";
 import { waitAndSubmitMessageToServer } from "../../api/waitAndSubmitMessageToServer";
 import { MAX_BACKOFF_IN_MS, URI } from "../../config";
-import { pickMessageContent } from "../../utils/pickMessageContent";
+import { pick } from "../../utils/pick";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
 import {
@@ -30,13 +30,13 @@ function* submitMessageWorkerSaga(
         }
         const responseData: AwaitedReturnType<typeof waitAndSubmitMessageToServer> = yield call(
             waitAndSubmitMessageToServer,
-            pickMessageContent(submitMessageRequested.payload),
+            submitMessageRequested.payload,
             URI.SEND_MESSAGES,
             backoff
         );
         const success: ISubmitMessageSucceeded = {
             type: ActionType.SubmitMessageSucceeded,
-            payload: responseData,
+            payload: pick(responseData, ["id"]),
         };
         yield put(success);
     } catch (e) {

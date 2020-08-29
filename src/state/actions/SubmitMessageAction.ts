@@ -1,4 +1,4 @@
-import { IMessageWithId } from "../state/IMessage";
+import { IMessage } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IActionWithPayload } from "./utils";
 
@@ -10,7 +10,7 @@ export type SubmitMessageAction =
 
 export type ISubmitMessageRequested = IActionWithPayload<
     ActionType.SubmitMessageRequested,
-    IMessageWithId
+    IMessage
 >;
 
 export interface ISubmitMessageFailed {
@@ -24,7 +24,7 @@ export interface ISubmitMessageFailed {
 
 export interface ISubmitMessageSucceeded {
     type: ActionType.SubmitMessageSucceeded;
-    payload: unknown;
+    payload: { id: string };
 }
 
 export interface ISubmitMessageFailedTimeoutExceeded {

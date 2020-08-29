@@ -10,6 +10,7 @@ import { START_SCREEN } from "../config";
 import ContributionScreen from "../screens/ContributionScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
+import MyContributionsScreen from "../screens/MyContributionsScreen";
 import PrivacyPolicyScreen from "../screens/PrivacyPolicyScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import { FullTheme } from "../themes/theme";
@@ -39,6 +40,18 @@ export const SettingsStack = () => {
             <Stack.Screen
                 name={Route.PrivacyPolicy}
                 component={PrivacyPolicyScreen}
+            />
+        </Stack.Navigator>
+    );
+};
+
+export const ContributionsStack = () => {
+    return (
+        <Stack.Navigator initialRouteName={Route.Contribute} headerMode="none">
+            <Stack.Screen name={"base"} component={ContributionScreen} />
+            <Stack.Screen
+                name={Route.MyContributions}
+                component={MyContributionsScreen}
             />
         </Stack.Navigator>
     );
@@ -86,7 +99,7 @@ const NavigationApp = () => {
             >
                 <Tab.Screen
                     name={Route.Contribute}
-                    component={ContributionScreen}
+                    component={ContributionsStack}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <TabBarIcon focused={focused} name="share-alt" />

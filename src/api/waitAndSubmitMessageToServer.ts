@@ -1,16 +1,21 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { IMessageContent } from "../state/state/IMessage";
-import { pickMessageContent } from "../utils/pickMessageContent";
+import { IMessage } from "../state/state/IMessage";
+import { pick } from "../utils/pick";
 
 const HTTP_CREATED = 201;
 
 export const waitAndSubmitMessageToServer = async (
-    msg: IMessageContent,
+    msg: IMessage,
     uri: string,
     backoffInMs: number
 ) => {
     await delay(backoffInMs);
-    const response = await axios.post(uri, pickMessageContent(msg), options);
+    // TODO #254 adjust user contributions API
+    const response = await axios.post<IMessage>(
+        uri,
+        pick(msg, ["author", "country", "isodate", "id", "text"]),
+        options
+    );
     if (response.status !== HTTP_CREATED) {
         return Promise.reject(
             new Error(

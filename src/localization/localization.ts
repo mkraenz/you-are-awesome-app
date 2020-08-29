@@ -30,7 +30,9 @@ type keys =
     | "favoritesDeleteDialogTitle"
     | "favoritesDeleteDialogText"
     | "favoritesDelete"
-    | "favoritesCancel";
+    | "favoritesCancel"
+    | "myContributionsContribute"
+    | "myContributionsEmptyList";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -63,6 +65,7 @@ const localization: {
             [Route.Home]: "Home",
             [Route.Settings]: "Settings",
             [Route.Contribute]: "Contribution",
+            [Route.MyContributions]: "My Contributions",
             [Route.PrivacyPolicy]: "Privacy Policy",
             [Route.Favorites]: "Favorites",
             buildVersion: "Build version",
@@ -93,6 +96,9 @@ const localization: {
             favoritesDeleteDialogText:
                 "Deleting favorites is permanent and cannot be reverted.",
             favoritesDeleteDialogTitle: "Are you sure?",
+            myContributionsContribute: "Contribute now",
+            myContributionsEmptyList:
+                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
         },
     },
     de: {
@@ -107,6 +113,7 @@ const localization: {
             [Route.Home]: "Start",
             [Route.Settings]: "Einstellungen",
             [Route.Contribute]: "Teilen",
+            [Route.MyContributions]: "Meine Beiträge",
             [Route.PrivacyPolicy]: "Datenschutzerklärung",
             [Route.Favorites]: "Favoriten",
             buildVersion: "Programmversion",
@@ -137,6 +144,9 @@ const localization: {
             favoritesDeleteDialogText:
                 "Das Löschen von Favoriten ist permanent und kann nicht rückgängig gemacht werden.",
             favoritesDeleteDialogTitle: "Bist du sicher?",
+            myContributionsContribute: "Jetzt beitragen",
+            myContributionsEmptyList:
+                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
         },
     },
     ja: {
@@ -151,6 +161,7 @@ const localization: {
             [Route.Home]: "ホーム",
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
+            [Route.MyContributions]: "自分の送信したアイテム",
             [Route.PrivacyPolicy]: "プライバシー ポリシー",
             [Route.Favorites]: "お気に入り",
             buildVersion: "ビルドバージョン",
@@ -182,6 +193,9 @@ const localization: {
             favoritesDeleteDialogText:
                 "お気に入りのすごいメッセジを削除すると元に戻すことはできません。",
             favoritesDeleteDialogTitle: "削除確認",
+            myContributionsContribute: "今すぐシェア",
+            myContributionsEmptyList:
+                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
         },
     },
 };
