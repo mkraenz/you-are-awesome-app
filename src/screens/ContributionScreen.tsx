@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";
@@ -8,14 +9,15 @@ import OfflineNotice from "../components/common/OfflineNotice";
 import SubmitMessageInputForm from "../components/contribution/SubmitMessageInputForm";
 import { Route } from "../navigation/Route";
 import { submitMessage } from "../state/action-creators/submitMessage";
-import { IMessageContent, IMessageWithId } from "../state/state/IMessage";
+import { IMessage, IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
+import { toIsoDateString } from "../utils/toTodayString";
 
 interface StateProps {
     connectedToInternet: boolean;
 }
 interface DispatchProps {
-    submitMessage: (message: IMessageWithId) => void;
+    submitMessage: (message: IMessage) => void;
 }
 type Props = StateProps & DispatchProps;
 
@@ -24,10 +26,13 @@ const ContributionScreen: FC<Props> = ({
     submitMessage,
 }) => {
     const { t } = useTranslation();
+    const { navigate } = useNavigation();
+    const gotoMyContributions = () => navigate(Route.MyContributions);
     const handleSubmit = (msg: IMessageContent) => {
         submitMessage({
             ...msg,
             id: v4(),
+            isodate: toIsoDateString(new Date()),
         });
         const stayTuned = t("contributionStayTuned");
         Alert.alert(
@@ -39,10 +44,18 @@ const ContributionScreen: FC<Props> = ({
                 },
             ]
         );
+        gotoMyContributions();
     };
 
     return (
-        <Layout route={Route.Contribute}>
+        <Layout
+            route={Route.Contribute}
+            title={t(Route.Contribute)}
+            appbarProps={{
+                actionIcon: "view-list",
+                onActionPress: gotoMyContributions,
+            }}
+        >
             {!connectedToInternet && <OfflineNotice />}
             <SubmitMessageInputForm handleSubmit={handleSubmit} />
         </Layout>

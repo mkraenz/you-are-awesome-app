@@ -1,19 +1,8 @@
 import {
-    backoffInMs,
     internetConnected,
     pushNotificationsEnabled,
 } from "../../src/state/selectors";
 import { Unpack } from "../../src/utils/ts/Unpack";
-
-it("backoffInMs returns backoff", () => {
-    const state: Unpack<Parameters<typeof backoffInMs>> = {
-        submitMessage: { backoffInMs: 1337 },
-    };
-
-    const result = backoffInMs(state);
-
-    expect(result).toBe(1337);
-});
 
 it("pushNotificationsEnabled returns the state", () => {
     const state: Unpack<Parameters<typeof pushNotificationsEnabled>> = {

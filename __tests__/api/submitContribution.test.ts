@@ -1,6 +1,6 @@
 import axios from "axios";
 import { range } from "lodash";
-import { waitAndSubmitMessageToServer } from "../../src/api/waitAndSubmitMessageToServer";
+import { submitContribution } from "../../src/api/submitContribution";
 
 afterEach(() => {
     jest.clearAllMocks();
@@ -15,17 +15,15 @@ describe("waitAndSubmitMessageToServer()", () => {
             author: "my author",
             country: "my country",
             text: "my text",
+            id: "id-123",
+            isodate: "2014-01-23",
         };
         const postSpy = jest.spyOn(axios, "post").mockResolvedValue({
             status: 201,
             data: responseBody,
         });
 
-        const result = await waitAndSubmitMessageToServer(
-            msg,
-            "irrelevant-uri",
-            0
-        );
+        const result = await submitContribution(msg, "irrelevant-uri");
 
         expect(result).toBe(responseBody);
         expect(postSpy).toHaveBeenCalledWith("irrelevant-uri", msg, {
@@ -47,13 +45,11 @@ describe("waitAndSubmitMessageToServer()", () => {
                 author: "my author",
                 country: "my country",
                 text: "my text",
+                id: "id-123",
+                isodate: "2020-05-09",
             };
 
-            const resultPromise = waitAndSubmitMessageToServer(
-                msg,
-                "irrelevant-uri",
-                0
-            );
+            const resultPromise = submitContribution(msg, "irrelevant-uri");
 
             await expect(resultPromise).rejects.toThrow(
                 new RegExp(`Expected POST response status 201, found ${status}`)

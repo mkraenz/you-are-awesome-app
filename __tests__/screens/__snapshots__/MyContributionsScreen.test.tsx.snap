@@ -343,12 +343,119 @@ exports[`renders special message on empty list 1`] = `
                             }
                           >
                             <View
-                              style={
+                              accessibilityLabel="Back"
+                              accessibilityRole="button"
+                              accessible={true}
+                              focusable={true}
+                              hitSlop={
                                 Object {
-                                  "width": 48,
+                                  "bottom": 6,
+                                  "left": 6,
+                                  "right": 6,
+                                  "top": 6,
                                 }
                               }
-                            />
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "overflow": "hidden",
+                                  },
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "justifyContent": "center",
+                                      "margin": 6,
+                                      "overflow": "hidden",
+                                    },
+                                    Object {
+                                      "borderRadius": 18,
+                                      "height": 36,
+                                      "width": 36,
+                                    },
+                                    undefined,
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "justifyContent": "center",
+                                      },
+                                      Object {
+                                        "height": 24,
+                                        "width": 24,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "opacity": 1,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "transform": Array [
+                                          Object {
+                                            "rotate": "0deg",
+                                          },
+                                        ],
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                          },
+                                          Object {
+                                            "height": 24,
+                                            "transform": Array [
+                                              Object {
+                                                "scaleX": 1,
+                                              },
+                                            ],
+                                            "width": 24,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Image
+                                        source={1}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "height": 21,
+                                              "resizeMode": "contain",
+                                              "width": 21,
+                                            },
+                                            Object {
+                                              "tintColor": "#ffffff",
+                                            },
+                                          ]
+                                        }
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                            </View>
                             <View
                               accessibilityStates={Object {}}
                               accessible={true}
@@ -367,14 +474,13 @@ exports[`renders special message on empty list 1`] = `
                                     "paddingHorizontal": 12,
                                   },
                                   Array [
-                                    false,
                                     Object {
-                                      "alignItems": "center",
+                                      "marginLeft": 8,
                                     },
                                     Object {
                                       "alignItems": "center",
-                                      "display": "flex",
                                     },
+                                    Object {},
                                   ],
                                 ]
                               }
@@ -406,7 +512,7 @@ exports[`renders special message on empty list 1`] = `
                                   ]
                                 }
                               >
-                                Favorites
+                                My Contributions
                               </Text>
                             </View>
                           </View>
@@ -471,7 +577,7 @@ exports[`renders special message on empty list 1`] = `
                                 ]
                               }
                             >
-                              Double tap your first awesome message in Home to add it to your favorites.
+                              No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)
                             </Text>
                             <View
                               accessibilityStates={Object {}}
@@ -567,7 +673,7 @@ exports[`renders special message on empty list 1`] = `
                                       ]
                                     }
                                   >
-                                    Go to Home
+                                    Contribute now
                                   </Text>
                                 </View>
                               </View>
@@ -931,12 +1037,119 @@ exports[`renders the list 1`] = `
                             }
                           >
                             <View
-                              style={
+                              accessibilityLabel="Back"
+                              accessibilityRole="button"
+                              accessible={true}
+                              focusable={true}
+                              hitSlop={
                                 Object {
-                                  "width": 48,
+                                  "bottom": 6,
+                                  "left": 6,
+                                  "right": 6,
+                                  "top": 6,
                                 }
                               }
-                            />
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "overflow": "hidden",
+                                  },
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "justifyContent": "center",
+                                      "margin": 6,
+                                      "overflow": "hidden",
+                                    },
+                                    Object {
+                                      "borderRadius": 18,
+                                      "height": 36,
+                                      "width": 36,
+                                    },
+                                    undefined,
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "justifyContent": "center",
+                                      },
+                                      Object {
+                                        "height": 24,
+                                        "width": 24,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "opacity": 1,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "transform": Array [
+                                          Object {
+                                            "rotate": "0deg",
+                                          },
+                                        ],
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "alignItems": "center",
+                                            "justifyContent": "center",
+                                          },
+                                          Object {
+                                            "height": 24,
+                                            "transform": Array [
+                                              Object {
+                                                "scaleX": 1,
+                                              },
+                                            ],
+                                            "width": 24,
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Image
+                                        source={1}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "height": 21,
+                                              "resizeMode": "contain",
+                                              "width": 21,
+                                            },
+                                            Object {
+                                              "tintColor": "#ffffff",
+                                            },
+                                          ]
+                                        }
+                                      />
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                            </View>
                             <View
                               accessibilityStates={Object {}}
                               accessible={true}
@@ -955,14 +1168,13 @@ exports[`renders the list 1`] = `
                                     "paddingHorizontal": 12,
                                   },
                                   Array [
-                                    false,
                                     Object {
-                                      "alignItems": "center",
+                                      "marginLeft": 8,
                                     },
                                     Object {
                                       "alignItems": "center",
-                                      "display": "flex",
                                     },
+                                    Object {},
                                   ],
                                 ]
                               }
@@ -994,7 +1206,7 @@ exports[`renders the list 1`] = `
                                   ]
                                 }
                               >
-                                Favorites
+                                My Contributions
                               </Text>
                             </View>
                           </View>

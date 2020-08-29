@@ -1,35 +1,43 @@
+import { difference } from "lodash";
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
 import { SubmitMessageAction } from "../actions/SubmitMessageAction";
 import { ISubmitMessageState } from "../state/ISubmitMessageState";
 
-/** exponential backoff for submitting a new message to the server */
 export const submitMessageReducer: Reducer<
     ISubmitMessageState,
     SubmitMessageAction
 > = (
     state = {
-        backoffInMs: 0,
+        myMessages: [],
     },
     action
 ) => {
     switch (action.type) {
-        case ActionType.SubmitMessageSucceeded:
-            return { ...state, backoffInMs: 0 };
-        case ActionType.SubmitMessageFailed:
-            return { ...state, backoffInMs: getBackoffInMs(state.backoffInMs) };
+        case ActionType.SubmitMessageRequested:
+            const newMsg = action.payload;
+            const alreadyInFavorites = state.myMessages.find(
+                (m) => m.id === newMsg.id
+            );
+            if (alreadyInFavorites) {
+                return state;
+            }
+            const messages = [action.payload, ...state.myMessages];
+            const sortedMessages = messages.sort((a, b) =>
+                a.isodate < b.isodate ? 1 : -1
+            );
+            return {
+                ...state,
+                myMessages: sortedMessages,
+            };
+        case ActionType.DeleteMyContributions:
+            const currentIds = state.myMessages.map((m) => m.id);
+            const remainingIds = difference(currentIds, action.payload.ids);
+            const remainingMessages = state.myMessages.filter((m) =>
+                remainingIds.includes(m.id)
+            );
+            return { ...state, myMessages: remainingMessages };
         default:
             return state;
     }
-};
-
-const getBackoffInMs = (previous: number) => {
-    const oneMinute = 60000;
-    if (2 * previous > oneMinute) {
-        return oneMinute;
-    }
-    if (previous === 0) {
-        return 1000;
-    }
-    return previous * 2;
 };

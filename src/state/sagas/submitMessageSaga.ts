@@ -1,18 +1,14 @@
-import { call, put, select, takeEvery } from "redux-saga/effects";
-import { waitAndSubmitMessageToServer } from "../../api/waitAndSubmitMessageToServer";
-import { MAX_BACKOFF_IN_MS, URI } from "../../config";
-import { pickMessageContent } from "../../utils/pickMessageContent";
+import { call, put, takeEvery } from "redux-saga/effects";
+import { submitContribution } from "../../api/submitContribution";
+import { URI } from "../../config";
+import { pick } from "../../utils/pick";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
 import {
     ISubmitMessageFailed,
-    ISubmitMessageFailedTimeoutExceeded,
     ISubmitMessageRequested,
     ISubmitMessageSucceeded,
 } from "../actions/SubmitMessageAction";
-import { backoffInMs } from "../selectors";
-
-const TIMEOUT_EXCEEDED = "Maximum timeout exceeded. Sending to server failed.";
 
 function* submitMessageWorkerSaga(
     action: ISubmitMessageRequested | ISubmitMessageFailed
@@ -22,21 +18,14 @@ function* submitMessageWorkerSaga(
             ? action
             : action.payload.originalAction;
     try {
-        const backoff: ReturnType<typeof backoffInMs> = yield select(
-            backoffInMs
-        );
-        if (backoff > MAX_BACKOFF_IN_MS) {
-            throw new Error(TIMEOUT_EXCEEDED);
-        }
-        const responseData: AwaitedReturnType<typeof waitAndSubmitMessageToServer> = yield call(
-            waitAndSubmitMessageToServer,
-            pickMessageContent(submitMessageRequested.payload),
-            URI.SEND_MESSAGES,
-            backoff
+        const responseData: AwaitedReturnType<typeof submitContribution> = yield call(
+            submitContribution,
+            submitMessageRequested.payload,
+            URI.SEND_MESSAGES
         );
         const success: ISubmitMessageSucceeded = {
             type: ActionType.SubmitMessageSucceeded,
-            payload: responseData,
+            payload: pick(responseData, ["id"]),
         };
         yield put(success);
     } catch (e) {
@@ -45,26 +34,17 @@ function* submitMessageWorkerSaga(
 }
 
 function* handleSendFailed(e: Error, action: ISubmitMessageRequested) {
-    if (e.message === TIMEOUT_EXCEEDED) {
-        const finalErrorAction: ISubmitMessageFailedTimeoutExceeded = {
-            type: ActionType.SubmitMessageFailedTimeoutExceeded,
-            payload: { originalAction: action, error: e },
-            error: true,
-        };
-        yield put(finalErrorAction);
-    } else {
-        const errorAction: ISubmitMessageFailed = {
-            type: ActionType.SubmitMessageFailed,
-            payload: { originalAction: action, error: e },
-            error: true,
-        };
-        yield put(errorAction);
-    }
+    const errorAction: ISubmitMessageFailed = {
+        type: ActionType.SubmitMessageFailed,
+        payload: { originalAction: action, error: e },
+        error: true,
+    };
+    yield put(errorAction);
 }
 
 function* submitMessageSaga() {
     yield takeEvery(
-        [ActionType.SubmitMessageRequested, ActionType.SubmitMessageFailed],
+        [ActionType.SubmitMessageRequested],
         submitMessageWorkerSaga
     );
 }

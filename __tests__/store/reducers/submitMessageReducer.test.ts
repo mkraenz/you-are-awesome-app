@@ -1,6 +1,7 @@
 import { ActionType } from "../../../src/state/actions/ActionType";
 import {
-    ISubmitMessageFailed,
+    IDeleteMyContributions,
+    ISubmitMessageRequested,
     ISubmitMessageSucceeded,
 } from "../../../src/state/actions/SubmitMessageAction";
 import { submitMessageReducer } from "../../../src/state/reducers/submitMessageReducer";
@@ -12,7 +13,7 @@ describe("submitMessageReducer", () => {
         // @ts-expect-error
         const result = submitMessageReducer(undefined, {});
 
-        expect(result).toEqual({ backoffInMs: 0 });
+        expect(result).toEqual({ myMessages: [] });
     });
 
     it(`should handle ${ActionType.SubmitMessageSucceeded}`, () => {
@@ -21,86 +22,141 @@ describe("submitMessageReducer", () => {
             payload: mock.message,
         };
         const state: ISubmitMessageState = {
-            backoffInMs: 987,
+            myMessages: [],
         };
 
         const result = submitMessageReducer(state, action);
 
         const expected: ISubmitMessageState = {
-            backoffInMs: 0,
+            myMessages: [],
         };
         expect(result).toEqual(expected);
     });
 
-    describe(`${ActionType.SubmitMessageFailed}`, () => {
-        it("should backoff 1 sec if first fail", () => {
-            const action: ISubmitMessageFailed = {
-                type: ActionType.SubmitMessageFailed,
+    describe(`${ActionType.SubmitMessageRequested}`, () => {
+        it("should add the new message to my messages", () => {
+            const action: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
                 payload: {
-                    error: new Error("an error message"),
-                    originalAction: {
-                        type: ActionType.SubmitMessageRequested,
-                        payload: mock.message,
-                    },
+                    ...mock.message,
                 },
-                error: true,
             };
             const state: ISubmitMessageState = {
-                backoffInMs: 0,
+                myMessages: [],
             };
 
             const result = submitMessageReducer(state, action);
 
             const expected: ISubmitMessageState = {
-                backoffInMs: 1000,
+                myMessages: [mock.message],
             };
             expect(result).toEqual(expected);
         });
 
-        it("should double backoff", () => {
-            const action: ISubmitMessageFailed = {
-                type: ActionType.SubmitMessageFailed,
+        it(`does not add if id already exists`, () => {
+            const action: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
                 payload: {
-                    error: new Error("an error message"),
-                    originalAction: {
-                        type: ActionType.SubmitMessageRequested,
-                        payload: mock.message,
-                    },
+                    author: "humpty dumpty",
+                    text: "I sit on a wall",
+                    country: "England",
+                    id: "id-1",
+                    isodate: "2020-08-25",
                 },
-                error: true,
             };
             const state: ISubmitMessageState = {
-                backoffInMs: 987,
+                myMessages: [
+                    Object.freeze({
+                        text: "message-with-same-id",
+                        author: "humpty dumpty",
+                        country: "England",
+                        id: "id-1",
+                        isodate: "2020-08-25",
+                    }),
+                ],
             };
 
             const result = submitMessageReducer(state, action);
 
             const expected: ISubmitMessageState = {
-                backoffInMs: 987 * 2,
+                myMessages: [state.myMessages[0]],
             };
             expect(result).toEqual(expected);
         });
 
-        it("should max out at 1 min", () => {
-            const action: ISubmitMessageFailed = {
-                type: ActionType.SubmitMessageFailed,
-                payload: {
-                    error: new Error("an error message"),
-                    originalAction: {
-                        type: ActionType.SubmitMessageRequested,
-                        payload: mock.message,
-                    },
-                },
-                error: true,
+        it(`orders by date: newest-first`, () => {
+            const msg = {
+                author: "Humpty Dumpty",
+                text: "sat on a wall",
+                country: "England",
+                id: "id-old",
+                isodate: "2020-08-25",
+            };
+            const old: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
+                payload: msg,
+            };
+            const newest: ISubmitMessageRequested = {
+                type: ActionType.SubmitMessageRequested,
+                payload: { ...msg, isodate: "2020-08-26", id: "id-new" },
             };
             const state: ISubmitMessageState = {
-                backoffInMs: 30001,
+                myMessages: [],
+            };
+
+            // permutate the timestamps
+            const resultState1 = submitMessageReducer(
+                submitMessageReducer(state, old),
+                newest
+            );
+            const resultState2 = submitMessageReducer(
+                submitMessageReducer(state, newest),
+                old
+            );
+
+            const expected: ISubmitMessageState = {
+                myMessages: [newest.payload, old.payload],
+            };
+            expect(resultState1).toEqual(expected);
+            expect(resultState1).toEqual(resultState2);
+        });
+    });
+
+    describe(`${ActionType.DeleteMyContributions}`, () => {
+        it("does nothing if messages don't exist", () => {
+            const action: IDeleteMyContributions = {
+                type: ActionType.DeleteMyContributions,
+                payload: {
+                    ids: ["id-1", "id-2"],
+                },
+            };
+            const state: ISubmitMessageState = {
+                myMessages: [{ ...mock.message, id: "different-id" }],
             };
 
             const result = submitMessageReducer(state, action);
 
             const expected: ISubmitMessageState = {
-                backoffInMs: 60000, // 1 min
+                myMessages: [{ ...mock.message, id: "different-id" }],
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it("deletes the specified subset of messages", () => {
+            const action: IDeleteMyContributions = {
+                type: ActionType.DeleteMyContributions,
+                payload: {
+                    ids: ["id-2"],
+                },
+            };
+            const state: ISubmitMessageState = {
+                myMessages: mock.messages,
+            };
+
+            const result = submitMessageReducer(state, action);
+
+            const expected: ISubmitMessageState = {
+                myMessages: [mock.messages[0]],
             };
             expect(result).toEqual(expected);
         });

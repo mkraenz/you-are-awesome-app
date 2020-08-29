@@ -1,5 +1,5 @@
 import { IMessage } from "./IMessage";
 
-export interface ISubmitMessageState {
+export interface IContributionState {
     myMessages: IMessage[];
 }

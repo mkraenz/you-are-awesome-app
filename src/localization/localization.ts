@@ -14,6 +14,7 @@ type keys =
     | "contributeAwesomeMessageLong"
     | "contributeCountry"
     | "contributeSubmit"
+    | "contributeNavLabel"
     | "contributionStayTuned"
     | "contributionThanks"
     | "contributionMember"
@@ -30,7 +31,13 @@ type keys =
     | "favoritesDeleteDialogTitle"
     | "favoritesDeleteDialogText"
     | "favoritesDelete"
-    | "favoritesCancel";
+    | "favoritesCancel"
+    | "myContributionsContribute"
+    | "myContributionsEmptyList"
+    | "myContributionsDeleteDialogTitle"
+    | "myContributionsDeleteDialogText"
+    | "myContributionsDelete"
+    | "myContributionsCancel";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -62,7 +69,9 @@ const localization: {
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Home",
             [Route.Settings]: "Settings",
-            [Route.Contribute]: "Contribute",
+            [Route.Contribute]: "Contribution",
+            contributeNavLabel: "Contribute",
+            [Route.MyContributions]: "My Contributions",
             [Route.PrivacyPolicy]: "Privacy Policy",
             [Route.Favorites]: "Favorites",
             buildVersion: "Build version",
@@ -93,6 +102,14 @@ const localization: {
             favoritesDeleteDialogText:
                 "Deleting favorites is permanent and cannot be reverted.",
             favoritesDeleteDialogTitle: "Are you sure?",
+            myContributionsContribute: "Contribute now",
+            myContributionsEmptyList:
+                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
+            myContributionsCancel: "Cancel",
+            myContributionsDelete: "Delete Forever",
+            myContributionsDeleteDialogText:
+                "Deleting list items is permanent and cannot be reverted.\nNote that deletions do not affect server data. Deletions are only effective on your device.",
+            myContributionsDeleteDialogTitle: "Are you sure?",
         },
     },
     de: {
@@ -107,6 +124,8 @@ const localization: {
             [Route.Home]: "Start",
             [Route.Settings]: "Einstellungen",
             [Route.Contribute]: "Teilen",
+            contributeNavLabel: "Teilen",
+            [Route.MyContributions]: "Meine Beiträge",
             [Route.PrivacyPolicy]: "Datenschutzerklärung",
             [Route.Favorites]: "Favoriten",
             buildVersion: "Programmversion",
@@ -137,6 +156,14 @@ const localization: {
             favoritesDeleteDialogText:
                 "Das Löschen von Favoriten ist permanent und kann nicht rückgängig gemacht werden.",
             favoritesDeleteDialogTitle: "Bist du sicher?",
+            myContributionsContribute: "Jetzt beitragen",
+            myContributionsEmptyList:
+                "Keine bisherigen Beiträge. Tippe auf den Knopf, um jetzt deine erste awesome Nachricht mit der Welt zu teilen. Wir warten schon auf dich. :)",
+            myContributionsCancel: "Abbrechen",
+            myContributionsDelete: "Endgültig löschen",
+            myContributionsDeleteDialogText:
+                "Das Löschen von Beiträge ist permanent und kann nicht rückgängig gemacht werden. Bitte beachte, dass keine Daten auf den Servern gelöscht werden. Nur Daten auf diesem Gerät werden gelöscht.",
+            myContributionsDeleteDialogTitle: "Bist du sicher?",
         },
     },
     ja: {
@@ -151,6 +178,8 @@ const localization: {
             [Route.Home]: "ホーム",
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
+            contributeNavLabel: "シェア",
+            [Route.MyContributions]: "自分の送信したすごいメッセージ",
             [Route.PrivacyPolicy]: "プライバシー ポリシー",
             [Route.Favorites]: "お気に入り",
             buildVersion: "ビルドバージョン",
@@ -182,6 +211,14 @@ const localization: {
             favoritesDeleteDialogText:
                 "お気に入りのすごいメッセジを削除すると元に戻すことはできません。",
             favoritesDeleteDialogTitle: "削除確認",
+            myContributionsContribute: "今すぐシェア",
+            myContributionsEmptyList:
+                "まだシェアしたメッセージはありません。今すぐ自分の初めてのすごいメッセージをシェアするため、下のボタンをタップしてください。",
+            myContributionsCancel: "キャンセル",
+            myContributionsDelete: "永久に削除",
+            myContributionsDeleteDialogText:
+                "削除すると元に戻すことはできません。サーバーに保存しているデータは消除されることはできません。このデバイスに保存しているのデータだけは消除されます。",
+            myContributionsDeleteDialogTitle: "削除確認",
         },
     },
 };

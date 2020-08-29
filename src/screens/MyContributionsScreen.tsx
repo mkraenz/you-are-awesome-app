@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { isEmpty } from "lodash";
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,24 +6,28 @@ import { FlatList } from "react-native";
 import { Divider } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
+import EmptyMyContributionsScreen from "../components/contribution/EmptyMyContributionsScreen";
 import DeleteConfirmationDialog from "../components/favorites/DeleteConfirmationDialog";
-import EmptyFavoritesScreen from "../components/favorites/EmptyFavoritesScreen";
 import ListItem from "../components/favorites/ListItem";
 import { Route } from "../navigation/Route";
-import { deleteFavorites } from "../state/action-creators/deleteFavorites";
+import { deleteMyContributions } from "../state/action-creators/deleteMyContributions";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 
 interface Props {
     messages: IMessage[];
-    deleteFavorites: typeof deleteFavorites;
+    deleteMyContributions: typeof deleteMyContributions;
 }
 
-const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
+const MyContributionsScreen: FC<Props> = ({
+    messages,
+    deleteMyContributions,
+}) => {
     const [selectModeEnabled, enableSelectMode] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
     const [deleteConfirmationVisible, showDeleteConfirmation] = useState(false);
     const { t } = useTranslation();
+    const { goBack } = useNavigation();
 
     const select = (id: string) => {
         enableSelectMode(true);
@@ -40,19 +45,19 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
     };
     const hideDeleteConfirmation = () => showDeleteConfirmation(false);
     const deleteSelected = () => {
-        deleteFavorites(selectedItemIds);
+        deleteMyContributions(selectedItemIds);
         resetSelection();
         hideDeleteConfirmation();
     };
 
     if (isEmpty(messages)) {
-        return <EmptyFavoritesScreen />;
+        return <EmptyMyContributionsScreen />;
     }
 
     return (
         <Layout
-            route={Route.Favorites}
-            title={t(Route.Favorites)}
+            route={Route.MyContributions}
+            title={t(Route.MyContributions)}
             appbarProps={
                 selectModeEnabled
                     ? {
@@ -60,7 +65,7 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                           actionIcon: "delete-forever",
                           onActionPress: () => showDeleteConfirmation(true),
                       }
-                    : undefined
+                    : { onBack: goBack }
             }
             containerStyleOverwrites={{ paddingLeft: 0 }}
         >
@@ -89,15 +94,19 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                 visible={deleteConfirmationVisible}
                 onDismiss={hideDeleteConfirmation}
                 onConfirm={deleteSelected}
+                route="myContributions"
             />
         </Layout>
     );
 };
 
 const mapStateToProps: MapStateToProps<Pick<Props, "messages">> = (state) => ({
-    messages: state.favorites.messages,
+    messages: state.submitMessage.myMessages,
 });
 
-const mapDispatchToProps = { deleteFavorites };
+const mapDispatchToProps = { deleteMyContributions };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FavoritesScreen);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(MyContributionsScreen);

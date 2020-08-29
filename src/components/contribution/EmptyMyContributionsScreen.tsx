@@ -1,4 +1,4 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -15,35 +15,39 @@ const styles = StyleSheet.create({
     button: { marginTop: 24 },
 });
 
-const EmptyFavoritesScreen = () => {
+const EmptyMyContributionsScreen = () => {
     const theme = useTheme();
     const { t } = useTranslation();
-    const { navigate } = useNavigation();
+    const { goBack } = useNavigation();
 
     return (
-        <Layout route={Route.Favorites} title={t(Route.Favorites)}>
+        <Layout
+            route={Route.MyContributions}
+            title={t(Route.MyContributions)}
+            appbarProps={{ onBack: goBack }}
+        >
             <View style={styles.container}>
                 <Paragraph style={styles.text}>
-                    {t("favoritesEmptyList", { route: t(Route.Home) })}
+                    {t("myContributionsEmptyList")}
                 </Paragraph>
                 <Button
                     mode="outlined"
-                    onPress={() => navigate(Route.Home)}
+                    onPress={goBack}
                     accessibilityStates={{}}
                     style={styles.button}
                     icon={() => (
-                        <MaterialCommunityIcons
-                            name="home"
+                        <FontAwesome5
+                            name="share-alt"
                             size={20}
                             color={theme.colors.primary}
                         />
                     )}
                 >
-                    {t("favoritesToRoute", { route: t(Route.Home) })}
+                    {t("myContributionsContribute")}
                 </Button>
             </View>
         </Layout>
     );
 };
 
-export default EmptyFavoritesScreen;
+export default EmptyMyContributionsScreen;

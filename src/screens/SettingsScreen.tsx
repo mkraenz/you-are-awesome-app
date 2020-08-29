@@ -37,7 +37,7 @@ const SettingsScreen: FC<Props> = ({ isDarkModeOn, toggleDarkTheme }) => {
     const handlePrivacyPolicyPressed = () =>
         navigation.navigate(Route.PrivacyPolicy);
     return (
-        <Layout route={Route.Settings}>
+        <Layout route={Route.Settings} title={t(Route.Settings)}>
             <LanguageDropdown />
             <Divider accessibilityStates={{}} />
             <PushNotificationSettings />
