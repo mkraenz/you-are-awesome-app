@@ -11,6 +11,7 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 - [Google Play Console](https://play.google.com/apps/publish/)
 - [Google Sheets](https://docs.google.com/spreadsheets/)
 - [EasyCron](https://www.easycron.com/user)
+- [Firebase](https://console.firebase.google.com/u/0/project/youareawesomeapp-c8835/overview)
 - [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
 
 ## Legals

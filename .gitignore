@@ -70,6 +70,8 @@ google-service-account.private.key.json
 google-services.json
 # firebase ios
 GoogleService-Info.plist
+# firebase web
+google-firebase-web.js
 
 node_modules/**/*
 .expo/*

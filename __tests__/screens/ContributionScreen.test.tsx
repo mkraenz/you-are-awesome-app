@@ -16,6 +16,7 @@ import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
+jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
 
 const ConfiguredContributionScreen: FC = () => (
     <LocalizedMockPaperProvider>
