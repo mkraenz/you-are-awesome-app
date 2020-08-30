@@ -66,8 +66,10 @@ coverage/
 # upload to playstore with expo
 google-service-account.private.key.json
 
-# firebase
+# firebase android
 google-services.json
+# firebase ios
+GoogleService-Info.plist
 
 node_modules/**/*
 .expo/*
