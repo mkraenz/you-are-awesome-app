@@ -79,6 +79,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [React Native Vector Icon List](https://oblador.github.io/react-native-vector-icons/)
 - [Monetize Expo App](https://medium.com/leckr-react-native-graphql-apollo-tutorials/monetisation-of-your-react-native-app-7c63241c4460)
 - [Expo Admob SDK](https://docs.expo.io/versions/latest/sdk/admob/)
+- [ezgif Gif Maker](https://ezgif.com/maker)
 - [Microsoft UI Translations](https://www.microsoft.com/en-us/language)
 
 ## Frequent Development Mistakes
