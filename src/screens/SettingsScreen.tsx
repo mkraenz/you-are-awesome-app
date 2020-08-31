@@ -68,7 +68,8 @@ const About = () => {
     return (
         <View style={styles.aboutContainer}>
             <Paragraph>
-                {t("buildVersion")} {version.jsBuildNumber}
+                {t("buildVersion")}
+                {version.jsBuildNumber}
             </Paragraph>
             <Paragraph>{t("copyright")}</Paragraph>
         </View>

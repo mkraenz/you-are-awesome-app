@@ -1022,8 +1022,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 ]
                               }
                             >
-                              Build version
-                               
+                              Build v
                               22
                             </Text>
                             <Text
@@ -2028,8 +2027,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 ]
                               }
                             >
-                              Build version
-                               
+                              Build v
                               22
                             </Text>
                             <Text
@@ -3073,8 +3071,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 ]
                               }
                             >
-                              Build version
-                               
+                              Build v
                               22
                             </Text>
                             <Text
