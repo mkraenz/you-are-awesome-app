@@ -1,11 +1,11 @@
 import axios from "axios";
 import { getExpoPushTokenAsync } from "expo-notifications";
-import { URI } from "../config";
+import { CONFIG } from "../config";
 
 export const registerForPushNotifications = async (time: Date) => {
     let token = await getExpoPushTokenAsync();
     await axios.post(
-        URI.REGISTER_PUSH_NOTIFICATION,
+        CONFIG.uri.registerForPushNotifications,
         {
             token: token.data,
             hour: time.getUTCHours(),

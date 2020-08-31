@@ -12,6 +12,7 @@ install:
 
 script:
   - yarn tsc
+  - yarn assert:prod-config
   - yarn test --ci
 
 after_success:

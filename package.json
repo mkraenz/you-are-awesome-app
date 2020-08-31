@@ -23,6 +23,7 @@
         "test:debug": "jest --onlyChanged --watch --coverage=false",
         "test:coverage": "jest",
         "test:update-snapshot": "jest --updateSnapshot --coverage=false",
+        "assert:prod-config": "ts-node ./scripts/assertProdConfig.ts",
         "ebuild:android": "expo build:android --type apk",
         "publish:android": "expo upload:android --latest --use-submission-service",
         "deploy:prod": "node ./scripts/expo-publish-with-version.js",
@@ -89,6 +90,7 @@
         "react-test-renderer": "^16.13.1",
         "redux-mock-store": "^1.5.4",
         "shelljs": "^0.8.4",
+        "ts-node": "^9.0.0",
         "typescript": "~3.9.5"
     },
     "private": true

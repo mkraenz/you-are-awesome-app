@@ -1,6 +1,6 @@
 import axios from "axios";
 import { registerForPushNotifications } from "../../src/api/registerForPushNotifications";
-import { URI } from "../../src/config";
+import { CONFIG } from "../../src/config";
 
 jest.mock("expo-notifications", () => ({
     getExpoPushTokenAsync: () =>
@@ -23,7 +23,7 @@ describe("registerForPushNotifications", () => {
 
         expect(result).toEqual(undefined);
         expect(postSpy).toBeCalledWith(
-            URI.REGISTER_PUSH_NOTIFICATION,
+            CONFIG.uri.registerForPushNotifications,
             { token: "mock-push-token-123", hour: 0, minute: 0 },
             {
                 headers: {
@@ -43,7 +43,7 @@ describe("registerForPushNotifications", () => {
 
         expect(result).toEqual(undefined);
         expect(postSpy).toBeCalledWith(
-            URI.REGISTER_PUSH_NOTIFICATION,
+            CONFIG.uri.registerForPushNotifications,
             { token: "mock-push-token-123", hour: 13 - 5, minute: 2 },
             {
                 headers: {

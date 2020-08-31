@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchMessages } from "../../api/fetchMessages";
-import { URI } from "../../config";
+import { CONFIG } from "../../config";
 import { todaysMessageOrRandomMessage } from "../../utils/todayOrRandomMessage";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
@@ -20,7 +20,7 @@ function* fetchMessagesWorkerSaga(
     try {
         const messages: AwaitedReturnType<typeof fetchMessages> = yield call(
             fetchMessages,
-            URI.FETCH_MESSAGES
+            CONFIG.uri.fetchMessages
         );
         const maybeTodaysMsg = todaysMessageOrRandomMessage(messages);
         const success: IFetchMessagesSucceeded = {

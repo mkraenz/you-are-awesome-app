@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Dimensions, Keyboard, StyleSheet } from "react-native";
 import { useTheme } from "react-native-paper";
 import TabBarIcon from "../components/navigation/TabBarIcon";
-import { START_SCREEN } from "../config";
+import { CONFIG } from "../config";
 import ContributionScreen from "../screens/ContributionScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
@@ -79,7 +79,7 @@ const NavigationApp = () => {
     return (
         <NavContainerWithAnalytics>
             <Tab.Navigator
-                initialRouteName={START_SCREEN}
+                initialRouteName={CONFIG.startScreen}
                 tabBarPosition="bottom"
                 tabBarOptions={{
                     showIcon: true,

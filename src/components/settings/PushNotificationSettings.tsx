@@ -6,7 +6,7 @@ import { View } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import { Divider, Subheading, Switch } from "react-native-paper";
 import { connect } from "react-redux";
-import { DEFAULT_NOTIFICATION_HOUR } from "../../config";
+import { CONFIG } from "../../config";
 import { changePushNotificationTime } from "../../state/action-creators/changePushNotificationTime";
 import { setPushNotificationsState } from "../../state/action-creators/setPushNotificationState";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
@@ -99,7 +99,7 @@ const PushNotificationSettings: FC<Props> = ({
 const getScheduledTimeOrDefault = (scheduledTime: Date) =>
     scheduledTime.getTime() === 0 ? at11Am() : scheduledTime;
 const at11Am = (now = new Date()) =>
-    new Date(now.setHours(DEFAULT_NOTIFICATION_HOUR, 0, 0, 0));
+    new Date(now.setHours(CONFIG.defaultNotificationHour, 0, 0, 0));
 
 const mapStateToProps: MapStateToProps<IStateProps> = (state) => ({
     enabled: state.app.pushNotificationsEnabled,

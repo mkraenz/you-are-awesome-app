@@ -1,11 +1,11 @@
 import axios from "axios";
 import * as Notifications from "expo-notifications";
-import { URI } from "../config";
+import { CONFIG } from "../config";
 
 export const unregisterFromPushNotifications = async () => {
     let token = await Notifications.getExpoPushTokenAsync();
     await axios.post(
-        URI.UNREGISTER_PUSH_NOTIFICATION,
+        CONFIG.uri.unregisterFromPushNotifications,
         {
             token: token.data,
         },
