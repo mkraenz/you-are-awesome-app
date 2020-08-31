@@ -5,13 +5,6 @@ export const DEFAULT_LANGUAGE = Language.English;
 export const START_SCREEN: Route = Route.Home;
 export const DEFAULT_NOTIFICATION_HOUR = 11;
 
-// verbose name because async storage is like a production database.
-// so trying to avoid name conflicts.
-export enum StorageSchema {
-    PushNotificationsEnabled = "@YouAreAwesomeApp:pushNotificationsEnabled",
-    PushNotificationsScheduledTime = "@YouAreAwesomeApp:pushNotificationsScheduledTime",
-}
-
 export const URI = {
     FETCH_MESSAGES:
         "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
