@@ -3,6 +3,9 @@ import { Route } from "./navigation/Route";
 
 const prodConfig = {
     isProd: true,
+    featureFlags: {
+        termsAndConditions: false,
+    },
     fallbackLanguage: Language.English,
     startScreen: Route.Home,
     defaultNotificationHour: 11,
@@ -22,6 +25,9 @@ const prodConfig = {
 
 const devConfig: typeof prodConfig = {
     isProd: false,
+    featureFlags: {
+        termsAndConditions: false,
+    },
     fallbackLanguage: Language.English,
     startScreen: Route.Home,
     defaultNotificationHour: 11,
@@ -40,5 +46,5 @@ const devConfig: typeof prodConfig = {
 };
 
 // WARNING: Always revert changes to this before deploying / merging.
-const isProd = true; // should be true for merges / deployments
+const isProd = false; // should be true for merges / deployments
 export const CONFIG = isProd ? prodConfig : devConfig;
