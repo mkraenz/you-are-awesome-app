@@ -34,6 +34,13 @@ const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
             >
                 {t("contributeConditions")}
             </Paragraph>
+            <Paragraph>{t("contributeAnd")}</Paragraph>
+            <Paragraph
+                onPress={() => Linking.openURL(t("privacyPolicyLink"))}
+                style={styles.link}
+            >
+                {t("contributePrivacyPolicy")}
+            </Paragraph>
         </>
     );
     const renderCheckbox = () => (
@@ -54,7 +61,7 @@ const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
             accessibilityStates={{}}
             title={renderTitle}
             left={renderCheckbox}
-            titleNumberOfLines={2}
+            titleNumberOfLines={3}
         ></List.Item>
     );
 };

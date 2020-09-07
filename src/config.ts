@@ -26,7 +26,7 @@ const prodConfig = {
 const devConfig: typeof prodConfig = {
     isProd: false,
     featureFlags: {
-        termsAndConditions: false,
+        termsAndConditions: true,
     },
     fallbackLanguage: Language.English,
     startScreen: Route.Home,

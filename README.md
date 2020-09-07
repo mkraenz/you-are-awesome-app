@@ -13,20 +13,15 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 - [EasyCron](https://www.easycron.com/user)
 - [Firebase](https://console.firebase.google.com/u/0/project/youareawesomeapp-c8835/overview)
 - [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
+- [AWS S3](https://s3.console.aws.amazon.com/s3/home?region=eu-central-1)
 
 ## Legals
-
-- [Privacy Policy](https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html)
-- [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
 
 ### Legal Attributions
 
 Google Play and the Google Play logo are trademarks of Google LLC.
 
 #### Further reading
-
-- [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
-- [Expo Doc Limits of Publish](https://docs.expo.io/versions/latest/workflow/publishing/#deploying-to-the-app-store-and-play)
 
 ## Development
 
@@ -82,6 +77,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [Expo Admob SDK](https://docs.expo.io/versions/latest/sdk/admob/)
 - [ezgif Gif Maker](https://ezgif.com/maker)
 - [Microsoft UI Translations](https://www.microsoft.com/en-us/language)
+- [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
 
 ## Frequent Development Mistakes
 

@@ -17,6 +17,8 @@ type keys =
     | "contributeAgreeToConditions"
     | "contributeConditions"
     | "contributeConditionsLink"
+    | "contributeAnd"
+    | "contributePrivacyPolicy"
     | "contributeNavLabel"
     | "contributionStayTuned"
     | "contributionThanks"
@@ -87,7 +89,9 @@ const localization: {
             contributeAgreeToConditions: "I have read and agree to the ",
             contributeConditions: "Terms & Conditions",
             contributeConditionsLink:
-                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html", // TODO link terms and conditions
+                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+            contributeAnd: " and ",
+            contributePrivacyPolicy: "Privacy Policy",
             contributionStayTuned:
                 "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)",
             contributionThanks: "Thanks for your contribution!",
@@ -142,10 +146,12 @@ const localization: {
             contributeCountry: "Land",
             contributeName: "Spitzname",
             contributeSubmit: "Senden",
-            contributeAgreeToConditions: "Ich las und akzeptiere die ",
-            contributeConditions: "Vertragsbedingungen",
+            contributeAgreeToConditions: "Ich verstehe und akzeptiere die ",
+            contributeConditions: "Nutzungsbedingungen",
             contributeConditionsLink:
-                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html", // TODO link terms and conditions
+                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+            contributeAnd: " und ",
+            contributePrivacyPolicy: "Datenschutzerklärung",
             contributionStayTuned:
                 "\n\nAufgrund der begrenzten Anzahl an Nachrichten, die wir jeden Tag zeigen können, wählen wir Beiträge per Hand aus. Mit ein wenig Glück ist deine Nachricht in Kürze für alle in der Community sichtbar. Freu dich darauf! :)",
             contributionThanks: "Danke für deinen Beitrag!",
@@ -204,7 +210,9 @@ const localization: {
             contributeAgreeToConditions: "利用条件に同意する。 ",
             contributeConditions: "利用条件へ",
             contributeConditionsLink:
-                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html", // TODO link terms and conditions
+                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+            contributeAnd: "。",
+            contributePrivacyPolicy: "プライバシー ポリシーへ",
             contributionStayTuned:
                 "\n\n毎日一つのメッセージだけが表示されているため、届いたメッセージは手動で選択されています。運がよければあなたのメッセージももうすぐ選ばれるかもしれません。ということで、お楽しみに! (≧▽≦)",
             contributionMember:
