@@ -34,7 +34,9 @@ const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
             >
                 {t("contributeConditions")}
             </Paragraph>
-            <Paragraph>{t("contributeAnd")}</Paragraph>
+            <Paragraph style={error ? { color: colors.error } : {}}>
+                {t("contributeAnd")}
+            </Paragraph>
             <Paragraph
                 onPress={() => Linking.openURL(t("privacyPolicyLink"))}
                 style={styles.link}
