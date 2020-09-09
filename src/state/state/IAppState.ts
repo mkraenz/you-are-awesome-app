@@ -5,4 +5,5 @@ export interface IAppState {
     pushNotificationsEnabled: boolean;
     pushNotificationsScheduledTime: Date;
     language: Language | null;
+    analyticsEnabled: boolean;
 }

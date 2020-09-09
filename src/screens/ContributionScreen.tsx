@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import Analytics from "expo-firebase-analytics";
+import * as Analytics from "expo-firebase-analytics";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";

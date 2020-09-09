@@ -3,4 +3,5 @@ export interface IPersistAppState {
     pushNotificationsEnabled: boolean;
     pushNotificationsScheduledTime: string;
     language: string;
+    analyticsEnabled: boolean;
 }

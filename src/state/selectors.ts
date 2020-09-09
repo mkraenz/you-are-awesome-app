@@ -8,3 +8,7 @@ export const pushNotificationsEnabled = (
 export const internetConnected = (
     state: Pick2<IState, "network", "connected">
 ) => state.network.connected;
+
+export const analyticsEnabled = (
+    state: Pick2<IState, "app", "analyticsEnabled">
+) => state.app.analyticsEnabled;

@@ -6,6 +6,7 @@ type keys =
     | "darkMode"
     | "settings"
     | "language"
+    | "sendAnalytics"
     | "copyright"
     | "comingSoon"
     | "noInternet"
@@ -70,6 +71,7 @@ const localization: {
             settings: "Settings",
             comingSoon: "Coming soon",
             language: "Language",
+            sendAnalytics: "Send usage statistics",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Home",
@@ -130,6 +132,7 @@ const localization: {
             settings: "Einstellungen",
             comingSoon: "In Kürze verfügbar",
             language: "Sprache",
+            sendAnalytics: "Nutzungsstatistiken senden",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Start",
@@ -190,6 +193,7 @@ const localization: {
             settings: "設定",
             comingSoon: "近日公開",
             language: "言語",
+            sendAnalytics: "利用状況の統計を送信する",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "ホーム",

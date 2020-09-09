@@ -6,6 +6,7 @@ import { IAppState } from "../state/IAppState";
 export const appReducer: Reducer<IAppState, IAppAction> = (
     state = {
         isDarkModeOn: false,
+        analyticsEnabled: true,
         pushNotificationsEnabled: false,
         pushNotificationsScheduledTime: new Date(0),
         language: null,
@@ -17,6 +18,11 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
             return {
                 ...state,
                 isDarkModeOn: !state.isDarkModeOn,
+            };
+        case ActionType.ToggleAnalytics:
+            return {
+                ...state,
+                analyticsEnabled: !state.analyticsEnabled,
             };
         case ActionType.SetPushNotificationsState:
             return {

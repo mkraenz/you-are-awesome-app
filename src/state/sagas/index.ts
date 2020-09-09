@@ -4,6 +4,7 @@ import changePushNotificationTimeSaga from "./push-notifications/changePushNotif
 import registerOrUnregisterPushNotificationsSaga from "./push-notifications/registerOrUnregisterPushNotificationsSaga";
 import setLanguageSaga from "./setLanguageSaga";
 import submitMessageSaga from "./submitMessageSaga";
+import toggleAnalyticsSaga from "./toggleAnalyticsSaga";
 
 export default function* rootSaga() {
     yield fork(fetchMessagesSaga);
@@ -11,4 +12,5 @@ export default function* rootSaga() {
     yield fork(changePushNotificationTimeSaga);
     yield fork(registerOrUnregisterPushNotificationsSaga);
     yield fork(setLanguageSaga);
+    yield fork(toggleAnalyticsSaga);
 }
