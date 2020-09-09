@@ -37,7 +37,7 @@ export const lightTheme: FullTheme = {
         accentedCard: NavDefaultTheme.colors.card,
         disabledItemText: Color.Grey,
         navAccent: Color.White,
-        accent: Color.LightGrey,
+        accent: Color.Blue,
     },
 };
 
@@ -48,11 +48,11 @@ export const darkTheme: FullTheme = {
     colors: {
         ...NavDarkTheme.colors,
         ...DarkTheme.colors,
-        primary: Color.DarkTurquoise,
+        primary: Color.Blue,
         card: DarkTheme.colors.surface,
         accentedCard: Color.Grey,
         disabledItemText: Color.Grey,
-        navAccent: Color.DarkTurquoise,
-        accent: Color.DarkTurquoise,
+        navAccent: Color.Blue,
+        accent: Color.Blue,
     },
 };
