@@ -1,7 +1,8 @@
 import React, { FC, Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Divider, Menu } from "react-native-paper";
+import { Divider, Menu, Subheading } from "react-native-paper";
 import { connect } from "react-redux";
+import { CONFIG } from "../../config";
 import {
     Language,
     LanguageCodeToLocalizedLang,
@@ -12,9 +13,10 @@ import SettingsRow from "./SettingsRow";
 
 interface Props {
     setLanguage: (Language: Language) => void;
+    language: Language;
 }
 
-const LanguageDropdown: FC<Props> = ({ setLanguage }) => {
+const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
     const { t } = useTranslation();
     const languages = Object.values(LanguageCodeToLocalizedLang);
     const [visible, setVisible] = useState(false);
@@ -40,6 +42,11 @@ const LanguageDropdown: FC<Props> = ({ setLanguage }) => {
                 <SettingsRow
                     onPress={() => setVisible(true)}
                     title={t("language")}
+                    rightComponent={() => () => (
+                        <Subheading>
+                            {LanguageCodeToLocalizedLang[language]}
+                        </Subheading>
+                    )}
                 ></SettingsRow>
             }
         >
@@ -62,7 +69,9 @@ const LanguageDropdown: FC<Props> = ({ setLanguage }) => {
     );
 };
 
-const mapStateToProps = (state: IState) => state;
+const mapStateToProps = (state: IState): Pick<Props, "language"> => ({
+    language: state.app.language || CONFIG.fallbackLanguage,
+});
 const mapDispatchToProps = { setLanguage };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LanguageDropdown);

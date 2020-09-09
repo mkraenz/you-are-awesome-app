@@ -491,6 +491,47 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     Language
                                   </Text>
                                 </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                          "textAlign": "left",
+                                          "writingDirection": "ltr",
+                                        },
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  English
+                                </Text>
                               </View>
                             </View>
                           </View>
@@ -1673,6 +1714,47 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     Language
                                   </Text>
                                 </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                          "textAlign": "left",
+                                          "writingDirection": "ltr",
+                                        },
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  English
+                                </Text>
                               </View>
                             </View>
                           </View>
@@ -2777,6 +2859,47 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     Language
                                   </Text>
                                 </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                          "textAlign": "left",
+                                          "writingDirection": "ltr",
+                                        },
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  English
+                                </Text>
                               </View>
                             </View>
                           </View>
