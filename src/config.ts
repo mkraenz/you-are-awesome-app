@@ -4,7 +4,7 @@ import { Route } from "./navigation/Route";
 const prodConfig = {
     isProd: true,
     featureFlags: {
-        termsAndConditions: false,
+        termsAndConditions: true,
     },
     fallbackLanguage: Language.English,
     startScreen: Route.Home,
