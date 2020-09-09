@@ -11,6 +11,7 @@ module.exports = Object.assign(expoPreset, {
     collectCoverage: true,
     collectCoverageFrom: [
         "**/*.{ts,tsx}",
+        "!./scripts/**/*.{ts,tsx}",
         "!**/coverage/**",
         "!**/node_modules/**",
         "!**/babel.config.js",

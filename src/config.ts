@@ -46,5 +46,5 @@ const devConfig: typeof prodConfig = {
 };
 
 // WARNING: Always revert changes to this before deploying / merging.
-const isProd = false; // should be true for merges / deployments
+const isProd = true; // should be true for merges / deployments
 export const CONFIG = isProd ? prodConfig : devConfig;
