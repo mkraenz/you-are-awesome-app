@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
-import { Button, TextInput } from "react-native-paper";
+import { Button, TextInput, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import { CONFIG } from "../../config";
 import { IMessageContent } from "../../state/state/IMessage";
@@ -38,6 +38,7 @@ const SubmitMessageInputForm: FC<Props> = ({
     const [countryError, setCountryError] = useState(false);
     const [conditionsError, setConditionsError] = useState(false);
     const { t } = useTranslation();
+    const { dark } = useTheme();
 
     const resetInputs = () => {
         setText("");
@@ -130,7 +131,7 @@ const SubmitMessageInputForm: FC<Props> = ({
                 />
             )}
             <Button
-                mode="contained"
+                mode={dark ? "outlined" : "contained"}
                 style={styles.button}
                 onPress={onSubmit}
                 disabled={!connectedToInternet}
