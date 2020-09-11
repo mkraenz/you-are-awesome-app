@@ -43,7 +43,19 @@ type keys =
     | "myContributionsDeleteDialogTitle"
     | "myContributionsDeleteDialogText"
     | "myContributionsDelete"
-    | "myContributionsCancel";
+    | "myContributionsCancel"
+    | "reportTitle"
+    | "reportConfirmButton"
+    | "reportCancelButton"
+    | "reportReason"
+    | "reportReasonSexual"
+    | "reportReasonHateful"
+    | "reportReasonInfringement"
+    | "reportReasonDrugs"
+    | "reportReasonPII"
+    | "reportReasonOther"
+    | "reportOtherComment"
+    | "reportDescription";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -123,6 +135,18 @@ const localization: {
             myContributionsDeleteDialogText:
                 "Deleting list items is permanent and cannot be reverted.\nNote that deletions do not affect server data. Deletions are only effective on your device.",
             myContributionsDeleteDialogTitle: "Are you sure?",
+            reportCancelButton: "Cancel",
+            reportConfirmButton: "Report",
+            reportDescription: "Why do you find the content objectionable?",
+            reportReason: "Reason",
+            reportReasonSexual: "Sexual content",
+            reportReasonHateful: "Hateful or abusive content",
+            reportReasonInfringement: "Intellectual property infringement",
+            reportReasonDrugs: "Relating to drugs or similar",
+            reportReasonPII: "Personally identifiable information",
+            reportReasonOther: "Other",
+            reportOtherComment: "Comment",
+            reportTitle: "Report as inappropriate",
         },
     },
     de: {
@@ -184,6 +208,18 @@ const localization: {
             myContributionsDeleteDialogText:
                 "Das Löschen von Beiträge ist permanent und kann nicht rückgängig gemacht werden. Bitte beachte, dass keine Daten auf den Servern gelöscht werden. Nur Daten auf diesem Gerät werden gelöscht.",
             myContributionsDeleteDialogTitle: "Bist du sicher?",
+            reportCancelButton: "Abbrechen",
+            reportConfirmButton: "Melden",
+            reportDescription: "Warum findest du diese Inhalte unangemessen?",
+            reportReason: "Grund",
+            reportReasonSexual: "Sexualle Inhalte",
+            reportReasonHateful: "Missbrauch oder hasserfüllte Inhalte",
+            reportReasonInfringement: "Verletzung geistigen Eigentums",
+            reportReasonDrugs: "Drogen oder ähnliches betreffend",
+            reportReasonPII: "Personenbezogene Informationen",
+            reportReasonOther: "Andere",
+            reportOtherComment: "Kommentar",
+            reportTitle: "Als unangemessen melden",
         },
     },
     ja: {
@@ -246,6 +282,18 @@ const localization: {
             myContributionsDeleteDialogText:
                 "削除すると元に戻すことはできません。サーバーに保存しているデータは消除されることはできません。このデバイスに保存しているのデータだけは消除されます。",
             myContributionsDeleteDialogTitle: "削除確認",
+            reportCancelButton: "キャンセル",
+            reportConfirmButton: "報告する",
+            reportDescription: "なんでこのコンテンツは不適切だと思いますか？",
+            reportReason: "理由",
+            reportReasonSexual: "性的な内容",
+            reportReasonHateful: "ひどい言葉、いやな言葉、侮辱的な言葉",
+            reportReasonInfringement: "著作権侵害",
+            reportReasonDrugs: "違法物質に関連する",
+            reportReasonPII: "個人を特定できる情報",
+            reportReasonOther: "その他",
+            reportOtherComment: "コメント",
+            reportTitle: "不適切として報告する",
         },
     },
 };

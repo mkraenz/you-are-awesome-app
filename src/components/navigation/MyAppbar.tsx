@@ -39,6 +39,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
                     accessibilityStates={{}}
                     icon={actionIcon}
                     onPress={onActionPress}
+                    testID={"appbar-action-item-right"}
                 />
             )}
             <ExpoStatusBar style={dark ? "light" : "dark"} />

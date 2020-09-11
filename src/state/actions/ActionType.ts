@@ -18,4 +18,5 @@ export enum ActionType {
     SetLanguage = "SetLanguage",
     AddToFavorites = "AddToFavorites",
     DeleteFavorites = "DeleteFavorites",
+    ReportAsInappropriate = "ReportAsInappropriate",
 }

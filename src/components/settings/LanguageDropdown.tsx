@@ -72,6 +72,6 @@ const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
 const mapStateToProps = (state: IState): Pick<Props, "language"> => ({
     language: state.app.language || CONFIG.fallbackLanguage,
 });
-const mapDispatchToProps = { setLanguage };
+const mapDispatchToProps: Pick<Props, "setLanguage"> = { setLanguage };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LanguageDropdown);

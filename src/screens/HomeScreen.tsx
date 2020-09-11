@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
 import RefreshMessagesView from "../components/home/RefreshMessagesView";
+import ReportDialog from "../components/home/ReportDialog";
 import { Route } from "../navigation/Route";
 import { addFavorite } from "../state/action-creators/addFavorite";
 import { IMessage } from "../state/state/IMessage";
@@ -42,6 +43,7 @@ interface Props {
 
 const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     const [heartShown, showHeart] = useState(false);
+    const [reportDialogOpen, showReportDialog] = useState(false);
     const theme = useTheme() as FullTheme;
     const { t } = useTranslation();
     const cardStyle = theme.dark
@@ -49,7 +51,7 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
               backgroundColor: theme.colors.accentedCard,
           }
         : { backgroundColor: theme.colors.primary };
-    const { author, text, country } = msg;
+    const { author, text, country, id } = msg;
 
     const likeOnDoubleTap = (event: TapGestureHandlerStateChangeEvent) => {
         if (event.nativeEvent.state === State.ACTIVE) {
@@ -57,8 +59,15 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
             showHeart(true);
         }
     };
+    const handleReportPressed = () => showReportDialog(!reportDialogOpen);
     return (
-        <Layout route={Route.Home}>
+        <Layout
+            route={Route.Home}
+            appbarProps={{
+                actionIcon: "flag",
+                onActionPress: handleReportPressed,
+            }}
+        >
             <RefreshMessagesView>
                 <TapGestureHandler
                     onHandlerStateChange={likeOnDoubleTap}
@@ -86,6 +95,11 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                     </View>
                 </TapGestureHandler>
             </RefreshMessagesView>
+            <ReportDialog
+                visible={reportDialogOpen}
+                close={() => showReportDialog(false)}
+                id={id}
+            ></ReportDialog>
         </Layout>
     );
 };

@@ -7,7 +7,8 @@ export type IAppAction =
     | IToggleAnalytics
     | ISetPushNotificationsState
     | IChangePushNotificationTime
-    | ISetLanguage;
+    | ISetLanguage
+    | IReportAsInappropriate;
 
 export type IToggleDarkThemeAction = IAction<ActionType.ToggleDarkTheme>;
 export type IToggleAnalytics = IAction<ActionType.ToggleAnalytics>;
@@ -30,4 +31,13 @@ export type IChangePushNotificationTime = IActionWithPayload<
 export type ISetLanguage = IActionWithPayload<
     ActionType.SetLanguage,
     { language: Language }
+>;
+
+export type IReportAsInappropriate = IActionWithPayload<
+    ActionType.ReportAsInappropriate,
+    {
+        messageId: string;
+        reason: string;
+        comment: string;
+    }
 >;

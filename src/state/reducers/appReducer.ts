@@ -40,6 +40,7 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
                 ...state,
                 language: action.payload.language,
             };
+        case ActionType.ReportAsInappropriate: // no state change, only triggers saga
         default:
             return state;
     }

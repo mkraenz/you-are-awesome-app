@@ -18,6 +18,8 @@ const LocalizationProvider: FC<Props> = ({ children, language }) => {
     );
 };
 
-const mapStateToProps = (state: IState) => ({ language: state.app.language });
+const mapStateToProps = (state: IState): Props => ({
+    language: state.app.language,
+});
 
 export default connect(mapStateToProps)(LocalizationProvider);

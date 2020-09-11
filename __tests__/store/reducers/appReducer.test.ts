@@ -114,6 +114,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: true,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -123,6 +124,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
