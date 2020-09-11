@@ -24,15 +24,17 @@ const NavContainerWithAnalytics: FC = ({ children }) => {
                 (routeNameRef as any).current = currentRoute!.name;
             }}
             onStateChange={() => {
-                const previousRouteName = routeNameRef.current;
-                const currentRouteName = navigationRef.current!.getCurrentRoute()!
-                    .name;
+                if (CONFIG.featureFlags.analytics) {
+                    const previousRouteName = routeNameRef.current;
+                    const currentRouteName = navigationRef.current!.getCurrentRoute()!
+                        .name;
 
-                if (previousRouteName !== currentRouteName) {
-                    Analytics.setCurrentScreen(currentRouteName);
+                    if (previousRouteName !== currentRouteName) {
+                        Analytics.setCurrentScreen(currentRouteName);
+                    }
+
+                    (routeNameRef as any).current = currentRouteName;
                 }
-
-                (routeNameRef as any).current = currentRouteName;
             }}
         >
             {children}

@@ -5,12 +5,12 @@ const prodConfig = {
     isProd: true,
     featureFlags: {
         termsAndConditions: true,
+        analytics: true,
     },
+    debugAnalytics: false,
     fallbackLanguage: Language.English,
     startScreen: Route.Home,
     defaultNotificationHour: 11,
-    enableAnalytics: true,
-    debugAnalytics: false,
     uri: {
         fetchMessages:
             "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
@@ -27,12 +27,12 @@ const devConfig: typeof prodConfig = {
     isProd: false,
     featureFlags: {
         termsAndConditions: true,
+        analytics: false,
     },
+    debugAnalytics: true,
     fallbackLanguage: Language.English,
     startScreen: Route.Home,
     defaultNotificationHour: 11,
-    enableAnalytics: true,
-    debugAnalytics: true,
     uri: {
         fetchMessages:
             "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
@@ -46,5 +46,5 @@ const devConfig: typeof prodConfig = {
 };
 
 // WARNING: Always revert changes to this before deploying / merging.
-const isProd = true; // should be true for merges / deployments
+const isProd = false; // should be true for merges / deployments
 export const CONFIG = isProd ? prodConfig : devConfig;
