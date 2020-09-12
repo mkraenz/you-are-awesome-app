@@ -1,6 +1,6 @@
 # Terms and Conditions
 
-Last updated September 07, 2020
+Last updated September 11, 2020
 
 ## Purpose of the App
 
@@ -15,7 +15,7 @@ As a user of the App and member of the App's community,
 - I will not infringe the intellectual property of another natural person or legal entity.
 - I will not submit any content with personally identifiable data of myself nor of any other natural person.
 - I will not submit any obscene, sexually explicit, or hate-inducing content.
-- I will report any content, created by me or created by others, if the content violates the rights of any person or legal entity. Reporting may be done from the Home screen or from the My Contributions screen.
+- I will report any content, created by me or created by others, if the content violates the rights of any person or entity, or violates any of the above Don'ts. Reporting may be done from the Home screen.
 
 Any violations will result in immediate deletion of the content. Displaying content publicly is fully at the discretion of the App. There is no guarantee that my submitted content will be displayed and I have no right to require its display.
 
