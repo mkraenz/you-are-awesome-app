@@ -421,6 +421,37 @@ exports[`displays netinfo box for no internet connection 1`] = `
                           }
                         >
                           <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "#B00020",
+                                "flexDirection": "row",
+                                "height": 30,
+                                "justifyContent": "center",
+                                "marginHorizontal": -100,
+                              }
+                            }
+                          >
+                            <Text
+                              accessibilityStates={Object {}}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontWeight": "400",
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "color": "white",
+                                  },
+                                ]
+                              }
+                            >
+                              No Internet Connection
+                            </Text>
+                          </View>
+                          <View
                             collapsable={false}
                           >
                             <View
@@ -549,37 +580,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           />
                           <View>
-                            <View
-                              style={
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "#B00020",
-                                  "flexDirection": "row",
-                                  "height": 30,
-                                  "justifyContent": "center",
-                                  "marginHorizontal": -100,
-                                }
-                              }
-                            >
-                              <Text
-                                accessibilityStates={Object {}}
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#000000",
-                                      "fontFamily": "System",
-                                      "fontWeight": "400",
-                                      "textAlign": "left",
-                                    },
-                                    Object {
-                                      "color": "white",
-                                    },
-                                  ]
-                                }
-                              >
-                                No Internet Connection
-                              </Text>
-                            </View>
                             <View
                               accessible={true}
                               focusable={true}

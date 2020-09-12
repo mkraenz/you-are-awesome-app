@@ -5,6 +5,7 @@ import { StyleSheet, View } from "react-native";
 import { Divider, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
+import OfflineNotice from "../components/common/OfflineNotice";
 import LanguageDropdown from "../components/settings/LanguageDropdown";
 import PushNotificationSettings from "../components/settings/PushNotificationSettings";
 import SettingsRow from "../components/settings/SettingsRow";
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
 interface StateProps {
     isDarkModeOn: boolean;
     analyticsEnabled: boolean;
+    connectedToInternet: boolean;
 }
 interface DispatchProps {
     // TODO #256
@@ -39,6 +41,7 @@ const SettingsScreen: FC<Props> = ({
     toggleDarkTheme,
     analyticsEnabled,
     toggleAnalytics,
+    connectedToInternet,
 }) => {
     const { t } = useTranslation();
     const navigation = useNavigation();
@@ -50,6 +53,7 @@ const SettingsScreen: FC<Props> = ({
     };
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
+            {!connectedToInternet && <OfflineNotice />}
             <LanguageDropdown />
             <Divider accessibilityStates={{}} />
             <PushNotificationSettings />
@@ -104,6 +108,7 @@ const About = () => {
 const mapStateToProps: MapStateToProps<StateProps> = (state) => ({
     isDarkModeOn: state.app.isDarkModeOn,
     analyticsEnabled: state.app.analyticsEnabled,
+    connectedToInternet: state.network.connected,
 });
 
 const mapDispatchToProps: DispatchProps = {

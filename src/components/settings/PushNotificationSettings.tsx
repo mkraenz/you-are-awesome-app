@@ -10,7 +10,6 @@ import { CONFIG } from "../../config";
 import { changePushNotificationTime } from "../../state/action-creators/changePushNotificationTime";
 import { setPushNotificationsState } from "../../state/action-creators/setPushNotificationState";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
-import OfflineNotice from "../common/OfflineNotice";
 import SettingsRow from "./SettingsRow";
 
 const DEBOUNCE_TIMEOUT = 500;
@@ -63,7 +62,6 @@ const PushNotificationSettings: FC<Props> = ({
 
     return (
         <View>
-            {!connectedToInternet && <OfflineNotice />}
             <SettingsRow
                 title={t("notificationsEnable")}
                 onPress={toggleNotifications}
