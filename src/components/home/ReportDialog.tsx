@@ -23,10 +23,11 @@ interface Props {
 }
 
 const otherReason = "reportReasonOther";
+const infringementReason = "reportReasonInfringement";
 const reasons = [
     "reportReasonSexual",
     "reportReasonHateful",
-    "reportReasonInfringement",
+    infringementReason,
     "reportReasonDrugs",
     "reportReasonPII",
     otherReason,
@@ -68,7 +69,10 @@ const ReportDialog: FC<Props> = ({
     };
     const submitDisabled =
         !reason ||
-        (reason === otherReason && comment.length < minCommentLength);
+        (reason === otherReason && comment.length < minCommentLength) ||
+        (reason === infringementReason && comment.length < minCommentLength);
+    const commentVisible =
+        reason === otherReason || reason === infringementReason;
     const handleSubmit = () => {
         reportAsInappropriate(id, reason, comment);
         handleClose();
@@ -129,12 +133,12 @@ const ReportDialog: FC<Props> = ({
                             </Fragment>
                         ))}
                     </Menu>
-                    {reason === otherReason && (
+                    {commentVisible && (
                         <TextInput
                             accessibilityStates={{}}
                             label={t("reportOtherComment")}
                             value={comment}
-                            onChangeText={(text) => setComment(text)}
+                            onChangeText={setComment}
                         />
                     )}
                 </Dialog.Content>

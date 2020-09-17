@@ -20,6 +20,8 @@ const prodConfig = {
             "https://opxwo1lkzg.execute-api.eu-central-1.amazonaws.com/prod/",
         unregisterFromPushNotifications:
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
+        reportInappropriateContent:
+            "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
     },
 };
 
@@ -42,9 +44,11 @@ const devConfig: typeof prodConfig = {
             "https://opxwo1lkzg.execute-api.eu-central-1.amazonaws.com/prod/",
         unregisterFromPushNotifications:
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
+        reportInappropriateContent:
+            "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
     },
 };
 
 // WARNING: Always revert changes to this before deploying / merging.
-const isProd = true; // should be true for merges / deployments
+const isProd = false; // should be true for merges / deployments
 export const CONFIG = isProd ? prodConfig : devConfig;
