@@ -14,6 +14,7 @@ import {
 import { connect } from "react-redux";
 import { reportAsInappropriate } from "../../state/action-creators/reportAsInappropriate";
 import { IState } from "../../state/state/IState";
+import ReportThankYouDialog from "./ReportThankYouDialog";
 
 interface Props {
     id: string;
@@ -53,7 +54,11 @@ const ReportDialog: FC<Props> = ({
 }) => {
     const [reasonsOpen, showReasons] = useState(false);
     const [reason, setReason] = useState("");
-    const [comment, setComment] = useState(""); // in case of 'other' reason
+    const [comment, setComment] = useState("");
+    const [thankYouVisible, showThankYou] = useState(false);
+
+    const commentVisible =
+        reason === otherReason || reason === infringementReason;
 
     const { t } = useTranslation();
     const { colors } = useTheme();
@@ -62,6 +67,7 @@ const ReportDialog: FC<Props> = ({
         setReason("");
         setComment("");
         showReasons(false);
+        showThankYou(false);
     };
     const handleClose = () => {
         reset();
@@ -71,11 +77,10 @@ const ReportDialog: FC<Props> = ({
         !reason ||
         (reason === otherReason && comment.length < minCommentLength) ||
         (reason === infringementReason && comment.length < minCommentLength);
-    const commentVisible =
-        reason === otherReason || reason === infringementReason;
     const handleSubmit = () => {
         reportAsInappropriate(id, reason, comment);
-        handleClose();
+        reset();
+        showThankYou(true);
     };
     const hideReasons = () => showReasons(false);
 
@@ -93,6 +98,9 @@ const ReportDialog: FC<Props> = ({
         />
     );
 
+    if (thankYouVisible) {
+        return <ReportThankYouDialog onDismiss={handleClose} />;
+    }
     return (
         <Portal>
             <Dialog visible={visible} onDismiss={handleClose}>

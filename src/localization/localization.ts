@@ -55,7 +55,10 @@ type keys =
     | "reportReasonPII"
     | "reportReasonOther"
     | "reportOtherComment"
-    | "reportDescription";
+    | "reportDescription"
+    | "reportThankYouTitle"
+    | "reportThankYouText"
+    | "reportThankYouButton";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -147,6 +150,10 @@ const localization: {
             reportReasonOther: "Other",
             reportOtherComment: "Details",
             reportTitle: "Report as inappropriate",
+            reportThankYouButton: "Close",
+            reportThankYouTitle: "Thanks for Reporting",
+            reportThankYouText:
+                "We are committed to protecting our users and others as well as their rights. We will check your report as soon as possible and take appropriate action.",
         },
     },
     de: {
@@ -220,6 +227,10 @@ const localization: {
             reportReasonOther: "Andere",
             reportOtherComment: "Details",
             reportTitle: "Als unangemessen melden",
+            reportThankYouButton: "Schließen",
+            reportThankYouTitle: "Vielen Dank für die Meldung",
+            reportThankYouText:
+                "Wir sind stets bemüht unsere Nutzer und andere sowie deren Rechte zu schützen. Wir werden deine Meldung so schnell wie möglich prüfen und entsprechende Maßnahmen ergreifen.",
         },
     },
     ja: {
@@ -294,6 +305,10 @@ const localization: {
             reportReasonOther: "その他",
             reportOtherComment: "詳細",
             reportTitle: "不適切として報告する",
+            reportThankYouButton: "閉じる",
+            reportThankYouTitle: "報告ありがとうございます",
+            reportThankYouText:
+                "You are Awesome App!では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。",
         },
     },
 };
