@@ -7,7 +7,6 @@ import {
     Dialog,
     Menu,
     Paragraph,
-    Portal,
     TextInput,
     useTheme,
 } from "react-native-paper";
@@ -102,68 +101,66 @@ const ReportDialog: FC<Props> = ({
         return <ReportThankYouDialog onDismiss={handleClose} />;
     }
     return (
-        <Portal>
-            <Dialog visible={visible} onDismiss={handleClose}>
-                <Dialog.Title accessibilityStates={{}}>
-                    {t("reportTitle")}
-                </Dialog.Title>
-                <Dialog.Content>
-                    <Paragraph>{t("reportDescription")}</Paragraph>
-                    <Menu
-                        visible={reasonsOpen}
-                        onDismiss={hideReasons}
-                        anchor={
-                            <TouchableOpacity onPress={() => showReasons(true)}>
-                                <View pointerEvents="none">
-                                    {renderReasonsInput()}
-                                </View>
-                                <FontAwesome
-                                    name="chevron-down"
-                                    size={14}
-                                    style={{
-                                        ...styles.downIcon,
-                                        color: colors.disabled,
-                                    }}
-                                />
-                            </TouchableOpacity>
-                        }
-                    >
-                        {reasons.map((reason, i) => (
-                            <Fragment key={reason}>
-                                <Menu.Item
-                                    key={reason}
-                                    onPress={() => {
-                                        setReason(reason);
-                                        hideReasons();
-                                    }}
-                                    title={t(reason)}
-                                />
-                            </Fragment>
-                        ))}
-                    </Menu>
-                    {commentVisible && (
-                        <TextInput
-                            accessibilityStates={{}}
-                            label={t("reportOtherComment")}
-                            value={comment}
-                            onChangeText={setComment}
-                        />
-                    )}
-                </Dialog.Content>
-                <Dialog.Actions>
-                    <Button onPress={handleClose} accessibilityStates={{}}>
-                        {t("reportCancelButton")}
-                    </Button>
-                    <Button
-                        onPress={handleSubmit}
+        <Dialog visible={visible} onDismiss={handleClose}>
+            <Dialog.Title accessibilityStates={{}}>
+                {t("reportTitle")}
+            </Dialog.Title>
+            <Dialog.Content>
+                <Paragraph>{t("reportDescription")}</Paragraph>
+                <Menu
+                    visible={reasonsOpen}
+                    onDismiss={hideReasons}
+                    anchor={
+                        <TouchableOpacity onPress={() => showReasons(true)}>
+                            <View pointerEvents="none">
+                                {renderReasonsInput()}
+                            </View>
+                            <FontAwesome
+                                name="chevron-down"
+                                size={14}
+                                style={{
+                                    ...styles.downIcon,
+                                    color: colors.disabled,
+                                }}
+                            />
+                        </TouchableOpacity>
+                    }
+                >
+                    {reasons.map((reason, i) => (
+                        <Fragment key={reason}>
+                            <Menu.Item
+                                key={reason}
+                                onPress={() => {
+                                    setReason(reason);
+                                    hideReasons();
+                                }}
+                                title={t(reason)}
+                            />
+                        </Fragment>
+                    ))}
+                </Menu>
+                {commentVisible && (
+                    <TextInput
                         accessibilityStates={{}}
-                        disabled={submitDisabled}
-                    >
-                        {t(`reportConfirmButton`)}
-                    </Button>
-                </Dialog.Actions>
-            </Dialog>
-        </Portal>
+                        label={t("reportOtherComment")}
+                        value={comment}
+                        onChangeText={setComment}
+                    />
+                )}
+            </Dialog.Content>
+            <Dialog.Actions>
+                <Button onPress={handleClose} accessibilityStates={{}}>
+                    {t("reportCancelButton")}
+                </Button>
+                <Button
+                    onPress={handleSubmit}
+                    accessibilityStates={{}}
+                    disabled={submitDisabled}
+                >
+                    {t(`reportConfirmButton`)}
+                </Button>
+            </Dialog.Actions>
+        </Dialog>
     );
 };
 

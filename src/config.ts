@@ -23,6 +23,10 @@ const prodConfig = {
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
     },
+    disableApiCall: {
+        all: false,
+        reportInappropriateContent: false,
+    },
 };
 
 const devConfig: typeof prodConfig = {
@@ -46,6 +50,10 @@ const devConfig: typeof prodConfig = {
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
+    },
+    disableApiCall: {
+        all: false,
+        reportInappropriateContent: false,
     },
 };
 

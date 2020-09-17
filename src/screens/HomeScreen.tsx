@@ -6,7 +6,7 @@ import {
     TapGestureHandler,
     TapGestureHandlerStateChangeEvent,
 } from "react-native-gesture-handler";
-import { Card, Paragraph, Title, useTheme } from "react-native-paper";
+import { Card, Paragraph, Portal, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
@@ -95,11 +95,14 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                     </View>
                 </TapGestureHandler>
             </RefreshMessagesView>
-            <ReportDialog
-                visible={reportDialogOpen}
-                close={() => showReportDialog(false)}
-                id={id}
-            ></ReportDialog>
+            <Portal>
+                {/* push Portal to top-level to test Dialogs individually. */}
+                <ReportDialog
+                    visible={reportDialogOpen}
+                    close={() => showReportDialog(false)}
+                    id={id}
+                ></ReportDialog>
+            </Portal>
         </Layout>
     );
 };

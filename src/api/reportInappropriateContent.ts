@@ -9,6 +9,12 @@ export const reportInappropriateContent = async (report: {
     reason: string;
     comment: string;
 }) => {
+    if (
+        CONFIG.disableApiCall.all ||
+        CONFIG.disableApiCall.reportInappropriateContent
+    ) {
+        return;
+    }
     const result = await Axios.post(
         CONFIG.uri.reportInappropriateContent,
         pick(report, ["messageId", "reason", "comment"]),
