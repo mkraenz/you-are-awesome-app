@@ -1,4 +1,4 @@
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import React, { FC, Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
@@ -21,7 +21,7 @@ interface Props {
     close: () => void;
     visible: boolean;
     reportAsInappropriate: typeof reportAsInappropriate;
-    connectedToInternet: boolean;
+    noInternet: boolean;
 }
 
 const otherReason = "reportReasonOther";
@@ -43,6 +43,13 @@ const styles = StyleSheet.create({
         margin: 16,
     },
     reasonsInput: { marginVertical: 8 },
+    noInternetContainer: {
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        width: "100%",
+        marginTop: 8,
+    },
+    noInternetIcon: { marginRight: 8 },
 });
 
 const minCommentLength = 7;
@@ -52,7 +59,7 @@ const ReportDialog: FC<Props> = ({
     visible,
     close,
     reportAsInappropriate,
-    connectedToInternet,
+    noInternet,
 }) => {
     const [reasonsOpen, showReasons] = useState(false);
     const [reason, setReason] = useState("");
@@ -76,7 +83,7 @@ const ReportDialog: FC<Props> = ({
         close();
     };
     const submitDisabled =
-        !connectedToInternet ||
+        noInternet ||
         !reason ||
         (reason === otherReason && comment.length < minCommentLength) ||
         (reason === infringementReason && comment.length < minCommentLength);
@@ -151,6 +158,19 @@ const ReportDialog: FC<Props> = ({
                         onChangeText={setComment}
                     />
                 )}
+                {noInternet && (
+                    <View style={styles.noInternetContainer}>
+                        <MaterialIcons
+                            name="error-outline"
+                            size={20}
+                            style={{
+                                ...styles.noInternetIcon,
+                                color: colors.error,
+                            }}
+                        />
+                        <Paragraph>{t("noInternet")}</Paragraph>
+                    </View>
+                )}
             </Dialog.Content>
             <Dialog.Actions>
                 <Button onPress={handleClose} accessibilityStates={{}}>
@@ -168,10 +188,10 @@ const ReportDialog: FC<Props> = ({
     );
 };
 
-const mapStateToProps: MapStateToProps<Pick<Props, "connectedToInternet">> = (
+const mapStateToProps: MapStateToProps<Pick<Props, "noInternet">> = (
     state: IState
 ) => ({
-    connectedToInternet: state.network.connected,
+    noInternet: !state.network.connected,
 });
 const mapDispatchToProps: Pick<Props, "reportAsInappropriate"> = {
     reportAsInappropriate,

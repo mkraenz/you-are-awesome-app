@@ -448,7 +448,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 ]
                               }
                             >
-                              No Internet Connection
+                              Internet connection required
                             </Text>
                           </View>
                           <View

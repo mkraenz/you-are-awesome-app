@@ -2147,7 +2147,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                 ]
                               }
                             >
-                              No Internet Connection
+                              Internet connection required
                             </Text>
                           </View>
                           <View
