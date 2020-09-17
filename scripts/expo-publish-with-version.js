@@ -9,7 +9,7 @@ const incrementBuildVersion = () => {
 };
 
 const main = () => {
-    const assertion = shell.exec("ts-node ./scripts/assertProdConfig.ts");
+    const assertion = shell.exec("yarn assert:prod-config");
     if (assertion.code === 0) {
         incrementBuildVersion();
         shell.exec("expo publish --target bare");

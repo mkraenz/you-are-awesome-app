@@ -57,6 +57,5 @@ const devConfig: typeof prodConfig = {
     },
 };
 
-// WARNING: Always set to true before merging.
-const isProd = process.env.NODE_ENV === "prod" || false; // should be true for merges
+const isProd = process.env.NODE_ENV === "prod" || false;
 export const CONFIG = isProd ? prodConfig : devConfig;
