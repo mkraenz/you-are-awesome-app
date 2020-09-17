@@ -96,3 +96,14 @@ will result in `ReferenceError: Can't find variable: React`.
 ```typescript
 import React, { FC } from "react";
 ```
+
+### During tests: Unable to find node on an unmounted component
+
+```log
+Unable to find node on an unmounted component.
+
+at node_modules/@testing-library/react-native/build/helpers/findByAPI.js:16:115
+at Timeout.runExpectation [as _onTimeout] (node_modules/@testing-library/react-native/build/waitFor.js:48:24)
+```
+
+If this happens in places where the `Portal` component is used, first check that the state is mocked correctly (including for all rendered subcomponents).

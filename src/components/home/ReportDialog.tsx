@@ -13,6 +13,7 @@ import {
 import { connect } from "react-redux";
 import { reportAsInappropriate } from "../../state/action-creators/reportAsInappropriate";
 import { IState } from "../../state/state/IState";
+import { MapStateToProps } from "../../state/state/MapStateToProps";
 import ReportThankYouDialog from "./ReportThankYouDialog";
 
 interface Props {
@@ -20,6 +21,7 @@ interface Props {
     close: () => void;
     visible: boolean;
     reportAsInappropriate: typeof reportAsInappropriate;
+    connectedToInternet: boolean;
 }
 
 const otherReason = "reportReasonOther";
@@ -50,6 +52,7 @@ const ReportDialog: FC<Props> = ({
     visible,
     close,
     reportAsInappropriate,
+    connectedToInternet,
 }) => {
     const [reasonsOpen, showReasons] = useState(false);
     const [reason, setReason] = useState("");
@@ -73,6 +76,7 @@ const ReportDialog: FC<Props> = ({
         close();
     };
     const submitDisabled =
+        !connectedToInternet ||
         !reason ||
         (reason === otherReason && comment.length < minCommentLength) ||
         (reason === infringementReason && comment.length < minCommentLength);
@@ -164,7 +168,11 @@ const ReportDialog: FC<Props> = ({
     );
 };
 
-const mapStateToProps = (state: IState) => state;
+const mapStateToProps: MapStateToProps<Pick<Props, "connectedToInternet">> = (
+    state: IState
+) => ({
+    connectedToInternet: state.network.connected,
+});
 const mapDispatchToProps: Pick<Props, "reportAsInappropriate"> = {
     reportAsInappropriate,
 };

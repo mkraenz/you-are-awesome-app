@@ -46,9 +46,10 @@ it("renders correctly", () => {
 });
 
 it("opens the report dialog when clicking the appbar right action button", async () => {
-    const store = createMockStore<Pick2<IState, "messages", "currentMessage">>(
-        []
-    )({
+    const store = createMockStore<
+        Pick2<IState, "messages", "currentMessage"> &
+            Pick2<IState, "network", "connected">
+    >([])({
         messages: {
             currentMessage: {
                 id: "1",
@@ -57,6 +58,9 @@ it("opens the report dialog when clicking the appbar right action button", async
                 country: "my-country",
                 isodate: "2018-08-20",
             },
+        },
+        network: {
+            connected: true,
         },
     });
 
