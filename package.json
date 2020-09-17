@@ -26,7 +26,7 @@
         "assert:prod-config": "ts-node ./scripts/assertProdConfig.ts",
         "ebuild:android": "expo build:android --type apk",
         "publish:android": "expo upload:android --latest --use-submission-service",
-        "deploy:prod": "node ./scripts/expo-publish-with-version.js",
+        "deploy:prod": "NODE_ENV=prod node ./scripts/expo-publish-with-version.js",
         "deploy:test": "expo publish --release-channel test"
     },
     "dependencies": {
