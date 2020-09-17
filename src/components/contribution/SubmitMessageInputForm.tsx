@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Button, TextInput, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
-import { CONFIG } from "../../config";
 import { IMessageContent } from "../../state/state/IMessage";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
 import TermsAndConditions from "./TermsAndConditions";
@@ -55,10 +54,7 @@ const SubmitMessageInputForm: FC<Props> = ({
         autoCapitalize: "sentences" as const,
         accessibilityStates: {},
     };
-    const missingInputs =
-        !(text && author && country) &&
-        CONFIG.featureFlags.termsAndConditions &&
-        !conditionsAccepted;
+    const missingInputs = !(text && author && country && conditionsAccepted);
     const displayErrors = () => {
         if (!text) setTextError(true);
         if (!author) setAuthorError(true);
@@ -123,13 +119,11 @@ const SubmitMessageInputForm: FC<Props> = ({
                 value={country}
                 error={countryError}
             />
-            {CONFIG.featureFlags.termsAndConditions && (
-                <TermsAndConditions
-                    accepted={conditionsAccepted}
-                    error={conditionsError}
-                    handlePress={handleConditionsChecked}
-                />
-            )}
+            <TermsAndConditions
+                accepted={conditionsAccepted}
+                error={conditionsError}
+                handlePress={handleConditionsChecked}
+            />
             <Button
                 mode={dark ? "outlined" : "contained"}
                 style={styles.button}

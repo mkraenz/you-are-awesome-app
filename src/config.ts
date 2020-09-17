@@ -4,7 +4,6 @@ import { Route } from "./navigation/Route";
 const prodConfig = {
     isProd: true,
     featureFlags: {
-        termsAndConditions: true,
         analytics: true,
     },
     debugAnalytics: false,
@@ -32,7 +31,6 @@ const prodConfig = {
 const devConfig: typeof prodConfig = {
     isProd: false,
     featureFlags: {
-        termsAndConditions: true,
         analytics: false,
     },
     debugAnalytics: true,

@@ -73,6 +73,7 @@ exports[`renders correctly 1`] = `
               },
             ]
           }
+          testID="terms-and-conditions-consent-checkbox"
         >
           <View
             style={
@@ -411,6 +412,7 @@ exports[`renders correctly on error 1`] = `
               },
             ]
           }
+          testID="terms-and-conditions-consent-checkbox"
         >
           <View
             style={
