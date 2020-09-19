@@ -14,7 +14,7 @@ const NavContainerWithAnalytics: FC = ({ children }) => {
     const navigationRef = React.useRef<NavigationContainerRef>(null);
     const theme = useTheme() as FullTheme;
 
-    Analytics.setDebugModeEnabled(CONFIG.debugAnalytics);
+    // Analytics.setDebugModeEnabled(CONFIG.debugAnalytics);
     return (
         <NavigationContainer
             theme={theme}
@@ -30,7 +30,10 @@ const NavContainerWithAnalytics: FC = ({ children }) => {
                         .name;
 
                     if (previousRouteName !== currentRouteName) {
-                        Analytics.setCurrentScreen(currentRouteName);
+                        Analytics.setCurrentScreen(
+                            currentRouteName,
+                            currentRouteName
+                        );
                     }
 
                     (routeNameRef as any).current = currentRouteName;

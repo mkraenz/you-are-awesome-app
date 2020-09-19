@@ -12,18 +12,18 @@
             "backgroundColor": "#ffffff"
         },
         "updates": {
-            "fallbackToCacheTimeout": 0
+            "fallbackToCacheTimeout": 2000
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.4.0",
+        "version": "1.5.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 6,
+            "versionCode": 7,
             "useNextNotificationsApi": true
         },
         "ios": {

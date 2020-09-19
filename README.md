@@ -29,18 +29,26 @@ Google Play and the Google Play logo are trademarks of Google LLC.
 
 #### How to
 
+##### OTA Over-the-air updates
+
 ```shell
-yarn expo publish
+deploy:ota:prod
 ```
 
-When a User now starts her app (even if installed from the Google Play Store!), the app tries to download the newest Js for the app and runs the newest version. It falls back to the cached version after 30 seconds.
+When a User now starts her app (even if installed from the Google Play Store!), the app tries to download the newest JS files for the app and runs the newest version. It falls back to the cached (i.e. previous) version after 2 seconds.
 
 ##### Special case - changes to app.json
 
-Only in case `app.json` changes, there is a need to rebuild the app and republish it manually to the app store.
+Only in case `app.json` changes, one needs to rebuild the app and republish to expo.
 
 ```shell
-yarn expo build:android -t apk
+yarn build-and-publish:expo:android
+```
+
+To push the update to the Google Playstore run
+
+```shell
+publish:playstore
 ```
 
 ### Debugging Jest tests

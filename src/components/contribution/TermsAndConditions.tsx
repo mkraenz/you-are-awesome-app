@@ -18,7 +18,6 @@ interface Props {
     error: boolean;
 }
 
-// TODO #229 tests
 const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
     const { colors } = useTheme();
     const { t } = useTranslation();
@@ -50,6 +49,7 @@ const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
         <View style={styles.checkboxContainer}>
             <Checkbox.Android
                 accessibilityStates={{}}
+                testID="terms-and-conditions-consent-checkbox"
                 status={accepted ? "checked" : "unchecked"}
                 onPress={handlePress}
                 color={colors.primary}

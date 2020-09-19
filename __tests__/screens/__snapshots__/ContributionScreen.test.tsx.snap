@@ -1221,6 +1221,7 @@ exports[`renders correctly 1`] = `
                                         },
                                       ]
                                     }
+                                    testID="terms-and-conditions-consent-checkbox"
                                   >
                                     <View
                                       style={
@@ -2880,6 +2881,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         },
                                       ]
                                     }
+                                    testID="terms-and-conditions-consent-checkbox"
                                   >
                                     <View
                                       style={

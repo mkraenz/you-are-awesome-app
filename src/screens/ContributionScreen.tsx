@@ -8,6 +8,7 @@ import { v4 } from "uuid";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
 import SubmitMessageInputForm from "../components/contribution/SubmitMessageInputForm";
+import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
 import { submitMessage } from "../state/action-creators/submitMessage";
 import { IMessage, IMessageContent } from "../state/state/IMessage";
@@ -35,7 +36,7 @@ const ContributionScreen: FC<Props> = ({
             id: v4(),
             isodate: toIsoDateString(new Date()),
         });
-        Analytics.logEvent("contribute");
+        if (CONFIG.featureFlags.analytics) Analytics.logEvent("contribute");
         const stayTuned = t("contributionStayTuned");
         Alert.alert(
             t("contributionThanks"),

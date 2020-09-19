@@ -76,7 +76,7 @@ it("can fill the form and submits it to the store", async () => {
         },
     });
 
-    const { findAllByText, getByText } = render(
+    const { findAllByText, getByText, getByTestId } = render(
         <Provider store={store}>
             <ConfiguredContributionScreen />
         </Provider>
@@ -88,9 +88,13 @@ it("can fill the form and submits it to the store", async () => {
         i18next.t("contributeAwesomeMessage")
     );
     const authorInputs = await findAllByText(i18next.t("contributeName"));
+    const consentCheckbox = getByTestId(
+        "terms-and-conditions-consent-checkbox"
+    );
     fireEvent.changeText(countryInputs[0], "Wonderland");
     fireEvent.changeText(awesomeInputs[0], "You are soooo awesome!");
     fireEvent.changeText(authorInputs[0], "Winnie the Puuh");
+    fireEvent.press(consentCheckbox);
     fireEvent.press(getByText(i18next.t("contributeSubmit")));
 
     const v4 = new RegExp(
