@@ -24,10 +24,10 @@
         "test:coverage": "jest",
         "test:update-snapshot": "jest --updateSnapshot --coverage=false",
         "assert:prod-config": "ts-node ./scripts/assertProdConfig.ts",
-        "ebuild:android": "expo build:android --type apk",
-        "publish:android": "expo upload:android --latest --use-submission-service",
-        "deploy:prod": "NODE_ENV=prod node ./scripts/expo-publish-with-version.js",
-        "deploy:test": "expo publish --release-channel test"
+        "build-and-publish:expo:android": "expo build:android --type apk",
+        "publish:playstore": "expo upload:android --latest --use-submission-service",
+        "deploy:ota:prod": "NODE_ENV=prod node ./scripts/expo-publish-with-version.js",
+        "deploy:ota:test": "expo publish --release-channel test"
     },
     "dependencies": {
         "@react-native-community/datetimepicker": "2.4.0",
