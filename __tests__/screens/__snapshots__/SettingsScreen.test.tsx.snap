@@ -421,6 +421,37 @@ exports[`displays netinfo box for no internet connection 1`] = `
                           }
                         >
                           <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "#B00020",
+                                "flexDirection": "row",
+                                "height": 30,
+                                "justifyContent": "center",
+                                "marginHorizontal": -100,
+                              }
+                            }
+                          >
+                            <Text
+                              accessibilityStates={Object {}}
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontWeight": "400",
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "color": "white",
+                                  },
+                                ]
+                              }
+                            >
+                              Internet connection required
+                            </Text>
+                          </View>
+                          <View
                             collapsable={false}
                           >
                             <View
@@ -491,6 +522,47 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     Language
                                   </Text>
                                 </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                          "textAlign": "left",
+                                          "writingDirection": "ltr",
+                                        },
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  English
+                                </Text>
                               </View>
                             </View>
                           </View>
@@ -508,37 +580,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           />
                           <View>
-                            <View
-                              style={
-                                Object {
-                                  "alignItems": "center",
-                                  "backgroundColor": "#B00020",
-                                  "flexDirection": "row",
-                                  "height": 30,
-                                  "justifyContent": "center",
-                                  "marginHorizontal": -100,
-                                }
-                              }
-                            >
-                              <Text
-                                accessibilityStates={Object {}}
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#000000",
-                                      "fontFamily": "System",
-                                      "fontWeight": "400",
-                                      "textAlign": "left",
-                                    },
-                                    Object {
-                                      "color": "white",
-                                    },
-                                  ]
-                                }
-                              >
-                                No Internet Connection
-                              </Text>
-                            </View>
                             <View
                               accessible={true}
                               focusable={true}
@@ -975,6 +1016,105 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           />
                           <View
+                            accessible={true}
+                            focusable={true}
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Array [
+                                false,
+                                Array [
+                                  Object {
+                                    "padding": 8,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "paddingLeft": 8,
+                                    },
+                                    Object {
+                                      "flex": 1,
+                                      "justifyContent": "center",
+                                    },
+                                  ]
+                                }
+                              >
+                                <Text
+                                  numberOfLines={1}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "fontSize": 16,
+                                        },
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                        },
+                                        Object {},
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Send usage statistics
+                                </Text>
+                              </View>
+                              <RCTSwitch
+                                accessibilityRole="switch"
+                                accessibilityStates={Object {}}
+                                onChange={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                onTintColor="#03dac4"
+                                style={
+                                  Object {
+                                    "height": 31,
+                                    "width": 51,
+                                  }
+                                }
+                                tintColor=""
+                                value={false}
+                              />
+                            </View>
+                          </View>
+                          <View
+                            accessibilityStates={Object {}}
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                  "height": 0.5,
+                                },
+                                undefined,
+                                undefined,
+                              ]
+                            }
+                          />
+                          <View
                             style={
                               Object {
                                 "marginBottom": 8,
@@ -1022,9 +1162,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 ]
                               }
                             >
-                              Build version
-                               
-                              22
+                              Build v
+                              24
                             </Text>
                             <Text
                               style={
@@ -1575,6 +1714,47 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     Language
                                   </Text>
                                 </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                          "textAlign": "left",
+                                          "writingDirection": "ltr",
+                                        },
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  English
+                                </Text>
                               </View>
                             </View>
                           </View>
@@ -1981,6 +2161,105 @@ exports[`renders correctly for disabled notifications 1`] = `
                             }
                           />
                           <View
+                            accessible={true}
+                            focusable={true}
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Array [
+                                false,
+                                Array [
+                                  Object {
+                                    "padding": 8,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "paddingLeft": 8,
+                                    },
+                                    Object {
+                                      "flex": 1,
+                                      "justifyContent": "center",
+                                    },
+                                  ]
+                                }
+                              >
+                                <Text
+                                  numberOfLines={1}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "fontSize": 16,
+                                        },
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                        },
+                                        Object {},
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Send usage statistics
+                                </Text>
+                              </View>
+                              <RCTSwitch
+                                accessibilityRole="switch"
+                                accessibilityStates={Object {}}
+                                onChange={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                onTintColor="#03dac4"
+                                style={
+                                  Object {
+                                    "height": 31,
+                                    "width": 51,
+                                  }
+                                }
+                                tintColor=""
+                                value={false}
+                              />
+                            </View>
+                          </View>
+                          <View
+                            accessibilityStates={Object {}}
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                  "height": 0.5,
+                                },
+                                undefined,
+                                undefined,
+                              ]
+                            }
+                          />
+                          <View
                             style={
                               Object {
                                 "marginBottom": 8,
@@ -2028,9 +2307,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 ]
                               }
                             >
-                              Build version
-                               
-                              22
+                              Build v
+                              24
                             </Text>
                             <Text
                               style={
@@ -2581,6 +2859,47 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     Language
                                   </Text>
                                 </View>
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "400",
+                                          "textAlign": "left",
+                                          "writingDirection": "ltr",
+                                        },
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                        Array [
+                                          Object {
+                                            "fontSize": 16,
+                                            "letterSpacing": 0.5,
+                                            "lineHeight": 24,
+                                            "marginVertical": 2,
+                                          },
+                                          undefined,
+                                        ],
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  English
+                                </Text>
                               </View>
                             </View>
                           </View>
@@ -3026,6 +3345,105 @@ exports[`renders correctly for enabled notifications 1`] = `
                             }
                           />
                           <View
+                            accessible={true}
+                            focusable={true}
+                            onClick={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
+                            style={
+                              Array [
+                                false,
+                                Array [
+                                  Object {
+                                    "padding": 8,
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "marginVertical": 6,
+                                      "paddingLeft": 8,
+                                    },
+                                    Object {
+                                      "flex": 1,
+                                      "justifyContent": "center",
+                                    },
+                                  ]
+                                }
+                              >
+                                <Text
+                                  numberOfLines={1}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "fontSize": 16,
+                                        },
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                        },
+                                        Object {},
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  Send usage statistics
+                                </Text>
+                              </View>
+                              <RCTSwitch
+                                accessibilityRole="switch"
+                                accessibilityStates={Object {}}
+                                onChange={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                onTintColor="#03dac4"
+                                style={
+                                  Object {
+                                    "height": 31,
+                                    "width": 51,
+                                  }
+                                }
+                                tintColor=""
+                                value={false}
+                              />
+                            </View>
+                          </View>
+                          <View
+                            accessibilityStates={Object {}}
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                  "height": 0.5,
+                                },
+                                undefined,
+                                undefined,
+                              ]
+                            }
+                          />
+                          <View
                             style={
                               Object {
                                 "marginBottom": 8,
@@ -3073,9 +3491,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 ]
                               }
                             >
-                              Build version
-                               
-                              22
+                              Build v
+                              24
                             </Text>
                             <Text
                               style={

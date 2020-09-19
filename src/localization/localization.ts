@@ -6,6 +6,7 @@ type keys =
     | "darkMode"
     | "settings"
     | "language"
+    | "sendAnalytics"
     | "copyright"
     | "comingSoon"
     | "noInternet"
@@ -14,6 +15,11 @@ type keys =
     | "contributeAwesomeMessageLong"
     | "contributeCountry"
     | "contributeSubmit"
+    | "contributeAgreeToConditions"
+    | "contributeConditions"
+    | "contributeConditionsLink"
+    | "contributeAnd"
+    | "contributePrivacyPolicy"
     | "contributeNavLabel"
     | "contributionStayTuned"
     | "contributionThanks"
@@ -37,7 +43,22 @@ type keys =
     | "myContributionsDeleteDialogTitle"
     | "myContributionsDeleteDialogText"
     | "myContributionsDelete"
-    | "myContributionsCancel";
+    | "myContributionsCancel"
+    | "reportTitle"
+    | "reportConfirmButton"
+    | "reportCancelButton"
+    | "reportReason"
+    | "reportReasonSexual"
+    | "reportReasonHateful"
+    | "reportReasonInfringement"
+    | "reportReasonDrugs"
+    | "reportReasonPII"
+    | "reportReasonOther"
+    | "reportOtherComment"
+    | "reportDescription"
+    | "reportThankYouTitle"
+    | "reportThankYouText"
+    | "reportThankYouButton";
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -65,6 +86,7 @@ const localization: {
             settings: "Settings",
             comingSoon: "Coming soon",
             language: "Language",
+            sendAnalytics: "Send usage statistics",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Home",
@@ -74,13 +96,19 @@ const localization: {
             [Route.MyContributions]: "My Contributions",
             [Route.PrivacyPolicy]: "Privacy Policy",
             [Route.Favorites]: "Favorites",
-            buildVersion: "Build version",
-            noInternet: "No Internet Connection",
+            buildVersion: "Build v",
+            noInternet: "Internet connection required",
             contributeAwesomeMessage: "Your Awesome Message",
             contributeAwesomeMessageLong: "Your awesome message to the world",
             contributeCountry: "Country",
             contributeName: "Nickname",
             contributeSubmit: "Submit",
+            contributeAgreeToConditions: "I have read and agree to the ",
+            contributeConditions: "Terms & Conditions",
+            contributeConditionsLink:
+                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+            contributeAnd: " and ",
+            contributePrivacyPolicy: "Privacy Policy",
             contributionStayTuned:
                 "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)",
             contributionThanks: "Thanks for your contribution!",
@@ -110,6 +138,22 @@ const localization: {
             myContributionsDeleteDialogText:
                 "Deleting list items is permanent and cannot be reverted.\nNote that deletions do not affect server data. Deletions are only effective on your device.",
             myContributionsDeleteDialogTitle: "Are you sure?",
+            reportCancelButton: "Cancel",
+            reportConfirmButton: "Report",
+            reportDescription: "Why do you find the content objectionable?",
+            reportReason: "Reason",
+            reportReasonSexual: "Sexual content",
+            reportReasonHateful: "Hateful or abusive content",
+            reportReasonInfringement: "Intellectual property infringement",
+            reportReasonDrugs: "Relating to drugs or similar",
+            reportReasonPII: "Personally identifiable information",
+            reportReasonOther: "Other",
+            reportOtherComment: "Details",
+            reportTitle: "Report as inappropriate",
+            reportThankYouButton: "Close",
+            reportThankYouTitle: "Thanks for Reporting",
+            reportThankYouText:
+                "We are committed to protecting our users and others as well as their rights. We will check your report as soon as possible and take appropriate action.",
         },
     },
     de: {
@@ -119,6 +163,7 @@ const localization: {
             settings: "Einstellungen",
             comingSoon: "In Kürze verfügbar",
             language: "Sprache",
+            sendAnalytics: "Nutzungsstatistiken senden",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "Start",
@@ -128,13 +173,19 @@ const localization: {
             [Route.MyContributions]: "Meine Beiträge",
             [Route.PrivacyPolicy]: "Datenschutzerklärung",
             [Route.Favorites]: "Favoriten",
-            buildVersion: "Programmversion",
-            noInternet: "Keine Internetverbindung",
+            buildVersion: "Programmversion ",
+            noInternet: "Internetverbindung benötigt",
             contributeAwesomeMessage: "Deine Awesome Nachricht",
             contributeAwesomeMessageLong: "Deine awesome Nachricht an die Welt",
             contributeCountry: "Land",
             contributeName: "Spitzname",
             contributeSubmit: "Senden",
+            contributeAgreeToConditions: "Ich verstehe und akzeptiere die ",
+            contributeConditions: "Nutzungsbedingungen",
+            contributeConditionsLink:
+                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+            contributeAnd: " und ",
+            contributePrivacyPolicy: "Datenschutzerklärung",
             contributionStayTuned:
                 "\n\nAufgrund der begrenzten Anzahl an Nachrichten, die wir jeden Tag zeigen können, wählen wir Beiträge per Hand aus. Mit ein wenig Glück ist deine Nachricht in Kürze für alle in der Community sichtbar. Freu dich darauf! :)",
             contributionThanks: "Danke für deinen Beitrag!",
@@ -164,6 +215,22 @@ const localization: {
             myContributionsDeleteDialogText:
                 "Das Löschen von Beiträge ist permanent und kann nicht rückgängig gemacht werden. Bitte beachte, dass keine Daten auf den Servern gelöscht werden. Nur Daten auf diesem Gerät werden gelöscht.",
             myContributionsDeleteDialogTitle: "Bist du sicher?",
+            reportCancelButton: "Abbrechen",
+            reportConfirmButton: "Melden",
+            reportDescription: "Warum findest du diese Inhalte unangemessen?",
+            reportReason: "Grund",
+            reportReasonSexual: "Sexualle Inhalte",
+            reportReasonHateful: "Missbrauch oder hasserfüllte Inhalte",
+            reportReasonInfringement: "Verletzung geistigen Eigentums",
+            reportReasonDrugs: "Drogen oder ähnliches betreffend",
+            reportReasonPII: "Personenbezogene Informationen",
+            reportReasonOther: "Andere",
+            reportOtherComment: "Details",
+            reportTitle: "Als unangemessen melden",
+            reportThankYouButton: "Schließen",
+            reportThankYouTitle: "Vielen Dank für die Meldung",
+            reportThankYouText:
+                "Wir sind stets bemüht unsere Nutzer und andere sowie deren Rechte zu schützen. Wir werden deine Meldung so schnell wie möglich prüfen und entsprechende Maßnahmen ergreifen.",
         },
     },
     ja: {
@@ -173,6 +240,7 @@ const localization: {
             settings: "設定",
             comingSoon: "近日公開",
             language: "言語",
+            sendAnalytics: "利用状況の統計を送信する",
             copyright:
                 "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
             [Route.Home]: "ホーム",
@@ -182,7 +250,7 @@ const localization: {
             [Route.MyContributions]: "自分の送信したすごいメッセージ",
             [Route.PrivacyPolicy]: "プライバシー ポリシー",
             [Route.Favorites]: "お気に入り",
-            buildVersion: "ビルドバージョン",
+            buildVersion: "ビルド v",
             noInternet: "インターネットに接続できませんでした",
             contributeAwesomeMessage: "すごいメッセージ",
             contributeAwesomeMessageLong:
@@ -190,6 +258,12 @@ const localization: {
             contributeCountry: "国",
             contributeName: "ニックネーム",
             contributeSubmit: "送信",
+            contributeAgreeToConditions: "利用条件に同意する。 ",
+            contributeConditions: "利用条件へ",
+            contributeConditionsLink:
+                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+            contributeAnd: "。",
+            contributePrivacyPolicy: "プライバシー ポリシーへ",
             contributionStayTuned:
                 "\n\n毎日一つのメッセージだけが表示されているため、届いたメッセージは手動で選択されています。運がよければあなたのメッセージももうすぐ選ばれるかもしれません。ということで、お楽しみに! (≧▽≦)",
             contributionMember:
@@ -219,6 +293,22 @@ const localization: {
             myContributionsDeleteDialogText:
                 "削除すると元に戻すことはできません。サーバーに保存しているデータは消除されることはできません。このデバイスに保存しているのデータだけは消除されます。",
             myContributionsDeleteDialogTitle: "削除確認",
+            reportCancelButton: "キャンセル",
+            reportConfirmButton: "報告する",
+            reportDescription: "なんでこのコンテンツは不適切だと思いますか？",
+            reportReason: "理由",
+            reportReasonSexual: "性的な内容",
+            reportReasonHateful: "ひどい言葉、いやな言葉、侮辱的な言葉",
+            reportReasonInfringement: "著作権侵害",
+            reportReasonDrugs: "違法物質に関連する",
+            reportReasonPII: "個人を特定できる情報",
+            reportReasonOther: "その他",
+            reportOtherComment: "詳細",
+            reportTitle: "不適切として報告する",
+            reportThankYouButton: "閉じる",
+            reportThankYouTitle: "報告ありがとうございます",
+            reportThankYouText:
+                "You are Awesome App!では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。",
         },
     },
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { unregisterFromPushNotifications } from "../../src/api/unregisterFromPushNotifications";
-import { URI } from "../../src/config";
+import { CONFIG } from "../../src/config";
 
 jest.mock("expo-notifications", () => ({
     getExpoPushTokenAsync: () =>
@@ -21,7 +21,7 @@ describe("unregisterForPushNotifications", () => {
 
         expect(result).toEqual(undefined);
         expect(postSpy).toBeCalledWith(
-            URI.UNREGISTER_PUSH_NOTIFICATION,
+            CONFIG.uri.unregisterFromPushNotifications,
             { token: "mock-push-token-123" },
             {
                 headers: {

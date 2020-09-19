@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
       ]
     }
   >
-    No Internet Connection
+    Internet connection required
   </Text>
 </View>
 `;

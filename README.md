@@ -11,21 +11,17 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 - [Google Play Console](https://play.google.com/apps/publish/)
 - [Google Sheets](https://docs.google.com/spreadsheets/)
 - [EasyCron](https://www.easycron.com/user)
+- [Firebase](https://console.firebase.google.com/u/0/project/youareawesomeapp-c8835/overview)
 - [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
+- [AWS S3](https://s3.console.aws.amazon.com/s3/home?region=eu-central-1)
 
 ## Legals
-
-- [Privacy Policy](https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html)
-- [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
 
 ### Legal Attributions
 
 Google Play and the Google Play logo are trademarks of Google LLC.
 
 #### Further reading
-
-- [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
-- [Expo Doc Limits of Publish](https://docs.expo.io/versions/latest/workflow/publishing/#deploying-to-the-app-store-and-play)
 
 ## Development
 
@@ -79,7 +75,9 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [React Native Vector Icon List](https://oblador.github.io/react-native-vector-icons/)
 - [Monetize Expo App](https://medium.com/leckr-react-native-graphql-apollo-tutorials/monetisation-of-your-react-native-app-7c63241c4460)
 - [Expo Admob SDK](https://docs.expo.io/versions/latest/sdk/admob/)
+- [ezgif Gif Maker](https://ezgif.com/maker)
 - [Microsoft UI Translations](https://www.microsoft.com/en-us/language)
+- [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
 
 ## Frequent Development Mistakes
 
@@ -98,3 +96,14 @@ will result in `ReferenceError: Can't find variable: React`.
 ```typescript
 import React, { FC } from "react";
 ```
+
+### During tests: Unable to find node on an unmounted component
+
+```log
+Unable to find node on an unmounted component.
+
+at node_modules/@testing-library/react-native/build/helpers/findByAPI.js:16:115
+at Timeout.runExpectation [as _onTimeout] (node_modules/@testing-library/react-native/build/waitFor.js:48:24)
+```
+
+If this happens in places where the `Portal` component is used, first check that the state is mocked correctly (including for all rendered subcomponents).

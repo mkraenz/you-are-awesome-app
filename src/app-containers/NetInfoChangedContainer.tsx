@@ -30,7 +30,7 @@ class NetInfoChangedContainer extends Component<Props> {
 }
 
 const mapStateToProps = (state: IState) => state;
-const mapDispatchToProps = { changeNetInfo };
+const mapDispatchToProps: Pick<Props, "changeNetInfo"> = { changeNetInfo };
 
 export default connect(
     mapStateToProps,

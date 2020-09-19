@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { submitContribution } from "../../api/submitContribution";
-import { URI } from "../../config";
+import { CONFIG } from "../../config";
 import { pick } from "../../utils/pick";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
@@ -21,7 +21,7 @@ function* submitMessageWorkerSaga(
         const responseData: AwaitedReturnType<typeof submitContribution> = yield call(
             submitContribution,
             submitMessageRequested.payload,
-            URI.SEND_MESSAGES
+            CONFIG.uri.submitContribution
         );
         const success: ISubmitMessageSucceeded = {
             type: ActionType.SubmitMessageSucceeded,

@@ -4,6 +4,7 @@ import {
     IChangePushNotificationTime,
     ISetLanguage,
     ISetPushNotificationsState,
+    IToggleAnalytics,
     IToggleDarkThemeAction,
 } from "../../../src/state/actions/IAppAction";
 import { appReducer } from "../../../src/state/reducers/appReducer";
@@ -19,6 +20,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
@@ -32,6 +34,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -41,6 +44,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
@@ -54,6 +58,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -63,6 +68,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
@@ -80,6 +86,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -89,6 +96,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: true,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
@@ -106,6 +114,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: true,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -115,6 +124,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
@@ -131,6 +141,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -140,6 +151,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date("2016"),
             language: null,
+            analyticsEnabled: true,
         };
         expect(result).toEqual(expected);
     });
@@ -156,6 +168,7 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: null,
+            analyticsEnabled: true,
         };
 
         const result = appReducer(state, action);
@@ -165,6 +178,28 @@ describe("appReducer()", () => {
             pushNotificationsEnabled: false,
             pushNotificationsScheduledTime: new Date(0),
             language: Language.English,
+            analyticsEnabled: true,
+        };
+        expect(result).toEqual(expected);
+    });
+
+    it(`should handle ${ActionType.ToggleAnalytics}`, () => {
+        const action: IToggleAnalytics = {
+            type: ActionType.ToggleAnalytics,
+        };
+        const state: IAppState = {
+            isDarkModeOn: false,
+            pushNotificationsEnabled: false,
+            pushNotificationsScheduledTime: new Date(0),
+            language: null,
+            analyticsEnabled: true,
+        };
+
+        const result = appReducer(state, action);
+
+        const expected: IAppState = {
+            ...state,
+            analyticsEnabled: false,
         };
         expect(result).toEqual(expected);
     });

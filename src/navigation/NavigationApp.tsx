@@ -1,12 +1,11 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dimensions, Keyboard, StyleSheet } from "react-native";
 import { useTheme } from "react-native-paper";
 import TabBarIcon from "../components/navigation/TabBarIcon";
-import { START_SCREEN } from "../config";
+import { CONFIG } from "../config";
 import ContributionScreen from "../screens/ContributionScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
@@ -14,6 +13,7 @@ import MyContributionsScreen from "../screens/MyContributionsScreen";
 import PrivacyPolicyScreen from "../screens/PrivacyPolicyScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import { FullTheme } from "../themes/theme";
+import NavContainerWithAnalytics from "./NavContainerWithAnalytics";
 import { Route } from "./Route";
 
 const styles = StyleSheet.create({
@@ -74,11 +74,12 @@ const NavigationApp = () => {
     const handleKeyboardHidden = () => setKeyboardShown(false);
 
     const theme = useTheme() as FullTheme;
+
     const { t } = useTranslation();
     return (
-        <NavigationContainer theme={theme}>
+        <NavContainerWithAnalytics>
             <Tab.Navigator
-                initialRouteName={START_SCREEN}
+                initialRouteName={CONFIG.startScreen}
                 tabBarPosition="bottom"
                 tabBarOptions={{
                     showIcon: true,
@@ -138,7 +139,7 @@ const NavigationApp = () => {
                     }}
                 />
             </Tab.Navigator>
-        </NavigationContainer>
+        </NavContainerWithAnalytics>
     );
 };
 

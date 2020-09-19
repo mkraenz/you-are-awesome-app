@@ -1,4 +1,5 @@
 import {
+    analyticsEnabled,
     internetConnected,
     pushNotificationsEnabled,
 } from "../../src/state/selectors";
@@ -20,6 +21,16 @@ it("internetConnected returns the state", () => {
     };
 
     const result = internetConnected(state);
+
+    expect(result).toBe(true);
+});
+
+it("analyticsEnabled returns the state", () => {
+    const state: Unpack<Parameters<typeof analyticsEnabled>> = {
+        app: { analyticsEnabled: true },
+    };
+
+    const result = analyticsEnabled(state);
 
     expect(result).toBe(true);
 });
