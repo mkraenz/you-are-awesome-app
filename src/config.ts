@@ -5,6 +5,7 @@ const prodConfig = {
     isProd: true,
     featureFlags: {
         analytics: true,
+        developerSettings: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -32,6 +33,7 @@ const devConfig: typeof prodConfig = {
     isProd: false,
     featureFlags: {
         analytics: false,
+        developerSettings: false,
     },
     debugAnalytics: true,
     fallbackLanguage: Language.English,

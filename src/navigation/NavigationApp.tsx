@@ -7,6 +7,7 @@ import { useTheme } from "react-native-paper";
 import TabBarIcon from "../components/navigation/TabBarIcon";
 import { CONFIG } from "../config";
 import ContributionScreen from "../screens/ContributionScreen";
+import DeveloperSettingsScreen from "../screens/DeveloperSettingsScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
 import MyContributionsScreen from "../screens/MyContributionsScreen";
@@ -40,6 +41,10 @@ export const SettingsStack = () => {
             <Stack.Screen
                 name={Route.PrivacyPolicy}
                 component={PrivacyPolicyScreen}
+            />
+            <Stack.Screen
+                name={Route.DeveloperSettings}
+                component={DeveloperSettingsScreen}
             />
         </Stack.Navigator>
     );
