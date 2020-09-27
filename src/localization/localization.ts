@@ -7,7 +7,10 @@ type keys =
     | "settings"
     | "language"
     | "sendAnalytics"
-    | "copyright"
+    | "copyright1"
+    | "copyright2Company"
+    | "copyright3"
+    | "companyLink"
     | "comingSoon"
     | "noInternet"
     | "buildVersion"
@@ -76,19 +79,25 @@ export enum LanguageCodeToLocalizedLang {
     ja = "日本語",
 }
 
+const shared = {
+    companyLink: "http://kraenz.eu",
+};
+
 const localization: {
     [locale in Language]: ITranslations;
 } = {
     en: {
         default: {
+            ...shared,
             appTitle: "You are Awesome App!",
             darkMode: "Dark mode",
             settings: "Settings",
             comingSoon: "Coming soon",
             language: "Language",
             sendAnalytics: "Send usage statistics",
-            copyright:
-                "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
+            copyright1: "Copyright © ",
+            copyright2Company: "Kraenz Software Development",
+            copyright3: "\nMirco Kraenz 2020",
             [Route.Home]: "Home",
             [Route.Settings]: "Settings",
             [Route.Contribute]: "Contribution",
@@ -159,14 +168,16 @@ const localization: {
     },
     de: {
         default: {
+            ...shared,
             appTitle: "You are Awesome App!",
             darkMode: "Nachtmodus",
             settings: "Einstellungen",
             comingSoon: "In Kürze verfügbar",
             language: "Sprache",
             sendAnalytics: "Nutzungsstatistiken senden",
-            copyright:
-                "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
+            copyright1: "Copyright © ",
+            copyright2Company: "Kraenz Software Development",
+            copyright3: "\nMirco Kraenz 2020",
             [Route.Home]: "Start",
             [Route.Settings]: "Einstellungen",
             [Route.Contribute]: "Teilen",
@@ -237,14 +248,16 @@ const localization: {
     },
     ja: {
         default: {
+            ...shared,
             appTitle: "You are Awesome App!",
             darkMode: "ダークモード",
             settings: "設定",
             comingSoon: "近日公開",
             language: "言語",
             sendAnalytics: "利用状況の統計を送信する",
-            copyright:
-                "Copyright © Kraenz Software Development\nMirco Kraenz 2020",
+            copyright1: "Copyright © ",
+            copyright2Company: "Kraenz Software Development",
+            copyright3: "\nMirco Kraenz 2020",
             [Route.Home]: "ホーム",
             [Route.Settings]: "設定",
             [Route.Contribute]: "シェア",
