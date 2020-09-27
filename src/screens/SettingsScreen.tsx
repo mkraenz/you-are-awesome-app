@@ -9,6 +9,7 @@ import OfflineNotice from "../components/common/OfflineNotice";
 import LanguageDropdown from "../components/settings/LanguageDropdown";
 import PushNotificationSettings from "../components/settings/PushNotificationSettings";
 import SettingsRow from "../components/settings/SettingsRow";
+import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
 import { toggleAnalytics } from "../state/action-creators/toggleAnalytics";
 import { toggleDarkTheme } from "../state/action-creators/toggleDarkTheme";
@@ -44,13 +45,9 @@ const SettingsScreen: FC<Props> = ({
     connectedToInternet,
 }) => {
     const { t } = useTranslation();
-    const navigation = useNavigation();
+    const { navigate } = useNavigation();
 
-    const handlePrivacyPolicyPressed = () =>
-        navigation.navigate(Route.PrivacyPolicy);
-    const handleSendAnalyticsPressed = () => {
-        toggleAnalytics();
-    };
+    const handlePrivacyPolicyPressed = () => navigate(Route.PrivacyPolicy);
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
             {!connectedToInternet && <OfflineNotice />}
@@ -70,23 +67,28 @@ const SettingsScreen: FC<Props> = ({
             />
             <Divider accessibilityStates={{}} />
             <SettingsRow
-                title={t("privacyPolicy")}
+                title={t(Route.PrivacyPolicy)}
                 onPress={handlePrivacyPolicyPressed}
             />
             <Divider accessibilityStates={{}} />
             <SettingsRow
                 title={t("sendAnalytics")}
-                onPress={handleSendAnalyticsPressed}
+                onPress={toggleAnalytics}
                 rightComponent={() => () => (
                     <Switch
                         value={analyticsEnabled}
-                        onValueChange={handleSendAnalyticsPressed}
+                        onValueChange={toggleAnalytics}
                         accessibilityStates={{}}
                     ></Switch>
                 )}
             />
             <Divider accessibilityStates={{}} />
-
+            {CONFIG.featureFlags.developerSettings && (
+                <SettingsRow
+                    onPress={() => navigate(Route.DeveloperSettings)}
+                    title={t(Route.DeveloperSettings)}
+                />
+            )}
             <About />
         </Layout>
     );
