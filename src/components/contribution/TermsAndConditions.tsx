@@ -2,9 +2,13 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, View } from "react-native";
 import { Checkbox, List, Paragraph, useTheme } from "react-native-paper";
+import { Color } from "../../themes/theme";
 
 const styles = StyleSheet.create({
-    link: { color: "blue", textDecorationLine: "underline" },
+    link: {
+        color: Color.Blue,
+        textDecorationLine: "underline",
+    },
     checkboxContainer: {
         display: "flex",
         alignItems: "center",

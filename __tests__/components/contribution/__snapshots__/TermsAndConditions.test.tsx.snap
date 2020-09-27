@@ -221,7 +221,7 @@ exports[`renders correctly 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -233,7 +233,7 @@ exports[`renders correctly 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -310,7 +310,7 @@ exports[`renders correctly 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -322,7 +322,7 @@ exports[`renders correctly 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -597,7 +597,7 @@ exports[`renders correctly on error 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -609,7 +609,7 @@ exports[`renders correctly on error 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -690,7 +690,7 @@ exports[`renders correctly on error 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],
@@ -702,7 +702,7 @@ exports[`renders correctly on error 1`] = `
                       "marginVertical": 2,
                     },
                     Object {
-                      "color": "blue",
+                      "color": "#1084ff",
                       "textDecorationLine": "underline",
                     },
                   ],

@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleSheet, View } from "react-native";
+import { Linking, StyleSheet, View } from "react-native";
 import { Divider, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
@@ -14,6 +14,7 @@ import { Route } from "../navigation/Route";
 import { toggleAnalytics } from "../state/action-creators/toggleAnalytics";
 import { toggleDarkTheme } from "../state/action-creators/toggleDarkTheme";
 import { MapStateToProps } from "../state/state/MapStateToProps";
+import { Color } from "../themes/theme";
 import version from "../utils/version.json";
 
 const styles = StyleSheet.create({
@@ -21,6 +22,10 @@ const styles = StyleSheet.create({
         marginTop: "auto",
         marginHorizontal: 16,
         marginBottom: 8,
+    },
+    link: {
+        color: Color.Blue,
+        textDecorationLine: "underline",
     },
 });
 
@@ -102,7 +107,16 @@ const About = () => {
                 {t("buildVersion")}
                 {version.jsBuildNumber}
             </Paragraph>
-            <Paragraph>{t("copyright")}</Paragraph>
+            <Paragraph>
+                {t("copyright1")}
+                <Paragraph
+                    onPress={() => Linking.openURL(t("companyLink"))}
+                    style={styles.link}
+                >
+                    {t("copyright2Company")}
+                </Paragraph>
+                {t("copyright3")}
+            </Paragraph>
         </View>
     );
 };
