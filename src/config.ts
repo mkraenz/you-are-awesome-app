@@ -13,7 +13,7 @@ const prodConfig = {
     defaultNotificationHour: 11,
     uri: {
         fetchMessages:
-            "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
+            "https://t1sy9ka9nf.execute-api.eu-central-1.amazonaws.com/prod/?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
         submitContribution:
             "https://s25cfu9sz3.execute-api.eu-central-1.amazonaws.com/prod/contrib",
         registerForPushNotifications:
@@ -41,7 +41,7 @@ const devConfig: typeof prodConfig = {
     defaultNotificationHour: 11,
     uri: {
         fetchMessages:
-            "http://gsx2json.com/api?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
+            "https://t1sy9ka9nf.execute-api.eu-central-1.amazonaws.com/prod/?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
         submitContribution:
             "https://s25cfu9sz3.execute-api.eu-central-1.amazonaws.com/prod/contrib",
         registerForPushNotifications:
