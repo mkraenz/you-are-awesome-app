@@ -25,7 +25,7 @@
         "test:update-snapshot": "jest --updateSnapshot --coverage=false",
         "assert:prod-config": "ts-node ./scripts/assertProdConfig.ts",
         "build-and-publish:expo:android": "NODE_ENV=prod expo build:android --type apk",
-        "publish:playstore": "NODE_ENV=prod expo upload:android --latest --use-submission-service",
+        "publish:playstore": "NODE_ENV=prod expo upload:android --latest",
         "deploy:ota:prod": "NODE_ENV=prod node ./scripts/expo-publish-with-version.js",
         "deploy:ota:test": "expo publish --release-channel test"
     },
