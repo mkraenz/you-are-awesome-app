@@ -23,7 +23,7 @@
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 7,
+            "versionCode": 8,
             "useNextNotificationsApi": true
         },
         "ios": {
