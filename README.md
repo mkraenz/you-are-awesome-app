@@ -37,9 +37,9 @@ deploy:ota:prod
 
 When a User now starts her app (even if installed from the Google Play Store!), the app tries to download the newest JS files for the app and runs the newest version. It falls back to the cached (i.e. previous) version after 2 seconds.
 
-##### Special case - changes to app.json
+##### Special case - changes to app.json or Expo SDK
 
-Only in case `app.json` changes, one needs to rebuild the app and republish to expo.
+Only in case of changes to `app.json` or the Expo SDK version, one needs to rebuild the app and republish to expo.
 
 ```shell
 yarn build-and-publish:expo:android
