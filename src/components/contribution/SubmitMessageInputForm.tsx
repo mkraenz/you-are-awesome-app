@@ -129,7 +129,6 @@ const SubmitMessageInputForm: FC<Props> = ({
                 style={styles.button}
                 onPress={onSubmit}
                 disabled={!connectedToInternet}
-                accessibilityStates={{}}
             >
                 {t("contributeSubmit")}
             </Button>

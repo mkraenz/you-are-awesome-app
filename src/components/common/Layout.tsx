@@ -44,7 +44,7 @@ const Layout: FC<Props> = ({
     };
 
     return (
-        <Surface style={containerStyles} accessibilityStates={{}}>
+        <Surface style={containerStyles}>
             <MyAppbar {...appbarProps} title={title || t("appTitle")} />
             <View style={contentContainerStyles}>{children}</View>
         </Surface>

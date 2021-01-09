@@ -60,9 +60,7 @@ const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
                         }}
                         title={lang}
                     />
-                    {i !== languages.length - 1 && (
-                        <Divider accessibilityStates={{}} />
-                    )}
+                    {i !== languages.length - 1 && <Divider />}
                 </Fragment>
             ))}
         </Menu>

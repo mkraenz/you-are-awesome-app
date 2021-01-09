@@ -52,7 +52,6 @@ const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
         // in case of multiline title, center the checkbox
         <View style={styles.checkboxContainer}>
             <Checkbox.Android
-                accessibilityStates={{}}
                 testID="terms-and-conditions-consent-checkbox"
                 status={accepted ? "checked" : "unchecked"}
                 onPress={handlePress}
@@ -64,7 +63,6 @@ const TermsAndConditions: FC<Props> = ({ accepted, handlePress, error }) => {
 
     return (
         <List.Item
-            accessibilityStates={{}}
             title={renderTitle}
             left={renderCheckbox}
             titleNumberOfLines={3}

@@ -32,7 +32,6 @@ exports[`renders correctly without dark mode 1`] = `
     }
   >
     <View
-      accessibilityStates={Object {}}
       style={
         Object {
           "alignItems": "center",
@@ -53,7 +52,6 @@ exports[`renders correctly without dark mode 1`] = `
         }
       />
       <View
-        accessibilityStates={Object {}}
         accessible={true}
         focusable={false}
         onClick={[Function]}

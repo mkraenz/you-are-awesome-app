@@ -31,12 +31,7 @@ const DeveloperSettingsScreen: FC = () => {
 
 const MyButton: FC<{ onPress: () => void }> = ({ children, onPress }) => {
     return (
-        <Button
-            onPress={onPress}
-            accessibilityStates={{}}
-            mode="outlined"
-            style={{ margin: 8 }}
-        >
+        <Button onPress={onPress} mode="outlined" style={{ margin: 8 }}>
             {children}
         </Button>
     );

@@ -48,7 +48,7 @@ it("renders correctly in select mode with disabled radio button", async () => {
             />
         </TestLocalizationProvider>
     );
-    const selectedButton = await findByA11yRole("button");
+    const selectedButton = await findByA11yRole("radio");
     await act(async () => {});
 
     expect(selectedButton).toBeTruthy();
@@ -60,7 +60,7 @@ it("renders correctly in select mode with disabled radio button", async () => {
 });
 
 it("renders correctly in select mode with enabled radio button", async () => {
-    const { findByA11yRole, ...tree } = render(
+    const { findByA11yRole, debug, ...tree } = render(
         <TestLocalizationProvider>
             <ListItem
                 author="Merlin"
@@ -74,8 +74,7 @@ it("renders correctly in select mode with enabled radio button", async () => {
             />
         </TestLocalizationProvider>
     );
-    const selectedButton = await findByA11yRole("button");
-    await act(async () => {});
+    const selectedButton = await findByA11yRole("radio");
 
     expect(selectedButton).toBeTruthy();
     // wow, this is incredibly ugly

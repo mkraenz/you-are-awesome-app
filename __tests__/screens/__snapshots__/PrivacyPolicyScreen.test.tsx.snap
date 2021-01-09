@@ -291,7 +291,6 @@ exports[`renders a button and the webview 1`] = `
                       }
                     >
                       <View
-                        accessibilityStates={Object {}}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -329,7 +328,6 @@ exports[`renders a button and the webview 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -345,6 +343,11 @@ exports[`renders a button and the webview 1`] = `
                             <View
                               accessibilityLabel="Back"
                               accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "disabled": undefined,
+                                }
+                              }
                               accessible={true}
                               focusable={true}
                               hitSlop={
@@ -441,12 +444,12 @@ exports[`renders a button and the webview 1`] = `
                                         style={
                                           Array [
                                             Object {
-                                              "height": 21,
                                               "resizeMode": "contain",
-                                              "width": 21,
                                             },
                                             Object {
+                                              "height": 21,
                                               "tintColor": "#ffffff",
+                                              "width": 21,
                                             },
                                           ]
                                         }
@@ -457,7 +460,6 @@ exports[`renders a button and the webview 1`] = `
                               </View>
                             </View>
                             <View
-                              accessibilityStates={Object {}}
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -527,7 +529,6 @@ exports[`renders a button and the webview 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "backgroundColor": "#6200ee",
@@ -550,6 +551,11 @@ exports[`renders a button and the webview 1`] = `
                           >
                             <View
                               accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "disabled": undefined,
+                                }
+                              }
                               accessible={true}
                               focusable={true}
                               onClick={[Function]}
@@ -584,6 +590,7 @@ exports[`renders a button and the webview 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {

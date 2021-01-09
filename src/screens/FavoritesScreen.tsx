@@ -79,9 +79,7 @@ const FavoritesScreen: FC<Props> = ({ messages, deleteFavorites }) => {
                         ></ListItem>
                     );
                 }}
-                ItemSeparatorComponent={() => (
-                    <Divider accessibilityStates={{}} />
-                )}
+                ItemSeparatorComponent={() => <Divider />}
                 onEndReachedThreshold={0.2}
                 initialNumToRender={20}
             />

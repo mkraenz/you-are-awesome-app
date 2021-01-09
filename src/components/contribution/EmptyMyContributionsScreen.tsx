@@ -33,7 +33,6 @@ const EmptyMyContributionsScreen = () => {
                 <Button
                     mode="outlined"
                     onPress={goBack}
-                    accessibilityStates={{}}
                     style={styles.button}
                     icon={() => (
                         <FontAwesome5

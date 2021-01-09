@@ -4,6 +4,7 @@ exports[`renders correctly 1`] = `
 <View
   accessibilityLiveRegion="polite"
   accessibilityViewIsModal={true}
+  onAccessibilityEscape={[Function]}
   pointerEvents="auto"
   style={
     Object {
@@ -16,6 +17,8 @@ exports[`renders correctly 1`] = `
   }
 >
   <View
+    accessibilityLabel="Close modal"
+    accessibilityRole="button"
     accessible={true}
     focusable={true}
     onClick={[Function]}
@@ -34,22 +37,23 @@ exports[`renders correctly 1`] = `
     }
   />
   <View
-    forwardedRef={[Function]}
-    onLayout={[Function]}
     pointerEvents="box-none"
     style={
-      Object {
-        "bottom": 0,
-        "justifyContent": "center",
-        "left": 0,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 20,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "marginBottom": 0,
+          "marginTop": 20,
+        },
+        undefined,
+      ]
     }
   >
     <View
@@ -74,7 +78,6 @@ exports[`renders correctly 1`] = `
     >
       <Text
         accessibilityRole="header"
-        accessibilityStates={Object {}}
         accessibilityTraits="header"
         style={
           Array [
@@ -92,25 +95,6 @@ exports[`renders correctly 1`] = `
                 "textAlign": "left",
                 "writingDirection": "ltr",
               },
-              Array [
-                Object {
-                  "fontSize": 20,
-                  "letterSpacing": 0.15,
-                  "lineHeight": 30,
-                  "marginVertical": 2,
-                },
-                Array [
-                  Object {
-                    "marginBottom": 18,
-                    "marginHorizontal": 24,
-                    "marginTop": 22,
-                  },
-                  Object {
-                    "color": "#000000",
-                  },
-                  undefined,
-                ],
-              ],
               Array [
                 Object {
                   "fontSize": 20,
@@ -173,15 +157,6 @@ exports[`renders correctly 1`] = `
                   },
                   undefined,
                 ],
-                Array [
-                  Object {
-                    "fontSize": 14,
-                    "letterSpacing": 0.25,
-                    "lineHeight": 20,
-                    "marginVertical": 2,
-                  },
-                  undefined,
-                ],
               ],
             ]
           }
@@ -203,7 +178,6 @@ exports[`renders correctly 1`] = `
         }
       >
         <View
-          accessibilityStates={Object {}}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -218,6 +192,11 @@ exports[`renders correctly 1`] = `
         >
           <View
             accessibilityRole="button"
+            accessibilityState={
+              Object {
+                "disabled": undefined,
+              }
+            }
             accessible={true}
             focusable={true}
             onClick={[Function]}
@@ -252,6 +231,7 @@ exports[`renders correctly 1`] = `
             >
               <Text
                 numberOfLines={1}
+                selectable={false}
                 style={
                   Array [
                     Object {

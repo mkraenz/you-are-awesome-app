@@ -46,7 +46,6 @@ const ListItem: FC<Props> = ({
             return (
                 <View style={styles.selectButtonContainer}>
                     <RadioButton.Android
-                        accessibilityStates={{}}
                         value="first"
                         status={selected ? "checked" : "unchecked"}
                     />
@@ -61,7 +60,6 @@ const ListItem: FC<Props> = ({
             onPress={selectMode ? onPressInSelectMode : undefined}
         >
             <List.Item
-                accessibilityStates={{}}
                 title={<Subheading>{text}</Subheading>}
                 titleNumberOfLines={5}
                 left={maybeRenderSelectionIndicator}

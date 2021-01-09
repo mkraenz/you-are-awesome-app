@@ -74,7 +74,7 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                     numberOfTaps={2}
                 >
                     <View style={styles.container}>
-                        <Card style={cardStyle} accessibilityStates={{}}>
+                        <Card style={cardStyle}>
                             <Card.Content style={styles.bubble}>
                                 <Title style={{ color: "white" }}>{text}</Title>
                                 <Paragraph style={{ color: "white" }}>

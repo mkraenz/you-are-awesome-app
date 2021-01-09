@@ -57,7 +57,7 @@ const SettingsScreen: FC<Props> = ({
         <Layout route={Route.Settings} title={t(Route.Settings)}>
             {!connectedToInternet && <OfflineNotice />}
             <LanguageDropdown />
-            <Divider accessibilityStates={{}} />
+            <Divider />
             <PushNotificationSettings />
             <SettingsRow
                 title={t("darkMode")}
@@ -66,16 +66,15 @@ const SettingsScreen: FC<Props> = ({
                     <Switch
                         value={isDarkModeOn}
                         onValueChange={toggleDarkTheme}
-                        accessibilityStates={{}}
                     ></Switch>
                 )}
             />
-            <Divider accessibilityStates={{}} />
+            <Divider />
             <SettingsRow
                 title={t(Route.PrivacyPolicy)}
                 onPress={handlePrivacyPolicyPressed}
             />
-            <Divider accessibilityStates={{}} />
+            <Divider />
             <SettingsRow
                 title={t("sendAnalytics")}
                 onPress={toggleAnalytics}
@@ -83,11 +82,10 @@ const SettingsScreen: FC<Props> = ({
                     <Switch
                         value={analyticsEnabled}
                         onValueChange={toggleAnalytics}
-                        accessibilityStates={{}}
                     ></Switch>
                 )}
             />
-            <Divider accessibilityStates={{}} />
+            <Divider />
             {CONFIG.featureFlags.developerSettings && (
                 <SettingsRow
                     onPress={() => navigate(Route.DeveloperSettings)}

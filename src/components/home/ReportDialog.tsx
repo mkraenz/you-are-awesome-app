@@ -96,7 +96,6 @@ const ReportDialog: FC<Props> = ({
 
     const renderReasonsInput = () => (
         <TextInput
-            accessibilityStates={{}}
             label={t("reportReason")}
             onFocus={() => showReasons(true)}
             pointerEvents="none"
@@ -113,9 +112,7 @@ const ReportDialog: FC<Props> = ({
     }
     return (
         <Dialog visible={visible} onDismiss={handleClose}>
-            <Dialog.Title accessibilityStates={{}}>
-                {t("reportTitle")}
-            </Dialog.Title>
+            <Dialog.Title>{t("reportTitle")}</Dialog.Title>
             <Dialog.Content>
                 <Paragraph>{t("reportDescription")}</Paragraph>
                 <Menu
@@ -152,7 +149,6 @@ const ReportDialog: FC<Props> = ({
                 </Menu>
                 {commentVisible && (
                     <TextInput
-                        accessibilityStates={{}}
                         label={t("reportOtherComment")}
                         value={comment}
                         onChangeText={setComment}
@@ -173,14 +169,8 @@ const ReportDialog: FC<Props> = ({
                 )}
             </Dialog.Content>
             <Dialog.Actions>
-                <Button onPress={handleClose} accessibilityStates={{}}>
-                    {t("reportCancelButton")}
-                </Button>
-                <Button
-                    onPress={handleSubmit}
-                    accessibilityStates={{}}
-                    disabled={submitDisabled}
-                >
+                <Button onPress={handleClose}>{t("reportCancelButton")}</Button>
+                <Button onPress={handleSubmit} disabled={submitDisabled}>
                     {t(`reportConfirmButton`)}
                 </Button>
             </Dialog.Actions>

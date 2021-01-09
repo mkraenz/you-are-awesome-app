@@ -2,11 +2,11 @@ import {
     DarkTheme as NavDarkTheme,
     DefaultTheme as NavDefaultTheme,
 } from "@react-navigation/native";
-import { DarkTheme, DefaultTheme, Theme } from "react-native-paper";
+import { DarkTheme, DefaultTheme } from "react-native-paper";
 
 type NavigationTheme = typeof NavDarkTheme | typeof NavDefaultTheme;
 
-export type FullTheme = Theme &
+export type FullTheme = typeof DefaultTheme &
     NavigationTheme & {
         colors: {
             accentedCard: string;
