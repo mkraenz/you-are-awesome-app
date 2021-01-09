@@ -1,14 +1,18 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
-import { Animated, Easing, StyleProp, TextStyle } from "react-native";
+import { Animated, Easing, TextStyle } from "react-native";
 
 const AnimatedIcon = Animated.createAnimatedComponent(MaterialIcons);
+type AnimatedIcon = typeof AnimatedIcon;
 
 const initialIconSize = 0;
 
 interface Props {
     onFinished: () => void;
-    style?: Animated.WithAnimatedValue<StyleProp<TextStyle>>;
+    style?:
+        | Animated.Value
+        | Animated.AnimatedInterpolation
+        | Animated.WithAnimatedObject<TextStyle>;
     maxIconSize: number;
 }
 
@@ -60,7 +64,7 @@ export default class AnimatedLikeIcon extends React.Component<
             <AnimatedIcon
                 name="favorite"
                 style={{
-                    ...this.props.style,
+                    ...(this.props.style || {}),
                     fontSize: this.state.iconSize,
                 }}
                 color="#ff1084"

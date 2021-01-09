@@ -4,14 +4,15 @@ import React, { ComponentClass, FC, FunctionComponent } from "react";
 
 interface Props {
     component: ComponentClass<any, any> | FunctionComponent<any>;
+    name?: string;
 }
 
 const Stack = createStackNavigator();
-const MockedNavigator: FC<Props> = ({ component }) => {
+const MockedNavigator: FC<Props> = ({ component, name = "MockedScreen" }) => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="MockedScreen" component={component} />
+                <Stack.Screen name={name} component={component} />
             </Stack.Navigator>
         </NavigationContainer>
     );

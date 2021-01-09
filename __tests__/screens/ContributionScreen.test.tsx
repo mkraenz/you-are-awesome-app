@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer, { act } from "react-test-renderer";
 import createMockStore from "redux-mock-store";
+import { Route } from "../../src/navigation/Route";
 import ContributionScreen from "../../src/screens/ContributionScreen";
 import { ActionType } from "../../src/state/actions/ActionType";
 import { ISubmitMessageRequested } from "../../src/state/actions/SubmitMessageAction";
@@ -20,7 +21,10 @@ jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
 
 const ConfiguredContributionScreen: FC = () => (
     <LocalizedMockPaperProvider>
-        <MockedNavigator component={ContributionScreen} />
+        <MockedNavigator
+            component={ContributionScreen}
+            name={Route.MyContributions}
+        />
     </LocalizedMockPaperProvider>
 );
 

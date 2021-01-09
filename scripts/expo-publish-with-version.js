@@ -5,7 +5,7 @@ const file = "./src/utils/version.json";
 const incrementBuildVersion = () => {
     const data = jsonfile.readFileSync(file);
     data.jsBuildNumber = data.jsBuildNumber + 1;
-    jsonfile.writeFileSync(file, data, { spaces: 2, EOL: "\r\n" });
+    jsonfile.writeFileSync(file, data, { spaces: 4, EOL: "\r\n" });
 };
 
 const main = () => {

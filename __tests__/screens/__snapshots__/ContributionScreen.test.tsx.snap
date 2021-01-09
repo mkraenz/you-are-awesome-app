@@ -129,7 +129,7 @@ exports[`renders correctly 1`] = `
                     }
                   }
                 >
-                  MockedScreen
+                  My Contributions
                 </Text>
               </View>
             </View>
@@ -1725,7 +1725,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                     }
                   }
                 >
-                  MockedScreen
+                  My Contributions
                 </Text>
               </View>
             </View>
