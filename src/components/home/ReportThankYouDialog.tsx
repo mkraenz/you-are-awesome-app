@@ -10,16 +10,12 @@ const ReportThankYouDialog: FC<Props> = ({ onDismiss }) => {
     const { t } = useTranslation();
     return (
         <Dialog visible={true} onDismiss={onDismiss}>
-            <Dialog.Title accessibilityStates={{}}>
-                {t("reportThankYouTitle")}
-            </Dialog.Title>
+            <Dialog.Title>{t("reportThankYouTitle")}</Dialog.Title>
             <Dialog.Content>
                 <Paragraph>{t("reportThankYouText")}</Paragraph>
             </Dialog.Content>
             <Dialog.Actions>
-                <Button onPress={onDismiss} accessibilityStates={{}}>
-                    {t(`reportThankYouButton`)}
-                </Button>
+                <Button onPress={onDismiss}>{t(`reportThankYouButton`)}</Button>
             </Dialog.Actions>
         </Dialog>
     );

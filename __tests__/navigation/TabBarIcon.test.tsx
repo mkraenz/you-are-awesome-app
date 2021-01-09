@@ -11,7 +11,7 @@ it("renders correctly", () => {
     const tree = renderer
         .create(
             <MockPaperProvider>
-                <TabBarIcon name="my-name" focused={false} />
+                <TabBarIcon name="star-o" focused={false} />
             </MockPaperProvider>
         )
         .toJSON();
@@ -23,7 +23,7 @@ it("renders correctly with focus", () => {
     const tree = renderer
         .create(
             <MockPaperProvider>
-                <TabBarIcon name="my-name" focused />
+                <TabBarIcon name="star-o" focused />
             </MockPaperProvider>
         )
         .toJSON();

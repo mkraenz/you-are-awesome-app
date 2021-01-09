@@ -18,7 +18,6 @@ const SettingsRow: FC<{
             right={rightComponent && rightComponent(disabledStyle)}
             disabled={disabled}
             titleStyle={disabledStyle}
-            accessibilityStates={{}}
         ></List.Item>
     );
 };

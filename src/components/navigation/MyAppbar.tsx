@@ -18,13 +18,8 @@ const MyAppbar: FC<MyAppbarProps> = ({
 }) => {
     const { dark } = useTheme();
     return (
-        <Appbar.Header
-            accessibilityStates={{}}
-            statusBarHeight={StatusBar.currentHeight}
-        >
-            {onBack && (
-                <Appbar.BackAction onPress={onBack} accessibilityStates={{}} />
-            )}
+        <Appbar.Header statusBarHeight={StatusBar.currentHeight}>
+            {onBack && <Appbar.BackAction onPress={onBack} />}
             <Appbar.Content
                 title={title}
                 style={
@@ -32,11 +27,9 @@ const MyAppbar: FC<MyAppbarProps> = ({
                         ? {}
                         : { alignItems: "center", display: "flex" }
                 }
-                accessibilityStates={{}}
             />
             {actionIcon && (
                 <Appbar.Action
-                    accessibilityStates={{}}
                     icon={actionIcon}
                     onPress={onActionPress}
                     testID={"appbar-action-item-right"}

@@ -67,11 +67,7 @@ export default class AnimationTest extends React.Component<
                     />
                 </View>
                 <View>
-                    <Button
-                        onPress={play}
-                        accessibilityStates={{}}
-                        mode="contained"
-                    >
+                    <Button onPress={play} mode="contained">
                         Play
                     </Button>
                     <Button
@@ -80,7 +76,6 @@ export default class AnimationTest extends React.Component<
                                 iconSize: new Animated.Value(initialIconSize),
                             })
                         }
-                        accessibilityStates={{}}
                         mode="contained"
                     >
                         Revert

@@ -29,7 +29,6 @@ const EmptyFavoritesScreen = () => {
                 <Button
                     mode="outlined"
                     onPress={() => navigate(Route.Home)}
-                    accessibilityStates={{}}
                     style={styles.button}
                     icon={() => (
                         <MaterialCommunityIcons

@@ -19,19 +19,13 @@ const DeleteConfirmationDialog: FC<Props> = ({
     return (
         <Portal>
             <Dialog visible={visible} onDismiss={onDismiss}>
-                <Dialog.Title accessibilityStates={{}}>
-                    {t(`${route}DeleteDialogTitle`)}
-                </Dialog.Title>
+                <Dialog.Title>{t(`${route}DeleteDialogTitle`)}</Dialog.Title>
                 <Dialog.Content>
                     <Paragraph>{t(`${route}DeleteDialogText`)}</Paragraph>
                 </Dialog.Content>
                 <Dialog.Actions>
-                    <Button onPress={onDismiss} accessibilityStates={{}}>
-                        {t(`${route}Cancel`)}
-                    </Button>
-                    <Button onPress={onConfirm} accessibilityStates={{}}>
-                        {t(`${route}Delete`)}
-                    </Button>
+                    <Button onPress={onDismiss}>{t(`${route}Cancel`)}</Button>
+                    <Button onPress={onConfirm}>{t(`${route}Delete`)}</Button>
                 </Dialog.Actions>
             </Dialog>
         </Portal>

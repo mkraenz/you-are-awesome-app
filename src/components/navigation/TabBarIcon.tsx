@@ -4,7 +4,7 @@ import { useTheme } from "react-native-paper";
 import { FullTheme } from "../../themes/theme";
 
 interface Props {
-    name: string;
+    name: "share-alt" | "home" | "heart" | "star-o" | "cog";
     focused: boolean;
 }
 

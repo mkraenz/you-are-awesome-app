@@ -28,7 +28,6 @@ const PrivacyPolicyScreen: React.FC = () => {
                 mode="contained"
                 style={styles.viewInBrowserButton}
                 onPress={() => Linking.openURL(t("privacyPolicyLink"))}
-                accessibilityStates={{}}
             >
                 {t("viewInBrowser")}
             </Button>
