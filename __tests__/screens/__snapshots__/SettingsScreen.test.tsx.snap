@@ -291,7 +291,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                       }
                     >
                       <View
-                        accessibilityStates={Object {}}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -329,7 +328,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -350,7 +348,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               }
                             />
                             <View
-                              accessibilityStates={Object {}}
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -433,7 +430,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           >
                             <Text
-                              accessibilityStates={Object {}}
                               style={
                                 Array [
                                   Object {
@@ -499,6 +495,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -548,15 +545,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                           },
                                           undefined,
                                         ],
-                                        Array [
-                                          Object {
-                                            "fontSize": 16,
-                                            "letterSpacing": 0.5,
-                                            "lineHeight": 24,
-                                            "marginVertical": 2,
-                                          },
-                                          undefined,
-                                        ],
                                       ],
                                     ]
                                   }
@@ -567,7 +555,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -625,6 +612,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -652,7 +640,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 </View>
                                 <RCTSwitch
                                   accessibilityRole="switch"
-                                  accessibilityStates={Object {}}
                                   disabled={true}
                                   onChange={[Function]}
                                   onResponderTerminationRequest={[Function]}
@@ -714,6 +701,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -767,17 +755,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                             "color": "rgba(0, 0, 0, 0.26)",
                                           },
                                         ],
-                                        Array [
-                                          Object {
-                                            "fontSize": 16,
-                                            "letterSpacing": 0.5,
-                                            "lineHeight": 24,
-                                            "marginVertical": 2,
-                                          },
-                                          Object {
-                                            "color": "rgba(0, 0, 0, 0.26)",
-                                          },
-                                        ],
                                       ],
                                     ]
                                   }
@@ -820,7 +797,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               />
                             </Modal>
                             <View
-                              accessibilityStates={Object {}}
                               style={
                                 Array [
                                   Object {
@@ -878,6 +854,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -903,7 +880,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               </View>
                               <RCTSwitch
                                 accessibilityRole="switch"
-                                accessibilityStates={Object {}}
                                 onChange={[Function]}
                                 onResponderTerminationRequest={[Function]}
                                 onStartShouldSetResponder={[Function]}
@@ -920,7 +896,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -977,6 +952,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -1003,7 +979,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -1060,6 +1035,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -1085,7 +1061,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               </View>
                               <RCTSwitch
                                 accessibilityRole="switch"
-                                accessibilityStates={Object {}}
                                 onChange={[Function]}
                                 onResponderTerminationRequest={[Function]}
                                 onStartShouldSetResponder={[Function]}
@@ -1102,7 +1077,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -1149,15 +1123,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       },
                                       undefined,
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      undefined,
-                                    ],
                                   ],
                                 ]
                               }
@@ -1191,15 +1156,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       },
                                       undefined,
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      undefined,
-                                    ],
                                   ],
                                 ]
                               }
@@ -1223,18 +1179,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         "textAlign": "left",
                                         "writingDirection": "ltr",
                                       },
-                                      Array [
-                                        Object {
-                                          "fontSize": 14,
-                                          "letterSpacing": 0.25,
-                                          "lineHeight": 20,
-                                          "marginVertical": 2,
-                                        },
-                                        Object {
-                                          "color": "#1084ff",
-                                          "textDecorationLine": "underline",
-                                        },
-                                      ],
                                       Array [
                                         Object {
                                           "fontSize": 14,
@@ -1563,7 +1507,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                       }
                     >
                       <View
-                        accessibilityStates={Object {}}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -1601,7 +1544,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -1622,7 +1564,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                               }
                             />
                             <View
-                              accessibilityStates={Object {}}
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -1740,6 +1681,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -1789,15 +1731,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                           },
                                           undefined,
                                         ],
-                                        Array [
-                                          Object {
-                                            "fontSize": 16,
-                                            "letterSpacing": 0.5,
-                                            "lineHeight": 24,
-                                            "marginVertical": 2,
-                                          },
-                                          undefined,
-                                        ],
                                       ],
                                     ]
                                   }
@@ -1808,7 +1741,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -1866,6 +1798,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -1891,7 +1824,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 </View>
                                 <RCTSwitch
                                   accessibilityRole="switch"
-                                  accessibilityStates={Object {}}
                                   disabled={false}
                                   onChange={[Function]}
                                   onResponderTerminationRequest={[Function]}
@@ -1953,6 +1885,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -2014,7 +1947,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                               />
                             </Modal>
                             <View
-                              accessibilityStates={Object {}}
                               style={
                                 Array [
                                   Object {
@@ -2072,6 +2004,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -2097,7 +2030,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                               </View>
                               <RCTSwitch
                                 accessibilityRole="switch"
-                                accessibilityStates={Object {}}
                                 onChange={[Function]}
                                 onResponderTerminationRequest={[Function]}
                                 onStartShouldSetResponder={[Function]}
@@ -2114,7 +2046,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -2171,6 +2102,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -2197,7 +2129,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -2254,6 +2185,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -2279,7 +2211,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                               </View>
                               <RCTSwitch
                                 accessibilityRole="switch"
-                                accessibilityStates={Object {}}
                                 onChange={[Function]}
                                 onResponderTerminationRequest={[Function]}
                                 onStartShouldSetResponder={[Function]}
@@ -2296,7 +2227,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -2343,15 +2273,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       },
                                       undefined,
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      undefined,
-                                    ],
                                   ],
                                 ]
                               }
@@ -2385,15 +2306,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       },
                                       undefined,
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      undefined,
-                                    ],
                                   ],
                                 ]
                               }
@@ -2417,18 +2329,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         "textAlign": "left",
                                         "writingDirection": "ltr",
                                       },
-                                      Array [
-                                        Object {
-                                          "fontSize": 14,
-                                          "letterSpacing": 0.25,
-                                          "lineHeight": 20,
-                                          "marginVertical": 2,
-                                        },
-                                        Object {
-                                          "color": "#1084ff",
-                                          "textDecorationLine": "underline",
-                                        },
-                                      ],
                                       Array [
                                         Object {
                                           "fontSize": 14,
@@ -2757,7 +2657,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                       }
                     >
                       <View
-                        accessibilityStates={Object {}}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -2795,7 +2694,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -2816,7 +2714,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                               }
                             />
                             <View
-                              accessibilityStates={Object {}}
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -2934,6 +2831,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -2983,15 +2881,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                           },
                                           undefined,
                                         ],
-                                        Array [
-                                          Object {
-                                            "fontSize": 16,
-                                            "letterSpacing": 0.5,
-                                            "lineHeight": 24,
-                                            "marginVertical": 2,
-                                          },
-                                          undefined,
-                                        ],
                                       ],
                                     ]
                                   }
@@ -3002,7 +2891,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -3060,6 +2948,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -3085,7 +2974,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 </View>
                                 <RCTSwitch
                                   accessibilityRole="switch"
-                                  accessibilityStates={Object {}}
                                   disabled={false}
                                   onChange={[Function]}
                                   onResponderTerminationRequest={[Function]}
@@ -3147,6 +3035,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 >
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -3187,15 +3076,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                           "textAlign": "left",
                                           "writingDirection": "ltr",
                                         },
-                                        Array [
-                                          Object {
-                                            "fontSize": 16,
-                                            "letterSpacing": 0.5,
-                                            "lineHeight": 24,
-                                            "marginVertical": 2,
-                                          },
-                                          Object {},
-                                        ],
                                         Array [
                                           Object {
                                             "fontSize": 16,
@@ -3247,7 +3127,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                               />
                             </Modal>
                             <View
-                              accessibilityStates={Object {}}
                               style={
                                 Array [
                                   Object {
@@ -3305,6 +3184,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -3330,7 +3210,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                               </View>
                               <RCTSwitch
                                 accessibilityRole="switch"
-                                accessibilityStates={Object {}}
                                 onChange={[Function]}
                                 onResponderTerminationRequest={[Function]}
                                 onStartShouldSetResponder={[Function]}
@@ -3347,7 +3226,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -3404,6 +3282,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -3430,7 +3309,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -3487,6 +3365,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                               >
                                 <Text
                                   numberOfLines={1}
+                                  selectable={false}
                                   style={
                                     Array [
                                       Object {
@@ -3512,7 +3391,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                               </View>
                               <RCTSwitch
                                 accessibilityRole="switch"
-                                accessibilityStates={Object {}}
                                 onChange={[Function]}
                                 onResponderTerminationRequest={[Function]}
                                 onStartShouldSetResponder={[Function]}
@@ -3529,7 +3407,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                             </View>
                           </View>
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Array [
                                 Object {
@@ -3576,15 +3453,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       },
                                       undefined,
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      undefined,
-                                    ],
                                   ],
                                 ]
                               }
@@ -3618,15 +3486,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       },
                                       undefined,
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      undefined,
-                                    ],
                                   ],
                                 ]
                               }
@@ -3650,18 +3509,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         "textAlign": "left",
                                         "writingDirection": "ltr",
                                       },
-                                      Array [
-                                        Object {
-                                          "fontSize": 14,
-                                          "letterSpacing": 0.25,
-                                          "lineHeight": 20,
-                                          "marginVertical": 2,
-                                        },
-                                        Object {
-                                          "color": "#1084ff",
-                                          "textDecorationLine": "underline",
-                                        },
-                                      ],
                                       Array [
                                         Object {
                                           "fontSize": 14,

@@ -291,7 +291,6 @@ exports[`renders special message on empty list 1`] = `
                       }
                     >
                       <View
-                        accessibilityStates={Object {}}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -329,7 +328,6 @@ exports[`renders special message on empty list 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -350,7 +348,6 @@ exports[`renders special message on empty list 1`] = `
                               }
                             />
                             <View
-                              accessibilityStates={Object {}}
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -456,17 +453,6 @@ exports[`renders special message on empty list 1`] = `
                                         "fontSize": 16,
                                       },
                                     ],
-                                    Array [
-                                      Object {
-                                        "fontSize": 14,
-                                        "letterSpacing": 0.25,
-                                        "lineHeight": 20,
-                                        "marginVertical": 2,
-                                      },
-                                      Object {
-                                        "fontSize": 16,
-                                      },
-                                    ],
                                   ],
                                 ]
                               }
@@ -474,7 +460,6 @@ exports[`renders special message on empty list 1`] = `
                               Double tap your first awesome message in Home to add it to your favorites.
                             </Text>
                             <View
-                              accessibilityStates={Object {}}
                               style={
                                 Object {
                                   "backgroundColor": "transparent",
@@ -490,6 +475,11 @@ exports[`renders special message on empty list 1`] = `
                             >
                               <View
                                 accessibilityRole="button"
+                                accessibilityState={
+                                  Object {
+                                    "disabled": undefined,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={true}
                                 onClick={[Function]}
@@ -534,6 +524,7 @@ exports[`renders special message on empty list 1`] = `
                                   </View>
                                   <Text
                                     numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       Array [
                                         Object {
@@ -879,7 +870,6 @@ exports[`renders the list 1`] = `
                       }
                     >
                       <View
-                        accessibilityStates={Object {}}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -917,7 +907,6 @@ exports[`renders the list 1`] = `
                           }
                         >
                           <View
-                            accessibilityStates={Object {}}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -938,7 +927,6 @@ exports[`renders the list 1`] = `
                               }
                             />
                             <View
-                              accessibilityStates={Object {}}
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -1117,6 +1105,7 @@ exports[`renders the list 1`] = `
                                       >
                                         <Text
                                           numberOfLines={5}
+                                          selectable={false}
                                           style={
                                             Array [
                                               Object {
@@ -1154,15 +1143,6 @@ exports[`renders the list 1`] = `
                                                     "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
-                                                  Array [
-                                                    Object {
-                                                      "fontSize": 16,
-                                                      "letterSpacing": 0.5,
-                                                      "lineHeight": 24,
-                                                      "marginVertical": 2,
-                                                    },
-                                                    undefined,
-                                                  ],
                                                   Array [
                                                     Object {
                                                       "fontSize": 16,
@@ -1214,15 +1194,6 @@ exports[`renders the list 1`] = `
                                                     },
                                                     undefined,
                                                   ],
-                                                  Array [
-                                                    Object {
-                                                      "fontSize": 14,
-                                                      "letterSpacing": 0.25,
-                                                      "lineHeight": 20,
-                                                      "marginVertical": 2,
-                                                    },
-                                                    undefined,
-                                                  ],
                                                 ],
                                               ]
                                             }
@@ -1259,17 +1230,6 @@ exports[`renders the list 1`] = `
                                                       "fontSize": 10,
                                                     },
                                                   ],
-                                                  Array [
-                                                    Object {
-                                                      "fontSize": 14,
-                                                      "letterSpacing": 0.25,
-                                                      "lineHeight": 20,
-                                                      "marginVertical": 2,
-                                                    },
-                                                    Object {
-                                                      "fontSize": 10,
-                                                    },
-                                                  ],
                                                 ],
                                               ]
                                             }
@@ -1282,7 +1242,6 @@ exports[`renders the list 1`] = `
                                   </View>
                                 </View>
                                 <View
-                                  accessibilityStates={Object {}}
                                   style={
                                     Array [
                                       Object {
@@ -1360,6 +1319,7 @@ exports[`renders the list 1`] = `
                                       >
                                         <Text
                                           numberOfLines={5}
+                                          selectable={false}
                                           style={
                                             Array [
                                               Object {
@@ -1397,15 +1357,6 @@ exports[`renders the list 1`] = `
                                                     "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
-                                                  Array [
-                                                    Object {
-                                                      "fontSize": 16,
-                                                      "letterSpacing": 0.5,
-                                                      "lineHeight": 24,
-                                                      "marginVertical": 2,
-                                                    },
-                                                    undefined,
-                                                  ],
                                                   Array [
                                                     Object {
                                                       "fontSize": 16,
@@ -1457,15 +1408,6 @@ exports[`renders the list 1`] = `
                                                     },
                                                     undefined,
                                                   ],
-                                                  Array [
-                                                    Object {
-                                                      "fontSize": 14,
-                                                      "letterSpacing": 0.25,
-                                                      "lineHeight": 20,
-                                                      "marginVertical": 2,
-                                                    },
-                                                    undefined,
-                                                  ],
                                                 ],
                                               ]
                                             }
@@ -1491,17 +1433,6 @@ exports[`renders the list 1`] = `
                                                     "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
-                                                  Array [
-                                                    Object {
-                                                      "fontSize": 14,
-                                                      "letterSpacing": 0.25,
-                                                      "lineHeight": 20,
-                                                      "marginVertical": 2,
-                                                    },
-                                                    Object {
-                                                      "fontSize": 10,
-                                                    },
-                                                  ],
                                                   Array [
                                                     Object {
                                                       "fontSize": 14,

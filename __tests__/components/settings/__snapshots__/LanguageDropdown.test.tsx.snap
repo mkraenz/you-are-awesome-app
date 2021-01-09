@@ -49,6 +49,7 @@ exports[`renders correctly 1`] = `
       >
         <Text
           numberOfLines={1}
+          selectable={false}
           style={
             Array [
               Object {
@@ -89,15 +90,6 @@ exports[`renders correctly 1`] = `
                 "textAlign": "left",
                 "writingDirection": "ltr",
               },
-              Array [
-                Object {
-                  "fontSize": 16,
-                  "letterSpacing": 0.5,
-                  "lineHeight": 24,
-                  "marginVertical": 2,
-                },
-                undefined,
-              ],
               Array [
                 Object {
                   "fontSize": 16,
