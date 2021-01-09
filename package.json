@@ -41,7 +41,7 @@
         "expo-firebase-analytics": "~2.5.0",
         "expo-firebase-core": "~1.2.0",
         "expo-localization": "~9.0.0",
-        "expo-notifications": "~0.7.2",
+        "expo-notifications": "~0.8.2",
         "expo-status-bar": "~1.0.2",
         "i18next": "^19.8.4",
         "lodash": "^4.17.20",
