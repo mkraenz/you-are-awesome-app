@@ -1,4 +1,4 @@
-import { advanceTo, clear as resetDateMock } from "jest-date-mock";
+import MockDate from "mockdate";
 import React, { FC } from "react";
 import "react-native";
 import { Provider } from "react-redux";
@@ -12,7 +12,7 @@ import MockedNavigator from "../helpers/MockedNavigation";
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
 
 afterEach(() => {
-    resetDateMock();
+    MockDate.reset();
 });
 
 const ConfiguredSettingsScreen: FC = () => (
@@ -24,7 +24,7 @@ const ConfiguredSettingsScreen: FC = () => (
 it("renders correctly for disabled notifications", async () => {
     // far in the future so that the snapshot does not change
     const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
-    advanceTo(scheduledTime);
+    MockDate.set(scheduledTime);
 
     const store = createMockStore([])({
         app: {
@@ -53,7 +53,7 @@ it("renders correctly for disabled notifications", async () => {
 it("renders correctly for enabled notifications", async () => {
     // far in the future so that the snapshot does not change
     const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
-    advanceTo(scheduledTime);
+    MockDate.set(scheduledTime);
 
     const store = createMockStore([])({
         app: {
@@ -81,7 +81,7 @@ it("renders correctly for enabled notifications", async () => {
 it("displays netinfo box for no internet connection", async () => {
     // far in the future so that the snapshot does not change
     const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
-    advanceTo(scheduledTime);
+    MockDate.set(scheduledTime);
 
     const store = createMockStore([])({
         app: {
