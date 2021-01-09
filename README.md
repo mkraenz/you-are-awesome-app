@@ -42,6 +42,7 @@ When a User now starts her app (even if installed from the Google Play Store!), 
 Only in case of changes to `app.json` or the Expo SDK version, one needs to rebuild the app and republish to expo.
 
 ```shell
+# manually update app.json's version and android.versionCode
 yarn build-and-publish:expo:android
 ```
 
