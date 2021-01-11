@@ -52,9 +52,10 @@ export class Analytics {
         });
     }
 
-    static async logButtonPress(type: string, value: object) {
+    /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
+    private static async logButtonPress(type: string, value: object) {
         if (analyticsDisabled) return;
-        await FAnalytics.logEvent("button_press", { type, value });
+        await FAnalytics.logEvent("button_press", { type, ...value });
     }
 
     static async logLike(messageId: string) {
@@ -71,5 +72,16 @@ export class Analytics {
 
     static async logLinkFollow(linkText: string) {
         await Analytics.logButtonPress("link", { linkText });
+    }
+
+    static async logDelete(itemsDeleted: number, itemsLeft: number) {
+        await Analytics.logButtonPress("items_delete", {
+            itemsDeleted,
+            itemsLeft,
+        });
+    }
+
+    static async logCancel(purpose: string) {
+        await Analytics.logButtonPress("cancel", { purpose });
     }
 }
