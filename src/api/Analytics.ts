@@ -16,6 +16,7 @@ export class Analytics {
     }
 
     static async resetAnalyticsData() {
+        if (analyticsDisabled) return;
         await FAnalytics.resetAnalyticsData();
     }
 
@@ -25,11 +26,11 @@ export class Analytics {
     }
 
     // TODO #348 improve with count. Hypothesis: the higher the contributions count, the more likely are further contributions
-    static async logContribution(contributionCount: number = -1) {
+    static async logContribution(contributions: number = -1) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("share", {
             type: "contribution",
-            contributionCount,
+            contributions,
         });
     }
 
@@ -53,7 +54,7 @@ export class Analytics {
     }
 
     /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
-    private static async logButtonPress(type: string, value: object) {
+    static async logButtonPress(type: string, value: object) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("button_press", { type, ...value });
     }
@@ -75,9 +76,10 @@ export class Analytics {
     }
 
     static async logDelete(itemsDeleted: number, itemsLeft: number) {
-        await Analytics.logButtonPress("items_delete", {
+        await Analytics.logButtonPress("items_deleted", {
             itemsDeleted,
             itemsLeft,
+            deletedAll: itemsLeft === 0,
         });
     }
 
