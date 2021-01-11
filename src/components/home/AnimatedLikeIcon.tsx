@@ -9,6 +9,7 @@ const initialIconSize = 0;
 
 interface Props {
     onFinished: () => void;
+    onStart: () => void;
     style?:
         | Animated.Value
         | Animated.AnimatedInterpolation
@@ -41,6 +42,7 @@ export default class AnimatedLikeIcon extends React.Component<
             this.props.onFinished();
         };
 
+        this.props.onStart();
         const anim = Animated.sequence([
             Animated.timing(this.state.iconSize, {
                 useNativeDriver: false,

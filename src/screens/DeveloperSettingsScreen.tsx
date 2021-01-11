@@ -1,8 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import * as Analytics from "expo-firebase-analytics";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "react-native-paper";
+import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import { Route } from "../navigation/Route";
 
@@ -15,14 +15,10 @@ const DeveloperSettingsScreen: FC = () => {
             route={Route.DeveloperSettings}
             title={t(Route.DeveloperSettings)}
         >
-            <MyButton onPress={() => Analytics.resetAnalyticsData()}>
+            <MyButton onPress={Analytics.resetAnalyticsData}>
                 Reset Analytics
             </MyButton>
-            <MyButton
-                onPress={() =>
-                    Analytics.logEvent("contribute", { debugParam: "yes" })
-                }
-            >
+            <MyButton onPress={Analytics.logDebug}>
                 Trigger Analytics Contribute event
             </MyButton>
         </Layout>
