@@ -37,7 +37,7 @@ const Stack = createStackNavigator();
 export const SettingsStack = () => {
     return (
         <Stack.Navigator initialRouteName={Route.Settings} headerMode="none">
-            <Stack.Screen name={"base"} component={SettingsScreen} />
+            <Stack.Screen name={Route.Settings} component={SettingsScreen} />
             <Stack.Screen
                 name={Route.PrivacyPolicy}
                 component={PrivacyPolicyScreen}
@@ -53,7 +53,10 @@ export const SettingsStack = () => {
 export const ContributionsStack = () => {
     return (
         <Stack.Navigator initialRouteName={Route.Contribute} headerMode="none">
-            <Stack.Screen name={"base"} component={ContributionScreen} />
+            <Stack.Screen
+                name={Route.Contribute}
+                component={ContributionScreen}
+            />
             <Stack.Screen
                 name={Route.MyContributions}
                 component={MyContributionsScreen}
