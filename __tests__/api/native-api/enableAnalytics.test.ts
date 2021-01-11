@@ -1,10 +1,15 @@
-import * as Analytics from "expo-firebase-analytics";
+import { Analytics } from "../../../src/api/Analytics";
 import { enableAnalytics } from "../../../src/api/native-api/enableAnalytics";
 
-jest.mock("expo-firebase-analytics", () => ({
-    logEvent: jest.fn(),
-    setAnalyticsCollectionEnabled: jest.fn(),
-}));
+beforeEach(() => {
+    jest.spyOn(Analytics, "logToggleAnalytics" as any).mockImplementation(() =>
+        Promise.resolve()
+    );
+    jest.spyOn(
+        Analytics,
+        "setAnalyticsCollectionEnabled" as any
+    ).mockImplementation(() => Promise.resolve());
+});
 
 afterEach(() => {
     jest.clearAllMocks();
@@ -15,22 +20,13 @@ afterEach(() => {
 it("logs that analytics have been reenabled and enables analytics", async () => {
     await enableAnalytics(true);
 
-    expect(Analytics.logEvent).toHaveBeenCalledWith("toggle_analytics", {
-        enabled: true,
-    });
+    expect(Analytics.logToggleAnalytics).toHaveBeenCalledWith(true);
     expect(Analytics.setAnalyticsCollectionEnabled).toHaveBeenCalledWith(true);
 });
 
 it("logs that analytics will be disabled and disables analytics", async () => {
-    jest.mock("expo-firebase-analytics", () => ({
-        logEvent: jest.fn(),
-        setAnalyticsCollectionEnabled: jest.fn(),
-    }));
-
     await enableAnalytics(false);
 
-    expect(Analytics.logEvent).toHaveBeenCalledWith("toggle_analytics", {
-        enabled: false,
-    });
+    expect(Analytics.logToggleAnalytics).toHaveBeenCalledWith(false);
     expect(Analytics.setAnalyticsCollectionEnabled).toHaveBeenCalledWith(false);
 });
