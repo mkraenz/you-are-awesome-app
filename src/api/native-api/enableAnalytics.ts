@@ -1,14 +1,14 @@
-import * as Analytics from "expo-firebase-analytics";
+import { Analytics } from "../Analytics";
 
 export const enableAnalytics = async (shouldBeEnabled: boolean) => {
     const disableRequested = !shouldBeEnabled;
     if (disableRequested) {
-        await Analytics.logEvent("toggle_analytics", { enabled: false });
+        await Analytics.logToggleAnalytics(false);
     }
 
     await Analytics.setAnalyticsCollectionEnabled(shouldBeEnabled);
 
     if (shouldBeEnabled) {
-        await Analytics.logEvent("toggle_analytics", { enabled: true });
+        await Analytics.logToggleAnalytics(true);
     }
 };

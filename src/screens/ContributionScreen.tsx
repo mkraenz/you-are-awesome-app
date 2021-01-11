@@ -1,14 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
-import * as Analytics from "expo-firebase-analytics";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";
 import { connect } from "react-redux";
 import { v4 } from "uuid";
+import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
 import SubmitMessageInputForm from "../components/contribution/SubmitMessageInputForm";
-import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
 import { submitMessage } from "../state/action-creators/submitMessage";
 import { IMessage, IMessageContent } from "../state/state/IMessage";
@@ -36,7 +35,7 @@ const ContributionScreen: FC<Props> = ({
             id: v4(),
             isodate: toIsoDateString(new Date()),
         });
-        if (CONFIG.featureFlags.analytics) Analytics.logEvent("contribute");
+        Analytics.logContribution();
         const stayTuned = t("contributionStayTuned");
         Alert.alert(
             t("contributionThanks"),
