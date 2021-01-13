@@ -20,7 +20,9 @@ function* changePushNotificationTimeWorkerSaga(
     action: IChangePushNotificationTime
 ) {
     // internet connected on higher level
-    const connected = yield select(internetConnected);
+    const connected: ReturnType<typeof internetConnected> = yield select(
+        internetConnected
+    );
     assert(connected, "no internet connection");
 
     yield call(askNotificationPermissions);
