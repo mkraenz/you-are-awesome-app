@@ -1,5 +1,6 @@
 import React from "react";
 import "react-native-gesture-handler";
+import "react-native-get-random-values"; // polyfill for https://github.com/uuidjs/uuid/issues/375
 import { Provider as StoreProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import AppStateChangedContainer from "./app-containers/AppStateChangedContainer";

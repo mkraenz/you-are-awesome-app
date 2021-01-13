@@ -35,9 +35,8 @@ interface StateProps {
     connectedToInternet: boolean;
 }
 interface DispatchProps {
-    // TODO #256
-    toggleDarkTheme: () => void;
-    toggleAnalytics: () => void;
+    toggleDarkTheme: typeof toggleDarkTheme;
+    toggleAnalytics: typeof toggleAnalytics;
 }
 
 type Props = StateProps & DispatchProps;

@@ -21,8 +21,8 @@ interface IStateProps {
 }
 
 interface IDispatchProps {
-    setNotificationsState: (enabled: boolean, scheduledTime: Date) => void;
-    changePushNotificationTime: (scheduledTime: Date) => void;
+    setNotificationsState: typeof setPushNotificationsState;
+    changePushNotificationTime: typeof changePushNotificationTime;
 }
 
 type Props = IStateProps & IDispatchProps;
