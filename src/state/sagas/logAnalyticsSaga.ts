@@ -2,6 +2,7 @@ import { call, select, takeEvery } from "redux-saga/effects";
 import { Analytics } from "../../api/Analytics";
 import { ActionType } from "../actions/ActionType";
 import { ISetLanguage, IToggleDarkThemeAction } from "../actions/IAppAction";
+import { IAddToFavorites } from "../actions/IFavoritesAction";
 import { ISubmitMessageRequested } from "../actions/SubmitMessageAction";
 import { countMyContributions, darkModeEnabled, language } from "../selectors";
 
@@ -10,10 +11,18 @@ import { countMyContributions, darkModeEnabled, language } from "../selectors";
  *  before disabling analytics globally. Conversely, we want to log 'enabled' only after enabling analytics again.
  */
 function* logAnalyticsWorkerSaga(
-    action: IToggleDarkThemeAction | ISubmitMessageRequested | ISetLanguage
+    action:
+        | IToggleDarkThemeAction
+        | ISubmitMessageRequested
+        | ISetLanguage
+        | IAddToFavorites
 ) {
     try {
         switch (action.type) {
+            case ActionType.AddToFavorites:
+                const msgId = action.payload.id;
+                yield call(Analytics.logLike, msgId);
+                break;
             case ActionType.SetLanguage:
                 const nextLanguage: ReturnType<typeof language> = yield select(
                     language
@@ -44,6 +53,7 @@ function* logAnalyticsSaga() {
             ActionType.ToggleDarkTheme,
             ActionType.SubmitMessageRequested,
             ActionType.SetLanguage,
+            ActionType.AddToFavorites,
         ],
         logAnalyticsWorkerSaga
     );
