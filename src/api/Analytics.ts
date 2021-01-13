@@ -91,4 +91,8 @@ export class Analytics {
     static async logLanguage(language: Language | null) {
         await Analytics.logButtonPress("language", { language });
     }
+
+    static async logManualRefresh() {
+        await Analytics.logButtonPress("refresh", {});
+    }
 }
