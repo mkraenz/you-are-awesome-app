@@ -1,5 +1,6 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { CONFIG } from "../config";
+import { Language } from "../localization/localization";
 
 const analyticsDisabled = !CONFIG.featureFlags.analytics;
 
@@ -85,5 +86,9 @@ export class Analytics {
 
     static async logCancel(purpose: string) {
         await Analytics.logButtonPress("cancel", { purpose });
+    }
+
+    static async logLanguage(language: Language | null) {
+        await Analytics.logButtonPress("language", { language });
     }
 }

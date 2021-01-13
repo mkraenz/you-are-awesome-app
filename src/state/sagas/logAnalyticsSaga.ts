@@ -1,20 +1,30 @@
 import { call, select, takeEvery } from "redux-saga/effects";
 import { Analytics } from "../../api/Analytics";
 import { ActionType } from "../actions/ActionType";
-import { IToggleDarkThemeAction } from "../actions/IAppAction";
+import { ISetLanguage, IToggleDarkThemeAction } from "../actions/IAppAction";
 import { ISubmitMessageRequested } from "../actions/SubmitMessageAction";
-import { countMyContributions, darkModeEnabled } from "../selectors";
+import { countMyContributions, darkModeEnabled, language } from "../selectors";
 
+/**
+ *  Note: ToggleAnalytics is not tracked here because of the specialty that we want to log
+ *  before disabling analytics globally. Conversely, we want to log 'enabled' only after enabling analytics again.
+ */
 function* logAnalyticsWorkerSaga(
-    action: IToggleDarkThemeAction | ISubmitMessageRequested
+    action: IToggleDarkThemeAction | ISubmitMessageRequested | ISetLanguage
 ) {
     try {
         switch (action.type) {
+            case ActionType.SetLanguage:
+                const nextLanguage: ReturnType<typeof language> = yield select(
+                    language
+                );
+                yield call(Analytics.logLanguage, nextLanguage);
+                break;
             case ActionType.ToggleDarkTheme:
-                const enabled: ReturnType<
+                const darkModeOn: ReturnType<
                     typeof darkModeEnabled
                 > = yield select(darkModeEnabled);
-                yield call(Analytics.logDarkMode, enabled);
+                yield call(Analytics.logDarkMode, darkModeOn);
                 break;
             case ActionType.SubmitMessageRequested:
                 const myContributionsCount: ReturnType<
@@ -30,7 +40,11 @@ function* logAnalyticsWorkerSaga(
 
 function* logAnalyticsSaga() {
     yield takeEvery(
-        [ActionType.ToggleDarkTheme, ActionType.SubmitMessageRequested],
+        [
+            ActionType.ToggleDarkTheme,
+            ActionType.SubmitMessageRequested,
+            ActionType.SetLanguage,
+        ],
         logAnalyticsWorkerSaga
     );
 }

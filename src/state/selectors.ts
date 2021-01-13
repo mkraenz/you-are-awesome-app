@@ -19,3 +19,6 @@ export const countMyContributions = (
 
 export const darkModeEnabled = (state: Pick2<IState, "app", "isDarkModeOn">) =>
     state.app.isDarkModeOn;
+
+export const language = (state: Pick2<IState, "app", "language">) =>
+    state.app.language;

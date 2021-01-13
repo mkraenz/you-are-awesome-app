@@ -1,8 +1,10 @@
+import { Language } from "../../src/localization/localization";
 import {
     analyticsEnabled,
     countMyContributions,
     darkModeEnabled,
     internetConnected,
+    language,
     pushNotificationsEnabled,
 } from "../../src/state/selectors";
 import { Unpack } from "../../src/utils/ts/Unpack";
@@ -58,4 +60,14 @@ it("darkModeEnabled returns the state ", () => {
     const result = darkModeEnabled(state);
 
     expect(result).toBe(true);
+});
+
+it("language returns the state ", () => {
+    const state: Unpack<Parameters<typeof language>> = {
+        app: { language: Language.Japanese },
+    };
+
+    const result = language(state);
+
+    expect(result).toBe("ja");
 });
