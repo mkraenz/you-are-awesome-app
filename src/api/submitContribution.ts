@@ -1,22 +1,31 @@
 import axios, { AxiosRequestConfig } from "axios";
+import { CONFIG } from "../config";
 import { IMessage } from "../state/state/IMessage";
 import { pick } from "../utils/pick";
 
-const HTTP_CREATED = 201;
+type FeatureFlags = Pick<
+    typeof CONFIG.disableApiCall,
+    "all" | "submitContribution"
+>;
 
-export const submitContribution = async (msg: IMessage, uri: string) => {
-    const response = await axios.post<IMessage>(
-        uri,
-        pick(msg, ["author", "country", "isodate", "id", "text"]),
-        options
-    );
-    if (response.status !== HTTP_CREATED) {
-        return Promise.reject(
-            new Error(
-                `Expected POST response status ${HTTP_CREATED}, found ${response.status}. POST uri: ${uri}`
-            )
-        );
+const mockMsg = {
+    author: "my-author",
+    country: "my-country",
+    id: "876",
+    text: "awesome-message",
+    isodate: "2020-05-01",
+};
+
+export const submitContribution = async (
+    msg: IMessage,
+    uri: string,
+    disabledFlags: FeatureFlags = CONFIG.disableApiCall
+): Promise<IMessage> => {
+    if (disabledFlags.all || disabledFlags.submitContribution) {
+        return mockMsg;
     }
+    const payload = pick(msg, ["author", "country", "isodate", "id", "text"]);
+    const response = await axios.post<IMessage>(uri, payload, options);
     return response.data;
 };
 

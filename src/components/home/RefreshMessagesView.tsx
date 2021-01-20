@@ -6,6 +6,7 @@ import {
     StyleSheet,
 } from "react-native";
 import { connect } from "react-redux";
+import { Analytics } from "../../api/Analytics";
 import { requestFetchMessages } from "../../state/action-creators/requestFetchMessages";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
 
@@ -32,6 +33,10 @@ class RefreshMessagesView extends Component<Props> {
 
     public render() {
         const { refreshing, children, requestFetchMessages } = this.props;
+        const handleRefresh = () => {
+            requestFetchMessages(new Date());
+            Analytics.logManualRefresh();
+        };
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView
@@ -39,7 +44,7 @@ class RefreshMessagesView extends Component<Props> {
                     refreshControl={
                         <RefreshControl
                             refreshing={refreshing}
-                            onRefresh={() => requestFetchMessages(new Date())}
+                            onRefresh={handleRefresh}
                         />
                     }
                 >

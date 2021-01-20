@@ -1,5 +1,6 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { CONFIG } from "../config";
+import { Language } from "../localization/localization";
 
 const analyticsDisabled = !CONFIG.featureFlags.analytics;
 
@@ -63,8 +64,18 @@ export class Analytics {
         await Analytics.logButtonPress("like", { messageId });
     }
 
-    static async logPushNotifications(enabled: boolean) {
-        await Analytics.logButtonPress("push_notifications", { enabled });
+    static async logPushNotifications(
+        enabled: boolean,
+        hour: number,
+        min: number,
+        timezoneOffsetInMin: number
+    ) {
+        await Analytics.logButtonPress("push_notifications", {
+            enabled,
+            hour,
+            min,
+            timezoneOffsetInMin,
+        });
     }
 
     static async logDarkMode(enabled: boolean) {
@@ -85,5 +96,13 @@ export class Analytics {
 
     static async logCancel(purpose: string) {
         await Analytics.logButtonPress("cancel", { purpose });
+    }
+
+    static async logLanguage(language: Language | null) {
+        await Analytics.logButtonPress("language", { language });
+    }
+
+    static async logManualRefresh() {
+        await Analytics.logButtonPress("refresh", {});
     }
 }

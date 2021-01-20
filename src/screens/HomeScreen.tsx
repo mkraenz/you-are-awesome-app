@@ -8,7 +8,6 @@ import {
 } from "react-native-gesture-handler";
 import { Card, Paragraph, Portal, Title, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
-import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
 import RefreshMessagesView from "../components/home/RefreshMessagesView";
@@ -87,7 +86,6 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                                 {heartShown && (
                                     <AnimatedLikeIcon
                                         style={styles.heartIcon}
-                                        onStart={() => Analytics.logLike(id)}
                                         onFinished={() => showHeart(false)}
                                         maxIconSize={200}
                                     />

@@ -6,7 +6,9 @@ import { analyticsEnabled } from "../selectors";
 
 function* toggleAnalyticsWorkerSaga(_: IToggleAnalytics) {
     try {
-        const analyticsOn = yield select(analyticsEnabled);
+        const analyticsOn: ReturnType<typeof analyticsEnabled> = yield select(
+            analyticsEnabled
+        );
         yield call(enableAnalytics, analyticsOn);
     } catch (e) {
         throw new Error(`Failed to toggle analytics: ${e.message}`);

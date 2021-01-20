@@ -1,5 +1,6 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { Analytics } from "../../src/api/Analytics";
+import { Language } from "../../src/localization/localization";
 
 jest.mock("expo-firebase-analytics", () => ({
     logEvent: jest.fn(),
@@ -86,10 +87,13 @@ it("logFormPartiallyFilled()", async () => {
 });
 
 it("logPushNotifications()", async () => {
-    await Analytics.logPushNotifications(false);
+    await Analytics.logPushNotifications(false, 16, 43, -90);
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "push_notifications",
         enabled: false,
+        hour: 16,
+        min: 43,
+        timezoneOffsetInMin: -90,
     });
 });
 
@@ -116,5 +120,20 @@ it("logCancel()", async () => {
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "cancel",
         purpose: "delete own contributions",
+    });
+});
+
+it("logLanguage()", async () => {
+    await Analytics.logLanguage(Language.German);
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
+        type: "language",
+        language: "de",
+    });
+});
+
+it("logManualRefresh()", async () => {
+    await Analytics.logManualRefresh();
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
+        type: "refresh",
     });
 });

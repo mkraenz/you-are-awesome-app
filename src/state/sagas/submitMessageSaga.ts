@@ -18,7 +18,9 @@ function* submitMessageWorkerSaga(
             ? action
             : action.payload.originalAction;
     try {
-        const responseData: AwaitedReturnType<typeof submitContribution> = yield call(
+        const responseData: AwaitedReturnType<
+            typeof submitContribution
+        > = yield call(
             submitContribution,
             submitMessageRequested.payload,
             CONFIG.uri.submitContribution
