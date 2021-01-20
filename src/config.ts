@@ -23,6 +23,13 @@ const prodConfig = {
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
     },
+    sentry: {
+        debug: true,
+        dns:
+            "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
+        environment: "prod",
+        reportFromExpoClient: false,
+    },
     disableApiCall: {
         all: false,
         reportInappropriateContent: false,
@@ -34,7 +41,7 @@ const devConfig: typeof prodConfig = {
     isProd: false,
     featureFlags: {
         analytics: true,
-        developerSettings: false,
+        developerSettings: true,
     },
     debugAnalytics: true,
     fallbackLanguage: Language.English,
@@ -51,6 +58,13 @@ const devConfig: typeof prodConfig = {
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
+    },
+    sentry: {
+        debug: true,
+        dns:
+            "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
+        environment: "dev",
+        reportFromExpoClient: true,
     },
     disableApiCall: {
         all: false,

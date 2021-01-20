@@ -36,6 +36,16 @@
                 "firebase": "NOTE: Gets overwritten in app.config.js"
             }
         },
+        "hooks": {
+            "postPublish": [
+                {
+                    "file": "sentry-expo/upload-sourcemaps",
+                    "config": {
+                        "note": "NOTE: config obj gets overwritten in app.config.js"
+                    }
+                }
+            ]
+        },
         "description": "Join our community that tells you HOW AWESOME YOU ARE. Spread the awesomeness by sending awesome messages to other people around the globe and feel proud to help them reach their goals."
     }
 }

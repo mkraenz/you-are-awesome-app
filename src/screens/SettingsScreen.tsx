@@ -16,7 +16,7 @@ import { toggleAnalytics } from "../state/action-creators/toggleAnalytics";
 import { toggleDarkTheme } from "../state/action-creators/toggleDarkTheme";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { Color } from "../themes/theme";
-import version from "../utils/version.json";
+import { jsBuildNumber } from "../utils/version.json";
 
 const styles = StyleSheet.create({
     aboutContainer: {
@@ -107,7 +107,7 @@ const About = () => {
         <View style={styles.aboutContainer}>
             <Paragraph>
                 {t("buildVersion")}
-                {version.jsBuildNumber}
+                {jsBuildNumber}
             </Paragraph>
             <Paragraph>
                 {t("copyright1")}

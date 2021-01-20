@@ -88,3 +88,5 @@ coverage/
 
 # macOS
 .DS_Store
+
+.env
