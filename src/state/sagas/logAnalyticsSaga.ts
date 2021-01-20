@@ -1,7 +1,11 @@
 import { call, select, takeEvery } from "redux-saga/effects";
 import { Analytics } from "../../api/Analytics";
 import { ActionType } from "../actions/ActionType";
-import { ISetLanguage, IToggleDarkThemeAction } from "../actions/IAppAction";
+import {
+    ISetLanguage,
+    ISetPushNotificationsState,
+    IToggleDarkThemeAction,
+} from "../actions/IAppAction";
 import { IAddToFavorites } from "../actions/IFavoritesAction";
 import { ISubmitMessageRequested } from "../actions/SubmitMessageAction";
 import { countMyContributions, darkModeEnabled, language } from "../selectors";
@@ -16,9 +20,21 @@ function* logAnalyticsWorkerSaga(
         | ISubmitMessageRequested
         | ISetLanguage
         | IAddToFavorites
+        | ISetPushNotificationsState
 ) {
     try {
         switch (action.type) {
+            case ActionType.SetPushNotificationsState:
+                const notificationsEnabled = action.payload.enabled;
+                const notifyTime = action.payload.scheduledTime;
+                yield call(
+                    Analytics.logPushNotifications,
+                    notificationsEnabled,
+                    notifyTime.getHours(),
+                    notifyTime.getMinutes(),
+                    notifyTime.getTimezoneOffset()
+                );
+                break;
             case ActionType.AddToFavorites:
                 const msgId = action.payload.id;
                 yield call(Analytics.logLike, msgId);

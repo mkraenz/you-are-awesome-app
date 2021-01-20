@@ -26,13 +26,14 @@ const prodConfig = {
     disableApiCall: {
         all: false,
         reportInappropriateContent: false,
+        submitContribution: false,
     },
 };
 
 const devConfig: typeof prodConfig = {
     isProd: false,
     featureFlags: {
-        analytics: false,
+        analytics: true,
         developerSettings: false,
     },
     debugAnalytics: true,
@@ -54,8 +55,9 @@ const devConfig: typeof prodConfig = {
     disableApiCall: {
         all: false,
         reportInappropriateContent: false,
+        submitContribution: false,
     },
 };
 
-const isProd = process.env.NODE_ENV === "prod" || false;
+const isProd = process.env.NODE_ENV === "prod";
 export const CONFIG = isProd ? prodConfig : devConfig;

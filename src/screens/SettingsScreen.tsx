@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, View } from "react-native";
 import { Divider, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
+import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
 import LanguageDropdown from "../components/settings/LanguageDropdown";
@@ -98,6 +99,10 @@ const SettingsScreen: FC<Props> = ({
 
 const About = () => {
     const { t } = useTranslation();
+    const handleCompanyLinkClicked = () => {
+        Analytics.logLinkFollow(t("companyLink"));
+        Linking.openURL(t("companyLink"));
+    };
     return (
         <View style={styles.aboutContainer}>
             <Paragraph>
@@ -107,7 +112,7 @@ const About = () => {
             <Paragraph>
                 {t("copyright1")}
                 <Paragraph
-                    onPress={() => Linking.openURL(t("companyLink"))}
+                    onPress={handleCompanyLinkClicked}
                     style={styles.link}
                 >
                     {t("copyright2Company")}

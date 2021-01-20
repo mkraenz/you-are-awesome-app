@@ -87,10 +87,13 @@ it("logFormPartiallyFilled()", async () => {
 });
 
 it("logPushNotifications()", async () => {
-    await Analytics.logPushNotifications(false);
+    await Analytics.logPushNotifications(false, 16, 43, -90);
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "push_notifications",
         enabled: false,
+        hour: 16,
+        min: 43,
+        timezoneOffsetInMin: -90,
     });
 });
 
