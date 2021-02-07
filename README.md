@@ -14,6 +14,7 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 - [Firebase](https://console.firebase.google.com/u/0/project/youareawesomeapp-c8835/overview)
 - [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
 - [AWS S3](https://s3.console.aws.amazon.com/s3/home?region=eu-central-1)
+- [Sentry](https://sentry.io/organizations/you-are-awesome-app/issues/)
 
 ## Legals
 
@@ -32,6 +33,8 @@ Google Play and the Google Play logo are trademarks of Google LLC.
 ##### OTA Over-the-air updates
 
 ```shell
+deploy:ota:test
+# for production release
 deploy:ota:prod
 ```
 
@@ -43,13 +46,39 @@ Only in case of changes to `app.json` or the Expo SDK version, one needs to rebu
 
 ```shell
 # manually update app.json's version and android.versionCode
-yarn build-and-publish:expo:android
+yarn build-and-publish:expo:android:test
+# for production release
+yarn build-and-publish:expo:android:prod
 ```
 
-To push the update to the Google Playstore run
+To push the built apk to the Google Playstore run
 
 ```shell
-publish:playstore
+# ensure the following was run right before publishing to playstore
+# yarn build-and-publish:expo:android:prod
+yarn publish:playstore
+```
+
+### Debug native app on a phone or emulator
+
+Requires
+
+- Android Studio to be installed on your computer
+- USB debugging enabled on phone or emulator (see [video](https://www.youtube.com/watch?v=Yxqq7bT1K2A))
+- for phone: phone is connected to computer
+
+> Pro tip: Use `zsh` ([zshell](https://ohmyz.sh/)) for autocompletion of paths, and even for adb.
+
+```shell
+# list connected devices
+adb devices -l
+
+# native logs
+adb logcat
+adb logcat >> my-log.log
+
+# install apk
+adb install /path/to/my/app
 ```
 
 ### Debugging Jest tests

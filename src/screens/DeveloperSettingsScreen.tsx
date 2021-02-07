@@ -21,6 +21,13 @@ const DeveloperSettingsScreen: FC = () => {
             <MyButton onPress={Analytics.logDebug}>
                 Trigger Analytics Contribute event
             </MyButton>
+            <MyButton
+                onPress={() => {
+                    throw new Error("Test Error");
+                }}
+            >
+                Throw an Error
+            </MyButton>
         </Layout>
     );
 };
