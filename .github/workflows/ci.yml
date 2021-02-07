@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      # fix timezone to developers' timezone with TZ=...
+      - run: |
+          yarn install --frozen-lockfile
+          yarn tsc
+          TZ=Europe/Berlin yarn test --ci 
+          npx codecov
