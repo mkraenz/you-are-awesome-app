@@ -12,24 +12,25 @@
             "backgroundColor": "#ffffff"
         },
         "updates": {
-            "fallbackToCacheTimeout": 2000
+            "fallbackToCacheTimeout": 10000
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.5.1",
+        "version": "1.6.5",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 9,
+            "versionCode": 10,
             "useNextNotificationsApi": true
         },
         "ios": {
             "bundleIdentifier": "eu.kraenz.youareawesomeapp",
             "googleServicesFile": "./GoogleService-Info.plist",
-            "supportsTablet": true
+            "supportsTablet": true,
+            "buildNumber": "1.0.0"
         },
         "web": {
             "config": {

@@ -12,7 +12,7 @@ const main = () => {
     const assertion = shell.exec("yarn assert:prod-config");
     if (assertion.code === 0) {
         incrementBuildVersion();
-        shell.exec("expo publish --target bare");
+        shell.exec("expo publish --target managed");
     }
 };
 

@@ -16,6 +16,7 @@
         "dev:clear-cache": "expo start --clear",
         "build": "tsc",
         "build:watch": "tsc -w",
+        "debug:production-mode": "expo start --no-dev --minify",
         "sanity-check": "npm install && yarn build && yarn test && yarn expo start",
         "start": "react-native start",
         "test": "jest",
@@ -24,10 +25,11 @@
         "test:coverage": "jest",
         "test:update-snapshot": "jest --updateSnapshot --coverage=false",
         "assert:prod-config": "ts-node ./scripts/assertProdConfig.ts",
-        "build-and-publish:expo:android": "NODE_ENV=prod expo build:android --type apk",
+        "build-and-publish:expo:android:prod": "NODE_ENV=prod expo build:android --type apk",
+        "build-and-publish:expo:android:test": "NODE_ENV=prod expo build:android --type apk --release-channel test",
         "publish:playstore": "NODE_ENV=prod expo upload:android --latest",
         "deploy:ota:prod": "NODE_ENV=prod node ./scripts/expo-publish-with-version.js",
-        "deploy:ota:test": "expo publish --release-channel test"
+        "deploy:ota:test": "NODE_ENV=prod expo publish  --release-channel test"
     },
     "dependencies": {
         "@react-native-community/datetimepicker": "3.0.4",
@@ -36,6 +38,8 @@
         "@react-navigation/material-top-tabs": "^5.3.10",
         "@react-navigation/native": "^5.8.10",
         "@react-navigation/stack": "^5.12.8",
+        "@sentry/integrations": "^6.1.0",
+        "@sentry/react-native": "2.1.0",
         "axios": "^0.21.1",
         "expo": "^40.0.0",
         "expo-firebase-analytics": "~2.6.0",

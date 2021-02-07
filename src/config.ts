@@ -5,7 +5,7 @@ const prodConfig = {
     isProd: true,
     featureFlags: {
         analytics: true,
-        developerSettings: false,
+        developerSettings: true,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -24,10 +24,10 @@ const prodConfig = {
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
     },
     sentry: {
-        debug: true,
+        debug: false,
         dns:
             "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
-        environment: "prod",
+        environment: "production",
         reportFromExpoClient: false,
     },
     disableApiCall: {
