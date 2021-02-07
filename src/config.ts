@@ -5,7 +5,7 @@ const prodConfig = {
     isProd: true,
     featureFlags: {
         analytics: true,
-        developerSettings: true,
+        developerSettings: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
