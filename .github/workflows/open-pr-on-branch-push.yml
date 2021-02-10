@@ -5,6 +5,8 @@ on:
       - staging
       - launchpad
       - production
+      - master
+      - main
 jobs:
   auto-pull-request:
     name: PullRequestAction
