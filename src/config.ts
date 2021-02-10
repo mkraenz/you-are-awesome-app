@@ -1,8 +1,10 @@
+import Constants from "expo-constants";
 import { Language } from "./localization/localization";
 import { Route } from "./navigation/Route";
 
 const prodConfig = {
     isProd: true,
+    env: "prod",
     featureFlags: {
         analytics: true,
         developerSettings: false,
@@ -39,6 +41,7 @@ const prodConfig = {
 
 const devConfig: typeof prodConfig = {
     isProd: false,
+    env: "dev",
     featureFlags: {
         analytics: true,
         developerSettings: true,
@@ -73,5 +76,5 @@ const devConfig: typeof prodConfig = {
     },
 };
 
-const isProd = process.env.NODE_ENV === "prod";
+const isProd = Constants.manifest.extra.env === "prod";
 export const CONFIG = isProd ? prodConfig : devConfig;
