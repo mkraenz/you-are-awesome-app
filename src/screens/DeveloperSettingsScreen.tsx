@@ -1,4 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
+import Constants from "expo-constants";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Paragraph } from "react-native-paper";
@@ -17,6 +18,9 @@ const DeveloperSettingsScreen: FC = () => {
             title={t(Route.DeveloperSettings)}
         >
             <Paragraph>Env: {CONFIG.env}</Paragraph>
+            <Paragraph>
+                Release channel: {String(Constants.manifest.releaseChannel)}
+            </Paragraph>
             <MyButton onPress={Analytics.resetAnalyticsData}>
                 Reset Analytics
             </MyButton>

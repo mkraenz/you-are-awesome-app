@@ -14,7 +14,7 @@ const NavContainerWithAnalytics: FC = ({ children }) => {
     const navigationRef = React.useRef<NavigationContainerRef>(null);
     const theme = useTheme() as FullTheme;
 
-    if (!CONFIG.isProd) {
+    if (!CONFIG.isProdOrStage) {
         Analytics.setDebugModeEnabled(CONFIG.debugAnalytics);
     }
     return (
