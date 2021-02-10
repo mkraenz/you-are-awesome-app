@@ -9,11 +9,15 @@ const incrementBuildVersion = () => {
 };
 
 const main = () => {
-    const assertion = shell.exec("yarn assert:prod-config");
-    if (assertion.code === 0) {
-        incrementBuildVersion();
-        shell.exec("expo publish --target managed");
+    const applicableEnv = ["prod", "stage"].includes(process.env.NODE_ENV);
+    if (!applicableEnv) {
+        throw new Error("Not an applicable environment.");
     }
+
+    incrementBuildVersion();
+    shell.exec(
+        `expo publish --target managed --release-channel ${process.env.NODE_ENV}`
+    );
 };
 
 main();

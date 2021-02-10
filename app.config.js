@@ -7,6 +7,7 @@ dotenv.config();
 export default ({ config }) => {
     config.web.config.firebase = firebaseWebConfig;
     setSentrySourcemapConfig(config);
+    config.extra.env = process.env.NODE_ENV || "dev";
 
     return config;
 };

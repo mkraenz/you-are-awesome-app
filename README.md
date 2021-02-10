@@ -33,9 +33,9 @@ Google Play and the Google Play logo are trademarks of Google LLC.
 ##### OTA Over-the-air updates
 
 ```shell
-deploy:ota:test
+yarn deploy:ota:test
 # for production release
-deploy:ota:prod
+yarn deploy:ota:prod
 ```
 
 When a User now starts her app (even if installed from the Google Play Store!), the app tries to download the newest JS files for the app and runs the newest version. It falls back to the cached (i.e. previous) version after 2 seconds.
