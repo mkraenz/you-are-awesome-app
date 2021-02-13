@@ -85,7 +85,8 @@ export class Analytics {
     static async logLinkFollow(
         linkText: "privacyPolicy" | "company" | "termsAndConditions"
     ) {
-        await Analytics.logButtonPress("link", { linkText });
+        if (analyticsDisabled) return;
+        await FAnalytics.logEvent("link_follow", { linkText });
     }
 
     static async logDelete(itemsDeleted: number, itemsLeft: number) {
