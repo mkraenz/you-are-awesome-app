@@ -99,8 +99,8 @@ const SettingsScreen: FC<Props> = ({
 
 const About = () => {
     const { t } = useTranslation();
-    const handleCompanyLinkClicked = () => {
-        Analytics.logLinkFollow(t("companyLink"));
+    const openCompanyWebsite = () => {
+        Analytics.logLinkFollow("company");
         Linking.openURL(t("companyLink"));
     };
     return (
@@ -111,10 +111,7 @@ const About = () => {
             </Paragraph>
             <Paragraph>
                 {t("copyright1")}
-                <Paragraph
-                    onPress={handleCompanyLinkClicked}
-                    style={styles.link}
-                >
+                <Paragraph onPress={openCompanyWebsite} style={styles.link}>
                     {t("copyright2Company")}
                 </Paragraph>
                 {t("copyright3")}

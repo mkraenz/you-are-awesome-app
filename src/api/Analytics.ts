@@ -82,7 +82,9 @@ export class Analytics {
         await Analytics.logButtonPress("dark_mode", { enabled });
     }
 
-    static async logLinkFollow(linkText: string) {
+    static async logLinkFollow(
+        linkText: "privacyPolicy" | "company" | "termsAndConditions"
+    ) {
         await Analytics.logButtonPress("link", { linkText });
     }
 

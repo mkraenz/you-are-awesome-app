@@ -97,11 +97,11 @@ it("logPushNotifications()", async () => {
     });
 });
 
-it("logPushNotifications()", async () => {
-    await Analytics.logLinkFollow("company name");
+it("logLinkFollow()", async () => {
+    await Analytics.logLinkFollow("company");
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "link",
-        linkText: "company name",
+        linkText: "company",
     });
 });
 

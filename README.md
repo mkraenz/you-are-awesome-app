@@ -15,6 +15,7 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 - [Privacy Policy on Termly.io](https://app.termly.io/dashboard/website/548360/privacy-policy)
 - [AWS S3](https://s3.console.aws.amazon.com/s3/home?region=eu-central-1)
 - [Sentry](https://sentry.io/organizations/you-are-awesome-app/issues/)
+- [BigQuery](https://console.cloud.google.com/bigquery?project=youareawesomeapp-c8835)
 
 ## Legals
 
@@ -116,6 +117,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [ezgif Gif Maker](https://ezgif.com/maker)
 - [Microsoft UI Translations](https://www.microsoft.com/en-us/language)
 - [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
+- [Firebase Analytics Tricks with BigQuery Video](https://www.youtube.com/watch?v=pxNrkjBeHpw) and [recipes](https://gist.github.com/ToddKerpelman/eec3e60c0a5e0bd720d8991bd45487cb)
 
 ## Frequent Development Mistakes
 
