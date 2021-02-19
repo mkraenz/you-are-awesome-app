@@ -1,5 +1,5 @@
-import * as Localization from "expo-localization";
 import { call, select, takeEvery } from "redux-saga/effects";
+import * as Sentry from "sentry-expo";
 import { Analytics } from "../../api/Analytics";
 import { Route } from "../../navigation/Route";
 import { ActionType } from "../actions/ActionType";
@@ -40,20 +40,17 @@ function* logAnalyticsWorkerSaga(
                     Analytics.logPushNotifications,
                     notificationsEnabled,
                     notifyTime.getHours(),
-                    notifyTime.getMinutes(),
-                    Localization.timezone
+                    notifyTime.getMinutes()
                 );
                 break;
 
             case ActionType.ChangePushNotificationTime:
                 const notificationTime = action.payload.scheduledTime;
-                console.log(notificationTime);
                 yield call(
                     Analytics.logPushNotifications,
                     true,
                     notificationTime.getHours(),
-                    notificationTime.getMinutes(),
-                    Localization.timezone
+                    notificationTime.getMinutes()
                 );
                 break;
 
@@ -110,7 +107,9 @@ function* logAnalyticsWorkerSaga(
                 break;
         }
     } catch (e) {
-        throw new Error(`Failed to log analytics: ${action.type} ${e.message}`);
+        Sentry.Native.captureException(
+            new Error(`Failed to log analytics: ${action.type} ${e.message}`)
+        );
     }
 }
 

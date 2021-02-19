@@ -57,14 +57,12 @@ export class Analytics {
     static async logPushNotifications(
         enabled: boolean,
         hour: number,
-        min: number,
-        timezone: string
+        min: number
     ) {
         await Analytics.logButtonPress("push_notifications", {
             enabled,
             hour,
             min,
-            timezone,
         });
     }
 
