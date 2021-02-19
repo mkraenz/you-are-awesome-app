@@ -16,7 +16,7 @@
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.6.5",
+        "version": "1.7.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
