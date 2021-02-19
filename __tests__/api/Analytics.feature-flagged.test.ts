@@ -52,8 +52,13 @@ describe("Analytics does nothing if feature flag not set", () => {
         expect(FAnalytics.logEvent).not.toHaveBeenCalled();
     });
 
-    it("logButtonPress()", async () => {
+    it("logFormPartiallyFilled()", async () => {
         await Analytics.logFormPartiallyFilled("my form", 1);
+        expect(FAnalytics.logEvent).not.toHaveBeenCalled();
+    });
+
+    it("logLinkFollow()", async () => {
+        await Analytics.logLinkFollow("company");
         expect(FAnalytics.logEvent).not.toHaveBeenCalled();
     });
 });
