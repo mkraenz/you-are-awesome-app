@@ -76,13 +76,13 @@ export class Analytics {
         enabled: boolean,
         hour: number,
         min: number,
-        timezoneOffsetInMin: number
+        timezone: string
     ) {
         await Analytics.logButtonPress("push_notifications", {
             enabled,
             hour,
             min,
-            timezoneOffsetInMin,
+            timezone,
         });
     }
 
