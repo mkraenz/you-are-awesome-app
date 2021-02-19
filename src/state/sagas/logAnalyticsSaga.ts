@@ -1,4 +1,3 @@
-import * as Localization from "expo-localization";
 import { call, select, takeEvery } from "redux-saga/effects";
 import { Analytics } from "../../api/Analytics";
 import { Route } from "../../navigation/Route";
@@ -40,20 +39,17 @@ function* logAnalyticsWorkerSaga(
                     Analytics.logPushNotifications,
                     notificationsEnabled,
                     notifyTime.getHours(),
-                    notifyTime.getMinutes(),
-                    Localization.timezone
+                    notifyTime.getMinutes()
                 );
                 break;
 
             case ActionType.ChangePushNotificationTime:
                 const notificationTime = action.payload.scheduledTime;
-                console.log(notificationTime);
                 yield call(
                     Analytics.logPushNotifications,
                     true,
                     notificationTime.getHours(),
-                    notificationTime.getMinutes(),
-                    Localization.timezone
+                    notificationTime.getMinutes()
                 );
                 break;
 
