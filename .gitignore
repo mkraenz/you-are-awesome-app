@@ -73,6 +73,9 @@ GoogleService-Info.plist
 # firebase web
 google-firebase-web.js
 
+# sentry
+.tmp
+
 node_modules/**/*
 .expo/*
 npm-debug.*
