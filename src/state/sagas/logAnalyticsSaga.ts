@@ -1,4 +1,5 @@
 import { call, select, takeEvery } from "redux-saga/effects";
+import * as Sentry from "sentry-expo";
 import { Analytics } from "../../api/Analytics";
 import { Route } from "../../navigation/Route";
 import { ActionType } from "../actions/ActionType";
@@ -106,7 +107,9 @@ function* logAnalyticsWorkerSaga(
                 break;
         }
     } catch (e) {
-        throw new Error(`Failed to log analytics: ${action.type} ${e.message}`);
+        Sentry.Native.captureException(
+            new Error(`Failed to log analytics: ${action.type} ${e.message}`)
+        );
     }
 }
 
