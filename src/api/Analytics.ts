@@ -27,8 +27,7 @@ export class Analytics {
         await FAnalytics.logEvent("toggle_analytics", { enabled });
     }
 
-    // TODO #348 improve with count. Hypothesis: the higher the contributions count, the more likely are further contributions
-    static async logContribution(contributions: number = -1) {
+    static async logContribution(contributions: number) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("share", {
             type: "contribution",
@@ -44,28 +43,11 @@ export class Analytics {
         });
     }
 
-    static async logFormPartiallyFilled(
-        formName: string,
-        otherFormLinesFilled: number
-    ) {
-        if (analyticsDisabled) return;
-        await FAnalytics.logEvent("form_fill", {
-            formName,
-            otherFormLinesFilled,
-        });
-    }
-
     static async logLinkFollow(
         linkText: "privacyPolicy" | "company" | "termsAndConditions"
     ) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("link_follow", { linkText });
-    }
-
-    /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
-    static async logButtonPress(type: string, value: object) {
-        if (analyticsDisabled) return;
-        await FAnalytics.logEvent("button_press", { type, ...value });
     }
 
     static async logLike(messageId: string) {
@@ -120,5 +102,11 @@ export class Analytics {
 
     static async logManualRefresh() {
         await Analytics.logButtonPress("refresh", {});
+    }
+
+    /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
+    private static async logButtonPress(type: string, value: object) {
+        if (analyticsDisabled) return;
+        await FAnalytics.logEvent("button_press", { type, ...value });
     }
 }

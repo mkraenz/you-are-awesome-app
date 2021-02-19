@@ -56,7 +56,7 @@ it("logDebug()", async () => {
 });
 
 it("logButtonPress()", async () => {
-    await Analytics.logButtonPress("my-type", { someProp: "hey" });
+    await Analytics["logButtonPress"]("my-type", { someProp: "hey" });
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "my-type",
         someProp: "hey",
@@ -76,14 +76,6 @@ it("logDarkMode()", async () => {
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "dark_mode",
         enabled: true,
-    });
-});
-
-it("logFormPartiallyFilled()", async () => {
-    await Analytics.logFormPartiallyFilled("contributions", 2);
-    expect(FAnalytics.logEvent).toHaveBeenCalledWith("form_fill", {
-        formName: "contributions",
-        otherFormLinesFilled: 2,
     });
 });
 
