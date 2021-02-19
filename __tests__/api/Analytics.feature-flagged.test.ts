@@ -48,12 +48,12 @@ describe("Analytics does nothing if feature flag not set", () => {
     });
 
     it("logButtonPress()", async () => {
-        await Analytics.logButtonPress("my-type", { someProp: "hey" });
+        await Analytics["logButtonPress"]("my-type", { someProp: "hey" });
         expect(FAnalytics.logEvent).not.toHaveBeenCalled();
     });
 
-    it("logButtonPress()", async () => {
-        await Analytics.logFormPartiallyFilled("my form", 1);
+    it("logLinkFollow()", async () => {
+        await Analytics.logLinkFollow("company");
         expect(FAnalytics.logEvent).not.toHaveBeenCalled();
     });
 });

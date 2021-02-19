@@ -39,5 +39,5 @@ export interface ISubmitMessageFailedTimeoutExceeded {
 
 export type IDeleteMyContributions = IActionWithPayload<
     ActionType.DeleteMyContributions,
-    { ids: string[] }
+    { ids: string[]; previousMessagesCount: number }
 >;

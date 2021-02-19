@@ -1,6 +1,7 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { CONFIG } from "../config";
 import { Language } from "../localization/localization";
+import { Route } from "../navigation/Route";
 
 const analyticsDisabled = !CONFIG.featureFlags.analytics;
 
@@ -26,8 +27,7 @@ export class Analytics {
         await FAnalytics.logEvent("toggle_analytics", { enabled });
     }
 
-    // TODO #348 improve with count. Hypothesis: the higher the contributions count, the more likely are further contributions
-    static async logContribution(contributions: number = -1) {
+    static async logContribution(contributions: number) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("share", {
             type: "contribution",
@@ -43,21 +43,11 @@ export class Analytics {
         });
     }
 
-    static async logFormPartiallyFilled(
-        formName: string,
-        otherFormLinesFilled: number
+    static async logLinkFollow(
+        linkText: "privacyPolicy" | "company" | "termsAndConditions"
     ) {
         if (analyticsDisabled) return;
-        await FAnalytics.logEvent("form_fill", {
-            formName,
-            otherFormLinesFilled,
-        });
-    }
-
-    /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
-    static async logButtonPress(type: string, value: object) {
-        if (analyticsDisabled) return;
-        await FAnalytics.logEvent("button_press", { type, ...value });
+        await FAnalytics.logEvent("link_follow", { linkText });
     }
 
     static async logLike(messageId: string) {
@@ -68,13 +58,13 @@ export class Analytics {
         enabled: boolean,
         hour: number,
         min: number,
-        timezoneOffsetInMin: number
+        timezone: string
     ) {
         await Analytics.logButtonPress("push_notifications", {
             enabled,
             hour,
             min,
-            timezoneOffsetInMin,
+            timezone,
         });
     }
 
@@ -82,15 +72,23 @@ export class Analytics {
         await Analytics.logButtonPress("dark_mode", { enabled });
     }
 
-    static async logLinkFollow(linkText: string) {
-        await Analytics.logButtonPress("link", { linkText });
-    }
-
-    static async logDelete(itemsDeleted: number, itemsLeft: number) {
+    static async logDelete(
+        itemsDeleted: number,
+        itemsLeft: number,
+        screen: Route.MyContributions | Route.Favorites
+    ) {
         await Analytics.logButtonPress("items_deleted", {
             itemsDeleted,
             itemsLeft,
             deletedAll: itemsLeft === 0,
+            screen,
+        });
+    }
+    static async logDeleteMode(
+        screen: Route.MyContributions | Route.Favorites
+    ) {
+        await Analytics.logButtonPress("delete_mode", {
+            screen,
         });
     }
 
@@ -104,5 +102,11 @@ export class Analytics {
 
     static async logManualRefresh() {
         await Analytics.logButtonPress("refresh", {});
+    }
+
+    /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
+    private static async logButtonPress(type: string, value: object) {
+        if (analyticsDisabled) return;
+        await FAnalytics.logEvent("button_press", { type, ...value });
     }
 }

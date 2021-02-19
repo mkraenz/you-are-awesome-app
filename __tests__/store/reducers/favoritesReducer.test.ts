@@ -147,6 +147,7 @@ describe("favoritesReducer()", () => {
                 type: ActionType.DeleteFavorites,
                 payload: {
                     ids: ["id-1", "id-2"],
+                    previousMessagesCount: 2,
                 },
             };
             const state: IFavoritesState = {
@@ -166,6 +167,7 @@ describe("favoritesReducer()", () => {
                 type: ActionType.DeleteFavorites,
                 payload: {
                     ids: ["id-2"],
+                    previousMessagesCount: 2,
                 },
             };
             const state: IFavoritesState = {

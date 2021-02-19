@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet } from "react-native";
 import { Button } from "react-native-paper";
 import { WebView } from "react-native-webview";
+import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import { Route } from "../navigation/Route";
 
@@ -16,6 +17,10 @@ const styles = StyleSheet.create({
 const PrivacyPolicyScreen: React.FC = () => {
     const { t } = useTranslation();
     const { goBack } = useNavigation();
+    const openInBrowser = () => {
+        Analytics.logLinkFollow("privacyPolicy");
+        Linking.openURL(t("privacyPolicyLink"));
+    };
     return (
         <Layout
             route={Route.PrivacyPolicy}
@@ -27,7 +32,7 @@ const PrivacyPolicyScreen: React.FC = () => {
             <Button
                 mode="contained"
                 style={styles.viewInBrowserButton}
-                onPress={() => Linking.openURL(t("privacyPolicyLink"))}
+                onPress={openInBrowser}
             >
                 {t("viewInBrowser")}
             </Button>

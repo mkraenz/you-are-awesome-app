@@ -11,5 +11,5 @@ export type IAddToFavorites = IActionWithPayload<
 
 export type IDeleteFavorites = IActionWithPayload<
     ActionType.DeleteFavorites,
-    { ids: string[] }
+    { ids: string[]; previousMessagesCount: number }
 >;

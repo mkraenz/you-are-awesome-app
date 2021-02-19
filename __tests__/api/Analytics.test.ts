@@ -1,6 +1,7 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { Analytics } from "../../src/api/Analytics";
 import { Language } from "../../src/localization/localization";
+import { Route } from "../../src/navigation/Route";
 
 jest.mock("expo-firebase-analytics", () => ({
     logEvent: jest.fn(),
@@ -55,7 +56,7 @@ it("logDebug()", async () => {
 });
 
 it("logButtonPress()", async () => {
-    await Analytics.logButtonPress("my-type", { someProp: "hey" });
+    await Analytics["logButtonPress"]("my-type", { someProp: "hey" });
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "my-type",
         someProp: "hey",
@@ -78,40 +79,40 @@ it("logDarkMode()", async () => {
     });
 });
 
-it("logFormPartiallyFilled()", async () => {
-    await Analytics.logFormPartiallyFilled("contributions", 2);
-    expect(FAnalytics.logEvent).toHaveBeenCalledWith("form_fill", {
-        formName: "contributions",
-        otherFormLinesFilled: 2,
-    });
-});
-
 it("logPushNotifications()", async () => {
-    await Analytics.logPushNotifications(false, 16, 43, -90);
+    await Analytics.logPushNotifications(false, 16, 43, "Europe/Berlin");
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "push_notifications",
         enabled: false,
         hour: 16,
         min: 43,
-        timezoneOffsetInMin: -90,
+        timezone: "Europe/Berlin",
     });
 });
 
-it("logPushNotifications()", async () => {
-    await Analytics.logLinkFollow("company name");
-    expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
-        type: "link",
-        linkText: "company name",
+it("logLinkFollow()", async () => {
+    await Analytics.logLinkFollow("company");
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("link_follow", {
+        linkText: "company",
     });
 });
 
 it("logDelete()", async () => {
-    await Analytics.logDelete(10, 0);
+    await Analytics.logDelete(10, 0, Route.Favorites);
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "items_deleted",
         itemsDeleted: 10,
         itemsLeft: 0,
         deletedAll: true,
+        screen: Route.Favorites,
+    });
+});
+
+it("logDeleteMode()", async () => {
+    await Analytics.logDeleteMode(Route.Favorites);
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
+        type: "delete_mode",
+        screen: Route.Favorites,
     });
 });
 
