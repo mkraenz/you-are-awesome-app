@@ -1,13 +1,17 @@
 import { call, select, takeEvery } from "redux-saga/effects";
 import { Analytics } from "../../api/Analytics";
+import { Route } from "../../navigation/Route";
 import { ActionType } from "../actions/ActionType";
 import {
     ISetLanguage,
     ISetPushNotificationsState,
     IToggleDarkThemeAction,
 } from "../actions/IAppAction";
-import { IAddToFavorites } from "../actions/IFavoritesAction";
-import { ISubmitMessageRequested } from "../actions/SubmitMessageAction";
+import { IAddToFavorites, IDeleteFavorites } from "../actions/IFavoritesAction";
+import {
+    IDeleteMyContributions,
+    ISubmitMessageRequested,
+} from "../actions/SubmitMessageAction";
 import { countMyContributions, darkModeEnabled, language } from "../selectors";
 
 /**
@@ -21,6 +25,8 @@ function* logAnalyticsWorkerSaga(
         | ISetLanguage
         | IAddToFavorites
         | ISetPushNotificationsState
+        | IDeleteFavorites
+        | IDeleteMyContributions
 ) {
     try {
         switch (action.type) {
@@ -57,9 +63,31 @@ function* logAnalyticsWorkerSaga(
                 > = yield select(countMyContributions);
                 yield Analytics.logContribution(myContributionsCount);
                 break;
+            case ActionType.DeleteFavorites:
+                const {
+                    ids: deletedFavIds,
+                    previousMessagesCount: previousFavCount,
+                } = action.payload;
+                yield Analytics.logDelete(
+                    deletedFavIds.length,
+                    deletedFavIds.length - previousFavCount,
+                    Route.Favorites
+                );
+                break;
+            case ActionType.DeleteMyContributions:
+                const {
+                    ids: deletedContribIds,
+                    previousMessagesCount: previousContribCount,
+                } = action.payload;
+                yield Analytics.logDelete(
+                    deletedContribIds.length,
+                    previousContribCount - deletedContribIds.length,
+                    Route.MyContributions
+                );
+                break;
         }
     } catch (e) {
-        throw new Error(`Failed to log analytics: ${e.message}`);
+        throw new Error(`Failed to log analytics: ${action.type} ${e.message}`);
     }
 }
 
@@ -70,6 +98,8 @@ function* logAnalyticsSaga() {
             ActionType.SubmitMessageRequested,
             ActionType.SetLanguage,
             ActionType.AddToFavorites,
+            ActionType.DeleteFavorites,
+            ActionType.DeleteMyContributions,
         ],
         logAnalyticsWorkerSaga
     );

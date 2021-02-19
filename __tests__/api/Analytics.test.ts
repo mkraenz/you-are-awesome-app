@@ -1,6 +1,7 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { Analytics } from "../../src/api/Analytics";
 import { Language } from "../../src/localization/localization";
+import { Route } from "../../src/navigation/Route";
 
 jest.mock("expo-firebase-analytics", () => ({
     logEvent: jest.fn(),
@@ -99,19 +100,27 @@ it("logPushNotifications()", async () => {
 
 it("logLinkFollow()", async () => {
     await Analytics.logLinkFollow("company");
-    expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
-        type: "link",
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("link_follow", {
         linkText: "company",
     });
 });
 
 it("logDelete()", async () => {
-    await Analytics.logDelete(10, 0);
+    await Analytics.logDelete(10, 0, Route.Favorites);
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
         type: "items_deleted",
         itemsDeleted: 10,
         itemsLeft: 0,
         deletedAll: true,
+        screen: Route.Favorites,
+    });
+});
+
+it("logDeleteMode()", async () => {
+    await Analytics.logDeleteMode(Route.Favorites);
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("button_press", {
+        type: "delete_mode",
+        screen: Route.Favorites,
     });
 });
 

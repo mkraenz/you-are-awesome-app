@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FlatList } from "react-native";
 import { Divider } from "react-native-paper";
 import { connect } from "react-redux";
+import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import EmptyMyContributionsScreen from "../components/contribution/EmptyMyContributionsScreen";
 import DeleteConfirmationDialog from "../components/favorites/DeleteConfirmationDialog";
@@ -45,9 +46,14 @@ const MyContributionsScreen: FC<Props> = ({
     };
     const hideDeleteConfirmation = () => showDeleteConfirmation(false);
     const deleteSelected = () => {
-        deleteMyContributions(selectedItemIds);
+        deleteMyContributions(selectedItemIds, messages.length);
         resetSelection();
         hideDeleteConfirmation();
+    };
+    const showConfirmationDialog = () => {
+        if (selectedItemIds.length > 0) {
+            showDeleteConfirmation(true);
+        }
     };
 
     if (isEmpty(messages)) {
@@ -63,7 +69,7 @@ const MyContributionsScreen: FC<Props> = ({
                     ? {
                           onBack: resetSelection,
                           actionIcon: "delete-forever",
-                          onActionPress: () => showDeleteConfirmation(true),
+                          onActionPress: showConfirmationDialog,
                       }
                     : { onBack: goBack }
             }
@@ -77,7 +83,10 @@ const MyContributionsScreen: FC<Props> = ({
                         <ListItem
                             {...item}
                             key={item.id}
-                            onLongPress={() => select(item.id)}
+                            onLongPress={() => {
+                                Analytics.logDeleteMode(Route.MyContributions);
+                                select(item.id);
+                            }}
                             onPressInSelectMode={() => select(item.id)}
                             selectMode={selectModeEnabled}
                             selected={selectedItemIds.includes(item.id)}

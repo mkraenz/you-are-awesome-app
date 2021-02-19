@@ -128,6 +128,7 @@ describe("submitMessageReducer", () => {
                 type: ActionType.DeleteMyContributions,
                 payload: {
                     ids: ["id-1", "id-2"],
+                    previousMessagesCount: 1,
                 },
             };
             const state: ISubmitMessageState = {
@@ -147,6 +148,7 @@ describe("submitMessageReducer", () => {
                 type: ActionType.DeleteMyContributions,
                 payload: {
                     ids: ["id-2"],
+                    previousMessagesCount: 2,
                 },
             };
             const state: ISubmitMessageState = {

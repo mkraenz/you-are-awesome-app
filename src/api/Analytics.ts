@@ -1,6 +1,7 @@
 import * as FAnalytics from "expo-firebase-analytics";
 import { CONFIG } from "../config";
 import { Language } from "../localization/localization";
+import { Route } from "../navigation/Route";
 
 const analyticsDisabled = !CONFIG.featureFlags.analytics;
 
@@ -54,6 +55,13 @@ export class Analytics {
         });
     }
 
+    static async logLinkFollow(
+        linkText: "privacyPolicy" | "company" | "termsAndConditions"
+    ) {
+        if (analyticsDisabled) return;
+        await FAnalytics.logEvent("link_follow", { linkText });
+    }
+
     /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
     static async logButtonPress(type: string, value: object) {
         if (analyticsDisabled) return;
@@ -82,18 +90,23 @@ export class Analytics {
         await Analytics.logButtonPress("dark_mode", { enabled });
     }
 
-    static async logLinkFollow(
-        linkText: "privacyPolicy" | "company" | "termsAndConditions"
+    static async logDelete(
+        itemsDeleted: number,
+        itemsLeft: number,
+        screen: Route.MyContributions | Route.Favorites
     ) {
-        if (analyticsDisabled) return;
-        await FAnalytics.logEvent("link_follow", { linkText });
-    }
-
-    static async logDelete(itemsDeleted: number, itemsLeft: number) {
         await Analytics.logButtonPress("items_deleted", {
             itemsDeleted,
             itemsLeft,
             deletedAll: itemsLeft === 0,
+            screen,
+        });
+    }
+    static async logDeleteMode(
+        screen: Route.MyContributions | Route.Favorites
+    ) {
+        await Analytics.logButtonPress("delete_mode", {
+            screen,
         });
     }
 
