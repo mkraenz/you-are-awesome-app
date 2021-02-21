@@ -108,7 +108,7 @@ const MyContributionsScreen: FC<Props> = ({
 };
 
 const mapStateToProps: MapStateToProps<Pick<Props, "messages">> = (state) => ({
-    messages: state.submitMessage.myMessages,
+    messages: state.contributions.myMessages,
 });
 
 const mapDispatchToProps = { deleteMyContributions };

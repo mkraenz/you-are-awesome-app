@@ -10,7 +10,7 @@ import { IState } from "./state/IState";
 
 const DEBUG = false;
 
-const whitelist: (keyof IState)[] = ["app", "favorites", "submitMessage"];
+const whitelist: (keyof IState)[] = ["app", "favorites", "contributions"];
 const persistConfig = {
     key: "root",
     storage: AsyncStorage,

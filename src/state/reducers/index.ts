@@ -20,7 +20,7 @@ const reducers = {
     messages: messageReducer,
     app: appReducer,
     network: networkReducer,
-    submitMessage: contributionsReducer,
+    contributions: contributionsReducer,
     favorites: favoritesReducer,
 };
 const combined = combineReducers(reducers);

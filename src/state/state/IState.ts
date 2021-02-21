@@ -1,13 +1,13 @@
 import { IAppState } from "./IAppState";
+import { IContributionsState } from "./IContributionsState";
 import { IFavoritesState } from "./IFavoritesState";
 import { IMessagesState } from "./IMessagesState";
 import { INetworkState } from "./INetworkState";
-import { IContributionsState } from "./IContributionsState";
 
 export type IState = Readonly<{
     messages: IMessagesState;
     app: IAppState;
     network: INetworkState;
-    submitMessage: IContributionsState;
+    contributions: IContributionsState;
     favorites: IFavoritesState;
 }>;

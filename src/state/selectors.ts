@@ -14,8 +14,8 @@ export const analyticsEnabled = (
 ) => state.app.analyticsEnabled;
 
 export const countMyContributions = (
-    state: Pick2<IState, "submitMessage", "myMessages">
-) => state.submitMessage.myMessages.length;
+    state: Pick2<IState, "contributions", "myMessages">
+) => state.contributions.myMessages.length;
 
 export const darkModeEnabled = (state: Pick2<IState, "app", "isDarkModeOn">) =>
     state.app.isDarkModeOn;

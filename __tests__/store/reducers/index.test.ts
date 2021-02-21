@@ -12,7 +12,7 @@ it("can create a store with the rootReducer", () => {
 
     // @ts-expect-error
     expect(state.messages).toEqual(messageReducer(undefined, {}));
-    expect(state.submitMessage).toEqual(
+    expect(state.contributions).toEqual(
         // @ts-expect-error
         contributionsReducer(undefined, {})
     );
@@ -24,7 +24,7 @@ it("can create a store with the rootReducer", () => {
         "messages",
         "app",
         "network",
-        "submitMessage",
+        "contributions",
         "favorites",
     ];
     expect(Object.keys(state)).toEqual(expectedKeys);

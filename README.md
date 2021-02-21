@@ -119,7 +119,14 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 - [Expo Doc Configure OTA Updates](https://docs.expo.io/versions/latest/guides/configuring-ota-updates/)
 - [Firebase Analytics Tricks with BigQuery Video](https://www.youtube.com/watch?v=pxNrkjBeHpw) and [recipes](https://gist.github.com/ToddKerpelman/eec3e60c0a5e0bd720d8991bd45487cb)
 
-## Frequent Development Mistakes
+## Frequent Development Questions and Mistakes
+
+### Clear expo cache
+
+```shell
+expo start --clear
+yarn dev --clear
+```
 
 ### `ReferenceError: Can't find variable: React`
 
