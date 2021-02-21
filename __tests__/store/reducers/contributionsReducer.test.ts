@@ -3,9 +3,9 @@ import {
     IDeleteMyContributions,
     ISubmitMessageRequested,
     ISubmitMessageSucceeded,
-} from "../../../src/state/actions/SubmitMessageAction";
-import { submitMessageReducer } from "../../../src/state/reducers/submitMessageReducer";
-import { ISubmitMessageState } from "../../../src/state/state/ISubmitMessageState";
+} from "../../../src/state/actions/ContributeAction";
+import { submitMessageReducer } from "../../../src/state/reducers/contributionsReducer";
+import { IContributionsState } from "../../../src/state/state/IContributionsState";
 import { mock } from "../../helpers/mocks";
 
 describe("submitMessageReducer", () => {
@@ -21,13 +21,13 @@ describe("submitMessageReducer", () => {
             type: ActionType.SubmitMessageSucceeded,
             payload: mock.message,
         };
-        const state: ISubmitMessageState = {
+        const state: IContributionsState = {
             myMessages: [],
         };
 
         const result = submitMessageReducer(state, action);
 
-        const expected: ISubmitMessageState = {
+        const expected: IContributionsState = {
             myMessages: [],
         };
         expect(result).toEqual(expected);
@@ -41,13 +41,13 @@ describe("submitMessageReducer", () => {
                     ...mock.message,
                 },
             };
-            const state: ISubmitMessageState = {
+            const state: IContributionsState = {
                 myMessages: [],
             };
 
             const result = submitMessageReducer(state, action);
 
-            const expected: ISubmitMessageState = {
+            const expected: IContributionsState = {
                 myMessages: [mock.message],
             };
             expect(result).toEqual(expected);
@@ -64,7 +64,7 @@ describe("submitMessageReducer", () => {
                     isodate: "2020-08-25",
                 },
             };
-            const state: ISubmitMessageState = {
+            const state: IContributionsState = {
                 myMessages: [
                     Object.freeze({
                         text: "message-with-same-id",
@@ -78,7 +78,7 @@ describe("submitMessageReducer", () => {
 
             const result = submitMessageReducer(state, action);
 
-            const expected: ISubmitMessageState = {
+            const expected: IContributionsState = {
                 myMessages: [state.myMessages[0]],
             };
             expect(result).toEqual(expected);
@@ -100,7 +100,7 @@ describe("submitMessageReducer", () => {
                 type: ActionType.SubmitMessageRequested,
                 payload: { ...msg, isodate: "2020-08-26", id: "id-new" },
             };
-            const state: ISubmitMessageState = {
+            const state: IContributionsState = {
                 myMessages: [],
             };
 
@@ -114,7 +114,7 @@ describe("submitMessageReducer", () => {
                 old
             );
 
-            const expected: ISubmitMessageState = {
+            const expected: IContributionsState = {
                 myMessages: [newest.payload, old.payload],
             };
             expect(resultState1).toEqual(expected);
@@ -131,13 +131,13 @@ describe("submitMessageReducer", () => {
                     previousMessagesCount: 1,
                 },
             };
-            const state: ISubmitMessageState = {
+            const state: IContributionsState = {
                 myMessages: [{ ...mock.message, id: "different-id" }],
             };
 
             const result = submitMessageReducer(state, action);
 
-            const expected: ISubmitMessageState = {
+            const expected: IContributionsState = {
                 myMessages: [{ ...mock.message, id: "different-id" }],
             };
             expect(result).toEqual(expected);
@@ -151,13 +151,13 @@ describe("submitMessageReducer", () => {
                     previousMessagesCount: 2,
                 },
             };
-            const state: ISubmitMessageState = {
+            const state: IContributionsState = {
                 myMessages: mock.messages,
             };
 
             const result = submitMessageReducer(state, action);
 
-            const expected: ISubmitMessageState = {
+            const expected: IContributionsState = {
                 myMessages: [mock.messages[0]],
             };
             expect(result).toEqual(expected);

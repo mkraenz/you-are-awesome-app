@@ -13,7 +13,7 @@ import { IAddToFavorites, IDeleteFavorites } from "../actions/IFavoritesAction";
 import {
     IDeleteMyContributions,
     ISubmitMessageRequested,
-} from "../actions/SubmitMessageAction";
+} from "../actions/ContributeAction";
 import { countMyContributions, darkModeEnabled, language } from "../selectors";
 
 /**

@@ -2,7 +2,7 @@ import { IMessage } from "../state/IMessage";
 import { ActionType } from "./ActionType";
 import { IActionWithPayload } from "./utils";
 
-export type SubmitMessageAction =
+export type ContributeAction =
     | ISubmitMessageFailed
     | ISubmitMessageSucceeded
     | ISubmitMessageRequested

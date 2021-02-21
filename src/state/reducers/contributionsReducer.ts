@@ -1,12 +1,12 @@
 import { difference } from "lodash";
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
-import { SubmitMessageAction } from "../actions/SubmitMessageAction";
-import { ISubmitMessageState } from "../state/ISubmitMessageState";
+import { ContributeAction } from "../actions/ContributeAction";
+import { IContributionsState } from "../state/IContributionsState";
 
 export const submitMessageReducer: Reducer<
-    ISubmitMessageState,
-    SubmitMessageAction
+    IContributionsState,
+    ContributeAction
 > = (
     state = {
         myMessages: [],

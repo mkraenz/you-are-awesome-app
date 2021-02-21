@@ -6,7 +6,7 @@ import { appReducer } from "./appReducer";
 import { favoritesReducer } from "./favoritesReducer";
 import { messageReducer } from "./messageReducer";
 import { networkReducer } from "./networkReducer";
-import { submitMessageReducer } from "./submitMessageReducer";
+import { submitMessageReducer } from "./contributionsReducer";
 
 type MyReducer = Reducer<CombinedState<IState>, IAnyAction>;
 type assertReducerMatchesState<T extends MyReducer> = T extends Reducer<

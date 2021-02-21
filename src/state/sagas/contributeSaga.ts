@@ -8,7 +8,7 @@ import {
     ISubmitMessageFailed,
     ISubmitMessageRequested,
     ISubmitMessageSucceeded,
-} from "../actions/SubmitMessageAction";
+} from "../actions/ContributeAction";
 
 function* submitMessageWorkerSaga(
     action: ISubmitMessageRequested | ISubmitMessageFailed

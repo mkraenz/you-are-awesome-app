@@ -1,3 +1,3 @@
-import { ISubmitMessageState } from "../state/ISubmitMessageState";
+import { IContributionState } from "../state/IContributionState";
 
-export interface IPersistSubmitMessageState extends ISubmitMessageState {}
+export interface IPersistContributionsState extends IContributionState {}

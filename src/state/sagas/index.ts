@@ -4,7 +4,7 @@ import logAnalyticsSaga from "./logAnalyticsSaga";
 import changePushNotificationTimeSaga from "./push-notifications/changePushNotificationTimeSaga";
 import registerOrUnregisterPushNotificationsSaga from "./push-notifications/registerOrUnregisterPushNotificationsSaga";
 import reportAsInappropriateSaga from "./reportAsInappropriateSaga";
-import submitMessageSaga from "./submitMessageSaga";
+import submitMessageSaga from "./contributeSaga";
 import toggleAnalyticsSaga from "./toggleAnalyticsSaga";
 
 export default function* rootSaga() {

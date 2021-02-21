@@ -3,7 +3,7 @@ import { rootReducer } from "../../../src/state/reducers";
 import { appReducer } from "../../../src/state/reducers/appReducer";
 import { messageReducer } from "../../../src/state/reducers/messageReducer";
 import { networkReducer } from "../../../src/state/reducers/networkReducer";
-import { submitMessageReducer } from "../../../src/state/reducers/submitMessageReducer";
+import { submitMessageReducer } from "../../../src/state/reducers/contributionsReducer";
 import { IState } from "../../../src/state/state/IState";
 
 it("can create a store with the rootReducer", () => {

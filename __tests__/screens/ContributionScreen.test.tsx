@@ -10,7 +10,7 @@ import createMockStore from "redux-mock-store";
 import { Route } from "../../src/navigation/Route";
 import ContributionScreen from "../../src/screens/ContributionScreen";
 import { ActionType } from "../../src/state/actions/ActionType";
-import { ISubmitMessageRequested } from "../../src/state/actions/SubmitMessageAction";
+import { ISubmitMessageRequested } from "../../src/state/actions/ContributeAction";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
