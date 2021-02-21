@@ -10,7 +10,7 @@ import createMockStore from "redux-mock-store";
 import { Route } from "../../src/navigation/Route";
 import ContributionScreen from "../../src/screens/ContributionScreen";
 import { ActionType } from "../../src/state/actions/ActionType";
-import { ISubmitMessageRequested } from "../../src/state/actions/ContributeAction";
+import { IContributionRequested } from "../../src/state/actions/ContributeAction";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
@@ -104,8 +104,8 @@ it("can fill the form and submits it to the store", async () => {
     const v4 = new RegExp(
         /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i
     );
-    const expected: ISubmitMessageRequested = {
-        type: ActionType.SubmitMessageRequested,
+    const expected: IContributionRequested = {
+        type: ActionType.ContributionRequested,
         payload: {
             author: "Winnie the Puuh",
             country: "Wonderland",

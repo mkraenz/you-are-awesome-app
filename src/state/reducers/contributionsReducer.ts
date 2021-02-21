@@ -4,7 +4,7 @@ import { ActionType } from "../actions/ActionType";
 import { ContributeAction } from "../actions/ContributeAction";
 import { IContributionsState } from "../state/IContributionsState";
 
-export const submitMessageReducer: Reducer<
+export const contributionsReducer: Reducer<
     IContributionsState,
     ContributeAction
 > = (
@@ -14,7 +14,7 @@ export const submitMessageReducer: Reducer<
     action
 ) => {
     switch (action.type) {
-        case ActionType.SubmitMessageRequested:
+        case ActionType.ContributionRequested:
             const newMsg = action.payload;
             const alreadyInFavorites = state.myMessages.find(
                 (m) => m.id === newMsg.id

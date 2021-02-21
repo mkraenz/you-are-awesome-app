@@ -24,7 +24,7 @@ interface Props {
     handleSubmit: (msg: IMessageContent) => void;
 }
 
-const SubmitMessageInputForm: FC<Props> = ({
+const ContributionInputForm: FC<Props> = ({
     handleSubmit,
     connectedToInternet,
 }) => {
@@ -140,4 +140,4 @@ const mapStateToProps: MapStateToProps<Pick<Props, "connectedToInternet">> = (
     state
 ) => ({ connectedToInternet: state.network.connected });
 
-export default connect(mapStateToProps)(SubmitMessageInputForm);
+export default connect(mapStateToProps)(ContributionInputForm);

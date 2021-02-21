@@ -3,39 +3,29 @@ import { ActionType } from "./ActionType";
 import { IActionWithPayload } from "./utils";
 
 export type ContributeAction =
-    | ISubmitMessageFailed
-    | ISubmitMessageSucceeded
-    | ISubmitMessageRequested
-    | ISubmitMessageFailedTimeoutExceeded
+    | IContributionFailed
+    | IContributionSucceeded
+    | IContributionRequested
     | IDeleteMyContributions;
 
-export type ISubmitMessageRequested = IActionWithPayload<
-    ActionType.SubmitMessageRequested,
+export type IContributionRequested = IActionWithPayload<
+    ActionType.ContributionRequested,
     IMessage
 >;
 
-export interface ISubmitMessageFailed {
-    type: ActionType.SubmitMessageFailed;
-    payload: {
-        originalAction: ISubmitMessageRequested;
+export type IContributionFailed = IActionWithPayload<
+    ActionType.ContributionFailed,
+    {
+        originalAction: IContributionRequested;
         error: Error;
-    };
-    error: true;
-}
+    },
+    true
+>;
 
-export interface ISubmitMessageSucceeded {
-    type: ActionType.SubmitMessageSucceeded;
-    payload: { id: string };
-}
-
-export interface ISubmitMessageFailedTimeoutExceeded {
-    type: ActionType.SubmitMessageFailedTimeoutExceeded;
-    payload: {
-        originalAction: ISubmitMessageRequested;
-        error: Error;
-    };
-    error: true;
-}
+export type IContributionSucceeded = IActionWithPayload<
+    ActionType.ContributionSucceeded,
+    { id: string }
+>;
 
 export type IDeleteMyContributions = IActionWithPayload<
     ActionType.DeleteMyContributions,

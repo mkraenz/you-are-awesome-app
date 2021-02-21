@@ -1,9 +1,9 @@
 import { createStore } from "redux";
 import { rootReducer } from "../../../src/state/reducers";
 import { appReducer } from "../../../src/state/reducers/appReducer";
+import { contributionsReducer } from "../../../src/state/reducers/contributionsReducer";
 import { messageReducer } from "../../../src/state/reducers/messageReducer";
 import { networkReducer } from "../../../src/state/reducers/networkReducer";
-import { submitMessageReducer } from "../../../src/state/reducers/contributionsReducer";
 import { IState } from "../../../src/state/state/IState";
 
 it("can create a store with the rootReducer", () => {
@@ -14,7 +14,7 @@ it("can create a store with the rootReducer", () => {
     expect(state.messages).toEqual(messageReducer(undefined, {}));
     expect(state.submitMessage).toEqual(
         // @ts-expect-error
-        submitMessageReducer(undefined, {})
+        contributionsReducer(undefined, {})
     );
     // @ts-expect-error
     expect(state.network).toEqual(networkReducer(undefined, {}));

@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 // Note: test renderer must be required after react-native.
 import renderer, { act } from "react-test-renderer";
 import createMockStore from "redux-mock-store";
-import SubmitMessageInputForm from "../../../src/components/contribution/ContributionInputForm";
+import ContributionInputForm from "../../../src/components/contribution/ContributionInputForm";
 import { IState } from "../../../src/state/state/IState";
 import { Pick2 } from "../../../src/utils/ts/Pick2";
 import TestLocalizationProvider from "../../helpers/TestLocalizationProvider";
@@ -20,7 +20,7 @@ it("renders correctly", async () => {
         .create(
             <Provider store={store}>
                 <TestLocalizationProvider>
-                    <SubmitMessageInputForm handleSubmit={() => undefined} />
+                    <ContributionInputForm handleSubmit={() => undefined} />
                 </TestLocalizationProvider>
             </Provider>
         )

@@ -5,10 +5,9 @@ export enum ActionType {
     FetchMessagesRequested = "FetchMessagesRequested",
     FetchMessagesSucceeded = "FetchMessagesSucceeded",
     // TODO handle somehow (at least notify the user)
-    SubmitMessageFailed = "SubmitMessageFailed",
-    SubmitMessageFailedTimeoutExceeded = "SubmitMessageFailedTimeoutExceeded",
-    SubmitMessageRequested = "SubmitMessageRequested",
-    SubmitMessageSucceeded = "SubmitMessageSucceeded",
+    ContributionFailed = "ContributionFailed",
+    ContributionRequested = "ContributionRequested",
+    ContributionSucceeded = "ContributionSucceeded",
     DeleteMyContributions = "DeleteMyContributions",
     NetInfoChanged = "NetInfoChanged",
     SetPushNotificationsState = "SetPushNotificationsState",

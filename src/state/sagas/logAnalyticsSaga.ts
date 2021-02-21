@@ -4,16 +4,16 @@ import { Analytics } from "../../api/Analytics";
 import { Route } from "../../navigation/Route";
 import { ActionType } from "../actions/ActionType";
 import {
+    IContributionRequested,
+    IDeleteMyContributions,
+} from "../actions/ContributeAction";
+import {
     IChangePushNotificationTime,
     ISetLanguage,
     ISetPushNotificationsState,
     IToggleDarkThemeAction,
 } from "../actions/IAppAction";
 import { IAddToFavorites, IDeleteFavorites } from "../actions/IFavoritesAction";
-import {
-    IDeleteMyContributions,
-    ISubmitMessageRequested,
-} from "../actions/ContributeAction";
 import { countMyContributions, darkModeEnabled, language } from "../selectors";
 
 /**
@@ -23,7 +23,7 @@ import { countMyContributions, darkModeEnabled, language } from "../selectors";
 function* logAnalyticsWorkerSaga(
     action:
         | IToggleDarkThemeAction
-        | ISubmitMessageRequested
+        | IContributionRequested
         | ISetLanguage
         | IAddToFavorites
         | ISetPushNotificationsState
@@ -73,7 +73,7 @@ function* logAnalyticsWorkerSaga(
                 yield call(Analytics.logDarkMode, darkModeOn);
                 break;
 
-            case ActionType.SubmitMessageRequested:
+            case ActionType.ContributionRequested:
                 const myContributionsCount: ReturnType<
                     typeof countMyContributions
                 > = yield select(countMyContributions);
@@ -119,7 +119,7 @@ function* logAnalyticsSaga() {
             ActionType.SetPushNotificationsState,
             ActionType.ChangePushNotificationTime,
             ActionType.ToggleDarkTheme,
-            ActionType.SubmitMessageRequested,
+            ActionType.ContributionRequested,
             ActionType.SetLanguage,
             ActionType.AddToFavorites,
             ActionType.DeleteFavorites,

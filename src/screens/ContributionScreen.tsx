@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import { v4 } from "uuid";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
-import SubmitMessageInputForm from "../components/contribution/ContributionInputForm";
+import ContributionInputForm from "../components/contribution/ContributionInputForm";
 import { Route } from "../navigation/Route";
-import { submitMessage } from "../state/action-creators/contribute";
+import { contribute } from "../state/action-creators/contribute";
 import { IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { toIsoDateString } from "../utils/toTodayString";
@@ -17,19 +17,16 @@ interface StateProps {
     connectedToInternet: boolean;
 }
 interface DispatchProps {
-    submitMessage: typeof submitMessage;
+    contribute: typeof contribute;
 }
 type Props = StateProps & DispatchProps;
 
-const ContributionScreen: FC<Props> = ({
-    connectedToInternet,
-    submitMessage,
-}) => {
+const ContributionScreen: FC<Props> = ({ connectedToInternet, contribute }) => {
     const { t } = useTranslation();
     const { navigate } = useNavigation();
     const gotoMyContributions = () => navigate(Route.MyContributions);
     const handleSubmit = (msg: IMessageContent) => {
-        submitMessage({
+        contribute({
             ...msg,
             id: v4(),
             isodate: toIsoDateString(new Date()),
@@ -57,7 +54,7 @@ const ContributionScreen: FC<Props> = ({
             }}
         >
             {!connectedToInternet && <OfflineNotice />}
-            <SubmitMessageInputForm handleSubmit={handleSubmit} />
+            <ContributionInputForm handleSubmit={handleSubmit} />
         </Layout>
     );
 };
@@ -65,6 +62,6 @@ const ContributionScreen: FC<Props> = ({
 const mapStateToProps: MapStateToProps<StateProps> = (state) => ({
     connectedToInternet: state.network.connected,
 });
-const mapDispatchToProps: DispatchProps = { submitMessage };
+const mapDispatchToProps: DispatchProps = { contribute: contribute };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContributionScreen);

@@ -5,16 +5,16 @@ import { pick } from "../../utils/pick";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
 import { ActionType } from "../actions/ActionType";
 import {
-    ISubmitMessageFailed,
-    ISubmitMessageRequested,
-    ISubmitMessageSucceeded,
+    IContributionFailed,
+    IContributionRequested,
+    IContributionSucceeded,
 } from "../actions/ContributeAction";
 
-function* submitMessageWorkerSaga(
-    action: ISubmitMessageRequested | ISubmitMessageFailed
+function* contributeWorkerSaga(
+    action: IContributionRequested | IContributionFailed
 ) {
-    const submitMessageRequested =
-        action.type === ActionType.SubmitMessageRequested
+    const contributionRequested =
+        action.type === ActionType.ContributionRequested
             ? action
             : action.payload.originalAction;
     try {
@@ -22,33 +22,30 @@ function* submitMessageWorkerSaga(
             typeof submitContribution
         > = yield call(
             submitContribution,
-            submitMessageRequested.payload,
+            contributionRequested.payload,
             CONFIG.uri.submitContribution
         );
-        const success: ISubmitMessageSucceeded = {
-            type: ActionType.SubmitMessageSucceeded,
+        const success: IContributionSucceeded = {
+            type: ActionType.ContributionSucceeded,
             payload: pick(responseData, ["id"]),
         };
         yield put(success);
     } catch (e) {
-        yield* handleSendFailed(e, submitMessageRequested);
+        yield* handleSendFailed(e, contributionRequested);
     }
 }
 
-function* handleSendFailed(e: Error, action: ISubmitMessageRequested) {
-    const errorAction: ISubmitMessageFailed = {
-        type: ActionType.SubmitMessageFailed,
+function* handleSendFailed(e: Error, action: IContributionRequested) {
+    const errorAction: IContributionFailed = {
+        type: ActionType.ContributionFailed,
         payload: { originalAction: action, error: e },
         error: true,
     };
     yield put(errorAction);
 }
 
-function* submitMessageSaga() {
-    yield takeEvery(
-        [ActionType.SubmitMessageRequested],
-        submitMessageWorkerSaga
-    );
+function* contributeSaga() {
+    yield takeEvery([ActionType.ContributionRequested], contributeWorkerSaga);
 }
 
-export default submitMessageSaga;
+export default contributeSaga;
