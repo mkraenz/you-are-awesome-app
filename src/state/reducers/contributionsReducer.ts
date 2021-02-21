@@ -1,12 +1,12 @@
 import { difference } from "lodash";
 import { Reducer } from "redux";
 import { ActionType } from "../actions/ActionType";
-import { SubmitMessageAction } from "../actions/SubmitMessageAction";
-import { ISubmitMessageState } from "../state/ISubmitMessageState";
+import { ContributeAction } from "../actions/ContributeAction";
+import { IContributionsState } from "../state/IContributionsState";
 
-export const submitMessageReducer: Reducer<
-    ISubmitMessageState,
-    SubmitMessageAction
+export const contributionsReducer: Reducer<
+    IContributionsState,
+    ContributeAction
 > = (
     state = {
         myMessages: [],
@@ -14,7 +14,7 @@ export const submitMessageReducer: Reducer<
     action
 ) => {
     switch (action.type) {
-        case ActionType.SubmitMessageRequested:
+        case ActionType.ContributionRequested:
             const newMsg = action.payload;
             const alreadyInFavorites = state.myMessages.find(
                 (m) => m.id === newMsg.id

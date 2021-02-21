@@ -1,5 +1,5 @@
 import { ActionType } from "../actions/ActionType";
-import { IDeleteMyContributions } from "../actions/SubmitMessageAction";
+import { IDeleteMyContributions } from "../actions/ContributeAction";
 
 export const deleteMyContributions = (
     ids: string[],

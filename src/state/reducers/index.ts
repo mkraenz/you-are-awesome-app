@@ -1,12 +1,12 @@
-import { combineReducers } from "redux";
 import type { CombinedState, Reducer } from "redux";
+import { combineReducers } from "redux";
 import { IAnyAction } from "../actions/IAction";
 import { IState } from "../state/IState";
 import { appReducer } from "./appReducer";
+import { contributionsReducer } from "./contributionsReducer";
 import { favoritesReducer } from "./favoritesReducer";
 import { messageReducer } from "./messageReducer";
 import { networkReducer } from "./networkReducer";
-import { submitMessageReducer } from "./submitMessageReducer";
 
 type MyReducer = Reducer<CombinedState<IState>, IAnyAction>;
 type assertReducerMatchesState<T extends MyReducer> = T extends Reducer<
@@ -20,7 +20,7 @@ const reducers = {
     messages: messageReducer,
     app: appReducer,
     network: networkReducer,
-    submitMessage: submitMessageReducer,
+    contributions: contributionsReducer,
     favorites: favoritesReducer,
 };
 const combined = combineReducers(reducers);

@@ -22,10 +22,10 @@ const ConfiguredMyContributions = () => (
 );
 
 it("renders special message on empty list", async () => {
-    const store = createMockStore<Pick2<IState, "submitMessage", "myMessages">>(
+    const store = createMockStore<Pick2<IState, "contributions", "myMessages">>(
         []
     )({
-        submitMessage: { myMessages: [] },
+        contributions: { myMessages: [] },
     });
 
     const tree = renderer
@@ -44,10 +44,10 @@ it("renders special message on empty list", async () => {
 });
 
 it("renders the list", async () => {
-    const store = createMockStore<Pick2<IState, "submitMessage", "myMessages">>(
+    const store = createMockStore<Pick2<IState, "contributions", "myMessages">>(
         []
     )({
-        submitMessage: { myMessages: mock.messages },
+        contributions: { myMessages: mock.messages },
     });
 
     const tree = renderer

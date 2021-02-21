@@ -42,7 +42,7 @@ it("analyticsEnabled returns the state", () => {
 
 it("countMyContributions returns the number of my contributions since the last app data resets ", () => {
     const state: Unpack<Parameters<typeof countMyContributions>> = {
-        submitMessage: {
+        contributions: {
             myMessages: [mock.message, mock.message, mock.message],
         },
     };

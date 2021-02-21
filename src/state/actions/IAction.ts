@@ -3,14 +3,14 @@ import { ActionType } from "./ActionType";
 import { IAppAction } from "./IAppAction";
 import { IFavoritesAction } from "./IFavoritesAction";
 import { INetworkAction } from "./INetworkAction";
-import { SubmitMessageAction } from "./SubmitMessageAction";
+import { ContributeAction } from "./ContributeAction";
 import { IActionWithPayload } from "./utils";
 
 export type IAnyAction =
     | IMessageAction
     | IAppAction
     | INetworkAction
-    | SubmitMessageAction
+    | ContributeAction
     | IFavoritesAction;
 
 export type IMessageAction =
