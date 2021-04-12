@@ -34,7 +34,7 @@ Google Play and the Google Play logo are trademarks of Google LLC.
 ##### OTA Over-the-air updates
 
 ```shell
-yarn deploy:ota:test
+yarn deploy:ota:stage
 # for production release
 yarn deploy:ota:prod
 ```
@@ -47,7 +47,7 @@ Only in case of changes to `app.json` or the Expo SDK version, one needs to rebu
 
 ```shell
 # manually update app.json's version and android.versionCode
-yarn build-and-publish:expo:android:test
+yarn build-and-publish:expo:android:stage
 # for production release
 yarn build-and-publish:expo:android:prod
 ```
