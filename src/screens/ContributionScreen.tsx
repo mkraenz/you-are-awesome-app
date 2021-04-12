@@ -2,9 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import * as StoreReview from "expo-store-review";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { Alert } from "react-native";
 import { connect } from "react-redux";
-import { v4 } from "uuid";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
 import ContributionInputForm from "../components/contribution/ContributionInputForm";
@@ -12,7 +10,6 @@ import { Route } from "../navigation/Route";
 import { contribute } from "../state/action-creators/contribute";
 import { IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
-import { toIsoDateString } from "../utils/toTodayString";
 
 interface StateProps {
     connectedToInternet: boolean;
@@ -27,25 +24,10 @@ const ContributionScreen: FC<Props> = ({ connectedToInternet, contribute }) => {
     const { navigate } = useNavigation();
     const gotoMyContributions = () => navigate(Route.MyContributions);
     const handleSubmit = async (msg: IMessageContent) => {
-        contribute({
-            ...msg,
-            id: v4(),
-            isodate: toIsoDateString(new Date()),
-        });
-        const stayTuned = t("contributionStayTuned");
-        Alert.alert(
-            t("contributionThanks"),
-            `${t("contributionMember")}${msg.text}${stayTuned}`,
-            [
-                {
-                    text: t("contributionAlertButton"),
-                },
-            ]
-        );
         if (await StoreReview.isAvailableAsync()) {
             await StoreReview.requestReview();
         }
-        gotoMyContributions();
+        // gotoMyContributions();
     };
 
     return (
