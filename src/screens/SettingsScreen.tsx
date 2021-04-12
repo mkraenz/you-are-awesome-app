@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { Divider, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
 import { Analytics } from "../api/Analytics";
@@ -53,46 +54,55 @@ const SettingsScreen: FC<Props> = ({
     const { navigate } = useNavigation();
 
     const handlePrivacyPolicyPressed = () => navigate(Route.PrivacyPolicy);
+    const rateTheApp = () => Linking.openURL(CONFIG.uri.playstoreUrl);
+
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
-            {!connectedToInternet && <OfflineNotice />}
-            <LanguageDropdown />
-            <Divider />
-            <PushNotificationSettings />
-            <SettingsRow
-                title={t("darkMode")}
-                onPress={toggleDarkTheme}
-                rightComponent={() => () => (
-                    <Switch
-                        value={isDarkModeOn}
-                        onValueChange={toggleDarkTheme}
-                    ></Switch>
-                )}
-            />
-            <Divider />
-            <SettingsRow
-                title={t(Route.PrivacyPolicy)}
-                onPress={handlePrivacyPolicyPressed}
-            />
-            <Divider />
-            <SettingsRow
-                title={t("sendAnalytics")}
-                onPress={toggleAnalytics}
-                rightComponent={() => () => (
-                    <Switch
-                        value={analyticsEnabled}
-                        onValueChange={toggleAnalytics}
-                    ></Switch>
-                )}
-            />
-            <Divider />
-            {CONFIG.featureFlags.developerSettings && (
+            <ScrollView>
+                {!connectedToInternet && <OfflineNotice />}
+                <LanguageDropdown />
+                <Divider />
+                <PushNotificationSettings />
                 <SettingsRow
-                    onPress={() => navigate(Route.DeveloperSettings)}
-                    title={t(Route.DeveloperSettings)}
+                    title={t("darkMode")}
+                    onPress={toggleDarkTheme}
+                    rightComponent={() => () => (
+                        <Switch
+                            value={isDarkModeOn}
+                            onValueChange={toggleDarkTheme}
+                        ></Switch>
+                    )}
                 />
-            )}
-            <About />
+                <Divider />
+                <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
+                <Divider />
+                <SettingsRow
+                    title={t(Route.PrivacyPolicy)}
+                    onPress={handlePrivacyPolicyPressed}
+                />
+                <Divider />
+                <SettingsRow
+                    title={t("sendAnalytics")}
+                    onPress={toggleAnalytics}
+                    rightComponent={() => () => (
+                        <Switch
+                            value={analyticsEnabled}
+                            onValueChange={toggleAnalytics}
+                        ></Switch>
+                    )}
+                />
+                <Divider />
+                {CONFIG.featureFlags.developerSettings && (
+                    <>
+                        <SettingsRow
+                            onPress={() => navigate(Route.DeveloperSettings)}
+                            title={t(Route.DeveloperSettings)}
+                        />
+                        <Divider />
+                    </>
+                )}
+                <About />
+            </ScrollView>
         </Layout>
     );
 };
