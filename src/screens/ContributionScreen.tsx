@@ -1,4 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
+import * as StoreReview from "expo-store-review";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";
@@ -25,7 +26,7 @@ const ContributionScreen: FC<Props> = ({ connectedToInternet, contribute }) => {
     const { t } = useTranslation();
     const { navigate } = useNavigation();
     const gotoMyContributions = () => navigate(Route.MyContributions);
-    const handleSubmit = (msg: IMessageContent) => {
+    const handleSubmit = async (msg: IMessageContent) => {
         contribute({
             ...msg,
             id: v4(),
@@ -41,6 +42,9 @@ const ContributionScreen: FC<Props> = ({ connectedToInternet, contribute }) => {
                 },
             ]
         );
+        if (await StoreReview.isAvailableAsync()) {
+            await StoreReview.requestReview();
+        }
         gotoMyContributions();
     };
 
