@@ -24,6 +24,8 @@ const prodConfig = {
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
+        playstoreUrl:
+            "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
     },
     sentry: {
         debug: false,
@@ -61,6 +63,8 @@ const stageConfig: typeof prodConfig = {
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
+        playstoreUrl:
+            "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
     },
     sentry: {
         debug: false,
@@ -98,6 +102,8 @@ const devConfig: typeof prodConfig = {
             "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
         reportInappropriateContent:
             "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
+        playstoreUrl:
+            "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
     },
     sentry: {
         debug: true,

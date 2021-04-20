@@ -23,31 +23,25 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 
 Google Play and the Google Play logo are trademarks of Google LLC.
 
-#### Further reading
+## Releases
 
-## Development
-
-### Update production apps
-
-#### How to
-
-##### OTA Over-the-air updates
+### OTA Over-the-air updates
 
 ```shell
-yarn deploy:ota:test
+yarn deploy:ota:stage
 # for production release
 yarn deploy:ota:prod
 ```
 
 When a User now starts her app (even if installed from the Google Play Store!), the app tries to download the newest JS files for the app and runs the newest version. It falls back to the cached (i.e. previous) version after 2 seconds.
 
-##### Special case - changes to app.json or Expo SDK
+### Special case - changes to app.json or Expo SDK
 
 Only in case of changes to `app.json` or the Expo SDK version, one needs to rebuild the app and republish to expo.
 
 ```shell
 # manually update app.json's version and android.versionCode
-yarn build-and-publish:expo:android:test
+yarn build-and-publish:expo:android:stage
 # for production release
 yarn build-and-publish:expo:android:prod
 ```
@@ -59,6 +53,8 @@ To push the built apk to the Google Playstore run
 # yarn build-and-publish:expo:android:prod
 yarn publish:playstore
 ```
+
+## Development
 
 ### Debug native app on a phone or emulator
 
@@ -76,10 +72,11 @@ adb devices -l
 
 # native logs
 adb logcat
-adb logcat >> my-log.log
+adb logcat | tee --append android-usb-debugging.log
 
 # install apk
 adb install /path/to/my/app
+adb install ~/Downloads/you-are-awesome-app-8497638a825d4c70988a0c68eec2d09b-signed.apk
 ```
 
 ### Debugging Jest tests

@@ -38,10 +38,10 @@ const ContributionScreen: FC<Props> = ({ connectedToInternet, contribute }) => {
             [
                 {
                     text: t("contributionAlertButton"),
+                    onPress: gotoMyContributions,
                 },
             ]
         );
-        gotoMyContributions();
     };
 
     return (

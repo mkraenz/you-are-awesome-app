@@ -7,6 +7,8 @@ type keys =
     | "settings"
     | "language"
     | "sendAnalytics"
+    // TODO IOS: currently always links to Google Play store
+    | "rateTheApp"
     | "copyright1"
     | "copyright2Company"
     | "copyright3"
@@ -95,6 +97,7 @@ const localization: {
             comingSoon: "Coming soon",
             language: "Language",
             sendAnalytics: "Send usage statistics",
+            rateTheApp: "Rate the App",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -175,6 +178,7 @@ const localization: {
             comingSoon: "In Kürze verfügbar",
             language: "Sprache",
             sendAnalytics: "Nutzungsstatistiken senden",
+            rateTheApp: "App bewerten",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -255,6 +259,7 @@ const localization: {
             comingSoon: "近日公開",
             language: "言語",
             sendAnalytics: "利用状況の統計を送信する",
+            rateTheApp: "このアプリをレビュー",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
