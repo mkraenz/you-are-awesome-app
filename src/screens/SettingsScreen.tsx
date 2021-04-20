@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { Divider, Paragraph, Switch } from "react-native-paper";
+import { Divider, List, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
 import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
         color: Color.Blue,
         textDecorationLine: "underline",
     },
+    sectionHeader: {
+        marginHorizontal: -12,
+    },
 });
 
 interface StateProps {
@@ -42,6 +45,10 @@ interface DispatchProps {
 }
 
 type Props = StateProps & DispatchProps;
+
+const SectionHeader = ({ text }: { text: string }) => (
+    <List.Subheader style={styles.sectionHeader}>{text}</List.Subheader>
+);
 
 const SettingsScreen: FC<Props> = ({
     isDarkModeOn,
@@ -59,55 +66,65 @@ const SettingsScreen: FC<Props> = ({
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
             <ScrollView>
-                {!connectedToInternet && <OfflineNotice />}
-                <LanguageDropdown />
-                <Divider />
-                <PushNotificationSettings />
-                <SettingsRow
-                    title={t("darkMode")}
-                    onPress={toggleDarkTheme}
-                    rightComponent={() => () => (
-                        <Switch
-                            value={isDarkModeOn}
-                            onValueChange={toggleDarkTheme}
-                        ></Switch>
-                    )}
-                />
-                <Divider />
-                <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
-                <Divider />
-                <SettingsRow
-                    title={t(Route.PrivacyPolicy)}
-                    onPress={handlePrivacyPolicyPressed}
-                />
-                <Divider />
-                <SettingsRow
-                    title={t("sendAnalytics")}
-                    onPress={toggleAnalytics}
-                    rightComponent={() => () => (
-                        <Switch
-                            value={analyticsEnabled}
-                            onValueChange={toggleAnalytics}
-                        ></Switch>
-                    )}
-                />
-                <Divider />
+                <List.Section>
+                    <SectionHeader text={t("settingsGeneral")} />
+                    {!connectedToInternet && <OfflineNotice />}
+                    <LanguageDropdown />
+                    <Divider />
+                    <PushNotificationSettings />
+                    <SettingsRow
+                        title={t("darkMode")}
+                        onPress={toggleDarkTheme}
+                        rightComponent={() => () => (
+                            <Switch
+                                value={isDarkModeOn}
+                                onValueChange={toggleDarkTheme}
+                            ></Switch>
+                        )}
+                    />
+                </List.Section>
+
+                <List.Section>
+                    <SectionHeader text={t("settingsPrivacy")} />
+                    <SettingsRow
+                        title={t(Route.PrivacyPolicy)}
+                        onPress={handlePrivacyPolicyPressed}
+                    />
+                    <Divider />
+                    <SettingsRow
+                        title={t("sendAnalytics")}
+                        onPress={toggleAnalytics}
+                        rightComponent={() => () => (
+                            <Switch
+                                value={analyticsEnabled}
+                                onValueChange={toggleAnalytics}
+                            ></Switch>
+                        )}
+                    />
+                </List.Section>
+
                 {CONFIG.featureFlags.developerSettings && (
-                    <>
+                    <List.Section>
+                        <SectionHeader text={t("settingsDeveloper")} />
                         <SettingsRow
                             onPress={() => navigate(Route.DeveloperSettings)}
                             title={t(Route.DeveloperSettings)}
                         />
-                        <Divider />
-                    </>
+                    </List.Section>
                 )}
-                <About />
+
+                <List.Section>
+                    <SectionHeader text={t("settingsAbout")} />
+                    <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
+                    <Divider />
+                    <VersionAndCopyright />
+                </List.Section>
             </ScrollView>
         </Layout>
     );
 };
 
-const About = () => {
+const VersionAndCopyright = () => {
     const { t } = useTranslation();
     const openCompanyWebsite = () => {
         Analytics.logLinkFollow("company");
