@@ -23,15 +23,9 @@ Production apps are apps on a User's smart phone installed from the Google Play 
 
 Google Play and the Google Play logo are trademarks of Google LLC.
 
-#### Further reading
+## Releases
 
-## Development
-
-### Update production apps
-
-#### How to
-
-##### OTA Over-the-air updates
+### OTA Over-the-air updates
 
 ```shell
 yarn deploy:ota:stage
@@ -41,7 +35,7 @@ yarn deploy:ota:prod
 
 When a User now starts her app (even if installed from the Google Play Store!), the app tries to download the newest JS files for the app and runs the newest version. It falls back to the cached (i.e. previous) version after 2 seconds.
 
-##### Special case - changes to app.json or Expo SDK
+### Special case - changes to app.json or Expo SDK
 
 Only in case of changes to `app.json` or the Expo SDK version, one needs to rebuild the app and republish to expo.
 
@@ -59,6 +53,8 @@ To push the built apk to the Google Playstore run
 # yarn build-and-publish:expo:android:prod
 yarn publish:playstore
 ```
+
+## Development
 
 ### Debug native app on a phone or emulator
 
