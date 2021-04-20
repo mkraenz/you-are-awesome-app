@@ -25,7 +25,7 @@ const ContributionScreen: FC<Props> = ({ connectedToInternet, contribute }) => {
     const { t } = useTranslation();
     const { navigate } = useNavigation();
     const gotoMyContributions = () => navigate(Route.MyContributions);
-    const handleSubmit = async (msg: IMessageContent) => {
+    const handleSubmit = (msg: IMessageContent) => {
         contribute({
             ...msg,
             id: v4(),
