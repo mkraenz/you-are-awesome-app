@@ -26,7 +26,7 @@
         "test:update-snapshot": "jest --updateSnapshot --coverage=false",
         "build-and-publish:expo:android:prod": "NODE_ENV=prod expo build:android --type apk --release-channel prod",
         "build-and-publish:expo:android:stage": "NODE_ENV=stage expo build:android --type apk --release-channel stage",
-        "publish:playstore": "NODE_ENV=prod expo upload:android --latest",
+        "publish:playstore": "NODE_ENV=prod expo upload:android --latest --key google-service-account.private.key.json",
         "deploy:ota:prod": "NODE_ENV=prod node ./scripts/expo-ota-update-with-version.js && yarn test:update-snapshot",
         "deploy:ota:stage": "NODE_ENV=stage node ./scripts/expo-ota-update-with-version.js"
     },
