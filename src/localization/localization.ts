@@ -9,6 +9,10 @@ type keys =
     | "sendAnalytics"
     // TODO IOS: currently always links to Google Play store
     | "rateTheApp"
+    | "settingsGeneral"
+    | "settingsPrivacy"
+    | "settingsAbout"
+    | "settingsDeveloper"
     | "copyright1"
     | "copyright2Company"
     | "copyright3"
@@ -98,6 +102,10 @@ const localization: {
             language: "Language",
             sendAnalytics: "Send usage statistics",
             rateTheApp: "Rate the App",
+            settingsGeneral: "General",
+            settingsPrivacy: "Privacy",
+            settingsDeveloper: "Developer",
+            settingsAbout: "About",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -179,6 +187,10 @@ const localization: {
             language: "Sprache",
             sendAnalytics: "Nutzungsstatistiken senden",
             rateTheApp: "App bewerten",
+            settingsGeneral: "Allgemein",
+            settingsPrivacy: "Datenschutz",
+            settingsDeveloper: "Entwickler",
+            settingsAbout: "Über uns",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -260,6 +272,10 @@ const localization: {
             language: "言語",
             sendAnalytics: "利用状況の統計を送信する",
             rateTheApp: "このアプリをレビュー",
+            settingsGeneral: "全般設定",
+            settingsPrivacy: "プライバシー設定",
+            settingsDeveloper: "開発者設定",
+            settingsAbout: "アプリについて",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
