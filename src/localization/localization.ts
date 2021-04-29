@@ -10,9 +10,11 @@ type keys =
     // TODO IOS: currently always links to Google Play store
     | "rateTheApp"
     | "settingsGeneral"
+    | "settingsFeedback"
     | "settingsPrivacy"
     | "settingsAbout"
     | "settingsDeveloper"
+    | "settingsSubmitFeedback"
     | "copyright1"
     | "copyright2Company"
     | "copyright3"
@@ -87,6 +89,7 @@ export enum LanguageCodeToLocalizedLang {
 
 const shared = {
     companyLink: "http://kraenz.eu",
+    appTitle: "You are Awesome App!",
 };
 
 const localization: {
@@ -95,7 +98,6 @@ const localization: {
     en: {
         default: {
             ...shared,
-            appTitle: "You are Awesome App!",
             darkMode: "Dark mode",
             settings: "Settings",
             comingSoon: "Coming soon",
@@ -103,9 +105,11 @@ const localization: {
             sendAnalytics: "Send usage statistics",
             rateTheApp: "Rate the App",
             settingsGeneral: "General",
+            settingsFeedback: "Feedback",
             settingsPrivacy: "Privacy",
             settingsDeveloper: "Developer",
             settingsAbout: "About",
+            settingsSubmitFeedback: "Provide feedback",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -180,7 +184,6 @@ const localization: {
     de: {
         default: {
             ...shared,
-            appTitle: "You are Awesome App!",
             darkMode: "Nachtmodus",
             settings: "Einstellungen",
             comingSoon: "In Kürze verfügbar",
@@ -188,9 +191,11 @@ const localization: {
             sendAnalytics: "Nutzungsstatistiken senden",
             rateTheApp: "App bewerten",
             settingsGeneral: "Allgemein",
+            settingsFeedback: "Feedback",
             settingsPrivacy: "Datenschutz",
             settingsDeveloper: "Entwickler",
             settingsAbout: "Über uns",
+            settingsSubmitFeedback: "Feedback geben",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -265,7 +270,6 @@ const localization: {
     ja: {
         default: {
             ...shared,
-            appTitle: "You are Awesome App!",
             darkMode: "ダークモード",
             settings: "設定",
             comingSoon: "近日公開",
@@ -273,9 +277,11 @@ const localization: {
             sendAnalytics: "利用状況の統計を送信する",
             rateTheApp: "このアプリをレビュー",
             settingsGeneral: "全般設定",
+            settingsFeedback: "フィードバック",
             settingsPrivacy: "プライバシー設定",
             settingsDeveloper: "開発者設定",
             settingsAbout: "アプリについて",
+            settingsSubmitFeedback: "フィードバックを提供",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",

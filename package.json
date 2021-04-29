@@ -27,8 +27,8 @@
         "build-and-publish:expo:android:prod": "NODE_ENV=prod expo build:android --type apk --release-channel prod",
         "build-and-publish:expo:android:stage": "NODE_ENV=stage expo build:android --type apk --release-channel stage",
         "publish:playstore": "NODE_ENV=prod expo upload:android --latest --key google-service-account.private.key.json",
-        "deploy:ota:prod": "NODE_ENV=prod node ./scripts/expo-ota-update-with-version.js && yarn test:update-snapshot",
-        "deploy:ota:stage": "NODE_ENV=stage node ./scripts/expo-ota-update-with-version.js"
+        "deploy:ota:prod": "NODE_ENV=prod ts-node ./scripts/expo-ota-update-with-version.ts",
+        "deploy:ota:stage": "NODE_ENV=stage ts-node ./scripts/expo-ota-update-with-version.ts"
     },
     "dependencies": {
         "@react-native-community/datetimepicker": "3.0.4",
@@ -75,6 +75,7 @@
         "@testing-library/jest-native": "^3.4.3",
         "@testing-library/react-native": "^7.0.2",
         "@types/jest": "^26.0.20",
+        "@types/jsonfile": "^6.0.0",
         "@types/lodash": "^4.14.168",
         "@types/luxon": "^1.25.0",
         "@types/mockdate": "^2.0.0",
@@ -82,7 +83,9 @@
         "@types/react-native": "0.63.40",
         "@types/react-redux": "^7.1.15",
         "@types/react-test-renderer": "^16.9.3",
+        "@types/readline-sync": "^1.4.3",
         "@types/redux-mock-store": "^1.0.2",
+        "@types/shelljs": "^0.8.8",
         "@types/traverse": "^0.6.32",
         "@types/uuid": "^8.3.0",
         "babel-preset-expo": "8.3.0",
@@ -93,6 +96,7 @@
         "jsonfile": "^6.1.0",
         "mockdate": "^3.0.2",
         "react-test-renderer": "^16.13.1",
+        "readline-sync": "^1.4.10",
         "redux-mock-store": "^1.5.4",
         "shelljs": "^0.8.4",
         "ts-node": "^9.1.1",
