@@ -86,6 +86,16 @@ const SettingsScreen: FC<Props> = ({
                 </List.Section>
 
                 <List.Section>
+                    <SectionHeader text={t("settingsFeedback")} />
+                    <SettingsRow
+                        title={t("settingsSubmitFeedback")}
+                        onPress={submitFeedback}
+                    />
+                    <Divider />
+                    <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
+                </List.Section>
+
+                <List.Section>
                     <SectionHeader text={t("settingsPrivacy")} />
                     <SettingsRow
                         title={t(Route.PrivacyPolicy)}
@@ -116,12 +126,6 @@ const SettingsScreen: FC<Props> = ({
 
                 <List.Section>
                     <SectionHeader text={t("settingsAbout")} />
-                    <SettingsRow
-                        title={t("settingsSubmitFeedback")}
-                        onPress={submitFeedback}
-                    />
-                    <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
-                    <Divider />
                     <VersionAndCopyright />
                 </List.Section>
             </ScrollView>

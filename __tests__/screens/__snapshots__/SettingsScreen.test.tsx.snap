@@ -1064,6 +1064,241 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     ]
                                   }
                                 >
+                                  Feedback
+                                </Text>
+                                <View
+                                  accessible={true}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Array [
+                                      false,
+                                      Array [
+                                        Object {
+                                          "padding": 8,
+                                        },
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "flexDirection": "row",
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "marginVertical": 6,
+                                            "paddingLeft": 8,
+                                          },
+                                          Object {
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        selectable={false}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                              "textAlign": "left",
+                                            },
+                                            Array [
+                                              Object {
+                                                "fontSize": 16,
+                                              },
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                              },
+                                              Object {},
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Provide feedback
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                        "height": 0.5,
+                                      },
+                                      undefined,
+                                      undefined,
+                                    ]
+                                  }
+                                />
+                                <View
+                                  accessible={true}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Array [
+                                      false,
+                                      Array [
+                                        Object {
+                                          "padding": 8,
+                                        },
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "flexDirection": "row",
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "marginVertical": 6,
+                                            "paddingLeft": 8,
+                                          },
+                                          Object {
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        selectable={false}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                              "textAlign": "left",
+                                            },
+                                            Array [
+                                              Object {
+                                                "fontSize": 16,
+                                              },
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                              },
+                                              Object {},
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Rate the App
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "marginVertical": 8,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                                theme={
+                                  Object {
+                                    "animation": Object {
+                                      "scale": 1,
+                                    },
+                                    "colors": Object {
+                                      "accent": "#03dac4",
+                                      "backdrop": "rgba(0, 0, 0, 0.5)",
+                                      "background": "#f6f6f6",
+                                      "disabled": "rgba(0, 0, 0, 0.26)",
+                                      "error": "#B00020",
+                                      "notification": "#f50057",
+                                      "onBackground": "#000000",
+                                      "onSurface": "#000000",
+                                      "placeholder": "rgba(0, 0, 0, 0.54)",
+                                      "primary": "#6200ee",
+                                      "surface": "#ffffff",
+                                      "text": "#000000",
+                                    },
+                                    "dark": false,
+                                    "fonts": Object {
+                                      "light": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "300",
+                                      },
+                                      "medium": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "500",
+                                      },
+                                      "regular": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                      },
+                                      "thin": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "100",
+                                      },
+                                    },
+                                    "roundness": 4,
+                                  }
+                                }
+                              >
+                                <Text
+                                  numberOfLines={1}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "paddingHorizontal": 16,
+                                          "paddingVertical": 13,
+                                        },
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "500",
+                                        },
+                                        Object {
+                                          "marginHorizontal": -12,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
                                   Privacy
                                 </Text>
                                 <View
@@ -1468,160 +1703,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 >
                                   About
                                 </Text>
-                                <View
-                                  accessible={true}
-                                  focusable={true}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
-                                  style={
-                                    Array [
-                                      false,
-                                      Array [
-                                        Object {
-                                          "padding": 8,
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "flexDirection": "row",
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "marginVertical": 6,
-                                            "paddingLeft": 8,
-                                          },
-                                          Object {
-                                            "flex": 1,
-                                            "justifyContent": "center",
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <Text
-                                        numberOfLines={1}
-                                        selectable={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontWeight": "400",
-                                              "textAlign": "left",
-                                            },
-                                            Array [
-                                              Object {
-                                                "fontSize": 16,
-                                              },
-                                              Object {
-                                                "color": "rgba(0, 0, 0, 0.87)",
-                                              },
-                                              Object {},
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Provide feedback
-                                      </Text>
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  accessible={true}
-                                  focusable={true}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
-                                  style={
-                                    Array [
-                                      false,
-                                      Array [
-                                        Object {
-                                          "padding": 8,
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "flexDirection": "row",
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "marginVertical": 6,
-                                            "paddingLeft": 8,
-                                          },
-                                          Object {
-                                            "flex": 1,
-                                            "justifyContent": "center",
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <Text
-                                        numberOfLines={1}
-                                        selectable={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontWeight": "400",
-                                              "textAlign": "left",
-                                            },
-                                            Array [
-                                              Object {
-                                                "fontSize": 16,
-                                              },
-                                              Object {
-                                                "color": "rgba(0, 0, 0, 0.87)",
-                                              },
-                                              Object {},
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Rate the App
-                                      </Text>
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
-                                        "height": 0.5,
-                                      },
-                                      undefined,
-                                      undefined,
-                                    ]
-                                  }
-                                />
                                 <View
                                   style={
                                     Object {
@@ -2751,6 +2832,241 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     ]
                                   }
                                 >
+                                  Feedback
+                                </Text>
+                                <View
+                                  accessible={true}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Array [
+                                      false,
+                                      Array [
+                                        Object {
+                                          "padding": 8,
+                                        },
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "flexDirection": "row",
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "marginVertical": 6,
+                                            "paddingLeft": 8,
+                                          },
+                                          Object {
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        selectable={false}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                              "textAlign": "left",
+                                            },
+                                            Array [
+                                              Object {
+                                                "fontSize": 16,
+                                              },
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                              },
+                                              Object {},
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Provide feedback
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                        "height": 0.5,
+                                      },
+                                      undefined,
+                                      undefined,
+                                    ]
+                                  }
+                                />
+                                <View
+                                  accessible={true}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Array [
+                                      false,
+                                      Array [
+                                        Object {
+                                          "padding": 8,
+                                        },
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "flexDirection": "row",
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "marginVertical": 6,
+                                            "paddingLeft": 8,
+                                          },
+                                          Object {
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        selectable={false}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                              "textAlign": "left",
+                                            },
+                                            Array [
+                                              Object {
+                                                "fontSize": 16,
+                                              },
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                              },
+                                              Object {},
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Rate the App
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "marginVertical": 8,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                                theme={
+                                  Object {
+                                    "animation": Object {
+                                      "scale": 1,
+                                    },
+                                    "colors": Object {
+                                      "accent": "#03dac4",
+                                      "backdrop": "rgba(0, 0, 0, 0.5)",
+                                      "background": "#f6f6f6",
+                                      "disabled": "rgba(0, 0, 0, 0.26)",
+                                      "error": "#B00020",
+                                      "notification": "#f50057",
+                                      "onBackground": "#000000",
+                                      "onSurface": "#000000",
+                                      "placeholder": "rgba(0, 0, 0, 0.54)",
+                                      "primary": "#6200ee",
+                                      "surface": "#ffffff",
+                                      "text": "#000000",
+                                    },
+                                    "dark": false,
+                                    "fonts": Object {
+                                      "light": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "300",
+                                      },
+                                      "medium": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "500",
+                                      },
+                                      "regular": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                      },
+                                      "thin": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "100",
+                                      },
+                                    },
+                                    "roundness": 4,
+                                  }
+                                }
+                              >
+                                <Text
+                                  numberOfLines={1}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "paddingHorizontal": 16,
+                                          "paddingVertical": 13,
+                                        },
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "500",
+                                        },
+                                        Object {
+                                          "marginHorizontal": -12,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
                                   Privacy
                                 </Text>
                                 <View
@@ -3155,160 +3471,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 >
                                   About
                                 </Text>
-                                <View
-                                  accessible={true}
-                                  focusable={true}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
-                                  style={
-                                    Array [
-                                      false,
-                                      Array [
-                                        Object {
-                                          "padding": 8,
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "flexDirection": "row",
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "marginVertical": 6,
-                                            "paddingLeft": 8,
-                                          },
-                                          Object {
-                                            "flex": 1,
-                                            "justifyContent": "center",
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <Text
-                                        numberOfLines={1}
-                                        selectable={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontWeight": "400",
-                                              "textAlign": "left",
-                                            },
-                                            Array [
-                                              Object {
-                                                "fontSize": 16,
-                                              },
-                                              Object {
-                                                "color": "rgba(0, 0, 0, 0.87)",
-                                              },
-                                              Object {},
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Provide feedback
-                                      </Text>
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  accessible={true}
-                                  focusable={true}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
-                                  style={
-                                    Array [
-                                      false,
-                                      Array [
-                                        Object {
-                                          "padding": 8,
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "flexDirection": "row",
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "marginVertical": 6,
-                                            "paddingLeft": 8,
-                                          },
-                                          Object {
-                                            "flex": 1,
-                                            "justifyContent": "center",
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <Text
-                                        numberOfLines={1}
-                                        selectable={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontWeight": "400",
-                                              "textAlign": "left",
-                                            },
-                                            Array [
-                                              Object {
-                                                "fontSize": 16,
-                                              },
-                                              Object {
-                                                "color": "rgba(0, 0, 0, 0.87)",
-                                              },
-                                              Object {},
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Rate the App
-                                      </Text>
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
-                                        "height": 0.5,
-                                      },
-                                      undefined,
-                                      undefined,
-                                    ]
-                                  }
-                                />
                                 <View
                                   style={
                                     Object {
@@ -4468,6 +4630,241 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     ]
                                   }
                                 >
+                                  Feedback
+                                </Text>
+                                <View
+                                  accessible={true}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Array [
+                                      false,
+                                      Array [
+                                        Object {
+                                          "padding": 8,
+                                        },
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "flexDirection": "row",
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "marginVertical": 6,
+                                            "paddingLeft": 8,
+                                          },
+                                          Object {
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        selectable={false}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                              "textAlign": "left",
+                                            },
+                                            Array [
+                                              Object {
+                                                "fontSize": 16,
+                                              },
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                              },
+                                              Object {},
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Provide feedback
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                                        "height": 0.5,
+                                      },
+                                      undefined,
+                                      undefined,
+                                    ]
+                                  }
+                                />
+                                <View
+                                  accessible={true}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    Array [
+                                      false,
+                                      Array [
+                                        Object {
+                                          "padding": 8,
+                                        },
+                                        undefined,
+                                      ],
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "flexDirection": "row",
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Array [
+                                          Object {
+                                            "marginVertical": 6,
+                                            "paddingLeft": 8,
+                                          },
+                                          Object {
+                                            "flex": 1,
+                                            "justifyContent": "center",
+                                          },
+                                        ]
+                                      }
+                                    >
+                                      <Text
+                                        numberOfLines={1}
+                                        selectable={false}
+                                        style={
+                                          Array [
+                                            Object {
+                                              "color": "#000000",
+                                              "fontFamily": "System",
+                                              "fontWeight": "400",
+                                              "textAlign": "left",
+                                            },
+                                            Array [
+                                              Object {
+                                                "fontSize": 16,
+                                              },
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                              },
+                                              Object {},
+                                            ],
+                                          ]
+                                        }
+                                      >
+                                        Rate the App
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
+                              </View>
+                              <View
+                                style={
+                                  Array [
+                                    Object {
+                                      "marginVertical": 8,
+                                    },
+                                    undefined,
+                                  ]
+                                }
+                                theme={
+                                  Object {
+                                    "animation": Object {
+                                      "scale": 1,
+                                    },
+                                    "colors": Object {
+                                      "accent": "#03dac4",
+                                      "backdrop": "rgba(0, 0, 0, 0.5)",
+                                      "background": "#f6f6f6",
+                                      "disabled": "rgba(0, 0, 0, 0.26)",
+                                      "error": "#B00020",
+                                      "notification": "#f50057",
+                                      "onBackground": "#000000",
+                                      "onSurface": "#000000",
+                                      "placeholder": "rgba(0, 0, 0, 0.54)",
+                                      "primary": "#6200ee",
+                                      "surface": "#ffffff",
+                                      "text": "#000000",
+                                    },
+                                    "dark": false,
+                                    "fonts": Object {
+                                      "light": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "300",
+                                      },
+                                      "medium": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "500",
+                                      },
+                                      "regular": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                      },
+                                      "thin": Object {
+                                        "fontFamily": "System",
+                                        "fontWeight": "100",
+                                      },
+                                    },
+                                    "roundness": 4,
+                                  }
+                                }
+                              >
+                                <Text
+                                  numberOfLines={1}
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "System",
+                                        "fontWeight": "400",
+                                        "textAlign": "left",
+                                      },
+                                      Array [
+                                        Object {
+                                          "paddingHorizontal": 16,
+                                          "paddingVertical": 13,
+                                        },
+                                        Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "System",
+                                          "fontWeight": "500",
+                                        },
+                                        Object {
+                                          "marginHorizontal": -12,
+                                        },
+                                      ],
+                                    ]
+                                  }
+                                >
                                   Privacy
                                 </Text>
                                 <View
@@ -4872,160 +5269,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 >
                                   About
                                 </Text>
-                                <View
-                                  accessible={true}
-                                  focusable={true}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
-                                  style={
-                                    Array [
-                                      false,
-                                      Array [
-                                        Object {
-                                          "padding": 8,
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "flexDirection": "row",
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "marginVertical": 6,
-                                            "paddingLeft": 8,
-                                          },
-                                          Object {
-                                            "flex": 1,
-                                            "justifyContent": "center",
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <Text
-                                        numberOfLines={1}
-                                        selectable={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontWeight": "400",
-                                              "textAlign": "left",
-                                            },
-                                            Array [
-                                              Object {
-                                                "fontSize": 16,
-                                              },
-                                              Object {
-                                                "color": "rgba(0, 0, 0, 0.87)",
-                                              },
-                                              Object {},
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Provide feedback
-                                      </Text>
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  accessible={true}
-                                  focusable={true}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
-                                  style={
-                                    Array [
-                                      false,
-                                      Array [
-                                        Object {
-                                          "padding": 8,
-                                        },
-                                        undefined,
-                                      ],
-                                    ]
-                                  }
-                                >
-                                  <View
-                                    style={
-                                      Object {
-                                        "flexDirection": "row",
-                                      }
-                                    }
-                                  >
-                                    <View
-                                      style={
-                                        Array [
-                                          Object {
-                                            "marginVertical": 6,
-                                            "paddingLeft": 8,
-                                          },
-                                          Object {
-                                            "flex": 1,
-                                            "justifyContent": "center",
-                                          },
-                                        ]
-                                      }
-                                    >
-                                      <Text
-                                        numberOfLines={1}
-                                        selectable={false}
-                                        style={
-                                          Array [
-                                            Object {
-                                              "color": "#000000",
-                                              "fontFamily": "System",
-                                              "fontWeight": "400",
-                                              "textAlign": "left",
-                                            },
-                                            Array [
-                                              Object {
-                                                "fontSize": 16,
-                                              },
-                                              Object {
-                                                "color": "rgba(0, 0, 0, 0.87)",
-                                              },
-                                              Object {},
-                                            ],
-                                          ]
-                                        }
-                                      >
-                                        Rate the App
-                                      </Text>
-                                    </View>
-                                  </View>
-                                </View>
-                                <View
-                                  style={
-                                    Array [
-                                      Object {
-                                        "backgroundColor": "rgba(0, 0, 0, 0.12)",
-                                        "height": 0.5,
-                                      },
-                                      undefined,
-                                      undefined,
-                                    ]
-                                  }
-                                />
                                 <View
                                   style={
                                     Object {

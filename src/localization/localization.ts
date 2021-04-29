@@ -10,6 +10,7 @@ type keys =
     // TODO IOS: currently always links to Google Play store
     | "rateTheApp"
     | "settingsGeneral"
+    | "settingsFeedback"
     | "settingsPrivacy"
     | "settingsAbout"
     | "settingsDeveloper"
@@ -104,6 +105,7 @@ const localization: {
             sendAnalytics: "Send usage statistics",
             rateTheApp: "Rate the App",
             settingsGeneral: "General",
+            settingsFeedback: "Feedback",
             settingsPrivacy: "Privacy",
             settingsDeveloper: "Developer",
             settingsAbout: "About",
@@ -189,6 +191,7 @@ const localization: {
             sendAnalytics: "Nutzungsstatistiken senden",
             rateTheApp: "App bewerten",
             settingsGeneral: "Allgemein",
+            settingsFeedback: "Feedback",
             settingsPrivacy: "Datenschutz",
             settingsDeveloper: "Entwickler",
             settingsAbout: "Über uns",
@@ -274,6 +277,7 @@ const localization: {
             sendAnalytics: "利用状況の統計を送信する",
             rateTheApp: "このアプリをレビュー",
             settingsGeneral: "全般設定",
+            settingsFeedback: "フィードバック",
             settingsPrivacy: "プライバシー設定",
             settingsDeveloper: "開発者設定",
             settingsAbout: "アプリについて",
