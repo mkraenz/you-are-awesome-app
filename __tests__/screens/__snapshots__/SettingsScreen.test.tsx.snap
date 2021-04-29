@@ -1743,7 +1743,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     }
                                   >
                                     Build v
-                                    58
+                                    59
                                   </Text>
                                   <Text
                                     style={
@@ -3511,7 +3511,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    58
+                                    59
                                   </Text>
                                   <Text
                                     style={
@@ -5309,7 +5309,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    58
+                                    59
                                   </Text>
                                   <Text
                                     style={
