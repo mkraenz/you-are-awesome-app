@@ -1,4 +1,5 @@
 import * as jsonfile from "jsonfile";
+import * as readline from "readline-sync";
 import * as shell from "shelljs";
 import { jsBuildNumber } from "../src/utils/version.json";
 
@@ -10,7 +11,7 @@ const incrementBuildVersion = () => {
     jsonfile.writeFileSync(file, data, { spaces: 4, EOL: "\r\n" });
 };
 
-function assertProdOrStage(env: string) {
+function assertProdOrStage(env: string): asserts env is "stage" | "prod" {
     const applicableEnv = ["prod", "stage"].includes(env);
     if (!applicableEnv) {
         throw new Error("Not an applicable environment.");
@@ -53,6 +54,22 @@ const onAutoReviewFailed = () => {
     );
 };
 
+const askForCommit = (env: "stage" | "prod") => {
+    const issueNumber = readline.questionInt(
+        "Insert issue number for commit. (without #)\n"
+    );
+    const maybeStageSuffix = env === "stage" ? "-STAGE" : "";
+    const gitCommitCommand = `git commit -m "RELEASE${maybeStageSuffix} #${issueNumber} build version ${jsBuildNumber}"`;
+    const confirmation = readline.question(`Do you wish to git commit with the following command?
+
+        ${gitCommitCommand}
+
+To confirm, type 'yes'. Any other input will abort the commit.
+`);
+
+    return { commitApproved: confirmation === "yes", gitCommitCommand };
+};
+
 const main = () => {
     const env = process.env.NODE_ENV!;
 
@@ -65,6 +82,11 @@ const main = () => {
     const reviewApproved = autoReview();
     if (reviewApproved) {
         stageChanges();
+        const { commitApproved, gitCommitCommand } = askForCommit(env);
+
+        if (commitApproved) {
+            shell.exec(gitCommitCommand);
+        }
     } else {
         onAutoReviewFailed();
     }
