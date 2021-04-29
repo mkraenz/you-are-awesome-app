@@ -17,7 +17,7 @@ const shared = {
         playstoreUrl:
             "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
         feedbackForm:
-            "https://docs.google.com/forms/d/e/1FAIpQLSdheSDuk56z1NaNVjDIaDLpiO4GZj2ZXcoHlQxIIpRREFioTA/viewform?usp=sf_link",
+            "https://docs.google.com/forms/d/e/1FAIpQLSdheSDuk56z1NaNVjDIaDLpiO4GZj2ZXcoHlQxIIpRREFioTA/viewform?usp=pp_url&entry.809955830=",
     },
 };
 

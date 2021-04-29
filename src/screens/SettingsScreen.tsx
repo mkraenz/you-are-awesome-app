@@ -62,7 +62,8 @@ const SettingsScreen: FC<Props> = ({
 
     const handlePrivacyPolicyPressed = () => navigate(Route.PrivacyPolicy);
     const rateTheApp = () => Linking.openURL(CONFIG.uri.playstoreUrl);
-    const submitFeedback = () => Linking.openURL(CONFIG.uri.feedbackForm);
+    const submitFeedback = () =>
+        Linking.openURL(`${CONFIG.uri.feedbackForm}${jsBuildNumber}`);
 
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
