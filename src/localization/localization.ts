@@ -13,6 +13,7 @@ type keys =
     | "settingsPrivacy"
     | "settingsAbout"
     | "settingsDeveloper"
+    | "settingsSubmitFeedback"
     | "copyright1"
     | "copyright2Company"
     | "copyright3"
@@ -87,6 +88,7 @@ export enum LanguageCodeToLocalizedLang {
 
 const shared = {
     companyLink: "http://kraenz.eu",
+    appTitle: "You are Awesome App!",
 };
 
 const localization: {
@@ -95,7 +97,6 @@ const localization: {
     en: {
         default: {
             ...shared,
-            appTitle: "You are Awesome App!",
             darkMode: "Dark mode",
             settings: "Settings",
             comingSoon: "Coming soon",
@@ -106,6 +107,7 @@ const localization: {
             settingsPrivacy: "Privacy",
             settingsDeveloper: "Developer",
             settingsAbout: "About",
+            settingsSubmitFeedback: "Provide feedback",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -180,7 +182,6 @@ const localization: {
     de: {
         default: {
             ...shared,
-            appTitle: "You are Awesome App!",
             darkMode: "Nachtmodus",
             settings: "Einstellungen",
             comingSoon: "In Kürze verfügbar",
@@ -191,6 +192,7 @@ const localization: {
             settingsPrivacy: "Datenschutz",
             settingsDeveloper: "Entwickler",
             settingsAbout: "Über uns",
+            settingsSubmitFeedback: "Feedback geben",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -265,7 +267,6 @@ const localization: {
     ja: {
         default: {
             ...shared,
-            appTitle: "You are Awesome App!",
             darkMode: "ダークモード",
             settings: "設定",
             comingSoon: "近日公開",
@@ -276,6 +277,7 @@ const localization: {
             settingsPrivacy: "プライバシー設定",
             settingsDeveloper: "開発者設定",
             settingsAbout: "アプリについて",
+            settingsSubmitFeedback: "フィードバックを提供",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",

@@ -62,6 +62,7 @@ const SettingsScreen: FC<Props> = ({
 
     const handlePrivacyPolicyPressed = () => navigate(Route.PrivacyPolicy);
     const rateTheApp = () => Linking.openURL(CONFIG.uri.playstoreUrl);
+    const submitFeedback = () => Linking.openURL(CONFIG.uri.feedbackForm);
 
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
@@ -115,6 +116,10 @@ const SettingsScreen: FC<Props> = ({
 
                 <List.Section>
                     <SectionHeader text={t("settingsAbout")} />
+                    <SettingsRow
+                        title={t("settingsSubmitFeedback")}
+                        onPress={submitFeedback}
+                    />
                     <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
                     <Divider />
                     <VersionAndCopyright />
