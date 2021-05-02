@@ -47,7 +47,13 @@ function stageChanges() {
     console.log(`git commit -m "RELEASE #TODO build version ${jsBuildNumber}"`);
 }
 
-const updateSnapshotTests = () => shell.exec("yarn test:update-snapshot");
+const updateSnapshotTests = () => {
+    const { code } = shell.exec("yarn test:update-snapshot");
+    if (code !== 0) {
+        throw new Error("Tests failed.");
+    }
+};
+
 const onAutoReviewFailed = () => {
     console.log(
         "auto review failed. Please check your git changes and commit manually"
@@ -75,9 +81,9 @@ const main = () => {
 
     assertProdOrStage(env);
     incrementBuildVersion();
-    publishToChannel(env);
-
     updateSnapshotTests();
+
+    publishToChannel(env);
 
     const reviewApproved = autoReview();
     if (reviewApproved) {
