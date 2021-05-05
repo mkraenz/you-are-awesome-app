@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Portal, Surface, useTheme } from "react-native-paper";
+import { openFeedbackForm } from "../../api/openFeedbackForm";
 import { CONFIG } from "../../config";
 import { Route } from "../../navigation/Route";
 import MyAppbar, { MyAppbarProps } from "../navigation/MyAppbar";
@@ -48,6 +49,10 @@ const Layout: FC<Props> = ({
     };
 
     const toggleBugReportOpen = () => setBugReportOpen(!bugReportOpen);
+    const handleBugReportConfirm = () => {
+        toggleBugReportOpen();
+        openFeedbackForm();
+    };
 
     return (
         <Surface style={containerStyles}>
@@ -63,6 +68,7 @@ const Layout: FC<Props> = ({
                         <BugReportDialog
                             visible={bugReportOpen}
                             handleClose={toggleBugReportOpen}
+                            handleConfirm={handleBugReportConfirm}
                         />
                     </Portal>
                 )}

@@ -1,14 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Dialog, Paragraph } from "react-native-paper";
-import { openFeedbackForm } from "../../api/openFeedbackForm";
 
 interface Props {
     visible: boolean;
     handleClose: () => void;
+    handleConfirm: () => void;
 }
 
-const BugReportDialog = ({ visible, handleClose }: Props) => {
+const BugReportDialog = ({ visible, handleClose, handleConfirm }: Props) => {
     const { t } = useTranslation();
 
     return (
@@ -21,7 +21,7 @@ const BugReportDialog = ({ visible, handleClose }: Props) => {
                 <Button onPress={handleClose}>
                     {t("bugReportCancelButton")}
                 </Button>
-                <Button onPress={openFeedbackForm}>
+                <Button onPress={handleConfirm}>
                     {t(`bugReportConfirmButton`)}
                 </Button>
             </Dialog.Actions>
