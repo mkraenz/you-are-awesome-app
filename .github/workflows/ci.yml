@@ -16,4 +16,5 @@ jobs:
       # fix timezone to developers' timezone with TZ=...
       - run: |
           TZ=Europe/Berlin yarn test --ci
-          npx codecov
+      - name: Codecov
+        uses: codecov/codecov-action@v1.5.0
