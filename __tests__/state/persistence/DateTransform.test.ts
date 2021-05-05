@@ -1,5 +1,5 @@
 import { random, range } from "lodash";
-import { toDateOrIdentity } from "./DateTransform";
+import { toDateOrIdentity } from "../../../src/state/persistence/DateTransform";
 
 describe("toDateOrIdentity()", () => {
     it("maps iso date strings to JS Date", () => {
