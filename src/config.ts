@@ -83,11 +83,11 @@ const devConfig: typeof prodConfig = {
     isProdOrStage: false,
     env: "dev",
     featureFlags: {
-        analytics: false,
+        analytics: true,
         developerSettings: true,
         bugReportIconVisible: true,
     },
-    debugAnalytics: false,
+    debugAnalytics: true,
     fallbackLanguage: Language.English,
     startScreen: Route.Home,
     defaultNotificationHour: 11,
