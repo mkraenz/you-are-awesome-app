@@ -27,7 +27,7 @@ const prodConfig = {
     featureFlags: {
         analytics: true,
         developerSettings: false,
-        bugReportIconVisible: true,
+        bugReportIconVisible: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -56,7 +56,7 @@ const stageConfig: typeof prodConfig = {
     featureFlags: {
         analytics: true,
         developerSettings: true,
-        bugReportIconVisible: true,
+        bugReportIconVisible: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -85,7 +85,7 @@ const devConfig: typeof prodConfig = {
     featureFlags: {
         analytics: true,
         developerSettings: true,
-        bugReportIconVisible: true,
+        bugReportIconVisible: false,
     },
     debugAnalytics: true,
     fallbackLanguage: Language.English,
