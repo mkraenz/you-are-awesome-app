@@ -1,9 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Linking } from "react-native";
 import { Button, Dialog, Paragraph } from "react-native-paper";
-import { Analytics } from "../../api/Analytics";
-import { CONFIG } from "../../config";
+import { openFeedbackForm } from "../../api/openFeedbackForm";
 
 interface Props {
     visible: boolean;
@@ -13,10 +11,6 @@ interface Props {
 const BugReportDialog = ({ visible, handleClose }: Props) => {
     const { t } = useTranslation();
 
-    const handleConfirm = () => {
-        Analytics.logLinkFollow("feedbackForm");
-        Linking.openURL(CONFIG.uri.feedbackForm);
-    };
     return (
         <Dialog visible={visible} onDismiss={handleClose}>
             <Dialog.Title>{t("bugReportTitle")}</Dialog.Title>
@@ -27,7 +21,7 @@ const BugReportDialog = ({ visible, handleClose }: Props) => {
                 <Button onPress={handleClose}>
                     {t("bugReportCancelButton")}
                 </Button>
-                <Button onPress={handleConfirm}>
+                <Button onPress={openFeedbackForm}>
                     {t(`bugReportConfirmButton`)}
                 </Button>
             </Dialog.Actions>

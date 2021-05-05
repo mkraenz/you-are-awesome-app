@@ -6,7 +6,6 @@ import "react-native";
 import { Linking } from "react-native";
 import renderer from "react-test-renderer";
 import BugReportDialog from "../../../src/components/common/BugReportDialog";
-import { CONFIG } from "../../../src/config";
 import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider";
 
 jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
@@ -40,7 +39,12 @@ it("calls analytics and linking when confirm button clicked", async () => {
 
     fireEvent.press(confirmButton);
 
-    expect(linkingMock).toHaveBeenCalledWith(CONFIG.uri.feedbackForm);
+    const urlWithBuildVersion = new RegExp(
+        /https:\/\/docs\.google\.com\/forms\/d\/e\/1FAIpQLSdheSDuk56z1NaNVjDIaDLpiO4GZj2ZXcoHlQxIIpRREFioTA\/viewform\?usp=pp_url&entry\.809955830=\d+/
+    );
+    expect(linkingMock).toHaveBeenCalledWith(
+        expect.stringMatching(urlWithBuildVersion)
+    );
 
     linkingMock.mockReset();
     linkingMock.mockRestore();

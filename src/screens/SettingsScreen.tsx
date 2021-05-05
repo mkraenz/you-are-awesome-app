@@ -6,6 +6,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Divider, List, Paragraph, Switch } from "react-native-paper";
 import { connect } from "react-redux";
 import { Analytics } from "../api/Analytics";
+import { openFeedbackForm } from "../api/openFeedbackForm";
 import Layout from "../components/common/Layout";
 import OfflineNotice from "../components/common/OfflineNotice";
 import LanguageDropdown from "../components/settings/LanguageDropdown";
@@ -62,8 +63,6 @@ const SettingsScreen: FC<Props> = ({
 
     const handlePrivacyPolicyPressed = () => navigate(Route.PrivacyPolicy);
     const rateTheApp = () => Linking.openURL(CONFIG.uri.playstoreUrl);
-    const submitFeedback = () =>
-        Linking.openURL(`${CONFIG.uri.feedbackForm}${jsBuildNumber}`);
 
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
@@ -90,7 +89,7 @@ const SettingsScreen: FC<Props> = ({
                     <SectionHeader text={t("settingsFeedback")} />
                     <SettingsRow
                         title={t("settingsSubmitFeedback")}
-                        onPress={submitFeedback}
+                        onPress={openFeedbackForm}
                     />
                     <Divider />
                     <SettingsRow title={t("rateTheApp")} onPress={rateTheApp} />
