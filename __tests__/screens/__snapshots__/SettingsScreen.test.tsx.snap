@@ -839,20 +839,14 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                           Daily notifications
                                         </Text>
                                       </View>
-                                      <RCTSwitch
-                                        accessibilityRole="switch"
+                                      <Switch
                                         disabled={true}
-                                        onChange={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        onTintColor="#03dac4"
-                                        style={
+                                        trackColor={
                                           Object {
-                                            "height": 31,
-                                            "width": 51,
+                                            "false": "",
+                                            "true": "#03dac4",
                                           }
                                         }
-                                        tintColor=""
                                         value={true}
                                       />
                                     </View>
@@ -1079,19 +1073,14 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         Dark mode
                                       </Text>
                                     </View>
-                                    <RCTSwitch
-                                      accessibilityRole="switch"
-                                      onChange={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      onTintColor="#03dac4"
-                                      style={
+                                    <Switch
+                                      onValueChange={[Function]}
+                                      trackColor={
                                         Object {
-                                          "height": 31,
-                                          "width": 51,
+                                          "false": "",
+                                          "true": "#03dac4",
                                         }
                                       }
-                                      tintColor=""
                                       value={false}
                                     />
                                   </View>
@@ -1564,20 +1553,14 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         Send usage statistics
                                       </Text>
                                     </View>
-                                    <RCTSwitch
-                                      accessibilityRole="switch"
-                                      onChange={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      onTintColor="#03dac4"
-                                      style={
+                                    <Switch
+                                      onValueChange={[Function]}
+                                      trackColor={
                                         Object {
-                                          "height": 31,
-                                          "width": 51,
+                                          "false": "",
+                                          "true": "#03dac4",
                                         }
                                       }
-                                      tintColor=""
-                                      value={false}
                                     />
                                   </View>
                                 </View>
@@ -2717,20 +2700,15 @@ exports[`renders correctly for disabled notifications 1`] = `
                                           Daily notifications
                                         </Text>
                                       </View>
-                                      <RCTSwitch
-                                        accessibilityRole="switch"
+                                      <Switch
                                         disabled={false}
-                                        onChange={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        onTintColor="#03dac4"
-                                        style={
+                                        onValueChange={[Function]}
+                                        trackColor={
                                           Object {
-                                            "height": 31,
-                                            "width": 51,
+                                            "false": "",
+                                            "true": "#03dac4",
                                           }
                                         }
-                                        tintColor=""
                                         value={false}
                                       />
                                     </View>
@@ -2923,19 +2901,14 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         Dark mode
                                       </Text>
                                     </View>
-                                    <RCTSwitch
-                                      accessibilityRole="switch"
-                                      onChange={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      onTintColor="#03dac4"
-                                      style={
+                                    <Switch
+                                      onValueChange={[Function]}
+                                      trackColor={
                                         Object {
-                                          "height": 31,
-                                          "width": 51,
+                                          "false": "",
+                                          "true": "#03dac4",
                                         }
                                       }
-                                      tintColor=""
                                       value={false}
                                     />
                                   </View>
@@ -3408,20 +3381,14 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         Send usage statistics
                                       </Text>
                                     </View>
-                                    <RCTSwitch
-                                      accessibilityRole="switch"
-                                      onChange={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      onTintColor="#03dac4"
-                                      style={
+                                    <Switch
+                                      onValueChange={[Function]}
+                                      trackColor={
                                         Object {
-                                          "height": 31,
-                                          "width": 51,
+                                          "false": "",
+                                          "true": "#03dac4",
                                         }
                                       }
-                                      tintColor=""
-                                      value={false}
                                     />
                                   </View>
                                 </View>
@@ -4596,20 +4563,15 @@ exports[`renders correctly for enabled notifications 1`] = `
                                           Daily notifications
                                         </Text>
                                       </View>
-                                      <RCTSwitch
-                                        accessibilityRole="switch"
+                                      <Switch
                                         disabled={false}
-                                        onChange={[Function]}
-                                        onResponderTerminationRequest={[Function]}
-                                        onStartShouldSetResponder={[Function]}
-                                        onTintColor="#03dac4"
-                                        style={
+                                        onValueChange={[Function]}
+                                        trackColor={
                                           Object {
-                                            "height": 31,
-                                            "width": 51,
+                                            "false": "",
+                                            "true": "#03dac4",
                                           }
                                         }
-                                        tintColor=""
                                         value={true}
                                       />
                                     </View>
@@ -4832,19 +4794,14 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         Dark mode
                                       </Text>
                                     </View>
-                                    <RCTSwitch
-                                      accessibilityRole="switch"
-                                      onChange={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      onTintColor="#03dac4"
-                                      style={
+                                    <Switch
+                                      onValueChange={[Function]}
+                                      trackColor={
                                         Object {
-                                          "height": 31,
-                                          "width": 51,
+                                          "false": "",
+                                          "true": "#03dac4",
                                         }
                                       }
-                                      tintColor=""
                                       value={false}
                                     />
                                   </View>
@@ -5317,20 +5274,14 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         Send usage statistics
                                       </Text>
                                     </View>
-                                    <RCTSwitch
-                                      accessibilityRole="switch"
-                                      onChange={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      onTintColor="#03dac4"
-                                      style={
+                                    <Switch
+                                      onValueChange={[Function]}
+                                      trackColor={
                                         Object {
-                                          "height": 31,
-                                          "width": 51,
+                                          "false": "",
+                                          "true": "#03dac4",
                                         }
                                       }
-                                      tintColor=""
-                                      value={false}
                                     />
                                   </View>
                                 </View>
