@@ -1,3 +1,4 @@
+import { noop } from "lodash";
 import React from "react";
 import "react-native";
 import renderer from "react-test-renderer";
@@ -10,23 +11,10 @@ it("renders correctly without dark mode", () => {
     const tree = renderer
         .create(
             <MockPaperProvider>
-                <MyAppbar title="my-title" />
+                <MyAppbar title="my-title" onBugActionPress={noop} />
             </MockPaperProvider>
         )
         .toJSON();
 
     expect(tree).toMatchSnapshot();
-});
-
-it("renders light status bar in dark mode", () => {
-    const tree = renderer
-        .create(
-            <MockPaperProvider dark>
-                <MyAppbar title="my-title" />
-            </MockPaperProvider>
-        )
-        .toJSON();
-
-    // don't know how to actually test this. the snapshot does not contain the color
-    // leaving this for specification even though it's not testing anything
 });
