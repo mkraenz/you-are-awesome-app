@@ -3,58 +3,57 @@ import i18next from "i18next";
 import { noop } from "lodash";
 import React from "react";
 import "react-native";
+import { Linking } from "react-native";
 import renderer from "react-test-renderer";
-import DeleteConfirmationDialog from "../../../src/components/favorites/DeleteConfirmationDialog";
+import BugReportDialog from "../../../src/components/common/BugReportDialog";
+import { CONFIG } from "../../../src/config";
 import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider";
 
-it("renders correctly", async () => {
+jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
+
+beforeEach(() => {});
+
+it("renders correctly", () => {
     const tree = renderer
         .create(
             <LocalizedMockPaperProvider>
-                <DeleteConfirmationDialog
-                    onConfirm={noop}
-                    onDismiss={noop}
-                    visible={true}
-                />
+                <BugReportDialog handleClose={noop} visible={true} />
             </LocalizedMockPaperProvider>
         )
         .toJSON();
-
     expect(tree).toMatchSnapshot();
 });
 
-it("calls confirm callback when confirm button clicked", async () => {
-    const confirmMock = jest.fn();
+it("calls analytics and linking when confirm button clicked", async () => {
+    const linkingMock = jest
+        .spyOn(Linking, "openURL")
+        .mockResolvedValueOnce(undefined);
+
     const { findByText } = render(
         <LocalizedMockPaperProvider>
-            <DeleteConfirmationDialog
-                onConfirm={confirmMock}
-                onDismiss={noop}
-                visible={true}
-            />
+            <BugReportDialog handleClose={noop} visible={true} />
         </LocalizedMockPaperProvider>
     );
-    const confirmButton = await findByText(i18next.t("favoritesDelete"));
+    const confirmButton = await findByText(i18next.t("bugReportConfirmButton"));
     await act(async () => {});
-    expect(confirmMock).not.toHaveBeenCalled();
+    expect(linkingMock).not.toHaveBeenCalled();
 
     fireEvent.press(confirmButton);
 
-    expect(confirmMock).toHaveBeenCalled();
+    expect(linkingMock).toHaveBeenCalledWith(CONFIG.uri.feedbackForm);
+
+    linkingMock.mockReset();
+    linkingMock.mockRestore();
 });
 
 it("calls dismiss callback when cancel button clicked", async () => {
     const dismissMock = jest.fn();
     const { findByText } = render(
         <LocalizedMockPaperProvider>
-            <DeleteConfirmationDialog
-                onConfirm={noop}
-                onDismiss={dismissMock}
-                visible={true}
-            />
+            <BugReportDialog handleClose={dismissMock} visible={true} />
         </LocalizedMockPaperProvider>
     );
-    const cancelButton = await findByText(i18next.t("favoritesCancel"));
+    const cancelButton = await findByText(i18next.t("bugReportCancelButton"));
     await act(async () => {});
     expect(dismissMock).not.toHaveBeenCalled();
 

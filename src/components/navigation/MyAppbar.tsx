@@ -2,9 +2,11 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { FC } from "react";
 import { StatusBar } from "react-native";
 import { Appbar, useTheme } from "react-native-paper";
+import { CONFIG } from "../../config";
 
 export interface MyAppbarProps {
     title: string;
+    onBugActionPress: () => void;
     onBack?: () => void;
     actionIcon?: string;
     onActionPress?: () => void;
@@ -15,6 +17,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
     onBack,
     actionIcon,
     onActionPress,
+    onBugActionPress,
 }) => {
     const { dark } = useTheme();
     return (
@@ -33,6 +36,13 @@ const MyAppbar: FC<MyAppbarProps> = ({
                     icon={actionIcon}
                     onPress={onActionPress}
                     testID={"appbar-action-item-right"}
+                />
+            )}
+            {CONFIG.featureFlags.bugReportIconVisible && (
+                <Appbar.Action
+                    icon="bug"
+                    onPress={onBugActionPress}
+                    accessibilityLabel="report a bug"
                 />
             )}
             <ExpoStatusBar style={dark ? "light" : "dark"} />

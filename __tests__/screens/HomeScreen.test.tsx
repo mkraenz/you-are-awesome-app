@@ -45,7 +45,7 @@ it("renders correctly", () => {
     expect(tree).toMatchSnapshot();
 });
 
-it("opens the report dialog when clicking the appbar right action button", async () => {
+it("opens the report dialog when clicking the flag button in the appbar", async () => {
     const store = createMockStore<
         Pick2<IState, "messages", "currentMessage"> &
             Pick2<IState, "network", "connected">
@@ -75,7 +75,44 @@ it("opens the report dialog when clicking the appbar right action button", async
     fireEvent.press(reportButton);
     await act(async () => {});
 
-    const dialogTree = ((tree.toJSON() as unknown) as any[])[1];
+    const dialogTree = ((tree.toJSON() as unknown) as renderer.ReactTestRendererJSON[])[2];
     expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportTitle"));
     expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportReason"));
+});
+
+it("opens the feedback/bug dialog when clicking the bug button in the appbar", async () => {
+    const store = createMockStore<
+        Pick2<IState, "messages", "currentMessage"> &
+            Pick2<IState, "network", "connected">
+    >([])({
+        messages: {
+            currentMessage: {
+                id: "1",
+                author: "my-author",
+                text: "my-text",
+                country: "my-country",
+                isodate: "2018-08-20",
+            },
+        },
+        network: {
+            connected: true,
+        },
+    });
+
+    const { findByA11yLabel, ...tree } = render(
+        <Provider store={store}>
+            <ConfiguredHomeScreen />
+        </Provider>
+    );
+    await act(async () => {});
+
+    const reportButton = await findByA11yLabel("report a bug");
+    fireEvent.press(reportButton);
+    await act(async () => {});
+
+    const dialogTree = ((tree.toJSON() as unknown) as renderer.ReactTestRendererJSON[])[1];
+    expect(JSON.stringify(dialogTree)).toContain(i18next.t("bugReportTitle"));
+    expect(JSON.stringify(dialogTree)).toContain(
+        i18next.t("bugReportDescription")
+    );
 });

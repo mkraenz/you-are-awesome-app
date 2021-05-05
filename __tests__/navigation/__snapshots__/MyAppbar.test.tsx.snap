@@ -45,13 +45,6 @@ exports[`renders correctly without dark mode 1`] = `
       }
     >
       <View
-        style={
-          Object {
-            "width": 48,
-          }
-        }
-      />
-      <View
         accessible={true}
         focusable={false}
         onClick={[Function]}
@@ -69,9 +62,7 @@ exports[`renders correctly without dark mode 1`] = `
             },
             Array [
               false,
-              Object {
-                "alignItems": "center",
-              },
+              false,
               Object {
                 "alignItems": "center",
                 "display": "flex",
@@ -109,6 +100,91 @@ exports[`renders correctly without dark mode 1`] = `
         >
           my-title
         </Text>
+      </View>
+      <View
+        accessibilityLabel="report a bug"
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "disabled": undefined,
+          }
+        }
+        accessible={true}
+        focusable={false}
+        hitSlop={
+          Object {
+            "bottom": 6,
+            "left": 6,
+            "right": 6,
+            "top": 6,
+          }
+        }
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "overflow": "hidden",
+            },
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "margin": 6,
+                "overflow": "hidden",
+              },
+              Object {
+                "borderRadius": 18,
+                "height": 36,
+                "width": 36,
+              },
+              undefined,
+              undefined,
+            ],
+          ]
+        }
+      >
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                Object {
+                  "height": 24,
+                  "width": 24,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "opacity": 1,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                }
+              }
+            >
+              <Text />
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   </RCTSafeAreaView>
