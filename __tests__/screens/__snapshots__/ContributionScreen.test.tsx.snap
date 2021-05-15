@@ -384,8 +384,6 @@ exports[`renders correctly 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
-                                    },
-                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -538,15 +536,11 @@ exports[`renders correctly 1`] = `
                                 />
                                 <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "paddingBottom": 0,
-                                      },
-                                      Object {
-                                        "minHeight": 64,
-                                        "paddingTop": 8,
-                                      },
-                                    ]
+                                    Object {
+                                      "minHeight": 64,
+                                      "paddingBottom": 0,
+                                      "paddingTop": 8,
+                                    }
                                   }
                                 >
                                   <View
@@ -572,7 +566,8 @@ exports[`renders correctly 1`] = `
                                       style={
                                         Object {
                                           "backgroundColor": "#f6f6f6",
-                                          "bottom": 4,
+                                          "bottom": 0,
+                                          "height": 2,
                                           "left": 10,
                                           "opacity": 0,
                                           "position": "absolute",
@@ -723,7 +718,6 @@ exports[`renders correctly 1`] = `
                                           "textAlign": "left",
                                           "textAlignVertical": "center",
                                         },
-                                        false,
                                         Array [
                                           Object {},
                                         ],
@@ -765,15 +759,11 @@ exports[`renders correctly 1`] = `
                                 />
                                 <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "paddingBottom": 0,
-                                      },
-                                      Object {
-                                        "minHeight": 64,
-                                        "paddingTop": 8,
-                                      },
-                                    ]
+                                    Object {
+                                      "minHeight": 64,
+                                      "paddingBottom": 0,
+                                      "paddingTop": 8,
+                                    }
                                   }
                                 >
                                   <View
@@ -799,7 +789,8 @@ exports[`renders correctly 1`] = `
                                       style={
                                         Object {
                                           "backgroundColor": "#f6f6f6",
-                                          "bottom": 4,
+                                          "bottom": 0,
+                                          "height": 2,
                                           "left": 10,
                                           "opacity": 0,
                                           "position": "absolute",
@@ -950,7 +941,6 @@ exports[`renders correctly 1`] = `
                                           "textAlign": "left",
                                           "textAlignVertical": "center",
                                         },
-                                        false,
                                         Array [
                                           Object {},
                                         ],
@@ -992,15 +982,11 @@ exports[`renders correctly 1`] = `
                                 />
                                 <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "paddingBottom": 0,
-                                      },
-                                      Object {
-                                        "minHeight": 64,
-                                        "paddingTop": 8,
-                                      },
-                                    ]
+                                    Object {
+                                      "minHeight": 64,
+                                      "paddingBottom": 0,
+                                      "paddingTop": 8,
+                                    }
                                   }
                                 >
                                   <View
@@ -1026,7 +1012,8 @@ exports[`renders correctly 1`] = `
                                       style={
                                         Object {
                                           "backgroundColor": "#f6f6f6",
-                                          "bottom": 4,
+                                          "bottom": 0,
+                                          "height": 2,
                                           "left": 10,
                                           "opacity": 0,
                                           "position": "absolute",
@@ -1177,7 +1164,6 @@ exports[`renders correctly 1`] = `
                                           "textAlign": "left",
                                           "textAlignVertical": "center",
                                         },
-                                        false,
                                         Array [
                                           Object {},
                                         ],
@@ -1326,8 +1312,6 @@ exports[`renders correctly 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
-                                        },
-                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
@@ -1349,18 +1333,14 @@ exports[`renders correctly 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -1386,18 +1366,14 @@ exports[`renders correctly 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -1425,18 +1401,14 @@ exports[`renders correctly 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -1462,18 +1434,14 @@ exports[`renders correctly 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -1567,8 +1535,6 @@ exports[`renders correctly 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
-                                        },
-                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
@@ -2001,8 +1967,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
-                                    },
-                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -2172,8 +2136,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     "color": "#000000",
                                     "fontFamily": "System",
                                     "fontWeight": "400",
-                                  },
-                                  Object {
                                     "textAlign": "left",
                                   },
                                   Object {
@@ -2222,15 +2184,11 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                 />
                                 <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "paddingBottom": 0,
-                                      },
-                                      Object {
-                                        "minHeight": 64,
-                                        "paddingTop": 8,
-                                      },
-                                    ]
+                                    Object {
+                                      "minHeight": 64,
+                                      "paddingBottom": 0,
+                                      "paddingTop": 8,
+                                    }
                                   }
                                 >
                                   <View
@@ -2256,7 +2214,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       style={
                                         Object {
                                           "backgroundColor": "#f6f6f6",
-                                          "bottom": 4,
+                                          "bottom": 0,
+                                          "height": 2,
                                           "left": 10,
                                           "opacity": 0,
                                           "position": "absolute",
@@ -2407,7 +2366,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                           "textAlign": "left",
                                           "textAlignVertical": "center",
                                         },
-                                        false,
                                         Array [
                                           Object {},
                                         ],
@@ -2449,15 +2407,11 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                 />
                                 <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "paddingBottom": 0,
-                                      },
-                                      Object {
-                                        "minHeight": 64,
-                                        "paddingTop": 8,
-                                      },
-                                    ]
+                                    Object {
+                                      "minHeight": 64,
+                                      "paddingBottom": 0,
+                                      "paddingTop": 8,
+                                    }
                                   }
                                 >
                                   <View
@@ -2483,7 +2437,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       style={
                                         Object {
                                           "backgroundColor": "#f6f6f6",
-                                          "bottom": 4,
+                                          "bottom": 0,
+                                          "height": 2,
                                           "left": 10,
                                           "opacity": 0,
                                           "position": "absolute",
@@ -2634,7 +2589,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                           "textAlign": "left",
                                           "textAlignVertical": "center",
                                         },
-                                        false,
                                         Array [
                                           Object {},
                                         ],
@@ -2676,15 +2630,11 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                 />
                                 <View
                                   style={
-                                    Array [
-                                      Object {
-                                        "paddingBottom": 0,
-                                      },
-                                      Object {
-                                        "minHeight": 64,
-                                        "paddingTop": 8,
-                                      },
-                                    ]
+                                    Object {
+                                      "minHeight": 64,
+                                      "paddingBottom": 0,
+                                      "paddingTop": 8,
+                                    }
                                   }
                                 >
                                   <View
@@ -2710,7 +2660,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       style={
                                         Object {
                                           "backgroundColor": "#f6f6f6",
-                                          "bottom": 4,
+                                          "bottom": 0,
+                                          "height": 2,
                                           "left": 10,
                                           "opacity": 0,
                                           "position": "absolute",
@@ -2861,7 +2812,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                           "textAlign": "left",
                                           "textAlignVertical": "center",
                                         },
-                                        false,
                                         Array [
                                           Object {},
                                         ],
@@ -3045,8 +2995,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
-                                        },
-                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
@@ -3068,18 +3016,14 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -3105,18 +3049,14 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -3144,18 +3084,14 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -3181,18 +3117,14 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                          },
-                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
-                                              "textAlign": "left",
-                                            },
-                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -3279,8 +3211,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
-                                        },
-                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [

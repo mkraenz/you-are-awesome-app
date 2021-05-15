@@ -106,7 +106,7 @@ const devConfig: typeof prodConfig = {
 };
 
 const getEnvConfig = () => {
-    switch (Constants.manifest.extra?.env) {
+    switch (Constants.manifest.extra.env) {
         case "prod":
             return prodConfig;
         case "stage":

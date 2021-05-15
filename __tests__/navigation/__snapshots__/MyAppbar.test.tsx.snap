@@ -91,8 +91,6 @@ exports[`renders correctly without dark mode 1`] = `
                 "color": "#000000",
                 "fontFamily": "System",
                 "fontWeight": "400",
-              },
-              Object {
                 "textAlign": "left",
               },
               Array [

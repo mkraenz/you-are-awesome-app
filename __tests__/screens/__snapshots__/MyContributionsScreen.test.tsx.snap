@@ -504,8 +504,6 @@ exports[`renders special message on empty list 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
-                                    },
-                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -551,18 +549,14 @@ exports[`renders special message on empty list 1`] = `
                                     "color": "#000000",
                                     "fontFamily": "System",
                                     "fontWeight": "400",
-                                  },
-                                  Object {
                                     "textAlign": "left",
                                   },
                                   Array [
                                     Object {
-                                      "textAlign": "left",
-                                    },
-                                    Object {
                                       "color": "rgba(0, 0, 0, 0.87)",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
+                                      "textAlign": "left",
                                       "writingDirection": "ltr",
                                     },
                                     Array [
@@ -654,8 +648,6 @@ exports[`renders special message on empty list 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
-                                        },
-                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
@@ -1208,8 +1200,6 @@ exports[`renders the list 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
-                                    },
-                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -1356,8 +1346,6 @@ exports[`renders the list 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                              },
-                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -1379,18 +1367,14 @@ exports[`renders the list 1`] = `
                                                   "color": "#000000",
                                                   "fontFamily": "System",
                                                   "fontWeight": "400",
-                                                },
-                                                Object {
                                                   "textAlign": "left",
                                                 },
                                                 Array [
                                                   Object {
-                                                    "textAlign": "left",
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
+                                                    "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
                                                   Array [
@@ -1425,18 +1409,14 @@ exports[`renders the list 1`] = `
                                                   "color": "#000000",
                                                   "fontFamily": "System",
                                                   "fontWeight": "400",
-                                                },
-                                                Object {
                                                   "textAlign": "left",
                                                 },
                                                 Array [
                                                   Object {
-                                                    "textAlign": "left",
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
+                                                    "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
                                                   Array [
@@ -1463,18 +1443,14 @@ exports[`renders the list 1`] = `
                                                   "color": "#000000",
                                                   "fontFamily": "System",
                                                   "fontWeight": "400",
-                                                },
-                                                Object {
                                                   "textAlign": "left",
                                                 },
                                                 Array [
                                                   Object {
-                                                    "textAlign": "left",
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
+                                                    "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
                                                   Array [
@@ -1584,8 +1560,6 @@ exports[`renders the list 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                              },
-                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -1607,18 +1581,14 @@ exports[`renders the list 1`] = `
                                                   "color": "#000000",
                                                   "fontFamily": "System",
                                                   "fontWeight": "400",
-                                                },
-                                                Object {
                                                   "textAlign": "left",
                                                 },
                                                 Array [
                                                   Object {
-                                                    "textAlign": "left",
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
+                                                    "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
                                                   Array [
@@ -1653,18 +1623,14 @@ exports[`renders the list 1`] = `
                                                   "color": "#000000",
                                                   "fontFamily": "System",
                                                   "fontWeight": "400",
-                                                },
-                                                Object {
                                                   "textAlign": "left",
                                                 },
                                                 Array [
                                                   Object {
-                                                    "textAlign": "left",
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
+                                                    "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
                                                   Array [
@@ -1691,18 +1657,14 @@ exports[`renders the list 1`] = `
                                                   "color": "#000000",
                                                   "fontFamily": "System",
                                                   "fontWeight": "400",
-                                                },
-                                                Object {
                                                   "textAlign": "left",
                                                 },
                                                 Array [
                                                   Object {
-                                                    "textAlign": "left",
-                                                  },
-                                                  Object {
                                                     "color": "rgba(0, 0, 0, 0.87)",
                                                     "fontFamily": "System",
                                                     "fontWeight": "400",
+                                                    "textAlign": "left",
                                                     "writingDirection": "ltr",
                                                   },
                                                   Array [
