@@ -4,10 +4,10 @@ import * as shell from "shelljs";
 import { jsBuildNumber } from "../src/utils/version.json";
 
 const file = "./src/utils/version.json";
+const nextBuildNumber = jsBuildNumber + 1;
 
 const incrementBuildVersion = () => {
-    const data = jsonfile.readFileSync(file);
-    data.jsBuildNumber = data.jsBuildNumber + 1;
+    const data = { jsBuildNumber: nextBuildNumber };
     jsonfile.writeFileSync(file, data, { spaces: 4, EOL: "\r\n" });
 };
 
@@ -44,7 +44,9 @@ function stageChanges() {
     console.log(
         "ACTION REQUIRED: Change issue number and run the following command:\n"
     );
-    console.log(`git commit -m "RELEASE #TODO build version ${jsBuildNumber}"`);
+    console.log(
+        `git commit -m "RELEASE #TODO build version ${nextBuildNumber}"`
+    );
 }
 
 const updateSnapshotTests = () => {
@@ -65,8 +67,9 @@ const askForCommit = (env: "stage" | "prod") => {
         "Insert issue number for commit. (without #)\n"
     );
     const maybeStageSuffix = env === "stage" ? "-STAGE" : "";
-    const gitCommitCommand = `git commit -m "RELEASE${maybeStageSuffix} #${issueNumber} build version ${jsBuildNumber}"`;
-    const confirmation = readline.question(`Do you wish to git commit with the following command?
+    const gitCommitCommand = `git commit -m "RELEASE${maybeStageSuffix} #${issueNumber} build version ${nextBuildNumber}"`;
+    const confirmation =
+        readline.question(`Do you wish to git commit with the following command?
 
         ${gitCommitCommand}
 
