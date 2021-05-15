@@ -10,6 +10,11 @@ import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
+// fix native switch warnings https://github.com/callstack/react-native-testing-library/issues/329#issuecomment-737307473
+jest.mock("react-native/Libraries/Components/Switch/Switch", () => {
+    const mockComponent = require("react-native/jest/mockComponent");
+    return mockComponent("react-native/Libraries/Components/Switch/Switch");
+});
 
 afterEach(() => {
     MockDate.reset();

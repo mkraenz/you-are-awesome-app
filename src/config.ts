@@ -27,6 +27,7 @@ const prodConfig = {
     featureFlags: {
         analytics: true,
         developerSettings: false,
+        bugReportIconVisible: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -37,8 +38,7 @@ const prodConfig = {
     },
     sentry: {
         debug: false,
-        dns:
-            "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
+        dns: "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
         environment: "production",
         reportFromExpoClient: false,
     },
@@ -55,6 +55,7 @@ const stageConfig: typeof prodConfig = {
     featureFlags: {
         analytics: true,
         developerSettings: true,
+        bugReportIconVisible: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -65,8 +66,7 @@ const stageConfig: typeof prodConfig = {
     },
     sentry: {
         debug: false,
-        dns:
-            "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
+        dns: "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
         environment: "stage",
         reportFromExpoClient: false,
     },
@@ -83,6 +83,7 @@ const devConfig: typeof prodConfig = {
     featureFlags: {
         analytics: true,
         developerSettings: true,
+        bugReportIconVisible: false,
     },
     debugAnalytics: true,
     fallbackLanguage: Language.English,
@@ -93,8 +94,7 @@ const devConfig: typeof prodConfig = {
     },
     sentry: {
         debug: true,
-        dns:
-            "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
+        dns: "https://64c0312c92834266b10fb04c7395fcac@o508307.ingest.sentry.io/5600625",
         environment: "dev",
         reportFromExpoClient: true,
     },

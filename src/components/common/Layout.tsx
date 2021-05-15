@@ -1,9 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
-import { Surface, useTheme } from "react-native-paper";
+import { Portal, Surface, useTheme } from "react-native-paper";
+import { openFeedbackForm } from "../../api/openFeedbackForm";
+import { CONFIG } from "../../config";
 import { Route } from "../../navigation/Route";
 import MyAppbar, { MyAppbarProps } from "../navigation/MyAppbar";
+import BugReportDialog from "./BugReportDialog";
 
 const styles = StyleSheet.create({
     container: {
@@ -20,7 +23,7 @@ const styles = StyleSheet.create({
 interface Props {
     route: Route;
     title?: string;
-    appbarProps?: Omit<MyAppbarProps, "title">;
+    appbarProps?: Omit<MyAppbarProps, "title" | "onBugActionPress">;
     containerStyleOverwrites?: { paddingLeft: number };
 }
 
@@ -30,8 +33,10 @@ const Layout: FC<Props> = ({
     appbarProps,
     containerStyleOverwrites,
 }) => {
+    const [bugReportOpen, setBugReportOpen] = useState(false);
     const { t } = useTranslation();
     const theme = useTheme();
+
     const containerStyles = {
         ...styles.container,
         backgroundColor: theme.dark
@@ -43,11 +48,34 @@ const Layout: FC<Props> = ({
         ...containerStyleOverwrites,
     };
 
+    const toggleBugReportOpen = () => setBugReportOpen(!bugReportOpen);
+    const handleBugReportConfirm = () => {
+        toggleBugReportOpen();
+        openFeedbackForm();
+    };
+
     return (
         <Surface style={containerStyles}>
-            <MyAppbar {...appbarProps} title={title || t("appTitle")} />
-            <View style={contentContainerStyles}>{children}</View>
+            <MyAppbar
+                {...appbarProps}
+                title={title || t("appTitle")}
+                onBugActionPress={toggleBugReportOpen}
+            />
+            <View style={contentContainerStyles}>
+                {CONFIG.featureFlags.bugReportIconVisible && (
+                    <Portal>
+                        {/* push Portal to top-level to test Dialogs individually. */}
+                        <BugReportDialog
+                            visible={bugReportOpen}
+                            handleClose={toggleBugReportOpen}
+                            handleConfirm={handleBugReportConfirm}
+                        />
+                    </Portal>
+                )}
+                {children}
+            </View>
         </Surface>
     );
 };
+
 export default Layout;

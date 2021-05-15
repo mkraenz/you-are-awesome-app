@@ -18,12 +18,9 @@ export type FullTheme = typeof DefaultTheme &
 export enum Color {
     LightBlue = "#89cff0",
     Blue = "#1084ff",
-    Violet = "#4e148c",
-    DarkTurquoise = "#00DAC6",
-    DarkGrey = "#202c39",
     Grey = "#272727",
-    LightGrey = "grey",
-    White = "white",
+    LightGrey = "grey", // #808080
+    White = "white", // #ffffff
 }
 
 export const lightTheme: FullTheme = {

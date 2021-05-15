@@ -5,6 +5,7 @@ import { Button, TextInput, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import { IMessageContent } from "../../state/state/IMessage";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
+import { Color } from "../../themes/theme";
 import TermsAndConditions from "./TermsAndConditions";
 
 const styles = StyleSheet.create({
@@ -50,7 +51,7 @@ const ContributionInputForm: FC<Props> = ({
         mode: "outlined" as const,
         style: styles.input,
         underlineColorAndroid: "transparent",
-        placeholderTextColor: "grey",
+        placeholderTextColor: Color.LightGrey,
         autoCapitalize: "sentences" as const,
         accessibilityStates: {},
     };

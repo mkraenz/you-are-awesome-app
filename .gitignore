@@ -88,6 +88,7 @@ npm-debug.*
 web-build/
 web-report/
 coverage/
+*.log
 
 # macOS
 .DS_Store

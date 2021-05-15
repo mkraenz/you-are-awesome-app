@@ -1,4 +1,4 @@
-import { act, fireEvent, render } from "@testing-library/react-native";
+import { fireEvent, render } from "@testing-library/react-native";
 import i18next from "i18next";
 import React from "react";
 import "react-native";
@@ -20,32 +20,6 @@ const ConfiguredHomeScreen = () => (
 );
 
 it("renders correctly", () => {
-    const store = createMockStore<Pick2<IState, "messages", "currentMessage">>(
-        []
-    )({
-        messages: {
-            currentMessage: {
-                id: "1",
-                author: "my-author",
-                text: "my-text",
-                country: "my-country",
-                isodate: "2018-08-20",
-            },
-        },
-    });
-
-    const tree = renderer
-        .create(
-            <Provider store={store}>
-                <ConfiguredHomeScreen />
-            </Provider>
-        )
-        .toJSON();
-
-    expect(tree).toMatchSnapshot();
-});
-
-it("opens the report dialog when clicking the appbar right action button", async () => {
     const store = createMockStore<
         Pick2<IState, "messages", "currentMessage"> &
             Pick2<IState, "network", "connected">
@@ -64,18 +38,85 @@ it("opens the report dialog when clicking the appbar right action button", async
         },
     });
 
-    const { findByTestId, ...tree } = render(
+    const tree = renderer
+        .create(
+            <Provider store={store}>
+                <ConfiguredHomeScreen />
+            </Provider>
+        )
+        .toJSON();
+
+    expect(tree).toMatchSnapshot();
+});
+
+it("opens the report dialog when clicking the flag button in the appbar", async () => {
+    const store = createMockStore<
+        Pick2<IState, "messages", "currentMessage"> &
+            Pick2<IState, "network", "connected">
+    >([])({
+        messages: {
+            currentMessage: {
+                id: "1",
+                author: "my-author",
+                text: "my-text",
+                country: "my-country",
+                isodate: "2018-08-20",
+            },
+        },
+        network: {
+            connected: true,
+        },
+    });
+
+    const { findByTestId, findByText, findAllByText, queryByText, ...tree } =
+        render(
+            <Provider store={store}>
+                <ConfiguredHomeScreen />
+            </Provider>
+        );
+
+    const dialogNotRenderedYet = queryByText(i18next.t("reportTitle")) === null;
+    expect(dialogNotRenderedYet).toBe(true);
+
+    const reportButton = await findByTestId("appbar-action-item-right");
+    fireEvent.press(reportButton);
+
+    await findByText(i18next.t("reportTitle"));
+    const reportReasons = await findAllByText(i18next.t("reportReason"));
+    expect(reportReasons).toHaveLength(3);
+});
+
+it.skip("opens the feedback/bug dialog when clicking the bug button in the appbar", async () => {
+    const store = createMockStore<
+        Pick2<IState, "messages", "currentMessage"> &
+            Pick2<IState, "network", "connected">
+    >([])({
+        messages: {
+            currentMessage: {
+                id: "1",
+                author: "my-author",
+                text: "my-text",
+                country: "my-country",
+                isodate: "2018-08-20",
+            },
+        },
+        network: {
+            connected: true,
+        },
+    });
+
+    const { findByText, queryByText, findByA11yLabel } = render(
         <Provider store={store}>
             <ConfiguredHomeScreen />
         </Provider>
     );
-    await act(async () => {});
 
-    const reportButton = await findByTestId("appbar-action-item-right");
+    const dialogNotRenderedYet = queryByText(i18next.t("reportTitle")) === null;
+    expect(dialogNotRenderedYet).toBe(true);
+
+    const reportButton = await findByA11yLabel("report a bug");
     fireEvent.press(reportButton);
-    await act(async () => {});
 
-    const dialogTree = ((tree.toJSON() as unknown) as any[])[1];
-    expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportTitle"));
-    expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportReason"));
+    await findByText(i18next.t("bugReportTitle"));
+    await findByText(i18next.t("bugReportDescription"));
 });

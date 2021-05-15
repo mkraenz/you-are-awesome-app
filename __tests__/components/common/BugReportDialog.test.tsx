@@ -4,39 +4,40 @@ import { noop } from "lodash";
 import React from "react";
 import "react-native";
 import renderer from "react-test-renderer";
-import DeleteConfirmationDialog from "../../../src/components/favorites/DeleteConfirmationDialog";
+import BugReportDialog from "../../../src/components/common/BugReportDialog";
 import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider";
 
-it("renders correctly", async () => {
+jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
+
+it("renders correctly", () => {
     const tree = renderer
         .create(
             <LocalizedMockPaperProvider>
-                <DeleteConfirmationDialog
-                    onConfirm={noop}
-                    onDismiss={noop}
+                <BugReportDialog
+                    handleClose={noop}
+                    handleConfirm={noop}
                     visible={true}
                 />
             </LocalizedMockPaperProvider>
         )
         .toJSON();
-
     expect(tree).toMatchSnapshot();
 });
 
-it("calls confirm callback when confirm button clicked", async () => {
+it("calls analytics and linking when confirm button clicked", async () => {
     const confirmMock = jest.fn();
+
     const { findByText } = render(
         <LocalizedMockPaperProvider>
-            <DeleteConfirmationDialog
-                onConfirm={confirmMock}
-                onDismiss={noop}
+            <BugReportDialog
+                handleClose={noop}
+                handleConfirm={confirmMock}
                 visible={true}
             />
         </LocalizedMockPaperProvider>
     );
-    const confirmButton = await findByText(i18next.t("favoritesDelete"));
+    const confirmButton = await findByText(i18next.t("bugReportConfirmButton"));
     await act(async () => {});
-    expect(confirmMock).not.toHaveBeenCalled();
 
     fireEvent.press(confirmButton);
 
@@ -47,14 +48,14 @@ it("calls dismiss callback when cancel button clicked", async () => {
     const dismissMock = jest.fn();
     const { findByText } = render(
         <LocalizedMockPaperProvider>
-            <DeleteConfirmationDialog
-                onConfirm={noop}
-                onDismiss={dismissMock}
+            <BugReportDialog
+                handleClose={dismissMock}
+                handleConfirm={noop}
                 visible={true}
             />
         </LocalizedMockPaperProvider>
     );
-    const cancelButton = await findByText(i18next.t("favoritesCancel"));
+    const cancelButton = await findByText(i18next.t("bugReportCancelButton"));
     await act(async () => {});
     expect(dismissMock).not.toHaveBeenCalled();
 

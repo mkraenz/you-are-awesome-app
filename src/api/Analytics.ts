@@ -44,7 +44,11 @@ export class Analytics {
     }
 
     static async logLinkFollow(
-        linkText: "privacyPolicy" | "company" | "termsAndConditions"
+        linkText:
+            | "privacyPolicy"
+            | "company"
+            | "termsAndConditions"
+            | "feedbackForm"
     ) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("link_follow", { linkText });

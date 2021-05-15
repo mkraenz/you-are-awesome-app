@@ -15,6 +15,10 @@ type keys =
     | "settingsAbout"
     | "settingsDeveloper"
     | "settingsSubmitFeedback"
+    | "bugReportTitle"
+    | "bugReportDescription"
+    | "bugReportCancelButton"
+    | "bugReportConfirmButton"
     | "copyright1"
     | "copyright2Company"
     | "copyright3"
@@ -110,6 +114,11 @@ const localization: {
             settingsDeveloper: "Developer",
             settingsAbout: "About",
             settingsSubmitFeedback: "Provide feedback",
+            bugReportTitle: "Feedback",
+            bugReportCancelButton: "Cancel",
+            bugReportConfirmButton: "Open in Browser",
+            bugReportDescription:
+                "Got some feedback for us? Found a bug? We'd love to hear from you!",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -196,6 +205,11 @@ const localization: {
             settingsDeveloper: "Entwickler",
             settingsAbout: "Über uns",
             settingsSubmitFeedback: "Feedback geben",
+            bugReportTitle: "Feedback",
+            bugReportCancelButton: "Abbrechen",
+            bugReportConfirmButton: "Im Browser öffnen",
+            bugReportDescription:
+                "Hast du Feedback für uns? Oder etwa einen Bug entdeckt? Wir freuen uns von dir zu hören!",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -282,6 +296,11 @@ const localization: {
             settingsDeveloper: "開発者設定",
             settingsAbout: "アプリについて",
             settingsSubmitFeedback: "フィードバックを提供",
+            bugReportTitle: "フィードバック",
+            bugReportCancelButton: "キャンセル",
+            bugReportConfirmButton: "ブラウザーで開く",
+            bugReportDescription:
+                "フィードバックを提供しますか？バグを見つかりましたか？ご連絡をお願いします。",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
