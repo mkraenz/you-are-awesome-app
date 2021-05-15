@@ -134,7 +134,7 @@ exports[`renders special message on empty list 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -142,7 +142,9 @@ exports[`renders special message on empty list 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -687,8 +689,8 @@ exports[`renders special message on empty list 1`] = `
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
@@ -828,7 +830,7 @@ exports[`renders the list 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -836,7 +838,9 @@ exports[`renders the list 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -1696,8 +1700,8 @@ exports[`renders the list 1`] = `
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>

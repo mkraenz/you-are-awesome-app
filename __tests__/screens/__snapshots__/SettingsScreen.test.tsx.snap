@@ -134,7 +134,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -142,7 +142,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -1726,7 +1728,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     }
                                   >
                                     Build v
-                                    63
+                                    64
                                   </Text>
                                   <Text
                                     style={
@@ -1810,8 +1812,8 @@ Mirco Kraenz 2020
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
@@ -1951,7 +1953,7 @@ exports[`renders correctly for disabled notifications 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -1959,7 +1961,9 @@ exports[`renders correctly for disabled notifications 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -3478,7 +3482,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    63
+                                    64
                                   </Text>
                                   <Text
                                     style={
@@ -3562,8 +3566,8 @@ Mirco Kraenz 2020
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
@@ -3703,7 +3707,7 @@ exports[`renders correctly for enabled notifications 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -3711,7 +3715,9 @@ exports[`renders correctly for enabled notifications 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -5260,7 +5266,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    63
+                                    64
                                   </Text>
                                   <Text
                                     style={
@@ -5344,8 +5350,8 @@ Mirco Kraenz 2020
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>

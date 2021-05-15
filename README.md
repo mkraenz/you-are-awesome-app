@@ -78,6 +78,8 @@ adb logcat | tee --append android-usb-debugging.log
 # install apk
 adb install /path/to/my/app
 adb install ~/Downloads/you-are-awesome-app-8497638a825d4c70988a0c68eec2d09b-signed.apk
+# if app already installed, then re-install
+adb install -r ~/Downloads/you-are-awesome-app-8497638a825d4c70988a0c68eec2d09b-signed.apk
 ```
 
 ### Debugging Jest tests

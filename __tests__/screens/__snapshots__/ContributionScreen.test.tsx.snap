@@ -134,7 +134,7 @@ exports[`renders correctly 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -142,7 +142,9 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -1574,8 +1576,8 @@ exports[`renders correctly 1`] = `
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
@@ -1715,7 +1717,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -1723,7 +1725,9 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -3248,8 +3252,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
