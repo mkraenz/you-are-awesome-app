@@ -75,7 +75,9 @@ it.skip("opens the report dialog when clicking the flag button in the appbar", a
     fireEvent.press(reportButton);
     await act(async () => {});
 
-    const dialogTree = ((tree.toJSON() as unknown) as renderer.ReactTestRendererJSON[])[2];
+    const dialogTree = (
+        tree.toJSON() as unknown as renderer.ReactTestRendererJSON[]
+    )[2];
     expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportTitle"));
     expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportReason"));
 });
@@ -110,7 +112,9 @@ it.skip("opens the feedback/bug dialog when clicking the bug button in the appba
     fireEvent.press(reportButton);
     await act(async () => {});
 
-    const dialogTree = ((tree.toJSON() as unknown) as renderer.ReactTestRendererJSON[])[1];
+    const dialogTree = (
+        tree.toJSON() as unknown as renderer.ReactTestRendererJSON[]
+    )[1];
     expect(JSON.stringify(dialogTree)).toContain(i18next.t("bugReportTitle"));
     expect(JSON.stringify(dialogTree)).toContain(
         i18next.t("bugReportDescription")
