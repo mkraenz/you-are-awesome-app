@@ -18,6 +18,13 @@ function assertProdOrStage(env: string): asserts env is "stage" | "prod" {
     }
 }
 
+function assertCompiles() {
+    const { code } = shell.exec(`yarn build`);
+    if (code !== 0) {
+        throw new Error("TypeScript Compilation failed");
+    }
+}
+
 function publishToChannel(env: string) {
     const { code } = shell.exec(
         `expo publish --target managed --release-channel ${env}`
@@ -83,6 +90,7 @@ const main = () => {
     const env = process.env.NODE_ENV!;
 
     assertProdOrStage(env);
+    assertCompiles();
     incrementBuildVersion();
     updateSnapshotTests();
 
