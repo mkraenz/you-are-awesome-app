@@ -7,6 +7,7 @@ import { CONFIG } from "../../config";
 export interface MyAppbarProps {
     title: string;
     onBugActionPress: () => void;
+    bugReportIconVisible?: boolean;
     onBack?: () => void;
     actionIcon?: string;
     onActionPress?: () => void;
@@ -18,6 +19,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
     actionIcon,
     onActionPress,
     onBugActionPress,
+    bugReportIconVisible = CONFIG.featureFlags.bugReportIconVisible,
 }) => {
     const { dark } = useTheme();
     return (
@@ -38,7 +40,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
                     testID={"appbar-action-item-right"}
                 />
             )}
-            {CONFIG.featureFlags.bugReportIconVisible && (
+            {bugReportIconVisible && (
                 <Appbar.Action
                     icon="bug"
                     onPress={onBugActionPress}

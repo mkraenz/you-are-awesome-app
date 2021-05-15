@@ -1,4 +1,4 @@
-import { act, fireEvent, render } from "@testing-library/react-native";
+import { fireEvent, render } from "@testing-library/react-native";
 import i18next from "i18next";
 import React from "react";
 import "react-native";
@@ -12,6 +12,10 @@ import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 
 jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
+jest.mock("react-native-paper/lib/commonjs/components/Portal/Portal", () => {
+    const { View } = require("react-native");
+    return ({ children }: any) => <View>{children}</View>;
+});
 
 const ConfiguredHomeScreen = () => (
     <LocalizedMockPaperProvider>
@@ -20,9 +24,10 @@ const ConfiguredHomeScreen = () => (
 );
 
 it("renders correctly", () => {
-    const store = createMockStore<Pick2<IState, "messages", "currentMessage">>(
-        []
-    )({
+    const store = createMockStore<
+        Pick2<IState, "messages", "currentMessage"> &
+            Pick2<IState, "network", "connected">
+    >([])({
         messages: {
             currentMessage: {
                 id: "1",
@@ -31,6 +36,9 @@ it("renders correctly", () => {
                 country: "my-country",
                 isodate: "2018-08-20",
             },
+        },
+        network: {
+            connected: true,
         },
     });
 
@@ -45,7 +53,7 @@ it("renders correctly", () => {
     expect(tree).toMatchSnapshot();
 });
 
-it.skip("opens the report dialog when clicking the flag button in the appbar", async () => {
+it("opens the report dialog when clicking the flag button in the appbar", async () => {
     const store = createMockStore<
         Pick2<IState, "messages", "currentMessage"> &
             Pick2<IState, "network", "connected">
@@ -64,25 +72,25 @@ it.skip("opens the report dialog when clicking the flag button in the appbar", a
         },
     });
 
-    const { findByTestId, ...tree } = render(
-        <Provider store={store}>
-            <ConfiguredHomeScreen />
-        </Provider>
-    );
-    await act(async () => {});
+    const { findByTestId, findByText, findAllByText, queryByText, ...tree } =
+        render(
+            <Provider store={store}>
+                <ConfiguredHomeScreen />
+            </Provider>
+        );
+
+    const dialogNotRenderedYet = queryByText(i18next.t("reportTitle")) === null;
+    expect(dialogNotRenderedYet).toBe(true);
 
     const reportButton = await findByTestId("appbar-action-item-right");
     fireEvent.press(reportButton);
-    await act(async () => {});
 
-    const dialogTree = (
-        tree.toJSON() as unknown as renderer.ReactTestRendererJSON[]
-    )[2];
-    expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportTitle"));
-    expect(JSON.stringify(dialogTree)).toContain(i18next.t("reportReason"));
+    await findByText(i18next.t("reportTitle"));
+    const reportReasons = await findAllByText(i18next.t("reportReason"));
+    expect(reportReasons).toHaveLength(3);
 });
 
-it.skip("opens the feedback/bug dialog when clicking the bug button in the appbar", async () => {
+it("opens the feedback/bug dialog when clicking the bug button in the appbar", async () => {
     const store = createMockStore<
         Pick2<IState, "messages", "currentMessage"> &
             Pick2<IState, "network", "connected">
@@ -101,22 +109,18 @@ it.skip("opens the feedback/bug dialog when clicking the bug button in the appba
         },
     });
 
-    const { findByA11yLabel, ...tree } = render(
+    const { findByText, queryByText, findByA11yLabel } = render(
         <Provider store={store}>
             <ConfiguredHomeScreen />
         </Provider>
     );
-    await act(async () => {});
+
+    const dialogNotRenderedYet = queryByText(i18next.t("reportTitle")) === null;
+    expect(dialogNotRenderedYet).toBe(true);
 
     const reportButton = await findByA11yLabel("report a bug");
     fireEvent.press(reportButton);
-    await act(async () => {});
 
-    const dialogTree = (
-        tree.toJSON() as unknown as renderer.ReactTestRendererJSON[]
-    )[1];
-    expect(JSON.stringify(dialogTree)).toContain(i18next.t("bugReportTitle"));
-    expect(JSON.stringify(dialogTree)).toContain(
-        i18next.t("bugReportDescription")
-    );
+    await findByText(i18next.t("bugReportTitle"));
+    await findByText(i18next.t("bugReportDescription"));
 });
