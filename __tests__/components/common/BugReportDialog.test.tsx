@@ -9,8 +9,6 @@ import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider
 
 jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
 
-beforeEach(() => {});
-
 it("renders correctly", () => {
     const tree = renderer
         .create(

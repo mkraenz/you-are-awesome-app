@@ -5,15 +5,6 @@ import renderer from "react-test-renderer";
 import MyAppbar from "../../src/components/navigation/MyAppbar";
 import MockPaperProvider from "../helpers/MockPaperProvider";
 
-jest.mock("@expo/vector-icons", () => ({
-    FontAwesome: "FontawesomeMock",
-    Icon: "SomeIcon",
-}));
-jest.mock("react-native-paper/lib/commonjs/components/Portal/Portal", () => {
-    const { View } = require("react-native");
-    return ({ children }: any) => <View>{children}</View>;
-});
-
 it("renders correctly without dark mode", () => {
     const tree = renderer
         .create(
@@ -21,6 +12,7 @@ it("renders correctly without dark mode", () => {
                 <MyAppbar
                     title="my-title"
                     onBugActionPress={noop}
+                    // TODO #430: Possibly the cause of failing tests on CI. Shows `...create-icon-set.js` error
                     bugReportIconVisible={false}
                 />
             </MockPaperProvider>
