@@ -86,10 +86,9 @@ const main = () => {
     incrementBuildVersion();
     updateSnapshotTests();
 
-    publishToChannel(env);
-
     const reviewApproved = autoReview();
     if (reviewApproved) {
+        publishToChannel(env);
         stageChanges();
         const { commitApproved, gitCommitCommand } = askForCommit(env);
 
