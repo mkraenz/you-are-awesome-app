@@ -14,7 +14,7 @@ class NetInfoChangedContainer extends Component<Props> {
 
     public componentDidMount() {
         this.unsubscribe = NetInfo.addEventListener((state) =>
-            this.props.changeNetInfo(state.isConnected)
+            this.props.changeNetInfo(!!state.isConnected)
         );
     }
 
