@@ -69,6 +69,8 @@ exports[`renders correctly in normal mode 1`] = `
                 "color": "#000000",
                 "fontFamily": "System",
                 "fontWeight": "400",
+              },
+              Object {
                 "textAlign": "left",
               },
               Array [
@@ -90,14 +92,18 @@ exports[`renders correctly in normal mode 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -132,14 +138,18 @@ exports[`renders correctly in normal mode 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -166,14 +176,18 @@ exports[`renders correctly in normal mode 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -322,6 +336,8 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
                 "color": "#000000",
                 "fontFamily": "System",
                 "fontWeight": "400",
+              },
+              Object {
                 "textAlign": "left",
               },
               Array [
@@ -343,14 +359,18 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -385,14 +405,18 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -419,14 +443,18 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -609,6 +637,8 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
                 "color": "#000000",
                 "fontFamily": "System",
                 "fontWeight": "400",
+              },
+              Object {
                 "textAlign": "left",
               },
               Array [
@@ -630,14 +660,18 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -672,14 +706,18 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
@@ -706,14 +744,18 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
                   "color": "#000000",
                   "fontFamily": "System",
                   "fontWeight": "400",
+                },
+                Object {
                   "textAlign": "left",
                 },
                 Array [
                   Object {
+                    "textAlign": "left",
+                  },
+                  Object {
                     "color": "rgba(0, 0, 0, 0.87)",
                     "fontFamily": "System",
                     "fontWeight": "400",
-                    "textAlign": "left",
                     "writingDirection": "ltr",
                   },
                   Array [
