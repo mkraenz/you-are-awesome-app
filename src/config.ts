@@ -9,11 +9,11 @@ const shared = {
         submitContribution:
             "https://s25cfu9sz3.execute-api.eu-central-1.amazonaws.com/prod/contrib",
         registerForPushNotifications:
-            "https://opxwo1lkzg.execute-api.eu-central-1.amazonaws.com/prod/",
+            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/push-notifications/register",
         unregisterFromPushNotifications:
-            "https://6b6zfu36x6.execute-api.eu-central-1.amazonaws.com/prod/",
+            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/push-notifications/unregister",
         reportInappropriateContent:
-            "https://ha18mzq01f.execute-api.eu-central-1.amazonaws.com/prod/",
+            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/reportinappropriate",
         playstoreUrl:
             "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
         feedbackForm:
@@ -106,7 +106,7 @@ const devConfig: typeof prodConfig = {
 };
 
 const getEnvConfig = () => {
-    switch (Constants.manifest.extra.env) {
+    switch (Constants.manifest.extra?.env) {
         case "prod":
             return prodConfig;
         case "stage":

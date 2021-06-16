@@ -134,7 +134,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -142,7 +142,9 @@ exports[`displays netinfo box for no internet connection 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -391,6 +393,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
+                                    },
+                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -486,6 +490,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -526,6 +532,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Object {
@@ -592,6 +600,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -616,14 +626,18 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
                                               Object {
+                                                "textAlign": "left",
+                                              },
+                                              Object {
                                                 "color": "rgba(0, 0, 0, 0.87)",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                                "textAlign": "left",
                                                 "writingDirection": "ltr",
                                               },
                                               Array [
@@ -709,6 +723,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -792,6 +808,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -818,14 +836,18 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
                                               Object {
+                                                "textAlign": "left",
+                                              },
+                                              Object {
                                                 "color": "rgba(0, 0, 0, 0.87)",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                                "textAlign": "left",
                                                 "writingDirection": "ltr",
                                               },
                                               Array [
@@ -945,6 +967,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -1034,6 +1058,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -1107,6 +1133,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -1190,6 +1218,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -1269,6 +1299,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -1342,6 +1374,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -1425,6 +1459,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -1513,6 +1549,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -1586,6 +1624,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -1665,6 +1705,8 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -1702,14 +1744,18 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
                                           Object {
+                                            "textAlign": "left",
+                                          },
+                                          Object {
                                             "color": "rgba(0, 0, 0, 0.87)",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                            "textAlign": "left",
                                             "writingDirection": "ltr",
                                           },
                                           Array [
@@ -1726,7 +1772,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     }
                                   >
                                     Build v
-                                    63
+                                    67
                                   </Text>
                                   <Text
                                     style={
@@ -1735,14 +1781,18 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
                                           Object {
+                                            "textAlign": "left",
+                                          },
+                                          Object {
                                             "color": "rgba(0, 0, 0, 0.87)",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                            "textAlign": "left",
                                             "writingDirection": "ltr",
                                           },
                                           Array [
@@ -1767,14 +1817,18 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
+                                          },
+                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
+                                              "textAlign": "left",
+                                            },
+                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
-                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -1810,8 +1864,8 @@ Mirco Kraenz 2020
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
@@ -1951,7 +2005,7 @@ exports[`renders correctly for disabled notifications 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -1959,7 +2013,9 @@ exports[`renders correctly for disabled notifications 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -2208,6 +2264,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
+                                    },
+                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -2303,6 +2361,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -2379,6 +2439,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -2403,14 +2465,18 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
                                               Object {
+                                                "textAlign": "left",
+                                              },
+                                              Object {
                                                 "color": "rgba(0, 0, 0, 0.87)",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                                "textAlign": "left",
                                                 "writingDirection": "ltr",
                                               },
                                               Array [
@@ -2496,6 +2562,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -2578,6 +2646,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -2697,6 +2767,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -2786,6 +2858,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -2859,6 +2933,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -2942,6 +3018,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -3021,6 +3099,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -3094,6 +3174,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -3177,6 +3259,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -3265,6 +3349,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -3338,6 +3424,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -3417,6 +3505,8 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -3454,14 +3544,18 @@ exports[`renders correctly for disabled notifications 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
                                           Object {
+                                            "textAlign": "left",
+                                          },
+                                          Object {
                                             "color": "rgba(0, 0, 0, 0.87)",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                            "textAlign": "left",
                                             "writingDirection": "ltr",
                                           },
                                           Array [
@@ -3478,7 +3572,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    63
+                                    67
                                   </Text>
                                   <Text
                                     style={
@@ -3487,14 +3581,18 @@ exports[`renders correctly for disabled notifications 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
                                           Object {
+                                            "textAlign": "left",
+                                          },
+                                          Object {
                                             "color": "rgba(0, 0, 0, 0.87)",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                            "textAlign": "left",
                                             "writingDirection": "ltr",
                                           },
                                           Array [
@@ -3519,14 +3617,18 @@ exports[`renders correctly for disabled notifications 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
+                                          },
+                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
+                                              "textAlign": "left",
+                                            },
+                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
-                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -3562,8 +3664,8 @@ Mirco Kraenz 2020
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
@@ -3703,7 +3805,7 @@ exports[`renders correctly for enabled notifications 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -3711,7 +3813,9 @@ exports[`renders correctly for enabled notifications 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -3960,6 +4064,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
+                                    },
+                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -4055,6 +4161,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -4131,6 +4239,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -4155,14 +4265,18 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
                                               Object {
+                                                "textAlign": "left",
+                                              },
+                                              Object {
                                                 "color": "rgba(0, 0, 0, 0.87)",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                                "textAlign": "left",
                                                 "writingDirection": "ltr",
                                               },
                                               Array [
@@ -4248,6 +4362,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -4330,6 +4446,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                                 "color": "#000000",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
+                                              },
+                                              Object {
                                                 "textAlign": "left",
                                               },
                                               Array [
@@ -4354,14 +4472,18 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
                                               Object {
+                                                "textAlign": "left",
+                                              },
+                                              Object {
                                                 "color": "rgba(0, 0, 0, 0.87)",
                                                 "fontFamily": "System",
                                                 "fontWeight": "400",
-                                                "textAlign": "left",
                                                 "writingDirection": "ltr",
                                               },
                                               Array [
@@ -4479,6 +4601,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -4568,6 +4692,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -4641,6 +4767,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -4724,6 +4852,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -4803,6 +4933,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -4876,6 +5008,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -4959,6 +5093,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -5047,6 +5183,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -5120,6 +5258,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                               "color": "#000000",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
+                                            },
+                                            Object {
                                               "textAlign": "left",
                                             },
                                             Array [
@@ -5199,6 +5339,8 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -5236,14 +5378,18 @@ exports[`renders correctly for enabled notifications 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
                                           Object {
+                                            "textAlign": "left",
+                                          },
+                                          Object {
                                             "color": "rgba(0, 0, 0, 0.87)",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                            "textAlign": "left",
                                             "writingDirection": "ltr",
                                           },
                                           Array [
@@ -5260,7 +5406,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    63
+                                    67
                                   </Text>
                                   <Text
                                     style={
@@ -5269,14 +5415,18 @@ exports[`renders correctly for enabled notifications 1`] = `
                                           "color": "#000000",
                                           "fontFamily": "System",
                                           "fontWeight": "400",
+                                        },
+                                        Object {
                                           "textAlign": "left",
                                         },
                                         Array [
                                           Object {
+                                            "textAlign": "left",
+                                          },
+                                          Object {
                                             "color": "rgba(0, 0, 0, 0.87)",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
-                                            "textAlign": "left",
                                             "writingDirection": "ltr",
                                           },
                                           Array [
@@ -5301,14 +5451,18 @@ exports[`renders correctly for enabled notifications 1`] = `
                                             "color": "#000000",
                                             "fontFamily": "System",
                                             "fontWeight": "400",
+                                          },
+                                          Object {
                                             "textAlign": "left",
                                           },
                                           Array [
                                             Object {
+                                              "textAlign": "left",
+                                            },
+                                            Object {
                                               "color": "rgba(0, 0, 0, 0.87)",
                                               "fontFamily": "System",
                                               "fontWeight": "400",
-                                              "textAlign": "left",
                                               "writingDirection": "ltr",
                                             },
                                             Array [
@@ -5344,8 +5498,8 @@ Mirco Kraenz 2020
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>

@@ -134,7 +134,7 @@ exports[`renders a button and the webview 1`] = `
           </View>
         </View>
       </View>
-      <View
+      <RNSScreenContainer
         onLayout={[Function]}
         style={
           Object {
@@ -142,7 +142,9 @@ exports[`renders a button and the webview 1`] = `
           }
         }
       >
-        <View
+        <RNSScreen
+          activityState={2}
+          forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
             Object {
@@ -502,6 +504,8 @@ exports[`renders a button and the webview 1`] = `
                                       "color": "#000000",
                                       "fontFamily": "System",
                                       "fontWeight": "400",
+                                    },
+                                    Object {
                                       "textAlign": "left",
                                     },
                                     Array [
@@ -601,6 +605,8 @@ exports[`renders a button and the webview 1`] = `
                                         "color": "#000000",
                                         "fontFamily": "System",
                                         "fontWeight": "400",
+                                      },
+                                      Object {
                                         "textAlign": "left",
                                       },
                                       Array [
@@ -648,8 +654,8 @@ exports[`renders a button and the webview 1`] = `
               </View>
             </View>
           </View>
-        </View>
-      </View>
+        </RNSScreen>
+      </RNSScreenContainer>
     </RNCSafeAreaProvider>
   </View>
 </View>
