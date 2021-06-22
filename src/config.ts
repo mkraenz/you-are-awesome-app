@@ -5,7 +5,7 @@ import { Route } from "./navigation/Route";
 const shared = {
     uri: {
         fetchMessages:
-            "https://t1sy9ka9nf.execute-api.eu-central-1.amazonaws.com/prod/?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
+            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/gsx2json/?id=1n3mhIrBpeAEQVKcparkZPdCnleYFRr06jo80aUtcHgI&sheet=1&columns=false",
         submitContribution:
             "https://s25cfu9sz3.execute-api.eu-central-1.amazonaws.com/prod/contrib",
         registerForPushNotifications:
