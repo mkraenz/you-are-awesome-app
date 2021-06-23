@@ -86,7 +86,7 @@ it("opens the report dialog when clicking the flag button in the appbar", async 
     expect(reportReasons).toHaveLength(3);
 });
 
-it.skip("opens the feedback/bug dialog when clicking the bug button in the appbar", async () => {
+it("opens the feedback/bug dialog when clicking the bug button in the appbar", async () => {
     const store = createMockStore<
         Pick2<IState, "messages", "currentMessage"> &
             Pick2<IState, "network", "connected">
