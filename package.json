@@ -46,7 +46,7 @@
         "expo-notifications": "~0.11.6",
         "expo-status-bar": "~1.0.4",
         "expo-store-review": "~4.0.2",
-        "i18next": "^19.8.4",
+        "i18next": "^20.3.2",
         "lodash": "^4.17.21",
         "luxon": "^1.27.0",
         "react": "16.13.1",
