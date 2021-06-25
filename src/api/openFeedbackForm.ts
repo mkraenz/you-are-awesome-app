@@ -3,7 +3,7 @@ import { CONFIG } from "../config";
 import { jsBuildNumber } from "../utils/version.json";
 import { Analytics } from "./Analytics";
 
-export const openFeedbackForm = () => {
+export const openFeedbackForm = async () => {
     Analytics.logLinkFollow("feedbackForm");
-    Linking.openURL(`${CONFIG.uri.feedbackForm}${jsBuildNumber}`);
+    await Linking.openURL(`${CONFIG.uri.feedbackForm}${jsBuildNumber}`);
 };

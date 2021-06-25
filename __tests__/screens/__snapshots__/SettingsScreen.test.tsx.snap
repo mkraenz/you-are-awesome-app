@@ -347,13 +347,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           >
                             <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
-                            <View
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -371,9 +364,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   },
                                   Array [
                                     false,
-                                    Object {
-                                      "alignItems": "center",
-                                    },
+                                    false,
                                     Object {
                                       "alignItems": "center",
                                       "display": "flex",
@@ -413,6 +404,126 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               >
                                 Settings
                               </Text>
+                            </View>
+                            <View
+                              accessibilityLabel="report a bug"
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "disabled": undefined,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              hitSlop={
+                                Object {
+                                  "bottom": 6,
+                                  "left": 6,
+                                  "right": 6,
+                                  "top": 6,
+                                }
+                              }
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "overflow": "hidden",
+                                  },
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "justifyContent": "center",
+                                      "margin": 6,
+                                      "overflow": "hidden",
+                                    },
+                                    Object {
+                                      "borderRadius": 18,
+                                      "height": 36,
+                                      "width": 36,
+                                    },
+                                    undefined,
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "justifyContent": "center",
+                                      },
+                                      Object {
+                                        "height": 24,
+                                        "width": 24,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "opacity": 1,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "transform": Array [
+                                          Object {
+                                            "rotate": "0deg",
+                                          },
+                                        ],
+                                      }
+                                    }
+                                  >
+                                    <Text
+                                      accessibilityElementsHidden={true}
+                                      allowFontScaling={false}
+                                      importantForAccessibility="no-hide-descendants"
+                                      pointerEvents="none"
+                                      selectable={false}
+                                      style={
+                                        Array [
+                                          Object {
+                                            "color": "#ffffff",
+                                            "fontSize": 24,
+                                          },
+                                          Array [
+                                            Object {
+                                              "lineHeight": 24,
+                                              "transform": Array [
+                                                Object {
+                                                  "scaleX": 1,
+                                                },
+                                              ],
+                                            },
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                            },
+                                          ],
+                                          Object {
+                                            "fontFamily": "material-community",
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          },
+                                          Object {},
+                                        ]
+                                      }
+                                    >
+                                      󰃤
+                                    </Text>
+                                  </View>
+                                </View>
+                              </View>
                             </View>
                           </View>
                         </RCTSafeAreaView>
@@ -1772,7 +1883,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     }
                                   >
                                     Build v
-                                    68
+                                    69
                                   </Text>
                                   <Text
                                     style={
@@ -2218,13 +2329,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                             }
                           >
                             <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
-                            <View
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -2242,9 +2346,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   },
                                   Array [
                                     false,
-                                    Object {
-                                      "alignItems": "center",
-                                    },
+                                    false,
                                     Object {
                                       "alignItems": "center",
                                       "display": "flex",
@@ -2284,6 +2386,91 @@ exports[`renders correctly for disabled notifications 1`] = `
                               >
                                 Settings
                               </Text>
+                            </View>
+                            <View
+                              accessibilityLabel="report a bug"
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "disabled": undefined,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              hitSlop={
+                                Object {
+                                  "bottom": 6,
+                                  "left": 6,
+                                  "right": 6,
+                                  "top": 6,
+                                }
+                              }
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "overflow": "hidden",
+                                  },
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "justifyContent": "center",
+                                      "margin": 6,
+                                      "overflow": "hidden",
+                                    },
+                                    Object {
+                                      "borderRadius": 18,
+                                      "height": 36,
+                                      "width": 36,
+                                    },
+                                    undefined,
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "justifyContent": "center",
+                                      },
+                                      Object {
+                                        "height": 24,
+                                        "width": 24,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "opacity": 1,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "transform": Array [
+                                          Object {
+                                            "rotate": "0deg",
+                                          },
+                                        ],
+                                      }
+                                    }
+                                  >
+                                    <Text />
+                                  </View>
+                                </View>
+                              </View>
                             </View>
                           </View>
                         </RCTSafeAreaView>
@@ -3572,7 +3759,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    68
+                                    69
                                   </Text>
                                   <Text
                                     style={
@@ -4018,13 +4205,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                             }
                           >
                             <View
-                              style={
-                                Object {
-                                  "width": 48,
-                                }
-                              }
-                            />
-                            <View
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -4042,9 +4222,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   },
                                   Array [
                                     false,
-                                    Object {
-                                      "alignItems": "center",
-                                    },
+                                    false,
                                     Object {
                                       "alignItems": "center",
                                       "display": "flex",
@@ -4084,6 +4262,126 @@ exports[`renders correctly for enabled notifications 1`] = `
                               >
                                 Settings
                               </Text>
+                            </View>
+                            <View
+                              accessibilityLabel="report a bug"
+                              accessibilityRole="button"
+                              accessibilityState={
+                                Object {
+                                  "disabled": undefined,
+                                }
+                              }
+                              accessible={true}
+                              focusable={true}
+                              hitSlop={
+                                Object {
+                                  "bottom": 6,
+                                  "left": 6,
+                                  "right": 6,
+                                  "top": 6,
+                                }
+                              }
+                              onClick={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderMove={[Function]}
+                              onResponderRelease={[Function]}
+                              onResponderTerminate={[Function]}
+                              onResponderTerminationRequest={[Function]}
+                              onStartShouldSetResponder={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "overflow": "hidden",
+                                  },
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "justifyContent": "center",
+                                      "margin": 6,
+                                      "overflow": "hidden",
+                                    },
+                                    Object {
+                                      "borderRadius": 18,
+                                      "height": 36,
+                                      "width": 36,
+                                    },
+                                    undefined,
+                                    undefined,
+                                  ],
+                                ]
+                              }
+                            >
+                              <View>
+                                <View
+                                  style={
+                                    Array [
+                                      Object {
+                                        "alignItems": "center",
+                                        "justifyContent": "center",
+                                      },
+                                      Object {
+                                        "height": 24,
+                                        "width": 24,
+                                      },
+                                    ]
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "opacity": 1,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 0,
+                                        "transform": Array [
+                                          Object {
+                                            "rotate": "0deg",
+                                          },
+                                        ],
+                                      }
+                                    }
+                                  >
+                                    <Text
+                                      accessibilityElementsHidden={true}
+                                      allowFontScaling={false}
+                                      importantForAccessibility="no-hide-descendants"
+                                      pointerEvents="none"
+                                      selectable={false}
+                                      style={
+                                        Array [
+                                          Object {
+                                            "color": "#ffffff",
+                                            "fontSize": 24,
+                                          },
+                                          Array [
+                                            Object {
+                                              "lineHeight": 24,
+                                              "transform": Array [
+                                                Object {
+                                                  "scaleX": 1,
+                                                },
+                                              ],
+                                            },
+                                            Object {
+                                              "backgroundColor": "transparent",
+                                            },
+                                          ],
+                                          Object {
+                                            "fontFamily": "material-community",
+                                            "fontStyle": "normal",
+                                            "fontWeight": "normal",
+                                          },
+                                          Object {},
+                                        ]
+                                      }
+                                    >
+                                      󰃤
+                                    </Text>
+                                  </View>
+                                </View>
+                              </View>
                             </View>
                           </View>
                         </RCTSafeAreaView>
@@ -5406,7 +5704,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     }
                                   >
                                     Build v
-                                    68
+                                    69
                                   </Text>
                                   <Text
                                     style={
