@@ -23,6 +23,6 @@ jobs:
       - run: yarn tsc
       # fix timezone to developers' timezone with TZ=...
       # TODO #473 run ALL tests again
-      - run: TZ=Europe/Berlin yarn test Layout --ci --detectOpenHandles
+      - run: TZ=Europe/Berlin yarn test HomeScreen --ci
       - name: Codecov
         uses: codecov/codecov-action@v1.5.0
