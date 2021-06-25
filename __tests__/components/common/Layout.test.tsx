@@ -7,6 +7,8 @@ import Layout from "../../../src/components/common/Layout";
 import { Route } from "../../../src/navigation/Route";
 import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider";
 
+// Portal seems to be using async things that made ONLY the pipeline fail
+// https://github.com/facebook/jest/issues/6434#issuecomment-583904021
 afterEach(cleanup);
 
 it("renders correctly", () => {
