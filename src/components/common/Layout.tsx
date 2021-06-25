@@ -49,9 +49,9 @@ const Layout: FC<Props> = ({
     };
 
     const toggleBugReportOpen = () => setBugReportOpen(!bugReportOpen);
-    const handleBugReportConfirm = () => {
+    const handleBugReportConfirm = async () => {
         toggleBugReportOpen();
-        openFeedbackForm();
+        await openFeedbackForm();
     };
 
     return (
