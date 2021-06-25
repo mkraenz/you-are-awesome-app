@@ -11,7 +11,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: yarn install --frozen-lockfile
+      - name: load cached node_modules
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: node-${{ hashFiles('**/yarn.lock')}}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
       - run: yarn tsc
       # fix timezone to developers' timezone with TZ=...
       - run: TZ=Europe/Berlin yarn test --ci --detectOpenHandles
