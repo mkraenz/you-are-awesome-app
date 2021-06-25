@@ -23,7 +23,6 @@ jobs:
         run: yarn install --frozen-lockfile
       - run: yarn tsc
       # fix timezone to developers' timezone with TZ=...
-      # TODO #473 run ALL tests again
-      - run: TZ=Europe/Berlin yarn test Layout --ci
+      - run: TZ=Europe/Berlin yarn test --ci
       - name: Codecov
         uses: codecov/codecov-action@v1.5.0
