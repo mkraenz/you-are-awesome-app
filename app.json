@@ -11,16 +11,9 @@
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
-        "plugins": [
-            [
-                "expo-notifications",
-                {
-                    "icon": "./assets/push-notification-icon.png",
-                    "color": "#ffffff",
-                    "mode": "production"
-                }
-            ]
-        ],
+        "notification": {
+            "icon": "./assets/push-notification-icon.png"
+        },
         "updates": {
             "fallbackToCacheTimeout": 10000
         },
