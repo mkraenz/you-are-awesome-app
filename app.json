@@ -11,19 +11,22 @@
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
+        "notification": {
+            "icon": "./assets/push-notification-icon.png"
+        },
         "updates": {
             "fallbackToCacheTimeout": 10000
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.9.1",
+        "version": "1.9.3",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 14,
+            "versionCode": 15,
             "playStoreUrl": "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
             "useNextNotificationsApi": true
         },
