@@ -28,8 +28,7 @@
         "build-and-publish:expo:android:stage": "NODE_ENV=stage expo build:android --type apk --release-channel stage",
         "publish:playstore": "NODE_ENV=prod expo upload:android --latest --key google-service-account.private.key.json",
         "deploy:ota:prod": "NODE_ENV=prod ts-node ./scripts/expo-ota-update-with-version.ts",
-        "deploy:ota:stage": "NODE_ENV=stage ts-node ./scripts/expo-ota-update-with-version.ts",
-        "aws:upload:privacy-policy": "aws s3 cp assets/PrivacyPolicyEn.html s3://you-are-awesome-app-privacy-policy --acl public-read"
+        "deploy:ota:stage": "NODE_ENV=stage ts-node ./scripts/expo-ota-update-with-version.ts"
     },
     "dependencies": {
         "@react-native-community/datetimepicker": "3.2.0",

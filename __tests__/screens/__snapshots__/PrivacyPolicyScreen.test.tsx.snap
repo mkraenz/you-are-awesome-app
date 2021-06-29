@@ -725,7 +725,7 @@ exports[`renders a button and the webview 1`] = `
                           <WebView
                             source={
                               Object {
-                                "uri": "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
+                                "uri": "https://youareawesomeapp-legal.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
                               }
                             }
                           />
