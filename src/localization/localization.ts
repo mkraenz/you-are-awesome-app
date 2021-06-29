@@ -94,6 +94,10 @@ export enum LanguageCodeToLocalizedLang {
 const shared = {
     companyLink: "http://kraenz.eu",
     appTitle: "You are Awesome App!",
+    contributeConditionsLink:
+        "https://youareawesomeapp-legal.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
+    privacyPolicyLink:
+        "https://youareawesomeapp-legal.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
 };
 
 const localization: {
@@ -139,8 +143,6 @@ const localization: {
             contributeSubmit: "Submit",
             contributeAgreeToConditions: "I have read and agree to the ",
             contributeConditions: "Terms & Conditions",
-            contributeConditionsLink:
-                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
             contributeAnd: " and ",
             contributePrivacyPolicy: "Privacy Policy",
             contributionStayTuned:
@@ -153,8 +155,6 @@ const localization: {
             notificationsSetTime: "Notification time",
             privacyPolicy: "Privacy Policy",
             viewInBrowser: "View in Web Browser",
-            privacyPolicyLink:
-                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
             from: " from ",
             favoritesEmptyList:
                 "Double tap your first awesome message in {{route}} to add it to your favorites.",
@@ -230,8 +230,6 @@ const localization: {
             contributeSubmit: "Senden",
             contributeAgreeToConditions: "Ich verstehe und akzeptiere die ",
             contributeConditions: "Nutzungsbedingungen",
-            contributeConditionsLink:
-                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
             contributeAnd: " und ",
             contributePrivacyPolicy: "Datenschutzerklärung",
             contributionStayTuned:
@@ -244,8 +242,6 @@ const localization: {
             notificationsSetTime: "Benachrichtigung um",
             privacyPolicy: "Datenschutzerklärung (Englisch)",
             viewInBrowser: "Im Web Browser ansehen",
-            privacyPolicyLink:
-                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
             from: " from ",
             favoritesEmptyList:
                 "Doppeltippe deine erste awesome Nachricht im {{route}}bildschirm um sie zu deinen Favoriten hinzuzufügen.",
@@ -322,8 +318,6 @@ const localization: {
             contributeSubmit: "送信",
             contributeAgreeToConditions: "利用条件に同意する。 ",
             contributeConditions: "利用条件へ",
-            contributeConditionsLink:
-                "https://you-are-awesome-app-terms-and-conditions.s3.eu-central-1.amazonaws.com/TermsAndConditionsEn.html",
             contributeAnd: "。",
             contributePrivacyPolicy: "プライバシー ポリシーへ",
             contributionStayTuned:
@@ -336,8 +330,6 @@ const localization: {
             notificationsSetTime: "通知時間",
             privacyPolicy: "プライバシー ポリシー(英語)",
             viewInBrowser: "ブラウザーで表示",
-            privacyPolicyLink:
-                "https://you-are-awesome-app-privacy-policy.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
             from: " from ",
             favoritesEmptyList:
                 "{{route}}ですごいメッセージをダブルタップしてお気に入りに追加してみてください。",
