@@ -21,9 +21,7 @@ describe("fetchMessages", () => {
             },
         ];
         const getSpy = jest.spyOn(axios, "get").mockResolvedValue({
-            data: {
-                rows: messages,
-            },
+            data: messages,
         });
 
         const result = await fetchMessages("irrelevant-uri");
@@ -48,9 +46,7 @@ describe("fetchMessages", () => {
             },
         ];
         const getSpy = jest.spyOn(axios, "get").mockResolvedValue({
-            data: {
-                rows: messages,
-            },
+            data: messages,
         });
 
         const result = await fetchMessages("irrelevant-uri");
