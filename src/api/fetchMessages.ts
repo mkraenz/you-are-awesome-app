@@ -5,7 +5,7 @@ export async function fetchMessages(uri: string): Promise<IMessage[]> {
     const response = await axios.get(uri);
     // NOTE: capital letters in the google sheets header (= names of the json's properties)
     // will be converted to all small letters
-    const messages: IMessage[] = response.data.rows;
+    const messages: IMessage[] = response.data;
     return messages.map((m) => ({
         isodate: `${m.isodate}`,
         author: `${m.author}`,
