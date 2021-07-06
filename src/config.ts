@@ -2,18 +2,16 @@ import Constants from "expo-constants";
 import { Language } from "./localization/localization";
 import { Route } from "./navigation/Route";
 
+const backendUri =
+    "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/";
 const shared = {
     uri: {
         fetchMessages:
             "https://youareawesomeapp-current-message.s3.eu-central-1.amazonaws.com/messages.json",
-        submitContribution:
-            "https://s25cfu9sz3.execute-api.eu-central-1.amazonaws.com/prod/contrib",
-        registerForPushNotifications:
-            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/push-notifications/register",
-        unregisterFromPushNotifications:
-            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/push-notifications/unregister",
-        reportInappropriateContent:
-            "https://9vaneth5dj.execute-api.eu-central-1.amazonaws.com/prod/reportinappropriate",
+        submitContribution: `${backendUri}contributions`,
+        registerForPushNotifications: `${backendUri}push-notifications/register`,
+        unregisterFromPushNotifications: `${backendUri}push-notifications/unregister`,
+        reportInappropriateContent: `${backendUri}reportinappropriate`,
         playstoreUrl:
             "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
         feedbackForm:
