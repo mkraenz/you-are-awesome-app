@@ -52,7 +52,7 @@
         "react-i18next": "^11.8.15",
         "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
         "react-native-gesture-handler": "~1.10.2",
-        "react-native-modal-datetime-picker": "^9.2.3",
+        "react-native-modal-datetime-picker": "^10.1.0",
         "react-native-paper": "~4.7.2",
         "react-native-reanimated": "~2.1.0",
         "react-native-safe-area-context": "3.2.0",
