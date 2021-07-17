@@ -19,16 +19,20 @@
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.9.3",
+        "version": "1.10.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 15,
+            "versionCode": 16,
             "playStoreUrl": "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
-            "useNextNotificationsApi": true
+            "useNextNotificationsApi": true,
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/google-play-store/logo.png"
+            },
+            "icon": "./assets/google-play-store/logo_legacy.png"
         },
         "ios": {
             "bundleIdentifier": "eu.kraenz.youareawesomeapp",
