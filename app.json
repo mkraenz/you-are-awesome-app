@@ -4,7 +4,7 @@
     "expo": {
         "name": "You are Awesome App!",
         "slug": "you-are-awesome-app",
-        "orientation": "portrait",
+        "orientation": "default",
         "icon": "./assets/google-play-store/logo.png",
         "splash": {
             "image": "./assets/splash.png",

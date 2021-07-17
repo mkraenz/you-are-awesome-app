@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { Button, TextInput, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import { IMessageContent } from "../../state/state/IMessage";
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
     },
     button: {
         marginTop: 8,
+        marginBottom: 12,
     },
 });
 
@@ -95,7 +97,7 @@ const ContributionInputForm: FC<Props> = ({
     };
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <TextInput
                 {...commonProps}
                 label={t("contributeAwesomeMessage")}
@@ -133,7 +135,7 @@ const ContributionInputForm: FC<Props> = ({
             >
                 {t("contributeSubmit")}
             </Button>
-        </View>
+        </ScrollView>
     );
 };
 
