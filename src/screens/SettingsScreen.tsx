@@ -66,22 +66,23 @@ const SettingsScreen: FC<Props> = ({
 
     return (
         <Layout route={Route.Settings} title={t(Route.Settings)}>
+            {!connectedToInternet && <OfflineNotice />}
             <ScrollView>
                 <List.Section>
                     <SectionHeader text={t("settingsGeneral")} />
-                    {!connectedToInternet && <OfflineNotice />}
                     <LanguageDropdown />
                     <Divider />
                     <PushNotificationSettings />
                     <SettingsRow
                         title={t("darkMode")}
                         onPress={toggleDarkTheme}
-                        rightComponent={() => () => (
-                            <Switch
-                                value={isDarkModeOn}
-                                onValueChange={toggleDarkTheme}
-                            ></Switch>
-                        )}
+                        rightComponent={() => () =>
+                            (
+                                <Switch
+                                    value={isDarkModeOn}
+                                    onValueChange={toggleDarkTheme}
+                                ></Switch>
+                            )}
                     />
                 </List.Section>
 
@@ -105,12 +106,13 @@ const SettingsScreen: FC<Props> = ({
                     <SettingsRow
                         title={t("sendAnalytics")}
                         onPress={toggleAnalytics}
-                        rightComponent={() => () => (
-                            <Switch
-                                value={analyticsEnabled}
-                                onValueChange={toggleAnalytics}
-                            ></Switch>
-                        )}
+                        rightComponent={() => () =>
+                            (
+                                <Switch
+                                    value={analyticsEnabled}
+                                    onValueChange={toggleAnalytics}
+                                ></Switch>
+                            )}
                     />
                 </List.Section>
 
