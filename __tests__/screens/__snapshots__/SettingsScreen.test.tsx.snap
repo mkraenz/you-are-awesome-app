@@ -536,6 +536,38 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           }
                         >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "backgroundColor": "#B00020",
+                                "flexDirection": "row",
+                                "height": 30,
+                                "justifyContent": "center",
+                                "marginHorizontal": -100,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#000000",
+                                    "fontFamily": "System",
+                                    "fontWeight": "400",
+                                  },
+                                  Object {
+                                    "textAlign": "left",
+                                  },
+                                  Object {
+                                    "color": "white",
+                                  },
+                                ]
+                              }
+                            >
+                              Internet connection required
+                            </Text>
+                          </View>
                           <RCTScrollView
                             collapsable={false}
                             onGestureHandlerEvent={[Function]}
@@ -624,38 +656,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 >
                                   General
                                 </Text>
-                                <View
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "backgroundColor": "#B00020",
-                                      "flexDirection": "row",
-                                      "height": 30,
-                                      "justifyContent": "center",
-                                      "marginHorizontal": -100,
-                                    }
-                                  }
-                                >
-                                  <Text
-                                    style={
-                                      Array [
-                                        Object {
-                                          "color": "#000000",
-                                          "fontFamily": "System",
-                                          "fontWeight": "400",
-                                        },
-                                        Object {
-                                          "textAlign": "left",
-                                        },
-                                        Object {
-                                          "color": "white",
-                                        },
-                                      ]
-                                    }
-                                  >
-                                    Internet connection required
-                                  </Text>
-                                </View>
                                 <View
                                   collapsable={false}
                                 >
