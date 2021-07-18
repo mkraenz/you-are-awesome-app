@@ -42,7 +42,9 @@ const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
         if (langCodeExists) {
             return LanguageCodeToLocalizedLang[i18nLang as Language];
         } else {
-            return LanguageCodeToLocalizedLang[language];
+            return LanguageCodeToLocalizedLang[
+                language || CONFIG.fallbackLanguage
+            ];
         }
     };
 

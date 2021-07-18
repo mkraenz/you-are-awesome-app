@@ -46,3 +46,22 @@ it("renders the detected German language on first start", () => {
         .toJSON();
     expect(JSON.stringify(tree)).toContain("Deutsch");
 });
+
+it("gracefully handles an unsupported detected language", () => {
+    const store = createMockStore<Pick2<IState, "app", "language">>([])({
+        app: {
+            language: null,
+        },
+    });
+
+    const tree = renderer
+        .create(
+            <Provider store={store}>
+                <TestLocalizationProvider detected="1337">
+                    <LanguageDropdown />
+                </TestLocalizationProvider>
+            </Provider>
+        )
+        .toJSON();
+    expect(JSON.stringify(tree)).toContain("English");
+});
