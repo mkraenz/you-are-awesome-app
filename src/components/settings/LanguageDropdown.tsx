@@ -17,7 +17,7 @@ interface Props {
 }
 
 const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const languages = Object.values(LanguageCodeToLocalizedLang);
     const [visible, setVisible] = useState(false);
 
@@ -34,6 +34,20 @@ const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
             setLanguage(selectedLangCode[0]);
         }
     };
+    const getCurrentLang = () => {
+        // special case for inferring the initially detected language
+        const i18nLang = i18n.language.slice(0, 2).toLocaleLowerCase();
+        const langCodes = Object.values(Language) as string[];
+        const langCodeExists = langCodes.includes(i18nLang);
+        if (langCodeExists) {
+            return LanguageCodeToLocalizedLang[i18nLang as Language];
+        } else {
+            return LanguageCodeToLocalizedLang[
+                language || CONFIG.fallbackLanguage
+            ];
+        }
+    };
+
     return (
         <Menu
             visible={visible}
@@ -42,11 +56,8 @@ const LanguageDropdown: FC<Props> = ({ setLanguage, language }) => {
                 <SettingsRow
                     onPress={() => setVisible(true)}
                     title={t("language")}
-                    rightComponent={() => () => (
-                        <Subheading>
-                            {LanguageCodeToLocalizedLang[language]}
-                        </Subheading>
-                    )}
+                    rightComponent={() => () =>
+                        <Subheading>{getCurrentLang()}</Subheading>}
                 ></SettingsRow>
             }
         >
