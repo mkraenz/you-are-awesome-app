@@ -19,14 +19,14 @@
         },
         "assetBundlePatterns": ["**/*"],
         "privacy": "public",
-        "version": "1.10.0",
+        "version": "1.11.0",
         "entryPoint": "node_modules/expo/AppEntry.js",
         "platforms": ["ios", "android", "web"],
         "android": {
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 16,
+            "versionCode": 17,
             "playStoreUrl": "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
             "useNextNotificationsApi": true,
             "adaptiveIcon": {
