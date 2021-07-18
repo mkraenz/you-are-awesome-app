@@ -37,7 +37,7 @@ function autoReview() {
     );
 }
 
-function stageChanges() {
+function gitStageChanges() {
     shell.exec(
         "git add ./src/utils/version.json __tests__/screens/__snapshots__/SettingsScreen.test.tsx.snap"
     );
@@ -89,7 +89,7 @@ const main = () => {
     const reviewApproved = autoReview();
     if (reviewApproved) {
         publishToChannel(env);
-        stageChanges();
+        gitStageChanges();
         const { commitApproved, gitCommitCommand } = askForCommit(env);
 
         if (commitApproved) {
