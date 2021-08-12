@@ -28,7 +28,7 @@ Google Play and the Google Play logo are trademarks of Google LLC.
 
 ### OTA Over-the-air updates
 
-```shell
+```sh
 yarn deploy:ota:stage
 # for production release
 yarn deploy:ota:prod
@@ -40,20 +40,47 @@ When a User now starts her app (even if installed from the Google Play Store!), 
 
 Only in case of changes to `app.json` or the Expo SDK version, one needs to rebuild the app and republish to expo.
 
-```shell
+```sh
 # manually update app.json's version and android.versionCode
-yarn build-and-publish:expo:android:stage
+yarn build-and-publish:expo:android:app-bundle:stage
 # for production release
-yarn build-and-publish:expo:android:prod
+yarn build-and-publish:expo:android:app-bundle:prod
 ```
 
 To push the built apk to the Google Playstore run
 
-```shell
+```sh
 # ensure the following was run right before publishing to playstore
-# yarn build-and-publish:expo:android:prod
+# yarn build-and-publish:expo:android:app-bundle:prod
 yarn publish:playstore
 ```
+
+## Testing Releases: app-bundle
+
+When using build target `app-bundle` (`.aap`) instead of `.apk` you cannot immediately install them on a device. To test the app on emulator, you need to create an `.apk` as follows:
+
+- Download your `.aab` file
+- Download newest version of [Bundletool](https://github.com/google/bundletool/releases) and rename to `bundletool.jar`.
+- Put both files into the same folder
+- Run the following
+
+```sh
+# unpacks the .aab to apk-archive (.apks, essentially .zip)
+java -jar bundletool.jar build-apks --bundle=you-are-awesome-app-f91e1a4501e44622b4de84267a774a23-signed.aab --output=y3a.apks --mode=universal
+
+# Option A: install app on a device (like adb install)
+java -jar bundletool.jar install-apks --apks=y3a.apks
+```
+
+Alternative to Option A:
+
+```sh
+# Option B: extract the real app (.apk) living inside the .apks as universal.apk
+unzip -p y3a.apks universal.apk > y3a.apk
+adb install -r ./y3a.apk
+```
+
+[Reference on StackOverflow](https://stackoverflow.com/questions/50419286/install-android-app-bundle-on-device)
 
 ## Development
 
@@ -67,7 +94,7 @@ Requires
 
 > Pro tip: Use `zsh` ([zshell](https://ohmyz.sh/)) for autocompletion of paths, and even for adb.
 
-```shell
+```sh
 # list connected devices
 adb devices -l
 
@@ -123,7 +150,7 @@ Further reading in related [issue #16](https://github.com/proSingularity/you-are
 
 ### Clear expo cache
 
-```shell
+```sh
 expo start --clear
 yarn dev --clear
 ```
