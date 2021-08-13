@@ -13,6 +13,7 @@ export enum ActionType {
     SetPushNotificationsState = "SetPushNotificationsState",
     ChangePushNotificationTime = "ChangePushNotificationTime",
     ToggleDarkTheme = "ToggleDarkTheme",
+    ToggleFirstOpen = "ToggleFirstOpen",
     ToggleAnalytics = "ToggleAnalytics",
     SetLanguage = "SetLanguage",
     AddToFavorites = "AddToFavorites",

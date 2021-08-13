@@ -7,7 +7,6 @@ type keys =
     | "settings"
     | "language"
     | "sendAnalytics"
-    // TODO IOS: currently always links to Google Play store
     | "rateTheApp"
     | "settingsGeneral"
     | "settingsFeedback"
@@ -74,9 +73,20 @@ type keys =
     | "reportThankYouTitle"
     | "reportThankYouText"
     | "reportThankYouButton";
+export type LocalizationKeysDefault = keys | Route;
+
+type OnboardingKeys =
+    | "welcomeTitle"
+    | "pushNotifsTitle"
+    | "subtitleMain"
+    | "subtitleNote"
+    | "next"
+    | "done";
+export type LocalizationKeysOnboarding = `onboarding:${OnboardingKeys}`;
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
+    onboarding: { [key in OnboardingKeys]: string };
 }
 
 export enum Language {
@@ -189,6 +199,15 @@ const localization: {
             reportThankYouText:
                 "We are committed to protecting our users and others as well as their rights. We will check your report as soon as possible and take appropriate action.",
         },
+        onboarding: {
+            welcomeTitle: "You are Awesome App!\nDaily Motivation Up!",
+            pushNotifsTitle: "Daily Boost In Motivation",
+            subtitleMain:
+                "We can send you a Push Notification each day to help you have an awesome start into your day.",
+            subtitleNote: "*You can still change this later from the settings.",
+            next: "Next",
+            done: "Done",
+        },
     },
     de: {
         default: {
@@ -276,6 +295,15 @@ const localization: {
             reportThankYouText:
                 "Wir sind stets bemüht unsere Nutzer und andere sowie deren Rechte zu schützen. Wir werden deine Meldung so schnell wie möglich prüfen und entsprechende Maßnahmen ergreifen.",
         },
+        onboarding: {
+            welcomeTitle: `${shared.appTitle}\nTäglicher Motivationsschub!`,
+            pushNotifsTitle: "Täglicher Motivationsschub",
+            subtitleMain:
+                "Wir können dir jeden Tag eine Push-Benachrichtigungen senden. um dir bei deinem awesome Start in den Tag zu helfen.",
+            subtitleNote: `*Du kannst Push-Benachrichtigungen später noch in den Einstellungen setzen.`,
+            next: "Weiter",
+            done: "Abschließen",
+        },
     },
     ja: {
         default: {
@@ -361,8 +389,17 @@ const localization: {
             reportTitle: "不適切として報告する",
             reportThankYouButton: "閉じる",
             reportThankYouTitle: "報告ありがとうございます",
-            reportThankYouText:
-                "You are Awesome App!では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。",
+            reportThankYouText: `${shared.appTitle}では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。`,
+        },
+        onboarding: {
+            // TODO #527 double check with native
+            welcomeTitle: `${shared.appTitle}\n毎日モチベーションアップ!`,
+            pushNotifsTitle: "毎日のモチベーションブースト",
+            subtitleMain:
+                "毎日すごい一日を迎えるように毎日のプッシュ通知送ることは設置しますか？",
+            subtitleNote: "*後で設定から変化可能",
+            next: "次",
+            done: "完了",
         },
     },
 };

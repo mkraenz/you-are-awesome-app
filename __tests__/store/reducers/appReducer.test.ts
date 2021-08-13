@@ -6,6 +6,7 @@ import {
     ISetPushNotificationsState,
     IToggleAnalytics,
     IToggleDarkThemeAction,
+    IToggleFirstOpen,
 } from "../../../src/state/actions/IAppAction";
 import { appReducer } from "../../../src/state/reducers/appReducer";
 import { IAppState } from "../../../src/state/state/IAppState";
@@ -21,6 +22,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: true,
         };
         expect(result).toEqual(expected);
     });
@@ -35,6 +37,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -45,6 +48,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
         expect(result).toEqual(expected);
     });
@@ -59,6 +63,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -69,6 +74,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
         expect(result).toEqual(expected);
     });
@@ -87,6 +93,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -97,6 +104,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
         expect(result).toEqual(expected);
     });
@@ -115,6 +123,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -125,6 +134,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
         expect(result).toEqual(expected);
     });
@@ -142,6 +152,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -152,6 +163,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016"),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
         expect(result).toEqual(expected);
     });
@@ -169,6 +181,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -179,6 +192,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: Language.English,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
         expect(result).toEqual(expected);
     });
@@ -193,6 +207,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
+            isFirstOpen: false,
         };
 
         const result = appReducer(state, action);
@@ -200,6 +215,29 @@ describe("appReducer()", () => {
         const expected: IAppState = {
             ...state,
             analyticsEnabled: false,
+        };
+        expect(result).toEqual(expected);
+    });
+
+    it(`should handle ${ActionType.ToggleFirstOpen}`, () => {
+        const action: IToggleFirstOpen = {
+            type: ActionType.ToggleFirstOpen,
+        };
+        const state: IAppState = {
+            isDarkModeOn: false,
+            pushNotificationsEnabled: false,
+            pushNotificationsScheduledTime: new Date(0),
+            language: null,
+            analyticsEnabled: true,
+            isFirstOpen: false,
+        };
+
+        const result = appReducer(state, action);
+
+        const expected: IAppState = {
+            ...state,
+            analyticsEnabled: true,
+            isFirstOpen: true,
         };
         expect(result).toEqual(expected);
     });

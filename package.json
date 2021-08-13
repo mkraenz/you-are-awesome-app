@@ -59,6 +59,7 @@
         "react-native": "~0.63.4",
         "react-native-gesture-handler": "~1.10.2",
         "react-native-modal-datetime-picker": "^9.2.3",
+        "react-native-onboarding-swiper": "^1.1.4",
         "react-native-paper": "~4.7.2",
         "react-native-reanimated": "~2.1.0",
         "react-native-safe-area-context": "3.2.0",
@@ -86,6 +87,7 @@
         "@types/mockdate": "^3.0.0",
         "@types/react": "~16.9.35",
         "@types/react-native": "~0.63.2",
+        "@types/react-native-onboarding-swiper": "^1.1.2",
         "@types/react-redux": "^7.1.16",
         "@types/react-test-renderer": "^16.9.3",
         "@types/readline-sync": "^1.4.3",
@@ -105,7 +107,7 @@
         "redux-mock-store": "^1.5.4",
         "shelljs": "^0.8.4",
         "ts-node": "^9.1.1",
-        "typescript": "~4.0.0"
+        "typescript": "^4.3.5"
     },
     "private": true
 }

@@ -12,7 +12,6 @@ it("renders correctly without dark mode", () => {
                 <MyAppbar
                     title="my-title"
                     onBugActionPress={noop}
-                    // TODO #430: Possibly the cause of failing tests on CI. Shows `...create-icon-set.js` error
                     bugReportIconVisible={false}
                 />
             </MockPaperProvider>

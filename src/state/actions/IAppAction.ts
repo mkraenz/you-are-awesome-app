@@ -5,6 +5,7 @@ import { IAction, IActionWithPayload } from "./utils";
 export type IAppAction =
     | IToggleDarkThemeAction
     | IToggleAnalytics
+    | IToggleFirstOpen
     | ISetPushNotificationsState
     | IChangePushNotificationTime
     | ISetLanguage
@@ -12,6 +13,7 @@ export type IAppAction =
 
 export type IToggleDarkThemeAction = IAction<ActionType.ToggleDarkTheme>;
 export type IToggleAnalytics = IAction<ActionType.ToggleAnalytics>;
+export type IToggleFirstOpen = IAction<ActionType.ToggleFirstOpen>;
 
 export type ISetPushNotificationsState = IActionWithPayload<
     ActionType.SetPushNotificationsState,
