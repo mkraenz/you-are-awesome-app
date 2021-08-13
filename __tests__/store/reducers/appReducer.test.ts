@@ -6,7 +6,7 @@ import {
     ISetPushNotificationsState,
     IToggleAnalytics,
     IToggleDarkThemeAction,
-    IToggleFirstOpen,
+    IToggleOnboardingCompleted,
 } from "../../../src/state/actions/IAppAction";
 import { appReducer } from "../../../src/state/reducers/appReducer";
 import { IAppState } from "../../../src/state/state/IAppState";
@@ -22,7 +22,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: true,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -37,7 +37,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -48,7 +48,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -63,7 +63,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -74,7 +74,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -93,7 +93,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -104,7 +104,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -123,7 +123,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -134,7 +134,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016-01-01T15:36:01Z"),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -152,7 +152,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -163,7 +163,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date("2016"),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -181,7 +181,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -192,7 +192,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: Language.English,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
         expect(result).toEqual(expected);
     });
@@ -207,7 +207,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -219,9 +219,9 @@ describe("appReducer()", () => {
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.ToggleFirstOpen}`, () => {
-        const action: IToggleFirstOpen = {
-            type: ActionType.ToggleFirstOpen,
+    it(`should handle ${ActionType.ToggleOnboardingCompleted}`, () => {
+        const action: IToggleOnboardingCompleted = {
+            type: ActionType.ToggleOnboardingCompleted,
         };
         const state: IAppState = {
             isDarkModeOn: false,
@@ -229,7 +229,7 @@ describe("appReducer()", () => {
             pushNotificationsScheduledTime: new Date(0),
             language: null,
             analyticsEnabled: true,
-            isFirstOpen: false,
+            onboardingCompleted: false,
         };
 
         const result = appReducer(state, action);
@@ -237,7 +237,7 @@ describe("appReducer()", () => {
         const expected: IAppState = {
             ...state,
             analyticsEnabled: true,
-            isFirstOpen: true,
+            onboardingCompleted: true,
         };
         expect(result).toEqual(expected);
     });

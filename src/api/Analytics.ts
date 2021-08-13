@@ -106,6 +106,10 @@ export class Analytics {
         await Analytics.logButtonPress("refresh", {});
     }
 
+    static async onboardingCompleted() {
+        await FAnalytics.logEvent("onboarding_completed", {});
+    }
+
     /** NOTE: value must be a flat object, else it will be tracked as a useless [object Object] */
     private static async logButtonPress(type: string, value: object) {
         if (analyticsDisabled) return;

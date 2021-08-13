@@ -6,7 +6,7 @@ import { Button, Paragraph, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import PushNotificationSettings from "../components/settings/PushNotificationSettings";
 import type { LocalizationKeysOnboarding } from "../localization/localization";
-import { toggleFirstOpen } from "../state/action-creators/toggleFirstOpen";
+import { toggleOnboardingCompleted } from "../state/action-creators/toggleFirstOpen";
 import { IState } from "../state/state/IState";
 import { FullTheme } from "../themes/theme";
 
@@ -79,8 +79,8 @@ const OnboardingScreen: FC<Props> = ({ finishOnboarding }) => {
 
 const mapStateToProps = (state: IState) => state;
 const mapDispatchToProps: Props = {
-    // We assume Onboarding gets only shown with isFirstOpen=true
-    finishOnboarding: toggleFirstOpen,
+    // We assume Onboarding gets only shown with onboardingCompleted=false
+    finishOnboarding: toggleOnboardingCompleted,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(OnboardingScreen);

@@ -9,19 +9,19 @@ import { darkTheme, lightTheme } from "./theme";
 
 interface Props {
     isDarkModeOn: boolean;
-    isFirstOpen: boolean;
+    onboardingCompleted: boolean;
 }
 
-const ThemedApp = ({ isDarkModeOn, isFirstOpen }: Props) => (
+const ThemedApp = ({ isDarkModeOn, onboardingCompleted }: Props) => (
     <PaperProvider theme={isDarkModeOn ? darkTheme : lightTheme}>
         <LocalizationProvider>
-            {isFirstOpen ? <OnboardingScreen /> : <NavigationApp />}
+            {onboardingCompleted ? <NavigationApp /> : <OnboardingScreen />}
         </LocalizationProvider>
     </PaperProvider>
 );
 
 const mapStateToProps: MapStateToProps<Props> = ({ app }) => ({
     isDarkModeOn: app.isDarkModeOn,
-    isFirstOpen: app.isFirstOpen,
+    onboardingCompleted: app.onboardingCompleted,
 });
 export default connect(mapStateToProps)(ThemedApp);

@@ -8,11 +8,11 @@ import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
-import { toggleFirstOpen } from "../state/action-creators/toggleFirstOpen";
+import { toggleOnboardingCompleted } from "../state/action-creators/toggleFirstOpen";
 import { IState } from "../state/state/IState";
 
 interface Props {
-    toggleFirstOpen: typeof toggleFirstOpen;
+    toggleFirstOpen: typeof toggleOnboardingCompleted;
 }
 
 const DeveloperSettingsScreen: FC<Props> = ({ toggleFirstOpen }) => {
@@ -56,7 +56,7 @@ const MyButton: FC<{ onPress: () => void }> = ({ children, onPress }) => {
 
 const mapStateToProps = (state: IState) => state;
 const mapDispatchToProps: Props = {
-    toggleFirstOpen,
+    toggleFirstOpen: toggleOnboardingCompleted,
 };
 
 export default connect(

@@ -10,7 +10,7 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
         pushNotificationsEnabled: false,
         pushNotificationsScheduledTime: new Date(0),
         language: null,
-        isFirstOpen: true,
+        onboardingCompleted: false,
     },
     action
 ) => {
@@ -25,10 +25,10 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
                 ...state,
                 analyticsEnabled: !state.analyticsEnabled,
             };
-        case ActionType.ToggleFirstOpen:
+        case ActionType.ToggleOnboardingCompleted:
             return {
                 ...state,
-                isFirstOpen: !state.isFirstOpen,
+                onboardingCompleted: !state.onboardingCompleted,
             };
         case ActionType.SetPushNotificationsState:
             return {
