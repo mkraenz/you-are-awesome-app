@@ -3,7 +3,7 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { connect } from "react-redux";
 import LocalizationProvider from "../localization/LocalizationProvider";
 import NavigationApp from "../navigation/NavigationApp";
-import OnboardingScreen from "../screens/OnboardingScreen";
+import IOSOnboardingScreen from "../screens/IOSOnboardingScreen";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { darkTheme, lightTheme } from "./theme";
 
@@ -15,7 +15,7 @@ interface Props {
 const ThemedApp = ({ isDarkModeOn, onboardingCompleted }: Props) => (
     <PaperProvider theme={isDarkModeOn ? darkTheme : lightTheme}>
         <LocalizationProvider>
-            {onboardingCompleted ? <NavigationApp /> : <OnboardingScreen />}
+            {onboardingCompleted ? <NavigationApp /> : <IOSOnboardingScreen />}
         </LocalizationProvider>
     </PaperProvider>
 );
