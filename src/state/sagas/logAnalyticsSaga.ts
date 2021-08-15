@@ -84,7 +84,7 @@ function* logAnalyticsWorkerSaga(
                     typeof onboardingCompleted
                 > = yield select(onboardingCompleted);
                 if (isOnboardingCompleted)
-                    yield call(Analytics.onboardingCompleted);
+                    yield call(Analytics.logOnboardingCompleted);
 
                 break;
 

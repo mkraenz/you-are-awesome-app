@@ -106,7 +106,8 @@ export class Analytics {
         await Analytics.logButtonPress("refresh", {});
     }
 
-    static async onboardingCompleted() {
+    static async logOnboardingCompleted() {
+        if (analyticsDisabled) return;
         await FAnalytics.logEvent("onboarding_completed", {});
     }
 
