@@ -1,11 +1,6 @@
 import Axios from "axios";
-import { CONFIG } from "../config";
+import { ApiFeatureFlags, CONFIG } from "../config";
 import { pick } from "../utils/pick";
-
-type FeatureFlags = Pick<
-    typeof CONFIG.disableApiCall,
-    "all" | "reportInappropriateContent"
->;
 
 export const reportInappropriateContent = async (
     report: {
@@ -13,9 +8,10 @@ export const reportInappropriateContent = async (
         reason: string;
         comment: string;
     },
-    disabledFlags: FeatureFlags = CONFIG.disableApiCall
+    disabledFlags: ApiFeatureFlags<"reportInappropriateContent"> = CONFIG.disableApiCall
 ) => {
     if (disabledFlags.all || disabledFlags.reportInappropriateContent) {
+        console.log("API call reportInappropriateContent disabled. Skipping");
         return;
     }
     const payload = pick(report, ["messageId", "reason", "comment"]);

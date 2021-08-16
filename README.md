@@ -84,6 +84,8 @@ adb install -r ./y3a.apk
 
 ## Development
 
+[Main reference](https://docs.expo.dev/workflow/debugging/?redirected#startup)
+
 ### Debug native app on a phone or emulator
 
 Requires
@@ -181,3 +183,25 @@ at Timeout.runExpectation [as _onTimeout] (node_modules/@testing-library/react-n
 ```
 
 If this happens in places where the `Portal` component is used, first check that the state is mocked correctly (including for all rendered subcomponents).
+
+### Redux: I connected my component with the action creator but the reducer doesn't receive any actions
+
+When your imported action creater and the Prop for the action creator are _named identically_, TypeScript doesn't care which one you use inside the component. So _make sure you use the action creator from the Props_. Only the action creator from the props is actually connected to the redux store.
+
+```ts
+import { actionCreator } from "./actionCreator";
+interface Props {
+  actionCreator: typeof actionCreator;
+}
+// make sure you use the action creator from the props.
+// TS won't recognize if you don't destructure the props.
+const MyComponent: FC<Props> = ({ actionCreator }) => {
+  return <Button onPress={actionCreator}>Do something</Button>;
+};
+
+const mapStateToProps = (state: IState) => state;
+const mapDispatchToProps: Props = {
+  actionCreator,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
+```

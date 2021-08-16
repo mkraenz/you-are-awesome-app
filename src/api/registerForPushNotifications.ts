@@ -1,8 +1,16 @@
 import axios from "axios";
 import { getExpoPushTokenAsync } from "expo-notifications";
-import { CONFIG } from "../config";
+import { ApiFeatureFlags, CONFIG } from "../config";
 
-export const registerForPushNotifications = async (time: Date) => {
+export const registerForPushNotifications = async (
+    time: Date,
+    disabledFlags: ApiFeatureFlags<"registerPushNotifications"> = CONFIG.disableApiCall
+) => {
+    if (disabledFlags.all || disabledFlags.registerPushNotifications) {
+        console.log("API call registerPushNotifications disabled. Skipping");
+        return;
+    }
+
     let token = await getExpoPushTokenAsync();
     await axios.post(
         CONFIG.uri.registerForPushNotifications,

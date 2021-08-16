@@ -3,12 +3,19 @@ import Constants from "expo-constants";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Paragraph } from "react-native-paper";
+import { connect } from "react-redux";
 import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
+import { toggleOnboardingCompleted } from "../state/action-creators/toggleOnboardingCompleted";
+import { IState } from "../state/state/IState";
 
-const DeveloperSettingsScreen: FC = () => {
+interface Props {
+    toggleFirstOpen: typeof toggleOnboardingCompleted;
+}
+
+const DeveloperSettingsScreen: FC<Props> = ({ toggleFirstOpen }) => {
     const { goBack } = useNavigation();
     const { t } = useTranslation();
     return (
@@ -21,6 +28,7 @@ const DeveloperSettingsScreen: FC = () => {
             <Paragraph>
                 Release channel: {String(Constants.manifest.releaseChannel)}
             </Paragraph>
+            <MyButton onPress={toggleFirstOpen}>Redo Onboarding</MyButton>
             <MyButton onPress={Analytics.resetAnalyticsData}>
                 Reset Analytics
             </MyButton>
@@ -46,4 +54,12 @@ const MyButton: FC<{ onPress: () => void }> = ({ children, onPress }) => {
     );
 };
 
-export default DeveloperSettingsScreen;
+const mapStateToProps = (state: IState) => state;
+const mapDispatchToProps: Props = {
+    toggleFirstOpen: toggleOnboardingCompleted,
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(DeveloperSettingsScreen);

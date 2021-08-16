@@ -7,7 +7,6 @@ type keys =
     | "settings"
     | "language"
     | "sendAnalytics"
-    // TODO IOS: currently always links to Google Play store
     | "rateTheApp"
     | "settingsGeneral"
     | "settingsFeedback"
@@ -74,6 +73,7 @@ type keys =
     | "reportThankYouTitle"
     | "reportThankYouText"
     | "reportThankYouButton";
+export type LocalizationKeysDefault = keys | Route;
 
 export interface ITranslations extends Resource {
     default: { [key in keys]: string } & { [key in Route]: string };
@@ -361,8 +361,7 @@ const localization: {
             reportTitle: "不適切として報告する",
             reportThankYouButton: "閉じる",
             reportThankYouTitle: "報告ありがとうございます",
-            reportThankYouText:
-                "You are Awesome App!では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。",
+            reportThankYouText: `${shared.appTitle}では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。`,
         },
     },
 };

@@ -12,9 +12,15 @@ import {
     ISetLanguage,
     ISetPushNotificationsState,
     IToggleDarkThemeAction,
+    IToggleOnboardingCompleted,
 } from "../actions/IAppAction";
 import { IAddToFavorites, IDeleteFavorites } from "../actions/IFavoritesAction";
-import { countMyContributions, darkModeEnabled, language } from "../selectors";
+import {
+    countMyContributions,
+    darkModeEnabled,
+    language,
+    onboardingCompleted,
+} from "../selectors";
 
 /**
  *  Note: ToggleAnalytics is not tracked here because of the specialty that we want to log
@@ -30,6 +36,7 @@ function* logAnalyticsWorkerSaga(
         | IChangePushNotificationTime
         | IDeleteFavorites
         | IDeleteMyContributions
+        | IToggleOnboardingCompleted
 ) {
     try {
         switch (action.type) {
@@ -67,10 +74,18 @@ function* logAnalyticsWorkerSaga(
                 break;
 
             case ActionType.ToggleDarkTheme:
-                const darkModeOn: ReturnType<
-                    typeof darkModeEnabled
-                > = yield select(darkModeEnabled);
+                const darkModeOn: ReturnType<typeof darkModeEnabled> =
+                    yield select(darkModeEnabled);
                 yield call(Analytics.logDarkMode, darkModeOn);
+                break;
+
+            case ActionType.ToggleOnboardingCompleted:
+                const isOnboardingCompleted: ReturnType<
+                    typeof onboardingCompleted
+                > = yield select(onboardingCompleted);
+                if (isOnboardingCompleted)
+                    yield call(Analytics.logOnboardingCompleted);
+
                 break;
 
             case ActionType.ContributionRequested:
@@ -124,6 +139,7 @@ function* logAnalyticsSaga() {
             ActionType.AddToFavorites,
             ActionType.DeleteFavorites,
             ActionType.DeleteMyContributions,
+            ActionType.ToggleOnboardingCompleted,
         ],
         logAnalyticsWorkerSaga
     );

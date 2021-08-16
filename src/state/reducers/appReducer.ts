@@ -10,6 +10,7 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
         pushNotificationsEnabled: false,
         pushNotificationsScheduledTime: new Date(0),
         language: null,
+        onboardingCompleted: false,
     },
     action
 ) => {
@@ -23,6 +24,11 @@ export const appReducer: Reducer<IAppState, IAppAction> = (
             return {
                 ...state,
                 analyticsEnabled: !state.analyticsEnabled,
+            };
+        case ActionType.ToggleOnboardingCompleted:
+            return {
+                ...state,
+                onboardingCompleted: !state.onboardingCompleted,
             };
         case ActionType.SetPushNotificationsState:
             return {

@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
     },
 });
 
+const getCardStyle = (theme: FullTheme) => {
+    return theme.dark
+        ? { backgroundColor: theme.colors.accentedCard }
+        : { backgroundColor: theme.colors.primary };
+};
+
 interface Props {
     msg: IMessage;
     addFavorite: typeof addFavorite;
@@ -46,11 +52,7 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     const [reportDialogOpen, showReportDialog] = useState(false);
     const theme = useTheme() as FullTheme;
     const { t } = useTranslation();
-    const cardStyle = theme.dark
-        ? {
-              backgroundColor: theme.colors.accentedCard,
-          }
-        : { backgroundColor: theme.colors.primary };
+    const cardStyle = getCardStyle(theme);
     const { author, text, country, id } = msg;
 
     const likeOnDoubleTap = (event: TapGestureHandlerStateChangeEvent) => {

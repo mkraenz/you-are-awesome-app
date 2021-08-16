@@ -62,6 +62,7 @@ const SettingsScreen: FC<Props> = ({
     const { navigate } = useNavigation();
 
     const handlePrivacyPolicyPressed = () => navigate(Route.PrivacyPolicy);
+    // TODO iOS: currently always links to Google Play store
     const rateTheApp = () => Linking.openURL(CONFIG.uri.playstoreUrl);
 
     return (

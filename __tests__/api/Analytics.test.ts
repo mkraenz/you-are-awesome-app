@@ -137,3 +137,11 @@ it("logManualRefresh()", async () => {
         type: "refresh",
     });
 });
+
+it("logOnboardingCompleted()", async () => {
+    await Analytics.logOnboardingCompleted();
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith(
+        "onboarding_completed",
+        {}
+    );
+});

@@ -5,6 +5,7 @@ import {
     darkModeEnabled,
     internetConnected,
     language,
+    onboardingCompleted,
     pushNotificationsEnabled,
 } from "../../src/state/selectors";
 import { Unpack } from "../../src/utils/ts/Unpack";
@@ -58,6 +59,16 @@ it("darkModeEnabled returns the state ", () => {
     };
 
     const result = darkModeEnabled(state);
+
+    expect(result).toBe(true);
+});
+
+it("onboardingCompleted returns the state ", () => {
+    const state: Unpack<Parameters<typeof onboardingCompleted>> = {
+        app: { onboardingCompleted: true },
+    };
+
+    const result = onboardingCompleted(state);
 
     expect(result).toBe(true);
 });

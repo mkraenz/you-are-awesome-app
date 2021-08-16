@@ -5,6 +5,7 @@ import { IAction, IActionWithPayload } from "./utils";
 export type IAppAction =
     | IToggleDarkThemeAction
     | IToggleAnalytics
+    | IToggleOnboardingCompleted
     | ISetPushNotificationsState
     | IChangePushNotificationTime
     | ISetLanguage
@@ -12,6 +13,8 @@ export type IAppAction =
 
 export type IToggleDarkThemeAction = IAction<ActionType.ToggleDarkTheme>;
 export type IToggleAnalytics = IAction<ActionType.ToggleAnalytics>;
+export type IToggleOnboardingCompleted =
+    IAction<ActionType.ToggleOnboardingCompleted>;
 
 export type ISetPushNotificationsState = IActionWithPayload<
     ActionType.SetPushNotificationsState,

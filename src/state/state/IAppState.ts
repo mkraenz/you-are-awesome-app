@@ -6,4 +6,6 @@ export interface IAppState {
     pushNotificationsScheduledTime: Date;
     language: Language | null;
     analyticsEnabled: boolean;
+    /** Whether this is the first time the app is being opened by the user after install from scratch */
+    onboardingCompleted: boolean;
 }

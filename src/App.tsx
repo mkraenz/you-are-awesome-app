@@ -5,6 +5,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { initSentry } from "./api/Sentry";
 import AppStateChangedContainer from "./app-containers/AppStateChangedContainer";
 import NetInfoChangedContainer from "./app-containers/NetInfoChangedContainer";
+import OnboardingContainer from "./app-containers/OnboardingContainer";
 import { CONFIG } from "./config";
 import "./localization/i18n";
 import { persistor, store } from "./state/store";
@@ -19,7 +20,9 @@ export default function App() {
             <PersistGate loading={null} persistor={persistor}>
                 <NetInfoChangedContainer>
                     <AppStateChangedContainer>
-                        <ThemedApp />
+                        <OnboardingContainer>
+                            <ThemedApp />
+                        </OnboardingContainer>
                     </AppStateChangedContainer>
                 </NetInfoChangedContainer>
             </PersistGate>

@@ -21,6 +21,8 @@ assignees: ""
 
 ## DoD
 
+- [ ] Post-mortem identified the issue, possible root cause, and defined actions to mitigate similar issues in the future
+- [ ] Post-mortem actions are being worked on with highest priority
 - [ ] merged into `master`
 - [ ] emulator app on `master` still starts
 - [ ] emulator app on `master` contains the update
