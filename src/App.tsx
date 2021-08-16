@@ -18,11 +18,10 @@ export default function App() {
     return (
         <StoreProvider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <NetInfoChangedContainer>
-                    <AppStateChangedContainer />
-                    <OnboardingContainer />
-                    <ThemedApp />
-                </NetInfoChangedContainer>
+                <NetInfoChangedContainer />
+                <AppStateChangedContainer />
+                <OnboardingContainer />
+                <ThemedApp />
             </PersistGate>
         </StoreProvider>
     );

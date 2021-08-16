@@ -60,8 +60,7 @@ it("does nothing if not brought to foregound", async () => {
             lastUpdate: longAgo,
         },
     });
-    let registeredListener: ((state: AppStateStatus) => void) | undefined =
-        undefined;
+    let registeredListener: ((state: AppStateStatus) => void) | undefined;
     const spy = jest
         .spyOn(AppState, "addEventListener")
         .mockImplementation((type, listener) => {
@@ -73,7 +72,7 @@ it("does nothing if not brought to foregound", async () => {
     expect(spy).toHaveBeenCalledWith("change", expect.any(Function));
     expect(registeredListener).toBeDefined();
 
-    // @ts-ignore somehow TS thinks listener is only of type undefined
+    if (!registeredListener) throw new Error("make TS happy");
     registeredListener("background");
 
     expect(store.getActions()).toEqual([]);

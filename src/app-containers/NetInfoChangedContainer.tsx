@@ -1,36 +1,25 @@
-import NetInfo, { NetInfoSubscription } from "@react-native-community/netinfo";
-import { Component, ReactNode } from "react";
+import NetInfo from "@react-native-community/netinfo";
+import { FC, useEffect } from "react";
 import { connect } from "react-redux";
 import { changeNetInfo } from "../state/action-creators/changeNetInfo";
 import { IState } from "../state/state/IState";
 
 interface Props {
     changeNetInfo: (connected: boolean) => void;
-    children: ReactNode;
 }
 
-class NetInfoChangedContainer extends Component<Props> {
-    private unsubscribe?: NetInfoSubscription;
-
-    public componentDidMount() {
-        this.unsubscribe = NetInfo.addEventListener((state) =>
-            this.props.changeNetInfo(!!state.isConnected)
+const NetInfoChangedContainer: FC<Props> = ({ changeNetInfo }) => {
+    useEffect(() => {
+        const unsubscribe = NetInfo.addEventListener((state) =>
+            changeNetInfo(!!state.isConnected)
         );
-    }
-
-    public componentWillUnmount() {
-        if (this.unsubscribe) {
-            this.unsubscribe();
-        }
-    }
-
-    public render() {
-        return this.props.children;
-    }
-}
+        return unsubscribe;
+    }, [changeNetInfo]);
+    return null;
+};
 
 const mapStateToProps = (state: IState) => state;
-const mapDispatchToProps: Pick<Props, "changeNetInfo"> = { changeNetInfo };
+const mapDispatchToProps: Props = { changeNetInfo };
 
 export default connect(
     mapStateToProps,
