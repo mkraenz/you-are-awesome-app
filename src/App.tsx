@@ -11,7 +11,7 @@ import "./localization/i18n";
 import LocalizationProvider from "./localization/LocalizationProvider";
 import NavigationApp from "./navigation/NavigationApp";
 import { persistor, store } from "./state/store";
-import ThemedApp from "./themes/ThemedApp";
+import ThemeProvider from "./themes/ThemedApp";
 import { jsBuildNumber } from "./utils/version.json";
 
 initSentry(CONFIG.sentry, jsBuildNumber);
@@ -24,9 +24,9 @@ export default function App() {
                 <AppStateChangedContainer />
                 <OnboardingContainer />
                 <LocalizationProvider>
-                    <ThemedApp>
+                    <ThemeProvider>
                         <NavigationApp />
-                    </ThemedApp>
+                    </ThemeProvider>
                 </LocalizationProvider>
             </PersistGate>
         </StoreProvider>

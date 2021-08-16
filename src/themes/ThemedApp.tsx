@@ -9,7 +9,7 @@ interface Props {
     children: ReactNode;
 }
 
-const ThemedApp: FC<Props> = ({ isDarkModeOn, children }) => (
+const ThemeProvider: FC<Props> = ({ isDarkModeOn, children }) => (
     <PaperProvider theme={isDarkModeOn ? darkTheme : lightTheme}>
         {children}
     </PaperProvider>
@@ -20,4 +20,4 @@ const mapStateToProps: MapStateToProps<Pick<Props, "isDarkModeOn">> = ({
 }) => ({
     isDarkModeOn: app.isDarkModeOn,
 });
-export default connect(mapStateToProps)(ThemedApp);
+export default connect(mapStateToProps)(ThemeProvider);
