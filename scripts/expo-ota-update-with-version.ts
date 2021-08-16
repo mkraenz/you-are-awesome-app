@@ -79,21 +79,25 @@ To confirm, type 'yes'. Any other input will abort the commit.
     return { commitApproved: confirmation === "yes", gitCommitCommand };
 };
 
+const gitPushCommand = "git push";
+
 const main = () => {
     const env = process.env.NODE_ENV!;
 
     assertProdOrStage(env);
+
     incrementBuildVersion();
+    const { commitApproved, gitCommitCommand } = askForCommit(env);
     updateSnapshotTests();
 
     const reviewApproved = autoReview();
     if (reviewApproved) {
         publishToChannel(env);
         gitStageChanges();
-        const { commitApproved, gitCommitCommand } = askForCommit(env);
 
         if (commitApproved) {
             shell.exec(gitCommitCommand);
+            shell.exec(gitPushCommand);
         }
     } else {
         onAutoReviewFailed();
