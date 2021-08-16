@@ -1,4 +1,4 @@
-import { toggleOnboardingCompleted } from "../../../src/state/action-creators/toggleFirstOpen";
+import { toggleOnboardingCompleted } from "../../../src/state/action-creators/toggleOnboardingCompleted";
 import { ActionType } from "../../../src/state/actions/ActionType";
 
 it("returns correct action", () => {

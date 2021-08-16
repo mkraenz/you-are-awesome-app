@@ -1,12 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { CONFIG } from "../config";
+import { ApiFeatureFlags, CONFIG } from "../config";
 import { IMessage } from "../state/state/IMessage";
 import { pick } from "../utils/pick";
-
-type FeatureFlags = Pick<
-    typeof CONFIG.disableApiCall,
-    "all" | "submitContribution"
->;
 
 const mockMsg = {
     author: "my-author",
@@ -19,9 +14,12 @@ const mockMsg = {
 export const submitContribution = async (
     msg: IMessage,
     uri: string,
-    disabledFlags: FeatureFlags = CONFIG.disableApiCall
+    disabledFlags: ApiFeatureFlags<"submitContribution"> = CONFIG.disableApiCall
 ): Promise<IMessage> => {
     if (disabledFlags.all || disabledFlags.submitContribution) {
+        console.log(
+            "API call submitContribution disabled. Falling back to fixture"
+        );
         return mockMsg;
     }
     const payload = pick(msg, ["author", "country", "isodate", "id", "text"]);

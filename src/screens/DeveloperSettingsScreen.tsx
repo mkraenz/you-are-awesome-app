@@ -8,7 +8,7 @@ import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
-import { toggleOnboardingCompleted } from "../state/action-creators/toggleFirstOpen";
+import { toggleOnboardingCompleted } from "../state/action-creators/toggleOnboardingCompleted";
 import { IState } from "../state/state/IState";
 
 interface Props {

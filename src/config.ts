@@ -19,6 +19,9 @@ const shared = {
     },
 };
 
+export type ApiFeatureFlags<U extends keyof typeof CONFIG.disableApiCall> =
+    Pick<typeof CONFIG.disableApiCall, U | "all">;
+
 const prodConfig = {
     isProdOrStage: true,
     env: "prod",
@@ -44,6 +47,8 @@ const prodConfig = {
         all: false,
         reportInappropriateContent: false,
         submitContribution: false,
+        registerPushNotifications: false,
+        unregisterPushNotifications: false,
     },
 };
 
@@ -72,6 +77,8 @@ const stageConfig: typeof prodConfig = {
         all: false,
         reportInappropriateContent: false,
         submitContribution: false,
+        registerPushNotifications: false,
+        unregisterPushNotifications: false,
     },
 };
 
@@ -100,6 +107,8 @@ const devConfig: typeof prodConfig = {
         all: false,
         reportInappropriateContent: false,
         submitContribution: false,
+        registerPushNotifications: false,
+        unregisterPushNotifications: false,
     },
 };
 

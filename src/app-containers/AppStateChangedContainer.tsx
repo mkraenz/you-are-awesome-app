@@ -1,48 +1,51 @@
-import { Component, ReactNode } from "react";
+import React, { FC, ReactNode, useCallback, useEffect } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
 import { requestFetchMessages } from "../state/action-creators/requestFetchMessages";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { isToday } from "../utils/toTodayString";
 
-interface Props {
+interface StateProps {
     lastUpdate: Date;
+}
+interface DispatchProps {
     requestFetchMessages: (now: Date) => void;
-    children: ReactNode;
 }
+type Props = StateProps &
+    DispatchProps & {
+        children: ReactNode;
+    };
 
-class AppStateChangedContainer extends Component<Props> {
-    public componentDidMount() {
-        AppState.addEventListener("change", (state) =>
-            this.handleAppStateChange(state)
-        );
-    }
+const AppStateChangedContainer: FC<Props> = ({
+    lastUpdate,
+    requestFetchMessages,
+    children,
+}) => {
+    const handleAppStateChange = useCallback(
+        (nextAppState: AppStateStatus) => {
+            const isAnotherDay =
+                nextAppState === "active" && !isToday(lastUpdate);
+            if (isAnotherDay) {
+                requestFetchMessages(new Date());
+            }
+        },
+        [lastUpdate, requestFetchMessages]
+    );
 
-    public componentWillUnmount() {
-        AppState.removeEventListener("change", (state) =>
-            this.handleAppStateChange(state)
-        );
-    }
+    useEffect(() => {
+        AppState.addEventListener("change", handleAppStateChange);
 
-    private handleAppStateChange(nextAppState: AppStateStatus) {
-        const { lastUpdate, requestFetchMessages } = this.props;
-        if (nextAppState === "active" && !isToday(lastUpdate)) {
-            requestFetchMessages(new Date());
-        }
-    }
+        return () =>
+            AppState.removeEventListener("change", handleAppStateChange);
+    }, [handleAppStateChange]);
+    return <>{children}</>;
+};
 
-    public render() {
-        return this.props.children;
-    }
-}
-
-const mapStateToProps: MapStateToProps<Pick<Props, "lastUpdate">> = (
-    state
-) => ({
+const mapStateToProps: MapStateToProps<StateProps> = (state) => ({
     lastUpdate: state.messages.lastUpdate,
 });
 
-const mapDispatchToProps: Pick<Props, "requestFetchMessages"> = {
+const mapDispatchToProps: DispatchProps = {
     requestFetchMessages,
 };
 

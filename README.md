@@ -84,6 +84,8 @@ adb install -r ./y3a.apk
 
 ## Development
 
+[Main reference](https://docs.expo.dev/workflow/debugging/?redirected#startup)
+
 ### Debug native app on a phone or emulator
 
 Requires
