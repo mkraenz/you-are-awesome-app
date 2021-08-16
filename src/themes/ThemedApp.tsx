@@ -1,24 +1,23 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import { Provider as PaperProvider } from "react-native-paper";
 import { connect } from "react-redux";
-import LocalizationProvider from "../localization/LocalizationProvider";
-import NavigationApp from "../navigation/NavigationApp";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { darkTheme, lightTheme } from "./theme";
 
 interface Props {
     isDarkModeOn: boolean;
+    children: ReactNode;
 }
 
-const ThemedApp = ({ isDarkModeOn }: Props) => (
+const ThemedApp: FC<Props> = ({ isDarkModeOn, children }) => (
     <PaperProvider theme={isDarkModeOn ? darkTheme : lightTheme}>
-        <LocalizationProvider>
-            <NavigationApp />
-        </LocalizationProvider>
+        {children}
     </PaperProvider>
 );
 
-const mapStateToProps: MapStateToProps<Props> = ({ app }) => ({
+const mapStateToProps: MapStateToProps<Pick<Props, "isDarkModeOn">> = ({
+    app,
+}) => ({
     isDarkModeOn: app.isDarkModeOn,
 });
 export default connect(mapStateToProps)(ThemedApp);

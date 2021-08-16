@@ -8,6 +8,8 @@ import NetInfoChangedContainer from "./app-containers/NetInfoChangedContainer";
 import OnboardingContainer from "./app-containers/OnboardingContainer";
 import { CONFIG } from "./config";
 import "./localization/i18n";
+import LocalizationProvider from "./localization/LocalizationProvider";
+import NavigationApp from "./navigation/NavigationApp";
 import { persistor, store } from "./state/store";
 import ThemedApp from "./themes/ThemedApp";
 import { jsBuildNumber } from "./utils/version.json";
@@ -21,7 +23,11 @@ export default function App() {
                 <NetInfoChangedContainer />
                 <AppStateChangedContainer />
                 <OnboardingContainer />
-                <ThemedApp />
+                <LocalizationProvider>
+                    <ThemedApp>
+                        <NavigationApp />
+                    </ThemedApp>
+                </LocalizationProvider>
             </PersistGate>
         </StoreProvider>
     );
