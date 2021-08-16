@@ -11,7 +11,7 @@ import "./localization/i18n";
 import LocalizationProvider from "./localization/LocalizationProvider";
 import NavigationApp from "./navigation/NavigationApp";
 import { persistor, store } from "./state/store";
-import ThemeProvider from "./themes/ThemedApp";
+import ThemeProvider from "./themes/ThemeProvide";
 import { jsBuildNumber } from "./utils/version.json";
 
 initSentry(CONFIG.sentry, jsBuildNumber);
