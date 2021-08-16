@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { connect } from "react-redux";
 import { at11Am } from "../components/settings/at11am";
 import { setPushNotificationsState } from "../state/action-creators/setPushNotificationState";
@@ -14,10 +14,7 @@ interface DispatchProps {
     setPushNotificationsState: typeof setPushNotificationsState;
     toggleOnboardingCompleted: () => void;
 }
-type Props = StateProps &
-    DispatchProps & {
-        children: ReactNode;
-    };
+type Props = StateProps & DispatchProps;
 
 const OnboardingContainer: FC<Props> = ({
     onboardingCompleted,
@@ -25,15 +22,15 @@ const OnboardingContainer: FC<Props> = ({
     setPushNotificationsState,
     toggleOnboardingCompleted,
     internetConnected,
-    children,
 }) => {
     useEffect(() => {
         if (!internetConnected) return;
-        if (!onboardingCompleted && !pushNotificationsEnabled) {
-            // TODO iOS this might not work due to required permissions for push notifications
-            setPushNotificationsState(true, at11Am());
-            toggleOnboardingCompleted();
-        }
+        if (onboardingCompleted) return;
+        if (pushNotificationsEnabled) return;
+
+        // TODO iOS this might not work due to required permissions for push notifications
+        setPushNotificationsState(true, at11Am());
+        toggleOnboardingCompleted();
     }, [
         onboardingCompleted,
         setPushNotificationsState,
@@ -41,7 +38,7 @@ const OnboardingContainer: FC<Props> = ({
         internetConnected,
     ]);
 
-    return <>{children}</>;
+    return null;
 };
 
 const mapStateToProps: MapStateToProps<StateProps> = (state) => ({
