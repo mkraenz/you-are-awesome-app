@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useCallback, useEffect } from "react";
+import { FC, useCallback, useEffect } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
 import { requestFetchMessages } from "../state/action-creators/requestFetchMessages";
@@ -11,15 +11,11 @@ interface StateProps {
 interface DispatchProps {
     requestFetchMessages: (now: Date) => void;
 }
-type Props = StateProps &
-    DispatchProps & {
-        children: ReactNode;
-    };
+type Props = StateProps & DispatchProps;
 
 const AppStateChangedContainer: FC<Props> = ({
     lastUpdate,
     requestFetchMessages,
-    children,
 }) => {
     const handleAppStateChange = useCallback(
         (nextAppState: AppStateStatus) => {
@@ -38,7 +34,7 @@ const AppStateChangedContainer: FC<Props> = ({
         return () =>
             AppState.removeEventListener("change", handleAppStateChange);
     }, [handleAppStateChange]);
-    return <>{children}</>;
+    return null;
 };
 
 const mapStateToProps: MapStateToProps<StateProps> = (state) => ({

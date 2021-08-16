@@ -19,11 +19,9 @@ export default function App() {
         <StoreProvider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <NetInfoChangedContainer>
-                    <AppStateChangedContainer>
-                        <OnboardingContainer>
-                            <ThemedApp />
-                        </OnboardingContainer>
-                    </AppStateChangedContainer>
+                    <AppStateChangedContainer />
+                    <OnboardingContainer />
+                    <ThemedApp />
                 </NetInfoChangedContainer>
             </PersistGate>
         </StoreProvider>

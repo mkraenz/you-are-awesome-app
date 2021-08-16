@@ -1,7 +1,6 @@
 import { render } from "@testing-library/react-native";
 import React from "react";
 import "react-native";
-import { Text } from "react-native";
 import { Provider } from "react-redux";
 import { Store } from "redux";
 import createMockStore from "redux-mock-store";
@@ -17,12 +16,10 @@ type RelevantState = Pick2<
 > &
     Pick2<IState, "network", "connected">;
 
-const renderComponent = (store: Store): { getByText: any } => {
+const renderComponent = (store: Store) => {
     return render(
         <Provider store={store}>
-            <OnboardingContainer>
-                <Text>some child component text</Text>
-            </OnboardingContainer>
+            <OnboardingContainer />
         </Provider>
     );
 };
@@ -40,7 +37,6 @@ it("registers for push notifications and ends the onboarding", async () => {
 
     const { getByText } = renderComponent(store);
 
-    expect(getByText("some child component text")).toBeDefined();
     expect(store.getActions()).toEqual([
         {
             type: ActionType.SetPushNotificationsState,
