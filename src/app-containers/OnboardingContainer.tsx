@@ -28,7 +28,6 @@ const OnboardingContainer: FC<Props> = ({
     children,
 }) => {
     useEffect(() => {
-        // TODO #527 what if internet is switched off?????
         if (!internetConnected) return;
         if (!onboardingCompleted && !pushNotificationsEnabled) {
             // TODO iOS this might not work due to required permissions for push notifications

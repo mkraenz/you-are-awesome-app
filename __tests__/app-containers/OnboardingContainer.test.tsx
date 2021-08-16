@@ -3,6 +3,7 @@ import React from "react";
 import "react-native";
 import { Text } from "react-native";
 import { Provider } from "react-redux";
+import { Store } from "redux";
 import createMockStore from "redux-mock-store";
 import OnboardingContainer from "../../src/app-containers/OnboardingContainer";
 import { ActionType } from "../../src/state/actions/ActionType";
@@ -16,6 +17,16 @@ type RelevantState = Pick2<
 > &
     Pick2<IState, "network", "connected">;
 
+const renderComponent = (store: Store): { getByText: any } => {
+    return render(
+        <Provider store={store}>
+            <OnboardingContainer>
+                <Text>some child component text</Text>
+            </OnboardingContainer>
+        </Provider>
+    );
+};
+
 it("registers for push notifications and ends the onboarding", async () => {
     const store = createMockStore<RelevantState>([])({
         app: {
@@ -27,13 +38,7 @@ it("registers for push notifications and ends the onboarding", async () => {
         },
     });
 
-    const { getByText } = render(
-        <Provider store={store}>
-            <OnboardingContainer>
-                <Text>some child component text</Text>
-            </OnboardingContainer>
-        </Provider>
-    );
+    const { getByText } = renderComponent(store);
 
     expect(getByText("some child component text")).toBeDefined();
     expect(store.getActions()).toEqual([
@@ -59,13 +64,7 @@ it("does nothing if onboarding is completed", async () => {
         },
     });
 
-    const {} = render(
-        <Provider store={store}>
-            <OnboardingContainer>
-                <Text>some child component text</Text>
-            </OnboardingContainer>
-        </Provider>
-    );
+    renderComponent(store);
 
     expect(store.getActions()).toEqual([]);
 });
@@ -82,13 +81,7 @@ it("does nothing if push notificatiosn already enabled", async () => {
         },
     });
 
-    const {} = render(
-        <Provider store={store}>
-            <OnboardingContainer>
-                <Text>some child component text</Text>
-            </OnboardingContainer>
-        </Provider>
-    );
+    renderComponent(store);
 
     expect(store.getActions()).toEqual([]);
 });
@@ -105,13 +98,7 @@ it("does nothing if not connected to internet", async () => {
         },
     });
 
-    const {} = render(
-        <Provider store={store}>
-            <OnboardingContainer>
-                <Text>some child component text</Text>
-            </OnboardingContainer>
-        </Provider>
-    );
+    renderComponent(store);
 
     expect(store.getActions()).toEqual([]);
 });
