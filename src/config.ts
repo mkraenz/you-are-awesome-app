@@ -11,6 +11,8 @@ const shared = {
         submitContribution: `${backendUri}contributions`,
         registerForPushNotifications: `${backendUri}push-notifications/register`,
         unregisterFromPushNotifications: `${backendUri}push-notifications/unregister`,
+        subscribeToPushNotifications: `${backendUri}push-notifications/subscribe`,
+        unsubscribeFromPushNotifications: `${backendUri}push-notifications/unsubscribe`,
         reportInappropriateContent: `${backendUri}reportinappropriate`,
         playstoreUrl:
             "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
@@ -29,6 +31,7 @@ const prodConfig = {
         analytics: true,
         developerSettings: false,
         bugReportIconVisible: true,
+        useAwsForPushNotifications: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -49,6 +52,8 @@ const prodConfig = {
         submitContribution: false,
         registerPushNotifications: false,
         unregisterPushNotifications: false,
+        subscribePushNotifications: false,
+        unsubscribePushNotifications: false,
     },
 };
 
@@ -59,6 +64,7 @@ const stageConfig: typeof prodConfig = {
         analytics: true,
         developerSettings: true,
         bugReportIconVisible: true,
+        useAwsForPushNotifications: false,
     },
     debugAnalytics: false,
     fallbackLanguage: Language.English,
@@ -79,6 +85,8 @@ const stageConfig: typeof prodConfig = {
         submitContribution: false,
         registerPushNotifications: false,
         unregisterPushNotifications: false,
+        subscribePushNotifications: false,
+        unsubscribePushNotifications: false,
     },
 };
 
@@ -89,6 +97,7 @@ const devConfig: typeof prodConfig = {
         analytics: true,
         developerSettings: true,
         bugReportIconVisible: true,
+        useAwsForPushNotifications: false,
     },
     debugAnalytics: true,
     fallbackLanguage: Language.English,
@@ -109,6 +118,8 @@ const devConfig: typeof prodConfig = {
         submitContribution: false,
         registerPushNotifications: false,
         unregisterPushNotifications: false,
+        subscribePushNotifications: false,
+        unsubscribePushNotifications: false,
     },
 };
 
