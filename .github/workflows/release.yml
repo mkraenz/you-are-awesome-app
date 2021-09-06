@@ -11,4 +11,6 @@ jobs:
       - name: Install non-default semantic-release plugins
         run: npm install --no-save @semantic-release/changelog
       - name: Semantic release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
