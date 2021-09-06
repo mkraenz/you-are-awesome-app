@@ -1,9 +1,6 @@
 import { call, select, takeLatest } from "redux-saga/effects";
 import { askNotificationPermissions } from "../../../api/native-api/askNotificationPermissions";
-import { registerForPushNotifications } from "../../../api/registerForPushNotifications";
 import { subscribeToPushNotifications } from "../../../api/subscribeToPushNotifications";
-import { unregisterFromPushNotifications } from "../../../api/unregisterFromPushNotifications";
-import { CONFIG } from "../../../config";
 import { assert } from "../../../utils/assert";
 import { ActionType } from "../../actions/ActionType";
 import { IChangePushNotificationTime } from "../../actions/IAppAction";
@@ -18,6 +15,7 @@ function* changePushNotificationTimeSaga() {
     );
 }
 
+// TODO #535 rename to subscribe. Is this saga still necessary with PUT request?
 function* changePushNotificationTimeWorkerSaga(
     action: IChangePushNotificationTime
 ) {
@@ -28,10 +26,5 @@ function* changePushNotificationTimeWorkerSaga(
     assert(connected, "no internet connection");
 
     yield call(askNotificationPermissions);
-    if (CONFIG.featureFlags.useAwsForPushNotifications) {
-        yield call(subscribeToPushNotifications, action.payload.scheduledTime);
-    } else {
-        yield call(unregisterFromPushNotifications);
-        yield call(registerForPushNotifications, action.payload.scheduledTime);
-    }
+    yield call(subscribeToPushNotifications, action.payload.scheduledTime);
 }
