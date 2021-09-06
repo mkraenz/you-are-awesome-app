@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install non-default semantic-release plugins
-        run: npm install --no-save @semantic-release/changelog
+        run: npm install --no-save @semantic-release/changelog @semantic-release/git
       - name: Semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
