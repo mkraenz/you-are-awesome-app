@@ -1,0 +1,14 @@
+name: Semantic Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install non-default semantic-release plugins
+        run: npm install --no-save @semantic-release/changelog
+      - name: Semantic release
+        run: npx semantic-release
