@@ -3,23 +3,31 @@ import { askNotificationPermissions } from "../../../api/native-api/askNotificat
 import { subscribeToPushNotifications } from "../../../api/subscribeToPushNotifications";
 import { unsubscribeFromPushNotifications } from "../../../api/unsubscribeFromPushNotifications";
 import { ActionType } from "../../actions/ActionType";
-import { ISetPushNotificationsState } from "../../actions/IAppAction";
+import {
+    IChangePushNotificationTime,
+    ISetPushNotificationsState,
+} from "../../actions/IAppAction";
 
-export default registerOrUnregisterPushNotificationsSaga;
+export default subscribeOrUnsubscribePushNotificationsSaga;
 
-function* registerOrUnregisterPushNotificationsSaga() {
+function* subscribeOrUnsubscribePushNotificationsSaga() {
     yield takeLatest(
-        [ActionType.SetPushNotificationsState],
-        registerOrUnregisterPushNotificationsWorkerSaga
+        [
+            ActionType.SetPushNotificationsState,
+            ActionType.ChangePushNotificationTime,
+        ],
+        subscribeOrUnsubscribePushNotificationsWorkerSaga
     );
 }
 
-// TODO #535 rename to subscribe
-function* registerOrUnregisterPushNotificationsWorkerSaga(
-    action: ISetPushNotificationsState
+function* subscribeOrUnsubscribePushNotificationsWorkerSaga(
+    action: ISetPushNotificationsState | IChangePushNotificationTime
 ) {
     // ensured internet connected on higher level
-    if (action.payload.enabled) {
+    if (
+        action.type === ActionType.ChangePushNotificationTime ||
+        action.payload.enabled
+    ) {
         yield call(askNotificationPermissions);
         yield call(subscribeToPushNotifications, action.payload.scheduledTime);
     } else {

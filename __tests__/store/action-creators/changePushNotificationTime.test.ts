@@ -6,6 +6,6 @@ it("returns correct action", () => {
 
     expect(result.type).toEqual(ActionType.ChangePushNotificationTime);
     expect(result.payload.scheduledTime).toBeInstanceOf(Date);
-    expect(result.payload.scheduledTime.getHours()).toBe(15);
-    expect(result.payload.scheduledTime.getMinutes()).toBe(36);
+    expect(result.payload.scheduledTime.getUTCHours()).toBe(15);
+    expect(result.payload.scheduledTime.getUTCMinutes()).toBe(36);
 });
