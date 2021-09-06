@@ -29,6 +29,7 @@ Each day you receive a motivational message written by a grateful person around 
 <a href="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favsdark.png">
   <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favsdark.png" height="300" alt="you are awesome app favorites screen dark theme">
 </a>
+
 ## Production
 
 Production apps are apps on a User's smart phone installed from the Google Play Store.
