@@ -27,7 +27,6 @@ const ConfiguredSettingsScreen: FC = () => (
 );
 
 it("renders correctly for disabled notifications", async () => {
-    // far in the future so that the snapshot does not change
     const scheduledTime = new Date("2029-09-06T21:00:00.000Z");
     MockDate.set(scheduledTime);
 
