@@ -460,9 +460,7 @@ exports[`renders correctly 1`] = `
                         ]
                       }
                     >
-                      my-author
-                       from 
-                      my-country
+                      my-author from my-country
                     </Text>
                   </View>
                 </View>

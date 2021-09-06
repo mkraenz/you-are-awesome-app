@@ -1,83 +1,4 @@
-import { Resource } from "i18next";
 import { Route } from "../navigation/Route";
-
-type keys =
-    | "appTitle"
-    | "darkMode"
-    | "settings"
-    | "language"
-    | "sendAnalytics"
-    | "rateTheApp"
-    | "settingsGeneral"
-    | "settingsFeedback"
-    | "settingsPrivacy"
-    | "settingsAbout"
-    | "settingsDeveloper"
-    | "settingsSubmitFeedback"
-    | "bugReportTitle"
-    | "bugReportDescription"
-    | "bugReportCancelButton"
-    | "bugReportConfirmButton"
-    | "copyright1"
-    | "copyright2Company"
-    | "copyright3"
-    | "companyLink"
-    | "comingSoon"
-    | "noInternet"
-    | "buildVersion"
-    | "contributeAwesomeMessage"
-    | "contributeAwesomeMessageLong"
-    | "contributeCountry"
-    | "contributeSubmit"
-    | "contributeAgreeToConditions"
-    | "contributeConditions"
-    | "contributeConditionsLink"
-    | "contributeAnd"
-    | "contributePrivacyPolicy"
-    | "contributeNavLabel"
-    | "contributionStayTuned"
-    | "contributionThanks"
-    | "contributionMember"
-    | "contributionAlertButton"
-    | "contributeName"
-    | "notificationsEnable"
-    | "notificationsSetTime"
-    | "privacyPolicyLink"
-    | "viewInBrowser"
-    | "privacyPolicy"
-    | "from"
-    | "favoritesEmptyList"
-    | "favoritesToRoute"
-    | "favoritesDeleteDialogTitle"
-    | "favoritesDeleteDialogText"
-    | "favoritesDelete"
-    | "favoritesCancel"
-    | "myContributionsContribute"
-    | "myContributionsEmptyList"
-    | "myContributionsDeleteDialogTitle"
-    | "myContributionsDeleteDialogText"
-    | "myContributionsDelete"
-    | "myContributionsCancel"
-    | "reportTitle"
-    | "reportConfirmButton"
-    | "reportCancelButton"
-    | "reportReason"
-    | "reportReasonSexual"
-    | "reportReasonHateful"
-    | "reportReasonInfringement"
-    | "reportReasonDrugs"
-    | "reportReasonPII"
-    | "reportReasonOther"
-    | "reportOtherComment"
-    | "reportDescription"
-    | "reportThankYouTitle"
-    | "reportThankYouText"
-    | "reportThankYouButton";
-export type LocalizationKeysDefault = keys | Route;
-
-export interface ITranslations extends Resource {
-    default: { [key in keys]: string } & { [key in Route]: string };
-}
 
 export enum Language {
     English = "en",
@@ -100,96 +21,107 @@ const shared = {
         "https://youareawesomeapp-legal.s3.eu-central-1.amazonaws.com/PrivacyPolicyEn.html",
 };
 
-const localization: {
-    [locale in Language]: ITranslations;
-} = {
-    en: {
-        default: {
-            ...shared,
-            darkMode: "Dark mode",
-            settings: "Settings",
-            comingSoon: "Coming soon",
-            language: "Language",
-            sendAnalytics: "Send usage statistics",
-            rateTheApp: "Rate the App",
-            settingsGeneral: "General",
-            settingsFeedback: "Feedback",
-            settingsPrivacy: "Privacy",
-            settingsDeveloper: "Developer",
-            settingsAbout: "About",
-            settingsSubmitFeedback: "Provide feedback",
-            bugReportTitle: "Feedback",
-            bugReportCancelButton: "Cancel",
-            bugReportConfirmButton: "Open in Browser",
-            bugReportDescription:
-                "Got some feedback for us? Found a bug? We'd love to hear from you!",
-            copyright1: "Copyright © ",
-            copyright2Company: "Kraenz Software Development",
-            copyright3: "\nMirco Kraenz 2020",
-            [Route.Home]: "Home",
-            [Route.Settings]: "Settings",
-            [Route.Contribute]: "Contribution",
-            contributeNavLabel: "Contribute",
-            [Route.MyContributions]: "My Contributions",
-            [Route.PrivacyPolicy]: "Privacy Policy",
-            [Route.Favorites]: "Favorites",
-            [Route.DeveloperSettings]: "Experimental Settings",
-            buildVersion: "Build v",
-            noInternet: "Internet connection required",
-            contributeAwesomeMessage: "Your Awesome Message",
-            contributeAwesomeMessageLong: "Your awesome message to the world",
-            contributeCountry: "Country",
-            contributeName: "Nickname",
-            contributeSubmit: "Submit",
-            contributeAgreeToConditions: "I have read and agree to the ",
-            contributeConditions: "Terms & Conditions",
-            contributeAnd: " and ",
-            contributePrivacyPolicy: "Privacy Policy",
-            contributionStayTuned:
-                "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)",
-            contributionThanks: "Thanks for your contribution!",
-            contributionMember:
-                "You are a valued member of our awesome community.\nYour message:\n",
-            contributionAlertButton: "Awesome!",
-            notificationsEnable: "Daily notifications",
-            notificationsSetTime: "Notification time",
-            privacyPolicy: "Privacy Policy",
-            viewInBrowser: "View in Web Browser",
-            from: " from ",
-            favoritesEmptyList:
-                "Double tap your first awesome message in {{route}} to add it to your favorites.",
-            favoritesToRoute: "Go to {{route}}",
-            favoritesCancel: "Cancel",
-            favoritesDelete: "Delete Forever",
-            favoritesDeleteDialogText:
-                "Deleting favorites is permanent and cannot be reverted.",
-            favoritesDeleteDialogTitle: "Are you sure?",
-            myContributionsContribute: "Contribute now",
-            myContributionsEmptyList:
-                "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
-            myContributionsCancel: "Cancel",
-            myContributionsDelete: "Delete Forever",
-            myContributionsDeleteDialogText:
-                "Deleting list items is permanent and cannot be reverted.\nNote that deletions do not affect server data. Deletions are only effective on your device.",
-            myContributionsDeleteDialogTitle: "Are you sure?",
-            reportCancelButton: "Cancel",
-            reportConfirmButton: "Report",
-            reportDescription: "Why do you find the content objectionable?",
-            reportReason: "Reason",
-            reportReasonSexual: "Sexual content",
-            reportReasonHateful: "Hateful or abusive content",
-            reportReasonInfringement: "Intellectual property infringement",
-            reportReasonDrugs: "Relating to drugs or similar",
-            reportReasonPII: "Personally identifiable information",
-            reportReasonOther: "Other",
-            reportOtherComment: "Details",
-            reportTitle: "Report as inappropriate",
-            reportThankYouButton: "Close",
-            reportThankYouTitle: "Thanks for Reporting",
-            reportThankYouText:
-                "We are committed to protecting our users and others as well as their rights. We will check your report as soon as possible and take appropriate action.",
-        },
+const en = {
+    default: {
+        ...shared,
+        darkMode: "Dark mode",
+        settings: "Settings",
+        comingSoon: "Coming soon",
+        language: "Language",
+        sendAnalytics: "Send usage statistics",
+        rateTheApp: "Rate the App",
+        settingsGeneral: "General",
+        settingsFeedback: "Feedback",
+        settingsPrivacy: "Privacy",
+        settingsDeveloper: "Developer",
+        settingsAbout: "About",
+        settingsSubmitFeedback: "Provide feedback",
+        bugReportTitle: "Feedback",
+        bugReportCancelButton: "Cancel",
+        bugReportConfirmButton: "Open in Browser",
+        bugReportDescription:
+            "Got some feedback for us? Found a bug? We'd love to hear from you!",
+        copyright1: "Copyright © ",
+        copyright2Company: "Kraenz Software Development",
+        copyright3: "\nMirco Kraenz 2020",
+        [Route.Home]: "Home",
+        [Route.Settings]: "Settings",
+        [Route.Contribute]: "Contribution",
+        contributeNavLabel: "Contribute",
+        [Route.MyContributions]: "My Contributions",
+        [Route.PrivacyPolicy]: "Privacy Policy",
+        [Route.Favorites]: "Favorites",
+        [Route.DeveloperSettings]: "Experimental Settings",
+        buildVersion: "Build v",
+        noInternet: "Internet connection required",
+        contributeAwesomeMessage: "Your Awesome Message",
+        contributeAwesomeMessageLong: "Your awesome message to the world",
+        contributeCountry: "Country",
+        contributeName: "Nickname",
+        contributeSubmit: "Submit",
+        contributeAgreeToConditions: "I have read and agree to the ",
+        contributeConditions: "Terms & Conditions",
+        contributeAnd: " and ",
+        contributePrivacyPolicy: "Privacy Policy",
+        contributionStayTuned:
+            "\n\nBecause of the limited amount of messages we can show, we select contributions by hand. With some luck, your awesome message will be chosen soon, too. So stay tuned! :)",
+        contributionThanks: "Thanks for your contribution!",
+        contributionMember:
+            "You are a valued member of our awesome community.\nYour message:\n",
+        contributionAlertButton: "Awesome!",
+        notificationsEnable: "Daily notifications",
+        notificationsSetTime: "Notification time",
+        privacyPolicy: "Privacy Policy",
+        viewInBrowser: "View in Web Browser",
+        from: " from ",
+        favoritesEmptyList:
+            "Double tap your first awesome message in {{route}} to add it to your favorites.",
+        favoritesToRoute: "Go to {{route}}",
+        favoritesCancel: "Cancel",
+        favoritesDelete: "Delete Forever",
+        favoritesDeleteDialogText:
+            "Deleting favorites is permanent and cannot be reverted.",
+        favoritesDeleteDialogTitle: "Are you sure?",
+        myContributionsContribute: "Contribute now",
+        myContributionsEmptyList:
+            "No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)",
+        myContributionsCancel: "Cancel",
+        myContributionsDelete: "Delete Forever",
+        myContributionsDeleteDialogText:
+            "Deleting list items is permanent and cannot be reverted.\nNote that deletions do not affect server data. Deletions are only effective on your device.",
+        myContributionsDeleteDialogTitle: "Are you sure?",
+        reportCancelButton: "Cancel",
+        reportConfirmButton: "Report",
+        reportDescription: "Why do you find the content objectionable?",
+        reportReason: "Reason",
+        reportReasonSexual: "Sexual content",
+        reportReasonHateful: "Hateful or abusive content",
+        reportReasonInfringement: "Intellectual property infringement",
+        reportReasonDrugs: "Relating to drugs or similar",
+        reportReasonPII: "Personally identifiable information",
+        reportReasonOther: "Other",
+        reportOtherComment: "Details",
+        reportTitle: "Report as inappropriate",
+        reportThankYouButton: "Close",
+        reportThankYouTitle: "Thanks for Reporting",
+        reportThankYouText:
+            "We are committed to protecting our users and others as well as their rights. We will check your report as soon as possible and take appropriate action.",
     },
+    home: {
+        copiedInfo: "Copied to clipboard",
+        copyAppendix: `via ${shared.appTitle}`,
+    },
+};
+
+type Translation = typeof en & {
+    default: Record<Route, string>;
+};
+type LocalizationKeysHome = `home:${keyof Translation["home"]}`;
+type LocalizationKeysDefault = keyof Translation["default"] | Route;
+export type LocalizationKeys = LocalizationKeysHome | LocalizationKeysDefault;
+
+const localization: Record<Language, Translation> = {
+    en,
     de: {
         default: {
             ...shared,
@@ -275,6 +207,10 @@ const localization: {
             reportThankYouTitle: "Vielen Dank für die Meldung",
             reportThankYouText:
                 "Wir sind stets bemüht unsere Nutzer und andere sowie deren Rechte zu schützen. Wir werden deine Meldung so schnell wie möglich prüfen und entsprechende Maßnahmen ergreifen.",
+        },
+        home: {
+            copiedInfo: "In Zwischenablage kopiert",
+            copyAppendix: `über ${shared.appTitle}`,
         },
     },
     ja: {
@@ -362,6 +298,10 @@ const localization: {
             reportThankYouButton: "閉じる",
             reportThankYouTitle: "報告ありがとうございます",
             reportThankYouText: `${shared.appTitle}では、ユーザーを含む皆様の保護に真剣に取り組んでいます。報告を出来るだけ早く確認し、適切な対応を行います。`,
+        },
+        home: {
+            copiedInfo: "クリップボードにコピーしました",
+            copyAppendix: `${shared.appTitle}経由`,
         },
     },
 };
