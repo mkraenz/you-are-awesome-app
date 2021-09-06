@@ -1,7 +1,34 @@
 # You are Awesome App! Daily Motivation Up
 
-<a href='https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width="200"/></a>
+**Community-driven motivational quotes.**
+
+Receive Motivation each day. Boost your Productivity. Share your gratitude to make this world even more awesome. Join our Awesome Community.
+
+How it works:
+Each day you receive a motivational message written by a grateful person around the globe. That's it. No magic. Only gratefulness. Either via push notification or directly in the app.
+
+<a href='https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width="200"/></a>
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40YouareAwesomeA2)](https://twitter.com/YouareAwesomeA2?ref_src=twsrc%5Etfw)
+
+<a href="https://public-div.s3.eu-central-1.amazonaws.com/y3a/home.png" target="_blank">
+  <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/home.png" height="300" alt="you are awesome app home screen">
+</a>
+
+<a href="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favs.png" target="_blank">
+  <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favs.png" height="300" alt="you are awesome app favorites screen">
+</a>
+
+<a href="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favsdark.png" target="_blank">
+  <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favsdark.png" height="300" alt="you are awesome app favorites screen dark theme">
+</a>
+
+<a href="https://public-div.s3.eu-central-1.amazonaws.com/y3a/contribution.png" target="_blank">
+  <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/contribution.png" height="300" alt="you are awesome app contribution screen">
+</a>
+
+<a href="https://public-div.s3.eu-central-1.amazonaws.com/y3a/settings.png" target="_blank">
+  <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/settings.png" height="300" alt="you are awesome app settings screen">
+</a>
 
 ## Production
 
