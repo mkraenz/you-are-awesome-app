@@ -86,8 +86,8 @@ const main = () => {
 
     assertProdOrStage(env);
 
-    incrementBuildVersion();
     const { commitApproved, gitCommitCommand } = askForCommit(env);
+    incrementBuildVersion();
     updateSnapshotTests();
 
     const reviewApproved = autoReview();
