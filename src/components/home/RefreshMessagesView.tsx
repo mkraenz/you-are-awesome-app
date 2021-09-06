@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import React, { FC, ReactNode, useEffect } from "react";
 import {
     RefreshControl,
     SafeAreaView,
@@ -26,34 +26,35 @@ interface Props {
     children: ReactNode;
 }
 
-class RefreshMessagesView extends Component<Props> {
-    public componentDidMount() {
-        this.props.requestFetchMessages(new Date());
-    }
+const RefreshMessagesView: FC<Props> = ({
+    requestFetchMessages,
+    children,
+    refreshing,
+}) => {
+    useEffect(() => {
+        requestFetchMessages(new Date());
+    }, [requestFetchMessages]);
 
-    public render() {
-        const { refreshing, children, requestFetchMessages } = this.props;
-        const handleRefresh = () => {
-            requestFetchMessages(new Date());
-            Analytics.logManualRefresh();
-        };
-        return (
-            <SafeAreaView style={styles.container}>
-                <ScrollView
-                    contentContainerStyle={styles.scrollView}
-                    refreshControl={
-                        <RefreshControl
-                            refreshing={refreshing}
-                            onRefresh={handleRefresh}
-                        />
-                    }
-                >
-                    {children}
-                </ScrollView>
-            </SafeAreaView>
-        );
-    }
-}
+    const handleRefresh = () => {
+        requestFetchMessages(new Date());
+        Analytics.logManualRefresh();
+    };
+    return (
+        <SafeAreaView style={styles.container}>
+            <ScrollView
+                contentContainerStyle={styles.scrollView}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={handleRefresh}
+                    />
+                }
+            >
+                {children}
+            </ScrollView>
+        </SafeAreaView>
+    );
+};
 
 const mapStateToProps: MapStateToProps<Pick<Props, "refreshing">> = (
     state
