@@ -1,7 +1,6 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Dimensions, Keyboard, StyleSheet } from "react-native";
 import { useTheme } from "react-native-paper";
 import TabBarIcon from "../components/navigation/TabBarIcon";
@@ -14,6 +13,7 @@ import MyContributionsScreen from "../screens/MyContributionsScreen";
 import PrivacyPolicyScreen from "../screens/PrivacyPolicyScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import { FullTheme } from "../themes/theme";
+import { useTranslation } from "../utils/useTranslation";
 import NavContainerWithAnalytics from "./NavContainerWithAnalytics";
 import { Route } from "./Route";
 

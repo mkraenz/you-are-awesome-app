@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { List, Paragraph, RadioButton, Subheading } from "react-native-paper";
 import { IMessageContent } from "../../state/state/IMessage";
+import { useTranslation } from "../../utils/useTranslation";
 
 interface Props extends IMessageContent {
     isodate: string;

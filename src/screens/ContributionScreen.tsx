@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";
 import { connect } from "react-redux";
 import { v4 } from "uuid";
@@ -12,6 +11,7 @@ import { contribute } from "../state/action-creators/contribute";
 import { IMessageContent } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { toIsoDateString } from "../utils/toTodayString";
+import { useTranslation } from "../utils/useTranslation";
 
 interface StateProps {
     connectedToInternet: boolean;

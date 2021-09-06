@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { isEmpty } from "lodash";
 import React, { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { FlatList } from "react-native";
 import { Divider } from "react-native-paper";
 import { connect } from "react-redux";
@@ -14,6 +13,7 @@ import { Route } from "../navigation/Route";
 import { deleteMyContributions } from "../state/action-creators/deleteMyContributions";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
+import { useTranslation } from "../utils/useTranslation";
 
 interface Props {
     messages: IMessage[];

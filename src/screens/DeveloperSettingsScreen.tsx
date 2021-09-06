@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import Constants from "expo-constants";
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { Button, Paragraph } from "react-native-paper";
 import { connect } from "react-redux";
 import { Analytics } from "../api/Analytics";
@@ -10,6 +9,7 @@ import { CONFIG } from "../config";
 import { Route } from "../navigation/Route";
 import { toggleOnboardingCompleted } from "../state/action-creators/toggleOnboardingCompleted";
 import { IState } from "../state/state/IState";
+import { useTranslation } from "../utils/useTranslation";
 
 interface Props {
     toggleFirstOpen: typeof toggleOnboardingCompleted;

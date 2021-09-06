@@ -1,7 +1,6 @@
 import { debounce } from "lodash";
 import { DateTime } from "luxon";
 import React, { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import { Divider, Subheading, Switch } from "react-native-paper";
@@ -9,6 +8,7 @@ import { connect } from "react-redux";
 import { changePushNotificationTime } from "../../state/action-creators/changePushNotificationTime";
 import { setPushNotificationsState } from "../../state/action-creators/setPushNotificationState";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
+import { useTranslation } from "../../utils/useTranslation";
 import { at11Am } from "./at11am";
 import SettingsRow from "./SettingsRow";
 

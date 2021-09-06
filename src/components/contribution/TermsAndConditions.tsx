@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, View } from "react-native";
 import { Checkbox, List, Paragraph, useTheme } from "react-native-paper";
 import { Analytics } from "../../api/Analytics";
 import { Color } from "../../themes/theme";
+import { useTranslation } from "../../utils/useTranslation";
 
 const styles = StyleSheet.create({
     link: {

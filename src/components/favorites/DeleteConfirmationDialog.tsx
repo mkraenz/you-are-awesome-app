@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { Button, Dialog, Paragraph, Portal } from "react-native-paper";
+import { useTranslation } from "../../utils/useTranslation";
 
 interface Props {
     visible: boolean;

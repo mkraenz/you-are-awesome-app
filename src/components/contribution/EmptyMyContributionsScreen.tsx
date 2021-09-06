@@ -1,10 +1,10 @@
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Button, Paragraph, useTheme } from "react-native-paper";
 import { Route } from "../../navigation/Route";
+import { useTranslation } from "../../utils/useTranslation";
 import Layout from "../common/Layout";
 
 const styles = StyleSheet.create({
