@@ -89,6 +89,7 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     return (
         <Layout
             route={Route.Home}
+            title={t("appTitle")}
             appbarProps={{
                 actionIcon: "flag",
                 onActionPress: handleReportPressed,
