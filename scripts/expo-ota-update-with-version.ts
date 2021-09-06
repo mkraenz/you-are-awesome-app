@@ -41,12 +41,6 @@ function gitStageChanges() {
     shell.exec(
         "git add ./src/utils/version.json __tests__/screens/__snapshots__/SettingsScreen.test.tsx.snap"
     );
-    console.log(
-        "ACTION REQUIRED: Change issue number and run the following command:\n"
-    );
-    console.log(
-        `git commit -m "RELEASE #TODO build version ${nextBuildNumber}"`
-    );
 }
 
 const updateSnapshotTests = () => {
@@ -86,8 +80,8 @@ const main = () => {
 
     assertProdOrStage(env);
 
-    incrementBuildVersion();
     const { commitApproved, gitCommitCommand } = askForCommit(env);
+    incrementBuildVersion();
     updateSnapshotTests();
 
     const reviewApproved = autoReview();

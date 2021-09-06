@@ -46,8 +46,8 @@ function* logAnalyticsWorkerSaga(
                 yield call(
                     Analytics.logPushNotifications,
                     notificationsEnabled,
-                    notifyTime.getHours(),
-                    notifyTime.getMinutes()
+                    notifyTime.getUTCHours(),
+                    notifyTime.getUTCMinutes()
                 );
                 break;
 
@@ -56,8 +56,8 @@ function* logAnalyticsWorkerSaga(
                 yield call(
                     Analytics.logPushNotifications,
                     true,
-                    notificationTime.getHours(),
-                    notificationTime.getMinutes()
+                    notificationTime.getUTCHours(),
+                    notificationTime.getUTCMinutes()
                 );
                 break;
 

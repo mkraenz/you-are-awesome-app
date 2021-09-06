@@ -2,18 +2,18 @@ import axios from "axios";
 import { getExpoPushTokenAsync } from "expo-notifications";
 import { ApiFeatureFlags, CONFIG } from "../config";
 
-export const registerForPushNotifications = async (
+export const subscribeToPushNotifications = async (
     time: Date,
-    disabledFlags: ApiFeatureFlags<"registerPushNotifications"> = CONFIG.disableApiCall
+    disabledFlags: ApiFeatureFlags<"subscribePushNotifications"> = CONFIG.disableApiCall
 ) => {
-    if (disabledFlags.all || disabledFlags.registerPushNotifications) {
-        console.log("API call registerPushNotifications disabled. Skipping");
+    if (disabledFlags.all || disabledFlags.subscribePushNotifications) {
+        console.log("API call subscribePushNotifications disabled. Skipping");
         return;
     }
 
     let token = await getExpoPushTokenAsync();
-    await axios.post(
-        CONFIG.uri.registerForPushNotifications,
+    await axios.put(
+        CONFIG.uri.subscribeToPushNotifications,
         {
             token: token.data,
             hour: time.getUTCHours(),
@@ -21,7 +21,6 @@ export const registerForPushNotifications = async (
         },
         {
             headers: {
-                Accept: "application/json",
                 "Content-Type": "application/json",
             },
         }

@@ -35,7 +35,7 @@ it("registers for push notifications and ends the onboarding", async () => {
         },
     });
 
-    const { getByText } = renderComponent(store);
+    renderComponent(store);
 
     expect(store.getActions()).toEqual([
         {

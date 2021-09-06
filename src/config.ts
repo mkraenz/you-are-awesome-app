@@ -9,8 +9,8 @@ const shared = {
         fetchMessages:
             "https://youareawesomeapp-current-message.s3.eu-central-1.amazonaws.com/messages.json",
         submitContribution: `${backendUri}contributions`,
-        registerForPushNotifications: `${backendUri}push-notifications/register`,
-        unregisterFromPushNotifications: `${backendUri}push-notifications/unregister`,
+        subscribeToPushNotifications: `${backendUri}push-notifications/subscribe`,
+        unsubscribeFromPushNotifications: `${backendUri}push-notifications/unsubscribe`,
         reportInappropriateContent: `${backendUri}reportinappropriate`,
         playstoreUrl:
             "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
@@ -47,8 +47,8 @@ const prodConfig = {
         all: false,
         reportInappropriateContent: false,
         submitContribution: false,
-        registerPushNotifications: false,
-        unregisterPushNotifications: false,
+        subscribePushNotifications: false,
+        unsubscribePushNotifications: false,
     },
 };
 
@@ -77,8 +77,8 @@ const stageConfig: typeof prodConfig = {
         all: false,
         reportInappropriateContent: false,
         submitContribution: false,
-        registerPushNotifications: false,
-        unregisterPushNotifications: false,
+        subscribePushNotifications: false,
+        unsubscribePushNotifications: false,
     },
 };
 
@@ -107,8 +107,8 @@ const devConfig: typeof prodConfig = {
         all: false,
         reportInappropriateContent: false,
         submitContribution: false,
-        registerPushNotifications: false,
-        unregisterPushNotifications: false,
+        subscribePushNotifications: false,
+        unsubscribePushNotifications: false,
     },
 };
 
