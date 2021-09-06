@@ -12,7 +12,7 @@ import HomeScreen from "../screens/HomeScreen";
 import MyContributionsScreen from "../screens/MyContributionsScreen";
 import PrivacyPolicyScreen from "../screens/PrivacyPolicyScreen";
 import SettingsScreen from "../screens/SettingsScreen";
-import { FullTheme } from "../themes/theme";
+import { Color, FullTheme } from "../themes/theme";
 import { useTranslation } from "../utils/useTranslation";
 import NavContainerWithAnalytics from "./NavContainerWithAnalytics";
 import { Route } from "./Route";
@@ -102,7 +102,7 @@ const NavigationApp = () => {
                     iconStyle: styles.icon,
                     renderIndicator: () => null,
                     labelStyle: styles.label,
-                    activeTintColor: "white",
+                    activeTintColor: Color.White,
                 }}
                 initialLayout={{ width: Dimensions.get("window").width }}
             >

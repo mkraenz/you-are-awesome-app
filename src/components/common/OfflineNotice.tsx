@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { StyleSheet, View } from "react-native";
 import { Text, useTheme } from "react-native-paper";
+import { Color } from "../../themes/theme";
 import { useTranslation } from "../../utils/useTranslation";
 
 const styles = StyleSheet.create({
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     text: {
-        color: "white",
+        color: Color.White,
     },
 });
 

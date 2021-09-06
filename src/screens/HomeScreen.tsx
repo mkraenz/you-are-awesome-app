@@ -25,7 +25,7 @@ import { Route } from "../navigation/Route";
 import { addFavorite } from "../state/action-creators/addFavorite";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
-import { FullTheme } from "../themes/theme";
+import { Color, FullTheme } from "../themes/theme";
 import { useTranslation } from "../utils/useTranslation";
 
 const styles = StyleSheet.create({
@@ -107,10 +107,10 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                         <View style={styles.container}>
                             <Card style={cardStyle}>
                                 <Card.Content style={styles.bubble}>
-                                    <Title style={{ color: "white" }}>
+                                    <Title style={{ color: Color.White }}>
                                         {text}
                                     </Title>
-                                    <Paragraph style={{ color: "white" }}>
+                                    <Paragraph style={{ color: Color.White }}>
                                         {contributor}
                                     </Paragraph>
 
