@@ -36,7 +36,7 @@ it("calls analytics and linking when confirm button clicked", async () => {
             />
         </LocalizedMockPaperProvider>
     );
-    const confirmButton = await findByText(i18next.t("bugReportConfirmButton"));
+    const confirmButton = await findByText(i18next.t("bugReport:confirm"));
     await act(async () => {});
 
     fireEvent.press(confirmButton);
@@ -55,7 +55,7 @@ it("calls dismiss callback when cancel button clicked", async () => {
             />
         </LocalizedMockPaperProvider>
     );
-    const cancelButton = await findByText(i18next.t("bugReportCancelButton"));
+    const cancelButton = await findByText(i18next.t("bugReport:cancel"));
     await act(async () => {});
     expect(dismissMock).not.toHaveBeenCalled();
 

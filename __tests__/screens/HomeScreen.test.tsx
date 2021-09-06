@@ -117,6 +117,6 @@ it("opens the feedback/bug dialog when clicking the bug button in the appbar", a
     const reportButton = await findByA11yLabel("report a bug");
     fireEvent.press(reportButton);
 
-    await findByText(i18next.t("bugReportTitle"));
-    await findByText(i18next.t("bugReportDescription"));
+    await findByText(i18next.t("bugReport:title"));
+    await findByText(i18next.t("bugReport:description"));
 });

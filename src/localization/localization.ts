@@ -36,11 +36,6 @@ const en = {
         settingsDeveloper: "Developer",
         settingsAbout: "About",
         settingsSubmitFeedback: "Provide feedback",
-        bugReportTitle: "Feedback",
-        bugReportCancelButton: "Cancel",
-        bugReportConfirmButton: "Open in Browser",
-        bugReportDescription:
-            "Got some feedback for us? Found a bug? We'd love to hear from you!",
         copyright1: "Copyright © ",
         copyright2Company: "Kraenz Software Development",
         copyright3: "\nMirco Kraenz 2020",
@@ -111,14 +106,25 @@ const en = {
         copiedInfo: "Copied to clipboard",
         copyAppendix: `via ${shared.appTitle}`,
     },
+    bugReport: {
+        title: "Feedback",
+        cancel: "Cancel",
+        confirm: "Open in Browser",
+        description:
+            "Got some feedback for us? Found a bug? We'd love to hear from you!",
+    },
 };
 
 type Translation = typeof en & {
     default: Record<Route, string>;
 };
-type LocalizationKeysHome = `home:${keyof Translation["home"]}`;
 type LocalizationKeysDefault = keyof Translation["default"] | Route;
-export type LocalizationKeys = LocalizationKeysHome | LocalizationKeysDefault;
+type LocalizationKeysHome = `home:${keyof Translation["home"]}`;
+type LocalizationKeysBugReport = `bugReport:${keyof Translation["bugReport"]}`;
+export type LocalizationKeys =
+    | LocalizationKeysHome
+    | LocalizationKeysDefault
+    | LocalizationKeysBugReport;
 
 const localization: Record<Language, Translation> = {
     en,
@@ -137,11 +143,6 @@ const localization: Record<Language, Translation> = {
             settingsDeveloper: "Entwickler",
             settingsAbout: "Über uns",
             settingsSubmitFeedback: "Feedback geben",
-            bugReportTitle: "Feedback",
-            bugReportCancelButton: "Abbrechen",
-            bugReportConfirmButton: "Im Browser öffnen",
-            bugReportDescription:
-                "Hast du Feedback für uns? Oder etwa einen Bug entdeckt? Wir freuen uns von dir zu hören!",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -212,6 +213,13 @@ const localization: Record<Language, Translation> = {
             copiedInfo: "In Zwischenablage kopiert",
             copyAppendix: `über ${shared.appTitle}`,
         },
+        bugReport: {
+            title: "Feedback",
+            cancel: "Abbrechen",
+            confirm: "Im Browser öffnen",
+            description:
+                "Hast du Feedback für uns? Oder etwa einen Bug entdeckt? Wir freuen uns von dir zu hören!",
+        },
     },
     ja: {
         default: {
@@ -228,11 +236,6 @@ const localization: Record<Language, Translation> = {
             settingsDeveloper: "開発者設定",
             settingsAbout: "アプリについて",
             settingsSubmitFeedback: "フィードバックを提供",
-            bugReportTitle: "フィードバック",
-            bugReportCancelButton: "キャンセル",
-            bugReportConfirmButton: "ブラウザーで開く",
-            bugReportDescription:
-                "フィードバックを提供しますか？バグを見つかりましたか？ご連絡をお願いします。",
             copyright1: "Copyright © ",
             copyright2Company: "Kraenz Software Development",
             copyright3: "\nMirco Kraenz 2020",
@@ -302,6 +305,13 @@ const localization: Record<Language, Translation> = {
         home: {
             copiedInfo: "クリップボードにコピーしました",
             copyAppendix: `${shared.appTitle}経由`,
+        },
+        bugReport: {
+            title: "フィードバック",
+            cancel: "キャンセル",
+            confirm: "ブラウザーで開く",
+            description:
+                "フィードバックを提供しますか？バグを見つかりましたか？ご連絡をお願いします。",
         },
     },
 };

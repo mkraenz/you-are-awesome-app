@@ -1,6 +1,6 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { Button, Dialog, Paragraph } from "react-native-paper";
+import { useTranslation } from "../../utils/useTranslation";
 
 interface Props {
     visible: boolean;
@@ -13,16 +13,14 @@ const BugReportDialog = ({ visible, handleClose, handleConfirm }: Props) => {
 
     return (
         <Dialog visible={visible} onDismiss={handleClose}>
-            <Dialog.Title>{t("bugReportTitle")}</Dialog.Title>
+            <Dialog.Title>{t("bugReport:title")}</Dialog.Title>
             <Dialog.Content>
-                <Paragraph>{t("bugReportDescription")}</Paragraph>
+                <Paragraph>{t("bugReport:description")}</Paragraph>
             </Dialog.Content>
             <Dialog.Actions>
-                <Button onPress={handleClose}>
-                    {t("bugReportCancelButton")}
-                </Button>
+                <Button onPress={handleClose}>{t("bugReport:cancel")}</Button>
                 <Button onPress={handleConfirm}>
-                    {t(`bugReportConfirmButton`)}
+                    {t(`bugReport:confirm`)}
                 </Button>
             </Dialog.Actions>
         </Dialog>
