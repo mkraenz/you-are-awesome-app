@@ -2,8 +2,8 @@ import { fork } from "redux-saga/effects";
 import contributeSaga from "./contributeSaga";
 import fetchMessagesSaga from "./fetchMessagesSaga";
 import logAnalyticsSaga from "./logAnalyticsSaga";
-import subscribeOrUnsubscribePushNotificationsSaga from "./push-notifications/registerOrUnregisterPushNotificationsSaga";
 import reportAsInappropriateSaga from "./reportAsInappropriateSaga";
+import subscribeOrUnsubscribePushNotificationsSaga from "./subscribeOrUnsubscribePushNotificationsSaga";
 import toggleAnalyticsSaga from "./toggleAnalyticsSaga";
 
 export default function* rootSaga() {

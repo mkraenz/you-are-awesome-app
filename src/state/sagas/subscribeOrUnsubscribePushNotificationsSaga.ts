@@ -1,12 +1,12 @@
 import { call, takeLatest } from "redux-saga/effects";
-import { askNotificationPermissions } from "../../../api/native-api/askNotificationPermissions";
-import { subscribeToPushNotifications } from "../../../api/subscribeToPushNotifications";
-import { unsubscribeFromPushNotifications } from "../../../api/unsubscribeFromPushNotifications";
-import { ActionType } from "../../actions/ActionType";
+import { askNotificationPermissions } from "../../api/native-api/askNotificationPermissions";
+import { subscribeToPushNotifications } from "../../api/subscribeToPushNotifications";
+import { unsubscribeFromPushNotifications } from "../../api/unsubscribeFromPushNotifications";
+import { ActionType } from "../actions/ActionType";
 import {
     IChangePushNotificationTime,
     ISetPushNotificationsState,
-} from "../../actions/IAppAction";
+} from "../actions/IAppAction";
 
 export default subscribeOrUnsubscribePushNotificationsSaga;
 
