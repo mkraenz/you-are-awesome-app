@@ -60,8 +60,12 @@ const askForCommit = (env: "stage" | "prod") => {
     const issueNumber = readline.questionInt(
         "Insert issue number for commit. (without #)\n"
     );
-    const maybeStageSuffix = env === "stage" ? "-STAGE" : "";
-    const gitCommitCommand = `git commit -m "RELEASE${maybeStageSuffix} #${issueNumber} build version ${nextBuildNumber}"`;
+    const gitCommitCommandForStageEnv = `git commit -m "chore(#${issueNumber}): stage-release build version ${nextBuildNumber}"`;
+    const gitCommitCommandForProdEnv = `git commit -m "fix(#${issueNumber}): RELEASE build version ${nextBuildNumber}"`;
+    const gitCommitCommand =
+        env === "stage"
+            ? gitCommitCommandForStageEnv
+            : gitCommitCommandForProdEnv;
     const confirmation =
         readline.question(`Do you wish to git commit with the following command?
 
