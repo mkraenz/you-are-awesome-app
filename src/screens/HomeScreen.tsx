@@ -3,10 +3,7 @@ import React, { FC, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
     LongPressGestureHandler,
-    LongPressGestureHandlerStateChangeEvent,
-    State,
     TapGestureHandler,
-    TapGestureHandlerStateChangeEvent,
 } from "react-native-gesture-handler";
 import {
     Card,
@@ -66,25 +63,19 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     const cardStyle = getCardStyle(theme);
     const { author, text, country, id } = msg;
 
-    const likeOnDoubleTap = (event: TapGestureHandlerStateChangeEvent) => {
-        if (event.nativeEvent.state === State.ACTIVE) {
-            addFavorite(msg);
-            showHeart(true);
-        }
+    const likeMessage = () => {
+        addFavorite(msg);
+        showHeart(true);
     };
     const contributor = `${author}${t("from")}${country}`;
     const handleReportPressed = () => showReportDialog(!reportDialogOpen);
     const toggleSnackbar = () => showSnackbar(!snackbarShown);
-    const copyToClipboardOnLongPress = ({
-        nativeEvent,
-    }: LongPressGestureHandlerStateChangeEvent) => {
-        if (nativeEvent.state === State.ACTIVE) {
-            const copiedText = `${text} - ${contributor} - ${t(
-                "home:copyAppendix"
-            )}`;
-            Clipboard.setString(copiedText);
-            toggleSnackbar();
-        }
+    const copyToClipboard = () => {
+        const copiedText = `${text} - ${contributor} - ${t(
+            "home:copyAppendix"
+        )}`;
+        Clipboard.setString(copiedText);
+        toggleSnackbar();
     };
     return (
         <Layout
@@ -96,15 +87,12 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
             }}
         >
             <RefreshMessagesView>
-                <TapGestureHandler
-                    onHandlerStateChange={likeOnDoubleTap}
-                    numberOfTaps={2}
-                >
-                    <LongPressGestureHandler
-                        onHandlerStateChange={copyToClipboardOnLongPress}
-                        minDurationMs={600}
-                    >
-                        <View style={styles.container}>
+                <TapGestureHandler onActivated={likeMessage} numberOfTaps={2}>
+                    <LongPressGestureHandler onActivated={copyToClipboard}>
+                        <View
+                            style={styles.container}
+                            accessibilityLabel="long press to copy message, double tap to add to favorites"
+                        >
                             <Card style={cardStyle}>
                                 <Card.Content style={styles.bubble}>
                                     <Title style={{ color: Color.White }}>

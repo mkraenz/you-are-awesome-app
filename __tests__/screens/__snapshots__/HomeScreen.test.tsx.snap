@@ -324,6 +324,7 @@ exports[`renders correctly 1`] = `
           <RCTRefreshControl />
           <View>
             <View
+              accessibilityLabel="long press to copy message, double tap to add to favorites"
               collapsable={false}
               onGestureHandlerEvent={[Function]}
               onGestureHandlerStateChange={[Function]}
