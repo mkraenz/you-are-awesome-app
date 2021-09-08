@@ -5,7 +5,7 @@ import {
     ScrollView,
     StyleSheet,
 } from "react-native";
-import { Snackbar } from "react-native-paper";
+import { Snackbar, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import { Analytics } from "../../api/Analytics";
 import { requestFetchMessages } from "../../state/action-creators/requestFetchMessages";
@@ -41,6 +41,7 @@ const RefreshMessagesView: FC<Props> = ({
     const [snackbarShown, showSnackbar] = useState(false);
     const { t } = useTranslation();
     const toggleSnackbar = () => showSnackbar(!snackbarShown);
+    const theme = useTheme();
 
     const handleRefresh = () => {
         if (!internetConnected) {
@@ -66,6 +67,7 @@ const RefreshMessagesView: FC<Props> = ({
                     visible={snackbarShown}
                     onDismiss={toggleSnackbar}
                     duration={7000}
+                    style={{ backgroundColor: theme.colors.error }}
                 >
                     {t("home:fetchFailedBecauseOffline")}
                 </Snackbar>
