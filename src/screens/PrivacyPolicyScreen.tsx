@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet } from "react-native";
 import { Button } from "react-native-paper";
 import { WebView } from "react-native-webview";
 import { Analytics } from "../api/Analytics";
 import Layout from "../components/common/Layout";
 import { Route } from "../navigation/Route";
+import { useTranslation } from "../utils/useTranslation";
 
 const styles = StyleSheet.create({
     viewInBrowserButton: {

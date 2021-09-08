@@ -116,7 +116,7 @@ exports[`renders correctly 1`] = `
               ]
             }
           >
-            You are Awesome App!
+            My test screen
           </Text>
         </View>
         <View

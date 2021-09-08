@@ -1,5 +1,4 @@
 import React, { FC, Fragment, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Divider, Menu, Subheading } from "react-native-paper";
 import { connect } from "react-redux";
 import { CONFIG } from "../../config";
@@ -9,6 +8,7 @@ import {
 } from "../../localization/localization";
 import { setLanguage } from "../../state/action-creators/setLanguage";
 import { IState } from "../../state/state/IState";
+import { useTranslation } from "../../utils/useTranslation";
 import SettingsRow from "./SettingsRow";
 
 interface Props {

@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { Linking, StyleSheet, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Divider, List, Paragraph, Switch } from "react-native-paper";
@@ -18,6 +17,7 @@ import { toggleAnalytics } from "../state/action-creators/toggleAnalytics";
 import { toggleDarkTheme } from "../state/action-creators/toggleDarkTheme";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { Color } from "../themes/theme";
+import { useTranslation } from "../utils/useTranslation";
 import { jsBuildNumber } from "../utils/version.json";
 
 const styles = StyleSheet.create({

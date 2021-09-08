@@ -1,6 +1,5 @@
 import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import React, { FC, Fragment, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import {
     Button,
@@ -14,6 +13,8 @@ import { connect } from "react-redux";
 import { reportAsInappropriate } from "../../state/action-creators/reportAsInappropriate";
 import { IState } from "../../state/state/IState";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
+import { GetArrayElementType } from "../../utils/ts/GetArrayElementType";
+import { useTranslation } from "../../utils/useTranslation";
 import ReportThankYouDialog from "./ReportThankYouDialog";
 
 interface Props {
@@ -33,7 +34,9 @@ const reasons = [
     "reportReasonDrugs",
     "reportReasonPII",
     otherReason,
-];
+] as const;
+
+type Reason = GetArrayElementType<typeof reasons>;
 
 const styles = StyleSheet.create({
     downIcon: {
@@ -62,7 +65,7 @@ const ReportDialog: FC<Props> = ({
     noInternet,
 }) => {
     const [reasonsOpen, showReasons] = useState(false);
-    const [reason, setReason] = useState("");
+    const [reason, setReason] = useState("" as Reason | "");
     const [comment, setComment] = useState("");
     const [thankYouVisible, showThankYou] = useState(false);
 
@@ -103,7 +106,7 @@ const ReportDialog: FC<Props> = ({
             style={styles.reasonsInput}
             onChangeText={undefined}
             editable={false}
-            value={t(reason)}
+            value={t(reason as Reason)}
         />
     );
 

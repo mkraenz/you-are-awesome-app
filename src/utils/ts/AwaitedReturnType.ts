@@ -7,9 +7,8 @@ import { ExpectSupertype } from "./Expect";
  * const fn = () => Promise.resolve("Hi"); // fn: () => Promise<string>
  * const y: AwaitedReturnType<typeof fn>; // y: string
  */
-export type AwaitedReturnType<
-    X extends (...args: any) => Promise<any>
-> = ReturnType<X> extends Promise<infer P> ? P : never;
+export type AwaitedReturnType<X extends (...args: any) => Promise<any>> =
+    ReturnType<X> extends Promise<infer P> ? P : never;
 
 const unitTest = () => {
     const fn = () => Promise.resolve("Hi");

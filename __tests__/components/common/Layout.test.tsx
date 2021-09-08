@@ -15,7 +15,7 @@ it("renders correctly", () => {
     const tree = renderer
         .create(
             <LocalizedMockPaperProvider>
-                <Layout route={Route.Home} />
+                <Layout route={Route.Home} title={"My test screen"} />
             </LocalizedMockPaperProvider>
         )
         .toJSON();

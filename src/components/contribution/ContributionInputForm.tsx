@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Button, TextInput, useTheme } from "react-native-paper";
@@ -7,6 +6,7 @@ import { connect } from "react-redux";
 import { IMessageContent } from "../../state/state/IMessage";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
 import { Color } from "../../themes/theme";
+import { useTranslation } from "../../utils/useTranslation";
 import TermsAndConditions from "./TermsAndConditions";
 
 const styles = StyleSheet.create({

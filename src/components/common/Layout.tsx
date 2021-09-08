@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Portal, Surface, useTheme } from "react-native-paper";
 import { openFeedbackForm } from "../../api/openFeedbackForm";
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
 
 interface Props {
     route: Route;
-    title?: string;
+    title: string;
     appbarProps?: Omit<MyAppbarProps, "title" | "onBugActionPress">;
     containerStyleOverwrites?: { paddingLeft: number };
 }
@@ -34,7 +33,6 @@ const Layout: FC<Props> = ({
     containerStyleOverwrites,
 }) => {
     const [bugReportOpen, setBugReportOpen] = useState(false);
-    const { t } = useTranslation();
     const theme = useTheme();
 
     const containerStyles = {
@@ -58,7 +56,7 @@ const Layout: FC<Props> = ({
         <Surface style={containerStyles}>
             <MyAppbar
                 {...appbarProps}
-                title={title || t("appTitle")}
+                title={title}
                 onBugActionPress={toggleBugReportOpen}
             />
             <View style={contentContainerStyles}>

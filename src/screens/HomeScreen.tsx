@@ -1,12 +1,18 @@
+import Clipboard from "expo-clipboard";
 import React, { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import {
-    State,
+    LongPressGestureHandler,
     TapGestureHandler,
-    TapGestureHandlerStateChangeEvent,
 } from "react-native-gesture-handler";
-import { Card, Paragraph, Portal, Title, useTheme } from "react-native-paper";
+import {
+    Card,
+    Paragraph,
+    Portal,
+    Snackbar,
+    Title,
+    useTheme,
+} from "react-native-paper";
 import { connect } from "react-redux";
 import Layout from "../components/common/Layout";
 import AnimatedLikeIcon from "../components/home/AnimatedLikeIcon";
@@ -16,7 +22,8 @@ import { Route } from "../navigation/Route";
 import { addFavorite } from "../state/action-creators/addFavorite";
 import { IMessage } from "../state/state/IMessage";
 import { MapStateToProps } from "../state/state/MapStateToProps";
-import { FullTheme } from "../themes/theme";
+import { Color, FullTheme } from "../themes/theme";
+import { useTranslation } from "../utils/useTranslation";
 
 const styles = StyleSheet.create({
     container: {
@@ -49,54 +56,73 @@ interface Props {
 
 const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     const [heartShown, showHeart] = useState(false);
+    const [snackbarShown, showSnackbar] = useState(false);
     const [reportDialogOpen, showReportDialog] = useState(false);
     const theme = useTheme() as FullTheme;
     const { t } = useTranslation();
     const cardStyle = getCardStyle(theme);
     const { author, text, country, id } = msg;
 
-    const likeOnDoubleTap = (event: TapGestureHandlerStateChangeEvent) => {
-        if (event.nativeEvent.state === State.ACTIVE) {
-            addFavorite(msg);
-            showHeart(true);
-        }
+    const likeMessage = () => {
+        addFavorite(msg);
+        showHeart(true);
     };
+    const contributor = `${author}${t("from")}${country}`;
     const handleReportPressed = () => showReportDialog(!reportDialogOpen);
+    const toggleSnackbar = () => showSnackbar(!snackbarShown);
+    const copyToClipboard = () => {
+        const copiedText = `${text} - ${contributor} - ${t(
+            "home:copyAppendix"
+        )}`;
+        Clipboard.setString(copiedText);
+        toggleSnackbar();
+    };
     return (
         <Layout
             route={Route.Home}
+            title={t("appTitle")}
             appbarProps={{
                 actionIcon: "flag",
                 onActionPress: handleReportPressed,
             }}
         >
             <RefreshMessagesView>
-                <TapGestureHandler
-                    onHandlerStateChange={likeOnDoubleTap}
-                    numberOfTaps={2}
-                >
-                    <View style={styles.container}>
-                        <Card style={cardStyle}>
-                            <Card.Content style={styles.bubble}>
-                                <Title style={{ color: "white" }}>{text}</Title>
-                                <Paragraph style={{ color: "white" }}>
-                                    {author}
-                                    {t("from")}
-                                    {country}
-                                </Paragraph>
+                <TapGestureHandler onActivated={likeMessage} numberOfTaps={2}>
+                    <LongPressGestureHandler onActivated={copyToClipboard}>
+                        <View
+                            style={styles.container}
+                            accessibilityLabel="long press to copy message, double tap to add to favorites"
+                        >
+                            <Card style={cardStyle}>
+                                <Card.Content style={styles.bubble}>
+                                    <Title style={{ color: Color.White }}>
+                                        {text}
+                                    </Title>
+                                    <Paragraph style={{ color: Color.White }}>
+                                        {contributor}
+                                    </Paragraph>
 
-                                {heartShown && (
-                                    <AnimatedLikeIcon
-                                        style={styles.heartIcon}
-                                        onFinished={() => showHeart(false)}
-                                        maxIconSize={200}
-                                    />
-                                )}
-                            </Card.Content>
-                        </Card>
-                    </View>
+                                    {heartShown && (
+                                        <AnimatedLikeIcon
+                                            style={styles.heartIcon}
+                                            onFinished={() => showHeart(false)}
+                                            maxIconSize={200}
+                                        />
+                                    )}
+                                </Card.Content>
+                            </Card>
+                        </View>
+                    </LongPressGestureHandler>
                 </TapGestureHandler>
+                <Snackbar
+                    visible={snackbarShown}
+                    onDismiss={toggleSnackbar}
+                    duration={4000}
+                >
+                    {t("home:copiedInfo")}
+                </Snackbar>
             </RefreshMessagesView>
+
             <Portal>
                 {/* push Portal to top-level to test Dialogs individually. */}
                 <ReportDialog

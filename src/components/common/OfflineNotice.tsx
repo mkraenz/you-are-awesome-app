@@ -1,7 +1,8 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { Text, useTheme } from "react-native-paper";
+import { Color } from "../../themes/theme";
+import { useTranslation } from "../../utils/useTranslation";
 
 const styles = StyleSheet.create({
     container: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     text: {
-        color: "white",
+        color: Color.White,
     },
 });
 

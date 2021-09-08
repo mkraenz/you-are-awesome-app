@@ -16,7 +16,6 @@ export type FullTheme = typeof DefaultTheme &
     };
 
 export enum Color {
-    LightBlue = "#89cff0",
     Blue = "#1084ff",
     Grey = "#272727",
     LightGrey = "grey", // #808080
@@ -30,6 +29,7 @@ export const lightTheme: FullTheme = {
     colors: {
         ...NavDefaultTheme.colors,
         ...DefaultTheme.colors,
+        onSurface: Color.Blue,
         primary: Color.Blue,
         accentedCard: NavDefaultTheme.colors.card,
         disabledItemText: Color.Grey,
@@ -46,6 +46,7 @@ export const darkTheme: FullTheme = {
         ...NavDarkTheme.colors,
         ...DarkTheme.colors,
         primary: Color.Blue,
+        onSurface: Color.Blue,
         card: DarkTheme.colors.surface,
         accentedCard: Color.Grey,
         disabledItemText: Color.Grey,
