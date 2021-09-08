@@ -105,6 +105,8 @@ const en = {
     home: {
         copiedInfo: "Copied to clipboard",
         copyAppendix: `via ${shared.appTitle}`,
+        fetchFailedBecauseOffline:
+            "Fetching today's message failed. Network connection required.",
     },
     bugReport: {
         title: "Feedback",
@@ -212,6 +214,8 @@ const localization: Record<Language, Translation> = {
         home: {
             copiedInfo: "In Zwischenablage kopiert",
             copyAppendix: `über ${shared.appTitle}`,
+            fetchFailedBecauseOffline:
+                "Abruf der heutige Nachricht schlug fehl. Internetverbindung benötigt.",
         },
         bugReport: {
             title: "Feedback",
@@ -305,6 +309,8 @@ const localization: Record<Language, Translation> = {
         home: {
             copiedInfo: "クリップボードにコピーしました",
             copyAppendix: `${shared.appTitle}経由`,
+            fetchFailedBecauseOffline:
+                "今日のメッセジの取得に失敗しました。インターネットに接続が必要です。",
         },
         bugReport: {
             title: "フィードバック",
