@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/proSingularity/you-are-awesome-app/compare/v1.1.0...v1.1.1) (2021-09-09)
+
+
+### Bug Fixes
+
+* **#556:** stop loading spinner when offline. show information whats wrong ([afebd98](https://github.com/proSingularity/you-are-awesome-app/commit/afebd9816561afd46a59ca7121617fb8eee341cb)), closes [#556](https://github.com/proSingularity/you-are-awesome-app/issues/556)
+
 # [1.1.0](https://github.com/proSingularity/you-are-awesome-app/compare/v1.0.1...v1.1.0) (2021-09-08)
 
 
