@@ -86,11 +86,10 @@ const main = () => {
 
     const reviewApproved = autoReview();
     if (reviewApproved) {
-        publishToChannel(env);
         gitStageChanges();
-
         if (commitApproved) {
             shell.exec(gitCommitCommand);
+            publishToChannel(env);
             shell.exec(gitPushCommand);
         }
     } else {
