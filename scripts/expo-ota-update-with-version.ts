@@ -60,13 +60,8 @@ const askForCommit = (env: "stage" | "prod") => {
     const issueNumber = readline.questionInt(
         "Insert issue number for commit. (without #)\n"
     );
-    const gitCommitCommandForStageEnv = `git commit -m "chore(#${issueNumber}): stage-release build version ${nextBuildNumber}"`;
-    // using fix() type for prod release to force at least a patch release with semantic-release
-    const gitCommitCommandForProdEnv = `git commit -m "fix(#${issueNumber}): release build version ${nextBuildNumber}"`;
-    const gitCommitCommand =
-        env === "stage"
-            ? gitCommitCommandForStageEnv
-            : gitCommitCommandForProdEnv;
+    const maybePrefix = env === "stage" ? "stage-" : "";
+    const gitCommitCommand = `git commit -m "chore(#${issueNumber}): ${maybePrefix}release build version ${nextBuildNumber}"`;
     const confirmation =
         readline.question(`Do you wish to git commit with the following command?
 
