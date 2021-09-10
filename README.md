@@ -30,6 +30,45 @@ Each day you receive a motivational message written by a grateful person around 
   <img src="https://public-div.s3.eu-central-1.amazonaws.com/y3a/favsdark.png" height="300" alt="you are awesome app favorites screen dark theme">
 </a>
 
+## Getting Started
+
+### Prerequisites
+
+- [NodeJS](https://nodejs.org/en/) installed. (recommended versions are 12 or 14)
+- [yarn](https://yarnpkg.com/) package manager installed
+- Linux or MacOS
+
+Please contact the repo owner for Windows support.
+
+### Installation
+
+```sh
+git clone https://github.com/proSingularity/you-are-awesome-app.git
+# Make sure to use yarn instead of npm
+yarn quick-setup
+yarn dev
+# a QR code will appear in the console
+```
+
+- On your Android or iOS phone, install the [Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent) app.
+- With the `Expo Go` app, scan the QR code.
+- `You are Awesome App!` will be started inside Expo Go.
+- Whenever you change a source code file and save, the app on your phone will be updated as well.
+- If it does not refresh automatically, trigger a hard-reload by hitting the `R` key in the terminal you're running `yarn dev` from.
+
+For a walkthrough with pictures, see [Expo Docs Walkthrough](https://docs.expo.dev/introduction/walkthrough/#open-the-project-with-the-expo-go).
+
+### More Advanced
+
+#### Emulator vs Device
+
+Alternative to `Expo Go`, you can run setup an Android Emulator (on any host operating system) or iOS Simulator (only on MacOS).
+See [Expo's Guide to Android Studio Emulator](https://docs.expo.dev/workflow/android-studio-emulator/).
+
+#### Google and Firebase integration
+
+`google-firebase-web.js`, `google-services.json`, `GoogleService-Info.plist` are generated with fake data. This _fake data suffices to run most of the app_. Some features like Google Analytics for Firebase are not available though. The real data may only be shared internally. Talk to the repo owner.
+
 ## Production
 
 Production apps are apps on a User's smart phone installed from the Google Play Store.
