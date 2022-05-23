@@ -84,7 +84,7 @@
         "@commitlint/cli": "^13.1.0",
         "@commitlint/config-conventional": "^13.1.0",
         "@expo/ngrok": "^4.1.0",
-        "@testing-library/jest-native": "^3.4.3",
+        "@testing-library/jest-native": "^4.0.5",
         "@testing-library/react-native": "^7.0.2",
         "@types/jest": "^26.0.23",
         "@types/jsonfile": "^6.0.0",
