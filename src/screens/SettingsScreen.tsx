@@ -81,7 +81,9 @@ const SettingsScreen: FC<Props> = ({
                             (
                                 <Switch
                                     value={isDarkModeOn}
-                                    onValueChange={toggleDarkTheme}
+                                    onValueChange={() => {
+                                        toggleDarkTheme();
+                                    }}
                                 ></Switch>
                             )}
                     />
@@ -111,7 +113,9 @@ const SettingsScreen: FC<Props> = ({
                             (
                                 <Switch
                                     value={analyticsEnabled}
-                                    onValueChange={toggleAnalytics}
+                                    onValueChange={() => {
+                                        toggleAnalytics();
+                                    }}
                                 ></Switch>
                             )}
                     />

@@ -3,6 +3,7 @@
 exports[`renders correctly in normal mode 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={false}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -18,6 +19,11 @@ exports[`renders correctly in normal mode 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
     accessible={true}
     focusable={false}
     onClick={[Function]}
@@ -217,6 +223,7 @@ exports[`renders correctly in normal mode 1`] = `
 exports[`renders correctly in select mode with disabled radio button 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -232,6 +239,11 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
     accessible={true}
     focusable={false}
     onClick={[Function]}
@@ -276,7 +288,7 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
           accessibilityState={
             Object {
               "checked": false,
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -300,6 +312,7 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
           }
         >
           <View
+            collapsable={false}
             style={
               Object {
                 "borderColor": "rgba(0, 0, 0, 0.54)",
@@ -484,6 +497,7 @@ exports[`renders correctly in select mode with disabled radio button 1`] = `
 exports[`renders correctly in select mode with enabled radio button 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={true}
   onClick={[Function]}
   onResponderGrant={[Function]}
@@ -499,6 +513,11 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
     accessible={true}
     focusable={false}
     onClick={[Function]}
@@ -543,7 +562,7 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
           accessibilityState={
             Object {
               "checked": true,
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -567,6 +586,7 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
           }
         >
           <View
+            collapsable={false}
             style={
               Object {
                 "borderColor": "#03dac4",
@@ -596,6 +616,7 @@ exports[`renders correctly in select mode with enabled radio button 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "backgroundColor": "#03dac4",

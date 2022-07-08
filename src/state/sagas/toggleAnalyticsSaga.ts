@@ -10,7 +10,7 @@ function* toggleAnalyticsWorkerSaga(_: IToggleAnalytics) {
             analyticsEnabled
         );
         yield call(enableAnalytics, analyticsOn);
-    } catch (e) {
+    } catch (e: any) {
         throw new Error(`Failed to toggle analytics: ${e.message}`);
     }
 }

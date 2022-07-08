@@ -13,7 +13,7 @@ import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
 import { mock } from "../helpers/mocks";
 
-jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
+jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 const ConfiguredMyContributions = () => (
     <LocalizedMockPaperProvider>

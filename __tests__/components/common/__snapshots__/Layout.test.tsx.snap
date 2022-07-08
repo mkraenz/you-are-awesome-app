@@ -11,6 +11,7 @@ exports[`renders correctly 1`] = `
   }
 >
   <View
+    collapsable={false}
     style={
       Object {
         "backgroundColor": "#ffffff",
@@ -48,6 +49,7 @@ exports[`renders correctly 1`] = `
       }
     >
       <View
+        collapsable={false}
         style={
           Object {
             "alignItems": "center",
@@ -61,6 +63,11 @@ exports[`renders correctly 1`] = `
         }
       >
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={true}
           focusable={false}
           onClick={[Function]}
@@ -124,7 +131,7 @@ exports[`renders correctly 1`] = `
           accessibilityRole="button"
           accessibilityState={
             Object {
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -183,6 +190,7 @@ exports[`renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "bottom": 0,

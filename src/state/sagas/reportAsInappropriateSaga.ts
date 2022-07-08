@@ -8,7 +8,7 @@ function* ReportAsInappropriatesWorkerSaga(action: IReportAsInappropriate) {
         const payload: Parameters<typeof reportInappropriateContent>[0] =
             action.payload;
         yield call(reportInappropriateContent, payload);
-    } catch (e) {
+    } catch (e: any) {
         throw new Error(`Failed to report as inappropriate: ${e.message}`);
     }
 }

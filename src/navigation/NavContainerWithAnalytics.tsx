@@ -5,6 +5,7 @@ import {
 import * as Analytics from "expo-firebase-analytics";
 import React, { FC } from "react";
 import { useTheme } from "react-native-paper";
+import { Analytics as FAnalytics } from "../api/Analytics";
 import { CONFIG } from "../config";
 import { FullTheme } from "../themes/theme";
 
@@ -28,14 +29,11 @@ const NavContainerWithAnalytics: FC = ({ children }) => {
             onStateChange={() => {
                 if (CONFIG.featureFlags.analytics) {
                     const previousRouteName = routeNameRef.current;
-                    const currentRouteName = navigationRef.current!.getCurrentRoute()!
-                        .name;
+                    const currentRouteName =
+                        navigationRef.current!.getCurrentRoute()!.name;
 
                     if (previousRouteName !== currentRouteName) {
-                        Analytics.setCurrentScreen(
-                            currentRouteName,
-                            currentRouteName
-                        );
+                        FAnalytics.logScreenView(currentRouteName);
                     }
 
                     (routeNameRef as any).current = currentRouteName;
