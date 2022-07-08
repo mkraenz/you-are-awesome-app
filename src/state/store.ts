@@ -1,4 +1,4 @@
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { applyMiddleware, createStore } from "redux";
 import { persistReducer, persistStore } from "redux-persist";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
@@ -13,8 +13,6 @@ const DEBUG = false;
 const whitelist: (keyof IState)[] = ["app", "favorites", "contributions"];
 const persistConfig = {
     key: "root",
-    // TODO expo 45
-    // AsyncStorage has been extracted from react-native core and will be removed in a future release. It can now be installed and imported from '@react-native-async-storage/async-storage' instead of 'react-native'. See https://github.com/react-native-async-storage/async-storag
     storage: AsyncStorage,
     transforms: [IsoStringToDateTransform],
     debug: DEBUG,
