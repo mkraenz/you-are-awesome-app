@@ -17,11 +17,6 @@ const AppStateChangedContainer: FC<Props> = ({
     lastUpdate,
     requestFetchMessages,
 }) => {
-    // TODO expo 45
-    // EventEmitter.removeListener('appStateDidChange', ...): Method has been deprecated. Please instead use `remove()` on the subscription returned by `EventEmitter.addListener`.
-    // at node_modules/react-native/Libraries/vendor/emitter/_EventEmitter.js:164:4 in EventEmitter#removeListener
-    // at node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter.js:108:4 in removeListener
-    // at node_modules/react-native/Libraries/AppState/AppState.js:147:8 in removeEventListener
     const handleAppStateChange = useCallback(
         (nextAppState: AppStateStatus) => {
             const isAnotherDay =
@@ -34,10 +29,12 @@ const AppStateChangedContainer: FC<Props> = ({
     );
 
     useEffect(() => {
-        AppState.addEventListener("change", handleAppStateChange);
+        const listener = AppState.addEventListener(
+            "change",
+            handleAppStateChange
+        );
 
-        return () =>
-            AppState.removeEventListener("change", handleAppStateChange);
+        return () => listener.remove();
     }, [handleAppStateChange]);
     return null;
 };
