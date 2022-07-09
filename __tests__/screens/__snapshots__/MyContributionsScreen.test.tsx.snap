@@ -29,6 +29,7 @@ exports[`renders special message on empty list 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -44,6 +45,7 @@ exports[`renders special message on empty list 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -58,6 +60,7 @@ exports[`renders special message on empty list 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -75,6 +78,7 @@ exports[`renders special message on empty list 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -106,6 +110,7 @@ exports[`renders special message on empty list 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -117,6 +122,7 @@ exports[`renders special message on empty list 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -144,6 +150,7 @@ exports[`renders special message on empty list 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -218,6 +225,7 @@ exports[`renders special message on empty list 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -246,6 +254,7 @@ exports[`renders special message on empty list 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -297,6 +306,7 @@ exports[`renders special message on empty list 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -334,6 +344,7 @@ exports[`renders special message on empty list 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -351,7 +362,7 @@ exports[`renders special message on empty list 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -410,6 +421,7 @@ exports[`renders special message on empty list 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -466,6 +478,11 @@ exports[`renders special message on empty list 1`] = `
                               </View>
                             </View>
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -528,7 +545,7 @@ exports[`renders special message on empty list 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -587,6 +604,7 @@ exports[`renders special message on empty list 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -666,6 +684,7 @@ exports[`renders special message on empty list 1`] = `
                               No contributions yet. Click below to share your first awesome message with the world. We are waiting for you. :)
                             </Text>
                             <View
+                              collapsable={false}
                               style={
                                 Object {
                                   "backgroundColor": "transparent",
@@ -676,6 +695,13 @@ exports[`renders special message on empty list 1`] = `
                                   "elevation": 0,
                                   "marginTop": 24,
                                   "minWidth": 64,
+                                  "shadowColor": "#000000",
+                                  "shadowOffset": Object {
+                                    "height": 0,
+                                    "width": 0,
+                                  },
+                                  "shadowOpacity": 0,
+                                  "shadowRadius": 0,
                                 }
                               }
                             >
@@ -683,7 +709,7 @@ exports[`renders special message on empty list 1`] = `
                                 accessibilityRole="button"
                                 accessibilityState={
                                   Object {
-                                    "disabled": undefined,
+                                    "disabled": false,
                                   }
                                 }
                                 accessible={true}
@@ -816,6 +842,7 @@ exports[`renders the list 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -831,6 +858,7 @@ exports[`renders the list 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -845,6 +873,7 @@ exports[`renders the list 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -862,6 +891,7 @@ exports[`renders the list 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -893,6 +923,7 @@ exports[`renders the list 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -904,6 +935,7 @@ exports[`renders the list 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -931,6 +963,7 @@ exports[`renders the list 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -1005,6 +1038,7 @@ exports[`renders the list 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -1033,6 +1067,7 @@ exports[`renders the list 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -1084,6 +1119,7 @@ exports[`renders the list 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -1121,6 +1157,7 @@ exports[`renders the list 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -1138,7 +1175,7 @@ exports[`renders the list 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -1197,6 +1234,7 @@ exports[`renders the list 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -1253,6 +1291,11 @@ exports[`renders the list 1`] = `
                               </View>
                             </View>
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -1315,7 +1358,7 @@ exports[`renders the list 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -1374,6 +1417,7 @@ exports[`renders the list 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -1461,17 +1505,15 @@ exports[`renders the list 1`] = `
                                 },
                               ]
                             }
-                            disableVirtualization={false}
                             extraData={Array []}
                             getItem={[Function]}
                             getItemCount={[Function]}
-                            horizontal={false}
                             initialNumToRender={20}
                             keyExtractor={[Function]}
-                            maxToRenderPerBatch={10}
                             onContentSizeChange={[Function]}
                             onEndReachedThreshold={0.2}
                             onLayout={[Function]}
+                            onMomentumScrollBegin={[Function]}
                             onMomentumScrollEnd={[Function]}
                             onScroll={[Function]}
                             onScrollBeginDrag={[Function]}
@@ -1480,9 +1522,7 @@ exports[`renders the list 1`] = `
                             renderItem={[Function]}
                             scrollEventThrottle={50}
                             stickyHeaderIndices={Array []}
-                            updateCellsBatchingPeriod={50}
                             viewabilityConfigCallbackPairs={Array []}
-                            windowSize={21}
                           >
                             <View>
                               <View
@@ -1491,6 +1531,7 @@ exports[`renders the list 1`] = `
                               >
                                 <View
                                   accessible={true}
+                                  collapsable={false}
                                   focusable={false}
                                   onClick={[Function]}
                                   onResponderGrant={[Function]}
@@ -1506,6 +1547,11 @@ exports[`renders the list 1`] = `
                                   }
                                 >
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": true,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={false}
                                     onClick={[Function]}
@@ -1719,6 +1765,7 @@ exports[`renders the list 1`] = `
                               >
                                 <View
                                   accessible={true}
+                                  collapsable={false}
                                   focusable={false}
                                   onClick={[Function]}
                                   onResponderGrant={[Function]}
@@ -1734,6 +1781,11 @@ exports[`renders the list 1`] = `
                                   }
                                 >
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": true,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={false}
                                     onClick={[Function]}
