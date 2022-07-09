@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { StatusBar } from "react-native";
 import { Appbar, useTheme } from "react-native-paper";
 import { CONFIG } from "../../config";
+import { useTranslation } from "../../utils/useTranslation";
 
 export interface MyAppbarProps {
     title: string;
@@ -22,6 +23,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
     bugReportIconVisible = CONFIG.featureFlags.bugReportIconVisible,
 }) => {
     const { dark } = useTheme();
+    const { t } = useTranslation();
     return (
         <Appbar.Header statusBarHeight={StatusBar.currentHeight}>
             {onBack && <Appbar.BackAction onPress={onBack} />}
@@ -44,8 +46,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
                 <Appbar.Action
                     icon="bug"
                     onPress={onBugActionPress}
-                    // TODO a11y labels need to be translated too
-                    accessibilityLabel="report a bug"
+                    accessibilityLabel={t("bugReport:buttonA11yLabel")}
                 />
             )}
             <ExpoStatusBar style={dark ? "light" : "dark"} />

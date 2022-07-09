@@ -111,6 +111,7 @@ const en = {
             "long press to copy message, double tap to add to favorites",
     },
     bugReport: {
+        buttonA11yLabel: "report a bug",
         title: "Feedback",
         cancel: "Cancel",
         confirm: "Open in Browser",
@@ -222,11 +223,12 @@ const localization: Record<Language, Translation> = {
                 "Lang tippen um Nachricht zu kopieren, doppelt tippen zum Hinzufügen zu Favoriten",
         },
         bugReport: {
+            buttonA11yLabel: "Einen Fehler melden",
             title: "Feedback",
             cancel: "Abbrechen",
             confirm: "Im Browser öffnen",
             description:
-                "Hast du Feedback für uns? Oder etwa einen Bug entdeckt? Wir freuen uns von dir zu hören!",
+                "Hast du Feedback für uns? Oder etwa einen Fehler/Bug entdeckt? Wir freuen uns von dir zu hören!",
         },
     },
     ja: {
@@ -319,6 +321,7 @@ const localization: Record<Language, Translation> = {
                 "メッセージをコピーするために長くタップしてください。お気に入りに追加するためにダブルタップしてください。",
         },
         bugReport: {
+            buttonA11yLabel: "バグを報告する",
             title: "フィードバック",
             cancel: "キャンセル",
             confirm: "ブラウザーで開く",
