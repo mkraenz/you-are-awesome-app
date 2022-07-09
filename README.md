@@ -107,18 +107,28 @@ When a User now starts her app (even if installed from the Google Play Store!), 
 Only in case of changes to `app.json` or the Expo SDK version, one needs to rebuild the app and republish to expo.
 
 ```sh
-# manually update app.json's version and android.versionCode
-yarn build-and-publish:expo:android:app-bundle:stage
-# for production release
-yarn build-and-publish:expo:android:app-bundle:prod
+# manually update app.json's version, android.versionCode, and js version
+# requires eas-cli installed
+yarn eas build --platform android --profile production
 ```
 
-To push the built apk to the Google Playstore run
+To push the built apk to the Google Playstore, run
 
 ```sh
 # ensure the following was run right before publishing to playstore
 # yarn build-and-publish:expo:android:app-bundle:prod
-yarn publish:playstore
+# then download the .aab to your local machine
+yarn eas submit --platform android --profile production
+# select `Provide a path to a local app binary file`
+# paste the path to your .aab file
+
+## NOTE: the workflow should soon be optimized for use of EAS Build, which works well together with EAS Submit
+```
+
+### google-services.json in EAS Build
+
+```sh
+yarn eas secret:create --scope=project --name=Y3A_GOOGLE_SERVICES --value="$(cat ./google-services.json | base64 --wrap 0)"
 ```
 
 ## Testing Releases: app-bundle

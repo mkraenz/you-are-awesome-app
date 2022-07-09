@@ -27,7 +27,7 @@
             "package": "eu.kraenz.youareawesomeapp",
             "permissions": [],
             "googleServicesFile": "./google-services.json",
-            "versionCode": 20,
+            "versionCode": 21,
             "playStoreUrl": "https://play.google.com/store/apps/details?id=eu.kraenz.youareawesomeapp",
             "useNextNotificationsApi": true,
             "adaptiveIcon": {

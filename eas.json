@@ -1,0 +1,23 @@
+{
+    "cli": {
+        "version": ">= 0.54.1"
+    },
+    "build": {
+        "development": {
+            "developmentClient": true,
+            "distribution": "internal"
+        },
+        "preview": {
+            "distribution": "internal"
+        },
+        "production": {
+            "env": {
+                "NODE_ENV": "prod"
+            },
+            "releaseChannel": "prod"
+        }
+    },
+    "submit": {
+        "production": {}
+    }
+}
