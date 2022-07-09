@@ -6,15 +6,15 @@ import TermsAndConditions from "../../../src/components/contribution/TermsAndCon
 import LocalizedMockPaperProvider from "../../helpers/LocalizedMockPaperProvider";
 
 it("renders correctly on accepted", async () => {
-    const { findByA11yRole, ...tree } = render(
+    const { findByRole, ...tree } = render(
         <LocalizedMockPaperProvider>
             <TermsAndConditions accepted error={false} handlePress={noop} />
         </LocalizedMockPaperProvider>
     );
 
-    const checkbox = await findByA11yRole("checkbox");
+    const checkbox = await findByRole("checkbox");
     expect(checkbox.props.accessibilityState).toEqual({
-        disabled: undefined,
+        disabled: false,
         checked: true,
     }); // checked, clickable checkbox
     expect(tree.toJSON()).toMatchSnapshot();
@@ -24,15 +24,15 @@ it("renders correctly on accepted", async () => {
 });
 
 it("renders correctly on error", async () => {
-    const { findByA11yRole, ...tree } = render(
+    const { findByRole, ...tree } = render(
         <LocalizedMockPaperProvider>
             <TermsAndConditions accepted={false} error handlePress={noop} />
         </LocalizedMockPaperProvider>
     );
 
-    const checkbox = await findByA11yRole("checkbox");
+    const checkbox = await findByRole("checkbox");
     expect(checkbox.props.accessibilityState).toEqual({
-        disabled: undefined,
+        disabled: false,
         checked: false,
     }); // empty but clickable checkbox
     const treeJson = tree.toJSON();
@@ -42,7 +42,7 @@ it("renders correctly on error", async () => {
 });
 
 it("renders correctly before pressing", async () => {
-    const { findByA11yRole, ...tree } = render(
+    const { findByRole, ...tree } = render(
         <LocalizedMockPaperProvider>
             <TermsAndConditions
                 accepted={false}
@@ -52,9 +52,9 @@ it("renders correctly before pressing", async () => {
         </LocalizedMockPaperProvider>
     );
 
-    const checkbox = await findByA11yRole("checkbox");
+    const checkbox = await findByRole("checkbox");
     expect(checkbox.props.accessibilityState).toEqual({
-        disabled: undefined,
+        disabled: false,
         checked: false,
     }); // empty but clickable checkbox
 
