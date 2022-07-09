@@ -67,7 +67,7 @@ See [Expo's Guide to Android Studio Emulator](https://docs.expo.dev/workflow/and
 
 #### Google and Firebase integration
 
-`google-firebase-web.js`, `google-services.json`, `GoogleService-Info.plist` are generated with fake data. This _fake data suffices to run most of the app_. Some features like Google Analytics for Firebase are not available though. The real data may only be shared internally. Talk to the repo owner.
+`.env`, `google-services.json`, `GoogleService-Info.plist` are generated with fake data. This _fake data suffices to run most of the app_. Some features like Google Analytics for Firebase are not available though. The real data may only be shared internally. Talk to the repo owner.
 
 ## Production
 

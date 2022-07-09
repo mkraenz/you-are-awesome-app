@@ -18,7 +18,7 @@
         "build:watch": "tsc -w",
         "debug:production-mode": "expo start --no-dev --minify",
         "quick-setup": "yarn install && yarn one-time-setup",
-        "one-time-setup": "cp google-firebase-web.js.sample google-firebase-web.js && cp google-services.json.sample google-services.json && cp GoogleService-Info.plist.sample GoogleService-Info.plist",
+        "one-time-setup": "cp .env.example .env && cp google-services.json.sample google-services.json && cp GoogleService-Info.plist.sample GoogleService-Info.plist",
         "sanity-check": "yarn install && yarn build && yarn test && yarn dev",
         "start": "react-native start",
         "test": "jest",
