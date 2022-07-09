@@ -3,18 +3,18 @@ import React from "react";
 import "react-native";
 import renderer from "react-test-renderer";
 import MyAppbar from "../../src/components/navigation/MyAppbar";
-import MockPaperProvider from "../helpers/MockPaperProvider";
+import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 
 it("renders correctly without dark mode", () => {
     const tree = renderer
         .create(
-            <MockPaperProvider>
+            <LocalizedMockPaperProvider>
                 <MyAppbar
                     title="my-title"
                     onBugActionPress={noop}
                     bugReportIconVisible={false}
                 />
-            </MockPaperProvider>
+            </LocalizedMockPaperProvider>
         )
         .toJSON();
 
