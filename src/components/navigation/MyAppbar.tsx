@@ -44,6 +44,7 @@ const MyAppbar: FC<MyAppbarProps> = ({
                 <Appbar.Action
                     icon="bug"
                     onPress={onBugActionPress}
+                    // TODO a11y labels need to be translated too
                     accessibilityLabel="report a bug"
                 />
             )}

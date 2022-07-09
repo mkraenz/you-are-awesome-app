@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react-native";
-import Clipboard from "expo-clipboard";
+import * as Clipboard from "expo-clipboard";
 import i18next from "i18next";
 import MockDate from "mockdate";
 import React from "react";
@@ -19,6 +19,8 @@ import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
+jest.mock("react-native/Libraries/Animated/Easing");
+jest.mock("react-native/Libraries/Animated/animations/TimingAnimation");
 
 const ConfiguredHomeScreen = () => (
     <LocalizedMockPaperProvider>
@@ -151,7 +153,7 @@ it("opens the feedback/bug dialog when clicking the bug button in the appbar", a
         },
     });
 
-    const { findByText, queryByText, findByA11yLabel } = render(
+    const { findByText, queryByText, getByLabelText } = render(
         <Provider store={store}>
             <ConfiguredHomeScreen />
         </Provider>
@@ -160,7 +162,7 @@ it("opens the feedback/bug dialog when clicking the bug button in the appbar", a
     const dialogNotRenderedYet = queryByText(i18next.t("reportTitle")) === null;
     expect(dialogNotRenderedYet).toBe(true);
 
-    const reportButton = await findByA11yLabel("report a bug");
+    const reportButton = getByLabelText("report a bug");
     fireEvent.press(reportButton);
 
     await findByText(i18next.t("bugReport:title"));
@@ -169,7 +171,7 @@ it("opens the feedback/bug dialog when clicking the bug button in the appbar", a
 
 it("copies the message to clipboard and notifies the user on long press", async () => {
     jest.useFakeTimers();
-    const clipboardSpy = jest.spyOn(Clipboard, "setString");
+    const clipboardSpy = jest.spyOn(Clipboard, "setStringAsync");
     const store = createMockStore<
         Pick2<IState, "messages", "currentMessage"> &
             Pick2<IState, "network", "connected">
@@ -188,18 +190,18 @@ it("copies the message to clipboard and notifies the user on long press", async 
         },
     });
 
-    const { getByA11yLabel, getByText } = render(
+    const { getByLabelText, getByText } = render(
         <Provider store={store}>
             <ConfiguredHomeScreen />
         </Provider>
     );
-    const quoteView = getByA11yLabel(
+    const quoteView = getByLabelText(
         "long press to copy message, double tap to add to favorites"
     );
     const longPressGestureHandler = quoteView.parent!.parent!;
 
     // simulates successful long press
-    fireEvent(longPressGestureHandler, "onActivated");
+    await fireEvent(longPressGestureHandler, "onActivated");
 
     expect(longPressGestureHandler.type).toEqual(LongPressGestureHandler);
     expect(getByText(i18next.t("home:copiedInfo"))).toBeTruthy();
@@ -228,12 +230,12 @@ it("adds the message to favorites on double tap", async () => {
         },
     });
 
-    const { getByA11yLabel } = render(
+    const { getByLabelText } = render(
         <Provider store={store}>
             <ConfiguredHomeScreen />
         </Provider>
     );
-    const quoteView = getByA11yLabel(
+    const quoteView = getByLabelText(
         "long press to copy message, double tap to add to favorites"
     );
 
