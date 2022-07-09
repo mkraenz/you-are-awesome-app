@@ -27,6 +27,13 @@ export class Analytics {
         await FAnalytics.logEvent("toggle_analytics", { enabled });
     }
 
+    static async logScreenView(currentScreen: string) {
+        if (analyticsDisabled) return;
+        await FAnalytics.logEvent("screen_view", {
+            currentScreen,
+        });
+    }
+
     static async logContribution(contributions: number) {
         if (analyticsDisabled) return;
         await FAnalytics.logEvent("share", {

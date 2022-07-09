@@ -16,8 +16,7 @@ import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
 
-jest.mock("react-native/Libraries/Animated/src/NativeAnimatedHelper");
-jest.mock("expo-firebase-analytics", () => ({ logEvent: jest.fn() }));
+jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 const ConfiguredContributionScreen: FC = () => (
     <LocalizedMockPaperProvider>
@@ -76,7 +75,7 @@ it("can fill the form and submits it to the store", async () => {
     MockDate.set("2002-02-20T20:20:02Z");
     const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {
-            connected: false,
+            connected: true,
         },
     });
 

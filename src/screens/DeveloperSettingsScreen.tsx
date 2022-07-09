@@ -26,7 +26,7 @@ const DeveloperSettingsScreen: FC<Props> = ({ toggleFirstOpen }) => {
         >
             <Paragraph>Env: {CONFIG.env}</Paragraph>
             <Paragraph>
-                Release channel: {String(Constants.manifest.releaseChannel)}
+                Release channel: {String(Constants?.manifest?.releaseChannel)}
             </Paragraph>
             <MyButton onPress={toggleFirstOpen}>Redo Onboarding</MyButton>
             <MyButton onPress={Analytics.resetAnalyticsData}>

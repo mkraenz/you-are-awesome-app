@@ -11,6 +11,11 @@ exports[`renders correctly before pressing 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
     accessible={true}
     focusable={false}
     onClick={[Function]}
@@ -54,7 +59,7 @@ exports[`renders correctly before pressing 1`] = `
           accessibilityState={
             Object {
               "checked": false,
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -82,6 +87,7 @@ exports[`renders correctly before pressing 1`] = `
           testID="terms-and-conditions-consent-checkbox"
         >
           <View
+            collapsable={false}
             style={
               Object {
                 "transform": Array [
@@ -146,6 +152,7 @@ exports[`renders correctly before pressing 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "borderColor": "rgba(0, 0, 0, 0.54)",
@@ -368,6 +375,11 @@ exports[`renders correctly on accepted 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
     accessible={true}
     focusable={false}
     onClick={[Function]}
@@ -411,7 +423,7 @@ exports[`renders correctly on accepted 1`] = `
           accessibilityState={
             Object {
               "checked": true,
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -439,6 +451,7 @@ exports[`renders correctly on accepted 1`] = `
           testID="terms-and-conditions-consent-checkbox"
         >
           <View
+            collapsable={false}
             style={
               Object {
                 "transform": Array [
@@ -503,6 +516,7 @@ exports[`renders correctly on accepted 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "borderColor": "#6200ee",
@@ -725,6 +739,11 @@ exports[`renders correctly on error 1`] = `
   }
 >
   <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
     accessible={true}
     focusable={false}
     onClick={[Function]}
@@ -768,7 +787,7 @@ exports[`renders correctly on error 1`] = `
           accessibilityState={
             Object {
               "checked": false,
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -796,6 +815,7 @@ exports[`renders correctly on error 1`] = `
           testID="terms-and-conditions-consent-checkbox"
         >
           <View
+            collapsable={false}
             style={
               Object {
                 "transform": Array [
@@ -860,6 +880,7 @@ exports[`renders correctly on error 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "borderColor": "#B00020",

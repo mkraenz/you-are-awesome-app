@@ -30,7 +30,7 @@ function* contributeWorkerSaga(
             payload: pick(responseData, ["id"]),
         };
         yield put(success);
-    } catch (e) {
+    } catch (e: any) {
         yield* handleSendFailed(e, contributionRequested);
     }
 }

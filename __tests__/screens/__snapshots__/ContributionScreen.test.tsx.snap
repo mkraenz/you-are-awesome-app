@@ -29,6 +29,7 @@ exports[`renders correctly 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -44,6 +45,7 @@ exports[`renders correctly 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -58,6 +60,7 @@ exports[`renders correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -75,6 +78,7 @@ exports[`renders correctly 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -106,6 +110,7 @@ exports[`renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -117,6 +122,7 @@ exports[`renders correctly 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -144,6 +150,7 @@ exports[`renders correctly 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -218,6 +225,7 @@ exports[`renders correctly 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -246,6 +254,7 @@ exports[`renders correctly 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -297,6 +306,7 @@ exports[`renders correctly 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -334,6 +344,7 @@ exports[`renders correctly 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -347,6 +358,11 @@ exports[`renders correctly 1`] = `
                             }
                           >
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -409,7 +425,7 @@ exports[`renders correctly 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -469,6 +485,7 @@ exports[`renders correctly 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -495,7 +512,7 @@ exports[`renders correctly 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -554,6 +571,7 @@ exports[`renders correctly 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -604,27 +622,28 @@ exports[`renders correctly 1`] = `
                                   }
                                 }
                               >
+                                <View
+                                  pointerEvents="none"
+                                  style={
+                                    Array [
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 6,
+                                      },
+                                      Object {
+                                        "backgroundColor": "#f6f6f6",
+                                        "borderColor": "rgba(0, 0, 0, 0.54)",
+                                        "borderRadius": 4,
+                                        "borderWidth": 1,
+                                      },
+                                    ]
+                                  }
+                                  testID="text-input-outline"
+                                />
                                 <View>
-                                  <View
-                                    pointerEvents="none"
-                                    style={
-                                      Array [
-                                        Object {
-                                          "bottom": 0,
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 6,
-                                        },
-                                        Object {
-                                          "backgroundColor": "#f6f6f6",
-                                          "borderColor": "rgba(0, 0, 0, 0.54)",
-                                          "borderRadius": 4,
-                                          "borderWidth": 1,
-                                        },
-                                      ]
-                                    }
-                                  />
                                   <View
                                     style={
                                       Array [
@@ -639,6 +658,7 @@ exports[`renders correctly 1`] = `
                                     }
                                   >
                                     <View
+                                      collapsable={false}
                                       pointerEvents="none"
                                       style={
                                         Object {
@@ -653,17 +673,19 @@ exports[`renders correctly 1`] = `
                                               "translateX": 0,
                                             },
                                           ],
+                                          "zIndex": 3,
                                         }
                                       }
                                     >
                                       <View
+                                        collapsable={false}
                                         pointerEvents="none"
                                         style={
                                           Object {
                                             "backgroundColor": "#f6f6f6",
-                                            "bottom": 0,
-                                            "height": 2,
+                                            "bottom": 4,
                                             "left": 10,
+                                            "maxHeight": 2,
                                             "opacity": 0,
                                             "position": "absolute",
                                             "right": 0,
@@ -673,11 +695,13 @@ exports[`renders correctly 1`] = `
                                                 "translateX": 0,
                                               },
                                             ],
-                                            "width": 8,
+                                            "width": 12,
                                           }
                                         }
                                       />
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -687,6 +711,7 @@ exports[`renders correctly 1`] = `
                                             "fontSize": 16,
                                             "fontWeight": undefined,
                                             "left": 18,
+                                            "maxWidth": -28,
                                             "opacity": 0,
                                             "paddingHorizontal": 0,
                                             "position": "absolute",
@@ -713,6 +738,8 @@ exports[`renders correctly 1`] = `
                                         Your Awesome Message
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         onLayout={[Function]}
                                         style={
@@ -745,6 +772,8 @@ exports[`renders correctly 1`] = `
                                         Your Awesome Message
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -778,9 +807,9 @@ exports[`renders correctly 1`] = `
                                     </View>
                                     <TextInput
                                       accessibilityStates={Object {}}
-                                      allowFontScaling={true}
                                       autoCapitalize="sentences"
                                       editable={true}
+                                      maxFontSizeMultiplier={1.5}
                                       maxLength={200}
                                       multiline={false}
                                       onBlur={[Function]}
@@ -788,7 +817,6 @@ exports[`renders correctly 1`] = `
                                       onFocus={[Function]}
                                       placeholder=""
                                       placeholderTextColor="grey"
-                                      rejectResponderTermination={true}
                                       selectionColor="#6200ee"
                                       style={
                                         Array [
@@ -813,11 +841,13 @@ exports[`renders correctly 1`] = `
                                             "textAlign": "left",
                                             "textAlignVertical": "center",
                                           },
+                                          false,
                                           Array [
                                             Object {},
                                           ],
                                         ]
                                       }
+                                      testID="text-input-outlined"
                                       underlineColorAndroid="transparent"
                                       value=""
                                     />
@@ -831,27 +861,28 @@ exports[`renders correctly 1`] = `
                                   }
                                 }
                               >
+                                <View
+                                  pointerEvents="none"
+                                  style={
+                                    Array [
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 6,
+                                      },
+                                      Object {
+                                        "backgroundColor": "#f6f6f6",
+                                        "borderColor": "rgba(0, 0, 0, 0.54)",
+                                        "borderRadius": 4,
+                                        "borderWidth": 1,
+                                      },
+                                    ]
+                                  }
+                                  testID="text-input-outline"
+                                />
                                 <View>
-                                  <View
-                                    pointerEvents="none"
-                                    style={
-                                      Array [
-                                        Object {
-                                          "bottom": 0,
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 6,
-                                        },
-                                        Object {
-                                          "backgroundColor": "#f6f6f6",
-                                          "borderColor": "rgba(0, 0, 0, 0.54)",
-                                          "borderRadius": 4,
-                                          "borderWidth": 1,
-                                        },
-                                      ]
-                                    }
-                                  />
                                   <View
                                     style={
                                       Array [
@@ -866,6 +897,7 @@ exports[`renders correctly 1`] = `
                                     }
                                   >
                                     <View
+                                      collapsable={false}
                                       pointerEvents="none"
                                       style={
                                         Object {
@@ -880,17 +912,19 @@ exports[`renders correctly 1`] = `
                                               "translateX": 0,
                                             },
                                           ],
+                                          "zIndex": 3,
                                         }
                                       }
                                     >
                                       <View
+                                        collapsable={false}
                                         pointerEvents="none"
                                         style={
                                           Object {
                                             "backgroundColor": "#f6f6f6",
-                                            "bottom": 0,
-                                            "height": 2,
+                                            "bottom": 4,
                                             "left": 10,
+                                            "maxHeight": 2,
                                             "opacity": 0,
                                             "position": "absolute",
                                             "right": 0,
@@ -900,11 +934,13 @@ exports[`renders correctly 1`] = `
                                                 "translateX": 0,
                                               },
                                             ],
-                                            "width": 8,
+                                            "width": 12,
                                           }
                                         }
                                       />
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -914,6 +950,7 @@ exports[`renders correctly 1`] = `
                                             "fontSize": 16,
                                             "fontWeight": undefined,
                                             "left": 18,
+                                            "maxWidth": -28,
                                             "opacity": 0,
                                             "paddingHorizontal": 0,
                                             "position": "absolute",
@@ -940,6 +977,8 @@ exports[`renders correctly 1`] = `
                                         Nickname
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         onLayout={[Function]}
                                         style={
@@ -972,6 +1011,8 @@ exports[`renders correctly 1`] = `
                                         Nickname
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -1005,9 +1046,9 @@ exports[`renders correctly 1`] = `
                                     </View>
                                     <TextInput
                                       accessibilityStates={Object {}}
-                                      allowFontScaling={true}
                                       autoCapitalize="sentences"
                                       editable={true}
+                                      maxFontSizeMultiplier={1.5}
                                       maxLength={50}
                                       multiline={false}
                                       onBlur={[Function]}
@@ -1015,7 +1056,6 @@ exports[`renders correctly 1`] = `
                                       onFocus={[Function]}
                                       placeholder=""
                                       placeholderTextColor="grey"
-                                      rejectResponderTermination={true}
                                       selectionColor="#6200ee"
                                       style={
                                         Array [
@@ -1040,11 +1080,13 @@ exports[`renders correctly 1`] = `
                                             "textAlign": "left",
                                             "textAlignVertical": "center",
                                           },
+                                          false,
                                           Array [
                                             Object {},
                                           ],
                                         ]
                                       }
+                                      testID="text-input-outlined"
                                       underlineColorAndroid="transparent"
                                       value=""
                                     />
@@ -1058,27 +1100,28 @@ exports[`renders correctly 1`] = `
                                   }
                                 }
                               >
+                                <View
+                                  pointerEvents="none"
+                                  style={
+                                    Array [
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 6,
+                                      },
+                                      Object {
+                                        "backgroundColor": "#f6f6f6",
+                                        "borderColor": "rgba(0, 0, 0, 0.54)",
+                                        "borderRadius": 4,
+                                        "borderWidth": 1,
+                                      },
+                                    ]
+                                  }
+                                  testID="text-input-outline"
+                                />
                                 <View>
-                                  <View
-                                    pointerEvents="none"
-                                    style={
-                                      Array [
-                                        Object {
-                                          "bottom": 0,
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 6,
-                                        },
-                                        Object {
-                                          "backgroundColor": "#f6f6f6",
-                                          "borderColor": "rgba(0, 0, 0, 0.54)",
-                                          "borderRadius": 4,
-                                          "borderWidth": 1,
-                                        },
-                                      ]
-                                    }
-                                  />
                                   <View
                                     style={
                                       Array [
@@ -1093,6 +1136,7 @@ exports[`renders correctly 1`] = `
                                     }
                                   >
                                     <View
+                                      collapsable={false}
                                       pointerEvents="none"
                                       style={
                                         Object {
@@ -1107,17 +1151,19 @@ exports[`renders correctly 1`] = `
                                               "translateX": 0,
                                             },
                                           ],
+                                          "zIndex": 3,
                                         }
                                       }
                                     >
                                       <View
+                                        collapsable={false}
                                         pointerEvents="none"
                                         style={
                                           Object {
                                             "backgroundColor": "#f6f6f6",
-                                            "bottom": 0,
-                                            "height": 2,
+                                            "bottom": 4,
                                             "left": 10,
+                                            "maxHeight": 2,
                                             "opacity": 0,
                                             "position": "absolute",
                                             "right": 0,
@@ -1127,11 +1173,13 @@ exports[`renders correctly 1`] = `
                                                 "translateX": 0,
                                               },
                                             ],
-                                            "width": 8,
+                                            "width": 12,
                                           }
                                         }
                                       />
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -1141,6 +1189,7 @@ exports[`renders correctly 1`] = `
                                             "fontSize": 16,
                                             "fontWeight": undefined,
                                             "left": 18,
+                                            "maxWidth": -28,
                                             "opacity": 0,
                                             "paddingHorizontal": 0,
                                             "position": "absolute",
@@ -1167,6 +1216,8 @@ exports[`renders correctly 1`] = `
                                         Country
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         onLayout={[Function]}
                                         style={
@@ -1199,6 +1250,8 @@ exports[`renders correctly 1`] = `
                                         Country
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -1232,9 +1285,9 @@ exports[`renders correctly 1`] = `
                                     </View>
                                     <TextInput
                                       accessibilityStates={Object {}}
-                                      allowFontScaling={true}
                                       autoCapitalize="sentences"
                                       editable={true}
+                                      maxFontSizeMultiplier={1.5}
                                       maxLength={50}
                                       multiline={false}
                                       onBlur={[Function]}
@@ -1242,7 +1295,6 @@ exports[`renders correctly 1`] = `
                                       onFocus={[Function]}
                                       placeholder=""
                                       placeholderTextColor="grey"
-                                      rejectResponderTermination={true}
                                       selectionColor="#6200ee"
                                       style={
                                         Array [
@@ -1267,11 +1319,13 @@ exports[`renders correctly 1`] = `
                                             "textAlign": "left",
                                             "textAlignVertical": "center",
                                           },
+                                          false,
                                           Array [
                                             Object {},
                                           ],
                                         ]
                                       }
+                                      testID="text-input-outlined"
                                       underlineColorAndroid="transparent"
                                       value=""
                                     />
@@ -1279,6 +1333,11 @@ exports[`renders correctly 1`] = `
                                 </View>
                               </View>
                               <View
+                                accessibilityState={
+                                  Object {
+                                    "disabled": true,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={false}
                                 onClick={[Function]}
@@ -1322,7 +1381,7 @@ exports[`renders correctly 1`] = `
                                       accessibilityState={
                                         Object {
                                           "checked": false,
-                                          "disabled": undefined,
+                                          "disabled": false,
                                         }
                                       }
                                       accessible={true}
@@ -1350,6 +1409,7 @@ exports[`renders correctly 1`] = `
                                       testID="terms-and-conditions-consent-checkbox"
                                     >
                                       <View
+                                        collapsable={false}
                                         style={
                                           Object {
                                             "transform": Array [
@@ -1379,6 +1439,7 @@ exports[`renders correctly 1`] = `
                                           }
                                         >
                                           <View
+                                            collapsable={false}
                                             style={
                                               Object {
                                                 "borderColor": "rgba(0, 0, 0, 0.54)",
@@ -1588,6 +1649,7 @@ exports[`renders correctly 1`] = `
                                 </View>
                               </View>
                               <View
+                                collapsable={false}
                                 style={
                                   Object {
                                     "backgroundColor": "#6200ee",
@@ -1737,6 +1799,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -1752,6 +1815,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -1766,6 +1830,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -1783,6 +1848,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -1814,6 +1880,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -1825,6 +1892,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -1852,6 +1920,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -1926,6 +1995,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -1954,6 +2024,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -2005,6 +2076,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -2042,6 +2114,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -2055,6 +2128,11 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                             }
                           >
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -2117,7 +2195,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -2177,6 +2255,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -2238,7 +2317,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -2297,6 +2376,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -2414,27 +2494,28 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                   }
                                 }
                               >
+                                <View
+                                  pointerEvents="none"
+                                  style={
+                                    Array [
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 6,
+                                      },
+                                      Object {
+                                        "backgroundColor": "#f6f6f6",
+                                        "borderColor": "rgba(0, 0, 0, 0.54)",
+                                        "borderRadius": 4,
+                                        "borderWidth": 1,
+                                      },
+                                    ]
+                                  }
+                                  testID="text-input-outline"
+                                />
                                 <View>
-                                  <View
-                                    pointerEvents="none"
-                                    style={
-                                      Array [
-                                        Object {
-                                          "bottom": 0,
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 6,
-                                        },
-                                        Object {
-                                          "backgroundColor": "#f6f6f6",
-                                          "borderColor": "rgba(0, 0, 0, 0.54)",
-                                          "borderRadius": 4,
-                                          "borderWidth": 1,
-                                        },
-                                      ]
-                                    }
-                                  />
                                   <View
                                     style={
                                       Array [
@@ -2449,6 +2530,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     }
                                   >
                                     <View
+                                      collapsable={false}
                                       pointerEvents="none"
                                       style={
                                         Object {
@@ -2463,17 +2545,19 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                               "translateX": 0,
                                             },
                                           ],
+                                          "zIndex": 3,
                                         }
                                       }
                                     >
                                       <View
+                                        collapsable={false}
                                         pointerEvents="none"
                                         style={
                                           Object {
                                             "backgroundColor": "#f6f6f6",
-                                            "bottom": 0,
-                                            "height": 2,
+                                            "bottom": 4,
                                             "left": 10,
+                                            "maxHeight": 2,
                                             "opacity": 0,
                                             "position": "absolute",
                                             "right": 0,
@@ -2483,11 +2567,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                                 "translateX": 0,
                                               },
                                             ],
-                                            "width": 8,
+                                            "width": 12,
                                           }
                                         }
                                       />
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -2497,6 +2583,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "fontSize": 16,
                                             "fontWeight": undefined,
                                             "left": 18,
+                                            "maxWidth": -28,
                                             "opacity": 0,
                                             "paddingHorizontal": 0,
                                             "position": "absolute",
@@ -2523,6 +2610,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         Your Awesome Message
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         onLayout={[Function]}
                                         style={
@@ -2555,6 +2644,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         Your Awesome Message
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -2588,9 +2679,9 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     </View>
                                     <TextInput
                                       accessibilityStates={Object {}}
-                                      allowFontScaling={true}
                                       autoCapitalize="sentences"
                                       editable={true}
+                                      maxFontSizeMultiplier={1.5}
                                       maxLength={200}
                                       multiline={false}
                                       onBlur={[Function]}
@@ -2598,7 +2689,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       onFocus={[Function]}
                                       placeholder=""
                                       placeholderTextColor="grey"
-                                      rejectResponderTermination={true}
                                       selectionColor="#6200ee"
                                       style={
                                         Array [
@@ -2623,11 +2713,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "textAlign": "left",
                                             "textAlignVertical": "center",
                                           },
+                                          false,
                                           Array [
                                             Object {},
                                           ],
                                         ]
                                       }
+                                      testID="text-input-outlined"
                                       underlineColorAndroid="transparent"
                                       value=""
                                     />
@@ -2641,27 +2733,28 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                   }
                                 }
                               >
+                                <View
+                                  pointerEvents="none"
+                                  style={
+                                    Array [
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 6,
+                                      },
+                                      Object {
+                                        "backgroundColor": "#f6f6f6",
+                                        "borderColor": "rgba(0, 0, 0, 0.54)",
+                                        "borderRadius": 4,
+                                        "borderWidth": 1,
+                                      },
+                                    ]
+                                  }
+                                  testID="text-input-outline"
+                                />
                                 <View>
-                                  <View
-                                    pointerEvents="none"
-                                    style={
-                                      Array [
-                                        Object {
-                                          "bottom": 0,
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 6,
-                                        },
-                                        Object {
-                                          "backgroundColor": "#f6f6f6",
-                                          "borderColor": "rgba(0, 0, 0, 0.54)",
-                                          "borderRadius": 4,
-                                          "borderWidth": 1,
-                                        },
-                                      ]
-                                    }
-                                  />
                                   <View
                                     style={
                                       Array [
@@ -2676,6 +2769,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     }
                                   >
                                     <View
+                                      collapsable={false}
                                       pointerEvents="none"
                                       style={
                                         Object {
@@ -2690,17 +2784,19 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                               "translateX": 0,
                                             },
                                           ],
+                                          "zIndex": 3,
                                         }
                                       }
                                     >
                                       <View
+                                        collapsable={false}
                                         pointerEvents="none"
                                         style={
                                           Object {
                                             "backgroundColor": "#f6f6f6",
-                                            "bottom": 0,
-                                            "height": 2,
+                                            "bottom": 4,
                                             "left": 10,
+                                            "maxHeight": 2,
                                             "opacity": 0,
                                             "position": "absolute",
                                             "right": 0,
@@ -2710,11 +2806,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                                 "translateX": 0,
                                               },
                                             ],
-                                            "width": 8,
+                                            "width": 12,
                                           }
                                         }
                                       />
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -2724,6 +2822,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "fontSize": 16,
                                             "fontWeight": undefined,
                                             "left": 18,
+                                            "maxWidth": -28,
                                             "opacity": 0,
                                             "paddingHorizontal": 0,
                                             "position": "absolute",
@@ -2750,6 +2849,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         Nickname
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         onLayout={[Function]}
                                         style={
@@ -2782,6 +2883,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         Nickname
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -2815,9 +2918,9 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     </View>
                                     <TextInput
                                       accessibilityStates={Object {}}
-                                      allowFontScaling={true}
                                       autoCapitalize="sentences"
                                       editable={true}
+                                      maxFontSizeMultiplier={1.5}
                                       maxLength={50}
                                       multiline={false}
                                       onBlur={[Function]}
@@ -2825,7 +2928,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       onFocus={[Function]}
                                       placeholder=""
                                       placeholderTextColor="grey"
-                                      rejectResponderTermination={true}
                                       selectionColor="#6200ee"
                                       style={
                                         Array [
@@ -2850,11 +2952,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "textAlign": "left",
                                             "textAlignVertical": "center",
                                           },
+                                          false,
                                           Array [
                                             Object {},
                                           ],
                                         ]
                                       }
+                                      testID="text-input-outlined"
                                       underlineColorAndroid="transparent"
                                       value=""
                                     />
@@ -2868,27 +2972,28 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                   }
                                 }
                               >
+                                <View
+                                  pointerEvents="none"
+                                  style={
+                                    Array [
+                                      Object {
+                                        "bottom": 0,
+                                        "left": 0,
+                                        "position": "absolute",
+                                        "right": 0,
+                                        "top": 6,
+                                      },
+                                      Object {
+                                        "backgroundColor": "#f6f6f6",
+                                        "borderColor": "rgba(0, 0, 0, 0.54)",
+                                        "borderRadius": 4,
+                                        "borderWidth": 1,
+                                      },
+                                    ]
+                                  }
+                                  testID="text-input-outline"
+                                />
                                 <View>
-                                  <View
-                                    pointerEvents="none"
-                                    style={
-                                      Array [
-                                        Object {
-                                          "bottom": 0,
-                                          "left": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 6,
-                                        },
-                                        Object {
-                                          "backgroundColor": "#f6f6f6",
-                                          "borderColor": "rgba(0, 0, 0, 0.54)",
-                                          "borderRadius": 4,
-                                          "borderWidth": 1,
-                                        },
-                                      ]
-                                    }
-                                  />
                                   <View
                                     style={
                                       Array [
@@ -2903,6 +3008,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     }
                                   >
                                     <View
+                                      collapsable={false}
                                       pointerEvents="none"
                                       style={
                                         Object {
@@ -2917,17 +3023,19 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                               "translateX": 0,
                                             },
                                           ],
+                                          "zIndex": 3,
                                         }
                                       }
                                     >
                                       <View
+                                        collapsable={false}
                                         pointerEvents="none"
                                         style={
                                           Object {
                                             "backgroundColor": "#f6f6f6",
-                                            "bottom": 0,
-                                            "height": 2,
+                                            "bottom": 4,
                                             "left": 10,
+                                            "maxHeight": 2,
                                             "opacity": 0,
                                             "position": "absolute",
                                             "right": 0,
@@ -2937,11 +3045,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                                 "translateX": 0,
                                               },
                                             ],
-                                            "width": 8,
+                                            "width": 12,
                                           }
                                         }
                                       />
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -2951,6 +3061,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "fontSize": 16,
                                             "fontWeight": undefined,
                                             "left": 18,
+                                            "maxWidth": -28,
                                             "opacity": 0,
                                             "paddingHorizontal": 0,
                                             "position": "absolute",
@@ -2977,6 +3088,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         Country
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         onLayout={[Function]}
                                         style={
@@ -3009,6 +3122,8 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                         Country
                                       </Text>
                                       <Text
+                                        collapsable={false}
+                                        maxFontSizeMultiplier={1.5}
                                         numberOfLines={1}
                                         style={
                                           Object {
@@ -3042,9 +3157,9 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     </View>
                                     <TextInput
                                       accessibilityStates={Object {}}
-                                      allowFontScaling={true}
                                       autoCapitalize="sentences"
                                       editable={true}
+                                      maxFontSizeMultiplier={1.5}
                                       maxLength={50}
                                       multiline={false}
                                       onBlur={[Function]}
@@ -3052,7 +3167,6 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       onFocus={[Function]}
                                       placeholder=""
                                       placeholderTextColor="grey"
-                                      rejectResponderTermination={true}
                                       selectionColor="#6200ee"
                                       style={
                                         Array [
@@ -3077,11 +3191,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                             "textAlign": "left",
                                             "textAlignVertical": "center",
                                           },
+                                          false,
                                           Array [
                                             Object {},
                                           ],
                                         ]
                                       }
+                                      testID="text-input-outlined"
                                       underlineColorAndroid="transparent"
                                       value=""
                                     />
@@ -3089,6 +3205,11 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                 </View>
                               </View>
                               <View
+                                accessibilityState={
+                                  Object {
+                                    "disabled": true,
+                                  }
+                                }
                                 accessible={true}
                                 focusable={false}
                                 onClick={[Function]}
@@ -3132,7 +3253,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       accessibilityState={
                                         Object {
                                           "checked": false,
-                                          "disabled": undefined,
+                                          "disabled": false,
                                         }
                                       }
                                       accessible={true}
@@ -3160,6 +3281,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                       testID="terms-and-conditions-consent-checkbox"
                                     >
                                       <View
+                                        collapsable={false}
                                         style={
                                           Object {
                                             "transform": Array [
@@ -3224,6 +3346,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                           }
                                         >
                                           <View
+                                            collapsable={false}
                                             style={
                                               Object {
                                                 "borderColor": "rgba(0, 0, 0, 0.54)",
@@ -3433,6 +3556,7 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                 </View>
                               </View>
                               <View
+                                collapsable={false}
                                 style={
                                   Object {
                                     "backgroundColor": "rgba(0, 0, 0, 0.12)",
@@ -3444,6 +3568,13 @@ exports[`renders no connection notify if disconnected from internet 1`] = `
                                     "marginBottom": 12,
                                     "marginTop": 8,
                                     "minWidth": 64,
+                                    "shadowColor": "#000000",
+                                    "shadowOffset": Object {
+                                      "height": 0,
+                                      "width": 0,
+                                    },
+                                    "shadowOpacity": 0,
+                                    "shadowRadius": 0,
                                   }
                                 }
                               >

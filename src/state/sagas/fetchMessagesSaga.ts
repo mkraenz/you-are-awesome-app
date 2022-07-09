@@ -32,7 +32,7 @@ function* fetchMessagesWorkerSaga(
             },
         };
         yield put(success);
-    } catch (e) {
+    } catch (e: any) {
         yield* handleFetchFailed(e, fetchMessagesRequested);
     }
 }

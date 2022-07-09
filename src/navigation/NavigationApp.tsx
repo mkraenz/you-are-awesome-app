@@ -70,12 +70,18 @@ const NavigationApp = () => {
     // hide navbar if keyboard is shown
     const [keyboardShown, setKeyboardShown] = useState(false);
     useEffect(() => {
-        Keyboard.addListener("keyboardDidShow", handleKeyboardShown);
-        Keyboard.addListener("keyboardDidHide", handleKeyboardHidden);
+        const keyboardDidShowListener = Keyboard.addListener(
+            "keyboardDidShow",
+            handleKeyboardShown
+        );
+        const keyboardDidHideListener = Keyboard.addListener(
+            "keyboardDidHide",
+            handleKeyboardHidden
+        );
 
         return () => {
-            Keyboard.removeListener("keyboardDidShow", handleKeyboardShown);
-            Keyboard.removeListener("keyboardDidHide", handleKeyboardHidden);
+            keyboardDidShowListener.remove();
+            keyboardDidHideListener.remove();
         };
     }, []);
     const handleKeyboardShown = () => setKeyboardShown(true);

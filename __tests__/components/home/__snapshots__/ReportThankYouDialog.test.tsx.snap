@@ -4,6 +4,7 @@ exports[`renders correctly 1`] = `
 <View
   accessibilityLiveRegion="polite"
   accessibilityViewIsModal={true}
+  collapsable={false}
   onAccessibilityEscape={[Function]}
   pointerEvents="auto"
   style={
@@ -19,8 +20,15 @@ exports[`renders correctly 1`] = `
   <View
     accessibilityLabel="Close modal"
     accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
     accessible={true}
+    collapsable={false}
     focusable={true}
+    importantForAccessibility="no"
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -57,6 +65,7 @@ exports[`renders correctly 1`] = `
     }
   >
     <View
+      collapsable={false}
       style={
         Object {
           "backgroundColor": "#ffffff",
@@ -186,6 +195,7 @@ exports[`renders correctly 1`] = `
         }
       >
         <View
+          collapsable={false}
           style={
             Object {
               "backgroundColor": "transparent",
@@ -195,6 +205,13 @@ exports[`renders correctly 1`] = `
               "borderWidth": 0,
               "elevation": 0,
               "minWidth": "auto",
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 0,
+              "shadowRadius": 0,
             }
           }
         >
@@ -202,7 +219,7 @@ exports[`renders correctly 1`] = `
             accessibilityRole="button"
             accessibilityState={
               Object {
-                "disabled": undefined,
+                "disabled": false,
               }
             }
             accessible={true}

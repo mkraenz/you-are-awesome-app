@@ -11,6 +11,7 @@ exports[`renders correctly 1`] = `
   }
 >
   <View
+    collapsable={false}
     style={
       Object {
         "backgroundColor": "#ffffff",
@@ -48,6 +49,7 @@ exports[`renders correctly 1`] = `
       }
     >
       <View
+        collapsable={false}
         style={
           Object {
             "alignItems": "center",
@@ -61,6 +63,11 @@ exports[`renders correctly 1`] = `
         }
       >
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={true}
           focusable={false}
           onClick={[Function]}
@@ -123,7 +130,7 @@ exports[`renders correctly 1`] = `
           accessibilityRole="button"
           accessibilityState={
             Object {
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -183,6 +190,7 @@ exports[`renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "bottom": 0,
@@ -209,7 +217,7 @@ exports[`renders correctly 1`] = `
           accessibilityRole="button"
           accessibilityState={
             Object {
-              "disabled": undefined,
+              "disabled": false,
             }
           }
           accessible={true}
@@ -268,6 +276,7 @@ exports[`renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "bottom": 0,
@@ -339,9 +348,11 @@ exports[`renders correctly 1`] = `
               }
             >
               <View
+                collapsable={false}
                 style={
                   Object {
                     "backgroundColor": "#6200ee",
+                    "borderColor": "rgba(0, 0, 0, 0.12)",
                     "borderRadius": 4,
                     "elevation": 1,
                     "shadowColor": "#000000",
@@ -355,6 +366,11 @@ exports[`renders correctly 1`] = `
                 }
               >
                 <View
+                  accessibilityState={
+                    Object {
+                      "disabled": true,
+                    }
+                  }
                   accessible={true}
                   focusable={false}
                   onClick={[Function]}

@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react-native";
+import { noop } from "lodash";
 import React from "react";
 import "react-native";
 import { AppState, AppStateStatus } from "react-native";
@@ -33,6 +34,7 @@ it("requests to fetch messages if not up-to-date when the app is brought into fo
         .spyOn(AppState, "addEventListener")
         .mockImplementation((type, listener) => {
             registeredListener = listener;
+            return { remove: noop };
         });
 
     renderComponent(store);
@@ -65,6 +67,7 @@ it("does nothing if not brought to foregound", async () => {
         .spyOn(AppState, "addEventListener")
         .mockImplementation((type, listener) => {
             registeredListener = listener;
+            return { remove: noop };
         });
 
     renderComponent(store);

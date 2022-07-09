@@ -39,6 +39,13 @@ it("logToggleAnalytics() logs the correct toggle_analytics event", async () => {
     });
 });
 
+it("logScreenView() logs the correct screen_view event", async () => {
+    await Analytics.logScreenView("Home");
+    expect(FAnalytics.logEvent).toHaveBeenCalledWith("screen_view", {
+        currentScreen: "Home",
+    });
+});
+
 it("logContribution()", async () => {
     await Analytics.logContribution(123);
     expect(FAnalytics.logEvent).toHaveBeenCalledWith("share", {

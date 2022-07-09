@@ -29,10 +29,12 @@ const AppStateChangedContainer: FC<Props> = ({
     );
 
     useEffect(() => {
-        AppState.addEventListener("change", handleAppStateChange);
+        const listener = AppState.addEventListener(
+            "change",
+            handleAppStateChange
+        );
 
-        return () =>
-            AppState.removeEventListener("change", handleAppStateChange);
+        return () => listener.remove();
     }, [handleAppStateChange]);
     return null;
 };

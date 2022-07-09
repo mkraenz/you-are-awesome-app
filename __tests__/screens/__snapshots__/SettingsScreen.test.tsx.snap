@@ -29,6 +29,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -44,6 +45,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -58,6 +60,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -75,6 +78,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -106,6 +110,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -117,6 +122,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -144,6 +150,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -218,6 +225,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -246,6 +254,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -297,6 +306,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -334,6 +344,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -347,6 +358,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                             }
                           >
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -410,7 +426,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -469,6 +485,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -595,7 +612,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -660,6 +676,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   collapsable={false}
                                 >
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": false,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -783,6 +804,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                 />
                                 <View>
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": true,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -855,19 +881,30 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                           Daily notifications
                                         </Text>
                                       </View>
-                                      <Switch
+                                      <RCTSwitch
+                                        accessibilityRole="switch"
                                         disabled={true}
-                                        trackColor={
+                                        onChange={[Function]}
+                                        onResponderTerminationRequest={[Function]}
+                                        onStartShouldSetResponder={[Function]}
+                                        onTintColor="#03dac4"
+                                        style={
                                           Object {
-                                            "false": "",
-                                            "true": "#03dac4",
+                                            "height": 31,
+                                            "width": 51,
                                           }
                                         }
+                                        tintColor=""
                                         value={true}
                                       />
                                     </View>
                                   </View>
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": true,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -987,32 +1024,7 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                     onHide={[Function]}
                                     transparent={true}
                                     visible={false}
-                                  >
-                                    <View
-                                      accessible={true}
-                                      focusable={true}
-                                      onClick={[Function]}
-                                      onResponderGrant={[Function]}
-                                      onResponderMove={[Function]}
-                                      onResponderRelease={[Function]}
-                                      onResponderTerminate={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "black",
-                                          "bottom": 0,
-                                          "height": 1334,
-                                          "left": 0,
-                                          "opacity": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
-                                          "width": 750,
-                                        }
-                                      }
-                                    />
-                                  </Modal>
+                                  />
                                   <View
                                     style={
                                       Array [
@@ -1027,6 +1039,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   />
                                 </View>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -1097,14 +1114,19 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         Dark mode
                                       </Text>
                                     </View>
-                                    <Switch
-                                      onValueChange={[Function]}
-                                      trackColor={
+                                    <RCTSwitch
+                                      accessibilityRole="switch"
+                                      onChange={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      onTintColor="#03dac4"
+                                      style={
                                         Object {
-                                          "false": "",
-                                          "true": "#03dac4",
+                                          "height": 31,
+                                          "width": 51,
                                         }
                                       }
+                                      tintColor=""
                                       value={false}
                                     />
                                   </View>
@@ -1131,7 +1153,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -1193,6 +1214,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   Feedback
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -1278,6 +1304,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   }
                                 />
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -1372,7 +1403,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -1434,6 +1464,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   Privacy
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -1519,6 +1554,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   }
                                 />
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -1589,14 +1629,20 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                         Send usage statistics
                                       </Text>
                                     </View>
-                                    <Switch
-                                      onValueChange={[Function]}
-                                      trackColor={
+                                    <RCTSwitch
+                                      accessibilityRole="switch"
+                                      onChange={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      onTintColor="#03dac4"
+                                      style={
                                         Object {
-                                          "false": "",
-                                          "true": "#03dac4",
+                                          "height": 31,
+                                          "width": 51,
                                         }
                                       }
+                                      tintColor=""
+                                      value={false}
                                     />
                                   </View>
                                 </View>
@@ -1622,7 +1668,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -1684,6 +1729,11 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                   Developer
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -1778,7 +1828,6 @@ exports[`displays netinfo box for no internet connection 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -2011,6 +2060,7 @@ exports[`renders correctly for disabled notifications 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -2026,6 +2076,7 @@ exports[`renders correctly for disabled notifications 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -2040,6 +2091,7 @@ exports[`renders correctly for disabled notifications 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -2057,6 +2109,7 @@ exports[`renders correctly for disabled notifications 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -2088,6 +2141,7 @@ exports[`renders correctly for disabled notifications 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -2099,6 +2153,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -2126,6 +2181,7 @@ exports[`renders correctly for disabled notifications 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -2200,6 +2256,7 @@ exports[`renders correctly for disabled notifications 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -2228,6 +2285,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -2279,6 +2337,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -2316,6 +2375,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -2329,6 +2389,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                             }
                           >
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -2392,7 +2457,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -2451,6 +2516,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -2510,7 +2576,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -2575,6 +2640,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   collapsable={false}
                                 >
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": false,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -2698,6 +2768,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                 />
                                 <View>
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": false,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -2768,20 +2843,30 @@ exports[`renders correctly for disabled notifications 1`] = `
                                           Daily notifications
                                         </Text>
                                       </View>
-                                      <Switch
+                                      <RCTSwitch
+                                        accessibilityRole="switch"
                                         disabled={false}
-                                        onValueChange={[Function]}
-                                        trackColor={
+                                        onChange={[Function]}
+                                        onResponderTerminationRequest={[Function]}
+                                        onStartShouldSetResponder={[Function]}
+                                        onTintColor="#03dac4"
+                                        style={
                                           Object {
-                                            "false": "",
-                                            "true": "#03dac4",
+                                            "height": 31,
+                                            "width": 51,
                                           }
                                         }
+                                        tintColor=""
                                         value={false}
                                       />
                                     </View>
                                   </View>
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": true,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -2863,32 +2948,7 @@ exports[`renders correctly for disabled notifications 1`] = `
                                     onHide={[Function]}
                                     transparent={true}
                                     visible={false}
-                                  >
-                                    <View
-                                      accessible={true}
-                                      focusable={true}
-                                      onClick={[Function]}
-                                      onResponderGrant={[Function]}
-                                      onResponderMove={[Function]}
-                                      onResponderRelease={[Function]}
-                                      onResponderTerminate={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "black",
-                                          "bottom": 0,
-                                          "height": 1334,
-                                          "left": 0,
-                                          "opacity": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
-                                          "width": 750,
-                                        }
-                                      }
-                                    />
-                                  </Modal>
+                                  />
                                   <View
                                     style={
                                       Array [
@@ -2903,6 +2963,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   />
                                 </View>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -2973,14 +3038,19 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         Dark mode
                                       </Text>
                                     </View>
-                                    <Switch
-                                      onValueChange={[Function]}
-                                      trackColor={
+                                    <RCTSwitch
+                                      accessibilityRole="switch"
+                                      onChange={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      onTintColor="#03dac4"
+                                      style={
                                         Object {
-                                          "false": "",
-                                          "true": "#03dac4",
+                                          "height": 31,
+                                          "width": 51,
                                         }
                                       }
+                                      tintColor=""
                                       value={false}
                                     />
                                   </View>
@@ -3007,7 +3077,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -3069,6 +3138,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   Feedback
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -3154,6 +3228,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   }
                                 />
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -3248,7 +3327,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -3310,6 +3388,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   Privacy
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -3395,6 +3478,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   }
                                 />
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -3465,14 +3553,20 @@ exports[`renders correctly for disabled notifications 1`] = `
                                         Send usage statistics
                                       </Text>
                                     </View>
-                                    <Switch
-                                      onValueChange={[Function]}
-                                      trackColor={
+                                    <RCTSwitch
+                                      accessibilityRole="switch"
+                                      onChange={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      onTintColor="#03dac4"
+                                      style={
                                         Object {
-                                          "false": "",
-                                          "true": "#03dac4",
+                                          "height": 31,
+                                          "width": 51,
                                         }
                                       }
+                                      tintColor=""
+                                      value={false}
                                     />
                                   </View>
                                 </View>
@@ -3498,7 +3592,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -3560,6 +3653,11 @@ exports[`renders correctly for disabled notifications 1`] = `
                                   Developer
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -3654,7 +3752,6 @@ exports[`renders correctly for disabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -3887,6 +3984,7 @@ exports[`renders correctly for enabled notifications 1`] = `
       }
     >
       <View
+        collapsable={false}
         pointerEvents="box-none"
         style={
           Object {
@@ -3902,6 +4000,7 @@ exports[`renders correctly for enabled notifications 1`] = `
           style={null}
         >
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -3916,6 +4015,7 @@ exports[`renders correctly for enabled notifications 1`] = `
             }
           >
             <View
+              collapsable={false}
               style={
                 Object {
                   "backgroundColor": "rgb(255, 255, 255)",
@@ -3933,6 +4033,7 @@ exports[`renders correctly for enabled notifications 1`] = `
             />
           </View>
           <View
+            collapsable={false}
             pointerEvents="box-none"
             style={
               Object {
@@ -3964,6 +4065,7 @@ exports[`renders correctly for enabled notifications 1`] = `
               }
             >
               <View
+                collapsable={false}
                 pointerEvents="box-none"
                 style={
                   Object {
@@ -3975,6 +4077,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                 <Text
                   accessibilityRole="header"
                   aria-level="1"
+                  collapsable={false}
                   numberOfLines={1}
                   onLayout={[Function]}
                   style={
@@ -4002,6 +4105,7 @@ exports[`renders correctly for enabled notifications 1`] = `
       >
         <RNSScreen
           activityState={2}
+          collapsable={false}
           forwardedRef={[Function]}
           pointerEvents="box-none"
           style={
@@ -4076,6 +4180,7 @@ exports[`renders correctly for enabled notifications 1`] = `
             }
           >
             <View
+              collapsable={false}
               needsOffscreenAlphaCompositing={false}
               pointerEvents="box-none"
               style={
@@ -4104,6 +4209,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                 }
               >
                 <View
+                  collapsable={false}
                   pointerEvents="none"
                   style={
                     Object {
@@ -4155,6 +4261,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                       }
                     >
                       <View
+                        collapsable={false}
                         style={
                           Object {
                             "backgroundColor": "#ffffff",
@@ -4192,6 +4299,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                           }
                         >
                           <View
+                            collapsable={false}
                             style={
                               Object {
                                 "alignItems": "center",
@@ -4205,6 +4313,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                             }
                           >
                             <View
+                              accessibilityState={
+                                Object {
+                                  "disabled": true,
+                                }
+                              }
                               accessible={true}
                               focusable={false}
                               onClick={[Function]}
@@ -4268,7 +4381,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                               accessibilityRole="button"
                               accessibilityState={
                                 Object {
-                                  "disabled": undefined,
+                                  "disabled": false,
                                 }
                               }
                               accessible={true}
@@ -4327,6 +4440,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   }
                                 >
                                   <View
+                                    collapsable={false}
                                     style={
                                       Object {
                                         "bottom": 0,
@@ -4421,7 +4535,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -4486,6 +4599,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   collapsable={false}
                                 >
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": false,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -4609,6 +4727,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                 />
                                 <View>
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": false,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -4679,20 +4802,30 @@ exports[`renders correctly for enabled notifications 1`] = `
                                           Daily notifications
                                         </Text>
                                       </View>
-                                      <Switch
+                                      <RCTSwitch
+                                        accessibilityRole="switch"
                                         disabled={false}
-                                        onValueChange={[Function]}
-                                        trackColor={
+                                        onChange={[Function]}
+                                        onResponderTerminationRequest={[Function]}
+                                        onStartShouldSetResponder={[Function]}
+                                        onTintColor="#03dac4"
+                                        style={
                                           Object {
-                                            "false": "",
-                                            "true": "#03dac4",
+                                            "height": 31,
+                                            "width": 51,
                                           }
                                         }
+                                        tintColor=""
                                         value={true}
                                       />
                                     </View>
                                   </View>
                                   <View
+                                    accessibilityState={
+                                      Object {
+                                        "disabled": false,
+                                      }
+                                    }
                                     accessible={true}
                                     focusable={true}
                                     onClick={[Function]}
@@ -4808,32 +4941,7 @@ exports[`renders correctly for enabled notifications 1`] = `
                                     onHide={[Function]}
                                     transparent={true}
                                     visible={false}
-                                  >
-                                    <View
-                                      accessible={true}
-                                      focusable={true}
-                                      onClick={[Function]}
-                                      onResponderGrant={[Function]}
-                                      onResponderMove={[Function]}
-                                      onResponderRelease={[Function]}
-                                      onResponderTerminate={[Function]}
-                                      onResponderTerminationRequest={[Function]}
-                                      onStartShouldSetResponder={[Function]}
-                                      style={
-                                        Object {
-                                          "backgroundColor": "black",
-                                          "bottom": 0,
-                                          "height": 1334,
-                                          "left": 0,
-                                          "opacity": 0,
-                                          "position": "absolute",
-                                          "right": 0,
-                                          "top": 0,
-                                          "width": 750,
-                                        }
-                                      }
-                                    />
-                                  </Modal>
+                                  />
                                   <View
                                     style={
                                       Array [
@@ -4848,6 +4956,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   />
                                 </View>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -4918,14 +5031,19 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         Dark mode
                                       </Text>
                                     </View>
-                                    <Switch
-                                      onValueChange={[Function]}
-                                      trackColor={
+                                    <RCTSwitch
+                                      accessibilityRole="switch"
+                                      onChange={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      onTintColor="#03dac4"
+                                      style={
                                         Object {
-                                          "false": "",
-                                          "true": "#03dac4",
+                                          "height": 31,
+                                          "width": 51,
                                         }
                                       }
+                                      tintColor=""
                                       value={false}
                                     />
                                   </View>
@@ -4952,7 +5070,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -5014,6 +5131,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   Feedback
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -5099,6 +5221,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   }
                                 />
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -5193,7 +5320,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -5255,6 +5381,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   Privacy
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -5340,6 +5471,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   }
                                 />
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -5410,14 +5546,20 @@ exports[`renders correctly for enabled notifications 1`] = `
                                         Send usage statistics
                                       </Text>
                                     </View>
-                                    <Switch
-                                      onValueChange={[Function]}
-                                      trackColor={
+                                    <RCTSwitch
+                                      accessibilityRole="switch"
+                                      onChange={[Function]}
+                                      onResponderTerminationRequest={[Function]}
+                                      onStartShouldSetResponder={[Function]}
+                                      onTintColor="#03dac4"
+                                      style={
                                         Object {
-                                          "false": "",
-                                          "true": "#03dac4",
+                                          "height": 31,
+                                          "width": 51,
                                         }
                                       }
+                                      tintColor=""
+                                      value={false}
                                     />
                                   </View>
                                 </View>
@@ -5443,7 +5585,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",
@@ -5505,6 +5646,11 @@ exports[`renders correctly for enabled notifications 1`] = `
                                   Developer
                                 </Text>
                                 <View
+                                  accessibilityState={
+                                    Object {
+                                      "disabled": false,
+                                    }
+                                  }
                                   accessible={true}
                                   focusable={true}
                                   onClick={[Function]}
@@ -5599,7 +5745,6 @@ exports[`renders correctly for enabled notifications 1`] = `
                                       "disabled": "rgba(0, 0, 0, 0.26)",
                                       "error": "#B00020",
                                       "notification": "#f50057",
-                                      "onBackground": "#000000",
                                       "onSurface": "#000000",
                                       "placeholder": "rgba(0, 0, 0, 0.54)",
                                       "primary": "#6200ee",

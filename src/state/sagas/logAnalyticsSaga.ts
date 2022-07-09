@@ -121,7 +121,7 @@ function* logAnalyticsWorkerSaga(
                 );
                 break;
         }
-    } catch (e) {
+    } catch (e: any) {
         Sentry.Native.captureException(
             new Error(`Failed to log analytics: ${action.type} ${e.message}`)
         );

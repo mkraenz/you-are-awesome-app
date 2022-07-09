@@ -32,6 +32,7 @@ exports[`renders correctly without dark mode 1`] = `
     }
   >
     <View
+      collapsable={false}
       style={
         Object {
           "alignItems": "center",
@@ -52,6 +53,11 @@ exports[`renders correctly without dark mode 1`] = `
         }
       />
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={true}
         focusable={false}
         onClick={[Function]}

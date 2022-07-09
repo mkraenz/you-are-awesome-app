@@ -9,6 +9,9 @@ import { IState } from "../../../src/state/state/IState";
 import { Pick2 } from "../../../src/utils/ts/Pick2";
 import TestLocalizationProvider from "../../helpers/TestLocalizationProvider";
 
+jest.mock("react-native/Libraries/Animated/Easing");
+jest.mock("react-native/Libraries/Animated/animations/TimingAnimation");
+
 it("renders correctly", async () => {
     const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {

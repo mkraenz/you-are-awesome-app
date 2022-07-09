@@ -1,4 +1,4 @@
-import Clipboard from "expo-clipboard";
+import * as Clipboard from "expo-clipboard";
 import React, { FC, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
@@ -70,11 +70,11 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
     const contributor = `${author}${t("from")}${country}`;
     const handleReportPressed = () => showReportDialog(!reportDialogOpen);
     const toggleSnackbar = () => showSnackbar(!snackbarShown);
-    const copyToClipboard = () => {
+    const copyToClipboard = async () => {
         const copiedText = `${text} - ${contributor} - ${t(
             "home:copyAppendix"
         )}`;
-        Clipboard.setString(copiedText);
+        await Clipboard.setStringAsync(copiedText);
         toggleSnackbar();
     };
     return (
@@ -91,7 +91,7 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                     <LongPressGestureHandler onActivated={copyToClipboard}>
                         <View
                             style={styles.container}
-                            accessibilityLabel="long press to copy message, double tap to add to favorites"
+                            accessibilityLabel={t("home:a11yLabelInteraction")}
                         >
                             <Card style={cardStyle}>
                                 <Card.Content style={styles.bubble}>
