@@ -37,6 +37,11 @@ describe("Analytics does nothing if feature flag not set", () => {
         expect(FAnalytics.logEvent).not.toHaveBeenCalled();
     });
 
+    it("logScreenView() logs the correct screen_view event", async () => {
+        await Analytics.logScreenView("Home");
+        expect(FAnalytics.logEvent).not.toHaveBeenCalled();
+    });
+
     it("logContribution()", async () => {
         await Analytics.logContribution(123);
         expect(FAnalytics.logEvent).not.toHaveBeenCalled();
