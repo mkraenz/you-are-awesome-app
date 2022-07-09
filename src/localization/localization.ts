@@ -107,6 +107,8 @@ const en = {
         copyAppendix: `via ${shared.appTitle}`,
         fetchFailedBecauseOffline:
             "Fetching today's message failed. Network connection required.",
+        a11yLabelInteraction:
+            "long press to copy message, double tap to add to favorites",
     },
     bugReport: {
         title: "Feedback",
@@ -216,6 +218,8 @@ const localization: Record<Language, Translation> = {
             copyAppendix: `über ${shared.appTitle}`,
             fetchFailedBecauseOffline:
                 "Abruf der heutige Nachricht schlug fehl. Internetverbindung benötigt.",
+            a11yLabelInteraction:
+                "Lang tippen um Nachricht zu kopieren, doppelt tippen zum Hinzufügen zu Favoriten",
         },
         bugReport: {
             title: "Feedback",
@@ -311,6 +315,8 @@ const localization: Record<Language, Translation> = {
             copyAppendix: `${shared.appTitle}経由`,
             fetchFailedBecauseOffline:
                 "今日のメッセジの取得に失敗しました。インターネットに接続が必要です。",
+            a11yLabelInteraction:
+                "メッセージをコピーするために長くタップしてください。お気に入りに追加するためにダブルタップしてください。",
         },
         bugReport: {
             title: "フィードバック",

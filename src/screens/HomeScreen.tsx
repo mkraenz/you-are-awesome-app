@@ -91,7 +91,7 @@ const HomeScreen: FC<Props> = ({ msg, addFavorite }) => {
                     <LongPressGestureHandler onActivated={copyToClipboard}>
                         <View
                             style={styles.container}
-                            accessibilityLabel="long press to copy message, double tap to add to favorites"
+                            accessibilityLabel={t("home:a11yLabelInteraction")}
                         >
                             <Card style={cardStyle}>
                                 <Card.Content style={styles.bubble}>
