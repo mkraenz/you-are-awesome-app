@@ -76,7 +76,7 @@ it("can fill the form and submits it to the store", async () => {
     MockDate.set("2002-02-20T20:20:02Z");
     const store = createMockStore<Pick2<IState, "network", "connected">>([])({
         network: {
-            connected: false,
+            connected: true,
         },
     });
 
