@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/proSingularity/you-are-awesome-app/compare/v1.2.1...v1.2.2) (2022-07-10)
+
+
+### Bug Fixes
+
+* **672:** bump i18next and react-i18next to latest stable version ([5e5710c](https://github.com/proSingularity/you-are-awesome-app/commit/5e5710c83c486bdd2c3dc9bb13c0e63889a5da6d))
+
 ## [1.2.1](https://github.com/proSingularity/you-are-awesome-app/compare/v1.2.0...v1.2.1) (2022-07-10)
 
 
