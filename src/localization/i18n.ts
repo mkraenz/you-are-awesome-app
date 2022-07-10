@@ -13,6 +13,7 @@ const myi18n = (languageDetector?: {
 }) => {
     if (languageDetector) i18n.use(languageDetector);
     i18n.use(initReactI18next).init({
+        compatibilityJSON: "v3", // fixes i18next::pluralResolver error https://www.i18next.com/misc/migration-guide#v20.x.x-to-v21.0.0
         resources: localization,
         fallbackLng: Language.English,
         defaultNS: "default",
