@@ -11,7 +11,10 @@ export const reportInappropriateContent = async (
     disabledFlags: ApiFeatureFlags<"reportInappropriateContent"> = CONFIG.disableApiCall
 ) => {
     if (disabledFlags.all || disabledFlags.reportInappropriateContent) {
-        console.log("API call reportInappropriateContent disabled. Skipping");
+        if (process.env.NODE_ENV !== "test")
+            console.log(
+                "API call reportInappropriateContent disabled. Skipping"
+            );
         return;
     }
     const payload = pick(report, ["messageId", "reason", "comment"]);
