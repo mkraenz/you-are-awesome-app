@@ -16,8 +16,6 @@ import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
 
-jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
-
 const ConfiguredContributionScreen: FC = () => (
     <LocalizedMockPaperProvider>
         <MockedNavigator
