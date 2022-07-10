@@ -1,3 +1,21 @@
+# [1.2.0](https://github.com/proSingularity/you-are-awesome-app/compare/v1.1.1...v1.2.0) (2022-07-10)
+
+
+### Bug Fixes
+
+* **#660:** a11y labels need translations ([bc3875a](https://github.com/proSingularity/you-are-awesome-app/commit/bc3875acd422c88cf95033a2823244260ee7e961)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+* **#660:** deprecation warning for keyboard show/hide events ([eb66d5b](https://github.com/proSingularity/you-are-awesome-app/commit/eb66d5b7b5c6dcb527fc8807756c8f72daa5098c)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+* **#660:** deprecation warning in EventEmitter.removeListener('appStateDidChange', ...) ([e2e9181](https://github.com/proSingularity/you-are-awesome-app/commit/e2e918119babf3ee3d2f48676e46be9288fcd049)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+* **#660:** deprecation warning of AsyncStorage ([3b5880a](https://github.com/proSingularity/you-are-awesome-app/commit/3b5880a86dc16a0a9f1de12e0307f64633a75091)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+* **#660:** downgrade expo localization to [@12](https://github.com/12) ([e342fe3](https://github.com/proSingularity/you-are-awesome-app/commit/e342fe3ce06876fb36455a0a652b937367022575)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+* **#660:** homescreen tests ([00202dc](https://github.com/proSingularity/you-are-awesome-app/commit/00202dcff38b45d804d5fdb590bea1407614b6dd)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+* **#660:** translate a11y label ([836337b](https://github.com/proSingularity/you-are-awesome-app/commit/836337bda3bd5be9fb0f0e024cd7a8385d09bd54)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+
+
+### Features
+
+* **#660:** upgrade to expo v45 - app runs again but has some bugs ([f1b9a01](https://github.com/proSingularity/you-are-awesome-app/commit/f1b9a0172e4c9c1fcdab690fcb16dbc7c132580f)), closes [#660](https://github.com/proSingularity/you-are-awesome-app/issues/660)
+
 ## [1.1.1](https://github.com/proSingularity/you-are-awesome-app/compare/v1.1.0...v1.1.1) (2021-09-09)
 
 
