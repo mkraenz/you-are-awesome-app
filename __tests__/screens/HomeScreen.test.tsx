@@ -18,10 +18,6 @@ import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 
-jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
-jest.mock("react-native/Libraries/Animated/Easing");
-jest.mock("react-native/Libraries/Animated/animations/TimingAnimation");
-
 const ConfiguredHomeScreen = () => (
     <LocalizedMockPaperProvider>
         <HomeScreen />

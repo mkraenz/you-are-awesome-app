@@ -9,9 +9,6 @@ import SettingsScreen from "../../src/screens/SettingsScreen";
 import LocalizedMockPaperProvider from "../helpers/LocalizedMockPaperProvider";
 import MockedNavigator from "../helpers/MockedNavigation";
 
-jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
-jest.mock("react-native/Libraries/Animated/Easing");
-jest.mock("react-native/Libraries/Animated/animations/TimingAnimation");
 // fix native switch warnings https://github.com/callstack/react-native-testing-library/issues/329#issuecomment-737307473
 jest.mock("react-native/Libraries/Components/Switch/Switch", () => {
     const mockComponent = require("react-native/jest/mockComponent");

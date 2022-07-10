@@ -3,7 +3,7 @@ const expoPreset = require("jest-expo/jest-preset");
 process.env.TZ = "Europe/Berlin";
 
 module.exports = Object.assign(expoPreset, {
-    setupFiles: [...expoPreset.setupFiles],
+    setupFiles: [...expoPreset.setupFiles, "./__mocks__/mocks.js"],
     setupFilesAfterEnv: ["@testing-library/jest-native/extend-expect"],
     transformIgnorePatterns: [
         "node_modules/(?!(jest-)?react-native|@react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules-permissions-interface/.*|@sentry/.*|sentry-expo|native-base)",
