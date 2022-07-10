@@ -7,7 +7,10 @@ export const subscribeToPushNotifications = async (
     disabledFlags: ApiFeatureFlags<"subscribePushNotifications"> = CONFIG.disableApiCall
 ) => {
     if (disabledFlags.all || disabledFlags.subscribePushNotifications) {
-        console.log("API call subscribePushNotifications disabled. Skipping");
+        if (process.env.NODE_ENV !== "test")
+            console.log(
+                "API call subscribePushNotifications disabled. Skipping"
+            );
         return;
     }
 

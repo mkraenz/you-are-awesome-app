@@ -6,7 +6,10 @@ export const unsubscribeFromPushNotifications = async (
     disabledFlags: ApiFeatureFlags<"unsubscribePushNotifications"> = CONFIG.disableApiCall
 ) => {
     if (disabledFlags.all || disabledFlags.unsubscribePushNotifications) {
-        console.log("API call unsubscribePushNotifications disabled. Skipping");
+        if (process.env.NODE_ENV !== "test")
+            console.log(
+                "API call unsubscribePushNotifications disabled. Skipping"
+            );
         return;
     }
     let token = await Notifications.getExpoPushTokenAsync();

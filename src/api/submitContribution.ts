@@ -17,9 +17,10 @@ export const submitContribution = async (
     disabledFlags: ApiFeatureFlags<"submitContribution"> = CONFIG.disableApiCall
 ): Promise<IMessage> => {
     if (disabledFlags.all || disabledFlags.submitContribution) {
-        console.log(
-            "API call submitContribution disabled. Falling back to fixture"
-        );
+        if (process.env.NODE_ENV !== "test")
+            console.log(
+                "API call submitContribution disabled. Falling back to fixture"
+            );
         return mockMsg;
     }
     const payload = pick(msg, ["author", "country", "isodate", "id", "text"]);
