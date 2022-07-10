@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/proSingularity/you-are-awesome-app/compare/v1.2.0...v1.2.1) (2022-07-10)
+
+
+### Bug Fixes
+
+* **#672:** fix errors/warnings in tests about native Animation ([a25d1e9](https://github.com/proSingularity/you-are-awesome-app/commit/a25d1e92d69803a9a8ac693fcff7ec8a8b76f610))
+* **#677:** errors of LocalizationProvider in console ([aadd452](https://github.com/proSingularity/you-are-awesome-app/commit/aadd452c3edf81f4b44ba9bd40bae45dd103a13e)), closes [#677](https://github.com/proSingularity/you-are-awesome-app/issues/677)
+
 # [1.2.0](https://github.com/proSingularity/you-are-awesome-app/compare/v1.1.1...v1.2.0) (2022-07-10)
 
 
