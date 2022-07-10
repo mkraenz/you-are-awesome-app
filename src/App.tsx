@@ -1,6 +1,6 @@
 import React from "react";
-import 'react-native-get-random-values' // required by uuid >4.0.0
 import "react-native-gesture-handler";
+import "react-native-get-random-values"; // required by uuid >4.0.0
 import { Provider as StoreProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { initSentry } from "./api/Sentry";

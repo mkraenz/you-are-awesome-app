@@ -4,7 +4,7 @@ import localization, { Language } from "./localization";
 
 const DEBUG = false;
 
-const myi18n = (language: Language | null) => (languageDetector?: {
+const myi18n = (languageDetector?: {
     type: "languageDetector";
     async: boolean;
     detect: (callback: (locale: string) => void) => void;
@@ -13,7 +13,6 @@ const myi18n = (language: Language | null) => (languageDetector?: {
 }) => {
     if (languageDetector) i18n.use(languageDetector);
     i18n.use(initReactI18next).init({
-        lng: language || undefined,
         resources: localization,
         fallbackLng: Language.English,
         defaultNS: "default",
