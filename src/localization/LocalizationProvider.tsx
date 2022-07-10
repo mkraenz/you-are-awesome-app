@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
 import { connect } from "react-redux";
 import { IState } from "../state/state/IState";
@@ -10,12 +10,14 @@ interface Props {
     language: Language | null;
 }
 
+const i18n = myi18n(languageDetector); // THIS NEEDS TO BE DETACHED FROM REACT!
+
 const LocalizationProvider: FC<Props> = ({ children, language }) => {
-    return (
-        <I18nextProvider i18n={myi18n(language)(languageDetector)}>
-            {children}
-        </I18nextProvider>
-    );
+    useEffect(() => {
+        if (language) i18n.changeLanguage(language);
+    }, [language, i18n.language]);
+
+    return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 };
 
 const mapStateToProps = (state: IState): Props => ({
