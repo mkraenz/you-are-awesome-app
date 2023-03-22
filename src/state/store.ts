@@ -1,17 +1,40 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { applyMiddleware, createStore } from "redux";
-import { persistReducer, persistStore } from "redux-persist";
+import { configureStore } from "@reduxjs/toolkit";
+import {
+    FLUSH,
+    PAUSE,
+    PERSIST,
+    PersistConfig,
+    persistReducer,
+    persistStore,
+    PURGE,
+    REGISTER,
+    REHYDRATE,
+} from "redux-persist";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import createSagaMiddleware from "redux-saga";
 import { IsoStringToDateTransform } from "./persistence/DateTransform";
-import { rootReducer } from "./reducers";
+import { rootReducer, _RootState } from "./reducers";
 import rootSaga from "./sagas";
 import { IState } from "./state/IState";
 
 const DEBUG = false;
 
+const logger =
+    (store: any) =>
+    (next: any) =>
+    (action: any): any => {
+        console.group(action.type);
+        console.info("action type: ", action.type);
+        console.info("dispatching ", action);
+        const result = next(action);
+        console.log("next state", store.getState());
+        console.groupEnd();
+        return result;
+    };
+
 const whitelist: (keyof IState)[] = ["app", "favorites", "contributions"];
-const persistConfig = {
+const persistConfig: PersistConfig<_RootState> = {
     key: "root",
     storage: AsyncStorage,
     transforms: [IsoStringToDateTransform],
@@ -20,12 +43,35 @@ const persistConfig = {
     stateReconciler: autoMergeLevel2,
 };
 
-// TODO fix ts error
-const persistedReducer = persistReducer(persistConfig, rootReducer as any);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(persistedReducer, applyMiddleware(sagaMiddleware));
+
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) => {
+        const middleware = getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [
+                    FLUSH,
+                    REHYDRATE,
+                    PAUSE,
+                    PERSIST,
+                    PURGE,
+                    REGISTER,
+                ],
+            },
+            thunk: false,
+        }).concat(sagaMiddleware);
+
+        return middleware;
+    },
+    devTools: false,
+});
 
 let persistor = persistStore(store);
 sagaMiddleware.run(rootSaga);
 
 export { store, persistor };
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

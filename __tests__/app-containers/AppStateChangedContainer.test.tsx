@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import { Store } from "redux";
 import createMockStore from "redux-mock-store";
 import AppStateChangedContainer from "../../src/app-containers/AppStateChangedContainer";
-import { ActionType } from "../../src/state/actions/ActionType";
 import { IState } from "../../src/state/state/IState";
 import { Pick2 } from "../../src/utils/ts/Pick2";
 
@@ -47,7 +46,7 @@ it("requests to fetch messages if not up-to-date when the app is brought into fo
 
     expect(store.getActions()).toEqual([
         {
-            type: ActionType.FetchMessagesRequested,
+            type: "message/fetchMessagesRequested",
             payload: {
                 now: expect.any(Date),
             },

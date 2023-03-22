@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import { rootReducer } from "../../../src/state/reducers";
 import { appReducer } from "../../../src/state/reducers/appReducer";
 import { contributionsReducer } from "../../../src/state/reducers/contributionsReducer";
-import { messageReducer } from "../../../src/state/reducers/messageReducer";
+import messageReducer from "../../../src/state/reducers/messageReducer";
 import { networkReducer } from "../../../src/state/reducers/networkReducer";
 import { IState } from "../../../src/state/state/IState";
 

@@ -85,7 +85,7 @@ it("requests to fetch messages", async () => {
     );
     expect(store.getActions()).toEqual([
         {
-            type: ActionType.FetchMessagesRequested,
+            type: "message/fetchMessagesRequested",
             payload: {
                 now: new Date("2021-01-01T00:00:00.000Z"),
             },

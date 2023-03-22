@@ -1,12 +1,8 @@
-import { ActionType } from "../../../src/state/actions/ActionType";
-import {
-    IFetchMessagesFailedTimeoutExceeded,
-    IFetchMessagesRequested,
-    IFetchMessagesSucceeded,
-} from "../../../src/state/actions/IAction";
-import {
+import messageReducer, {
+    fetchMessagesFailedTimeoutExceeded,
+    fetchMessagesRequested,
+    fetchMessagesSucceeded,
     initialMessage,
-    messageReducer,
 } from "../../../src/state/reducers/messageReducer";
 import { IMessagesState } from "../../../src/state/state/IMessagesState";
 import { mock } from "../../helpers/mocks";
@@ -24,9 +20,9 @@ describe("messagesReducer", () => {
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.FetchMessagesRequested}`, () => {
-        const action: IFetchMessagesRequested = {
-            type: ActionType.FetchMessagesRequested,
+    it(`should handle ${fetchMessagesRequested.type}`, () => {
+        const action = {
+            type: fetchMessagesRequested.type,
             payload: { now: new Date(123) },
         };
         const state: IMessagesState = {
@@ -45,9 +41,9 @@ describe("messagesReducer", () => {
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.FetchMessagesSucceeded}`, () => {
-        const action: IFetchMessagesSucceeded = {
-            type: ActionType.FetchMessagesSucceeded,
+    it(`should handle ${fetchMessagesSucceeded.type}`, () => {
+        const action = {
+            type: fetchMessagesSucceeded.type,
             payload: {
                 now: new Date(123),
                 message: mock.message,
@@ -70,13 +66,13 @@ describe("messagesReducer", () => {
         expect(result).toEqual(expected);
     });
 
-    it(`should handle ${ActionType.FetchMessagesFailedTimeoutExceeded}`, () => {
-        const action: IFetchMessagesFailedTimeoutExceeded = {
-            type: ActionType.FetchMessagesFailedTimeoutExceeded,
+    it(`should handle ${fetchMessagesFailedTimeoutExceeded.type}`, () => {
+        const action = {
+            type: fetchMessagesFailedTimeoutExceeded.type,
             payload: {
                 error: new Error("an error message"),
                 originalAction: {
-                    type: ActionType.FetchMessagesRequested,
+                    type: fetchMessagesRequested.type,
                     payload: {
                         now: new Date("2013"),
                     },

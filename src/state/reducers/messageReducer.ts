@@ -1,8 +1,5 @@
-import { Reducer } from "redux";
-import { ActionType } from "../actions/ActionType";
-import { IMessageAction } from "../actions/IAction";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IMessage } from "../state/IMessage";
-import { IMessagesState } from "../state/IMessagesState";
 
 export const initialMessage: IMessage = {
     id: "default",
@@ -12,33 +9,76 @@ export const initialMessage: IMessage = {
     isodate: "2019-11-12",
 };
 
-export const messageReducer: Reducer<IMessagesState, IMessageAction> = (
-    state = {
-        currentMessage: initialMessage,
-        refreshing: false,
-        lastUpdate: new Date(0), // epoch
-    },
-    action
-) => {
-    switch (action.type) {
-        case ActionType.FetchMessagesSucceeded:
-            return {
-                ...state,
-                currentMessage: action.payload.message,
-                lastUpdate: action.payload.now,
-                refreshing: false,
-            };
-        case ActionType.FetchMessagesRequested:
-            return {
-                ...state,
-                refreshing: true,
-            };
-        case ActionType.FetchMessagesFailedTimeoutExceeded:
-            return {
-                ...state,
-                refreshing: false,
-            };
-        default:
-            return state;
-    }
+const initialState = {
+    currentMessage: initialMessage,
+    refreshing: false,
+    lastUpdate: new Date(0), // epoch
 };
+
+type FetchMessageRequestedAction = PayloadAction<
+    { now: Date },
+    "message/fetchMessagesRequested"
+>;
+
+const messageSlice = createSlice({
+    name: "message",
+    initialState,
+    reducers: {
+        fetchMessagesSucceeded(
+            state,
+            action: PayloadAction<{
+                message: IMessage;
+                now: Date;
+                messages: IMessage[];
+            }>
+        ) {
+            const { message, now } = action.payload;
+
+            state.currentMessage = message;
+            state.refreshing = false;
+            state.lastUpdate = now;
+        },
+        fetchMessagesRequested: {
+            reducer(state, action: PayloadAction<{ now: Date }>) {
+                state.refreshing = true;
+            },
+            prepare(now: Date) {
+                return { payload: { now } };
+            },
+        },
+        fetchMessagesFailed: {
+            reducer(
+                state,
+                action: PayloadAction<{
+                    originalAction: FetchMessageRequestedAction;
+                    error: Error;
+                }>
+            ) {},
+            // adding error: true to ensure backwards compatibility. Not sure we ever used the action.error property
+            prepare(payload: {
+                originalAction: FetchMessageRequestedAction;
+                error: Error;
+            }) {
+                return { payload, error: true };
+            },
+        },
+        fetchMessagesFailedTimeoutExceeded(
+            state,
+            action: PayloadAction<{
+                originalAction: FetchMessageRequestedAction;
+                error: Error;
+            }>
+        ) {
+            state.refreshing = false;
+        },
+    },
+});
+
+export const {
+    fetchMessagesSucceeded,
+    fetchMessagesRequested,
+    fetchMessagesFailed,
+    fetchMessagesFailedTimeoutExceeded,
+} = messageSlice.actions;
+
+export default messageSlice.reducer;
