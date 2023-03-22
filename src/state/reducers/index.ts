@@ -1,20 +1,9 @@
-import type { CombinedState, Reducer } from "redux";
-import { combineReducers } from "redux";
-import { IAnyAction } from "../actions/IAction";
-import { IState } from "../state/IState";
+import { combineReducers } from "@reduxjs/toolkit";
 import { appReducer } from "./appReducer";
 import { contributionsReducer } from "./contributionsReducer";
 import { favoritesReducer } from "./favoritesReducer";
-import { messageReducer } from "./messageReducer";
+import messageReducer from "./messageReducer";
 import { networkReducer } from "./networkReducer";
-
-type MyReducer = Reducer<CombinedState<IState>, IAnyAction>;
-type assertReducerMatchesState<T extends MyReducer> = T extends Reducer<
-    CombinedState<infer S>,
-    infer A
->
-    ? Reducer<CombinedState<S>, A>
-    : false;
 
 const reducers = {
     messages: messageReducer,
@@ -23,5 +12,9 @@ const reducers = {
     contributions: contributionsReducer,
     favorites: favoritesReducer,
 };
-const combined = combineReducers(reducers);
-export const rootReducer: assertReducerMatchesState<typeof combined> = combined;
+export const rootReducer = combineReducers(reducers);
+
+/** @deprecated This is a workaround for redux-persist. Except for typing redux-persist in store.ts, always use RootState exported from store.ts. */
+export type _RootState = {
+    [K in keyof typeof reducers]: ReturnType<typeof reducers[K]>;
+};

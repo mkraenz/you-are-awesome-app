@@ -8,7 +8,7 @@ import {
 import { Snackbar, useTheme } from "react-native-paper";
 import { connect } from "react-redux";
 import { Analytics } from "../../api/Analytics";
-import { requestFetchMessages } from "../../state/action-creators/requestFetchMessages";
+import { fetchMessagesRequested } from "../../state/reducers/messageReducer";
 import { MapStateToProps } from "../../state/state/MapStateToProps";
 import { useTranslation } from "../../utils/useTranslation";
 
@@ -23,21 +23,21 @@ const styles = StyleSheet.create({
 });
 
 interface Props {
-    requestFetchMessages: (now: Date) => void;
+    fetchMessagesRequested: (now: Date) => void;
     refreshing: boolean;
     internetConnected: boolean;
     children: ReactNode;
 }
 
 const RefreshMessagesView: FC<Props> = ({
-    requestFetchMessages,
+    fetchMessagesRequested,
     children,
     refreshing,
     internetConnected,
 }) => {
     useEffect(() => {
-        requestFetchMessages(new Date());
-    }, [requestFetchMessages]);
+        fetchMessagesRequested(new Date());
+    }, [fetchMessagesRequested]);
     const [snackbarShown, showSnackbar] = useState(false);
     const { t } = useTranslation();
     const toggleSnackbar = () => showSnackbar(!snackbarShown);
@@ -48,7 +48,7 @@ const RefreshMessagesView: FC<Props> = ({
             toggleSnackbar();
             return;
         }
-        requestFetchMessages(new Date());
+        fetchMessagesRequested(new Date());
         Analytics.logManualRefresh();
     };
     return (
@@ -83,8 +83,8 @@ const mapStateToProps: MapStateToProps<
     internetConnected: state.network.connected,
 });
 
-const mapDispatchToProps: Pick<Props, "requestFetchMessages"> = {
-    requestFetchMessages,
+const mapDispatchToProps: Pick<Props, "fetchMessagesRequested"> = {
+    fetchMessagesRequested,
 };
 
 export default connect(

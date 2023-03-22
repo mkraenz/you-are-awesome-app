@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect } from "react";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
-import { requestFetchMessages } from "../state/action-creators/requestFetchMessages";
+import { fetchMessagesRequested } from "../state/reducers/messageReducer";
 import { MapStateToProps } from "../state/state/MapStateToProps";
 import { isToday } from "../utils/toTodayString";
 
@@ -9,23 +9,23 @@ interface StateProps {
     lastUpdate: Date;
 }
 interface DispatchProps {
-    requestFetchMessages: (now: Date) => void;
+    fetchMessagesRequested: (now: Date) => void;
 }
 type Props = StateProps & DispatchProps;
 
 const AppStateChangedContainer: FC<Props> = ({
     lastUpdate,
-    requestFetchMessages,
+    fetchMessagesRequested,
 }) => {
     const handleAppStateChange = useCallback(
         (nextAppState: AppStateStatus) => {
             const isAnotherDay =
                 nextAppState === "active" && !isToday(lastUpdate);
             if (isAnotherDay) {
-                requestFetchMessages(new Date());
+                fetchMessagesRequested(new Date());
             }
         },
-        [lastUpdate, requestFetchMessages]
+        [lastUpdate, fetchMessagesRequested]
     );
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const mapStateToProps: MapStateToProps<StateProps> = (state) => ({
 });
 
 const mapDispatchToProps: DispatchProps = {
-    requestFetchMessages,
+    fetchMessagesRequested,
 };
 
 export default connect(

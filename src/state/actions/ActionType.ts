@@ -1,10 +1,5 @@
 export enum ActionType {
     // TODO handle somehow (at least notify the user)
-    FetchMessagesFailed = "FetchMessagesFailed",
-    FetchMessagesFailedTimeoutExceeded = "FetchMessagesFailedTimeoutExceeded",
-    FetchMessagesRequested = "FetchMessagesRequested",
-    FetchMessagesSucceeded = "FetchMessagesSucceeded",
-    // TODO handle somehow (at least notify the user)
     ContributionFailed = "ContributionFailed",
     ContributionRequested = "ContributionRequested",
     ContributionSucceeded = "ContributionSucceeded",

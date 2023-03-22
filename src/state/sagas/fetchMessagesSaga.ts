@@ -3,18 +3,19 @@ import { fetchMessages } from "../../api/fetchMessages";
 import { CONFIG } from "../../config";
 import { todaysMessageOrRandomMessage } from "../../utils/todayOrRandomMessage";
 import { AwaitedReturnType } from "../../utils/ts/AwaitedReturnType";
-import { ActionType } from "../actions/ActionType";
 import {
-    IFetchMessagesFailed,
-    IFetchMessagesRequested,
-    IFetchMessagesSucceeded,
-} from "../actions/IAction";
+    fetchMessagesFailed,
+    fetchMessagesRequested,
+    fetchMessagesSucceeded,
+} from "../reducers/messageReducer";
 
 function* fetchMessagesWorkerSaga(
-    action: IFetchMessagesRequested | IFetchMessagesFailed
+    action:
+        | ReturnType<typeof fetchMessagesRequested>
+        | ReturnType<typeof fetchMessagesFailed>
 ) {
-    const fetchMessagesRequested =
-        action.type === ActionType.FetchMessagesRequested
+    const isFetchMessagesRequested =
+        action.type === fetchMessagesRequested.type
             ? action
             : action.payload.originalAction;
     try {
@@ -23,34 +24,27 @@ function* fetchMessagesWorkerSaga(
             CONFIG.uri.fetchMessages
         );
         const maybeTodaysMsg = todaysMessageOrRandomMessage(messages);
-        const success: IFetchMessagesSucceeded = {
-            type: ActionType.FetchMessagesSucceeded,
-            payload: {
+        yield put(
+            fetchMessagesSucceeded({
                 message: maybeTodaysMsg,
                 now: new Date(),
                 messages,
-            },
-        };
-        yield put(success);
+            })
+        );
     } catch (e: any) {
-        yield* handleFetchFailed(e, fetchMessagesRequested);
+        yield* handleFetchFailed(e, isFetchMessagesRequested);
     }
 }
 
-function* handleFetchFailed(e: Error, action: IFetchMessagesRequested) {
-    const errorAction: IFetchMessagesFailed = {
-        type: ActionType.FetchMessagesFailed,
-        payload: { originalAction: action, error: e },
-        error: true,
-    };
-    yield put(errorAction);
+function* handleFetchFailed(
+    e: Error,
+    action: ReturnType<typeof fetchMessagesRequested>
+) {
+    yield put(fetchMessagesFailed({ originalAction: action, error: e }));
 }
 
 function* fetchMessagesSaga() {
-    yield takeLatest(
-        [ActionType.FetchMessagesRequested],
-        fetchMessagesWorkerSaga
-    );
+    yield takeLatest([fetchMessagesRequested.type], fetchMessagesWorkerSaga);
 }
 
 export default fetchMessagesSaga;
